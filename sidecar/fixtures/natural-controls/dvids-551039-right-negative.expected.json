@@ -1,0 +1,91 @@
+{
+  "fixture": "dvids-551039-right-negative-36s-51s.mp4",
+  "sha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+  "bytes": 1623169,
+  "annotationFrozenAt": "2026-10-20T15:14:24.593176+00:00",
+  "annotationMethod": "Two independent visual reviews of public source frames before any pose inference; frozen wrong-side control under unchanged anatomical-left-first game.",
+  "poseInferencePerformedBeforeFreeze": false,
+  "predictionsUsedToChooseSegmentOrExpectation": false,
+  "naturalContinuousMovement": true,
+  "expectedGestures": [],
+  "eventWindows": [],
+  "expectedPhysicalMotion": "Three anatomical right-arm dumbbell snatches; no certified left raise. Game must not award its first left ray for these movements.",
+  "source": {
+    "sourcePage": "https://www.dvidshub.net/video/551039/dumbbell-snatch",
+    "title": "Dumbbell Snatch",
+    "videoId": 551039,
+    "creator": "Capt. Matthew Holfinger",
+    "organization": "U.S. Marine Corps Training and Education Command",
+    "dateTaken": "2017-06-23",
+    "datePosted": "2017-09-27",
+    "virin": "170913-M-JT909-006",
+    "filename": "DOD_104836154",
+    "rights": "PUBLIC DOMAIN as explicitly marked on the asset page",
+    "rightsSource": "https://www.dvidshub.net/about/copyright",
+    "requiredDisclaimer": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.",
+    "rightsLimits": "No implied government endorsement; publicity/privacy and protected marks are not waived. Local private diagnostic use only; no publication or marketing.",
+    "publicPlayerUrl": "https://d34w7g4gy10iej.cloudfront.net/video/1709/DOD_104836154/DOD_104836154-1024x576-1769k.mp4",
+    "acquisition": "Normal unauthenticated source-tag MP4; no gated download or account used",
+    "accessedAt": "2026-10-20T15:06:36.997436+00:00",
+    "bytes": 12140868,
+    "sha256": "53811c7890323606087b429e3ef83524f8cb961c08c16e8c2efda8750f946bc5",
+    "sourcePageSha256": "8802cc5bf02978e6e535058253da1eb1d04e5b88121bc44fa5b330cdb1501216",
+    "policyPageSha256": "0639befbd30b4b5e37e37fb2b8479c41b4d737b352a56da13aa09c9fc22bdc1a",
+    "poseInferencePerformed": false,
+    "cameraUsed": false
+  },
+  "derivation": {
+    "sourceSha256": "53811c7890323606087b429e3ef83524f8cb961c08c16e8c2efda8750f946bc5",
+    "sourceStartFrame": 1079,
+    "sourceEndFrameExclusive": 1529,
+    "frames": 450,
+    "fps": "30000/1001",
+    "sourceStartMs": 36002.63333333333,
+    "sourceEndExclusiveMs": 51017.63333333333,
+    "horizontalReflection": false,
+    "retimed": false,
+    "heldOrDuplicatedFrames": false,
+    "spliced": false,
+    "audioRemoved": true,
+    "dimensions": [
+      1024,
+      576
+    ]
+  },
+  "certifiedPoseWindows": [
+    {
+      "startFrame": 1,
+      "endFrameInclusive": 16,
+      "startMs": 33.36666666666667,
+      "endMs": 533.8666666666667,
+      "geometry": {
+        "left": "down",
+        "right": "down"
+      },
+      "spanMs": 500.5,
+      "sourceFrames": [
+        1080,
+        1095
+      ]
+    },
+    {
+      "startFrame": 136,
+      "endFrameInclusive": 151,
+      "startMs": 4537.866666666667,
+      "endMs": 5038.366666666667,
+      "geometry": {
+        "left": "down",
+        "right": "up"
+      },
+      "spanMs": 500.5,
+      "sourceFrames": [
+        1215,
+        1230
+      ]
+    }
+  ],
+  "secondaryVisualReviewSha256": "904b14e4cdb34e63ac748b16d9cb9bfdd89d1000f4e8981e9dde759bc1877430",
+  "coverageLimit": "Wrong-side game negative plus certified neutral/right-up windows only. Not an independently filmed left action or alternating-six goal; other transition frames have no exact landmark annotation.",
+  "physicalCameraUsed": false,
+  "liveUserVerified": false
+}

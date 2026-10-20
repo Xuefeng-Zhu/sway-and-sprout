@@ -1,0 +1,111 @@
+{
+  "reviewType": "independent primary visual review before pose inference",
+  "reviewer": "licensed_dataset_probe",
+  "reviewedAtUTC": "2026-10-20T15:14:19.370792+00:00",
+  "sourceFile": "source.mp4",
+  "sourceSha256": "53811c7890323606087b429e3ef83524f8cb961c08c16e8c2efda8750f946bc5",
+  "frameIndexing": "zero-based original source frames",
+  "sourceFPS": {
+    "numerator": 30000,
+    "denominator": 1001
+  },
+  "poseInferenceSeen": false,
+  "cameraUsed": false,
+  "view": "one person, three-quarter frontal, unchanged natural motion; no horizontal reflection",
+  "windows": [
+    {
+      "sourceFirstFrame": 1080,
+      "sourceLastFrame": 1095,
+      "allFramesVisuallyReviewed": true,
+      "spanMs": 500.5,
+      "manualLeftGate": "down",
+      "manualRightGate": "down",
+      "certainty": "high for coarse both-wrists-below-shoulders geometry",
+      "notes": "Both shoulders and wrists are within image. No model confidence or exact landmark accuracy is assumed."
+    },
+    {
+      "sourceFirstFrame": 1215,
+      "sourceLastFrame": 1230,
+      "allFramesVisuallyReviewed": true,
+      "spanMs": 500.5,
+      "manualLeftGate": "down",
+      "manualRightGate": "up",
+      "certainty": "high for coarse anatomical-right-wrist-above-shoulder geometry, opposite wrist down",
+      "notes": "Raising arm appears on viewer left; face/chest orientation confirms anatomical right. Shoulder position beneath T-shirt is uncertain, but wrist has a large vertical margin. This is a natural dumbbell snatch, not a prompted six-alternation game trial."
+    }
+  ],
+  "referenceFrame1227UncertaintyPixels": {
+    "scope": "reference frame only, not a rectangle guarantee for all frames",
+    "rightShoulder": {
+      "x": [
+        574,
+        600
+      ],
+      "y": [
+        195,
+        230
+      ]
+    },
+    "leftShoulder": {
+      "x": [
+        625,
+        652
+      ],
+      "y": [
+        214,
+        243
+      ]
+    },
+    "rightWrist": {
+      "x": [
+        580,
+        603
+      ],
+      "y": [
+        97,
+        122
+      ]
+    },
+    "leftWrist": {
+      "x": [
+        615,
+        638
+      ],
+      "y": [
+        342,
+        366
+      ]
+    }
+  },
+  "intendedVerificationScope": "neutral calibration plus right-up pose windows; left-first game wrong-side negative",
+  "expectedGameGestures": [],
+  "eventWindows": [],
+  "completeAlternatingSequenceCertified": false,
+  "independentFilmedLeftRaiseCertified": false,
+  "reviewMaterials": [
+    {
+      "file": "contact-all.png",
+      "sha256": "b35e251714946e89562c7f1c3409f2ecfccf1f33e05ea3e7815393b309458c10"
+    },
+    {
+      "file": "contact-first-raise.png",
+      "sha256": "b345bdfa1a3f29064bc35a270890ab93684b190cea2cf141f08978c4f1d50f50"
+    },
+    {
+      "file": "neutral-1080-1095.png",
+      "sha256": "f696e54e489815273c5a4e38241e31d5e0a1663b8226ba550982e9dc27c5a02c"
+    },
+    {
+      "file": "right-up-1215-1230.png",
+      "sha256": "523ce35939d00e2cb9e702c458fd4d8efdbe20d400d4949e438e00109e248c1e"
+    },
+    {
+      "file": "frame-1080.png",
+      "sha256": "2062d51f8f58aa5c89dc7a1a8fad04d26440d8151c8c10f804dcbba34604ced9"
+    },
+    {
+      "file": "frame-1227.png",
+      "sha256": "cb2a9c972123c152acda28707a6ebd638ff9b5c5320e09c64bdfe637384d113e"
+    }
+  ]
+}

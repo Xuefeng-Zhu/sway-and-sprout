@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-20",
+  "reviewer": "natural_video_contract independent second visual review",
+  "sourceSha256": "53811c7890323606087b429e3ef83524f8cb961c08c16e8c2efda8750f946bc5",
+  "modelInferenceUsed": false,
+  "predictedLandmarksReviewed": false,
+  "physicalCameraUsed": false,
+  "imagesReviewed": [
+    "contact-all.png",
+    "contact-first-raise.png",
+    "neutral-1080-1095.png",
+    "right-up-1215-1230.png",
+    "frame-1227.png"
+  ],
+  "certifiedWindows": [
+    {
+      "sourceStartFrame": 1080,
+      "sourceEndFrameInclusive": 1095,
+      "fpsNumerator": 30000,
+      "fpsDenominator": 1001,
+      "timestampSpanMs": 500.5,
+      "visualGeometry": {
+        "left": "down",
+        "right": "down"
+      },
+      "review": "All16consecutiveframes; both wrists visibly below their shoulders."
+    },
+    {
+      "sourceStartFrame": 1215,
+      "sourceEndFrameInclusive": 1230,
+      "fpsNumerator": 30000,
+      "fpsDenominator": 1001,
+      "timestampSpanMs": 500.5,
+      "visualGeometry": {
+        "left": "down",
+        "right": "up"
+      },
+      "review": "All16consecutiveframes; actual anatomicalrightdumbbellsnatch (viewerleft), otherwristdown."
+    }
+  ],
+  "framingReview": {
+    "prominentPeople": 1,
+    "certifiedShouldersAndWristsInsideFrame": true,
+    "raisedWristClipped": false,
+    "bodyOrientation": "Three-quarter frontal; anatomicalrightarm rises on viewerleft."
+  },
+  "uncertainty": [
+    "ShoulderjointcentersareestimatedunderTshirt; no exactlandmarkaccuracyclaim.",
+    "Weightedgrip partlyoccludeshand/wristdetail but grossup/downmarginisclear.",
+    "Coarsefullsequence showsrightrepetitions only; no filmedleftcertified."
+  ],
+  "expectedGameGestures": [],
+  "expectationScope": "Wrong-side negative under unchangedleft-firstgame; actualphysicalrightmotionisnotexpectedtoscore.",
+  "completeSixAlternationCertified": false,
+  "secondaryReviewCompleteBeforeAnyModelEvaluationByThisReviewer": true
+}

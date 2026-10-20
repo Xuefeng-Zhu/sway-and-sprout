@@ -7,7 +7,9 @@ Canonical checkout: `~/mygit/sway-and-sprout`. Private remote:
 Local development branch: `work/natural-motion-diagnostics`. Its starting point
 is `ed4e1f5f12003319fc2cb4a93c4c203fee104adb` on `main`/`origin/main`.
 Local milestones: `89a0f9c` explains calibration/readiness; `d48a3ac` binds video
-acceptance and reconstruction. Inspect all local checkpoints with
+acceptance and reconstruction; `25b9de9` records the initial diagnosis. The next
+local milestone `b1b049e` adds authored event timing and generic bound-file
+traces. Inspect all local checkpoints with
 `git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
 been requested. The dated TogetherMove source remains an untouched backup.
 
@@ -30,13 +32,29 @@ Physical camera capture stayed off. No live user recognition is claimed.
    media's SHA256 before inference. `--require-complete-goal` requires an
    independently expected alternating six-event sequence, six scored rays and
    matching ACKs. Consistent zero-event transport remains observation-only.
-4. **Diagnosis:** a portable analyzer reproduces the current natural-video
-   result and records local scalar traces. No decoder/crop defect was
-   demonstrated, and no thresholds were lowered to fit a fixture.
+4. **Initial diagnosis:** the dancing-video analyzer and independent inverse-ROI
+   checks found no decoder defect in those inputs. No thresholds were lowered.
+5. **New natural control:** public-domain DVIDS551039 was independently annotated
+   before inference. The 450-frame right-only clip correctly scores zero under
+   the left-first policy, but its certified overhead window matches 0/16 poses.
+   A cropped wrist/hand context is now demonstrated on this separate input.
+   Fixed 1.25 expansion recovers only 2/16 frames and regresses near-face
+   recognition from 1 event to 0, so it was rejected. Recognition code is unchanged.
+6. **Timed acceptance:** optional event windows are SHA-bound and validated
+   before inference; early/late events fail even when order, scoring and ACK match.
+   The generic analyzer records bounded numeric traces for any bound local file.
 
 Fresh checks and limits are recorded in
 [the development verification record](verification/mac-development-20261020.json).
 The earlier [migration record](MIGRATION-VERIFICATION.md) remains historical.
+The [new natural-control report](NATURAL-CONTROL-VERIFICATION.md) and
+[scalar record](verification/natural-control-20261020.json) contain the latest
+licensed footage, frozen truth, rejected experiment and verification results.
+Fresh checks: 137 Python tests, 55 JavaScript tests, 90 saved-progress checks,
+37 synthetic-landmark checks, six decoder checks and production build passed.
+The earlier 13 browser checks were not rerun because frontend/service/recognition
+code did not change. Full numeric evidence is ignored under
+`verification-results/natural-controls-20261020/`.
 
 ## Start and test
 
@@ -91,6 +109,7 @@ generated from the inference result being evaluated.
 | Frontal held public poses | 6 / 6 / 6 | Selected constructed fixture goal verified |
 | Near-face held public poses | 1 / 1 / 1 | Preserved six-event expectation failure |
 | Normal-speed original / reflection | 0 / 0 / 0 each | Complete natural goal unverified; strict acceptance exits 1 |
+| New normal-speed filmed right-only control | 0 / 0 / 0 | Correct wrong-side negative; certified overhead tracking fails 0/16 |
 
 Repeat the frame-level diagnosis without capture:
 
@@ -136,20 +155,24 @@ storage; they do not read or clear the user's browser progress.
 
 ## Next acceptance checks
 
-1. Obtain a licensed or user-provided local normal-motion clip with confidently
-   annotated visible neutral intervals and anatomical left/right raises. Freeze
-   exact bytes and annotations before inference. The current dancing clip cannot
-   certify a complete alternating six-raise trial; its partial windows stay partial.
+1. The new licensed control supplies independent neutral/right-up truth, but no
+   filmed positive left/right alternation. Obtain that remaining natural positive
+   with confidently visible neutral/hold intervals; freeze bytes and annotations
+   before inference. The dancing clip and right-only control cannot certify six
+   alternating raises. Keep their partial/negative scopes explicit.
 2. Run the strict full pipeline and require six expected events, six rays, ACK6,
    no saved participation, and no unexpected events. Retain failures and uncertainty.
    A reflected side is not an independently filmed opposite-side trial.
 3. Recheck near-face failure, neutral/loss/recovery, pause/restart/context filters,
    stale feedback and the nonempty-progress harness after any recognition change.
-4. Request a real camera test only when the user explicitly says they are ready.
-   Keep it single-person and supervised, prompt raises only after Ready, keep all
-   frames in memory, and stop capture when finished or participation is unavailable.
+4. Keep the physical camera off for this continuation. A future supervised
+   single-person test requires new explicit user readiness. Prompt raises only
+   after Ready, keep all frames in memory, and stop capture when finished or
+   participation is unavailable.
 
-The missing complete natural-motion acceptance evidence is the remaining input
-limitation. No permission request is pending. Two-player camera co-op remains
+Both the missing complete natural-motion positive and demonstrated overhead
+tracking failure remain unresolved. The global crop candidate was rejected; do
+not adopt it or infer success from a consistent zero-event game negative.
+No permission request is pending. Two-player camera co-op remains
 future work; it was a capability question, not an implementation request. Native
 APK/Fire TV/Vega verification is also separate and was not run in this milestone.

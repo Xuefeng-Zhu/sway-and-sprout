@@ -103,3 +103,12 @@ through the actual video/service/game pipeline and retain unsupported coverage
 as a limitation. The current held public fixtures and synthetic tensors are useful
 controls, but cannot replace that evidence. Never label reflected or scripted
 sessions as saved human participation.
+
+## Subsequent independent natural control
+
+The original dancing-video and inverse-geometry findings above remain specific to
+those inputs. [The subsequent DVIDS control](NATURAL-CONTROL-VERIFICATION.md) now
+demonstrates cropped overhead-hand context on different independently annotated
+footage. Its certified right-up window fails 0/16; a global 1.25 crop experiment
+was rejected for insufficient sustained recovery and a known near-face regression.
+Recognition code and thresholds remain unchanged.

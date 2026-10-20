@@ -1,0 +1,1954 @@
+{
+  "date": "2026-10-20",
+  "baseCommitBeforeContinuation": "25b9de91ea88b94ad827148b272b30488f3e9a69",
+  "verificationCodeCommit": "b1b049e",
+  "physicalCameraUsed": false,
+  "liveUserVerified": false,
+  "pushPerformed": false,
+  "deploymentPerformed": false,
+  "artifactUploadPerformed": false,
+  "credentialsChanged": false,
+  "moneySpent": false,
+  "naturalAlternatingSixVerified": false,
+  "recognitionCodeChanged": false,
+  "calibrationOrGestureThresholdsChanged": false,
+  "frozenAnnotations": [
+    {
+      "file": "dvids-551039-right-negative.expected.json",
+      "sha256": "d66045e78e2498b2e004bef31da2966a691333433765076f4a34123af893b6f7"
+    },
+    {
+      "file": "primary-visual-review.json",
+      "sha256": "9245c4526805cfb166ac9b053c4d2b0c140d90ff60435713727ed4be5c2ebb88"
+    },
+    {
+      "file": "secondary-blind-visual-review.json",
+      "sha256": "904b14e4cdb34e63ac748b16d9cb9bfdd89d1000f4e8981e9dde759bc1877430"
+    }
+  ],
+  "naturalControl": {
+    "sourcePage": "https://www.dvidshub.net/video/551039/dumbbell-snatch",
+    "rights": "PUBLIC DOMAIN, item-specific official declaration with DVIDS use-policy restrictions",
+    "sourceSha256": "53811c7890323606087b429e3ef83524f8cb961c08c16e8c2efda8750f946bc5",
+    "fixture": {
+      "file": "dvids-551039-right-negative-36s-51s.mp4",
+      "sha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+      "fps": 29.97002997002997,
+      "decodedFrames": 450
+    },
+    "gameOutcome": {
+      "status": "negative-control-matched",
+      "pipelineConsistent": true,
+      "sequenceExpectationPresent": true,
+      "expectedSequenceMatched": true,
+      "eventTimingExpectationPresent": true,
+      "eventTimingMatched": true,
+      "completeGoalVerified": false,
+      "scope": "selected local fixture only",
+      "liveUserVerified": false
+    },
+    "poseWindowComparisons": [
+      {
+        "sourceFrames": [
+          1080,
+          1095
+        ],
+        "fixtureFrames": [
+          1,
+          16
+        ],
+        "manualGate": "left-down/right-down",
+        "frames": 16,
+        "matchedFrames": 16,
+        "poseWindowAcceptancePassed": true,
+        "observedSpanMs": 500.5
+      },
+      {
+        "sourceFrames": [
+          1215,
+          1230
+        ],
+        "fixtureFrames": [
+          136,
+          151
+        ],
+        "manualGate": "left-down/right-up",
+        "frames": 16,
+        "matchedFrames": 0,
+        "poseWindowAcceptancePassed": false,
+        "observedSpanMs": 500.5
+      }
+    ],
+    "poseWindowAcceptancePassed": false,
+    "detectionCounts": {
+      "1": 443,
+      "2": 5,
+      "3": 2
+    },
+    "inferenceFailureStageCounts": {
+      "pose-not-accepted": 4,
+      "multiple-detections": 7
+    },
+    "lowConfidenceBottleneckCounts": {
+      "right_wrist": 81
+    },
+    "gateCounts": {
+      "left-down/right-down": 289,
+      "low-confidence": 81,
+      "no-pose": 11,
+      "left-down/right-up": 39,
+      "left-down/right-transition": 30
+    },
+    "blockedApiAttempts": {
+      "capture": 0,
+      "socket": 0
+    },
+    "game": {
+      "source": "video",
+      "evidenceType": "video-inference-events",
+      "physicalCameraUsed": false,
+      "privateProgressSaved": false,
+      "count": 0,
+      "target": 6,
+      "completed": false,
+      "expected": "left",
+      "lastSeq": 0,
+      "acceptedGestures": [],
+      "packetCount": 450,
+      "eventDeliveries": 0,
+      "ignoredPackets": 0
+    }
+  },
+  "rejectedExperiment": {
+    "candidatePreInferenceCropFactor": 1.25,
+    "candidateUsedOnlyInLocalExperiment": true,
+    "thresholdsRetuned": false,
+    "adopted": false,
+    "reason": "Neutral windows remain 16/16 but overhead remains 2/16; known near-face recognition worsens from 1 event to 0. A single reflected observed-only event does not establish a natural goal.",
+    "certifiedWindows": {
+      "1.0": {
+        "frames": 32,
+        "correctNeutral": 16,
+        "correctRightUp": 0,
+        "gateCounts": {
+          "left-down/right-down": 16,
+          "low-confidence": 16
+        },
+        "allFourConfidenceRange": [
+          0.06292904168367386,
+          0.7711117267608643
+        ],
+        "medianInferenceMs": 22.256500000000003,
+        "maxInferenceMs": 23.505
+      },
+      "1.25": {
+        "frames": 32,
+        "correctNeutral": 16,
+        "correctRightUp": 2,
+        "gateCounts": {
+          "left-down/right-down": 16,
+          "low-confidence": 14,
+          "left-down/right-up": 2
+        },
+        "allFourConfidenceRange": [
+          0.12243901193141937,
+          0.8873153924942017
+        ],
+        "medianInferenceMs": 22.687,
+        "maxInferenceMs": 24.19
+      }
+    },
+    "frame148CropGeometry": {
+      "1.0": {
+        "frame": 148,
+        "cropSourceBounds": [
+          [
+            238,
+            62
+          ],
+          [
+            531,
+            355
+          ]
+        ],
+        "frozenManualBoxes": {
+          "rightShoulder": {
+            "modelInputBounds": [
+              [
+                108.81468323194966,
+                51.14313250440511
+              ],
+              [
+                124.08993751678365,
+                71.04182130706067
+              ]
+            ],
+            "allCornersInsideModelInput": true
+          },
+          "leftShoulder": {
+            "modelInputBounds": [
+              [
+                136.20937985626375,
+                63.10546398558059
+              ],
+              [
+                151.84108140901463,
+                79.76459543118074
+              ]
+            ],
+            "allCornersInsideModelInput": true
+          },
+          "rightWrist": {
+            "modelInputBounds": [
+              [
+                115.48267598047279,
+                -2.094657529749179
+              ],
+              [
+                128.8078894619129,
+                12.257985844540167
+              ]
+            ],
+            "allCornersInsideModelInput": false
+          },
+          "leftWrist": {
+            "modelInputBounds": [
+              [
+                126.8889101437129,
+                132.5724943407135
+              ],
+              [
+                140.18267008945148,
+                146.37996923287665
+              ]
+            ],
+            "allCornersInsideModelInput": true
+          }
+        }
+      },
+      "1.25": {
+        "frame": 148,
+        "cropSourceBounds": [
+          [
+            201,
+            25
+          ],
+          [
+            567,
+            391
+          ]
+        ],
+        "frozenManualBoxes": {
+          "rightShoulder": {
+            "modelInputBounds": [
+              [
+                112.99098958186134,
+                66.8222344912314
+              ],
+              [
+                125.2195401432175,
+                82.75205913379446
+              ]
+            ],
+            "allCornersInsideModelInput": true
+          },
+          "leftShoulder": {
+            "modelInputBounds": [
+              [
+                134.92171666088873,
+                76.3986364693309
+              ],
+              [
+                147.43561981650626,
+                89.73504497632774
+              ]
+            ],
+            "allCornersInsideModelInput": true
+          },
+          "rightWrist": {
+            "modelInputBounds": [
+              [
+                118.3290274925643,
+                24.202910775364728
+              ],
+              [
+                128.99647981513795,
+                35.69286844931768
+              ]
+            ],
+            "allCornersInsideModelInput": true
+          },
+          "leftWrist": {
+            "modelInputBounds": [
+              [
+                127.46024773799967,
+                132.01022087931435
+              ],
+              [
+                138.10252004428764,
+                143.06374586129198
+              ]
+            ],
+            "allCornersInsideModelInput": true
+          }
+        }
+      }
+    },
+    "inMemoryReflectionDiagnostic": {
+      "1.0": {
+        "frames": 32,
+        "correctNeutral": 16,
+        "correctRightUp": 0,
+        "gateCounts": {
+          "left-down/right-down": 16,
+          "low-confidence": 16
+        },
+        "medianInferenceMs": 22.4625,
+        "confidentFullPoseFrames": 16,
+        "allFourConfidenceRange": [
+          0.05601711571216583,
+          0.8959070444107056
+        ]
+      },
+      "1.25": {
+        "frames": 32,
+        "correctNeutral": 16,
+        "correctRightUp": 7,
+        "gateCounts": {
+          "left-down/right-down": 16,
+          "left-down/right-up": 7,
+          "low-confidence": 9
+        },
+        "medianInferenceMs": 22.889,
+        "confidentFullPoseFrames": 23,
+        "allFourConfidenceRange": [
+          0.06790662556886673,
+          0.9527644515037537
+        ]
+      }
+    },
+    "reflectionScope": "Same frozen natural public frames horizontallyreflectedINMEMORY only. Swap all four anatomical labels and inverse x before comparing original frozen truth. No event sequence or independently filmed left trial claim.",
+    "fullPipelineComparison": {
+      "clear": {
+        "fixture": {
+          "file": "clear-public-arm-fixture.mp4",
+          "sha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+          "fps": 10.0,
+          "decodedFrames": 152
+        },
+        "baselineObservedEventCount": 6,
+        "observedGestures": [
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise"
+        ],
+        "rays": 6,
+        "ack": 6,
+        "gameScoringMatches": true,
+        "gameAcknowledgmentMatches": true,
+        "outcome": {
+          "status": "complete-goal-verified",
+          "pipelineConsistent": true,
+          "sequenceExpectationPresent": true,
+          "expectedSequenceMatched": true,
+          "eventTimingExpectationPresent": false,
+          "eventTimingMatched": null,
+          "completeGoalVerified": true,
+          "scope": "selected local fixture only",
+          "liveUserVerified": false
+        }
+      },
+      "near-face": {
+        "fixture": {
+          "file": "held-public-arm-fixture.mp4",
+          "sha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+          "fps": 10.0,
+          "decodedFrames": 152
+        },
+        "baselineObservedEventCount": 1,
+        "observedGestures": [],
+        "rays": 0,
+        "ack": 0,
+        "gameScoringMatches": true,
+        "gameAcknowledgmentMatches": true,
+        "outcome": {
+          "status": "failed",
+          "pipelineConsistent": true,
+          "sequenceExpectationPresent": true,
+          "expectedSequenceMatched": false,
+          "eventTimingExpectationPresent": false,
+          "eventTimingMatched": null,
+          "completeGoalVerified": false,
+          "scope": "selected local fixture only",
+          "liveUserVerified": false
+        }
+      },
+      "frontal-held": {
+        "fixture": {
+          "file": "frontal-held-source035.mp4",
+          "sha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+          "fps": 10.0,
+          "decodedFrames": 152
+        },
+        "baselineObservedEventCount": 6,
+        "observedGestures": [
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise"
+        ],
+        "rays": 6,
+        "ack": 6,
+        "gameScoringMatches": true,
+        "gameAcknowledgmentMatches": true,
+        "outcome": {
+          "status": "complete-goal-verified",
+          "pipelineConsistent": true,
+          "sequenceExpectationPresent": true,
+          "expectedSequenceMatched": true,
+          "eventTimingExpectationPresent": false,
+          "eventTimingMatched": null,
+          "completeGoalVerified": true,
+          "scope": "selected local fixture only",
+          "liveUserVerified": false
+        }
+      },
+      "continuous-original": {
+        "fixture": {
+          "file": "continuous-source-original640.mp4",
+          "sha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+          "fps": 30.0,
+          "decodedFrames": 319
+        },
+        "baselineObservedEventCount": 0,
+        "observedGestures": [],
+        "rays": 0,
+        "ack": 0,
+        "gameScoringMatches": true,
+        "gameAcknowledgmentMatches": true,
+        "outcome": {
+          "status": "observed-only",
+          "pipelineConsistent": true,
+          "sequenceExpectationPresent": false,
+          "expectedSequenceMatched": null,
+          "eventTimingExpectationPresent": false,
+          "eventTimingMatched": null,
+          "completeGoalVerified": false,
+          "scope": "selected local fixture only",
+          "liveUserVerified": false
+        }
+      },
+      "continuous-mirror": {
+        "fixture": {
+          "file": "continuous-source-mirrored640.mp4",
+          "sha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+          "fps": 30.0,
+          "decodedFrames": 319
+        },
+        "baselineObservedEventCount": 0,
+        "observedGestures": [
+          "left-raise"
+        ],
+        "rays": 1,
+        "ack": 1,
+        "gameScoringMatches": true,
+        "gameAcknowledgmentMatches": true,
+        "outcome": {
+          "status": "observed-only",
+          "pipelineConsistent": true,
+          "sequenceExpectationPresent": false,
+          "expectedSequenceMatched": null,
+          "eventTimingExpectationPresent": false,
+          "eventTimingMatched": null,
+          "completeGoalVerified": false,
+          "scope": "selected local fixture only",
+          "liveUserVerified": false
+        }
+      },
+      "dvids-wrong-side-negative": {
+        "fixture": {
+          "file": "dvids-551039-right-negative-36s-51s.mp4",
+          "sha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+          "fps": 29.97002997002997,
+          "decodedFrames": 450
+        },
+        "baselineObservedEventCount": 0,
+        "observedGestures": [],
+        "rays": 0,
+        "ack": 0,
+        "gameScoringMatches": true,
+        "gameAcknowledgmentMatches": true,
+        "outcome": {
+          "status": "negative-control-matched",
+          "pipelineConsistent": true,
+          "sequenceExpectationPresent": true,
+          "expectedSequenceMatched": true,
+          "eventTimingExpectationPresent": true,
+          "eventTimingMatched": true,
+          "completeGoalVerified": false,
+          "scope": "selected local fixture only",
+          "liveUserVerified": false
+        }
+      }
+    },
+    "implementationSha256": {
+      "sidecar/inference.py": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407",
+      "sidecar/motion.py": "375b9dd92631c13533513c88b7eea9f9b3900f82304c566ee86b373b80a3b458",
+      "sidecar/service.py": "cae49767c0ec32a1ce02fe294b64364bfa89b795058d901abbf69aedd6c751d4",
+      "sidecar/verify_video.py": "6bcbb368f1287bbc678ae89548962bcc73e4d24663273252910a0090fb268ecb",
+      "sidecar/vendor/mp_pose.py": "7e1953d1fb848c64fd3b44277e615e273e7fb2f325f7633eb9c1e32948d45e67",
+      "sidecar/models/person_detection_mediapipe_2023mar.onnx": "47fd5599d6fa17608f03e0eb0ae230baa6e597d7e8a2c8199fe00abea55a701f",
+      "sidecar/models/pose_estimation_mediapipe_2023mar.onnx": "9d89c599319a18fb7d2e28451a883476164543182bafca5f09eb2cf767ed2f3f",
+      "src/motion.js": "9adc0c6d7ff801962b18a6d188873f1c05abf35c12a2739100ddd7c5fd452bc2",
+      "scripts/score-motion-fixture.mjs": "97ba23862bc5ee14d90551fb540a62bf782f0c09954ea5709ae9e74a35a31c61"
+    }
+  },
+  "finalPipelineBaseline": [
+    {
+      "case": "clear-held",
+      "exit": 0,
+      "expectedExit": 0,
+      "fixture": {
+        "file": "clear-public-arm-fixture.mp4",
+        "sha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "privateProgressSaved": false,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "previewCacheCleared": true
+    },
+    {
+      "case": "frontal-held",
+      "exit": 0,
+      "expectedExit": 0,
+      "fixture": {
+        "file": "frontal-held-source035.mp4",
+        "sha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "privateProgressSaved": false,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "previewCacheCleared": true
+    },
+    {
+      "case": "near-face-held",
+      "exit": 1,
+      "expectedExit": 1,
+      "fixture": {
+        "file": "held-public-arm-fixture.mp4",
+        "sha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "events": [
+        "left-raise"
+      ],
+      "rays": 1,
+      "ack": 1,
+      "outcome": {
+        "status": "failed",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": false,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "privateProgressSaved": false,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "previewCacheCleared": true
+    },
+    {
+      "case": "natural-original",
+      "exit": 1,
+      "expectedExit": 1,
+      "fixture": {
+        "file": "continuous-source-original640.mp4",
+        "sha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+        "fps": 30.0,
+        "decodedFrames": 319
+      },
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "privateProgressSaved": false,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "previewCacheCleared": true
+    },
+    {
+      "case": "natural-reflection",
+      "exit": 1,
+      "expectedExit": 1,
+      "fixture": {
+        "file": "continuous-source-mirrored640.mp4",
+        "sha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+        "fps": 30.0,
+        "decodedFrames": 319
+      },
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "privateProgressSaved": false,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "previewCacheCleared": true
+    },
+    {
+      "case": "natural-right-negative",
+      "exit": 0,
+      "expectedExit": 0,
+      "fixture": {
+        "file": "dvids-551039-right-negative-36s-51s.mp4",
+        "sha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+        "fps": 29.97002997002997,
+        "decodedFrames": 450
+      },
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "privateProgressSaved": false,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "previewCacheCleared": true
+    }
+  ],
+  "validation": {
+    "pythonSuite": {
+      "testsRun": 137,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "captureApiProhibited": true
+    },
+    "javascriptSuite": {
+      "testsRun": 55,
+      "passed": 55
+    },
+    "progressPreservation": {
+      "passed": true,
+      "checksRun": 90,
+      "checksPassed": 90,
+      "simulatedScenarios": 48,
+      "modelReferenceChecks": 12,
+      "cameraManualScenarios": 30,
+      "seeds": [
+        {
+          "name": "existing-other",
+          "completed": [
+            "wake"
+          ],
+          "sessions": 3
+        },
+        {
+          "name": "existing-sun",
+          "completed": [
+            "sun"
+          ],
+          "sessions": 7
+        },
+        {
+          "name": "multiple-without-sun",
+          "completed": [
+            "wake",
+            "rain"
+          ],
+          "sessions": 23
+        },
+        {
+          "name": "multiple-with-sun",
+          "completed": [
+            "sun",
+            "rain"
+          ],
+          "sessions": 42
+        },
+        {
+          "name": "all-challenges",
+          "completed": [
+            "wake",
+            "sun",
+            "rain"
+          ],
+          "sessions": 57
+        },
+        {
+          "name": "all-alternate-order",
+          "completed": [
+            "rain",
+            "wake",
+            "sun"
+          ],
+          "sessions": 101
+        }
+      ],
+      "sourceHashes": {
+        "src/model.js": "31c4b4f3296f9bbc56ba6e8ba7a127759d92d263d88a96e603044c78c31d50f9",
+        "src/main.js": "94f83192b222b80daf4d987f6278fa1ced00749426eb3e7b0b3cfdf0fbbf466a"
+      },
+      "cameraOpened": false,
+      "servicesOpened": false,
+      "realAppStorageAccessed": false,
+      "actualProjectFilesWritten": false,
+      "testMethod": "Actual main module in a VM; actual model and reducer; in-memory DOM/storage; inert clients/timers",
+      "failures": [],
+      "results": [
+        {
+          "name": "existing-other/video/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "video",
+          "seed": "existing-other"
+        },
+        {
+          "name": "existing-other/video/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "existing-other",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-other/video/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "existing-other",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-other/video/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "existing-other",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-other/video/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "existing-other",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-other/synthetic/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "synthetic",
+          "seed": "existing-other"
+        },
+        {
+          "name": "existing-other/synthetic/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "existing-other",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-other/synthetic/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "existing-other",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-other/synthetic/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "existing-other",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-other/synthetic/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "existing-other",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-other/camera/0-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "existing-other",
+          "rays": 0,
+          "flow": "automatic",
+          "expectedSetItemWrites": 0,
+          "setItemWrites": 0
+        },
+        {
+          "name": "existing-other/camera/0-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "existing-other",
+          "rays": 0,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "existing-other/camera/6-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "existing-other",
+          "rays": 6,
+          "flow": "automatic",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "existing-other/camera/6-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "existing-other",
+          "rays": 6,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "existing-other/manual/confirmation",
+          "passed": true,
+          "kind": "manual-retained-behavior",
+          "source": "manual",
+          "seed": "existing-other",
+          "setItemWrites": 1
+        },
+        {
+          "name": "existing-sun/video/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "video",
+          "seed": "existing-sun"
+        },
+        {
+          "name": "existing-sun/video/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "existing-sun",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-sun/video/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "existing-sun",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-sun/video/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "existing-sun",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-sun/video/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "existing-sun",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-sun/synthetic/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "synthetic",
+          "seed": "existing-sun"
+        },
+        {
+          "name": "existing-sun/synthetic/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "existing-sun",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-sun/synthetic/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "existing-sun",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-sun/synthetic/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "existing-sun",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-sun/synthetic/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "existing-sun",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "existing-sun/camera/0-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "existing-sun",
+          "rays": 0,
+          "flow": "automatic",
+          "expectedSetItemWrites": 0,
+          "setItemWrites": 0
+        },
+        {
+          "name": "existing-sun/camera/0-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "existing-sun",
+          "rays": 0,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "existing-sun/camera/6-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "existing-sun",
+          "rays": 6,
+          "flow": "automatic",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "existing-sun/camera/6-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "existing-sun",
+          "rays": 6,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "existing-sun/manual/confirmation",
+          "passed": true,
+          "kind": "manual-retained-behavior",
+          "source": "manual",
+          "seed": "existing-sun",
+          "setItemWrites": 1
+        },
+        {
+          "name": "multiple-without-sun/video/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "video",
+          "seed": "multiple-without-sun"
+        },
+        {
+          "name": "multiple-without-sun/video/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "multiple-without-sun",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-without-sun/video/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "multiple-without-sun",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-without-sun/video/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "multiple-without-sun",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-without-sun/video/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "multiple-without-sun",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-without-sun/synthetic/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "synthetic",
+          "seed": "multiple-without-sun"
+        },
+        {
+          "name": "multiple-without-sun/synthetic/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "multiple-without-sun",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-without-sun/synthetic/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "multiple-without-sun",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-without-sun/synthetic/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "multiple-without-sun",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-without-sun/synthetic/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "multiple-without-sun",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-without-sun/camera/0-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "multiple-without-sun",
+          "rays": 0,
+          "flow": "automatic",
+          "expectedSetItemWrites": 0,
+          "setItemWrites": 0
+        },
+        {
+          "name": "multiple-without-sun/camera/0-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "multiple-without-sun",
+          "rays": 0,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "multiple-without-sun/camera/6-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "multiple-without-sun",
+          "rays": 6,
+          "flow": "automatic",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "multiple-without-sun/camera/6-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "multiple-without-sun",
+          "rays": 6,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "multiple-without-sun/manual/confirmation",
+          "passed": true,
+          "kind": "manual-retained-behavior",
+          "source": "manual",
+          "seed": "multiple-without-sun",
+          "setItemWrites": 1
+        },
+        {
+          "name": "multiple-with-sun/video/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "video",
+          "seed": "multiple-with-sun"
+        },
+        {
+          "name": "multiple-with-sun/video/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "multiple-with-sun",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-with-sun/video/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "multiple-with-sun",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-with-sun/video/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "multiple-with-sun",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-with-sun/video/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "multiple-with-sun",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-with-sun/synthetic/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "synthetic",
+          "seed": "multiple-with-sun"
+        },
+        {
+          "name": "multiple-with-sun/synthetic/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "multiple-with-sun",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-with-sun/synthetic/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "multiple-with-sun",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-with-sun/synthetic/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "multiple-with-sun",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-with-sun/synthetic/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "multiple-with-sun",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "multiple-with-sun/camera/0-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "multiple-with-sun",
+          "rays": 0,
+          "flow": "automatic",
+          "expectedSetItemWrites": 0,
+          "setItemWrites": 0
+        },
+        {
+          "name": "multiple-with-sun/camera/0-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "multiple-with-sun",
+          "rays": 0,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "multiple-with-sun/camera/6-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "multiple-with-sun",
+          "rays": 6,
+          "flow": "automatic",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "multiple-with-sun/camera/6-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "multiple-with-sun",
+          "rays": 6,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "multiple-with-sun/manual/confirmation",
+          "passed": true,
+          "kind": "manual-retained-behavior",
+          "source": "manual",
+          "seed": "multiple-with-sun",
+          "setItemWrites": 1
+        },
+        {
+          "name": "all-challenges/video/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "video",
+          "seed": "all-challenges"
+        },
+        {
+          "name": "all-challenges/video/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "all-challenges",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-challenges/video/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "all-challenges",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-challenges/video/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "all-challenges",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-challenges/video/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "all-challenges",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-challenges/synthetic/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "synthetic",
+          "seed": "all-challenges"
+        },
+        {
+          "name": "all-challenges/synthetic/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "all-challenges",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-challenges/synthetic/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "all-challenges",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-challenges/synthetic/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "all-challenges",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-challenges/synthetic/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "all-challenges",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-challenges/camera/0-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "all-challenges",
+          "rays": 0,
+          "flow": "automatic",
+          "expectedSetItemWrites": 0,
+          "setItemWrites": 0
+        },
+        {
+          "name": "all-challenges/camera/0-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "all-challenges",
+          "rays": 0,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "all-challenges/camera/6-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "all-challenges",
+          "rays": 6,
+          "flow": "automatic",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "all-challenges/camera/6-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "all-challenges",
+          "rays": 6,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "all-challenges/manual/confirmation",
+          "passed": true,
+          "kind": "manual-retained-behavior",
+          "source": "manual",
+          "seed": "all-challenges",
+          "setItemWrites": 1
+        },
+        {
+          "name": "all-alternate-order/video/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "video",
+          "seed": "all-alternate-order"
+        },
+        {
+          "name": "all-alternate-order/video/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "all-alternate-order",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-alternate-order/video/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "all-alternate-order",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-alternate-order/video/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "all-alternate-order",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-alternate-order/video/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "video",
+          "seed": "all-alternate-order",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-alternate-order/synthetic/model-reference",
+          "passed": true,
+          "kind": "model-reference",
+          "source": "synthetic",
+          "seed": "all-alternate-order"
+        },
+        {
+          "name": "all-alternate-order/synthetic/0-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "all-alternate-order",
+          "rays": 0,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-alternate-order/synthetic/0-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "all-alternate-order",
+          "rays": 0,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-alternate-order/synthetic/6-rays/automatic",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "all-alternate-order",
+          "rays": 6,
+          "flow": "automatic",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-alternate-order/synthetic/6-rays/confirmation",
+          "passed": true,
+          "kind": "simulated-preservation",
+          "source": "synthetic",
+          "seed": "all-alternate-order",
+          "rays": 6,
+          "flow": "confirmation",
+          "setItemWrites": 0,
+          "storedJsonBytesUnchanged": true,
+          "memoryValueUnchanged": true,
+          "memoryReferenceUnchanged": true
+        },
+        {
+          "name": "all-alternate-order/camera/0-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "all-alternate-order",
+          "rays": 0,
+          "flow": "automatic",
+          "expectedSetItemWrites": 0,
+          "setItemWrites": 0
+        },
+        {
+          "name": "all-alternate-order/camera/0-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "all-alternate-order",
+          "rays": 0,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "all-alternate-order/camera/6-rays/automatic",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "all-alternate-order",
+          "rays": 6,
+          "flow": "automatic",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "all-alternate-order/camera/6-rays/confirmation",
+          "passed": true,
+          "kind": "camera-retained-behavior",
+          "source": "camera",
+          "seed": "all-alternate-order",
+          "rays": 6,
+          "flow": "confirmation",
+          "expectedSetItemWrites": 1,
+          "setItemWrites": 1
+        },
+        {
+          "name": "all-alternate-order/manual/confirmation",
+          "passed": true,
+          "kind": "manual-retained-behavior",
+          "source": "manual",
+          "seed": "all-alternate-order",
+          "setItemWrites": 1
+        }
+      ]
+    },
+    "syntheticLandmarks": {
+      "checksRun": 37,
+      "passed": 37,
+      "actualPersonImageInference": false
+    },
+    "decoderContract": {
+      "testsRun": 6,
+      "passed": 6,
+      "actualPersonImageInference": false
+    },
+    "productionBuildPassed": true,
+    "browserTestsRerun": false,
+    "browserTestsReason": "No frontend, service or recognition code changed; prior 13-case browser milestone remains historical."
+  },
+  "implementationSha256": {
+    "sidecar/inference.py": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407",
+    "sidecar/motion.py": "375b9dd92631c13533513c88b7eea9f9b3900f82304c566ee86b373b80a3b458",
+    "sidecar/service.py": "cae49767c0ec32a1ce02fe294b64364bfa89b795058d901abbf69aedd6c751d4",
+    "sidecar/vendor/mp_persondet.py": "e530a8ebc3c218376d5dd1c13aa8ed39a850fac4dbcd6928144746b33477b9c7",
+    "sidecar/vendor/mp_pose.py": "7e1953d1fb848c64fd3b44277e615e273e7fb2f325f7633eb9c1e32948d45e67",
+    "sidecar/video_input.py": "00cdf1aa7e90eb2c1a6056dcca0226d8aff3c64fabd5dd6b3115169c25bd462e",
+    "sidecar/verify_video.py": "6bcbb368f1287bbc678ae89548962bcc73e4d24663273252910a0090fb268ecb",
+    "src/motion.js": "9adc0c6d7ff801962b18a6d188873f1c05abf35c12a2739100ddd7c5fd452bc2",
+    "src/calibration.js": "cee344ed0f970ec74feba211fff674eb9ca75a1d2cb2f895c038bcd7cedaf6c9",
+    "scripts/score-motion-fixture.mjs": "97ba23862bc5ee14d90551fb540a62bf782f0c09954ea5709ae9e74a35a31c61"
+  },
+  "remainingLimitations": [
+    "No independently filmed positive left-arm or six-alternating natural sequence certified from acquired candidates.",
+    "Certified natural right-up window still fails pose confidence/geometry acceptance.",
+    "Global crop expansion and in-memory reflection did not demonstrate sustained reliable recognition; no tracking change adopted.",
+    "No live user or native-device test performed."
+  ],
+  "supportingLocalEvidencePolicy": "Full numeric traces and experimental per-frame results retained locally outside source history; no image/media/model upload.",
+  "timingContractNegative": {
+    "evidenceType": "actual-video-pipeline timing-contract negative, deliberately false expected times",
+    "recognitionAcceptanceClaim": false,
+    "manifestSha256": "0762aff56d70217c1e2560a669b4e747f4cd2a940a0a8459f5892ed882b52aee",
+    "actualExit": 1,
+    "observedGestures": [
+      "left-raise",
+      "right-raise",
+      "left-raise",
+      "right-raise",
+      "left-raise",
+      "right-raise"
+    ],
+    "sequenceMatched": true,
+    "rays": 6,
+    "ack": 6,
+    "eventTiming": {
+      "passed": false,
+      "boundaryRule": "inclusive",
+      "timestampMeaning": "event emission in unrounded deterministic file milliseconds",
+      "expectedEventCount": 6,
+      "observedEventCount": 6,
+      "checks": [
+        {
+          "index": 0,
+          "expectedGesture": "left-raise",
+          "startMs": 0,
+          "endMs": 0,
+          "observedGesture": "left-raise",
+          "atVideoMs": 2400.0,
+          "passed": false,
+          "reason": "late"
+        },
+        {
+          "index": 1,
+          "expectedGesture": "right-raise",
+          "startMs": 0,
+          "endMs": 0,
+          "observedGesture": "right-raise",
+          "atVideoMs": 4600.0,
+          "passed": false,
+          "reason": "late"
+        },
+        {
+          "index": 2,
+          "expectedGesture": "left-raise",
+          "startMs": 0,
+          "endMs": 0,
+          "observedGesture": "left-raise",
+          "atVideoMs": 6800.0,
+          "passed": false,
+          "reason": "late"
+        },
+        {
+          "index": 3,
+          "expectedGesture": "right-raise",
+          "startMs": 0,
+          "endMs": 0,
+          "observedGesture": "right-raise",
+          "atVideoMs": 9000.0,
+          "passed": false,
+          "reason": "late"
+        },
+        {
+          "index": 4,
+          "expectedGesture": "left-raise",
+          "startMs": 0,
+          "endMs": 0,
+          "observedGesture": "left-raise",
+          "atVideoMs": 11200.0,
+          "passed": false,
+          "reason": "late"
+        },
+        {
+          "index": 5,
+          "expectedGesture": "right-raise",
+          "startMs": 0,
+          "endMs": 0,
+          "observedGesture": "right-raise",
+          "atVideoMs": 13400.0,
+          "passed": false,
+          "reason": "late"
+        }
+      ]
+    },
+    "outcome": {
+      "status": "failed",
+      "pipelineConsistent": true,
+      "sequenceExpectationPresent": true,
+      "expectedSequenceMatched": true,
+      "eventTimingExpectationPresent": true,
+      "eventTimingMatched": false,
+      "completeGoalVerified": false,
+      "scope": "selected local fixture only",
+      "liveUserVerified": false
+    },
+    "cameraOpens": 0,
+    "savedOutputFrames": 0,
+    "uploadedFrames": 0,
+    "privateProgressSaved": false
+  },
+  "noOwnedServicesListeningAtFinish": {
+    "ports": [
+      4173,
+      4187,
+      4188,
+      8765
+    ],
+    "listeners": 0
+  }
+}
