@@ -1,0 +1,29 @@
+[
+  {
+    "file": "continuous-source-mirrored640.mp4",
+    "sha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+    "width": 640,
+    "height": 360,
+    "avg_frame_rate": "30/1",
+    "duration": "10.633333",
+    "nb_read_frames": "319"
+  },
+  {
+    "file": "continuous-source-original640.mp4",
+    "sha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+    "width": 640,
+    "height": 360,
+    "avg_frame_rate": "30/1",
+    "duration": "10.633333",
+    "nb_read_frames": "319"
+  },
+  {
+    "file": "frontal-held-source035.mp4",
+    "sha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+    "width": 640,
+    "height": 360,
+    "avg_frame_rate": "10/1",
+    "duration": "15.200000",
+    "nb_read_frames": "152"
+  }
+]

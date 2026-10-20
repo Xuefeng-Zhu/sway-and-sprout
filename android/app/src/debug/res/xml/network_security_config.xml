@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+ <base-config cleartextTrafficPermitted="false" />
+ <!-- Android Emulator alias for this Mac's loopback; never a general network opt-in. -->
+ <domain-config cleartextTrafficPermitted="true">
+  <domain includeSubdomains="false">10.0.2.2</domain>
+ </domain-config>
+</network-security-config>

@@ -1,0 +1,10 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'com.togethermove.tv'
+ compileSdk 35
+ defaultConfig { applicationId 'com.togethermove.tv'; minSdk 25; targetSdk 35; versionCode 1; versionName '1.0.0' }
+ buildFeatures { buildConfig true }
+ buildTypes {
+  debug { applicationIdSuffix '.motion'; versionNameSuffix '-motion' }
+ }
+}

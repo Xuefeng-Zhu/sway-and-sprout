@@ -1,0 +1,35 @@
+node_modules/
+dist/
+android/.gradle/
+android/**/build/
+android/local.properties
+android/app/src/main/assets/web/
+test-results/
+playwright-report/
+
+.toolchain/
+
+# Local runtime/models and licensed public fixture media are restored locally.
+sidecar/models/*.onnx
+sidecar/fixtures/.cache/
+sidecar/fixtures/**/*.mp4
+sidecar/fixtures/**/*.png
+verification-results/
+.DS_Store
+
+# Generated evidence and local credentials never belong in source history.
+artifacts/
+.env
+.env.*
+!.env.example
+!.env.sample
+.npmrc
+.pypirc
+.netrc
+.aws/
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+*.log

@@ -1,0 +1,76 @@
+{
+  "sourceSha256": "d891db0b4b326b5adaa07dbc6af080024ae4ed2e3e3e9c671bf8f75e39708c51",
+  "ffmpeg": "ffmpeg version 8.1.1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "thresholdTuning": false,
+  "modelInferenceUsed": false,
+  "cameraUsed": false,
+  "naturalContinuousMovement": false,
+  "results": [
+    {
+      "file": "held-public-arm-fixture.mp4",
+      "path": "sidecar/fixtures/.cache/rebuilt/held-public-arm-fixture.mp4",
+      "sha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+      "originalFixtureSha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+      "matchesOriginalEncoding": true,
+      "rightSourceFrame": 165,
+      "neutralSourceFrame": 225,
+      "derivedLeftIsReflection": true,
+      "frames": 152,
+      "fps": 10,
+      "expectedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ]
+    },
+    {
+      "file": "clear-public-arm-fixture.mp4",
+      "path": "sidecar/fixtures/.cache/rebuilt/clear-public-arm-fixture.mp4",
+      "sha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+      "originalFixtureSha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+      "matchesOriginalEncoding": true,
+      "rightSourceFrame": 170,
+      "neutralSourceFrame": 225,
+      "derivedLeftIsReflection": true,
+      "frames": 152,
+      "fps": 10,
+      "expectedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ]
+    },
+    {
+      "file": "frontal-held-source035.mp4",
+      "path": "sidecar/fixtures/.cache/rebuilt/frontal-held-source035.mp4",
+      "sha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+      "originalFixtureSha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+      "matchesOriginalEncoding": true,
+      "rightSourceFrame": 35,
+      "neutralSourceFrame": 225,
+      "derivedLeftIsReflection": true,
+      "frames": 152,
+      "fps": 10,
+      "expectedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ]
+    }
+  ],
+  "limit": "Output hash differences remain explicit. Do not overwrite recorded manifests or call regenerated media identical without matching hashes.",
+  "_migration": {
+    "pathsRelativized": true,
+    "originalReportSha256": "17f69adc782aa840cd1a41bc0eb991f5ec5b4238609962aa929b7df6fd0ea03c",
+    "contentChanges": "Machine paths converted to repository-relative paths; test results unchanged."
+  }
+}

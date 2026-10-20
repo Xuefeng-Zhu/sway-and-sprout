@@ -1,0 +1,426 @@
+{
+  "kind": "frozen manual selection for public frontal structural geometry checks; NO model evaluation used",
+  "frozenAtUtc": "2026-10-20T00:18:15.645491+00:00",
+  "source": {
+    "file": "pexels-artem-podrez-6003772.mp4",
+    "sha256": "d891db0b4b326b5adaa07dbc6af080024ae4ed2e3e3e9c671bf8f75e39708c51",
+    "creator": "Artem Podrez",
+    "pexelsAssetId": "6003772",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "fps": 30,
+    "decodedFrames": 319,
+    "durationSeconds": 10.633333333333333
+  },
+  "size": [
+    640,
+    360
+  ],
+  "coordinateConvention": "pixel centers, x right/y down, anatomical labels",
+  "formula": "S=hypot(LSx-RSx,LSy-RSy); qSide=(shoulderY-wristY)/S. Up q>0.30; down q<-0.20. Horizontal reflection x=639-x plus anatomical-label swap leaves geometry invariant.",
+  "uncertainty": "Conservative visual plausibility boxes, not statistical confidence intervals or exact anatomical ground truth. Shoulder centers estimated under shirt. Left shoulder has hair along its upper edge; do not describe both joints as completely unoccluded. Both wrists are in frame and distinguishable. Person is substantially frontal with body roll.",
+  "scope": "Exactly one frozen set: source35 right + source225 neutral and explicitly derived reflected pairs. No other candidate selected. Eligible for partial structural/image geometry checks; not a complete genuine anatomical-left/right or perfectly unoccluded frontal set.",
+  "naturalContinuousSequenceCertified": false,
+  "genuineFilmedLeftRaiseSelected": false,
+  "cameraUsed": false,
+  "modelInferenceUsed": false,
+  "poses": [
+    {
+      "name": "filmed right raise",
+      "file": "public-frontal-candidate-frame035.png",
+      "sha256": "f0594a17bd487795652119e2a643ca1e8f6df66551e2c97792c344e218fb4532",
+      "sourceFrameZeroBased": 35,
+      "sourceSeconds": 1.1666666666666667,
+      "derivedHorizontalReflection": false,
+      "anatomicalSideEvidence": "filmed anatomical right/left labels from front-facing person",
+      "annotations": {
+        "rightShoulder": {
+          "center": [
+            350,
+            80
+          ],
+          "boxXYXY": [
+            343,
+            72,
+            357,
+            88
+          ]
+        },
+        "leftShoulder": {
+          "center": [
+            400,
+            110
+          ],
+          "boxXYXY": [
+            390,
+            99,
+            408,
+            121
+          ]
+        },
+        "rightWrist": {
+          "center": [
+            342,
+            28
+          ],
+          "boxXYXY": [
+            337,
+            23,
+            347,
+            33
+          ]
+        },
+        "leftWrist": {
+          "center": [
+            390,
+            169
+          ],
+          "boxXYXY": [
+            383,
+            162,
+            396,
+            176
+          ]
+        }
+      },
+      "geometry": {
+        "shoulderWidthPx": 58.309518948453004,
+        "shoulderWidthConservativeBounds": [
+          34.785054261852174,
+          81.40024569987489
+        ],
+        "left": {
+          "verticalOffsetPx": -59,
+          "normalizedOffset": -1.0118416523408023,
+          "verticalOffsetConservativeBounds": [
+            -77,
+            -41
+          ],
+          "normalizedConservativeBounds": [
+            -2.2135943621178655,
+            -0.5036839833526819
+          ]
+        },
+        "right": {
+          "verticalOffsetPx": 52,
+          "normalizedOffset": 0.891792642741046,
+          "verticalOffsetConservativeBounds": [
+            39,
+            65
+          ],
+          "normalizedConservativeBounds": [
+            0.479114032945234,
+            1.8686186173722241
+          ]
+        }
+      },
+      "expectedGeometry": {
+        "left": "down",
+        "right": "up"
+      }
+    },
+    {
+      "name": "filmed neutral",
+      "file": "chosen-neutral-source-frame225.png",
+      "sha256": "436c13bfe4803fba5453da1b8e5d575d9482b4099622a99b117f1d881827b4e3",
+      "sourceFrameZeroBased": 225,
+      "sourceSeconds": 7.5,
+      "derivedHorizontalReflection": false,
+      "anatomicalSideEvidence": "filmed anatomical right/left labels from front-facing person",
+      "annotations": {
+        "rightShoulder": {
+          "center": [
+            346,
+            90
+          ],
+          "boxXYXY": [
+            340,
+            83,
+            352,
+            97
+          ]
+        },
+        "leftShoulder": {
+          "center": [
+            397,
+            94
+          ],
+          "boxXYXY": [
+            390,
+            86,
+            403,
+            102
+          ]
+        },
+        "rightWrist": {
+          "center": [
+            332,
+            161
+          ],
+          "boxXYXY": [
+            326,
+            154,
+            339,
+            169
+          ]
+        },
+        "leftWrist": {
+          "center": [
+            397,
+            166
+          ],
+          "boxXYXY": [
+            390,
+            159,
+            404,
+            174
+          ]
+        }
+      },
+      "geometry": {
+        "shoulderWidthPx": 51.15662224971465,
+        "shoulderWidthConservativeBounds": [
+          38.0,
+          65.80273550544841
+        ],
+        "left": {
+          "verticalOffsetPx": -72,
+          "normalizedOffset": -1.4074424157353667,
+          "verticalOffsetConservativeBounds": [
+            -88,
+            -57
+          ],
+          "normalizedConservativeBounds": [
+            -2.3157894736842106,
+            -0.86622538656133
+          ]
+        },
+        "right": {
+          "verticalOffsetPx": -71,
+          "normalizedOffset": -1.3878946044057088,
+          "verticalOffsetConservativeBounds": [
+            -86,
+            -57
+          ],
+          "normalizedConservativeBounds": [
+            -2.263157894736842,
+            -0.86622538656133
+          ]
+        }
+      },
+      "expectedGeometry": {
+        "left": "down",
+        "right": "down"
+      }
+    },
+    {
+      "name": "derived apparent left raise",
+      "file": "frontal-left-reflected-frame035.png",
+      "sha256": "576e051cd9c0f33c508bb737916eb47aee35154582c21afd00aa6d07b7626e1e",
+      "sourceFrameZeroBased": 35,
+      "sourceSeconds": 1.1666666666666667,
+      "derivedHorizontalReflection": true,
+      "anatomicalSideEvidence": "derived apparent side only, not separately filmed left action",
+      "annotations": {
+        "leftShoulder": {
+          "center": [
+            289,
+            80
+          ],
+          "boxXYXY": [
+            282,
+            72,
+            296,
+            88
+          ]
+        },
+        "rightShoulder": {
+          "center": [
+            239,
+            110
+          ],
+          "boxXYXY": [
+            231,
+            99,
+            249,
+            121
+          ]
+        },
+        "leftWrist": {
+          "center": [
+            297,
+            28
+          ],
+          "boxXYXY": [
+            292,
+            23,
+            302,
+            33
+          ]
+        },
+        "rightWrist": {
+          "center": [
+            249,
+            169
+          ],
+          "boxXYXY": [
+            243,
+            162,
+            256,
+            176
+          ]
+        }
+      },
+      "geometry": {
+        "shoulderWidthPx": 58.309518948453004,
+        "shoulderWidthConservativeBounds": [
+          34.785054261852174,
+          81.40024569987489
+        ],
+        "left": {
+          "verticalOffsetPx": 52,
+          "normalizedOffset": 0.891792642741046,
+          "verticalOffsetConservativeBounds": [
+            39,
+            65
+          ],
+          "normalizedConservativeBounds": [
+            0.479114032945234,
+            1.8686186173722241
+          ]
+        },
+        "right": {
+          "verticalOffsetPx": -59,
+          "normalizedOffset": -1.0118416523408023,
+          "verticalOffsetConservativeBounds": [
+            -77,
+            -41
+          ],
+          "normalizedConservativeBounds": [
+            -2.2135943621178655,
+            -0.5036839833526819
+          ]
+        }
+      },
+      "expectedGeometry": {
+        "left": "up",
+        "right": "down"
+      }
+    },
+    {
+      "name": "derived mirrored neutral",
+      "file": "frontal-neutral-reflected-frame225.png",
+      "sha256": "4a5a4c3b0cfb7f159f0d2eabc337a23bcbce75c4a081619c417f4312629651b7",
+      "sourceFrameZeroBased": 225,
+      "sourceSeconds": 7.5,
+      "derivedHorizontalReflection": true,
+      "anatomicalSideEvidence": "derived apparent side only, not separately filmed left action",
+      "annotations": {
+        "leftShoulder": {
+          "center": [
+            293,
+            90
+          ],
+          "boxXYXY": [
+            287,
+            83,
+            299,
+            97
+          ]
+        },
+        "rightShoulder": {
+          "center": [
+            242,
+            94
+          ],
+          "boxXYXY": [
+            236,
+            86,
+            249,
+            102
+          ]
+        },
+        "leftWrist": {
+          "center": [
+            307,
+            161
+          ],
+          "boxXYXY": [
+            300,
+            154,
+            313,
+            169
+          ]
+        },
+        "rightWrist": {
+          "center": [
+            242,
+            166
+          ],
+          "boxXYXY": [
+            235,
+            159,
+            249,
+            174
+          ]
+        }
+      },
+      "geometry": {
+        "shoulderWidthPx": 51.15662224971465,
+        "shoulderWidthConservativeBounds": [
+          38.0,
+          65.80273550544841
+        ],
+        "left": {
+          "verticalOffsetPx": -71,
+          "normalizedOffset": -1.3878946044057088,
+          "verticalOffsetConservativeBounds": [
+            -86,
+            -57
+          ],
+          "normalizedConservativeBounds": [
+            -2.263157894736842,
+            -0.86622538656133
+          ]
+        },
+        "right": {
+          "verticalOffsetPx": -72,
+          "normalizedOffset": -1.4074424157353667,
+          "verticalOffsetConservativeBounds": [
+            -88,
+            -57
+          ],
+          "normalizedConservativeBounds": [
+            -2.3157894736842106,
+            -0.86622538656133
+          ]
+        }
+      },
+      "expectedGeometry": {
+        "left": "down",
+        "right": "down"
+      }
+    }
+  ],
+  "heldCutFixtureExpectationIfConstructed": {
+    "expectedSemanticGestures": [
+      "left-raise",
+      "right-raise",
+      "left-raise",
+      "right-raise",
+      "left-raise",
+      "right-raise"
+    ],
+    "expectedCount": 6,
+    "assumption": "Only for disclosed held/cut reconstruction with authored durations; NOT six naturally filmed gestures. Freeze pixel selections/annotations before model comparison.",
+    "recommendedTimeline": "N2.0s; (derivedL1.0s,N1.2s,R1.0s,N1.2s) repeated3; total15.2s at10fps"
+  },
+  "fullOriginalAndMirrorExpectation": {
+    "semanticExpectedSequence": null,
+    "reason": "No independently certified full alternating sequence. Report observed model events only; normal-speed full source10.633333s, mirror is derived."
+  },
+  "timingReview": "Separate timing review: at least35\u201346 (366.667ms timestamp span) right-up/opposite-down hold independently visually supported. Initial300ms strict neutral not certified; do not claim natural calibrated sequence. No further timing search.",
+  "annotationRevision": 2,
+  "supersedes": "frontal-public-selection-20261020.json",
+  "revisionReason": "Before inference, original-resolution source225 wrist check found initial leftWrist(397,180) on hand rather than forearm junction. Corrected neutral wrist centers and broadened boxes using only public image; raised-frame35 annotations unchanged."
+}

@@ -1,0 +1,3105 @@
+{
+  "evidenceType": "public-PNG inference plus actual repeated-pixel inference and classifier sequence",
+  "manifestSha256": "2b495c38b86214060ee48f29a3d86af608b77de71c16f1b909aed0611f777c8d",
+  "manualAnnotation": {
+    "path": "sidecar/fixtures/frontal/frontal-public-selection-20261020-v2.json",
+    "sha256": "2b495c38b86214060ee48f29a3d86af608b77de71c16f1b909aed0611f777c8d"
+  },
+  "config": {
+    "hold_ms": 350,
+    "neutral_ms": 300,
+    "cooldown_ms": 500,
+    "min_confidence": 0.65,
+    "max_frame_gap_ms": 300,
+    "raise_margin": 0.3,
+    "neutral_margin": 0.2
+  },
+  "physicalCameraUsed": false,
+  "socketsOpened": false,
+  "thresholdsRetuned": false,
+  "validationOnly": false,
+  "inputs": {
+    "R": {
+      "path": "sidecar/fixtures/frontal/public-frontal-candidate-frame035.png",
+      "sha256": "f0594a17bd487795652119e2a643ca1e8f6df66551e2c97792c344e218fb4532",
+      "dimensions": [
+        640,
+        360
+      ],
+      "expected": {
+        "left": "down",
+        "right": "up"
+      },
+      "annotationGeometry": {
+        "status": "validated",
+        "shoulderWidthBounds": [
+          34.785054261852174,
+          81.40024569987489
+        ],
+        "gates": {
+          "left": {
+            "qBounds": [
+              -2.2135943621178655,
+              -0.5036839833526819
+            ],
+            "robustGate": "down"
+          },
+          "right": {
+            "qBounds": [
+              0.479114032945234,
+              1.8686186173722241
+            ],
+            "robustGate": "up"
+          }
+        }
+      },
+      "measurement": {
+        "points": {
+          "leftShoulder": {
+            "x": 398.0556945800781,
+            "y": 102.73717498779297,
+            "confidence": 0.9999933242797852
+          },
+          "rightShoulder": {
+            "x": 349.56103515625,
+            "y": 87.98124694824219,
+            "confidence": 0.999996542930603
+          },
+          "leftWrist": {
+            "x": 389.4132385253906,
+            "y": 169.6357421875,
+            "confidence": 0.9425751566886902
+          },
+          "rightWrist": {
+            "x": 341.49603271484375,
+            "y": 47.360225677490234,
+            "confidence": 0.9820110201835632
+          }
+        },
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "shoulderWidth": 50.689933960713375,
+        "observationConfidence": 0.9698267569587168,
+        "gate": "left-down/right-up",
+        "minimumConfidence": 0.9425751566886902,
+        "confidenceEligible": true,
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.153,
+        "inferenceDimensions": [
+          640,
+          360
+        ],
+        "matchesFrozenGate": true
+      }
+    },
+    "N": {
+      "path": "sidecar/fixtures/frontal/chosen-neutral-source-frame225.png",
+      "sha256": "436c13bfe4803fba5453da1b8e5d575d9482b4099622a99b117f1d881827b4e3",
+      "dimensions": [
+        640,
+        360
+      ],
+      "expected": {
+        "left": "down",
+        "right": "down"
+      },
+      "annotationGeometry": {
+        "status": "validated",
+        "shoulderWidthBounds": [
+          38.0,
+          65.80273550544841
+        ],
+        "gates": {
+          "left": {
+            "qBounds": [
+              -2.3157894736842106,
+              -0.86622538656133
+            ],
+            "robustGate": "down"
+          },
+          "right": {
+            "qBounds": [
+              -2.263157894736842,
+              -0.86622538656133
+            ],
+            "robustGate": "down"
+          }
+        }
+      },
+      "measurement": {
+        "points": {
+          "leftShoulder": {
+            "x": 397.0824890136719,
+            "y": 88.67630004882812,
+            "confidence": 0.9999067783355713
+          },
+          "rightShoulder": {
+            "x": 348.4542236328125,
+            "y": 89.35020446777344,
+            "confidence": 0.9994749426841736
+          },
+          "leftWrist": {
+            "x": 396.208984375,
+            "y": 167.5441436767578,
+            "confidence": 0.933964729309082
+          },
+          "rightWrist": {
+            "x": 331.46270751953125,
+            "y": 160.18528747558594,
+            "confidence": 0.9166639447212219
+          }
+        },
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "shoulderWidth": 48.63293473683405,
+        "observationConfidence": 0.9716059217271488,
+        "gate": "left-down/right-down",
+        "minimumConfidence": 0.9166639447212219,
+        "confidenceEligible": true,
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.923,
+        "inferenceDimensions": [
+          640,
+          360
+        ],
+        "matchesFrozenGate": true
+      }
+    },
+    "L": {
+      "path": "sidecar/fixtures/frontal/frontal-left-reflected-frame035.png",
+      "sha256": "576e051cd9c0f33c508bb737916eb47aee35154582c21afd00aa6d07b7626e1e",
+      "dimensions": [
+        640,
+        360
+      ],
+      "expected": {
+        "left": "up",
+        "right": "down"
+      },
+      "annotationGeometry": {
+        "status": "validated",
+        "shoulderWidthBounds": [
+          34.785054261852174,
+          81.40024569987489
+        ],
+        "gates": {
+          "left": {
+            "qBounds": [
+              0.479114032945234,
+              1.8686186173722241
+            ],
+            "robustGate": "up"
+          },
+          "right": {
+            "qBounds": [
+              -2.2135943621178655,
+              -0.5036839833526819
+            ],
+            "robustGate": "down"
+          }
+        }
+      },
+      "measurement": {
+        "points": {
+          "leftShoulder": {
+            "x": 291.2381591796875,
+            "y": 86.08406066894531,
+            "confidence": 0.9998311996459961
+          },
+          "rightShoulder": {
+            "x": 245.5026397705078,
+            "y": 102.76435852050781,
+            "confidence": 0.9999697208404541
+          },
+          "leftWrist": {
+            "x": 299.2691650390625,
+            "y": 32.9886474609375,
+            "confidence": 0.9811962842941284
+          },
+          "rightWrist": {
+            "x": 249.97659301757812,
+            "y": 171.18218994140625,
+            "confidence": 0.9361597299575806
+          }
+        },
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "shoulderWidth": 48.682338399508836,
+        "observationConfidence": 0.9758328721430943,
+        "gate": "left-up/right-down",
+        "minimumConfidence": 0.9361597299575806,
+        "confidenceEligible": true,
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.083,
+        "inferenceDimensions": [
+          640,
+          360
+        ],
+        "matchesFrozenGate": true
+      }
+    },
+    "NM": {
+      "path": "sidecar/fixtures/frontal/frontal-neutral-reflected-frame225.png",
+      "sha256": "4a5a4c3b0cfb7f159f0d2eabc337a23bcbce75c4a081619c417f4312629651b7",
+      "dimensions": [
+        640,
+        360
+      ],
+      "expected": {
+        "left": "down",
+        "right": "down"
+      },
+      "annotationGeometry": {
+        "status": "validated",
+        "shoulderWidthBounds": [
+          38.0,
+          65.80273550544841
+        ],
+        "gates": {
+          "left": {
+            "qBounds": [
+              -2.263157894736842,
+              -0.86622538656133
+            ],
+            "robustGate": "down"
+          },
+          "right": {
+            "qBounds": [
+              -2.3157894736842106,
+              -0.86622538656133
+            ],
+            "robustGate": "down"
+          }
+        }
+      },
+      "measurement": {
+        "points": {
+          "leftShoulder": {
+            "x": 289.5813903808594,
+            "y": 86.67914581298828,
+            "confidence": 0.9996379613876343
+          },
+          "rightShoulder": {
+            "x": 243.5111541748047,
+            "y": 87.73748016357422,
+            "confidence": 0.9997195601463318
+          },
+          "leftWrist": {
+            "x": 306.955078125,
+            "y": 159.4151153564453,
+            "confidence": 0.8997046947479248
+          },
+          "rightWrist": {
+            "x": 243.1820526123047,
+            "y": 166.9290008544922,
+            "confidence": 0.9134203791618347
+          }
+        },
+        "q": {
+          "left": -1.5783896708985576,
+          "right": -1.7184768288077117
+        },
+        "shoulderWidth": 46.08239073311304,
+        "observationConfidence": 0.9639025545228906,
+        "gate": "left-down/right-down",
+        "minimumConfidence": 0.8997046947479248,
+        "confidenceEligible": true,
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.138,
+        "inferenceDimensions": [
+          640,
+          360
+        ],
+        "matchesFrozenGate": true
+      }
+    }
+  },
+  "source": {
+    "file": "pexels-artem-podrez-6003772.mp4",
+    "sha256": "d891db0b4b326b5adaa07dbc6af080024ae4ed2e3e3e9c671bf8f75e39708c51",
+    "creator": "Artem Podrez",
+    "pexelsAssetId": "6003772",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "fps": 30,
+    "decodedFrames": 319,
+    "durationSeconds": 10.633333333333333
+  },
+  "scope": "Exactly one frozen set: source35 right + source225 neutral and explicitly derived reflected pairs. No other candidate selected. Eligible for partial structural/image geometry checks; not a complete genuine anatomical-left/right or perfectly unoccluded frontal set.",
+  "uncertainty": "Conservative visual plausibility boxes, not statistical confidence intervals or exact anatomical ground truth. Shoulder centers estimated under shirt. Left shoulder has hair along its upper edge; do not describe both joints as completely unoccluded. Both wrists are in frame and distinguishable. Person is substantially frontal with body roll.",
+  "naturalContinuousSequenceCertified": false,
+  "genuineFilmedLeftRaiseSelected": false,
+  "manualMirrorComparisons": [
+    {
+      "original": "R",
+      "mirror": "L",
+      "exactCenterAndBoxReflection": true,
+      "anatomicalSidesSwapped": true
+    },
+    {
+      "original": "N",
+      "mirror": "NM",
+      "exactCenterAndBoxReflection": true,
+      "anatomicalSidesSwapped": true
+    }
+  ],
+  "implementationSha256": {
+    "inference.py": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407",
+    "motion.py": "e5aea8b4ba8b6b2f9d6fbcdbe506fcc5b156e83956e5f00276423e2ad8645da9",
+    "video_input.py": "00cdf1aa7e90eb2c1a6056dcca0226d8aff3c64fabd5dd6b3115169c25bd462e",
+    "models.lock.json": "97d2d6f383dc8ce26ea73840305e047b1f068f3445799b14323f71589311ef04"
+  },
+  "exactPixelReflectionChecks": [
+    {
+      "original": "R",
+      "mirror": "L",
+      "matched": true
+    },
+    {
+      "original": "N",
+      "mirror": "NM",
+      "matched": true
+    }
+  ],
+  "runtime": {
+    "opencv": "5.0.0",
+    "verified": true,
+    "numpy": "2.5.4",
+    "zooCommit": "47534e27c9851bb1128ccc0102f1145e27f23f98",
+    "verification": "locked hashes + both zero-image DNN forwards + exact output shapes",
+    "warmupMs": 26.94
+  },
+  "mirrorComparisons": [
+    {
+      "original": "R",
+      "mirror": "L",
+      "anatomicalSidesSwapped": true,
+      "pointDiscrepancies": {
+        "leftShoulderToRightShoulder": {
+          "xDelta": 4.5583343505859375,
+          "yDelta": 0.02718353271484375,
+          "distancePixels": 4.558415404083154
+        },
+        "rightShoulderToLeftShoulder": {
+          "xDelta": 1.7991943359375,
+          "yDelta": -1.897186279296875,
+          "distancePixels": 2.6146540950615056
+        },
+        "leftWristToRightWrist": {
+          "xDelta": 0.38983154296875,
+          "yDelta": 1.54644775390625,
+          "distancePixels": 1.5948257859261876
+        },
+        "rightWristToLeftWrist": {
+          "xDelta": 1.76519775390625,
+          "yDelta": -14.371578216552734,
+          "distancePixels": 14.479578154935618
+        }
+      },
+      "qDiscrepancies": {
+        "leftToRight": -0.08563289000602015,
+        "rightToLeft": 0.2892877490540242
+      }
+    },
+    {
+      "original": "N",
+      "mirror": "NM",
+      "anatomicalSidesSwapped": true,
+      "pointDiscrepancies": {
+        "leftShoulderToRightShoulder": {
+          "xDelta": 1.5936431884765625,
+          "yDelta": -0.9388198852539062,
+          "distancePixels": 1.8496165519171541
+        },
+        "rightShoulderToLeftShoulder": {
+          "xDelta": -0.964385986328125,
+          "yDelta": -2.6710586547851562,
+          "distancePixels": 2.8398229994013287
+        },
+        "leftWristToRightWrist": {
+          "xDelta": 0.3910369873046875,
+          "yDelta": -0.615142822265625,
+          "distancePixels": 0.7289105687430006
+        },
+        "rightWristToLeftWrist": {
+          "xDelta": -0.58221435546875,
+          "yDelta": -0.770172119140625,
+          "distancePixels": 0.9654732771109996
+        }
+      },
+      "qDiscrepancies": {
+        "leftToRight": -0.09678066642917349,
+        "rightToLeft": -0.12186471736408011
+      }
+    }
+  ],
+  "classifierSimulation": {
+    "method": "Actual OpenCVPose.infer for every repeated frozen PNG, actual GestureMachine.update at authored10fps; no naturally filmed motion claim",
+    "frames": 152,
+    "durationMs": 15200.0,
+    "statuses": {
+      "neutral": 57,
+      "tracking": 71,
+      "hold": 24
+    },
+    "armedTransitions": 7,
+    "expectedGestures": [
+      "left-raise",
+      "right-raise",
+      "left-raise",
+      "right-raise",
+      "left-raise",
+      "right-raise"
+    ],
+    "observedGestures": [
+      "left-raise",
+      "right-raise",
+      "left-raise",
+      "right-raise",
+      "left-raise",
+      "right-raise"
+    ],
+    "events": [
+      {
+        "atMs": 2400.0,
+        "pose": "L",
+        "gesture": "left-raise",
+        "confidence": 0.9361597299575806
+      },
+      {
+        "atMs": 4600.0,
+        "pose": "R",
+        "gesture": "right-raise",
+        "confidence": 0.9425751566886902
+      },
+      {
+        "atMs": 6800.0,
+        "pose": "L",
+        "gesture": "left-raise",
+        "confidence": 0.9361597299575806
+      },
+      {
+        "atMs": 9000.0,
+        "pose": "R",
+        "gesture": "right-raise",
+        "confidence": 0.9425751566886902
+      },
+      {
+        "atMs": 11200.0,
+        "pose": "L",
+        "gesture": "left-raise",
+        "confidence": 0.9361597299575806
+      },
+      {
+        "atMs": 13400.0,
+        "pose": "R",
+        "gesture": "right-raise",
+        "confidence": 0.9425751566886902
+      }
+    ],
+    "matched": true,
+    "trace": [
+      {
+        "frame": 0,
+        "atMs": 0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.862,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 1,
+        "atMs": 100.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.165,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 2,
+        "atMs": 200.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.782,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 3,
+        "atMs": 300.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.533,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 4,
+        "atMs": 400.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.981,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 5,
+        "atMs": 500.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.177,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 6,
+        "atMs": 600.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 20.998,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 7,
+        "atMs": 700.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.785,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 8,
+        "atMs": 800.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.457,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 9,
+        "atMs": 900.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.47,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 10,
+        "atMs": 1000.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.543,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 11,
+        "atMs": 1100.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.064,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 12,
+        "atMs": 1200.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.467,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 13,
+        "atMs": 1300.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.084,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 14,
+        "atMs": 1400.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.012,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 15,
+        "atMs": 1500.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.474,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 16,
+        "atMs": 1600.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.32,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 17,
+        "atMs": 1700.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.77,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 18,
+        "atMs": 1800.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.489,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 19,
+        "atMs": 1900.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.286,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 20,
+        "atMs": 2000.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.22,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 21,
+        "atMs": 2100.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.545,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 100
+      },
+      {
+        "frame": 22,
+        "atMs": 2200.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.837,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 200
+      },
+      {
+        "frame": 23,
+        "atMs": 2300.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.474,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 300
+      },
+      {
+        "frame": 24,
+        "atMs": 2400.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.537,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 25,
+        "atMs": 2500.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.092,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 26,
+        "atMs": 2600.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.811,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 27,
+        "atMs": 2700.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.838,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 28,
+        "atMs": 2800.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.479,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 29,
+        "atMs": 2900.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.275,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 30,
+        "atMs": 3000.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.155,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 31,
+        "atMs": 3100.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.95,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 32,
+        "atMs": 3200.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.8,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 33,
+        "atMs": 3300.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.754,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 34,
+        "atMs": 3400.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 24.049,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 35,
+        "atMs": 3500.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.685,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 36,
+        "atMs": 3600.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.538,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 37,
+        "atMs": 3700.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.956,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 38,
+        "atMs": 3800.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.754,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 39,
+        "atMs": 3900.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.589,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 40,
+        "atMs": 4000.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.137,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 41,
+        "atMs": 4100.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.396,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 42,
+        "atMs": 4200.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.078,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 43,
+        "atMs": 4300.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 20.85,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 100
+      },
+      {
+        "frame": 44,
+        "atMs": 4400.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 24.14,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 200
+      },
+      {
+        "frame": 45,
+        "atMs": 4500.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.214,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 300
+      },
+      {
+        "frame": 46,
+        "atMs": 4600.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.89,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 47,
+        "atMs": 4700.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.45,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 48,
+        "atMs": 4800.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.477,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 49,
+        "atMs": 4900.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.884,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 50,
+        "atMs": 5000.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.528,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 51,
+        "atMs": 5100.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.506,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 52,
+        "atMs": 5200.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.799,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 53,
+        "atMs": 5300.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.205,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 54,
+        "atMs": 5400.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.32,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 55,
+        "atMs": 5500.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.641,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 56,
+        "atMs": 5600.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.731,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 57,
+        "atMs": 5700.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.069,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 58,
+        "atMs": 5800.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.933,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 59,
+        "atMs": 5900.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.691,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 60,
+        "atMs": 6000.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.54,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 61,
+        "atMs": 6100.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.705,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 62,
+        "atMs": 6200.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.448,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 63,
+        "atMs": 6300.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.392,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 64,
+        "atMs": 6400.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.405,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 65,
+        "atMs": 6500.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.534,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 100
+      },
+      {
+        "frame": 66,
+        "atMs": 6600.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.968,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 200
+      },
+      {
+        "frame": 67,
+        "atMs": 6700.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.844,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 300
+      },
+      {
+        "frame": 68,
+        "atMs": 6800.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.517,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 69,
+        "atMs": 6900.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.12,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 70,
+        "atMs": 7000.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.5,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 71,
+        "atMs": 7100.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.5,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 72,
+        "atMs": 7200.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.837,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 73,
+        "atMs": 7300.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.839,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 74,
+        "atMs": 7400.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.288,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 75,
+        "atMs": 7500.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.653,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 76,
+        "atMs": 7600.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.588,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 77,
+        "atMs": 7700.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.734,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 78,
+        "atMs": 7800.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.704,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 79,
+        "atMs": 7900.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.026,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 80,
+        "atMs": 8000.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.686,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 81,
+        "atMs": 8100.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.048,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 82,
+        "atMs": 8200.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.492,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 83,
+        "atMs": 8300.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.54,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 84,
+        "atMs": 8400.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.459,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 85,
+        "atMs": 8500.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.304,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 86,
+        "atMs": 8600.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.558,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 87,
+        "atMs": 8700.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.709,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 100
+      },
+      {
+        "frame": 88,
+        "atMs": 8800.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.324,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 200
+      },
+      {
+        "frame": 89,
+        "atMs": 8900.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.07,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 300
+      },
+      {
+        "frame": 90,
+        "atMs": 9000.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.322,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 91,
+        "atMs": 9100.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.66,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 92,
+        "atMs": 9200.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.463,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 93,
+        "atMs": 9300.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.283,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 94,
+        "atMs": 9400.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.478,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 95,
+        "atMs": 9500.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.808,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 96,
+        "atMs": 9600.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.365,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 97,
+        "atMs": 9700.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.437,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 98,
+        "atMs": 9800.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.183,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 99,
+        "atMs": 9900.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.25,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 100,
+        "atMs": 10000.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.514,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 101,
+        "atMs": 10100.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.185,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 102,
+        "atMs": 10200.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.717,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 103,
+        "atMs": 10300.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.665,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 104,
+        "atMs": 10400.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 20.819,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 105,
+        "atMs": 10500.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.829,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 106,
+        "atMs": 10600.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.28,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 107,
+        "atMs": 10700.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.22,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 108,
+        "atMs": 10800.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.676,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 109,
+        "atMs": 10900.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.864,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 100
+      },
+      {
+        "frame": 110,
+        "atMs": 11000.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.094,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 200
+      },
+      {
+        "frame": 111,
+        "atMs": 11100.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.127,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 300
+      },
+      {
+        "frame": 112,
+        "atMs": 11200.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.653,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 113,
+        "atMs": 11300.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.157,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 114,
+        "atMs": 11400.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.907,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 115,
+        "atMs": 11500.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.906,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 116,
+        "atMs": 11600.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.709,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 117,
+        "atMs": 11700.0,
+        "pose": "L",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.686,
+        "q": {
+          "left": 1.0906504279289817,
+          "right": -1.4053932836880472
+        },
+        "minimumConfidence": 0.9361597299575806,
+        "gate": "left-up/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 118,
+        "atMs": 11800.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.564,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 119,
+        "atMs": 11900.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.726,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 120,
+        "atMs": 12000.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.14,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 121,
+        "atMs": 12100.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.592,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 122,
+        "atMs": 12200.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.77,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 123,
+        "atMs": 12300.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.104,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 124,
+        "atMs": 12400.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.834,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 125,
+        "atMs": 12500.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.859,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 126,
+        "atMs": 12600.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.317,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 127,
+        "atMs": 12700.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.561,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 128,
+        "atMs": 12800.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.286,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 129,
+        "atMs": 12900.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.998,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 130,
+        "atMs": 13000.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.299,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 0
+      },
+      {
+        "frame": 131,
+        "atMs": 13100.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.999,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 100
+      },
+      {
+        "frame": 132,
+        "atMs": 13200.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.333,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 200
+      },
+      {
+        "frame": 133,
+        "atMs": 13300.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.164,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "hold",
+        "armed": true,
+        "expectedSide": "right",
+        "heldMs": 300
+      },
+      {
+        "frame": 134,
+        "atMs": 13400.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.678,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 135,
+        "atMs": 13500.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.339,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 136,
+        "atMs": 13600.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.763,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 137,
+        "atMs": 13700.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.875,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 138,
+        "atMs": 13800.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.963,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 139,
+        "atMs": 13900.0,
+        "pose": "R",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.557,
+        "q": {
+          "left": -1.319760393682027,
+          "right": 0.8013626788749575
+        },
+        "minimumConfidence": 0.9425751566886902,
+        "gate": "left-down/right-up",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 140,
+        "atMs": 14000.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.845,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 141,
+        "atMs": 14100.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.252,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 142,
+        "atMs": 14200.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.159,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "neutral",
+        "armed": false,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 143,
+        "atMs": 14300.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.11,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 144,
+        "atMs": 14400.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.053,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 145,
+        "atMs": 14500.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.829,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 146,
+        "atMs": 14600.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.255,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 147,
+        "atMs": 14700.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 22.075,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 148,
+        "atMs": 14800.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.426,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 149,
+        "atMs": 14900.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.68,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 150,
+        "atMs": 15000.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 23.389,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      },
+      {
+        "frame": 151,
+        "atMs": 15100.0,
+        "pose": "N",
+        "inferenceStatus": "tracking",
+        "inferenceMs": 21.924,
+        "q": {
+          "left": -1.6216961623785382,
+          "right": -1.4565249535344775
+        },
+        "minimumConfidence": 0.9166639447212219,
+        "gate": "left-down/right-down",
+        "classifierStatus": "tracking",
+        "armed": true,
+        "expectedSide": "left",
+        "heldMs": 0
+      }
+    ]
+  },
+  "blockedApiAttempts": {
+    "camera": 0,
+    "socket": 0
+  },
+  "allFrozenPoseGatesMatched": true,
+  "_migration": {
+    "pathsRelativized": true,
+    "historicalResult": true,
+    "originalReportSha256": "40823a303e5deb617bd56a1d687f99318b581ab1120321ee8b35b5bb3bf54a9a",
+    "contentChanges": "Machine paths converted to repository-relative paths; test results unchanged."
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "fixture": "frontal-held-source035.mp4",
+  "sha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+  "fps": 10,
+  "frames": 152,
+  "durationSeconds": 15.2,
+  "naturalContinuousMovement": false,
+  "kind": "hard-cut repeated public frames; frontal source-right and derived reflected-left",
+  "sourceFrameRight": 35,
+  "sourceFrameNeutral": 225,
+  "leftIsReflection": true,
+  "expectedGestures": [
+    "left-raise",
+    "right-raise",
+    "left-raise",
+    "right-raise",
+    "left-raise",
+    "right-raise"
+  ],
+  "annotationFile": "sidecar/fixtures/frontal/frontal-public-selection-20261020-v2.json",
+  "annotationSha256": "2b495c38b86214060ee48f29a3d86af608b77de71c16f1b909aed0611f777c8d",
+  "annotationFrozenBeforeInference": true,
+  "segments": [
+    {
+      "label": "N",
+      "startFrame": 0,
+      "endFrameExclusive": 20,
+      "sourceFrame": 225,
+      "reflected": false
+    },
+    {
+      "label": "L",
+      "startFrame": 20,
+      "endFrameExclusive": 30,
+      "sourceFrame": 35,
+      "reflected": true
+    },
+    {
+      "label": "N",
+      "startFrame": 30,
+      "endFrameExclusive": 42,
+      "sourceFrame": 225,
+      "reflected": false
+    },
+    {
+      "label": "R",
+      "startFrame": 42,
+      "endFrameExclusive": 52,
+      "sourceFrame": 35,
+      "reflected": false
+    },
+    {
+      "label": "N",
+      "startFrame": 52,
+      "endFrameExclusive": 64,
+      "sourceFrame": 225,
+      "reflected": false
+    },
+    {
+      "label": "L",
+      "startFrame": 64,
+      "endFrameExclusive": 74,
+      "sourceFrame": 35,
+      "reflected": true
+    },
+    {
+      "label": "N",
+      "startFrame": 74,
+      "endFrameExclusive": 86,
+      "sourceFrame": 225,
+      "reflected": false
+    },
+    {
+      "label": "R",
+      "startFrame": 86,
+      "endFrameExclusive": 96,
+      "sourceFrame": 35,
+      "reflected": false
+    },
+    {
+      "label": "N",
+      "startFrame": 96,
+      "endFrameExclusive": 108,
+      "sourceFrame": 225,
+      "reflected": false
+    },
+    {
+      "label": "L",
+      "startFrame": 108,
+      "endFrameExclusive": 118,
+      "sourceFrame": 35,
+      "reflected": true
+    },
+    {
+      "label": "N",
+      "startFrame": 118,
+      "endFrameExclusive": 130,
+      "sourceFrame": 225,
+      "reflected": false
+    },
+    {
+      "label": "R",
+      "startFrame": 130,
+      "endFrameExclusive": 140,
+      "sourceFrame": 35,
+      "reflected": false
+    },
+    {
+      "label": "N",
+      "startFrame": 140,
+      "endFrameExclusive": 152,
+      "sourceFrame": 225,
+      "reflected": false
+    }
+  ],
+  "provenance": {
+    "creator": "Artem Podrez",
+    "page": "https://www.pexels.com/video/a-woman-dancing-at-home-6003772/",
+    "license": "https://www.pexels.com/license/"
+  },
+  "limits": [
+    "One actor and one actual raised anatomical side, with reflected opposite side.",
+    "No natural movement in held fixture.",
+    "Frame35 choice frozen before this fixture inference; older source165/170 results known."
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "fixture": "clear-public-arm-fixture.mp4",
+  "sha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+  "bytes": 565252,
+  "fps": 10,
+  "frames": 152,
+  "durationSeconds": 15.2,
+  "width": 640,
+  "height": 360,
+  "kind": "additional constructed held/cut public fixture with clearer physical raise",
+  "naturalContinuousMovement": false,
+  "humanUserCameraTest": false,
+  "expectedSemanticGestures": [
+    "left-raise",
+    "right-raise",
+    "left-raise",
+    "right-raise",
+    "left-raise",
+    "right-raise"
+  ],
+  "expectedCount": 6,
+  "expectationIsNotAnObservedModelResult": true,
+  "source": {
+    "file": "pexels-artem-podrez-6003772.mp4",
+    "sha256": "d891db0b4b326b5adaa07dbc6af080024ae4ed2e3e3e9c671bf8f75e39708c51",
+    "bytes": 31111153,
+    "creator": "Artem Podrez",
+    "assetId": "6003772",
+    "page": "https://www.pexels.com/video/a-woman-dancing-at-home-6003772/",
+    "download": "https://videos.pexels.com/video-files/6003772/6003772-uhd_3840_2160_30fps.mp4",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "termsUrl": "https://www.pexels.com/terms-of-service/",
+    "originalPreservedUnmodified": true,
+    "videoFrames": 319,
+    "videoFps": 30,
+    "videoDurationSeconds": 10.633333,
+    "videoWidth": 3840,
+    "videoHeight": 2160
+  },
+  "poseSelection": {
+    "neutral": {
+      "sourceFrameZeroBased": 225,
+      "sourceSeconds": 7.5,
+      "visualDescription": "Both arms hang down; both wrists visibly below their shoulders."
+    },
+    "right": {
+      "sourceFrameZeroBased": 170,
+      "sourceSeconds": 5.666666666666667,
+      "visualDescription": "Front/three-quarter view: anatomical right wrist clearly above head; opposite arm down."
+    },
+    "left": {
+      "derivedFromSourceFrameZeroBased": 170,
+      "sourceSeconds": 5.666666666666667,
+      "operation": "horizontal reflection after scaling",
+      "visualDescription": "Reflected right-pose image supplies a derived apparent anatomical left raise; not footage of a separate left-arm movement."
+    },
+    "scaling": "Source frames selected exactly by FFmpeg zero-based n, resized to 640x360; no crop or interpolation of motion."
+  },
+  "segments": [
+    {
+      "label": "N",
+      "startFrame": 0,
+      "endFrameExclusive": 20,
+      "startSeconds": 0.0,
+      "endSeconds": 2.0,
+      "sourceFrame": 225,
+      "transform": "none",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "L",
+      "startFrame": 20,
+      "endFrameExclusive": 30,
+      "startSeconds": 2.0,
+      "endSeconds": 3.0,
+      "sourceFrame": 170,
+      "transform": "horizontal reflection",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "N",
+      "startFrame": 30,
+      "endFrameExclusive": 42,
+      "startSeconds": 3.0,
+      "endSeconds": 4.2,
+      "sourceFrame": 225,
+      "transform": "none",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "R",
+      "startFrame": 42,
+      "endFrameExclusive": 52,
+      "startSeconds": 4.2,
+      "endSeconds": 5.2,
+      "sourceFrame": 170,
+      "transform": "none",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "N",
+      "startFrame": 52,
+      "endFrameExclusive": 64,
+      "startSeconds": 5.2,
+      "endSeconds": 6.4,
+      "sourceFrame": 225,
+      "transform": "none",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "L",
+      "startFrame": 64,
+      "endFrameExclusive": 74,
+      "startSeconds": 6.4,
+      "endSeconds": 7.4,
+      "sourceFrame": 170,
+      "transform": "horizontal reflection",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "N",
+      "startFrame": 74,
+      "endFrameExclusive": 86,
+      "startSeconds": 7.4,
+      "endSeconds": 8.6,
+      "sourceFrame": 225,
+      "transform": "none",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "R",
+      "startFrame": 86,
+      "endFrameExclusive": 96,
+      "startSeconds": 8.6,
+      "endSeconds": 9.6,
+      "sourceFrame": 170,
+      "transform": "none",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "N",
+      "startFrame": 96,
+      "endFrameExclusive": 108,
+      "startSeconds": 9.6,
+      "endSeconds": 10.8,
+      "sourceFrame": 225,
+      "transform": "none",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "L",
+      "startFrame": 108,
+      "endFrameExclusive": 118,
+      "startSeconds": 10.8,
+      "endSeconds": 11.8,
+      "sourceFrame": 170,
+      "transform": "horizontal reflection",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "N",
+      "startFrame": 118,
+      "endFrameExclusive": 130,
+      "startSeconds": 11.8,
+      "endSeconds": 13.0,
+      "sourceFrame": 225,
+      "transform": "none",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "R",
+      "startFrame": 130,
+      "endFrameExclusive": 140,
+      "startSeconds": 13.0,
+      "endSeconds": 14.0,
+      "sourceFrame": 170,
+      "transform": "none",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    },
+    {
+      "label": "N",
+      "startFrame": 140,
+      "endFrameExclusive": 152,
+      "startSeconds": 14.0,
+      "endSeconds": 15.2,
+      "sourceFrame": 225,
+      "transform": "none",
+      "operation": "repeat identical selected frame; hard cut at segment boundaries"
+    }
+  ],
+  "limits": [
+    "Hard cuts and held identical frames intentionally remove natural transition and hold timing.",
+    "This tests actual video decoding and model inference on realistic public image pixels, not recognition accuracy or natural movement continuity.",
+    "The left pose is a disclosed reflection, not a separate filmed left-arm movement.",
+    "Expected gestures may fail actual inference; do not relabel failures or change frames to force success.",
+    "Keep this fixture local; no endorsement, publication, artifact upload, or standalone redistribution is part of this task.",
+    "This supplemental clearer-pose case does not hide, replace, or overturn the earlier one-ray failure."
+  ],
+  "selectionHistory": {
+    "previousFixtureFailureKnown": true,
+    "newFixtureInferencePerformedBeforePoseFreeze": false,
+    "basis": "Visual inspection of exact source170 shows wrist above head with opposite arm down; chosen before any model evaluation of this additional fixture.",
+    "notAReplacementForPreviousFailure": true
+  },
+  "previousFixture": {
+    "file": "held-public-arm-fixture.mp4",
+    "sha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+    "preservedUnmodified": true,
+    "resultReportedByParent": {
+      "decodedFrames": 152,
+      "recognizedGestures": [
+        "left-raise"
+      ],
+      "rayCount": 1,
+      "expectedCount": 6,
+      "passed": false
+    },
+    "limit": "Near-face source165 was visually above shoulder, but model placed right wrist only about0.063 shoulder widths above its shoulder; this failed case remains separate evidence."
+  }
+}

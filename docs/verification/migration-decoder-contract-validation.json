@@ -1,0 +1,23 @@
+{
+  "testsRun": 6,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "evidenceType": "synthetic decoder tensors and blank arrays; no person-image inference",
+  "cameraAndSocketBlocked": true,
+  "captureAttempts": 0,
+  "socketAttempts": 0,
+  "coverage": [
+    "pixel recovery through padding/scale/rotation",
+    "visibility/presence versus coordinates/world outputs",
+    "anatomical indices11/12/15/16",
+    "consistent resized coordinate system",
+    "all120 output permutations",
+    "decoded known pixel poses emit left then right"
+  ],
+  "_migration": {
+    "pathsRelativized": true,
+    "originalReportSha256": "fb644beb637e0694131e9639938bba992e2cbdef4b89815d65306224cce35ee4",
+    "contentChanges": "Machine paths converted to repository-relative paths; test results unchanged."
+  }
+}

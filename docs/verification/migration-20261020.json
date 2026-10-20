@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-20",
+  "scope": "new canonical checkout migration verification",
+  "physicalCameraUsed": false,
+  "liveHumanRecognitionVerified": false,
+  "javascriptUnitTests": {
+    "passed": 49,
+    "failed": 0
+  },
+  "pythonUnitTests": {
+    "passed": 97,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "cameraAPIProhibited": true,
+    "includesLoopbackHTTPTests": true
+  },
+  "webBuild": {
+    "passed": true,
+    "vite": "6.4.1"
+  },
+  "runtime": {
+    "opencv": "5.0.0",
+    "verified": true,
+    "numpy": "2.5.4",
+    "zooCommit": "47534e27c9851bb1128ccc0102f1145e27f23f98",
+    "verification": "locked hashes + both zero-image DNN forwards + exact output shapes",
+    "warmupMs": 28.69
+  },
+  "syntheticLandmarks": {
+    "passed": true,
+    "checksRun": 37,
+    "checksPassed": 37,
+    "evidenceType": "synthetic-landmark-fixtures",
+    "physicalCameraUsed": false,
+    "realUserVerified": false,
+    "privateProgressSaved": false
+  },
+  "progressPreservation": {
+    "passed": true,
+    "checksRun": 90,
+    "checksPassed": 90,
+    "simulatedScenarios": 48,
+    "modelReferenceChecks": 12,
+    "cameraManualScenarios": 30,
+    "cameraOpened": false,
+    "servicesOpened": false,
+    "realAppStorageAccessed": false,
+    "sourceHashes": {
+      "src/model.js": "31c4b4f3296f9bbc56ba6e8ba7a127759d92d263d88a96e603044c78c31d50f9",
+      "src/main.js": "45c4862e74f81029a1a5f3bf9246f5114233983b0946cdfe91d619aafc5ef171"
+    }
+  },
+  "decoderContract": {
+    "testsRun": 6,
+    "passed": true,
+    "captureAttempts": 0,
+    "socketAttempts": 0,
+    "evidenceType": "synthetic decoder tensors and blank arrays; no person-image inference"
+  },
+  "mockedBrowser": {
+    "passed": 11,
+    "failed": 0,
+    "flaky": 0,
+    "skippedLiveRelay": 1,
+    "physicalCameraUsed": false,
+    "cameraLabelledPacketsAreMockJSON": true
+  },
+  "nativeHostQueryParser": {
+    "assertionsPassed": 23,
+    "cameraOrNetworkUsed": false,
+    "apkBuilt": false
+  },
+  "nativeWebSync": {
+    "passed": true,
+    "generatedFiles": 5,
+    "staleAssetRemoved": true,
+    "webAssetsMatchCurrentBuild": true
+  },
+  "frontalPNGPairs": {
+    "frozenPoseGatesMatched": 4,
+    "classifierRepeatedFrames": 152,
+    "classifierGesturesMatched": 6,
+    "manifestSha256": "2b495c38b86214060ee48f29a3d86af608b77de71c16f1b909aed0611f777c8d",
+    "thresholdsRetuned": false,
+    "blockedApiAttempts": {
+      "camera": 0,
+      "socket": 0
+    },
+    "genuineFilmedLeftRaiseSelected": false
+  },
+  "publicHeldVideoInference": {
+    "clear": {
+      "evidenceType": "actual-video-pose-inference",
+      "fixture": {
+        "file": "clear-public-arm-fixture.mp4",
+        "sha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "expectedGestureCount": 6,
+      "observedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "acknowledgedSeq": 6,
+      "expectedSequencePassed": true,
+      "gameScoringMatches": true,
+      "gameAcknowledgmentMatches": true,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "humanVerified": false,
+      "previewCacheCleared": true
+    },
+    "near-face": {
+      "evidenceType": "actual-video-pose-inference",
+      "fixture": {
+        "file": "held-public-arm-fixture.mp4",
+        "sha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "expectedGestureCount": 6,
+      "observedGestures": [
+        "left-raise"
+      ],
+      "rays": 1,
+      "acknowledgedSeq": 1,
+      "expectedSequencePassed": false,
+      "gameScoringMatches": true,
+      "gameAcknowledgmentMatches": true,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "humanVerified": false,
+      "previewCacheCleared": true
+    },
+    "frontal-held": {
+      "evidenceType": "actual-video-pose-inference",
+      "fixture": {
+        "file": "frontal-held-source035.mp4",
+        "sha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "expectedGestureCount": 6,
+      "observedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "acknowledgedSeq": 6,
+      "expectedSequencePassed": true,
+      "gameScoringMatches": true,
+      "gameAcknowledgmentMatches": true,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "humanVerified": false,
+      "previewCacheCleared": true
+    }
+  },
+  "implementationSha256": {
+    "src/main.js": "45c4862e74f81029a1a5f3bf9246f5114233983b0946cdfe91d619aafc5ef171",
+    "src/model.js": "31c4b4f3296f9bbc56ba6e8ba7a127759d92d263d88a96e603044c78c31d50f9",
+    "src/motion.js": "a2d578eccf2a11175a264ffee49c2b984e1f409cf87dd9dcb1be07e90ed1ee79",
+    "sidecar/inference.py": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407",
+    "sidecar/motion.py": "e5aea8b4ba8b6b2f9d6fbcdbe506fcc5b156e83956e5f00276423e2ad8645da9",
+    "sidecar/service.py": "5613cb90ca82aade5bba74f542c957fc254e331d91ae8b7d854894f1f37f78a4",
+    "sidecar/video_input.py": "00cdf1aa7e90eb2c1a6056dcca0226d8aff3c64fabd5dd6b3115169c25bd462e",
+    "sidecar/vendor/mp_pose.py": "7e1953d1fb848c64fd3b44277e615e273e7fb2f325f7633eb9c1e32948d45e67",
+    "tests/browser/motion.spec.js": "0418910ae89565583e95295269ce46c7da2b9fa0051b16650cd435b9dcc9967f",
+    "tests/browser/motion-live.spec.js": "77cca2538a51c88d3d52e9468a8cc4725b9161d7f1a6d4131d08c120c885a1dc",
+    "scripts/verify-simulated-progress-preservation.mjs": "485706df6530c0a93fc01db9c934937eab1f7da198f00b5e5159129f868c5a1d"
+  }
+}

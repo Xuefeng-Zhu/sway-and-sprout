@@ -1,0 +1,8 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {challenges,normalizeProgress,complete,phaseAt} from '../src/model.js';
+test('three authored 30-second challenges have both variants',()=>{assert.equal(challenges.length,3);for(const c of challenges){assert.equal(c.duration,30);assert.equal(c.seated.length,3);assert.equal(c.standing.length,3);}});
+test('invalid and duplicate saved progress is safely normalized',()=>assert.deepEqual(normalizeProgress({completed:['wake','wake','bad'],sessions:-1}),{completed:['wake'],sessions:0}));
+test('missing storage is accepted',()=>assert.deepEqual(normalizeProgress(null),{completed:[],sessions:0}));
+test('joining in is idempotent',()=>assert.deepEqual(complete(complete(normalizeProgress(null),'wake'),'wake').completed,['wake']));
+test('cues advance at 10 and 20 seconds and are bounded',()=>{assert.equal(phaseAt(-1),0);assert.equal(phaseAt(9.9),0);assert.equal(phaseAt(10),1);assert.equal(phaseAt(20),2);assert.equal(phaseAt(100),2);});
+test('non-array progress and unsafe session numbers are rejected',()=>assert.deepEqual(normalizeProgress({completed:'wake',sessions:Infinity}),{completed:[],sessions:0}));
+test('spatial navigation picks a nearby button in requested direction',async()=>{const {nearest}=await import('../src/model.js');const rect=(x,y)=>({getBoundingClientRect:()=>({x,y,width:100,height:50})});const origin=rect(100,100),left=rect(0,100),right=rect(220,100),down=rect(100,200);assert.equal(nearest(origin,[left,right,down],'ArrowRight'),right);assert.equal(nearest(origin,[left,right,down],'ArrowDown'),down);assert.equal(nearest(origin,[right,down],'ArrowLeft'),null);});

@@ -1,0 +1,489 @@
+{
+  "source": "synthetic",
+  "evidenceType": "synthetic-landmark-fixtures",
+  "acknowledgmentMethod": "Actual JS reducer lastSeq fed back into service after",
+  "videoPoseInferenceVerified": false,
+  "realUserVerified": false,
+  "physicalCameraUsed": false,
+  "serviceOpened": false,
+  "privateProgressSaved": false,
+  "passed": true,
+  "checksRun": 37,
+  "checksPassed": 37,
+  "results": [
+    {
+      "name": "calibration-before300ms",
+      "expected": false,
+      "observed": false,
+      "passed": true
+    },
+    {
+      "name": "calibration-at300ms",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "name": "hold-before350ms",
+      "expected": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "name": "hold-at350ms",
+      "expected": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "name": "one-left-raise",
+      "expected": 1,
+      "observed": 1,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 1,
+        "target": 6,
+        "completed": false,
+        "expected": "right",
+        "lastSeq": 1,
+        "acceptedGestures": [
+          "left-raise"
+        ],
+        "packetCount": 31,
+        "eventDeliveries": 1,
+        "ignoredPackets": 0
+      }
+    },
+    {
+      "name": "one-left-raise:accepted-sides",
+      "expected": [
+        "left-raise"
+      ],
+      "observed": [
+        "left-raise"
+      ],
+      "passed": true
+    },
+    {
+      "name": "six-classifier-events",
+      "expected": 6,
+      "observed": 6,
+      "passed": true
+    },
+    {
+      "name": "six-game-acknowledgments",
+      "expected": 6,
+      "observed": 6,
+      "passed": true
+    },
+    {
+      "name": "six-alternating-rays",
+      "expected": 6,
+      "observed": 6,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 6,
+        "target": 6,
+        "completed": true,
+        "expected": "left",
+        "lastSeq": 6,
+        "acceptedGestures": [
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise"
+        ],
+        "packetCount": 230,
+        "eventDeliveries": 6,
+        "ignoredPackets": 0
+      }
+    },
+    {
+      "name": "six-alternating-rays:accepted-sides",
+      "expected": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "observed": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "passed": true
+    },
+    {
+      "name": "six-rays-complete",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "name": "gradual-transition-classifier-events",
+      "expected": 2,
+      "observed": 2,
+      "passed": true
+    },
+    {
+      "name": "gradual-transition-rays",
+      "expected": 2,
+      "observed": 2,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 2,
+        "target": 6,
+        "completed": false,
+        "expected": "left",
+        "lastSeq": 2,
+        "acceptedGestures": [
+          "left-raise",
+          "right-raise"
+        ],
+        "packetCount": 113,
+        "eventDeliveries": 2,
+        "ignoredPackets": 0
+      }
+    },
+    {
+      "name": "gradual-transition-rays:accepted-sides",
+      "expected": [
+        "left-raise",
+        "right-raise"
+      ],
+      "observed": [
+        "left-raise",
+        "right-raise"
+      ],
+      "passed": true
+    },
+    {
+      "name": "sustained-arm-emits-once",
+      "expected": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "name": "duplicate-packet-prevention",
+      "expected": 1,
+      "observed": 1,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 1,
+        "target": 6,
+        "completed": false,
+        "expected": "right",
+        "lastSeq": 1,
+        "acceptedGestures": [
+          "left-raise"
+        ],
+        "packetCount": 10,
+        "eventDeliveries": 10,
+        "ignoredPackets": 0
+      }
+    },
+    {
+      "name": "duplicate-packet-prevention:accepted-sides",
+      "expected": [
+        "left-raise"
+      ],
+      "observed": [
+        "left-raise"
+      ],
+      "passed": true
+    },
+    {
+      "name": "low-confidence-clears-arming",
+      "expected": false,
+      "observed": false,
+      "passed": true
+    },
+    {
+      "name": "low-confidence-cannot-complete-old-hold",
+      "expected": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "name": "fresh-neutral-after-low-confidence",
+      "expected": 1,
+      "observed": 1,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 1,
+        "target": 6,
+        "completed": false,
+        "expected": "right",
+        "lastSeq": 1,
+        "acceptedGestures": [
+          "left-raise"
+        ],
+        "packetCount": 101,
+        "eventDeliveries": 1,
+        "ignoredPackets": 0
+      }
+    },
+    {
+      "name": "late-inference-after-pause-dropped",
+      "expected": 15,
+      "observed": 15,
+      "passed": true
+    },
+    {
+      "name": "stale-control-revision-rejected",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "name": "resume-requires-fresh-neutral",
+      "expected": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "name": "pause-resume-fresh-calibration-rays",
+      "expected": 1,
+      "observed": 1,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 1,
+        "target": 6,
+        "completed": false,
+        "expected": "right",
+        "lastSeq": 1,
+        "acceptedGestures": [
+          "left-raise"
+        ],
+        "packetCount": 101,
+        "eventDeliveries": 1,
+        "ignoredPackets": 1
+      }
+    },
+    {
+      "name": "unacknowledged-pause-rolls-back-side",
+      "expected": "left",
+      "observed": "left",
+      "passed": true
+    },
+    {
+      "name": "late-packet-after-pause-dropped",
+      "expected": 0,
+      "observed": 0,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 0,
+        "target": 6,
+        "completed": false,
+        "expected": "left",
+        "lastSeq": 0,
+        "acceptedGestures": [],
+        "packetCount": 2,
+        "eventDeliveries": 0,
+        "ignoredPackets": 2
+      }
+    },
+    {
+      "name": "long-frame-gap-clears-hold",
+      "expected": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "name": "fresh-neutral-after-gap-rays",
+      "expected": 1,
+      "observed": 1,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 1,
+        "target": 6,
+        "completed": false,
+        "expected": "right",
+        "lastSeq": 1,
+        "acceptedGestures": [
+          "left-raise"
+        ],
+        "packetCount": 93,
+        "eventDeliveries": 1,
+        "ignoredPackets": 0
+      }
+    },
+    {
+      "name": "lease-expired-before-renewal",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "name": "expired-lease-frame-dropped",
+      "expected": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "name": "renewed-lease-rejects-old-inference",
+      "expected": 0,
+      "observed": 0,
+      "passed": true,
+      "note": "A token from before lease expiry must not enter the renewed epoch."
+    },
+    {
+      "name": "new-round-calibration-reset",
+      "expected": false,
+      "observed": false,
+      "passed": true
+    },
+    {
+      "name": "old-round-packets-cannot-score-new-round",
+      "expected": 1,
+      "observed": 1,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 1,
+        "target": 6,
+        "completed": false,
+        "expected": "right",
+        "lastSeq": 2,
+        "acceptedGestures": [
+          "left-raise"
+        ],
+        "packetCount": 78,
+        "eventDeliveries": 1,
+        "ignoredPackets": 39
+      }
+    },
+    {
+      "name": "game-rejects-wrong-round-event",
+      "expected": 0,
+      "observed": 0,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 0,
+        "target": 6,
+        "completed": false,
+        "expected": "left",
+        "lastSeq": 0,
+        "acceptedGestures": [],
+        "packetCount": 1,
+        "eventDeliveries": 1,
+        "ignoredPackets": 0
+      }
+    },
+    {
+      "name": "game-rejects-expired-event",
+      "expected": 0,
+      "observed": 0,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 0,
+        "target": 6,
+        "completed": false,
+        "expected": "left",
+        "lastSeq": 0,
+        "acceptedGestures": [],
+        "packetCount": 1,
+        "eventDeliveries": 1,
+        "ignoredPackets": 0
+      }
+    },
+    {
+      "name": "game-rejects-low-confidence-event",
+      "expected": 0,
+      "observed": 0,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 0,
+        "target": 6,
+        "completed": false,
+        "expected": "left",
+        "lastSeq": 1,
+        "acceptedGestures": [],
+        "packetCount": 2,
+        "eventDeliveries": 2,
+        "ignoredPackets": 0
+      }
+    },
+    {
+      "name": "game-rejects-wrong-side-event",
+      "expected": 0,
+      "observed": 0,
+      "passed": true,
+      "scoring": {
+        "source": "synthetic",
+        "evidenceType": "synthetic-landmark-events",
+        "physicalCameraUsed": false,
+        "privateProgressSaved": false,
+        "count": 0,
+        "target": 6,
+        "completed": false,
+        "expected": "left",
+        "lastSeq": 1,
+        "acceptedGestures": [],
+        "packetCount": 2,
+        "eventDeliveries": 2,
+        "ignoredPackets": 0
+      }
+    }
+  ],
+  "_migration": {
+    "pathsRelativized": true,
+    "historicalResult": true,
+    "originalReportSha256": "a78fefa1593a425f1b644281c956c2d6c41d4c4cd6ef480c436c134a4e2085cb",
+    "contentChanges": "Machine paths converted to repository-relative paths; test results unchanged."
+  }
+}
