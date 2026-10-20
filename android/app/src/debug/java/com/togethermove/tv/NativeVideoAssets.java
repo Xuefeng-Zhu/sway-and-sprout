@@ -20,21 +20,23 @@ final class NativeVideoAssets {
     static final String RUNTIME_VERSION = "1.4.2";
     static final String MODEL_SHA256 = "cd7cc22fa946e5d146a7b98d496853e1923e22828d3972d579973f27f91bb105";
     static final int MODEL_BYTES = 2894840;
-    static final ModelPin INT8_MODEL = new ModelPin("int8", "verification/movenet-lightning-int8.tflite", MODEL_SHA256, MODEL_BYTES);
+    static final ModelPin INT8_MODEL = new ModelPin("int8", "verification/movenet-lightning-int8.tflite", MODEL_SHA256, MODEL_BYTES, 192);
     static final ModelPin FLOAT16_MODEL = new ModelPin("float16", "verification/movenet-lightning-float16.tflite",
-            "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab", 4758512);
+            "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab", 4758512, 192);
+    static final ModelPin THUNDER_MODEL = new ModelPin("thunder", "verification/movenet-thunder-float16.tflite",
+            "41641538679ec79b07d4101e591dda47d098c09af29607674b2a40b8a3798dd3", 12584128, 256);
     static final class ModelPin {
         final String id, asset, sha256;
-        final int bytes;
-        private ModelPin(String id, String asset, String sha256, int bytes) {
-            this.id = id; this.asset = asset; this.sha256 = sha256; this.bytes = bytes;
+        final int bytes, inputSize;
+        private ModelPin(String id, String asset, String sha256, int bytes, int inputSize) {
+            this.id = id; this.asset = asset; this.sha256 = sha256; this.bytes = bytes; this.inputSize = inputSize;
         }
     }
     static ModelPin modelPin(String configAsset) {
-        if (configAsset == null || !configAsset.matches("verification/(clear|frontal|nearface|right-negative|both-up-negative|natural-original|natural-mirror)(\\.float16)?\\.json")) {
+        if (configAsset == null || !configAsset.matches("verification/(clear|frontal|nearface|right-negative|both-up-negative|natural-original|natural-mirror)(\\.(float16|thunder))?\\.json")) {
             throw new IllegalArgumentException("config_asset_not_allowed");
         }
-        return configAsset.endsWith(".float16.json") ? FLOAT16_MODEL : INT8_MODEL;
+        return configAsset.endsWith(".thunder.json") ? THUNDER_MODEL : configAsset.endsWith(".float16.json") ? FLOAT16_MODEL : INT8_MODEL;
     }
     static final int MAX_VIDEO_BYTES = 256 * 1024 * 1024;
     final ModelPin modelPin;

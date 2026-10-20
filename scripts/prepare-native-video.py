@@ -58,7 +58,7 @@ def model_artifacts(lock):
 
 
 def model_config_name(fixture, model):
-    return fixture['config'] if model['role'] == 'model' else fixture['config'][:-5] + '.float16.json'
+    return fixture['config'] if model['role'] == 'model' else fixture['config'][:-5] + '.' + model['modelId'] + '.json'
 
 
 def expected_config(lock, fixture, model=None):
@@ -90,15 +90,24 @@ def validate_lock(lock):
             raise ValueError('Known frozen controls must retain their expectations')
     models = model_artifacts(lock)
     expected_models = {
-        'model': (2894840, 'cd7cc22fa946e5d146a7b98d496853e1923e22828d3972d579973f27f91bb105', 'verification/movenet-lightning-int8.tflite'),
-        'candidate-model': (4758512, '0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab', 'verification/movenet-lightning-float16.tflite')}
-    if len(models) != 2 or {row['role'] for row in models} != set(expected_models):
-        raise ValueError('Expected pinned INT8 baseline and one FP16 candidate')
+        'int8': ('model', 2894840, 'cd7cc22fa946e5d146a7b98d496853e1923e22828d3972d579973f27f91bb105', 'verification/movenet-lightning-int8.tflite', 192),
+        'float16': ('candidate-model', 4758512, '0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab', 'verification/movenet-lightning-float16.tflite', 192),
+        'thunder': ('candidate-model', 12584128, '41641538679ec79b07d4101e591dda47d098c09af29607674b2a40b8a3798dd3', 'verification/movenet-thunder-float16.tflite', 256)}
+    def model_id(row):
+        return 'int8' if row['role'] == 'model' else row.get('modelId')
+    if len(models) != 3 or {model_id(row) for row in models} != set(expected_models):
+        raise ValueError('Expected pinned INT8 baseline and explicit Lightning FP16/Thunder candidates')
     for row in models:
-        if (row['bytes'], row['sha256'], row['asset']) != expected_models[row['role']]:
-            raise ValueError('Native model role/pin mismatch')
-        if row['role'] == 'candidate-model' and row.get('modelId') != 'float16':
+        identity = model_id(row)
+        if identity not in expected_models:
             raise ValueError('Unknown native candidate model')
+        expected = expected_models[identity]
+        if (row['role'], row['bytes'], row['sha256'], row['asset']) != expected[:4]:
+            raise ValueError('Native model role/pin mismatch')
+        if row['input'] != {'type': 'UINT8', 'shape': [1, expected[4], expected[4], 3], 'color': 'RGB', 'values': [0, 255]}:
+            raise ValueError('Native model input contract mismatch')
+        if row['output'] != {'type': 'FLOAT32', 'shape': [1, 1, 17, 3], 'order': ['y', 'x', 'score']}:
+            raise ValueError('Native model output contract mismatch')
     for row in [*lock['artifacts'], *lock['fixtures']]:
         if type(row['bytes']) is not int or row['bytes'] <= 0:
             raise ValueError('Invalid pinned byte count')

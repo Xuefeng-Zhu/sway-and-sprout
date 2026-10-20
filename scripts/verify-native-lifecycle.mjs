@@ -3,6 +3,9 @@ import assert from 'node:assert/strict';
 import {chromium} from '@playwright/test';
 import {nativeOptions} from './native-emulator-options.mjs';
 const options=nativeOptions(),{adb,out}=options;
+const lock=JSON.parse(fs.readFileSync(new URL('../android/native-video-assets.lock.json',import.meta.url),'utf8'));
+const selectedModel=lock.artifacts.find(item=>options.model==='int8'?item.role==='model':item.role==='candidate-model'&&item.modelId===options.model);
+if(!selectedModel)throw Error('Selected native model is not pinned');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms)),result={assertions:[],camera:false,physicalDevice:false,nativeModel:options.model,nativeRefinement:options.refinement};let browser,guardPassed=false,forwarded=false;
 const check=(name,value)=>{assert.ok(value,name);result.assertions.push(name);};
 try{
@@ -15,7 +18,9 @@ try{
  await page.evaluate(()=>{window.__p=[];const parse=JSON.parse;JSON.parse=function(...a){const p=parse.apply(this,a);if(p?.protocol===1)window.__p.push(p);return p;};});
  for(const a of ['choose:1','input:camera','start'])await page.locator('[data-action="'+a+'"]').click();
  await page.waitForFunction(()=>window.__p.at(-1)?.metrics?.acceptedFrames>=5);
- const profile=await page.evaluate(()=>window.__p.at(-1)?.metrics);
+ const packet=await page.evaluate(()=>window.__p.at(-1));
+ const profile=packet?.metrics;
+ check('native model pin matches requested',packet?.runtime?.modelSha256===selectedModel.sha256&&packet?.runtime?.modelId===options.model&&packet?.runtime?.inputSize===selectedModel.input.shape[1]);
  check('native refinement profile matches requested',profile?.modelInferencesPerFrame===(options.refinement==='image'?3:1)&&profile?.statelessCropRefinement===(options.refinement==='image'));
  await adb(['shell','input','keyevent','3']);await sleep(1200);
  const log=async()=>{const text=await adb(['logcat','-d','--pid='+pid,'-s','SwayNativeVideo:I']);return text.split('\n').filter(l=>l.includes('{')).map(l=>JSON.parse(l.slice(l.indexOf('{'))));};
@@ -31,7 +36,7 @@ try{
  await page.waitForFunction(n=>window.__p.at(-1)?.metrics?.acceptedFrames>n,before);
  check('explicit resume advances actual native decoding',true);
  await page.locator('[data-action="home"]').first().click();await adb(['shell','input','keyevent','4']);await sleep(800);
- const stopped=(await log()).filter(x=>x.kind==='stopped').at(-1);result.stopped=stopped;
+ const cleanupStarted=Date.now();let stopped;while(Date.now()-cleanupStarted<5000){stopped=(await log()).filter(x=>x.kind==='stopped').at(-1);if(stopped)break;await sleep(150);}result.cleanupWaitMs=Date.now()-cleanupStarted;result.stopped=stopped;
  check('Activity destruction closes decoder and interpreter',stopped?.resourcesClosed===true&&stopped?.cleanupSucceeded===true&&stopped?.verified===false);
  result.status='passed';
 }catch(e){result.status='failed';result.error=e.message;process.exitCode=1;}

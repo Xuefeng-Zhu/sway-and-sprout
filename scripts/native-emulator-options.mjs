@@ -8,7 +8,7 @@ export const caseNames=['clear','frontal','nearface','right-negative','both-up-n
 export function nativeOptions(){
  const args=process.argv.slice(2),values={adb:'adb','adb-port':'5038',serial:'emulator-5556',model:'int8',refinement:'image',completion:'false',out:path.join(projectRoot,'verification-results/native-video')},cases=[];
  while(args.length){const a=args.shift();if(a.startsWith('--')){const key=a.slice(2);if(!Object.hasOwn(values,key)||!args.length||args[0].startsWith('--'))throw Error('Unknown or incomplete option: '+a);values[key]=args.shift();}else{if(!caseNames.includes(a))throw Error('Unknown frozen case: '+a);cases.push(a);}}
- if(!['int8','float16'].includes(values.model))throw Error('Unknown native model');
+ if(!['int8','float16','thunder'].includes(values.model))throw Error('Unknown native model');
  if(!['image','tracked'].includes(values.refinement))throw Error('Unknown native refinement profile');
  if(!['false','true'].includes(values.completion))throw Error('Completion must be false or true');
  if(!/^emulator-[0-9]+$/.test(values.serial))throw Error('Only an emulator serial is permitted');

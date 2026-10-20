@@ -323,6 +323,7 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "platform", "android");
         put(output, "modelSha256", modelPin.sha256);
         put(output, "modelId", modelPin.id);
+        put(output, "inputSize", modelPin.inputSize);
         put(output, "verified", verified);
         return output;
     }
@@ -349,7 +350,7 @@ public final class NativeVideoReplay implements MotionSource {
             }
             if (Build.VERSION.SDK_INT < 28) throw new IOException("recorded_video_requires_api_28");
             NativeVideoAssets loaded = new NativeVideoAssets(assets, configAsset);
-            model = new NativeMoveNet(loaded.modelBuffer, statelessCrop);
+            model = new NativeMoveNet(loaded.modelBuffer, loaded.modelPin, statelessCrop);
             video = new MediaMetadataRetriever();
             try (AssetFileDescriptor file = assets.openFd(loaded.videoAsset)) {
                 if (file.getLength() != loaded.videoBytes) throw new IOException("fixture_fd_size_mismatch");
@@ -503,6 +504,7 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "engineVersion", NativeVideoAssets.RUNTIME_VERSION);
         put(output, "modelSha256", modelPin.sha256);
         put(output, "modelId", modelPin.id);
+        put(output, "inputSize", modelPin.inputSize);
         put(output, "verified", verified);
         put(output, "configAsset", configAsset);
         put(output, "api", Build.VERSION.SDK_INT);
@@ -511,7 +513,7 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "scalarFrameDiagnostics", true);
         put(output, "capture", "bundled-public-video");
         put(output, "personCount", "unknown-singlepose-model");
-        put(output, "inputTransform", (statelessCrop ? "official-three-pass-stateless" : "official-android-tracked") + "-crop-square-before-bilinear-rgb-uint8-192-no-mirror");
+        put(output, "inputTransform", (statelessCrop ? "official-three-pass-stateless" : "official-android-tracked") + "-crop-square-before-bilinear-rgb-uint8-" + modelPin.inputSize + "-no-mirror");
         put(output, "decodedFrames", stats.decodedFrames);
         put(output, "acceptedFrames", stats.acceptedFrames);
         put(output, "discardedEpochFrames", stats.discardedEpochFrames);
@@ -563,6 +565,7 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "meanR", result.meanR); put(output, "meanG", result.meanG); put(output, "meanB", result.meanB);
         put(output, "nonzeroInputBytes", result.nonzeroInputBytes);
         put(output, "invalidMappedKeypoints", result.invalidMappedKeypoints);
+        put(output, "modelInputSize", result.plan.inputSize);
         put(output, "imageWidth", result.imageWidth); put(output, "imageHeight", result.imageHeight);
         put(output, "cropLeft", result.plan.left); put(output, "cropTop", result.plan.top);
         put(output, "cropRight", result.plan.right); put(output, "cropBottom", result.plan.bottom);

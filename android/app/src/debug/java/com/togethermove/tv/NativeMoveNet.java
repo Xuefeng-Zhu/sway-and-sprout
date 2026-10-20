@@ -15,24 +15,31 @@ import java.util.zip.CRC32;
 
 /** CPU-only official Android crop flow; worker-owned state and sampled reference parity. */
 final class NativeMoveNet implements Closeable {
-    private static final int SIZE = 192;
+    private final int inputSize;
     private final Interpreter interpreter;
-    private final ByteBuffer input = ByteBuffer.allocateDirect(SIZE * SIZE * 3).order(ByteOrder.nativeOrder());
+    private final ByteBuffer input;
     private final float[][][][] output = new float[1][1][17][3];
-    private final int[] pixels = new int[SIZE * SIZE];
+    private final int[] pixels;
     private final boolean statelessCrop;
     private MoveNetCrop.Region crop;
     private int imageWidth, imageHeight;
 
-    NativeMoveNet(ByteBuffer model) throws IOException { this(model, true); }
+    NativeMoveNet(ByteBuffer model) throws IOException { this(model, NativeVideoAssets.INT8_MODEL, true); }
 
-    NativeMoveNet(ByteBuffer model, boolean statelessCrop) throws IOException {
+    NativeMoveNet(ByteBuffer model, boolean statelessCrop) throws IOException { this(model, NativeVideoAssets.INT8_MODEL, statelessCrop); }
+
+    NativeMoveNet(ByteBuffer model, NativeVideoAssets.ModelPin modelPin, boolean statelessCrop) throws IOException {
+        if (modelPin != NativeVideoAssets.INT8_MODEL && modelPin != NativeVideoAssets.FLOAT16_MODEL
+                && modelPin != NativeVideoAssets.THUNDER_MODEL) throw new IOException("unknown_model_pin");
+        this.inputSize = modelPin.inputSize;
+        this.input = ByteBuffer.allocateDirect(inputSize * inputSize * 3).order(ByteOrder.nativeOrder());
+        this.pixels = new int[inputSize * inputSize];
         this.statelessCrop = statelessCrop;
         Interpreter.Options options = new Interpreter.Options().setNumThreads(2).setUseNNAPI(false);
         Interpreter candidate = new Interpreter(model, options);
         try {
             if (candidate.getInputTensorCount() != 1 || candidate.getOutputTensorCount() != 1) throw new IOException("model_tensor_count");
-            check(candidate.getInputTensor(0), DataType.UINT8, new int[]{1, SIZE, SIZE, 3}, SIZE * SIZE * 3);
+            check(candidate.getInputTensor(0), DataType.UINT8, new int[]{1, inputSize, inputSize, 3}, inputSize * inputSize * 3);
             check(candidate.getOutputTensor(0), DataType.FLOAT32, new int[]{1, 1, 17, 3}, 17 * 3 * 4);
         } catch (IOException | RuntimeException error) {
             candidate.close();
@@ -78,7 +85,7 @@ final class NativeMoveNet implements Closeable {
             crop = MoveNetCrop.initial(imageWidth, imageHeight);
         }
         boolean usedDefaultCrop = crop.defaultCrop;
-        MoveNetCrop.PixelPlan plan = crop.pixels(imageWidth, imageHeight, SIZE);
+        MoveNetCrop.PixelPlan plan = crop.pixels(imageWidth, imageHeight, inputSize);
         CRC32 decodedProbe = new CRC32();
         for (int row = 0; row < 4; row++) for (int column = 0; column < 4; column++) {
             checksumInt(decodedProbe, frame.getPixel(column * (imageWidth - 1) / 3, row * (imageHeight - 1) / 3));
@@ -89,8 +96,8 @@ final class NativeMoveNet implements Closeable {
             // Same source-space square/padding and floating origin as MoveNet.kt.
             new Canvas(detect).drawBitmap(frame, -plan.left, -plan.top, null);
             square = Bitmap.createBitmap(detect, plan.centerCropLeft, plan.centerCropTop, plan.squareSize, plan.squareSize);
-            scaled = Bitmap.createScaledBitmap(square, SIZE, SIZE, true);
-            scaled.getPixels(pixels, 0, SIZE, 0, 0, SIZE, SIZE);
+            scaled = Bitmap.createScaledBitmap(square, inputSize, inputSize, true);
+            scaled.getPixels(pixels, 0, inputSize, 0, 0, inputSize, inputSize);
             input.clear();
             long red = 0, green = 0, blue = 0;
             int nonzeroBytes = 0;
@@ -110,7 +117,7 @@ final class NativeMoveNet implements Closeable {
             long parityStart = SystemClock.elapsedRealtimeNanos();
             if (verifyReference) {
                 // Actual official Support API classes, same bitmap/crop and pinned model.
-                ByteBuffer reference = MoveNetReferenceImage.prepare(detect, SIZE);
+                ByteBuffer reference = MoveNetReferenceImage.prepare(detect, inputSize);
                 ByteBuffer candidate = input.asReadOnlyBuffer(); candidate.rewind();
                 if (reference.remaining() != candidate.remaining()) throw new IllegalStateException("reference_input_size");
                 while (candidate.hasRemaining()) {

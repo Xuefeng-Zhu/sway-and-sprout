@@ -116,6 +116,47 @@
         ]
       },
       "purpose": "Explicit diagnostic candidate only; INT8 remains default and all fixture expectations/gates stay unchanged."
+    },
+    {
+      "role": "candidate-model",
+      "modelId": "thunder",
+      "filename": "movenet-singlepose-thunder-float16-v4.tflite",
+      "target": ".toolchain/native-runtime/movenet-singlepose-thunder-float16-v4.tflite",
+      "bytes": 12584128,
+      "sha256": "41641538679ec79b07d4101e591dda47d098c09af29607674b2a40b8a3798dd3",
+      "url": "https://tfhub.dev/google/lite-model/movenet/singlepose/thunder/tflite/float16/4?lite-format=tflite",
+      "license": "Apache-2.0",
+      "licenseSource": "https://storage.googleapis.com/movenet/MoveNet.SinglePose%20Model%20Card.pdf",
+      "asset": "verification/movenet-thunder-float16.tflite",
+      "input": {
+        "type": "UINT8",
+        "shape": [
+          1,
+          256,
+          256,
+          3
+        ],
+        "color": "RGB",
+        "values": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "type": "FLOAT32",
+        "shape": [
+          1,
+          1,
+          17,
+          3
+        ],
+        "order": [
+          "y",
+          "x",
+          "score"
+        ]
+      },
+      "purpose": "Explicit optional accuracy diagnostic only; not selected for TV production. INT8 default and frozen fixtures/event gate unchanged."
     }
   ],
   "fixtures": [

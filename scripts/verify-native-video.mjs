@@ -8,7 +8,7 @@ const selectedModel=lock.artifacts.find(item=>options.model==='int8'?item.role==
 if(!selectedModel)throw Error('Selected native model is not pinned');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const sha=value=>crypto.createHash('sha256').update(value??'<absent>').digest('hex');
-const result={startedAt:new Date().toISOString(),cameraUsed:false,physicalDevice:false,fireOSVerified:false,macInferenceService:false,nativeRefinement:options.refinement,completionRequested:options.completion,selectedModel:{id:options.model,sha256:selectedModel.sha256,bytes:selectedModel.bytes},cases:[]};
+const result={startedAt:new Date().toISOString(),cameraUsed:false,physicalDevice:false,fireOSVerified:false,macInferenceService:false,nativeRefinement:options.refinement,completionRequested:options.completion,selectedModel:{id:options.model,sha256:selectedModel.sha256,bytes:selectedModel.bytes,inputSize:selectedModel.input.shape[1]},cases:[]};
 let browser,forwarded=false,guardPassed=false;
 try {
  await options.guard();guardPassed=true;
@@ -45,7 +45,7 @@ try {
   state=await page.evaluate(()=>({count:Number(document.querySelector('.sunshine-garden')?.dataset.motionCount||0),source:document.querySelector('.sunshine-garden')?.dataset.motionSource,screen:document.querySelector('.app')?.className,body:document.body.innerText,packets:window.__nativeObserved,cameraCalls:window.__cameraCalls,storage:localStorage.getItem('togethermove.v1')}));
   row.packets=state.packets;row.ui={count:state.count,source:state.source,screen:state.screen,replayLabel:state.body.includes('VIDEO REPLAY')||state.body.includes('Video replay'),cameraCalls:state.cameraCalls};row.storageAfterSha256=sha(state.storage);row.progressUnchanged=before===state.storage;
   row.lastPacket=row.packets.at(-1);row.wallMs=Date.now()-started;
-  row.integrationVerified=row.packets.some(p=>p.runtime.engine==='litert'&&p.runtime.verified&&p.runtime.modelSha256===selectedModel.sha256&&p.source==='video'&&p.metrics?.modelInferencesPerFrame===(options.refinement==='image'?3:1)&&p.metrics?.statelessCropRefinement===(options.refinement==='image'))&&row.progressUnchanged&&state.cameraCalls===0&&row.pageErrors.length===0;
+  row.integrationVerified=row.packets.some(p=>p.runtime.engine==='litert'&&p.runtime.verified&&p.runtime.modelSha256===selectedModel.sha256&&p.runtime.modelId===options.model&&p.runtime.inputSize===selectedModel.input.shape[1]&&p.source==='video'&&p.metrics?.modelInferencesPerFrame===(options.refinement==='image'?3:1)&&p.metrics?.statelessCropRefinement===(options.refinement==='image'))&&row.progressUnchanged&&state.cameraCalls===0&&row.pageErrors.length===0;
   const expected=lock.fixtures.find(f=>f.case===name),events=new Map();
   for(const p of row.packets)for(const e of p.events)events.set(e.seq,e.gesture);
   row.observedGestures=[...events.entries()].sort((a,b)=>a[0]-b[0]).map(e=>e[1]);

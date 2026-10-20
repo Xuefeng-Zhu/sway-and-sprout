@@ -4,3 +4,5 @@ Public video fixture credits and transformations are in the repository fixture m
 This local diagnostic APK is not distributed.
 TensorFlow Android MoveNet crop algorithm adapted from tensorflow/examples bda6a8741864b7bc934345c47c25f8e17fd67bdc (Apache-2.0).
 TensorFlow Lite Support API0.4.4 (Apache-2.0) supplies the debug bitmap/tensor reference; unused ODML and legacy Lite API dependencies are not bundled.
+
+Optional MoveNet SinglePose Thunder Float16 v4 is an Apache-2.0 diagnostic candidate (UINT8 input256). Source and exact SHA256/bytes: android/native-video-assets.lock.json. No production model selection or distribution claim.
