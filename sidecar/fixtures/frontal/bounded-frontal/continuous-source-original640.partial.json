@@ -1,0 +1,62 @@
+{
+  "fixture": "continuous-source-original640.mp4",
+  "sha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+  "fps": 30,
+  "frames": 319,
+  "naturalContinuousMovement": true,
+  "humanUserCameraTest": false,
+  "expectedGestures": null,
+  "completeAlternatingSequenceCertified": false,
+  "kind": "partial temporal review of continuous public dancing video; no complete game sequence",
+  "source": {
+    "assetId": "6003772",
+    "creator": "Artem Podrez",
+    "sha256": "d891db0b4b326b5adaa07dbc6af080024ae4ed2e3e3e9c671bf8f75e39708c51",
+    "page": "https://www.pexels.com/video/a-woman-dancing-at-home-6003772/",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  "transform": {
+    "resize": [
+      640,
+      360
+    ],
+    "horizontalReflection": false,
+    "frameOrderPreserved": true,
+    "timeChanges": false,
+    "newFilmedLeftAction": false
+  },
+  "annotationEvidence": {
+    "priorFrozenPoseReview": "../frontal-public-selection-20261020-v2.json",
+    "priorFrozenPoseReviewSha256": "2b495c38b86214060ee48f29a3d86af608b77de71c16f1b909aed0611f777c8d",
+    "priorReviewFrozenBeforeInference": true,
+    "additionalReview": "Local visual review of whole source at3fps and every initial frame0\u201320. No new pose was selected from inference results; no additional natural sequence is certified.",
+    "reviewLimit": "3fps contact sheet is insufficient to certify every temporal hold. The only strict raise-hold window retained is the prior independently reviewed35\u201346 window."
+  },
+  "temporalWindows": [
+    {
+      "startFrame": 0,
+      "endFrameExclusive": 10,
+      "description": "Initial wrists start below shoulders, then the filmed anatomical right begins rising.",
+      "certifiedNeutral300ms": false,
+      "reason": "The exact strict-down boundary is uncertain on visual review; do not infer a valid calibrated start from this partial observation."
+    },
+    {
+      "startFrame": 35,
+      "endFrameExclusive": 47,
+      "timestampSpanMs": 366.6666666667,
+      "expectedGeometry": {
+        "left": "down",
+        "right": "up"
+      },
+      "sourceOfReview": "Frozen prior temporal review, anatomical sides exchanged only for disclosed reflection.",
+      "scope": "Pose window only; not a valid game event without preceding calibration and correct expected side."
+    }
+  ],
+  "limits": [
+    "This dancing clip is not a six-alternating-raise exercise trial.",
+    "An observed-only zero-event run is pipeline evidence, not a recognition accuracy pass.",
+    "No independently filmed left-arm raise or complete calibrated alternating sequence has been certified.",
+    "Mirror labels describe a derived reflected input, not another performed action.",
+    "No threshold changes or image-time manipulation were used to fit an expected result."
+  ]
+}

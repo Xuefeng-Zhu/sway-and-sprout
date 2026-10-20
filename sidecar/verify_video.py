@@ -10,6 +10,7 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+import re
 import statistics
 import subprocess
 import sys
@@ -23,6 +24,57 @@ from video_input import open_video, wrist_gates
 PROJECT = Path(__file__).resolve().parent.parent
 CLIENT = "12345678-0000-4000-8000-000000000101"
 ROUND = "12345678-0000-4000-8000-000000000102"
+GOAL_SEQUENCE = ["left-raise", "right-raise"] * 3
+
+
+def load_manifest(manifest_path, video_path, *, partial=False):
+    """Bind external expectations to exact local fixture bytes before inference.
+
+    Partial annotations describe reviewed pose windows without inventing a full
+    gesture sequence. They cannot establish a complete game-goal result.
+    """
+    manifest_path, video_path = Path(manifest_path), Path(video_path).resolve(strict=True)
+    if not video_path.is_file() or not 0 < video_path.stat().st_size <= 512 * 1024 * 1024:
+        raise ValueError("Video fixture must be a local file of at most 512 MiB")
+    manifest_bytes = manifest_path.read_bytes()
+    manifest = json.loads(manifest_bytes)
+    if not isinstance(manifest, dict):
+        raise ValueError("Manifest must be a JSON object")
+    digest = manifest.get("sha256")
+    if not isinstance(digest, str) or re.fullmatch(r"[0-9a-fA-F]{64}", digest) is None:
+        raise ValueError("Manifest must pin the fixture's SHA256")
+    with video_path.open("rb") as stream:
+        actual = hashlib.file_digest(stream, "sha256").hexdigest()
+    if actual != digest.lower():
+        raise ValueError("Manifest SHA256 does not match the selected video fixture")
+    expected = manifest.get("expectedGestures", manifest.get("expectedSemanticGestures"))
+    if partial:
+        if expected is not None:
+            raise ValueError("Partial annotation must not declare a full expected gesture list; use --expected")
+    elif (not isinstance(expected, list)
+          or any(item not in ("left-raise", "right-raise") for item in expected)):
+        raise ValueError("Expected manifest must contain an explicit gesture list")
+    return {"file": manifest_path.name, "sha256": hashlib.sha256(manifest_bytes).hexdigest(),
+            "fixtureSha256": actual, "kind": "partial-annotation" if partial else "sequence-expectation",
+            "naturalContinuousMovement": manifest.get("naturalContinuousMovement"),
+            "expectedGestures": expected}
+
+
+def verification_outcome(report):
+    """Pipeline consistency alone does not verify a recognition/game goal."""
+    pipeline = report["gameScoringMatches"] and report["gameAcknowledgmentMatches"]
+    expected = report["expectedGestures"]
+    matched = report["expectedSequencePassed"] if expected is not None else None
+    complete = bool(pipeline and matched is True and expected == GOAL_SEQUENCE
+                    and report["game"].get("count") == 6 and report["game"].get("completed") is True)
+    status = ("failed" if not pipeline or matched is False else
+              "complete-goal-verified" if complete else
+              "partial-expectation-matched" if expected else
+              "negative-control-matched" if expected == [] else "observed-only")
+    return {"status": status, "pipelineConsistent": bool(pipeline),
+            "sequenceExpectationPresent": expected is not None,
+            "expectedSequenceMatched": matched, "completeGoalVerified": complete,
+            "scope": "selected local fixture only", "liveUserVerified": False}
 
 
 def game_scoring_matches(observed, game):
@@ -141,29 +193,41 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("video", type=Path)
     parser.add_argument("--seconds", type=float, default=30)
-    parser.add_argument("--expected", type=Path, help="JSON containing expectedGestures; never generated from inference")
+    manifests = parser.add_mutually_exclusive_group()
+    manifests.add_argument("--expected", type=Path,
+                           help="SHA256-bound JSON containing expectedGestures; never generated from inference")
+    manifests.add_argument("--annotation", type=Path,
+                           help="SHA256-bound partial pose annotations; does not certify a complete sequence")
+    parser.add_argument("--require-complete-goal", action="store_true",
+                        help="Exit 1 unless an independently expected six-gesture goal is verified")
     parser.add_argument("--output", type=Path, required=True, help="Scalar JSON report only")
     parser.add_argument("--score-script", type=Path)
     parser.add_argument("--motion-module", type=Path)
     args = parser.parse_args()
     if not 0 < args.seconds <= 30:
         parser.error("Video test bound must be greater than zero and at most30seconds")
-    expected = None
-    if args.expected:
-        manifest = json.loads(args.expected.read_text())
-        expected = manifest.get("expectedGestures", manifest.get("expectedSemanticGestures"))
-        if not isinstance(expected, list) or any(item not in ("left-raise", "right-raise") for item in expected):
-            parser.error("Expected manifest must contain an explicit gesture list")
+    expectation = None
+    if args.expected or args.annotation:
+        try:
+            expectation = load_manifest(args.expected or args.annotation, args.video,
+                                        partial=args.annotation is not None)
+        except (OSError, ValueError) as exc:
+            parser.error(str(exc))
+    expected = expectation["expectedGestures"] if expectation else None
     report = verify(args.video, args.seconds, expected, args.score_script, args.motion_module)
+    report["expectation"] = expectation
+    report["verificationOutcome"] = verification_outcome(report)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps({key: report[key] for key in ("source", "evidenceType", "fixture", "observedGestures",
                                                  "expectedGestures", "expectedSequencePassed", "game",
                                                  "gameScoringMatches", "gameAcknowledgmentMatches",
-                                                 "armedTransitions", "previewResponses", "physicalCameraOpens")}))
+                                                 "armedTransitions", "previewResponses", "physicalCameraOpens",
+                                                 "verificationOutcome")}))
     # Fixtures cover one game goal (at most six scored events). Extra service
     # events beyond a completed goal remain an ACK mismatch, not a silent pass.
     if (not report["gameScoringMatches"] or not report["gameAcknowledgmentMatches"]
-            or (args.expected and not report["expectedSequencePassed"])):
+            or (args.expected and not report["expectedSequencePassed"])
+            or (args.require_complete_goal and not report["verificationOutcome"]["completeGoalVerified"])):
         raise SystemExit(1)
 
 

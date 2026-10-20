@@ -1,0 +1,269 @@
+{
+  "date": "2026-10-20",
+  "evidenceType": "bounded public-file inference plus separate mocked verifier-contract regression",
+  "physicalCameraUsed": false,
+  "liveHumanRecognitionVerified": false,
+  "thresholdsChanged": false,
+  "baselineBindingGap": {
+    "evidenceType": "mocked CLI pre-inference binding contract only",
+    "baselineAcceptsMismatchedManifestSHA": true,
+    "inferenceWasCalled": true,
+    "physicalCameraUsed": false,
+    "actualVideoRecognitionResult": false
+  },
+  "focusedContractUnitTests": {
+    "passed": 16,
+    "failures": 0,
+    "scope": "8 retained outcome tests and 8 new manifest/outcome contract regressions; inference mocked"
+  },
+  "cases": {
+    "clear": {
+      "source": "video",
+      "evidenceType": "actual-video-pose-inference",
+      "fixture": {
+        "file": "clear-public-arm-fixture.mp4",
+        "sha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "expectation": {
+        "file": "clear-public-arm-fixture.json",
+        "sha256": "a9f2aa279c72a712ff22cbf5fecef05e8c78942f387e3eb5afa8dc4432ff8746",
+        "fixtureSha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+        "kind": "sequence-expectation",
+        "naturalContinuousMovement": false,
+        "expectedGestures": [
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise"
+        ]
+      },
+      "observedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "expectedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "expectedSequencePassed": true,
+      "gameScoringMatches": true,
+      "gameAcknowledgmentMatches": true,
+      "acknowledgedSeq": 6,
+      "armedTransitions": 7,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "previewCacheCleared": true,
+      "verificationOutcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "game": {
+        "count": 6,
+        "target": 6,
+        "completed": true,
+        "lastSeq": 6,
+        "acceptedGestures": [
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise"
+        ],
+        "privateProgressSaved": false
+      },
+      "exitWithRequireCompleteGoal": 0
+    },
+    "near-face": {
+      "source": "video",
+      "evidenceType": "actual-video-pose-inference",
+      "fixture": {
+        "file": "held-public-arm-fixture.mp4",
+        "sha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "expectation": {
+        "file": "held-public-arm-fixture.json",
+        "sha256": "bbdd792f05859dc4f109aea554e68f96de9d8cf66327016f066f0794407fa170",
+        "fixtureSha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+        "kind": "sequence-expectation",
+        "naturalContinuousMovement": false,
+        "expectedGestures": [
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise"
+        ]
+      },
+      "observedGestures": [
+        "left-raise"
+      ],
+      "expectedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "expectedSequencePassed": false,
+      "gameScoringMatches": true,
+      "gameAcknowledgmentMatches": true,
+      "acknowledgedSeq": 1,
+      "armedTransitions": 5,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "previewCacheCleared": true,
+      "verificationOutcome": {
+        "status": "failed",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": false,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "game": {
+        "count": 1,
+        "target": 6,
+        "completed": false,
+        "lastSeq": 1,
+        "acceptedGestures": [
+          "left-raise"
+        ],
+        "privateProgressSaved": false
+      },
+      "exitWithRequireCompleteGoal": 1
+    },
+    "original": {
+      "source": "video",
+      "evidenceType": "actual-video-pose-inference",
+      "fixture": {
+        "file": "continuous-source-original640.mp4",
+        "sha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+        "fps": 30.0,
+        "decodedFrames": 319
+      },
+      "expectation": {
+        "file": "continuous-source-original640.partial.json",
+        "sha256": "04c435feb6b29bb22de587281b45e0a31cebbd071b743e84d5305ddbf7de0456",
+        "fixtureSha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+        "kind": "partial-annotation",
+        "naturalContinuousMovement": true,
+        "expectedGestures": null
+      },
+      "observedGestures": [],
+      "expectedGestures": null,
+      "expectedSequencePassed": null,
+      "gameScoringMatches": true,
+      "gameAcknowledgmentMatches": true,
+      "acknowledgedSeq": 0,
+      "armedTransitions": 4,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "previewCacheCleared": true,
+      "verificationOutcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "game": {
+        "count": 0,
+        "target": 6,
+        "completed": false,
+        "lastSeq": 0,
+        "acceptedGestures": [],
+        "privateProgressSaved": false
+      },
+      "exitWithRequireCompleteGoal": 1
+    },
+    "mirror": {
+      "source": "video",
+      "evidenceType": "actual-video-pose-inference",
+      "fixture": {
+        "file": "continuous-source-mirrored640.mp4",
+        "sha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+        "fps": 30.0,
+        "decodedFrames": 319
+      },
+      "expectation": {
+        "file": "continuous-source-mirrored640.partial.json",
+        "sha256": "bde9bea8f5c423d1f894881a5081a24435f085a7e2c606a093af5d701c02d384",
+        "fixtureSha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+        "kind": "partial-annotation",
+        "naturalContinuousMovement": true,
+        "expectedGestures": null
+      },
+      "observedGestures": [],
+      "expectedGestures": null,
+      "expectedSequencePassed": null,
+      "gameScoringMatches": true,
+      "gameAcknowledgmentMatches": true,
+      "acknowledgedSeq": 0,
+      "armedTransitions": 4,
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0,
+      "previewCacheCleared": true,
+      "verificationOutcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "game": {
+        "count": 0,
+        "target": 6,
+        "completed": false,
+        "lastSeq": 0,
+        "acceptedGestures": [],
+        "privateProgressSaved": false
+      },
+      "exitWithRequireCompleteGoal": 1
+    }
+  },
+  "implementationSha256": {
+    "sidecar/verify_video.py": "b756595860b19fe16e958cefc3885dbb4d042d2de033c658e5a0626cc36cace9",
+    "sidecar/inference.py": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407",
+    "sidecar/motion.py": "e5aea8b4ba8b6b2f9d6fbcdbe506fcc5b156e83956e5f00276423e2ad8645da9",
+    "sidecar/service.py": "5613cb90ca82aade5bba74f542c957fc254e331d91ae8b7d854894f1f37f78a4",
+    "src/motion.js": "a2d578eccf2a11175a264ffee49c2b984e1f409cf87dd9dcb1be07e90ed1ee79",
+    "scripts/score-motion-fixture.mjs": "97ba23862bc5ee14d90551fb540a62bf782f0c09954ea5709ae9e74a35a31c61"
+  },
+  "limits": [
+    "Normal-speed dancing footage has no certified complete alternating sequence.",
+    "Observed zero rays are not a recognition pass or demonstrated decoder/classifier defect.",
+    "Held/cut positive fixture is not natural motion.",
+    "The reflected clip is a derived input, not a separately filmed anatomical-left trial."
+  ]
+}
