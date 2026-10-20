@@ -3,11 +3,11 @@ import assert from 'node:assert/strict';
 import {chromium} from '@playwright/test';
 import {nativeOptions} from './native-emulator-options.mjs';
 const options=nativeOptions(),{adb,out}=options;
-const sleep=ms=>new Promise(r=>setTimeout(r,ms)),result={assertions:[],camera:false,physicalDevice:false};let browser,guardPassed=false,forwarded=false;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms)),result={assertions:[],camera:false,physicalDevice:false,nativeModel:options.model,nativeRefinement:options.refinement};let browser,guardPassed=false,forwarded=false;
 const check=(name,value)=>{assert.ok(value,name);result.assertions.push(name);};
 try{
  await options.guard();guardPassed=true;
- await adb(['shell','am','start','-n','com.togethermove.tv.motion/com.togethermove.tv.MainActivity','--ez','nativeVideo','true','--es','nativeVideoCase','clear']);
+ await adb(['shell','am','start','-n','com.togethermove.tv.motion/com.togethermove.tv.MainActivity','--ez','nativeVideo','true','--es','nativeVideoCase','clear','--es','nativeModel',options.model,'--es','nativeRefinement',options.refinement]);
  await sleep(800);const pid=(await adb(['shell','pidof','com.togethermove.tv.motion'])).trim();
  await adb(['forward','--no-rebind','tcp:9342','localabstract:webview_devtools_remote_'+pid]);forwarded=true;
  browser=await chromium.connectOverCDP('http://127.0.0.1:9342');const page=browser.contexts()[0].pages()[0];
@@ -15,6 +15,8 @@ try{
  await page.evaluate(()=>{window.__p=[];const parse=JSON.parse;JSON.parse=function(...a){const p=parse.apply(this,a);if(p?.protocol===1)window.__p.push(p);return p;};});
  for(const a of ['choose:1','input:camera','start'])await page.locator('[data-action="'+a+'"]').click();
  await page.waitForFunction(()=>window.__p.at(-1)?.metrics?.acceptedFrames>=5);
+ const profile=await page.evaluate(()=>window.__p.at(-1)?.metrics);
+ check('native refinement profile matches requested',profile?.modelInferencesPerFrame===(options.refinement==='image'?3:1)&&profile?.statelessCropRefinement===(options.refinement==='image'));
  await adb(['shell','input','keyevent','3']);await sleep(1200);
  const log=async()=>{const text=await adb(['logcat','-d','--pid='+pid,'-s','SwayNativeVideo:I']);return text.split('\n').filter(l=>l.includes('{')).map(l=>JSON.parse(l.slice(l.indexOf('{'))));};
  const paused=(await log()).filter(x=>x.kind==='suspended').at(-1);check('native Activity suspend reported',!!paused);

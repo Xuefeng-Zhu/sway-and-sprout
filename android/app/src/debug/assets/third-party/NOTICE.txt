@@ -2,3 +2,5 @@ Google LiteRT 1.4.2 and MoveNet SinglePose Lightning INT8 v4 are Apache-2.0 lice
 See LiteRT-LICENSE.txt and android/native-video-assets.lock.json for exact sources and pins.
 Public video fixture credits and transformations are in the repository fixture manifests and docs/NATURAL-VIDEO-VERIFICATION.md.
 This local diagnostic APK is not distributed.
+TensorFlow Android MoveNet crop algorithm adapted from tensorflow/examples bda6a8741864b7bc934345c47c25f8e17fd67bdc (Apache-2.0).
+TensorFlow Lite Support API0.4.4 (Apache-2.0) supplies the debug bitmap/tensor reference; unused ODML and legacy Lite API dependencies are not bundled.

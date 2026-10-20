@@ -20,7 +20,24 @@ final class NativeVideoAssets {
     static final String RUNTIME_VERSION = "1.4.2";
     static final String MODEL_SHA256 = "cd7cc22fa946e5d146a7b98d496853e1923e22828d3972d579973f27f91bb105";
     static final int MODEL_BYTES = 2894840;
+    static final ModelPin INT8_MODEL = new ModelPin("int8", "verification/movenet-lightning-int8.tflite", MODEL_SHA256, MODEL_BYTES);
+    static final ModelPin FLOAT16_MODEL = new ModelPin("float16", "verification/movenet-lightning-float16.tflite",
+            "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab", 4758512);
+    static final class ModelPin {
+        final String id, asset, sha256;
+        final int bytes;
+        private ModelPin(String id, String asset, String sha256, int bytes) {
+            this.id = id; this.asset = asset; this.sha256 = sha256; this.bytes = bytes;
+        }
+    }
+    static ModelPin modelPin(String configAsset) {
+        if (configAsset == null || !configAsset.matches("verification/(clear|frontal|nearface|right-negative|both-up-negative|natural-original|natural-mirror)(\\.float16)?\\.json")) {
+            throw new IllegalArgumentException("config_asset_not_allowed");
+        }
+        return configAsset.endsWith(".float16.json") ? FLOAT16_MODEL : INT8_MODEL;
+    }
     static final int MAX_VIDEO_BYTES = 256 * 1024 * 1024;
+    final ModelPin modelPin;
     final String configAsset;
     final String modelAsset;
     final String videoAsset;
@@ -33,9 +50,7 @@ final class NativeVideoAssets {
     final ByteBuffer modelBuffer;
 
     NativeVideoAssets(AssetManager assets, String configPath) throws IOException, JSONException {
-        if (configPath == null || !configPath.matches("verification/(clear|frontal|nearface|right-negative|both-up-negative|natural-original|natural-mirror)\\.json")) {
-            throw new IOException("config_asset_not_allowed");
-        }
+        modelPin = modelPin(configPath);
         configAsset = configPath;
         JSONObject config = new JSONObject(new String(read(assets, configPath, 65536), java.nio.charset.StandardCharsets.UTF_8));
         if (config.getInt("schemaVersion") != 1 || !RUNTIME_VERSION.equals(config.getString("runtimeVersion"))) {
@@ -43,7 +58,7 @@ final class NativeVideoAssets {
         }
         JSONObject model = config.getJSONObject("model");
         modelAsset = localAsset(model.getString("asset"), "tflite");
-        if (model.getLong("bytes") != MODEL_BYTES || !MODEL_SHA256.equals(model.getString("sha256"))) {
+        if (!modelPin.asset.equals(modelAsset) || model.getLong("bytes") != modelPin.bytes || !modelPin.sha256.equals(model.getString("sha256"))) {
             throw new IOException("model_pin_mismatch");
         }
         JSONObject fixture = config.getJSONObject("fixture");
@@ -69,9 +84,9 @@ final class NativeVideoAssets {
             names.add(name);
         }
         expectedGestures = Collections.unmodifiableList(names);
-        byte[] modelBytes = read(assets, modelAsset, MODEL_BYTES);
-        if (modelBytes.length != MODEL_BYTES || !MODEL_SHA256.equals(sha256(modelBytes))) throw new IOException("model_hash_or_size_mismatch");
-        modelBuffer = ByteBuffer.allocateDirect(MODEL_BYTES).order(ByteOrder.nativeOrder());
+        byte[] modelBytes = read(assets, modelAsset, modelPin.bytes);
+        if (modelBytes.length != modelPin.bytes || !modelPin.sha256.equals(sha256(modelBytes))) throw new IOException("model_hash_or_size_mismatch");
+        modelBuffer = ByteBuffer.allocateDirect(modelPin.bytes).order(ByteOrder.nativeOrder());
         modelBuffer.put(modelBytes).rewind();
         verifyStreaming(assets, videoAsset, videoBytes, videoSha256);
     }

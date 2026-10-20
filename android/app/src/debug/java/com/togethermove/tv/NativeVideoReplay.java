@@ -51,6 +51,8 @@ public final class NativeVideoReplay implements MotionSource {
     private final Object lock = new Object();
     private final AssetManager assets;
     private final String configAsset;
+    private final NativeVideoAssets.ModelPin modelPin;
+    private final boolean statelessCrop;
     private final PoseGestureMachine machine = new PoseGestureMachine();
     private final List<PendingEvent> pending = new ArrayList<>();
     private final List<PendingEvent> history = new ArrayList<>();
@@ -83,9 +85,13 @@ public final class NativeVideoReplay implements MotionSource {
         this(context, "verification/clear.json");
     }
 
-    public NativeVideoReplay(Context context, String configAsset) {
+    public NativeVideoReplay(Context context, String configAsset) { this(context, configAsset, true); }
+
+    public NativeVideoReplay(Context context, String configAsset, boolean statelessCrop) {
+        this.statelessCrop = statelessCrop;
         assets = context.getApplicationContext().getAssets();
         this.configAsset = configAsset;
+        this.modelPin = NativeVideoAssets.modelPin(configAsset);
         workerTask = WORKER.submit(this::run);
     }
 
@@ -300,7 +306,10 @@ public final class NativeVideoReplay implements MotionSource {
         put(metrics, "acknowledgedEvents", stats.acknowledgedEvents);
         put(metrics, "fullFileProcessed", completed);
         put(metrics, "singlePoseAssumption", true);
-        put(metrics, "fixedFullFrameLetterbox", true);
+        put(metrics, "fixedFullFrameLetterbox", false);
+        put(metrics, "dynamicPersonCrop", true);
+        put(metrics, "statelessCropRefinement", statelessCrop);
+        put(metrics, "modelInferencesPerFrame", statelessCrop ? 3 : 1);
         put(metrics, "cameraEnabled", false);
         put(output, "metrics", metrics);
         if (failed) put(output, "error", failure);
@@ -312,7 +321,8 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "engine", "litert");
         put(output, "engineVersion", NativeVideoAssets.RUNTIME_VERSION);
         put(output, "platform", "android");
-        put(output, "modelSha256", NativeVideoAssets.MODEL_SHA256);
+        put(output, "modelSha256", modelPin.sha256);
+        put(output, "modelId", modelPin.id);
         put(output, "verified", verified);
         return output;
     }
@@ -339,7 +349,7 @@ public final class NativeVideoReplay implements MotionSource {
             }
             if (Build.VERSION.SDK_INT < 28) throw new IOException("recorded_video_requires_api_28");
             NativeVideoAssets loaded = new NativeVideoAssets(assets, configAsset);
-            model = new NativeMoveNet(loaded.modelBuffer);
+            model = new NativeMoveNet(loaded.modelBuffer, statelessCrop);
             video = new MediaMetadataRetriever();
             try (AssetFileDescriptor file = assets.openFd(loaded.videoAsset)) {
                 if (file.getLength() != loaded.videoBytes) throw new IOException("fixture_fd_size_mismatch");
@@ -353,6 +363,7 @@ public final class NativeVideoReplay implements MotionSource {
                 Log.i(TAG, logBase("init").toString());
                 lock.notifyAll();
             }
+            long inferenceEpoch = Long.MIN_VALUE;
             while (true) {
                 long token;
                 int index;
@@ -372,12 +383,13 @@ public final class NativeVideoReplay implements MotionSource {
                     token = epoch;
                     index = frameIndex;
                 }
+                if (token != inferenceEpoch) { model.resetTracking(); inferenceEpoch = token; }
                 long started = SystemClock.elapsedRealtimeNanos();
                 Bitmap bitmap = video.getFrameAtIndex(index);
                 if (bitmap == null) throw new IOException("video_decode_returned_no_frame");
                 long decoded = SystemClock.elapsedRealtimeNanos();
                 NativeMoveNet.Result result;
-                try { result = model.infer(bitmap); }
+                try { result = model.infer(bitmap, index < 3 || index % 30 == 0 || index + 1 == loaded.frames); }
                 finally { bitmap.recycle(); }
                 long finished = SystemClock.elapsedRealtimeNanos();
                 synchronized (lock) {
@@ -392,6 +404,20 @@ public final class NativeVideoReplay implements MotionSource {
                     stats.record(decodeMs, result, totalMs);
                     PoseGestureMachine.Event recognized = machine.update(result.observation, index * 1000.0 / loaded.fps);
                     stats.pose.observe(result, index * 1000.0 / loaded.fps, machine);
+                    JSONObject poseFrame = new JSONObject();
+                    put(poseFrame, "kind", "pose-frame"); put(poseFrame, "configAsset", configAsset);
+                    put(poseFrame, "frameIndex", index); put(poseFrame, "fileMs", index * 1000.0 / loaded.fps);
+                    put(poseFrame, "confidence", result.observation.confidence);
+                    PoseGestureMachine.Point[] framePoints = {result.observation.leftShoulder, result.observation.rightShoulder,
+                            result.observation.leftWrist, result.observation.rightWrist};
+                    String[] frameNames = {"ls", "rs", "lw", "rw"};
+                    for (int joint = 0; joint < 4; joint++) {
+                        put(poseFrame, frameNames[joint] + "X", framePoints[joint].x);
+                        put(poseFrame, frameNames[joint] + "Y", framePoints[joint].y);
+                        put(poseFrame, frameNames[joint] + "Score", framePoints[joint].confidence);
+                    }
+                    put(poseFrame, "status", machine.status); put(poseFrame, "armed", machine.armed);
+                    Log.i(TAG, poseFrame.toString());
                     if (index < 3 || index % 30 == 0 || index + 1 == loaded.frames) {
                         frameDiagnostic(result, index, index * 1000.0 / loaded.fps);
                     }
@@ -475,7 +501,8 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "source", "video");
         put(output, "engine", "litert");
         put(output, "engineVersion", NativeVideoAssets.RUNTIME_VERSION);
-        put(output, "modelSha256", NativeVideoAssets.MODEL_SHA256);
+        put(output, "modelSha256", modelPin.sha256);
+        put(output, "modelId", modelPin.id);
         put(output, "verified", verified);
         put(output, "configAsset", configAsset);
         put(output, "api", Build.VERSION.SDK_INT);
@@ -484,7 +511,7 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "scalarFrameDiagnostics", true);
         put(output, "capture", "bundled-public-video");
         put(output, "personCount", "unknown-singlepose-model");
-        put(output, "inputTransform", "fullframe-integer-letterbox-bilinear-rgb-uint8-192-no-mirror");
+        put(output, "inputTransform", (statelessCrop ? "official-three-pass-stateless" : "official-android-tracked") + "-crop-square-before-bilinear-rgb-uint8-192-no-mirror");
         put(output, "decodedFrames", stats.decodedFrames);
         put(output, "acceptedFrames", stats.acceptedFrames);
         put(output, "discardedEpochFrames", stats.discardedEpochFrames);
@@ -515,6 +542,13 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "frameMeanMs", stats.mean(stats.total));
         put(output, "frameP95Ms", stats.percentile(stats.total, 0.95));
         put(output, "poseDiagnostics", stats.pose.snapshot());
+        put(output, "referenceParityChecks", stats.parityChecks);
+        put(output, "referenceByteDifferences", stats.parityByteDifferences);
+        put(output, "referenceMaxByteDelta", stats.parityMaxByteDelta);
+        put(output, "referenceOutputMaxDelta", stats.parityOutputMaxDelta);
+        put(output, "referenceMeanMs", stats.parityChecks == 0 ? 0 : stats.referenceTotalMs / stats.parityChecks);
+        put(output, "modelInferencesPerFrame", statelessCrop ? 3 : 1);
+        put(output, "defaultCropFrames", stats.defaultCropFrames);
         put(output, "processPssKiB", Debug.getPss());
         Log.i(TAG, output.toString());
     }
@@ -529,9 +563,14 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "meanR", result.meanR); put(output, "meanG", result.meanG); put(output, "meanB", result.meanB);
         put(output, "nonzeroInputBytes", result.nonzeroInputBytes);
         put(output, "invalidMappedKeypoints", result.invalidMappedKeypoints);
-        put(output, "imageWidth", result.plan.originalWidth); put(output, "imageHeight", result.plan.originalHeight);
-        put(output, "resizedWidth", result.plan.resizedWidth); put(output, "resizedHeight", result.plan.resizedHeight);
-        put(output, "padLeft", result.plan.padLeft); put(output, "padTop", result.plan.padTop);
+        put(output, "imageWidth", result.imageWidth); put(output, "imageHeight", result.imageHeight);
+        put(output, "cropLeft", result.plan.left); put(output, "cropTop", result.plan.top);
+        put(output, "cropRight", result.plan.right); put(output, "cropBottom", result.plan.bottom);
+        put(output, "detectWidth", result.plan.detectWidth); put(output, "detectHeight", result.plan.detectHeight);
+        put(output, "squareSize", result.plan.squareSize); put(output, "defaultCrop", result.defaultCrop);
+        put(output, "referenceParityChecked", result.parityChecked);
+        put(output, "referenceByteDifferences", result.parityByteDifferences);
+        put(output, "referenceOutputMaxDelta", result.parityOutputMaxDelta);
         String[] names = {"leftShoulder", "rightShoulder", "leftWrist", "rightWrist"};
         String[] fields = {"Y", "X", "Score"};
         for (int i = 0; i < names.length; i++) {
@@ -594,12 +633,21 @@ public final class NativeVideoReplay implements MotionSource {
     }
     private static final class RunStats {
         int decodedFrames, acceptedFrames, discardedEpochFrames, acknowledgedEvents;
+        int parityChecks, parityByteDifferences, parityMaxByteDelta, defaultCropFrames;
+        double parityOutputMaxDelta, referenceTotalMs;
         double lastDecodeMs, lastPreprocessMs, lastInferenceMs, lastMinimum;
         final List<Double> decode = new ArrayList<>(), preprocess = new ArrayList<>(), inference = new ArrayList<>(), total = new ArrayList<>();
         final List<String> observed = new ArrayList<>();
         final NativePoseDiagnostics pose = new NativePoseDiagnostics();
         void record(double decodeMs, NativeMoveNet.Result result, double totalMs) {
             acceptedFrames++;
+            if (result.defaultCrop) defaultCropFrames++;
+            if (result.parityChecked) {
+                parityChecks += result.modelCalls; parityByteDifferences += result.parityByteDifferences;
+                parityMaxByteDelta = Math.max(parityMaxByteDelta, result.parityMaxByteDelta);
+                parityOutputMaxDelta = Math.max(parityOutputMaxDelta, result.parityOutputMaxDelta);
+                referenceTotalMs += result.referenceMs;
+            }
             lastDecodeMs = decodeMs; lastPreprocessMs = result.preprocessMs;
             lastInferenceMs = result.inferenceMs; lastMinimum = result.keypointMinimum;
             decode.add(decodeMs); preprocess.add(result.preprocessMs); inference.add(result.inferenceMs); total.add(totalMs);

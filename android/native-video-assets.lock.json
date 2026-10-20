@@ -65,6 +65,57 @@
           "score"
         ]
       }
+    },
+    {
+      "role": "image-reference-api",
+      "filename": "tensorflow-lite-support-api-0.4.4.aar",
+      "target": ".toolchain/native-runtime/tensorflow-lite-support-api-0.4.4.aar",
+      "bytes": 85482,
+      "sha256": "072481f7f3822074996a06afb1d784efd8287319b38e3e48572bb299079298e4",
+      "url": "https://repo.maven.apache.org/maven2/org/tensorflow/tensorflow-lite-support-api/0.4.4/tensorflow-lite-support-api-0.4.4.aar",
+      "license": "Apache-2.0",
+      "purpose": "Debug official image preprocessing reference only; selected bitmap/tensor path uses existing LiteRT API. No legacy Lite API or unused ODML adapter dependency."
+    },
+    {
+      "role": "candidate-model",
+      "modelId": "float16",
+      "filename": "movenet-singlepose-lightning-float16-v4.tflite",
+      "target": ".toolchain/native-runtime/movenet-singlepose-lightning-float16-v4.tflite",
+      "bytes": 4758512,
+      "sha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+      "url": "https://tfhub.dev/google/lite-model/movenet/singlepose/lightning/tflite/float16/4?lite-format=tflite",
+      "license": "Apache-2.0",
+      "licenseSource": "https://storage.googleapis.com/movenet/MoveNet.SinglePose%20Model%20Card.pdf",
+      "asset": "verification/movenet-lightning-float16.tflite",
+      "input": {
+        "type": "UINT8",
+        "shape": [
+          1,
+          192,
+          192,
+          3
+        ],
+        "color": "RGB",
+        "values": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "type": "FLOAT32",
+        "shape": [
+          1,
+          1,
+          17,
+          3
+        ],
+        "order": [
+          "y",
+          "x",
+          "score"
+        ]
+      },
+      "purpose": "Explicit diagnostic candidate only; INT8 remains default and all fixture expectations/gates stay unchanged."
     }
   ],
   "fixtures": [

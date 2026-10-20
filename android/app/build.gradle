@@ -14,13 +14,14 @@ android {
 dependencies {
  debugImplementation files(rootProject.file('../.toolchain/native-runtime/litert-1.4.2.aar'))
  debugImplementation files(rootProject.file('../.toolchain/native-runtime/litert-api-1.4.2.aar'))
+ debugImplementation files(rootProject.file('../.toolchain/native-runtime/tensorflow-lite-support-api-0.4.4.aar'))
 }
 
 // Do not silently substitute another local AAR while claiming the pinned runtime.
 def nativeVideoDependencies = tasks.register('verifyNativeVideoDependencies') {
  doLast {
   def lock = new groovy.json.JsonSlurper().parse(rootProject.file('native-video-assets.lock.json'))
-  lock.artifacts.findAll { it.role in ['core', 'api'] }.each { pin ->
+  lock.artifacts.findAll { it.role in ['core', 'api', 'image-reference-api'] }.each { pin ->
    def artifact = rootProject.file('../' + pin.target)
    if (!artifact.isFile() || artifact.length() != pin.bytes ||
        java.security.MessageDigest.getInstance('SHA-256').digest(artifact.bytes).encodeHex().toString() != pin.sha256)

@@ -19,7 +19,7 @@ import urllib.request
 sys.dont_write_bytecode = True
 PROJECT = Path(__file__).resolve().parent.parent
 OFFICIAL_HOSTS = frozenset(('dl.google.com', 'tfhub.dev', 'www.kaggle.com',
-                            'kaggle.com', 'storage.googleapis.com'))
+                            'kaggle.com', 'storage.googleapis.com', 'repo.maven.apache.org'))
 
 
 def sha256(path):
@@ -53,8 +53,16 @@ def encoded(value):
     return (json.dumps(value, indent=2, ensure_ascii=False) + '\n').encode('utf-8')
 
 
-def expected_config(lock, fixture):
-    model = next(item for item in lock['artifacts'] if item['role'] == 'model')
+def model_artifacts(lock):
+    return [item for item in lock['artifacts'] if item['role'] in ('model', 'candidate-model')]
+
+
+def model_config_name(fixture, model):
+    return fixture['config'] if model['role'] == 'model' else fixture['config'][:-5] + '.float16.json'
+
+
+def expected_config(lock, fixture, model=None):
+    model = model or next(item for item in lock['artifacts'] if item['role'] == 'model')
     return {'schemaVersion': 1, 'runtimeVersion': lock['runtimeVersion'],
             'model': {'asset': model['asset'], 'bytes': model['bytes'],
                       'sha256': model['sha256']},
@@ -80,6 +88,17 @@ def validate_lock(lock):
                 raise ValueError('Partial natural clips must remain observed-only')
         elif not row['expectationKnown']:
             raise ValueError('Known frozen controls must retain their expectations')
+    models = model_artifacts(lock)
+    expected_models = {
+        'model': (2894840, 'cd7cc22fa946e5d146a7b98d496853e1923e22828d3972d579973f27f91bb105', 'verification/movenet-lightning-int8.tflite'),
+        'candidate-model': (4758512, '0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab', 'verification/movenet-lightning-float16.tflite')}
+    if len(models) != 2 or {row['role'] for row in models} != set(expected_models):
+        raise ValueError('Expected pinned INT8 baseline and one FP16 candidate')
+    for row in models:
+        if (row['bytes'], row['sha256'], row['asset']) != expected_models[row['role']]:
+            raise ValueError('Native model role/pin mismatch')
+        if row['role'] == 'candidate-model' and row.get('modelId') != 'float16':
+            raise ValueError('Unknown native candidate model')
     for row in [*lock['artifacts'], *lock['fixtures']]:
         if type(row['bytes']) is not int or row['bytes'] <= 0:
             raise ValueError('Invalid pinned byte count')
@@ -176,7 +195,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--project-root', type=Path, default=PROJECT)
     parser.add_argument('--artifact-dir', type=Path,
-                        help='Explicit directory containing the three pinned artifact filenames')
+                        help='Explicit directory containing the pinned artifact filenames')
     parser.add_argument('--download', action='store_true',
                         help='Explicitly allow only missing pinned runtime/model downloads from official URLs')
     parser.add_argument('--check', action='store_true',
@@ -207,10 +226,11 @@ def main():
     outputs = []
     for pin, source in sources:
         outputs.append((inside(asset_root, pin['asset']), pin, source))
-    model = next(pin for pin in lock['artifacts'] if pin['role'] == 'model')
-    outputs.append((inside(asset_root, model['asset']), model, None))
-    configs = [(inside(asset_root, row['config']), encoded(expected_config(lock, row)))
-               for row in lock['fixtures']]
+    models = model_artifacts(lock)
+    for model in models:
+        outputs.append((inside(asset_root, model['asset']), model, inside(root, model['target'])))
+    configs = [(inside(asset_root, model_config_name(row, model)), encoded(expected_config(lock, row, model)))
+               for row in lock['fixtures'] for model in models]
     for target, pin, source in outputs:
         if args.check:
             verify(target, pin)
@@ -229,14 +249,13 @@ def main():
                 download(pin, target)
             else:
                 copy_verified(source, target, pin)
-        model_source = inside(root, model['target'])
         for target, pin, source in outputs:
-            copy_verified(source or model_source, target, pin)
+            copy_verified(source, target, pin)
         for target, contents in configs:
             write_config(target, contents)
     print(json.dumps({'status': 'checked' if args.check else 'prepared',
                       'runtimeVersion': lock['runtimeVersion'], 'artifacts': len(artifacts),
-                      'fixtureAssets': len(sources), 'modelAssets': 1, 'configs': len(configs),
+                      'fixtureAssets': len(sources), 'modelAssets': len(models), 'configs': len(configs),
                       'networkOptIn': args.download, 'cameraUsed': False, 'inferenceRun': False,
                       'naturalClipsObservedOnly': True}))
 

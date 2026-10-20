@@ -9,6 +9,12 @@ final class NativeVideoFactory {
   if(name==null)name="clear";
   java.util.Set<String> allowed=new java.util.HashSet<>(java.util.Arrays.asList("clear","frontal","nearface","right-negative","both-up-negative","natural-original","natural-mirror"));
   if(!allowed.contains(name))throw new IllegalArgumentException("Unknown native verification fixture");
-  return new NativeVideoReplay(context,"verification/"+name+".json");
+  String model=intent.getStringExtra("nativeModel");
+  if(model==null)model="int8";
+  if(!model.equals("int8")&&!model.equals("float16"))throw new IllegalArgumentException("Unknown native verification model");
+  String refinement=intent.getStringExtra("nativeRefinement");
+  if(refinement==null)refinement="image";
+  if(!refinement.equals("image")&&!refinement.equals("tracked"))throw new IllegalArgumentException("Unknown native refinement profile");
+  return new NativeVideoReplay(context,"verification/"+name+(model.equals("float16")?".float16":"")+".json",refinement.equals("image"));
  }
 }
