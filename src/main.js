@@ -7,6 +7,7 @@ import {sunshineMarkup,updateSunshine,updateCameraPreview} from './motion-view.j
 const root=document.querySelector('#app');
 let saved;
 try{saved=JSON.parse(localStorage.getItem('togethermove.v1'));}catch{}
+const nativeVideoCheck=new URLSearchParams(location.search).get('input')==='video-verification';
 let progress=normalizeProgress(saved),screen='home',mode='seated',selected=0;
 let elapsed=0,paused=false,last=0,frame=0,storageFailed=false,returnScreen='home';
 let inputMode='manual',roundId=crypto.randomUUID(),revision=0;
@@ -55,13 +56,13 @@ function syncPreview(){
 function save(){try{localStorage.setItem('togethermove.v1',JSON.stringify(progress));}catch{storageFailed=true;}}
 const button=(label,action,cls='',extra='')=>`<button class="${cls}" data-action="${action}" ${extra}>${label}</button>`;
 function shell(content){
-  root.innerHTML=`<div class="app ${screen}${cameraMode()?' camera-mode':''}"><header><div class="brand" aria-label="Sway &amp; Sprout">Sway <span>&amp; Sprout</span><i aria-hidden="true">✦</i></div><nav>${button('Garden','home',screen==='home'?'active':'')}${button('How to play','help')}</nav></header><main>${content}</main><footer><span><kbd>↔ ↕</kbd> Navigate</span><span><kbd>OK</kbd> Select</span><span><kbd>↶</kbd> Back</span><span><kbd>II</kbd> Pause</span><span class="privacy">Optional camera. Local on this Mac.</span></footer></div>`;
+  root.innerHTML=`<div class="app ${screen}${cameraMode()?' camera-mode':''}"><header><div class="brand" aria-label="Sway &amp; Sprout">Sway <span>&amp; Sprout</span><i aria-hidden="true">✦</i></div><nav>${button('Garden','home',screen==='home'?'active':'')}${button('How to play','help')}</nav></header><main>${content}</main><footer><span><kbd>↔ ↕</kbd> Navigate</span><span><kbd>OK</kbd> Select</span><span><kbd>↶</kbd> Back</span><span><kbd>II</kbd> Pause</span><span class="privacy">${nativeVideoCheck?'Video verification · no camera.':'Optional camera. Processed locally.'}</span></footer></div>`;
   root.querySelectorAll('button').forEach(b=>b.onclick=()=>act(b.dataset.action));
   (root.querySelector('[autofocus]')||root.querySelector('main button'))?.focus();
 }
 function inputChoices(){
   if(challenges[selected].id!=='sun')return '';
-  return `<fieldset class="input-choices"><legend>HOW WOULD YOU LIKE TO PLAY?</legend><div class="input-options">${button('<b>Manual play</b><small>Follow along, then confirm</small>','input:manual',inputMode==='manual'?'selected':'',`aria-pressed="${inputMode==='manual'}"`)}${button('<b>Camera sunshine</b><small>One player · OpenCV 5 on this Mac</small>','input:camera',inputMode==='camera'?'selected':'',`aria-pressed="${inputMode==='camera'}"`)}</div><p class="camera-setup-note">${inputMode==='camera'?'Camera is off. One person only: face the camera with both shoulders and wrists visible. Rest both arms below your shoulders, with hands clear of your face. After Start, wait for Ready, then follow the cue. Frames stay on this Mac; nothing is recorded.':'Manual play uses your own confirmation. No camera is needed.'}</p></fieldset>`;
+  return `<fieldset class="input-choices"><legend>HOW WOULD YOU LIKE TO PLAY?</legend><div class="input-options">${button('<b>Manual play</b><small>Follow along, then confirm</small>','input:manual',inputMode==='manual'?'selected':'',`aria-pressed="${inputMode==='manual'}"`)}${button(nativeVideoCheck?'<b>Video replay</b><small>Bundled test · no camera</small>':'<b>Camera sunshine</b><small>One player · local processing</small>','input:camera',inputMode==='camera'?'selected':'',`aria-pressed="${inputMode==='camera'}"`)}</div><p class="camera-setup-note">${nativeVideoCheck?'This diagnostic replays a bundled public video. It does not open a camera or change your saved garden.':inputMode==='camera'?'Camera is off. One person only: face the camera with both shoulders and wrists visible. Rest both arms below your shoulders, with hands clear of your face. After Start, wait for Ready, then follow the cue. Frames stay on this device; nothing is recorded.':'Manual play uses your own confirmation. No camera is needed.'}</p></fieldset>`;
 }
 function render(){
   // Remove the current image and invalidate requests before replacing the DOM.

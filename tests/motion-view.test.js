@@ -87,3 +87,13 @@ test('completion gives a breather even with a stale armed packet',()=>{
     packet:packet({metrics:{armed:true}})});
   assert.match(cue,/caught the sunshine.*breather/i);assert.doesNotMatch(cue,/raise your|hold your/i);
 });
+
+
+test('a claimed verified runtime with invalid identity cannot authorize an armed cue',()=>{
+  const litert={engine:'litert',engineVersion:'1.2.0',platform:'android',
+    modelSha256:'a'.repeat(64),verified:true};
+  for(const runtime of [{verified:true}, {...litert,modelSha256:undefined},
+    {...litert,opencv:'5.0.0'}, {...litert,engine:'unknown'}]){
+    assertRest(renderCue({packet:packet({runtime,metrics:{armed:true}})}));
+  }
+});

@@ -1,6 +1,7 @@
 // This event client handles semantic motion only. The optional local preview
 // uses its own bounded route and never contributes events or scoring.
 import {sanitizeCalibration} from './calibration.js';
+import {validMotionRuntime} from './runtime.js';
 
 const MAX_EVENT_AGE_MS = 1500;
 const MAX_PACKET_BYTES = 32 * 1024;
@@ -74,9 +75,7 @@ export function sameContext(first, current) {
 function validatePacket(packet, context) {
   const runtime = packet?.runtime;
   const metrics = packet?.metrics ?? {};
-  if (!object(packet) || packet.protocol !== 1 || !object(runtime) ||
-      typeof runtime.opencv !== 'string' || runtime.opencv.length > 80 ||
-      typeof runtime.verified !== 'boolean' || (runtime.verified && !/^5\./.test(runtime.opencv)) ||
+  if (!object(packet) || packet.protocol !== 1 || !validMotionRuntime(runtime) ||
       !['synthetic', 'camera', 'video'].includes(packet.source) ||
       (runtime.source !== undefined && runtime.source !== packet.source) ||
       packet.clientId !== context.clientId || packet.roundId !== context.roundId ||

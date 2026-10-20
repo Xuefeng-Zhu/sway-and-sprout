@@ -85,10 +85,10 @@ test('video and synthetic completion return unchanged progress; camera and manua
 
 // Execute the real main module offline with in-memory DOM and clients. No UI,
 // network, media API or timers run; the test hooks exist only in this VM string.
-function appHarness(){
+function appHarness(search=''){
   let callbacks,id=0;const writes=[];const nodes={};
   const root={innerHTML:'',querySelectorAll:()=>[],querySelector:()=>({focus(){}})};
-  const sandbox={...model,createMotionState,acceptMotionEvent,
+  const sandbox={...model,createMotionState,acceptMotionEvent,URLSearchParams,location:{search},
     createMotionClient:options=>{callbacks=options;return {start(){},stop(){}};},
     createPreviewClient:()=>({start(){},stop(){}}),sunshineMarkup:()=>'',updateSunshine(){},updateCameraPreview(){},
     document:{querySelector:selector=>selector==='#app'?root:nodes[selector]||= {textContent:'',style:{},classList:{toggle(){}}},
@@ -97,11 +97,11 @@ function appHarness(){
     crypto:{randomUUID:()=>`id-${++id}`},performance:{now:()=>0},requestAnimationFrame:()=>1,cancelAnimationFrame(){},
   };
   const main=readFileSync(new URL('../src/main.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
-  const hooks=`\nglobalThis.hooks={act,finish,read:()=>({progress,screen,roundId,revision}),check:()=>{screen='check';render();},advanceToEnd:()=>{elapsed=challenges[selected].duration;tick(0);}};`;
+  const hooks=`\nglobalThis.hooks={act,finish,read:()=>({progress,screen,roundId,revision,motion}),check:()=>{screen='check';render();},advanceToEnd:()=>{elapsed=challenges[selected].duration;tick(0);}};`;
   vm.runInNewContext(main+hooks,sandbox);
   const api=sandbox.hooks;
   api.act('choose:1');api.act('input:camera');api.act('start');
-  return {api,writes,root,send(source,six=true){
+  return {api,writes,root,motionOptions:callbacks,send(source,six=true){
     const current=api.read();
     callbacks.onPacket({...packet(source),roundId:current.roundId,revision:current.revision,
       seq:six?6:0,events:six?Array.from({length:6},(_,index)=>({seq:index+1,roundId:current.roundId,
@@ -146,4 +146,68 @@ test('real replay check confirmation cannot persist self-reported human progress
   assert.doesNotMatch(app.root.innerHTML,/Manual: we joined in/);
   app.api.act('complete');assert.equal(app.writes.length,0);
   assert.deepEqual([...app.api.read().progress.completed],['wake']);
+});
+
+
+test('actual LiteRT video client, reducer and finish path preserve six acknowledgments and saved progress',async()=>{
+  const app=appHarness(),requests=[];
+  const identity={engine:'litert',engineVersion:'1.2.0',platform:'android',
+    modelSha256:'a'.repeat(64),verified:true,source:'video'};
+  const client=createMotionClient({...app.motionOptions,fetchImpl:async url=>{
+    const query=new URL(url,'http://local.test').searchParams;
+    requests.push(Object.fromEntries(query));
+    const current=app.motionOptions.getContext(),next=current.after+1;
+    return response({...packet(),...current,runtime:identity,
+      seq:current.active?next:current.after,
+      expected:next%2?'left':'right',events:current.active?[{seq:next,roundId:current.roundId,
+        gesture:next%2?'left-raise':'right-raise',confidence:.9,ageMs:0}]:[]});
+  }});
+  try{
+    const initial=app.api.read();
+    for(let seq=1;seq<=6;seq++){
+      const result=await client.pollOnce();
+      assert.equal(result?.runtime.engine,'litert');
+      assert.equal(result.source,'video');
+      assert.equal(Object.hasOwn(result.runtime,'opencv'),false);
+      assert.equal(app.api.read().motion.count,seq);
+      assert.equal(app.api.read().motion.lastSeq,seq);
+    }
+    const complete=app.api.read();
+    assert.equal(complete.motion.completed,true);
+    assert.equal(complete.revision,initial.revision+1);
+    assert.equal(await client.pollOnce()!==null,true);
+    assert.deepEqual(requests.map(query=>Number(query.after)),[0,1,2,3,4,5,6]);
+    assert.deepEqual(requests.map(query=>query.active),['1','1','1','1','1','1','0']);
+    assert.equal(requests.at(-1).roundId,initial.roundId);
+    assert.equal(Number(requests.at(-1).revision),complete.revision);
+    assert.equal(app.api.read().motion.count,6);
+    app.api.advanceToEnd();
+    assert.equal(app.api.read().screen,'celebrate');
+    assert.equal(app.writes.length,0);
+    assert.deepEqual([...app.api.read().progress.completed],['wake']);
+    assert.equal(app.api.read().progress.sessions,3);
+    assert.match(app.root.innerHTML,/VIDEO REPLAY · NO CAMERA/);
+    assert.match(app.root.innerHTML,/does not verify live human camera recognition/);
+  }finally{client.stop();}
+});
+
+test('unverified LiteRT video status uses runtime-neutral diagnostics while retaining the replay label',()=>withView(nodes=>{
+  const value={...packet(),runtime:{engine:'litert',engineVersion:'1.2.0',platform:'android',
+    modelSha256:'a'.repeat(64),verified:false}};
+  updateSunshine({motion:createMotionState('round-1'),packet:value,paused:false,revision:1});
+  assert.equal(nodes['#camera-source'].textContent,'VIDEO REPLAY · NO CAMERA');
+  assert.equal(nodes['#motion-status'].textContent,'Local inference runtime is not verified. Video replay progress is unavailable.');
+  assert.doesNotMatch(nodes['#camera-cue'].textContent,/raise your|hold your/i);
+  updateSunshine({motion:createMotionState('round-1'),packet:{...value,runtime:{opencv:'unavailable',verified:false}},paused:false,revision:1});
+  assert.equal(nodes['#motion-status'].textContent,'OpenCV 5 runtime is not verified. Video replay progress is unavailable.');
+}));
+
+test('native verification entry identifies recorded input before any packet without opening capture',()=>{
+  const app=appHarness('?input=video-verification');
+  app.api.act('home');app.api.act('choose:1');
+  assert.match(app.root.innerHTML,/Video replay/);
+  assert.match(app.root.innerHTML,/Bundled test · no camera/);
+  assert.match(app.root.innerHTML,/does not open a camera/);
+  assert.doesNotMatch(app.root.innerHTML,/OpenCV 5 on this Mac/);
+  assert.equal(app.writes.length,0);
 });

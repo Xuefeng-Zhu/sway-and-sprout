@@ -1,4 +1,5 @@
 import {calibrationFeedback} from './calibration.js';
+import {validMotionRuntime} from './runtime.js';
 
 const messages = {
   waiting:'Connecting to your local camera…',
@@ -129,7 +130,7 @@ export function updateCameraPreview({preview,reason='off',expected='left',source
 }
 
 function currentPacket(motion,packet,revision){
-  return packet?.runtime?.verified===true&&packet.active===true&&
+  return packet?.runtime?.verified===true&&validMotionRuntime(packet.runtime)&&packet.active===true&&
     (!motion.roundId||packet.roundId===motion.roundId)&&
     (revision===undefined||packet.revision===revision);
 }
@@ -184,7 +185,10 @@ export function updateSunshine({motion,packet,paused,disconnected=false,notice='
   garden.dataset.motionSource=packet?.source||'waiting';
   let status=paused?'Camera input paused. Rest whenever you like.':motion.completed?'Six rays! Enjoy your garden until the timer ends.':messages[disconnected?'disconnected':packet?.status]||messages.waiting;
   if(video)status=motion.completed?'Six simulated rays from this video. Garden progress is unchanged.':videoMessages[paused?'paused':disconnected?'disconnected':packet?.status]||videoMessages.waiting;
-  if(packet?.runtime?.verified===false)status=video?'OpenCV 5 runtime is not verified. Video replay progress is unavailable.':'OpenCV 5 runtime is not verified. Camera progress is unavailable; use manual play.';
+  if(packet?.runtime?.verified===false){
+    const runtimeLabel=packet.runtime.engine==='litert'?'Local inference runtime':'OpenCV 5 runtime';
+    status=video?`${runtimeLabel} is not verified. Video replay progress is unavailable.`:`${runtimeLabel} is not verified. Camera progress is unavailable; use manual play.`;
+  }
   const feedback=!paused&&!disconnected&&!motion.completed?packetFeedback(motion,packet,revision):null;
   if(feedback)status=`${video?'Video replay calibration':'Calibration'}: ${feedback.label}. ${feedback.detail}`;
   if(synthetic)status=`Synthetic input — ${status}`;
