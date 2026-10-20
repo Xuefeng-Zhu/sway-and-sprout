@@ -1,0 +1,19 @@
+Local diagnostic clips only. Not a live-person camera test.
+
+Artem Podrez: A woman dancing at home, Pexels asset6003772.
+https://www.pexels.com/video/a-woman-dancing-at-home-6003772/
+Pexels License: https://www.pexels.com/license/
+Clear/frontal/near-face fixtures cut and repeat selected frames, resize and reflect apparent left-arm poses. The continuous reflected control is also transformed. No natural alternating-six claim.
+
+Capt. Matthew Holfinger / U.S. Marine Corps Training and Education Command:
+Dumbbell Snatch, DVIDS551039. PUBLIC DOMAIN as marked on asset page.
+https://www.dvidshub.net/video/551039/dumbbell-snatch
+Selected source frames1079..1528, no reflection or retiming.
+The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.
+
+Taco Fleur: Kettlebell Suitcase Row and Press.
+https://commons.wikimedia.org/w/index.php?title=File:Kettlebell_Suitcase_Row_and_Press.webm&oldid=1004642243
+CC BY-SA4.0: https://creativecommons.org/licenses/by-sa/4.0/
+Both-up derivative selects source frames720..855 and re-encodes to MP4 at original cadence, without reflection, resizing, retiming or splicing. This derivative is available under CC BY-SA4.0. Source attribution and modification notes retained.
+
+Exact media hashes and derivation records are in the repository fixture manifests. This diagnostic APK and its clips remain local; no distribution or upload has occurred.

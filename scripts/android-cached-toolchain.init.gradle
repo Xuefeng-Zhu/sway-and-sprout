@@ -1,0 +1,14 @@
+// Local, explicit build override: preserve the exported AGP 8.7.3 / wrapper 8.9 files.
+// Only already-installed Gradle 8.13, AGP 8.13.2, JDK 17 and SDK 35 are used.
+settingsEvaluated { settings ->
+ settings.pluginManagement.resolutionStrategy.eachPlugin {
+  if (requested.id.id == 'com.android.application') useVersion('8.13.2')
+ }
+}
+allprojects { project ->
+ project.plugins.withId('com.android.application') {
+  def existingDebugKey = System.getenv('TOGETHERMOVE_DEBUG_KEYSTORE')
+  if (!existingDebugKey || !new File(existingDebugKey).isFile()) throw new GradleException('Set TOGETHERMOVE_DEBUG_KEYSTORE to an existing local debug keystore; this script does not create one.')
+  project.android.signingConfigs.debug.storeFile = new File(existingDebugKey)
+ }
+}

@@ -34,3 +34,6 @@ artifacts/
 *.jks
 *.keystore
 *.log
+
+# Licensed models/videos in the debug-only native verification APK are restored locally.
+android/app/src/debug/assets/verification/

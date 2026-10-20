@@ -13,6 +13,16 @@ traces. Inspect all local checkpoints with
 `git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
 been requested. The dated TogetherMove source remains an untouched backup.
 
+## Current native Android milestone — 2026-10-20
+
+[Native verification](NATIVE-VIDEO-VERIFICATION.md) now provides a pinned LiteRT1.4.2 / MoveNet Lightning UINT8 debug path that decodes public videos and performs inference, gesture timing and event delivery inside the Android app process, with the Mac sidecar off. Debug and release APKs build offline; the debug APK contains real ARMv7 ELF32 libraries, while the exercised guest is Android TV API34 ARM64. The release remains free of ML/media and network/camera permission. Existing identifiers, default OpenCV and optional Mac Full behavior are preserved.
+
+The user has no physical Fire TV. Fire OS7/API28/armeabi-v7a is a provisional reference, not a verified device. Seven actual emulator replays completed1,680 frames, with source labels and unchanged participation. All3 positive controls failed0/6; all1,680 frames failed the unchanged four-joint confidence gate. Input/output fingerprints vary, so this is not fixed/black input or stale output; exact official preprocessing/crop parity remains unverified. Negative0 counts are weak because none calibrated under confidence. Do not promote this candidate or call it Fire TV ready.
+
+Fresh checks:65 JavaScript tests/build,381 host Java assertions,8 asset preparation checks,2 fake-ADB guard checks and5 real emulator lifecycle checks. Pause/resume and native cleanup work. The portable runner correctly returns exit1 for a positive recognition failure. Emulator, isolated ADB and all inference services are stopped; no physical camera, push, production deployment or upload occurred. There is no permission blocker. Vega/capture and sustained hardware acceptance are unresolved; do not ask again for a model screenshot when no hardware exists.
+
+[The controlled model comparison](MODEL-CANDIDATE-COMPARISON.md), committed at2b34976, rejects Heavy and RTMPose as replacements: Heavy's accepted overhead run stays233.567ms<350ms at~3× Full inference cost; RTMPose overhead geometry improves but loses Full's near-face6/6 control to0. Retain Full as the optional Mac diagnostic baseline. Next useful recognition work is exact official preprocessing/crop/loss-recovery diagnosis and independently annotated natural positives, preserving all frozen controls and thresholds. The native scalar record distinguishes actual model failure, generated event/scoring tests and hardware limitations.
+
 ## Current optional-model milestone
 
 Local commit `8afc8db` integrates the official Google Full IMAGE backend for explicit local videos.

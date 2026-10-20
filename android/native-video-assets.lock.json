@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "runtimeVersion": "1.4.2",
+  "debugAssetsDirectory": "android/app/src/debug/assets",
+  "purpose": "Local opt-in native video diagnostics; no camera or physical Fire TV acceptance claim. Media stays ignored and is not published.",
+  "artifactDownloadExplicitOnly": true,
+  "fixtureDownloadEnabled": false,
+  "expectationsSource": "docs/verification/full-image-20261020.json (known-five expected sequence, natural-two observed-only)",
+  "artifacts": [
+    {
+      "role": "core",
+      "filename": "litert-1.4.2.aar",
+      "target": ".toolchain/native-runtime/litert-1.4.2.aar",
+      "bytes": 8305790,
+      "sha256": "9b02cdf9db0a698b341b59e75c54ab8221d6304577cc43830d01024caf1fca74",
+      "url": "https://dl.google.com/dl/android/maven2/com/google/ai/edge/litert/litert/1.4.2/litert-1.4.2.aar",
+      "license": "Apache-2.0",
+      "licenseSource": "https://dl.google.com/dl/android/maven2/com/google/ai/edge/litert/litert/1.4.2/litert-1.4.2.pom"
+    },
+    {
+      "role": "api",
+      "filename": "litert-api-1.4.2.aar",
+      "target": ".toolchain/native-runtime/litert-api-1.4.2.aar",
+      "bytes": 23589,
+      "sha256": "66c2ba8086bd5cbf89bec2bd81c3de6c1a852312829cd55bc30c9dd26ffa357c",
+      "url": "https://dl.google.com/dl/android/maven2/com/google/ai/edge/litert/litert-api/1.4.2/litert-api-1.4.2.aar",
+      "license": "Apache-2.0",
+      "licenseSource": "https://dl.google.com/dl/android/maven2/com/google/ai/edge/litert/litert-api/1.4.2/litert-api-1.4.2.pom"
+    },
+    {
+      "role": "model",
+      "filename": "movenet-singlepose-lightning-int8-v4.tflite",
+      "target": ".toolchain/native-runtime/movenet-singlepose-lightning-int8-v4.tflite",
+      "bytes": 2894840,
+      "sha256": "cd7cc22fa946e5d146a7b98d496853e1923e22828d3972d579973f27f91bb105",
+      "url": "https://tfhub.dev/google/lite-model/movenet/singlepose/lightning/tflite/int8/4?lite-format=tflite",
+      "license": "Apache-2.0",
+      "licenseSource": "https://storage.googleapis.com/movenet/MoveNet.SinglePose%20Model%20Card.pdf",
+      "asset": "verification/movenet-lightning-int8.tflite",
+      "input": {
+        "type": "UINT8",
+        "shape": [
+          1,
+          192,
+          192,
+          3
+        ],
+        "color": "RGB",
+        "values": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "type": "FLOAT32",
+        "shape": [
+          1,
+          1,
+          17,
+          3
+        ],
+        "order": [
+          "y",
+          "x",
+          "score"
+        ]
+      }
+    }
+  ],
+  "fixtures": [
+    {
+      "case": "clear",
+      "source": "sidecar/fixtures/clear-public-arm-fixture.mp4",
+      "asset": "verification/clear.mp4",
+      "config": "verification/clear.json",
+      "bytes": 565252,
+      "sha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+      "fps": 10.0,
+      "frames": 152,
+      "expectedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "expectationKnown": true,
+      "evidenceType": "constructed-held-cut-reflected",
+      "license": "Pexels License",
+      "sourcePage": "https://www.pexels.com/video/a-woman-dancing-at-home-6003772/",
+      "licenseSource": "https://www.pexels.com/license/",
+      "creator": "Artem Podrez",
+      "mediaDownloadEnabled": false
+    },
+    {
+      "case": "frontal",
+      "source": "sidecar/fixtures/frontal/bounded-frontal/frontal-held-source035.mp4",
+      "asset": "verification/frontal.mp4",
+      "config": "verification/frontal.json",
+      "bytes": 587125,
+      "sha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+      "fps": 10.0,
+      "frames": 152,
+      "expectedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "expectationKnown": true,
+      "evidenceType": "constructed-held-cut-reflected",
+      "license": "Pexels License",
+      "sourcePage": "https://www.pexels.com/video/a-woman-dancing-at-home-6003772/",
+      "licenseSource": "https://www.pexels.com/license/",
+      "creator": "Artem Podrez",
+      "mediaDownloadEnabled": false
+    },
+    {
+      "case": "nearface",
+      "source": "sidecar/fixtures/held-public-arm-fixture.mp4",
+      "asset": "verification/nearface.mp4",
+      "config": "verification/nearface.json",
+      "bytes": 569169,
+      "sha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+      "fps": 10.0,
+      "frames": 152,
+      "expectedGestures": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "expectationKnown": true,
+      "evidenceType": "constructed-held-cut-reflected",
+      "license": "Pexels License",
+      "sourcePage": "https://www.pexels.com/video/a-woman-dancing-at-home-6003772/",
+      "licenseSource": "https://www.pexels.com/license/",
+      "creator": "Artem Podrez",
+      "mediaDownloadEnabled": false
+    },
+    {
+      "case": "right-negative",
+      "source": "sidecar/fixtures/.cache/natural-controls/dvids-551039-right-negative-36s-51s.mp4",
+      "asset": "verification/right-negative.mp4",
+      "config": "verification/right-negative.json",
+      "bytes": 1623169,
+      "sha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+      "fps": 29.97002997002997,
+      "frames": 450,
+      "expectedGestures": [],
+      "expectationKnown": true,
+      "evidenceType": "continuous-video-negative-control",
+      "license": "Public domain (DVIDS asset marked)",
+      "sourcePage": "https://www.dvidshub.net/video/551039/dumbbell-snatch",
+      "licenseSource": "https://www.dvidshub.net/about/copyright",
+      "creator": "Capt. Matthew Holfinger / U.S. Marine Corps",
+      "mediaDownloadEnabled": false,
+      "requiredDisclaimer": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement."
+    },
+    {
+      "case": "both-up-negative",
+      "source": "sidecar/fixtures/.cache/natural-controls/suitcase-both-up-negative.mp4",
+      "asset": "verification/both-up-negative.mp4",
+      "config": "verification/both-up-negative.json",
+      "bytes": 332963,
+      "sha256": "e5d5cecc1d981e6589432add534a6a09fbd4ee692864a3f0ec4603ef5864ef80",
+      "fps": 30.0,
+      "frames": 136,
+      "expectedGestures": [],
+      "expectationKnown": true,
+      "evidenceType": "continuous-video-negative-control",
+      "license": "CC BY-SA 4.0",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Kettlebell_Suitcase_Row_and_Press.webm",
+      "licenseSource": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "creator": "Taco Fleur",
+      "mediaDownloadEnabled": false
+    },
+    {
+      "case": "natural-original",
+      "source": "sidecar/fixtures/frontal/bounded-frontal/continuous-source-original640.mp4",
+      "asset": "verification/natural-original.mp4",
+      "config": "verification/natural-original.json",
+      "bytes": 952724,
+      "sha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+      "fps": 30.0,
+      "frames": 319,
+      "expectedGestures": [],
+      "expectationKnown": false,
+      "evidenceType": "continuous-video-partially-annotated-observed-only",
+      "license": "Pexels License",
+      "sourcePage": "https://www.pexels.com/video/a-woman-dancing-at-home-6003772/",
+      "licenseSource": "https://www.pexels.com/license/",
+      "creator": "Artem Podrez",
+      "mediaDownloadEnabled": false
+    },
+    {
+      "case": "natural-mirror",
+      "source": "sidecar/fixtures/frontal/bounded-frontal/continuous-source-mirrored640.mp4",
+      "asset": "verification/natural-mirror.mp4",
+      "config": "verification/natural-mirror.json",
+      "bytes": 954930,
+      "sha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+      "fps": 30.0,
+      "frames": 319,
+      "expectedGestures": [],
+      "expectationKnown": false,
+      "evidenceType": "continuous-video-partially-annotated-observed-only",
+      "license": "Pexels License",
+      "sourcePage": "https://www.pexels.com/video/a-woman-dancing-at-home-6003772/",
+      "licenseSource": "https://www.pexels.com/license/",
+      "creator": "Artem Podrez",
+      "mediaDownloadEnabled": false
+    }
+  ]
+}

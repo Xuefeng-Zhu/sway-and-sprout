@@ -38,3 +38,8 @@ The visual system uses forest, cream and lime, with coral/gold/lavender moments,
 large system type, visible focus and reduced-motion support. Product artwork is
 local. See [the development handoff](DEVELOPMENT-HANDOFF.md) for commands, exact
 invariants, evidence and unresolved acceptance checks.
+
+
+## Optional native recorded-video diagnostics
+
+The debug Android host can use its in-process LiteRT/MoveNet source instead of the normal emulator-host proxy. It owns indexed asset decoding, integer RGB letterboxing, CPU inference and ported gesture timing, then serves the existing semantic protocol directly to the WebView. Source remains video; the frontend validates an explicit Android LiteRT/model identity. No camera implementation or Python fallback is present in this mode. Release excludes native inference and video assets. See [the architecture, reproducible commands and failed positive controls](NATIVE-VIDEO-VERIFICATION.md); Android emulator execution is established, Fire OS and recognition readiness are not.

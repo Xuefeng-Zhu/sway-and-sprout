@@ -1,0 +1,4 @@
+Google LiteRT 1.4.2 and MoveNet SinglePose Lightning INT8 v4 are Apache-2.0 licensed.
+See LiteRT-LICENSE.txt and android/native-video-assets.lock.json for exact sources and pins.
+Public video fixture credits and transformations are in the repository fixture manifests and docs/NATURAL-VIDEO-VERIFICATION.md.
+This local diagnostic APK is not distributed.

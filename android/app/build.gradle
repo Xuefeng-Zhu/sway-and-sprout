@@ -4,7 +4,28 @@ android {
  compileSdk 35
  defaultConfig { applicationId 'com.togethermove.tv'; minSdk 25; targetSdk 35; versionCode 1; versionName '1.0.0' }
  buildFeatures { buildConfig true }
+ androidResources { noCompress += ['tflite', 'mp4'] }
  buildTypes {
   debug { applicationIdSuffix '.motion'; versionNameSuffix '-motion' }
  }
 }
+
+// Explicitly restored, hash-pinned local Google artifacts; release contains no ML runtime.
+dependencies {
+ debugImplementation files(rootProject.file('../.toolchain/native-runtime/litert-1.4.2.aar'))
+ debugImplementation files(rootProject.file('../.toolchain/native-runtime/litert-api-1.4.2.aar'))
+}
+
+// Do not silently substitute another local AAR while claiming the pinned runtime.
+def nativeVideoDependencies = tasks.register('verifyNativeVideoDependencies') {
+ doLast {
+  def lock = new groovy.json.JsonSlurper().parse(rootProject.file('native-video-assets.lock.json'))
+  lock.artifacts.findAll { it.role in ['core', 'api'] }.each { pin ->
+   def artifact = rootProject.file('../' + pin.target)
+   if (!artifact.isFile() || artifact.length() != pin.bytes ||
+       java.security.MessageDigest.getInstance('SHA-256').digest(artifact.bytes).encodeHex().toString() != pin.sha256)
+    throw new GradleException('Restore pinned native artifacts explicitly with scripts/prepare-native-video.py before building debug.')
+  }
+ }
+}
+tasks.configureEach { if (name == 'preDebugBuild') dependsOn(nativeVideoDependencies) }

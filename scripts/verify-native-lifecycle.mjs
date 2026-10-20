@@ -1,0 +1,36 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {chromium} from '@playwright/test';
+import {nativeOptions} from './native-emulator-options.mjs';
+const options=nativeOptions(),{adb,out}=options;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms)),result={assertions:[],camera:false,physicalDevice:false};let browser,guardPassed=false,forwarded=false;
+const check=(name,value)=>{assert.ok(value,name);result.assertions.push(name);};
+try{
+ await options.guard();guardPassed=true;
+ await adb(['shell','am','start','-n','com.togethermove.tv.motion/com.togethermove.tv.MainActivity','--ez','nativeVideo','true','--es','nativeVideoCase','clear']);
+ await sleep(800);const pid=(await adb(['shell','pidof','com.togethermove.tv.motion'])).trim();
+ await adb(['forward','--no-rebind','tcp:9342','localabstract:webview_devtools_remote_'+pid]);forwarded=true;
+ browser=await chromium.connectOverCDP('http://127.0.0.1:9342');const page=browser.contexts()[0].pages()[0];
+ await page.waitForSelector('[data-action="choose:1"]');
+ await page.evaluate(()=>{window.__p=[];const parse=JSON.parse;JSON.parse=function(...a){const p=parse.apply(this,a);if(p?.protocol===1)window.__p.push(p);return p;};});
+ for(const a of ['choose:1','input:camera','start'])await page.locator('[data-action="'+a+'"]').click();
+ await page.waitForFunction(()=>window.__p.at(-1)?.metrics?.acceptedFrames>=5);
+ await adb(['shell','input','keyevent','3']);await sleep(1200);
+ const log=async()=>{const text=await adb(['logcat','-d','--pid='+pid,'-s','SwayNativeVideo:I']);return text.split('\n').filter(l=>l.includes('{')).map(l=>JSON.parse(l.slice(l.indexOf('{'))));};
+ const paused=(await log()).filter(x=>x.kind==='suspended').at(-1);check('native Activity suspend reported',!!paused);
+ await sleep(500);
+ await adb(['shell','am','start','-n','com.togethermove.tv.motion/com.togethermove.tv.MainActivity']);await sleep(500);
+ const state=await page.evaluate(()=>({text:document.body.innerText,packets:window.__p}));
+ check('UI remains paused after Activity resumes',state.text.includes('Resume'));
+ const before=state.packets.at(-1)?.metrics?.acceptedFrames;
+ await sleep(800);const still=await page.evaluate(()=>window.__p.at(-1)?.metrics?.acceptedFrames);
+ check('native frames do not advance before explicit play resume',before===still&&before<=paused.acceptedFrames+1);
+ await page.locator('[data-action="pause"]').click();
+ await page.waitForFunction(n=>window.__p.at(-1)?.metrics?.acceptedFrames>n,before);
+ check('explicit resume advances actual native decoding',true);
+ await page.locator('[data-action="home"]').first().click();await adb(['shell','input','keyevent','4']);await sleep(800);
+ const stopped=(await log()).filter(x=>x.kind==='stopped').at(-1);result.stopped=stopped;
+ check('Activity destruction closes decoder and interpreter',stopped?.resourcesClosed===true&&stopped?.cleanupSucceeded===true&&stopped?.verified===false);
+ result.status='passed';
+}catch(e){result.status='failed';result.error=e.message;process.exitCode=1;}
+finally{if(browser)await browser.close().catch(()=>{});if(forwarded)await adb(['forward','--remove','tcp:9342']).catch(()=>{});if(guardPassed)await adb(['shell','am','force-stop','com.togethermove.tv.motion']).catch(()=>{});fs.writeFileSync(out+'/lifecycle.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));}

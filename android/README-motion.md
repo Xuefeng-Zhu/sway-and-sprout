@@ -4,7 +4,9 @@ This prototype keeps the exported release application identity (`com.togethermov
 The debug application remains separate: `com.togethermove.tv.motion`. New builds use the visible label **Sway & Sprout Motion**; preserved TogetherMove Motion APKs retain their original label.
 Its launch activity is `com.togethermove.tv.MainActivity` (the namespace does not acquire the suffix).
 
-The WebView remains on `https://app.togethermove.local`. Only its exact
+An opt-in debug-only native recorded-video mode is now available: see [actual native results](../docs/NATIVE-VIDEO-VERIFICATION.md). It runs LiteRT inside Android with no Mac service. Its three positive controls currently fail0/6, so it is a diagnostic harness rather than accepted recognition. Launch only on an intended emulator with `--ez nativeVideo true --es nativeVideoCase clear`; seven whitelisted case names are supported. The WebView clearly labels the replay and does not save participation. Release has no native model/runtime/media.
+
+The default debug WebView remains on `https://app.togethermove.local`. Only its exact
 `GET /motion/events` route is proxied by native Java to the fixed
 `http://10.0.2.2:8765/motion/events` endpoint. `10.0.2.2` is the Android Emulator's
 alias for this Mac's loopback; this is not a physical Fire TV connection scheme.
@@ -28,6 +30,8 @@ a JavaScript-to-native object. Android does not request a camera permission.
 Build the web app and synchronize its assets before packaging:
 
 ```sh
+python3 scripts/prepare-native-video.py --artifact-dir /path/to/audited-artifacts
+python3 scripts/prepare-native-video.py --check
 npm run build
 npm run android:sync
 cd android
@@ -41,10 +45,10 @@ with offline dependency resolution. The exported version pins are preserved.
 No new SDK, Gradle distribution, legal terms or debug signing key are needed
 for that recorded build; it uses an existing local debug keystore.
 
-From this task workspace's root, the recorded cached build is runnable as:
+From the canonical repository root, the recorded cached build is runnable as:
 
 ```sh
-sh evidence/togethermove-motion-20261018/android/build-cached-mac.sh
+sh scripts/build-android-cached-mac.sh
 ```
 
 ## Host-side query tests
