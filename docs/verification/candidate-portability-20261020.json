@@ -1,0 +1,1081 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-20",
+  "baselineCommit": "ca84fb1cb8d887b588119d2f85f19609b454a68e",
+  "scope": "Completed Mac candidate comparisons plus static native-artifact audit. This record contains no native app build, emulator, Fire OS execution, camera or live-user result.",
+  "selection": {
+    "macDiagnosticBaseline": "mediapipe-full-image",
+    "defaultOpenCVChanged": false,
+    "heavyAdopted": false,
+    "rtmposeAdopted": false,
+    "portableCandidate": "Bundled LiteRT1.4.2 + MoveNet SinglePose Lightning INT8v4; implementation/build/runtime evidence recorded separately"
+  },
+  "motionConfig": {
+    "hold_ms": 350,
+    "neutral_ms": 300,
+    "cooldown_ms": 500,
+    "min_confidence": 0.65,
+    "max_frame_gap_ms": 300,
+    "raise_margin": 0.3,
+    "neutral_margin": 0.2
+  },
+  "frozenFixtures": [
+    {
+      "case": "clear-held",
+      "video": "sidecar/fixtures/clear-public-arm-fixture.mp4",
+      "bytes": 565252,
+      "binding": {
+        "file": "clear-public-arm-fixture.json",
+        "sha256": "a9f2aa279c72a712ff22cbf5fecef05e8c78942f387e3eb5afa8dc4432ff8746",
+        "fixtureSha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+        "kind": "sequence-expectation",
+        "naturalContinuousMovement": false,
+        "expectedGestures": [
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise"
+        ],
+        "eventWindows": null
+      }
+    },
+    {
+      "case": "frontal-held",
+      "video": "sidecar/fixtures/frontal/bounded-frontal/frontal-held-source035.mp4",
+      "bytes": 587125,
+      "binding": {
+        "file": "frontal-held-source035.json",
+        "sha256": "360005f8d5f3aa18342aa7903d4064ceb3c981c2073ad1007f7b89b5fd07aa86",
+        "fixtureSha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+        "kind": "sequence-expectation",
+        "naturalContinuousMovement": false,
+        "expectedGestures": [
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise"
+        ],
+        "eventWindows": null
+      }
+    },
+    {
+      "case": "nearface-held",
+      "video": "sidecar/fixtures/held-public-arm-fixture.mp4",
+      "bytes": 569169,
+      "binding": {
+        "file": "held-public-arm-fixture.json",
+        "sha256": "bbdd792f05859dc4f109aea554e68f96de9d8cf66327016f066f0794407fa170",
+        "fixtureSha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+        "kind": "sequence-expectation",
+        "naturalContinuousMovement": false,
+        "expectedGestures": [
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise",
+          "left-raise",
+          "right-raise"
+        ],
+        "eventWindows": null
+      }
+    },
+    {
+      "case": "right-negative",
+      "video": "sidecar/fixtures/.cache/natural-controls/dvids-551039-right-negative-36s-51s.mp4",
+      "bytes": 1623169,
+      "binding": {
+        "file": "dvids-551039-right-negative.expected.json",
+        "sha256": "d66045e78e2498b2e004bef31da2966a691333433765076f4a34123af893b6f7",
+        "fixtureSha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+        "kind": "sequence-expectation",
+        "naturalContinuousMovement": true,
+        "expectedGestures": [],
+        "eventWindows": []
+      }
+    },
+    {
+      "case": "both-up-negative",
+      "video": "sidecar/fixtures/.cache/natural-controls/suitcase-both-up-negative.mp4",
+      "bytes": 332963,
+      "binding": {
+        "file": "suitcase-both-up-negative.expected.json",
+        "sha256": "9fbb782bbb09e89bc9789f3b141a2321c7c41e95f2e4f4b9371b47a2d3a1c7a4",
+        "fixtureSha256": "e5d5cecc1d981e6589432add534a6a09fbd4ee692864a3f0ec4603ef5864ef80",
+        "kind": "sequence-expectation",
+        "naturalContinuousMovement": true,
+        "expectedGestures": [],
+        "eventWindows": []
+      }
+    },
+    {
+      "case": "natural-original",
+      "video": "sidecar/fixtures/frontal/bounded-frontal/continuous-source-original640.mp4",
+      "bytes": 952724,
+      "binding": {
+        "file": "continuous-source-original640.partial.json",
+        "sha256": "04c435feb6b29bb22de587281b45e0a31cebbd071b743e84d5305ddbf7de0456",
+        "fixtureSha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+        "kind": "partial-annotation",
+        "naturalContinuousMovement": true,
+        "expectedGestures": null,
+        "eventWindows": null
+      }
+    },
+    {
+      "case": "natural-mirror",
+      "video": "sidecar/fixtures/frontal/bounded-frontal/continuous-source-mirrored640.mp4",
+      "bytes": 954930,
+      "binding": {
+        "file": "continuous-source-mirrored640.partial.json",
+        "sha256": "bde9bea8f5c423d1f894881a5081a24435f085a7e2c606a093af5d701c02d384",
+        "fixtureSha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+        "kind": "partial-annotation",
+        "naturalContinuousMovement": true,
+        "expectedGestures": null,
+        "eventWindows": null
+      }
+    }
+  ],
+  "completeFileResults": [
+    {
+      "case": "clear-held",
+      "candidate": "full",
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 955.2354998886585,
+        "nativeDetectMedianMs": 23.078541387803853,
+        "adapterInferMedianMs": 23.192500000000003,
+        "canonicalPipelineProcessingSeconds": 3.909,
+        "wholeVerifyWallSecondsIncludingConstructor": 4.916709000011906,
+        "fileDurationSeconds": 15.2,
+        "processingToFileDurationRatio": 0.25717105263157897,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "clear-held",
+      "candidate": "heavy",
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 117.1739159617573,
+        "nativeDetectMedianMs": 69.0432294504717,
+        "adapterInferMedianMs": 69.1785,
+        "canonicalPipelineProcessingSeconds": 10.822,
+        "wholeVerifyWallSecondsIncludingConstructor": 10.944939499953762,
+        "fileDurationSeconds": 15.2,
+        "processingToFileDurationRatio": 0.7119736842105263,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "frontal-held",
+      "candidate": "full",
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 66.65533292107284,
+        "nativeDetectMedianMs": 23.16762541886419,
+        "adapterInferMedianMs": 23.286,
+        "canonicalPipelineProcessingSeconds": 3.661,
+        "wholeVerifyWallSecondsIncludingConstructor": 3.7329022500198334,
+        "fileDurationSeconds": 15.2,
+        "processingToFileDurationRatio": 0.24085526315789474,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "frontal-held",
+      "candidate": "heavy",
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 95.04383313469589,
+        "nativeDetectMedianMs": 69.16527100838721,
+        "adapterInferMedianMs": 69.306,
+        "canonicalPipelineProcessingSeconds": 10.666,
+        "wholeVerifyWallSecondsIncludingConstructor": 10.766257707960904,
+        "fileDurationSeconds": 15.2,
+        "processingToFileDurationRatio": 0.7017105263157896,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "nearface-held",
+      "candidate": "full",
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 66.35354203172028,
+        "nativeDetectMedianMs": 23.10987503733486,
+        "adapterInferMedianMs": 23.225,
+        "canonicalPipelineProcessingSeconds": 3.642,
+        "wholeVerifyWallSecondsIncludingConstructor": 3.7141552921384573,
+        "fileDurationSeconds": 15.2,
+        "processingToFileDurationRatio": 0.23960526315789474,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "nearface-held",
+      "candidate": "heavy",
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 109.24366698600352,
+        "nativeDetectMedianMs": 69.08204150386155,
+        "adapterInferMedianMs": 69.211,
+        "canonicalPipelineProcessingSeconds": 10.649,
+        "wholeVerifyWallSecondsIncludingConstructor": 10.763399082934484,
+        "fileDurationSeconds": 15.2,
+        "processingToFileDurationRatio": 0.7005921052631578,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "right-negative",
+      "candidate": "full",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 71.03612506762147,
+        "nativeDetectMedianMs": 23.096167016774416,
+        "adapterInferMedianMs": 23.3295,
+        "canonicalPipelineProcessingSeconds": 10.837,
+        "wholeVerifyWallSecondsIncludingConstructor": 10.913417583098635,
+        "fileDurationSeconds": 15.015,
+        "processingToFileDurationRatio": 0.7217449217449217,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "right-negative",
+      "candidate": "heavy",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 93.88741687871516,
+        "nativeDetectMedianMs": 69.1748954122886,
+        "adapterInferMedianMs": 69.4255,
+        "canonicalPipelineProcessingSeconds": 31.882,
+        "wholeVerifyWallSecondsIncludingConstructor": 31.981816082959995,
+        "fileDurationSeconds": 15.015,
+        "processingToFileDurationRatio": 2.1233433233433234,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "both-up-negative",
+      "candidate": "full",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 70.43095817789435,
+        "nativeDetectMedianMs": 23.074083030223846,
+        "adapterInferMedianMs": 23.208,
+        "canonicalPipelineProcessingSeconds": 3.276,
+        "wholeVerifyWallSecondsIncludingConstructor": 3.3520408750046045,
+        "fileDurationSeconds": 4.53333,
+        "processingToFileDurationRatio": 0.7226475901820515,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "both-up-negative",
+      "candidate": "heavy",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 107.19954106025398,
+        "nativeDetectMedianMs": 69.15991695132107,
+        "adapterInferMedianMs": 69.317,
+        "canonicalPipelineProcessingSeconds": 9.553,
+        "wholeVerifyWallSecondsIncludingConstructor": 9.665632999967784,
+        "fileDurationSeconds": 4.53333,
+        "processingToFileDurationRatio": 2.107280961236001,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "natural-original",
+      "candidate": "full",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 70.92041708528996,
+        "nativeDetectMedianMs": 23.12458399683237,
+        "adapterInferMedianMs": 23.239,
+        "canonicalPipelineProcessingSeconds": 7.627,
+        "wholeVerifyWallSecondsIncludingConstructor": 7.70321079203859,
+        "fileDurationSeconds": 10.633329999999999,
+        "processingToFileDurationRatio": 0.7172729521231825,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "natural-original",
+      "candidate": "heavy",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 111.36912507936358,
+        "nativeDetectMedianMs": 69.21804114244878,
+        "adapterInferMedianMs": 69.345,
+        "canonicalPipelineProcessingSeconds": 22.526,
+        "wholeVerifyWallSecondsIncludingConstructor": 22.643655667081475,
+        "fileDurationSeconds": 10.633329999999999,
+        "processingToFileDurationRatio": 2.1184332659665412,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "natural-mirror",
+      "candidate": "full",
+      "events": [
+        "left-raise"
+      ],
+      "rays": 1,
+      "ack": 1,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 67.22608301788568,
+        "nativeDetectMedianMs": 23.207749938592315,
+        "adapterInferMedianMs": 23.329,
+        "canonicalPipelineProcessingSeconds": 7.703,
+        "wholeVerifyWallSecondsIncludingConstructor": 7.775507125072181,
+        "fileDurationSeconds": 10.633329999999999,
+        "processingToFileDurationRatio": 0.7244202897869247,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "natural-mirror",
+      "candidate": "heavy",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "graphConstructorAndFirstImportsMs": 97.94687503017485,
+        "nativeDetectMedianMs": 69.43712499924004,
+        "adapterInferMedianMs": 69.56,
+        "canonicalPipelineProcessingSeconds": 22.856,
+        "wholeVerifyWallSecondsIncludingConstructor": 22.960416208021343,
+        "fileDurationSeconds": 10.633329999999999,
+        "processingToFileDurationRatio": 2.1494677584538433,
+        "latencyScope": "Local decode->model->classifier/service->preview->JS score wall duration; accelerated deterministic file clock, not real-time replay/HTTP or live gesture end-to-end latency"
+      }
+    },
+    {
+      "case": "clear-held",
+      "candidate": "rtmpose-m-official-cpu-bundle",
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "detectorOrtRunMedianMs": 9.300895500928164,
+        "poseOrtRunMedianMs": 29.873771010898054,
+        "adapterMedianMs": 41.4845,
+        "graphConstructorAndFirstImportsMs": 236.70120793394744,
+        "pipelineProcessingSeconds": 6.667,
+        "wholeVerifyWallSecondsIncludingConstructor": 6.906014665961266,
+        "fileDurationSeconds": 15.2,
+        "processingToFileDurationRatio": 0.4386184210526316,
+        "scope": "ORT calls versus whole file decode/inference/classifier/service/preview/JS pipeline; file clock accelerated, no realtime/HTTP claim"
+      }
+    },
+    {
+      "case": "frontal-held",
+      "candidate": "rtmpose-m-official-cpu-bundle",
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "detectorOrtRunMedianMs": 9.292937465943396,
+        "poseOrtRunMedianMs": 29.895000043325126,
+        "adapterMedianMs": 41.495999999999995,
+        "graphConstructorAndFirstImportsMs": 113.57120797038078,
+        "pipelineProcessingSeconds": 6.462,
+        "wholeVerifyWallSecondsIncludingConstructor": 6.577961165923625,
+        "fileDurationSeconds": 15.2,
+        "processingToFileDurationRatio": 0.4251315789473684,
+        "scope": "ORT calls versus whole file decode/inference/classifier/service/preview/JS pipeline; file clock accelerated, no realtime/HTTP claim"
+      }
+    },
+    {
+      "case": "nearface-held",
+      "candidate": "rtmpose-m-official-cpu-bundle",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "failed",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": false,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "detectorOrtRunMedianMs": 9.283895953558385,
+        "poseOrtRunMedianMs": 29.96635460294783,
+        "adapterMedianMs": 41.569,
+        "graphConstructorAndFirstImportsMs": 110.55762507021427,
+        "pipelineProcessingSeconds": 6.457,
+        "wholeVerifyWallSecondsIncludingConstructor": 6.569472417002544,
+        "fileDurationSeconds": 15.2,
+        "processingToFileDurationRatio": 0.4248026315789474,
+        "scope": "ORT calls versus whole file decode/inference/classifier/service/preview/JS pipeline; file clock accelerated, no realtime/HTTP claim"
+      }
+    },
+    {
+      "case": "right-negative",
+      "candidate": "rtmpose-m-official-cpu-bundle",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "detectorOrtRunMedianMs": 9.312999434769154,
+        "poseOrtRunMedianMs": 29.961396008729935,
+        "adapterMedianMs": 41.709500000000006,
+        "graphConstructorAndFirstImportsMs": 110.544792143628,
+        "pipelineProcessingSeconds": 19.533,
+        "wholeVerifyWallSecondsIncludingConstructor": 19.645936208078638,
+        "fileDurationSeconds": 15.015,
+        "processingToFileDurationRatio": 1.3008991008991009,
+        "scope": "ORT calls versus whole file decode/inference/classifier/service/preview/JS pipeline; file clock accelerated, no realtime/HTTP claim"
+      }
+    },
+    {
+      "case": "both-up-negative",
+      "candidate": "rtmpose-m-official-cpu-bundle",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "detectorOrtRunMedianMs": 8.96795850712806,
+        "poseOrtRunMedianMs": 29.84262490645051,
+        "adapterMedianMs": 10.462499999999999,
+        "graphConstructorAndFirstImportsMs": 140.8219998702407,
+        "pipelineProcessingSeconds": 2.112,
+        "wholeVerifyWallSecondsIncludingConstructor": 2.255626584170386,
+        "fileDurationSeconds": 4.53333,
+        "processingToFileDurationRatio": 0.46588269550198197,
+        "scope": "ORT calls versus whole file decode/inference/classifier/service/preview/JS pipeline; file clock accelerated, no realtime/HTTP claim"
+      }
+    },
+    {
+      "case": "natural-original",
+      "candidate": "rtmpose-m-official-cpu-bundle",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "detectorOrtRunMedianMs": 9.323749924078584,
+        "poseOrtRunMedianMs": 29.90595786832273,
+        "adapterMedianMs": 41.523,
+        "graphConstructorAndFirstImportsMs": 111.83112510479987,
+        "pipelineProcessingSeconds": 13.383,
+        "wholeVerifyWallSecondsIncludingConstructor": 13.496937500080094,
+        "fileDurationSeconds": 10.633329999999999,
+        "processingToFileDurationRatio": 1.2585897362350271,
+        "scope": "ORT calls versus whole file decode/inference/classifier/service/preview/JS pipeline; file clock accelerated, no realtime/HTTP claim"
+      }
+    },
+    {
+      "case": "natural-mirror",
+      "candidate": "rtmpose-m-official-cpu-bundle",
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "timing": {
+        "detectorOrtRunMedianMs": 9.312042035162449,
+        "poseOrtRunMedianMs": 29.9332084832713,
+        "adapterMedianMs": 41.548,
+        "graphConstructorAndFirstImportsMs": 140.1172091718763,
+        "pipelineProcessingSeconds": 13.638,
+        "wholeVerifyWallSecondsIncludingConstructor": 13.780537790851668,
+        "fileDurationSeconds": 10.633329999999999,
+        "processingToFileDurationRatio": 1.2825709349752148,
+        "scope": "ORT calls versus whole file decode/inference/classifier/service/preview/JS pipeline; file clock accelerated, no realtime/HTTP claim"
+      }
+    }
+  ],
+  "selectedOverheadWindow": {
+    "fixture": "right-negative",
+    "frames": [
+      136,
+      151
+    ],
+    "manualSpanMs": 500.5,
+    "requiredHoldMs": 350,
+    "full": {
+      "startFrame": 136,
+      "endFrameInclusive": 151,
+      "manualGate": "left-down/right-up",
+      "frames": 16,
+      "rawGeometryMatches": 9,
+      "acceptedGateMatches": 6,
+      "longestAcceptedSpanMs": 66.73333333333333,
+      "confidenceRejectedFrames": [
+        136,
+        137,
+        138,
+        139,
+        140,
+        142,
+        147,
+        148,
+        149
+      ],
+      "multipleReturnedPoseFrames": [
+        143
+      ]
+    },
+    "heavy": {
+      "startFrame": 136,
+      "endFrameInclusive": 151,
+      "manualGate": "left-down/right-up",
+      "frames": 16,
+      "rawGeometryMatches": 9,
+      "acceptedGateMatches": 9,
+      "longestAcceptedSpanMs": 233.56666666666666,
+      "confidenceRejectedFrames": [
+        136,
+        137,
+        138,
+        139,
+        140,
+        142
+      ],
+      "multipleReturnedPoseFrames": [
+        143
+      ]
+    },
+    "rtmpose": {
+      "firstFrame": 136,
+      "lastFrameInclusive": 151,
+      "frames": 16,
+      "manualGate": "left-down/right-up",
+      "rawGeometryMatches": 16,
+      "acceptedMatches": 11,
+      "confidenceRejected": 5,
+      "noSinglePerson": 0,
+      "boundsRejected": 0,
+      "longestAcceptedRun": {
+        "consecutiveFrames": 6,
+        "firstToLastSpanMs": 166.83333333333334
+      }
+    },
+    "scope": "Raw coarse geometry and accepted joint confidence are separate; right-only remains a wrong-side negative for the left-first game."
+  },
+  "rtmposeNearface": {
+    "frames": 152,
+    "acceptedSinglePersonFrames": 152,
+    "nativeConfidenceRejectedFrames": 0,
+    "boundsRejectedFrames": 0,
+    "rawGeometryCounts": {
+      "left-down/right-down": 92,
+      "left-transition/right-down": 30,
+      "left-down/right-transition": 30
+    },
+    "actualEvents": [],
+    "rays": 0,
+    "ack": 0,
+    "rawScoresAboveOne": 0
+  },
+  "rtmposeBothUpNegative": {
+    "frames": 136,
+    "detectorRejectedFrames": 118,
+    "neutralFramesDetected": 0,
+    "neutralWindowFrames": 16,
+    "poseRunningFrames": 18,
+    "medianAllFrameAdapterMs": 10.462499999999999,
+    "medianPoseRunningFrameAdapterMs": 41.509,
+    "meaning": "Zero events is a matched negative expectation, but rejection before pose prevents claiming robust both-up classification after calibration."
+  },
+  "rtmposeMacProcessResources": {
+    "wholeSevenCaseRunWallSeconds": 70.55,
+    "maximumResidentSetSizeBytes": 372686848,
+    "peakMemoryFootprintBytes": 327435320,
+    "scope": "macOS /usr/bin/time -l, one evaluator process; not Android/FireTV memory or sustained performance"
+  },
+  "runtimeArtifacts": {
+    "core": {
+      "url": "https://dl.google.com/dl/android/maven2/com/google/ai/edge/litert/litert/1.4.2/litert-1.4.2.aar",
+      "bytes": 8305790,
+      "sha256": "9b02cdf9db0a698b341b59e75c54ab8221d6304577cc43830d01024caf1fca74"
+    },
+    "api": {
+      "url": "https://dl.google.com/dl/android/maven2/com/google/ai/edge/litert/litert-api/1.4.2/litert-api-1.4.2.aar",
+      "bytes": 23589,
+      "sha256": "66c2ba8086bd5cbf89bec2bd81c3de6c1a852312829cd55bc30c9dd26ffa357c"
+    },
+    "model": {
+      "bytes": 2894840,
+      "sha256": "cd7cc22fa946e5d146a7b98d496853e1923e22828d3972d579973f27f91bb105",
+      "sourceUrl": "https://tfhub.dev/google/lite-model/movenet/singlepose/lightning/tflite/int8/4?lite-format=tflite",
+      "resolvedUrl": "https://storage.googleapis.com/kagglesdsdata/models/1037/1207/4.tflite",
+      "license": "Apache-2.0",
+      "noExplicitTermsAccepted": true
+    },
+    "armv7Jni": {
+      "path": "jni/armeabi-v7a/libtensorflowlite_jni.so",
+      "bytes": 2641764,
+      "sha256": "1ef7f586c996fb95c944c3e25555d121f01874153b330d5b26503f369fd54d0a",
+      "elfClass": 1,
+      "elfMachine": 40
+    },
+    "minimumApi": 21,
+    "playServicesDependencyDeclared": false,
+    "input": {
+      "index": 0,
+      "name": "serving_default_input:0",
+      "shape": [
+        1,
+        192,
+        192,
+        3
+      ],
+      "type": "UINT8",
+      "buffer": 1,
+      "quantization": {
+        "scale": [],
+        "zeroPoint": [],
+        "quantizedDimension": 0
+      }
+    },
+    "output": {
+      "index": 332,
+      "name": "StatefulPartitionedCall:0",
+      "shape": [
+        1,
+        1,
+        17,
+        3
+      ],
+      "type": "FLOAT32",
+      "buffer": 333,
+      "quantization": {
+        "scale": [],
+        "zeroPoint": [],
+        "quantizedDimension": 0
+      }
+    },
+    "customOrFlexOperators": false,
+    "staticInspectionOnly": true
+  },
+  "targetBoundary": {
+    "userPhysicalHardwareAvailable": false,
+    "provisionalFireOSReference": {
+      "os": "Fire OS7",
+      "api": 28,
+      "applicationAbi": "armeabi-v7a",
+      "status": "engineering assumption, not a user-owned device or verified runtime"
+    },
+    "installedAVD": {
+      "system": "Android TV",
+      "api": 34,
+      "abi": "arm64-v8a",
+      "newRunClaimedInThisRecord": false
+    },
+    "vegaSupported": false,
+    "fireOSExecutionVerified": false,
+    "uvcCameraAccessVerified": false,
+    "sustainedDevicePerformanceVerified": false,
+    "unavailableReason": "No physical FireTV hardware. This is unavailable evidence, not denied permission; do not ask again for model/screenshot."
+  },
+  "sourceFiles": [
+    {
+      "path": "heavy-comparison-20261020/results-run1/frozen-plan.json",
+      "bytes": 9221,
+      "sha256": "ef5bbbb7b83e2ed8945f4cacf7ce0902d3113eec51027b041bff115744824e41"
+    },
+    {
+      "path": "heavy-comparison-20261020/results-run1/summary.json",
+      "bytes": 38315,
+      "sha256": "041f4b7bc0f71f1a171704b5d50c4f6abcbd79257de50650676a9bdd712f2b2b"
+    },
+    {
+      "path": "heavy-comparison-20261020/results-run1/integrity.json",
+      "bytes": 3284,
+      "sha256": "a0577ed3439b34a841ad9f63d3193abffc0bc537458cb38d4aa95ca9765be6d9"
+    },
+    {
+      "path": "heavy-comparison-20261020/selected-windows-postanalysis.json",
+      "bytes": 80773,
+      "sha256": "818a55c26ac6358750c08613d68147fec720c8acae3df8ee10b41ddf898d9080"
+    },
+    {
+      "path": "rtmpose-evaluation/candidate-lock.json",
+      "bytes": 3814,
+      "sha256": "0c28bd502405f7eddab6a536b49d0704f551875c4dcacd4e112ec0d7586f910f"
+    },
+    {
+      "path": "rtmpose-evaluation/results-run1/frozen-before-inference.json",
+      "bytes": 11435,
+      "sha256": "905a9bd5ea6825f48f53d3bac3384ecdd8b243e734dfaba9a46b2829a78f8bdd"
+    },
+    {
+      "path": "rtmpose-evaluation/results-run1/summary.json",
+      "bytes": 16593,
+      "sha256": "c0fdfad60bd28da8038e2b1839d60777684f2fdeef368cff18c5e3d139c2f487"
+    },
+    {
+      "path": "rtmpose-evaluation/results-run1/integrity.json",
+      "bytes": 1773,
+      "sha256": "b6d2a55e4f153d2c9c6c44747c454c61f42dcd1cceba086ee40812afbb149cc6"
+    },
+    {
+      "path": "rtmpose-evaluation/saved-results-audit/audit.json",
+      "bytes": 19298,
+      "sha256": "c6c90a24df246dba9c988a91ddb5327a981c2f14d04272a2af814322cd317071"
+    },
+    {
+      "path": "rtmpose-evaluation/results-run1-timing.log",
+      "bytes": 777,
+      "sha256": "ad328987485d56a5c03bd045f90825cb8931cc74a010deaae6633f46a85a9867"
+    },
+    {
+      "path": "portable-runtime-audit-20261020/aar-inspection.json",
+      "bytes": 2905,
+      "sha256": "c59961d3c0e039bc5c886e9b385175e3a1115cc5ee4c6d8bbe907f2df622ecfb"
+    },
+    {
+      "path": "portable-runtime-audit-20261020/api-aar-inspection.json",
+      "bytes": 2109,
+      "sha256": "7f6fb5e5b9d6f3c6bc13d18cc10422e035e7f16c78d77e7608cdced9dd6748c2"
+    },
+    {
+      "path": "portable-runtime-audit-20261020/elf-and-classes-inspection.json",
+      "bytes": 2075,
+      "sha256": "62fc46f7db819928d83971c0f5fe68ee3f29822c5f38966aefb942b1e0f2a7ed"
+    },
+    {
+      "path": "portable-runtime-audit-20261020/model-integrity.json",
+      "bytes": 539,
+      "sha256": "0284605095d591f393738f076214c9ebc69dfa3d2a17f462ba40e6160dc59f12"
+    },
+    {
+      "path": "portable-runtime-audit-20261020/model-schema-inspection.json",
+      "bytes": 1799156,
+      "sha256": "e1ee783c2f0bdd8c01f5107fc25284c89b01f17d16c9c7c1cd5c3f1cb97697b6"
+    },
+    {
+      "path": "portable-runtime-audit-20261020/REPORT.md",
+      "bytes": 9077,
+      "sha256": "70c43be0a06e9bc9c37d325f7cd551294133a1ea404dfbfd3e2ec9fbf3f5fc19"
+    },
+    {
+      "path": "firetv-portability-audit-20261020/audit.json",
+      "bytes": 26161,
+      "sha256": "c83d311e7918a25054da91d89c6784ed9e592a78b2e71ccb2bf7489c11e37daf"
+    }
+  ],
+  "actionsForThisRecord": {
+    "sourceReads": true,
+    "scalarJsonAggregation": true,
+    "newInference": false,
+    "nativeBuild": false,
+    "emulator": false,
+    "camera": false,
+    "network": false,
+    "canonicalWrites": false,
+    "push": false,
+    "upload": false
+  }
+}
