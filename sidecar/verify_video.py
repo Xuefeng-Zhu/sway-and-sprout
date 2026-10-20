@@ -9,6 +9,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import math
 from pathlib import Path
 import re
 import statistics
@@ -25,6 +26,68 @@ PROJECT = Path(__file__).resolve().parent.parent
 CLIENT = "12345678-0000-4000-8000-000000000101"
 ROUND = "12345678-0000-4000-8000-000000000102"
 GOAL_SEQUENCE = ["left-raise", "right-raise"] * 3
+MAX_VIDEO_MS = 30000
+
+
+def load_event_windows(manifest, expected):
+    """Validate authored optional event timing before any model or media decode."""
+    if "eventWindows" not in manifest:
+        return None
+    windows = manifest["eventWindows"]
+    if expected is None:
+        raise ValueError("Event windows require an explicit expected gesture list")
+    if not isinstance(windows, list) or len(windows) != len(expected):
+        raise ValueError("Event windows must contain one window per expected gesture")
+    frozen = []
+    for gesture, window in zip(expected, windows):
+        if not isinstance(window, dict) or set(window) != {"gesture", "startMs", "endMs"}:
+            raise ValueError("Each event window requires exactly gesture, startMs and endMs")
+        if window["gesture"] != gesture:
+            raise ValueError("Event window gesture order must match expected gestures")
+        start, end = window["startMs"], window["endMs"]
+        # Check the range first so arbitrarily large JSON integers never reach
+        # math.isfinite's implicit float conversion. Booleans are not times.
+        if any(type(value) not in (int, float) or not 0 <= value <= MAX_VIDEO_MS
+               or not math.isfinite(value) for value in (start, end)) or start > end:
+            raise ValueError("Event window times must be finite, ordered and within0..30000ms")
+        frozen.append({"gesture": gesture, "startMs": start, "endMs": end})
+    return frozen
+
+
+def evaluate_event_windows(events, windows):
+    """Match every observed event to its authored inclusive file-time window."""
+    checks = []
+    for index in range(max(len(events), len(windows))):
+        expected = windows[index] if index < len(windows) else None
+        observed = events[index] if index < len(events) else None
+        observed = observed if isinstance(observed, dict) else {}
+        gesture, at_ms = observed.get("gesture"), observed.get("atVideoMs")
+        if expected is None:
+            reason = "unexpected-event"
+        elif index >= len(events):
+            reason = "missing-event"
+        elif gesture != expected["gesture"]:
+            reason = "gesture-mismatch"
+        elif (type(at_ms) not in (int, float) or not 0 <= at_ms <= MAX_VIDEO_MS
+              or not math.isfinite(at_ms)):
+            reason = "invalid-timestamp"
+        elif at_ms < expected["startMs"]:
+            reason = "early"
+        elif at_ms > expected["endMs"]:
+            reason = "late"
+        else:
+            reason = "within-window"
+        # Invalid timestamps are evidence of failure, never NaN/Infinity JSON.
+        safe_time = (at_ms if type(at_ms) in (int, float) and 0 <= at_ms <= MAX_VIDEO_MS
+                     and math.isfinite(at_ms) else None)
+        checks.append({"index": index, "expectedGesture": expected["gesture"] if expected else None,
+                       "startMs": expected["startMs"] if expected else None,
+                       "endMs": expected["endMs"] if expected else None,
+                       "observedGesture": gesture, "atVideoMs": safe_time,
+                       "passed": reason == "within-window", "reason": reason})
+    return {"passed": all(check["passed"] for check in checks), "boundaryRule": "inclusive",
+            "timestampMeaning": "event emission in unrounded deterministic file milliseconds",
+            "expectedEventCount": len(windows), "observedEventCount": len(events), "checks": checks}
 
 
 def load_manifest(manifest_path, video_path, *, partial=False):
@@ -54,10 +117,11 @@ def load_manifest(manifest_path, video_path, *, partial=False):
     elif (not isinstance(expected, list)
           or any(item not in ("left-raise", "right-raise") for item in expected)):
         raise ValueError("Expected manifest must contain an explicit gesture list")
+    windows = load_event_windows(manifest, expected)
     return {"file": manifest_path.name, "sha256": hashlib.sha256(manifest_bytes).hexdigest(),
             "fixtureSha256": actual, "kind": "partial-annotation" if partial else "sequence-expectation",
             "naturalContinuousMovement": manifest.get("naturalContinuousMovement"),
-            "expectedGestures": expected}
+            "expectedGestures": expected, "eventWindows": windows}
 
 
 def verification_outcome(report):
@@ -65,15 +129,17 @@ def verification_outcome(report):
     pipeline = report["gameScoringMatches"] and report["gameAcknowledgmentMatches"]
     expected = report["expectedGestures"]
     matched = report["expectedSequencePassed"] if expected is not None else None
-    complete = bool(pipeline and matched is True and expected == GOAL_SEQUENCE
+    timing = report.get("eventTimingPassed")
+    complete = bool(pipeline and matched is True and timing is not False and expected == GOAL_SEQUENCE
                     and report["game"].get("count") == 6 and report["game"].get("completed") is True)
-    status = ("failed" if not pipeline or matched is False else
+    status = ("failed" if not pipeline or matched is False or timing is False else
               "complete-goal-verified" if complete else
               "partial-expectation-matched" if expected else
               "negative-control-matched" if expected == [] else "observed-only")
     return {"status": status, "pipelineConsistent": bool(pipeline),
             "sequenceExpectationPresent": expected is not None,
-            "expectedSequenceMatched": matched, "completeGoalVerified": complete,
+            "expectedSequenceMatched": matched, "eventTimingExpectationPresent": timing is not None,
+            "eventTimingMatched": timing, "completeGoalVerified": complete,
             "scope": "selected local fixture only", "liveUserVerified": False}
 
 
@@ -147,7 +213,7 @@ def verify(path, seconds=30, expected=None, score_script=None, motion_module=Non
                 # Scalar packet contains no image or landmark coordinates.
                 if packet["events"]:
                     events.extend({"gesture": event["gesture"], "seq": event["seq"],
-                                   "atVideoMs": round(now, 2), "confidence": event["confidence"]}
+                                   "atVideoMs": now, "confidence": event["confidence"]}
                                   for event in packet["events"])
                     control["after"] = packet["seq"]
                 packets.append(packet)
@@ -216,10 +282,13 @@ def main():
     expected = expectation["expectedGestures"] if expectation else None
     report = verify(args.video, args.seconds, expected, args.score_script, args.motion_module)
     report["expectation"] = expectation
+    windows = expectation["eventWindows"] if expectation else None
+    report["eventTiming"] = evaluate_event_windows(report["events"], windows) if windows is not None else None
+    report["eventTimingPassed"] = report["eventTiming"]["passed"] if windows is not None else None
     report["verificationOutcome"] = verification_outcome(report)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps({key: report[key] for key in ("source", "evidenceType", "fixture", "observedGestures",
-                                                 "expectedGestures", "expectedSequencePassed", "game",
+                                                 "expectedGestures", "expectedSequencePassed", "eventTimingPassed", "game",
                                                  "gameScoringMatches", "gameAcknowledgmentMatches",
                                                  "armedTransitions", "previewResponses", "physicalCameraOpens",
                                                  "verificationOutcome")}))
@@ -227,6 +296,7 @@ def main():
     # events beyond a completed goal remain an ACK mismatch, not a silent pass.
     if (not report["gameScoringMatches"] or not report["gameAcknowledgmentMatches"]
             or (args.expected and not report["expectedSequencePassed"])
+            or report["eventTimingPassed"] is False
             or (args.require_complete_goal and not report["verificationOutcome"]["completeGoalVerified"])):
         raise SystemExit(1)
 

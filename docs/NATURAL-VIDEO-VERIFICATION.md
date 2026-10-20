@@ -48,6 +48,44 @@ transport and scoring are consistent. Read `verificationOutcome`: status
 `observed-only` and `completeGoalVerified: false` are not recognition passes.
 An explicit empty expected list is a negative control, also not a complete goal.
 
+## Authored event times and scalar diagnosis
+
+An expected manifest may also include `eventWindows`, with exactly one
+`{gesture, startMs, endMs}` entry per expected gesture, in the same order.
+Bounds are inclusive, finite file milliseconds within 0–30000. An explicit
+empty expected list and empty windows describe a negative control. The windows
+must be authored from independent visual review before inference. They describe
+when an event may be emitted, including its required hold, rather than merely
+when an arm first becomes raised. Preserve onset uncertainty in the annotation.
+
+A correctly ordered event outside its window now fails acceptance, even when
+scoring and ACKs agree. Reports retain unrounded deterministic event time and
+per-event early/late/missing/extra evidence. Existing manifests without timing
+windows remain supported, with `eventTimingPassed: null`; they establish no
+timed expectation. Partial `--annotation` input cannot declare event windows.
+
+For another independently annotated local file, the generic helper records
+numeric detector, ROI, landmark, confidence, calibration and classifier traces:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 sidecar/.venv/bin/python scripts/analyze-video-motion.py --project . --video "$VIDEO" --expected "$EXPECTED_MANIFEST" --output verification-results/selected-video
+```
+
+Use `--annotation` for partial coverage, and `--require-complete-goal` only when
+requiring the six-event goal. The helper requires an explicit project and a
+SHA256-bound manifest before model initialization. It limits processing to
+30 seconds/3600 frames, rechecks the fixture hash after decode, and compares
+actual service packets with the real JavaScript reducer and ACK. It separates
+observed sample spans from frame coverage, so ten 30fps samples cannot be
+mislabelled as a 333ms observed neutral dwell.
+
+The helper permits only the exact local file with `CAP_FFMPEG`, guards Python
+capture/socket APIs through model initialization and scoring, and saves no
+pixels or JPEGs. These are Python-level guards, not an operating-system network
+sandbox. The fixed local scorer has no network client. Full scalar traces stay
+in ignored verification output; model predictions never become manual truth.
+The original two-fixture `analyze-natural-motion.py` command is unchanged.
+
 ## What this establishes
 
 The scalar [contract evidence](verification/natural-video-contract-20261020.json)
