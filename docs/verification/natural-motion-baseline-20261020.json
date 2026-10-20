@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-20",
+  "baselineCommit": "ed4e1f5f12003319fc2cb4a93c4c203fee104adb",
+  "evidenceType": "actual public natural-video detector/pose/service inference plus actual JS game scoring",
+  "diagnosticBaselineOnly": true,
+  "accuracyPassed": false,
+  "completeNaturalAlternatingSequenceCertified": false,
+  "humanVerified": false,
+  "physicalCameraUsed": false,
+  "privateProgressSaved": false,
+  "savedFrames": 0,
+  "uploadedFrames": 0,
+  "source": {
+    "provider": "Pexels",
+    "creator": "Artem Podrez",
+    "videoId": 6003772,
+    "license": "https://www.pexels.com/license/",
+    "note": "Original and horizontally reflected derivative of one filmed source; not independent left/right trials."
+  },
+  "runtime": {
+    "opencv": "5.0.0",
+    "numpy": "2.5.4",
+    "verified": true,
+    "zooCommit": "47534e27c9851bb1128ccc0102f1145e27f23f98",
+    "verification": "locked hashes + both zero-image DNN forwards + exact output shapes"
+  },
+  "implementationSha256": {
+    "sidecar/inference.py": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407",
+    "sidecar/motion.py": "e5aea8b4ba8b6b2f9d6fbcdbe506fcc5b156e83956e5f00276423e2ad8645da9",
+    "sidecar/service.py": "5613cb90ca82aade5bba74f542c957fc254e331d91ae8b7d854894f1f37f78a4",
+    "sidecar/vendor/mp_persondet.py": "e530a8ebc3c218376d5dd1c13aa8ed39a850fac4dbcd6928144746b33477b9c7",
+    "sidecar/vendor/mp_pose.py": "7e1953d1fb848c64fd3b44277e615e273e7fb2f325f7633eb9c1e32948d45e67",
+    "sidecar/video_input.py": "00cdf1aa7e90eb2c1a6056dcca0226d8aff3c64fabd5dd6b3115169c25bd462e",
+    "src/motion.js": "a2d578eccf2a11175a264ffee49c2b984e1f409cf87dd9dcb1be07e90ed1ee79",
+    "scripts/score-motion-fixture.mjs": "97ba23862bc5ee14d90551fb540a62bf782f0c09954ea5709ae9e74a35a31c61"
+  },
+  "analyzerSha256": "22caf876b105fedec45ee44cd24f489ca3a8b3abfa512f1e74365d9cff392d4c",
+  "files": {
+    "continuous-source-original640.mp4": {
+      "sha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+      "fps": 30.0,
+      "frames": 319,
+      "config": {
+        "hold_ms": 350,
+        "neutral_ms": 300,
+        "cooldown_ms": 500,
+        "min_confidence": 0.65,
+        "max_frame_gap_ms": 300,
+        "raise_margin": 0.3,
+        "neutral_margin": 0.2
+      },
+      "gateCounts": {
+        "left-down/right-down": 158,
+        "left-down/right-transition": 15,
+        "left-down/right-up": 61,
+        "left-transition/right-down": 12,
+        "low-confidence": 73
+      },
+      "statusCounts": {
+        "neutral": 128,
+        "tracking": 118,
+        "low-confidence": 73
+      },
+      "inferenceStatusCounts": {
+        "tracking": 319
+      },
+      "detectionCounts": {
+        "1": 319
+      },
+      "maxFrameGapMs": 33.33400000000074,
+      "firstFrameMinConfidence": 0.6792375445365906,
+      "firstRaisedGate": {
+        "frame": 13,
+        "atMs": 433.333,
+        "gate": "left-down/right-up",
+        "armed": false,
+        "status": "neutral"
+      },
+      "lowConfidenceBottleneckCounts": {
+        "right_wrist": 54,
+        "left_wrist": 19
+      },
+      "armedFrames": 124,
+      "roiAngleRange": [
+        -9.159891568723536,
+        14.350507842987932
+      ],
+      "blockedApiAttempts": {
+        "camera": 0,
+        "socket": 0
+      },
+      "firstNeutralRun": {
+        "frames": [
+          0,
+          9
+        ],
+        "firstMs": 0.0,
+        "lastMs": 300.0,
+        "spanMs": 300.0
+      },
+      "observedGestures": [],
+      "rays": 0,
+      "acknowledgedSeq": 0,
+      "firstFrameLandmarkConfidence": {
+        "left_shoulder": 0.9994696974754333,
+        "right_shoulder": 0.9998078942298889,
+        "left_wrist": 0.6792375445365906,
+        "right_wrist": 0.9557701349258423
+      },
+      "maxAdjacentROIangleDeltaDegrees": 9.490093758043486,
+      "maxAdjacentROIhipShiftPixels": 15.832911614568987
+    },
+    "continuous-source-mirrored640.mp4": {
+      "sha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+      "fps": 30.0,
+      "frames": 319,
+      "config": {
+        "hold_ms": 350,
+        "neutral_ms": 300,
+        "cooldown_ms": 500,
+        "min_confidence": 0.65,
+        "max_frame_gap_ms": 300,
+        "raise_margin": 0.3,
+        "neutral_margin": 0.2
+      },
+      "gateCounts": {
+        "low-confidence": 81,
+        "left-down/right-down": 147,
+        "left-transition/right-down": 14,
+        "left-up/right-down": 65,
+        "left-down/right-transition": 12
+      },
+      "statusCounts": {
+        "low-confidence": 81,
+        "neutral": 159,
+        "tracking": 79
+      },
+      "inferenceStatusCounts": {
+        "tracking": 319
+      },
+      "detectionCounts": {
+        "1": 319
+      },
+      "maxFrameGapMs": 33.33400000000074,
+      "firstFrameMinConfidence": 0.6374891400337219,
+      "firstRaisedGate": {
+        "frame": 13,
+        "atMs": 433.333,
+        "gate": "left-up/right-down",
+        "armed": false,
+        "status": "neutral"
+      },
+      "lowConfidenceBottleneckCounts": {
+        "right_wrist": 32,
+        "left_wrist": 49
+      },
+      "armedFrames": 84,
+      "roiAngleRange": [
+        -16.84848864208764,
+        5.9056894345757796
+      ],
+      "blockedApiAttempts": {
+        "camera": 0,
+        "socket": 0
+      },
+      "firstNeutralRun": {
+        "frames": [
+          1,
+          9
+        ],
+        "firstMs": 33.333,
+        "lastMs": 300.0,
+        "spanMs": 266.667
+      },
+      "observedGestures": [],
+      "rays": 0,
+      "acknowledgedSeq": 0,
+      "firstFrameLandmarkConfidence": {
+        "left_shoulder": 0.9996408224105835,
+        "right_shoulder": 0.9996092915534973,
+        "left_wrist": 0.8286979794502258,
+        "right_wrist": 0.6374891400337219
+      },
+      "maxAdjacentROIangleDeltaDegrees": 11.229132415301784,
+      "maxAdjacentROIhipShiftPixels": 20.766795877426794
+    }
+  }
+}

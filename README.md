@@ -1,8 +1,12 @@
 # Sway & Sprout
 
+Every move helps your garden grow.
+
 A cooperative living-room movement garden: three playful moments, seated or standing, with manual participation and optional local pose recognition for **Catch the Sunshine**. No accounts or cloud runtime. Camera frames stay in memory on the Mac; the app does not save or upload them.
 
 This is the canonical development repository, normally checked out at `~/mygit/sway-and-sprout`. The earlier TogetherMove export remains an unchanged backup outside this repository. The private repository is [Xuefeng-Zhu/sway-and-sprout](https://github.com/Xuefeng-Zhu/sway-and-sprout).
+
+The current local branch, milestones, architecture, reproducible checks and next acceptance gate are in the [Mac development handoff](docs/DEVELOPMENT-HANDOFF.md). Natural-motion reliability and live recognition remain unverified.
 
 ## Start on this Mac
 

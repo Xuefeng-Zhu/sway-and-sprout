@@ -1,0 +1,249 @@
+{
+  "date": "2026-10-20",
+  "branch": "work/natural-motion-diagnostics",
+  "baselineMain": "ed4e1f5f12003319fc2cb4a93c4c203fee104adb",
+  "furtherPushPerformed": false,
+  "physicalCameraUsed": false,
+  "liveHumanRecognitionVerified": false,
+  "classifierThresholdsChanged": false,
+  "checks": {
+    "javascript": {
+      "exitCode": 0,
+      "passed": true,
+      "testsPassed": 55
+    },
+    "build": {
+      "exitCode": 0,
+      "passed": true
+    },
+    "progress": {
+      "exitCode": 0,
+      "passed": true,
+      "testsPassed": 90
+    },
+    "decoder": {
+      "exitCode": 0,
+      "passed": true,
+      "testsPassed": 6
+    },
+    "synthetic": {
+      "exitCode": 0,
+      "passed": true,
+      "testsPassed": 37
+    },
+    "python": {
+      "testsRun": 113,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true,
+      "captureAttempts": []
+    }
+  },
+  "browser": {
+    "mockedCasesPassed": 12,
+    "realSyntheticHTTPCasePassed": 1,
+    "totalPassed": 13,
+    "failed": 0,
+    "flaky": 0,
+    "realUserBrowserStorageAccessed": false
+  },
+  "syntheticHTTP": {
+    "source": "synthetic",
+    "passed": true,
+    "humanGestureVerified": false,
+    "responseCount": 153,
+    "timingsMs": {
+      "secondRay": 3247,
+      "sixthRay": 11302,
+      "completed": 31382
+    },
+    "pageErrorCount": 0,
+    "consoleErrorCount": 0,
+    "httpErrorCount": 0,
+    "captureGuard": {
+      "source": "synthetic",
+      "physicalCameraUsed": false,
+      "captureAttempts": [],
+      "captureAPIProhibited": true,
+      "serverStopped": true
+    }
+  },
+  "actualPublicVideo": {
+    "clear": {
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "rays": 6,
+      "ack": 6,
+      "decodedFrames": 152,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "fixtureSha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0
+    },
+    "near-face": {
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "rays": 1,
+      "ack": 1,
+      "decodedFrames": 152,
+      "outcome": {
+        "status": "failed",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": false,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "fixtureSha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0
+    },
+    "frontal-held": {
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "rays": 6,
+      "ack": 6,
+      "decodedFrames": 152,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "fixtureSha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0
+    },
+    "natural-original": {
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "rays": 0,
+      "ack": 0,
+      "decodedFrames": 319,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "fixtureSha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0
+    },
+    "natural-mirror": {
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "rays": 0,
+      "ack": 0,
+      "decodedFrames": 319,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "fixtureSha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+      "physicalCameraOpens": 0,
+      "savedOutputFrames": 0,
+      "uploadedFrames": 0
+    }
+  },
+  "naturalAnalyzerCompleted": true,
+  "pngFreeRebuild": {
+    "files": 2,
+    "frozenHashesMatched": true,
+    "dimensionsAndFrameCadenceMatched": true,
+    "pngInputsRequired": false,
+    "sourceSha256": "d891db0b4b326b5adaa07dbc6af080024ae4ed2e3e3e9c671bf8f75e39708c51",
+    "results": [
+      {
+        "file": "continuous-source-original640.mp4",
+        "bytes": 952724,
+        "sha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+        "frozenSha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+        "matchesFrozenEncoding": true,
+        "probe": {
+          "width": 640,
+          "height": 360,
+          "avg_frame_rate": "30/1",
+          "duration": "10.633333",
+          "nb_read_frames": "319"
+        },
+        "dimensionsAndFrameCadenceMatch": true,
+        "horizontalReflection": false
+      },
+      {
+        "file": "continuous-source-mirrored640.mp4",
+        "bytes": 954930,
+        "sha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+        "frozenSha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+        "matchesFrozenEncoding": true,
+        "probe": {
+          "width": 640,
+          "height": 360,
+          "avg_frame_rate": "30/1",
+          "duration": "10.633333",
+          "nb_read_frames": "319"
+        },
+        "dimensionsAndFrameCadenceMatch": true,
+        "horizontalReflection": true
+      }
+    ]
+  },
+  "calibrationDifferentialReview": {
+    "updates": 1120,
+    "events": 6,
+    "machineStateOrEventDifferences": 0,
+    "staleAtMs": 301,
+    "pollingDoesNotMutateClassifier": true
+  },
+  "nativeWebAssetsSynced": true,
+  "apkBuilt": false,
+  "remainingLimitations": [
+    "No complete independently annotated natural six-alternation acceptance clip.",
+    "Near-face fixture remains one of six expected events.",
+    "No live user or physical TV runtime recognition verification."
+  ],
+  "implementationSha256": {
+    "sidecar/motion.py": "375b9dd92631c13533513c88b7eea9f9b3900f82304c566ee86b373b80a3b458",
+    "sidecar/service.py": "cae49767c0ec32a1ce02fe294b64364bfa89b795058d901abbf69aedd6c751d4",
+    "sidecar/inference.py": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407",
+    "sidecar/verify_video.py": "b756595860b19fe16e958cefc3885dbb4d042d2de033c658e5a0626cc36cace9",
+    "src/main.js": "94f83192b222b80daf4d987f6278fa1ced00749426eb3e7b0b3cfdf0fbbf466a",
+    "src/motion.js": "9adc0c6d7ff801962b18a6d188873f1c05abf35c12a2739100ddd7c5fd452bc2",
+    "src/model.js": "31c4b4f3296f9bbc56ba6e8ba7a127759d92d263d88a96e603044c78c31d50f9",
+    "src/motion-view.js": "4e6f40b71ef5bfcc6ebdc5c7f4168b48a08a65b5e6b1834091f79df3f6e2edda",
+    "src/calibration.js": "cee344ed0f970ec74feba211fff674eb9ca75a1d2cb2f895c038bcd7cedaf6c9",
+    "src/preview.js": "e7a11f1f5328937639526ad6630fb24dc9e2cf04afe48853d3c4891d44acb135",
+    "scripts/analyze-natural-motion.py": "22caf876b105fedec45ee44cd24f489ca3a8b3abfa512f1e74365d9cff392d4c",
+    "scripts/rebuild-natural-video-fixtures.py": "1a8ac2e2efb4a3f6b45210d799ef88c38672f408e0878fe75dbb631e9b89f1d0",
+    "scripts/verify-simulated-progress-preservation.mjs": "485706df6530c0a93fc01db9c934937eab1f7da198f00b5e5159129f868c5a1d"
+  },
+  "milestoneCommits": {
+    "calibration": "89a0f9c4fcd90b1ef102abda08d19cd365ad7f96",
+    "videoVerification": "d48a3ac9a97c7849df52ed0ff882e355a761a80f"
+  }
+}

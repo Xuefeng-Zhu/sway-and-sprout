@@ -21,3 +21,22 @@ After the user approved the standard SDK agreement, installed checksum-verified 
 ### Runtime diagnostic outcome
 
 Official Android TV emulator installation succeeded under the approved Preview agreement. Process-local home/runtime paths resolved initial filesystem assumptions. With no CPU virtualization, two 10-minute software boot attempts did not reach boot-complete; one-core kernel logs showed Android system-server startup. Stopped the emulator cleanly and retained factual diagnostic logs. No native app launch was reached. Delivered verified debug APK and updated source; actual Fire TV runtime remains the next release/submission gate.
+
+
+## Mac development continuation — 2026-10-20
+
+- Continued on local `work/natural-motion-diagnostics` from private-main checkpoint
+  `ed4e1f5f12003319fc2cb4a93c4c203fee104adb`; no subsequent push or deployment.
+- Demonstrated and fixed conflicting preview/arming instructions and stale Ready
+  after frame stalls. Added bounded calibration diagnostics; thresholds and
+  classifier/event behavior remain unchanged under differential review.
+- Bound video expectations to exact input bytes and made complete-goal acceptance
+  explicit. Preserved near-face 1/6 and natural original/reflection zero-event
+  outcomes rather than treating consistent transport as recognition success.
+- Canonical checks: 55 JS, 113 Python, 90 progress, 37 synthetic, six decoder,
+  production build, 12 mocked Chrome cases and one real HTTP synthetic Chrome
+  case passed. Capture was guarded off; all test services were stopped.
+- Added repeatable diagnosis and source-only natural-video reconstruction, current
+  setup/demo documentation and [developer handoff](DEVELOPMENT-HANDOFF.md).
+  Complete natural-motion accuracy, live user recognition and native runtime
+  remain unverified; two-player camera work was not implemented.

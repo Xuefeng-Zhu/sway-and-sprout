@@ -1,15 +1,40 @@
 # Architecture
 
-The app is an offline, dependency-free runtime written in JavaScript and CSS, bundled by Vite. Vanilla DOM rendering fits the small finite screen set and avoids runtime framework weight. All assets are local. Dev dependencies are pinned and locked.
+Sway & Sprout is a local JavaScript/CSS app bundled by Vite. Manual play has no
+runtime network dependency. Optional Catch the Sunshine recognition uses an
+explicitly started Python/OpenCV sidecar on Mac loopback; it is single-person.
 
-Screens: home → setup → play → check → celebrate. Help returns safely; leaving play cancels animation. `requestAnimationFrame` advances elapsed seconds, capped per frame to prevent time jumps after suspension. Backgrounding or native Activity pause freezes play. Each challenge has three cues at 0/10/20 seconds and a 30-second endpoint. Only pressing “We joined in” updates completion. There is no inferred success.
+Screens follow home → setup → play → check/celebrate. requestAnimationFrame
+advances each 30-second round, with pause/background handling. Directional focus
+uses button centers, and native Java forwards remote input to the same handlers.
 
-Directional focus uses button centers, rejects candidates opposite the input, and scores forward distance plus perpendicular distance. Focus is set to a relevant main action after screen changes. Native Java translates key codes into the same JS handlers. Browser pointer clicks exercise identical actions.
+Manual participation is self-reported. A completed six-ray camera round can also
+save sunshine participation. Incomplete camera rounds retain the labelled manual
+confirmation path. Explicit video/synthetic provenance survives fallback, so
+simulated completion never saves human participation. `src/model.js` normalizes
+`{completed: string[], sessions: number}` under the preserved `togethermove.v1`
+key; unknown IDs and invalid counts are rejected. Storage failure is disclosed.
 
-`localStorage` key `togethermove.v1` holds `{completed: string[], sessions: number}` only. The normalizer deduplicates, filters unknown challenge identifiers, and rejects negative/noninteger session counts. Failed storage does not prevent gameplay and is disclosed on celebration.
+`src/motion.js` bounds/validates packets and filters source, runtime, round,
+revision, age, sequence and anatomical alternation. `src/calibration.js` validates
+optional feedback without creating events. `motion-view.js` renders readiness;
+preview visibility alone cannot authorize a raise.
 
-The Fire OS host intercepts HTTPS requests for a single local origin and serves packaged assets. External navigation is blocked and no INTERNET permission is requested. Camera/microphone are absent. HTML, JavaScript and CSS never contain personal records.
+The sidecar verifies pinned model/wrapper hashes and matches unique DNN output
+shapes. It detects and estimates pose independently per frame; no temporal ROI
+tracker exists. The gesture machine requires confident neutral before a held
+expected-arm raise. Service leases, capture epochs and ACK reconciliation prevent
+old frames or transport resets from scoring a new context. Calibration snapshots
+describe actual frame evidence; old frames suppress readiness without changing
+the classifier's state. Preview uses one bounded in-memory image from the same
+inference frame, and preview reads cannot activate capture or renew the lease.
 
-## Design system
+The release Android host serves packaged local assets and blocks external
+navigation. The separate debug motion prototype has a fixed proxy to the emulator
+host alias; it does not request a TV camera and is not a physical Fire TV route.
+Current native runtime verification is separate from Mac/browser evidence.
 
-Midnight forest #09241f, warm cream #fff3d9, lime #d6fb79; coral, gold, lavender identify the moments. Large rounded native system typography, generous five-percent horizontal TV margins, visible cream focus outline, pill primary actions. Original botanical image is decorative; content and interaction remain native HTML. Reduced-motion preference disables animation.
+The visual system uses forest, cream and lime, with coral/gold/lavender moments,
+large system type, visible focus and reduced-motion support. Product artwork is
+local. See [the development handoff](DEVELOPMENT-HANDOFF.md) for commands, exact
+invariants, evidence and unresolved acceptance checks.

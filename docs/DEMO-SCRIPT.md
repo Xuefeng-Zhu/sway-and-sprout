@@ -1,13 +1,29 @@
-# English demo script — target 2:40
+# Mac demo — manual play and labelled synthetic input
 
-Record on a real Fire TV or Fire TV/Vega simulator after actual device verification. Do not use this browser preview as proof of platform compliance.
+Use the current canonical checkout and a fresh test browser profile when a clean
+garden is useful. Do not clear an existing user's saved garden. This Mac demo
+does not establish Fire TV/Vega compliance or live camera recognition.
 
-0:00–0:15 Show device/simulator and remote. “This is Sway & Sprout, a cooperative living-room garden. Three little moments, one shared experience.”
-0:15–0:30 D-pad to start. Show seated and standing choices. “Everyone can adapt, rest, or watch. There is no camera and no performance score.”
-0:30–1:05 Start Wake the garden. Show prompts advance naturally. Briefly pause with the remote and resume. At endpoint choose We joined in.
-1:05–1:40 Next moment, Catch the sunshine. Show alternate position and all cues. Confirm participation.
-1:40–2:15 Make some rain, then confirm. Show the three-flower celebration.
-2:15–2:30 Return to garden, relaunch if time permits to show local saved progress. “The garden remembers only which moments we chose to join.”
-2:30–2:40 Show replay and close. “One remote, no setup, a little more time together.”
+1. Start `npm run dev` from the repository root. Show the Sway & Sprout name and
+   “Every move helps your garden grow.” Choose a position and manual play.
+2. Show Wake the Garden, pause/resume and visible keyboard focus. At the endpoint,
+   choose “We joined in.” Explain that manual participation is self-reported and
+   saved only on this device. All three moments remain available without a camera.
+3. For a separate deterministic transport/game demo, start `npm run motion:synthetic`
+   in another terminal. Choose Catch the Sunshine → Camera sunshine → Start.
+   Verify the badge says `SYNTHETIC TEST · NO CAMERA`; no camera image should appear.
+4. Let synthetic input collect six rays. Pause, change position and resume. At
+   completion, show that the previously saved garden/session data is unchanged,
+   including after reload. Say explicitly that these are generated landmarks,
+   not human recognition. Stop the sidecar with Ctrl-C after the demo.
+5. Use [the full-pipeline file checks](NATURAL-VIDEO-VERIFICATION.md) for a separate
+   evidence review. Clear/frontal held public poses score six rays; near-face
+   remains one of six. The current normal-speed dancing clips do not verify a
+   complete natural sequence.
 
-Do not claim rehabilitation, fitness improvement, detection, or AI-generated personalized coaching. No music or third-party footage is needed. Capture a clean 16:9 screen with readable text and visible focus.
+The improved calibration UI can be demonstrated with the mocked browser test;
+its camera-labelled JSON is not a live-camera result. Do not prompt a person or
+start camera mode until they explicitly say they are ready for a later test and
+the offline acceptance boundary in the [handoff](DEVELOPMENT-HANDOFF.md) is met.
+Actual Fire TV/Vega recording requires separate device verification. No clinical,
+fitness, general detection-accuracy or two-player camera claim is supported.

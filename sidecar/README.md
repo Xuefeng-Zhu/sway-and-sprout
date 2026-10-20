@@ -10,16 +10,16 @@ unconfirmed.
 
 ## Reproduce this Mac runtime
 
-Run from this directory. The verified installation uses CPython3.14.3, Apple Silicon,
+Run from this directory. The verified installation uses CPython3.14, Apple Silicon,
 `opencv-python-headless==5.0.0.93` (actual `cv2.__version__ == '5.0.0'`) and
 `numpy==2.5.4`. No Docker, system installation or GPU runtime is needed.
 
 ```sh
-python3 -m venv .venv
+python3.14 -m venv .venv
 .venv/bin/python -m pip install --only-binary=:all: --require-hashes -r requirements-macos-arm64.lock
 .venv/bin/python fetch_models.py
 .venv/bin/python run.py --verify
-.venv/bin/python -m unittest test_motion test_service test_inference -v
+.venv/bin/python -B -m unittest discover -p 'test_*.py'
 ```
 
 `requirements-macos-arm64.lock` pins **wheel SHA256**, for CPython3.14/macOS14+ arm64.
@@ -49,13 +49,15 @@ All responses are labelled `source:'synthetic'`; the game must visibly show synt
 test mode. It is useful for transport, pause and game feedback checks, and is not
 camera verification.
 
-Explicitly allow this local camera for an active game:
+Camera mode is for a later supervised test after the user explicitly says they
+are ready. Offline development keeps it off. To explicitly allow this local
+camera for that active game:
 
 ```sh
 .venv/bin/python run.py --camera 0
 ```
 
-Start the web app separately with `npm run dev`, choose **Catch the Sunshine**,
+From the repository root in a separate terminal, start the web app with `npm run dev`, choose **Catch the Sunshine**,
 select camera input, and start the round. The service opens the camera only while a
 client is actively polling an active round. Pause, leaving the game or a1500ms poll
 lease timeout releases the camera. Resume requires arms at rest before another
@@ -92,8 +94,11 @@ proxies only this fixed route to `10.0.2.2:8765`, the emulator's Mac host alias.
 This address is not a physical FireTV route.
 
 Packets carry a per-process `streamId`, explicit source, verified runtime, control
-identity, status, expected anatomical side, hold duration, numeric metrics and at
-most64 semantic events. Each event has a global sequence, round ID, gesture,
+identity, status, expected anatomical side, hold duration, numeric/boolean metrics
+and at most64 semantic events. Optional `metrics.calibration` contains only bounded
+reason/gate labels, dwell/hold durations, confidence labels and frame freshness.
+After300ms without a new valid frame, readiness is masked. Polling never arms the
+classifier or accumulates neutral time. Each event has a global sequence, round ID, gesture,
 confidence and server-computed age. Pending events expire after1500ms. Query size,
 field count, UUIDs, safe integers, host, origin and local peer are constrained;
 responses are `no-store`. A single local client has a1500ms lease. A takeover
@@ -118,8 +123,10 @@ Round changes reset to left. No action is converted to generic Enter or a keypre
 Camera frames are never recorded, written to disk or uploaded. The requested
 live framing preview transfers only the latest small JPEG over Mac loopback to
 the local browser, with no recording or persistent browser storage. Images are
-cleared on pause, end and manual mode. The semantic event endpoint and diagnostic
-logs contain no images or landmark coordinates. No personal images are used for
+cleared on pause, end and manual mode. The semantic event endpoint and live
+camera service logs contain no images or landmark coordinates. The separate
+public-file analyzer can write scalar coordinates for its pinned licensed fixtures;
+it cannot open a camera and does not log user movement. No personal images are used for
 external inference. Manual input and pause remain available in the game. The
 existing APK has not been updated with the Mac-browser preview.
 
@@ -134,3 +141,5 @@ Official upstream references:
 - https://github.com/opencv/opencv_zoo/tree/47534e27c9851bb1128ccc0102f1145e27f23f98/models/person_detection_mediapipe
 - https://github.com/opencv/opencv_zoo/tree/47534e27c9851bb1128ccc0102f1145e27f23f98/models/pose_estimation_mediapipe
 - https://developer.android.com/studio/run/emulator-networking-address
+
+Current commands, evidence and acceptance limits: [Mac development handoff](../docs/DEVELOPMENT-HANDOFF.md).
