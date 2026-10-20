@@ -11,6 +11,7 @@ playwright-report/
 
 # Local runtime/models and licensed public fixture media are restored locally.
 sidecar/models/*.onnx
+sidecar/models/*.task
 sidecar/fixtures/.cache/
 sidecar/fixtures/**/*.mp4
 sidecar/fixtures/**/*.png

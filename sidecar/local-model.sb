@@ -1,0 +1,8 @@
+;; The optional Google runtime may attempt utilization telemetry. Deny external
+;; networking at the OS boundary while permitting the existing local game bridge.
+(version 1)
+(allow default)
+(deny network*)
+(allow network-bind (local ip "localhost:*"))
+(allow network-inbound (local ip "localhost:*"))
+(allow network-outbound (remote ip "localhost:*"))

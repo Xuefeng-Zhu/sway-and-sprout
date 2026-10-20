@@ -10,6 +10,7 @@ import time
 from pathlib import Path
 
 from inference import OpenCVPose
+from pose_backend import BACKENDS, close_pose, create_pose
 from motion import synthetic_observation
 from service import MotionService, make_server
 from video_input import video_worker
@@ -141,21 +142,26 @@ def main():
     choice.add_argument("--camera-smoke", type=int, choices=range(0, 8), metavar="INDEX", help="Explicit bounded camera + DNN check, no HTTP service")
     parser.add_argument("--seconds", type=float, default=5, help="Smoke duration 1–30 seconds")
     parser.add_argument("--port", type=int, default=8765, help="Loopback port, default8765")
+    parser.add_argument("--pose-backend", choices=BACKENDS, default="opencv",
+                        help="Optional Full CPU IMAGE backend, allowed with --video only")
     args = parser.parse_args()
     if not 1 <= args.seconds <= 30 or not 1024 <= args.port <= 65535:
         parser.error("Duration must be1–30 and port1024–65535")
+    if args.pose_backend != "opencv" and args.video is None:
+        parser.error("The optional Full backend is allowed with --video only")
+    pose = None
     try:
-        pose = OpenCVPose()
+        if args.video is not None:
+            args.video = args.video.expanduser().resolve(strict=True)
+            if not args.video.is_file() or not 0 < args.video.stat().st_size <= 512 * 1024 * 1024:
+                raise ValueError("Video fixture must be a local file of at most512 MiB")
+        pose = OpenCVPose() if args.pose_backend == "opencv" else create_pose(args.pose_backend)
         if args.verify:
             print(json.dumps(pose.runtime, indent=2))
             return
         if args.camera_smoke is not None:
             print(json.dumps(camera_smoke(pose, args.camera_smoke, args.seconds), indent=2))
             return
-        if args.video is not None:
-            args.video = args.video.expanduser().resolve(strict=True)
-            if not args.video.is_file():
-                raise ValueError("Video fixture must be an existing local file")
         source = "synthetic" if args.synthetic else "video" if args.video is not None else "camera"
         service = MotionService(pose.runtime, source)
         stop = threading.Event()
@@ -167,13 +173,15 @@ def main():
         else:
             worker_target, worker_args = camera_worker, (service, pose, stop, args.camera)
         worker = threading.Thread(target=worker_target, args=worker_args, daemon=True)
-        for sig in (signal.SIGINT, signal.SIGTERM):
-            signal.signal(sig, lambda *_: (_ for _ in ()).throw(KeyboardInterrupt()))
-        worker.start()
-        print(json.dumps({"listening": f"http://127.0.0.1:{args.port}/motion/events",
-                          "source": source, "runtime": pose.runtime,
-                          "cameraStartsOnlyWhenActive": source == "camera"}), flush=True)
+        worker_started = False
         try:
+            for sig in (signal.SIGINT, signal.SIGTERM):
+                signal.signal(sig, lambda *_: (_ for _ in ()).throw(KeyboardInterrupt()))
+            worker.start()
+            worker_started = True
+            print(json.dumps({"listening": f"http://127.0.0.1:{args.port}/motion/events",
+                              "source": source, "runtime": pose.runtime,
+                              "cameraStartsOnlyWhenActive": source == "camera"}), flush=True)
             server.serve_forever(poll_interval=0.1)
         except KeyboardInterrupt:
             pass
@@ -181,11 +189,16 @@ def main():
             stop.set()
             service.close()
             server.server_close()
-            worker.join(timeout=3)
+            if worker_started:
+                worker.join(timeout=None if args.pose_backend == "mediapipe-full" else 3)
+                # Full must release its worker before closing the native graph.
     except Exception as exc:
         print(json.dumps({"error": f"{type(exc).__name__}: {exc}",
                           "verified": False, "cameraFramesSaved": 0}), flush=True)
         raise SystemExit(1)
+    finally:
+        if pose is not None:
+            close_pose(pose)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,13 @@
+{
+  "backend": "mediapipe-full",
+  "packages": {"mediapipe": "1.1.1", "opencv": "5.0.0", "numpy": "2.5.4"},
+  "model": {
+    "path": "models/pose_landmarker_full.task",
+    "bytes": 9398198,
+    "sha256": "4eaa5eb7a98365221087693fcc286334cf0858e2eb6e15b506aa4a7ecdcec4ad",
+    "url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/latest/pose_landmarker_full.task"
+  },
+  "runningMode": "IMAGE",
+  "delegate": "CPU",
+  "admissionThreshold": 0.65
+}

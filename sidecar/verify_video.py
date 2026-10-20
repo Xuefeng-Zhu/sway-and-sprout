@@ -19,6 +19,7 @@ import time
 from unittest import mock
 
 from inference import OpenCVPose
+from pose_backend import BACKENDS, close_pose, create_pose
 from service import MotionService
 from video_input import open_video, wrist_gates
 
@@ -152,8 +153,22 @@ def game_scoring_matches(observed, game):
             and game.get("completed") is (len(observed) >= target))
 
 
-def verify(path, seconds=30, expected=None, score_script=None, motion_module=None):
-    pose = OpenCVPose()
+def verify(path, seconds=30, expected=None, score_script=None, motion_module=None, *,
+           pose_backend="opencv", pose_factory=None):
+    path = Path(path).expanduser().resolve(strict=True)
+    if not path.is_file() or not 0 < path.stat().st_size <= 512 * 1024 * 1024:
+        raise ValueError("Video fixture must be a local file of at most512 MiB")
+    # Preserve the existing default hook and dependency-free default tests.
+    factory = pose_factory or (OpenCVPose if pose_backend == "opencv" else
+                               lambda: create_pose(pose_backend))
+    pose = factory()
+    try:
+        return _verify_with_pose(pose, path, seconds, expected, score_script, motion_module)
+    finally:
+        close_pose(pose)
+
+
+def _verify_with_pose(pose, path, seconds, expected, score_script, motion_module):
     path = Path(path).expanduser().resolve(strict=True)
     original_capture = pose.cv.VideoCapture
     opened = []
@@ -269,6 +284,8 @@ def main():
     parser.add_argument("--output", type=Path, required=True, help="Scalar JSON report only")
     parser.add_argument("--score-script", type=Path)
     parser.add_argument("--motion-module", type=Path)
+    parser.add_argument("--pose-backend", choices=BACKENDS, default="opencv",
+                        help="Optional Full CPU IMAGE backend; explicit local videos only")
     args = parser.parse_args()
     if not 0 < args.seconds <= 30:
         parser.error("Video test bound must be greater than zero and at most30seconds")
@@ -280,7 +297,8 @@ def main():
         except (OSError, ValueError) as exc:
             parser.error(str(exc))
     expected = expectation["expectedGestures"] if expectation else None
-    report = verify(args.video, args.seconds, expected, args.score_script, args.motion_module)
+    report = verify(args.video, args.seconds, expected, args.score_script, args.motion_module,
+                    pose_backend=args.pose_backend)
     report["expectation"] = expectation
     windows = expectation["eventWindows"] if expectation else None
     report["eventTiming"] = evaluate_event_windows(report["events"], windows) if windows is not None else None
