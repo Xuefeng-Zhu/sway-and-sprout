@@ -1,73 +1,62 @@
 # Android native video verification — 2026-10-20
 
-The debug APK now has an opt-in **in-process Android inference path**. It runs without a Mac Python sidecar. This is a diagnostic implementation, not accepted Fire TV motion recognition: the first full seven-video emulator run produced zero events on all three six-event controls. The default web/OpenCV path and optional Mac Full IMAGE baseline remain unchanged.
+Official crop/preprocessing corrections restored one actual native positive: **Lightning FP16 with three same-image passes reaches six frontal events, six UI rays and ACK6**, then passes the real30-second celebration, reload and unchanged participation checks. Clear and near-face remain0/6; overall recognition is not accepted. The default web/OpenCV backend and optional Mac Full IMAGE baseline remain unchanged.
 
-The user has no physical Fire TV. The provisional reference is Fire OS7 / API28 / `armeabi-v7a`; no user-owned device is assumed. Actual runtime evidence is from the already-installed Android TV API34 **ARM64** emulator on this Mac. ARMv7 library presence is statically verified in the APK, not executed on a 32-bit guest. Fire OS, UVC camera access, Vega and sustained real-device performance remain unverified.
+The user has no physical Fire TV. The provisional reference is Fire OS7/API28/`armeabi-v7a`; actual execution is Android TV API34 ARM64 on the existing Mac emulator. ARMv7 ELF32 presence is statically checked, not executed. Fire OS/UVC/Vega and sustained device performance remain unverified.
 
-## What executes on Android
+## Android implementation
 
-`NativeVideoFactory` activates only in debug with the `nativeVideo=true` intent extra and one of seven whitelisted `nativeVideoCase` names. It cannot accept a path, URI or camera. Release has an inert factory, no inference libraries/model/videos and no INTERNET or CAMERA permission. The normal debug route retains the existing fixed emulator-host proxy.
+The debug-only intent `nativeVideo=true` selects one of seven fixed local videos, an explicit pinned model (`int8`, `float16`, `thunder`) and `nativeRefinement=image|tracked`. No path, URI, camera or network video is accepted. Release has an inert factory, no model/runtime/media, INTERNET or CAMERA permission. Model binaries, licensed videos, generated assets and logs remain ignored.
 
-`NativeVideoAssets` verifies model/video bytes and SHA256, expected frame count/duration, runtime version, config schema and tensor shape/type. LiteRT core and API **1.4.2** are explicitly restored Google AARs; the Gradle debug preflight rejects a changed AAR. Their dependency closure has no Play Services requirement. The APK includes `armeabi-v7a/libtensorflowlite_jni.so` as ELF32 ARM, plus the ARM64 library actually exercised by this emulator.
+`MediaMetadataRetriever.getFrameAtIndex` decodes indexed bundled MP4 frames, requiringAPI28 for this mode. LiteRT1.4.2 CPU uses two threads, without Play Services or a Mac inference sidecar. Model/video byte counts and SHA256 are checked, as are exact tensor types/shapes and unquantized I/O metadata. Lightning uses UINT8 RGB192×192; Thunder uses256×256. FLOAT32 outputs are17 `(y,x,score)` joints. No external normalization, extra dequantization or confidence remapping is applied.
 
-`MediaMetadataRetriever.getFrameAtIndex` decodes every indexed frame from an uncompressed bundled MP4 asset (API28 minimum for this mode). `NativeMoveNet` uses the official pinned Lightning INT8 v4: UINT8 RGB `[1,192,192,3]` in, FLOAT32 `[1,1,17,3]` `(y,x,score)` out. A single CPU interpreter uses two threads. The transform is full-frame, aspect-preserving floor resize, integer-centered black padding and Android Canvas bilinear sampling; its actual per-axis scale/offset invert landmarks to source coordinates. There is no mirror, signed-int8 conversion, float normalization or claim of exact TensorFlow resize-with-pad parity. This baseline does not implement adaptive torso cropping.
+The official Android hip-centered torso/body ROI is ported with350 independent host math assertions. Actual Support API comparisons independently check sampled center-crop/resize/RGB tensor bytes on a shared crop bitmap, followed by all51 floats through the same interpreter. All observed byte and output differences were0. This sampled boundary does not independently verify decoding, the shared Canvas crop or another runtime. See [exact source pins, semantics and scope](MOVENET-REFERENCE-PARITY.md).
 
-Shoulders5/6 and wrists9/10 feed the ported gesture rules: confidence.65, neutral300ms, expected-arm hold350ms, cooldown500ms, maximum frame gap300ms, raise margin.30 and down margin.20 shoulder-width. MoveNet scores are keypoint scores, not MediaPipe visibility/presence or a measured person-global probability. SinglePose cannot establish person count; these clips are assumed to contain one intended person. Thresholds and annotations were not adjusted for this model.
+`tracked` uses one pose call and carries crop state between frames. `image` resets each fileframe and performs three same-image crop refinements; only the final pose advances the classifier once. Sampled parity adds one reference call per checked pass. All four required native joint scores must still meet.65; .2 is only official crop-support eligibility. Neutral300ms, hold350ms, cooldown500ms, gap300ms and .30/.20 shoulder-width margins are unchanged. MoveNet scores are uncalibrated keypoint scores, not MediaPipe visibility or global person probability. SinglePose cannot verify person count.
 
-`NativeVideoReplay` serves bounded same-origin semantic events and metadata-only preview directly to the WebView; it opens no socket. Source remains `video`, runtime identifies `litert` and its pinned model, and the existing JS reducer/ACK/UI path remains authoritative. File timestamps drive gesture dwell; monotonic wall time drives leases and event age. Pause/revision/epoch changes invalidate partial work. A separate host pause gate prevents a delayed request from restarting a paused Activity. One serialized worker owns native resources, including cleanup across Activity recreation.
+The serialized native worker owns decoder, interpreter and crop state. Revision/epoch/pause changes discard in-flight work and reset tracking. Same-origin WebView interception transports semantic events and metadata-only preview without opening a socket; source stays `video`. The existing JS reducer/ACK/UI owns scoring and preserves saved participation. File time drives gesture dwell, wall time drives leases/event age and the real30-second round. Frames/tensors remain in memory and are recycled; scalar diagnostics contain no pixel export.
 
-Frames and transformed tensors remain in memory, then are recycled. No frame/preview export, screenshot or physical camera is used. Only bounded scalar diagnostics are logged, including input/output CRCs, means, landmark scores, confidence/geometry rejection counts and timings. CRCs diagnose changed input/output; they do not establish pixel parity. Instrumentation adds preprocessing work, so diagnostic timing is labelled separately.
+## Measured results
 
-## Actual result
+| Model/profile | Clear | Near-face | Frontal | Negative coverage |
+| --- | ---: | ---: | ---: | --- |
+| Initial INT8/full-frame |0/6|0/6|0/6|Both complete, but all frames confidence rejected|
+| INT8 official tracked/image |0/6|0/6|Not run in these two probes|Not established|
+| Lightning FP16/image3-pass |0/6|0/6|**6/6, UI6, ACK6**|Both-up136/136 zero; right-only218/450 partial|
+| Lightning FP16/tracked1-pass |0/6|0/6|0/6|Both complete, zero; all7 files/1680frames complete|
+| Thunder FP16/tracked1-pass |0/6|0/6|0/6|Both-up136/136 zero; right-only193/450 partial|
 
-All seven final-APK replays completed all **1,680 frames**. The clear, frontal and near-face expected-six controls produced **0 events / 0 rays / ACK0** each. The two negatives also produced0, and the two uncertified continuous clips produced0 (observations only). The runtime/source labels, HTTP-to-WebView integration, no-camera calls and unchanged stored progress were verified for all seven. Six-ray native-model scoring was not demonstrated; the separate generated-packet tests verify that UI/ACK boundary.
+The three positive clips disclose held frames/cuts/reflection; none certifies natural six-alternating motion. The two continuous inputs remain observed-only, not zero-event negatives. Partial negatives fail full acceptance. A valid runtime or completed file is not successful recognition; `acceptedFrames` means frames committed to the current epoch, while `nativeConfidenceAcceptedFrames` reports the separate pose gate.
 
-Every frame failed the unchanged four-joint .65 confidence gate. Clear/frontal/near-face input/output fingerprints had113/123/118 distinct values, with no blank inputs, invalid mappings or invalid native scores. This excludes fixed/black input and stale output for these runs; it does not prove pixel parity with the official preprocessing. Raw left/right/neutral geometry was also weak. Negative zero counts are therefore weak rejection evidence, because no confidence-admitted neutral calibration occurred.
+Offline scalar replay matches all logged canonical classifier states/events. Lower-gate counterfactuals are not model calibration or UI results. Near-face still produces only2/6 under ideal confidence in image mode,0/6 in tracked mode: geometry breaks the holds. Independent AI joint boxes, frozen before reviewing predictions, allow both passing and failing .30 geometry; they do not establish exact human ground truth or justify changing expectations/margins.
 
-With scalar instrumentation enabled, whole-interpreter mean time ranged **10.65–16.97ms** across the seven clips; native decode/preprocess/inference frame means ranged **20.45–33.11ms**. These exclude event polling, UI and intentional dwell, and are emulator/Mac measurements. App-process PSS snapshots ranged103,226–114,844KiB. A separate `dumpsys meminfo` snapshot reported PSS103,889KiB, RSS213,420KiB and swap PSS302KiB. Separate WebView renderer/decoder service memory and sustained peaks were not attributed; no complete TV RAM budget or hardware throughput guarantee follows.
+| Profile | Primary inference mean across cases | Native diagnostic frame mean |
+| --- | ---: | ---: |
+| Lightning FP16 tracked |22.4–30.4ms|38.3–54.5ms|
+| Lightning FP16 image |63.5–84.1ms, sum of3|93.6–133.8ms|
+| Thunder FP16 tracked |110.0–144.0ms|143.2–182.0ms|
 
-Fresh required checks: **65 JavaScript tests**, production build, **381 pure Java synthetic assertions**,8 preparation boundary checks,2 fake-ADB physical-device-guard checks, and **5 actual emulator lifecycle assertions**. Debug and release APKs build offline. The saved portable runner was exercised on clear+both-up: it completed both, exited1 for the failed positive, and recorded the negative's matching zero count without claiming robust tracking.
+Times are emulator/Mac measurements. Primary inference excludes extra sampled reference calls; native frame time includes them and decode/preprocessing, but excludes event polling/rendering and intentional dwell. They are not camera-to-render or Fire TV results. ProcessPSS snapshots omit separate renderer/service memory and sustained peaks; no complete TV resource budget follows. No candidate is promoted.
 
-## Boundaries of verification
+## Reproduce and evidence
 
-The three positive clips contain disclosed held frames, cuts and reflected apparent-left poses; they do not certify natural alternating movement. Two negative clips are independently annotated controls. The two continuous clips have no complete independently certified expected sequence and remain `expectationKnown:false`; an empty placeholder array is never a negative expectation.
+Use the existing explicit fixture recipes, then restore audited artifacts with `python3 scripts/prepare-native-video.py --artifact-dir /path/to/audited-artifacts` (offline default), or explicit `--download`. `--check` verifies six artifacts, three models, seven videos and21 configs without mutation. Existing14 INT8/FP16 config bytes and all frozen expectations are preserved. `sh scripts/build-android-cached-mac.sh` uses this Mac's installed JDK17/Gradle8.13/AGP8.13.2/SDK35 offline, one worker/768MB heap and the existing debug key. Exported AGP8.7.3/Gradle8.9 pins are unchanged.
 
-`acceptedFrames` in transport statistics means decoded frames committed to the current control epoch, not confidence-admitted pose frames. `poseDiagnostics.nativeConfidenceAcceptedFrames` reports that separate gate. A completed file or valid runtime does not mean recognition passed. Generated six-event JS tests and pure Java pose tests establish scoring/rule behavior independently from actual model results.
-
-The detailed scalar record is [native-video-20261020.json](verification/native-video-20261020.json). It binds APKs, sources, runs and expectations. Real emulator lifecycle checks cover background pause, no advance on foreground without explicit resume, resumption and successful decoder/interpreter release. They do not substitute for extended device testing.
-
-## Reproduce locally
-
-Restore the seven source fixtures using their existing opt-in repository recipes. Models/media and generated debug assets remain ignored. Then explicitly copy already-audited artifacts or request the pinned official downloads:
-
-```sh
-python3 scripts/prepare-native-video.py --artifact-dir /path/to/audited-artifacts
-# Alternative explicit network opt-in: python3 scripts/prepare-native-video.py --download
-python3 scripts/prepare-native-video.py --check
-npm test
-npm run build
-npm run android:sync
-cd android
-./gradlew --offline :app:assembleDebug :app:assembleRelease
-```
-
-For the already-installed Mac cache, `sh scripts/build-android-cached-mac.sh` is the explicit offline override. With an existing camera-disabled emulator and the debug APK installed, run:
+With the debug APK installed on an intended camera-disabled emulator:
 
 ```sh
-node scripts/verify-native-video.mjs --adb /path/to/adb --adb-port 5038 --serial emulator-5556
-node scripts/verify-native-lifecycle.mjs --adb /path/to/adb --adb-port 5038 --serial emulator-5556
+node scripts/verify-native-video.mjs --adb /path/to/adb --adb-port 5038 --serial emulator-5556 --model float16 --refinement image --completion true --out verification-results/fp16-image frontal both-up-negative
+node scripts/verify-native-lifecycle.mjs --adb /path/to/adb --adb-port 5038 --serial emulator-5556 --model float16 --refinement tracked
 ```
 
-Outputs default to ignored `verification-results/native-video`. Case names may be provided to select controls. A failed known positive returns exit1 after the remaining cases run; unknown expectations stay observed-only. Local debug installation uses `adb -P 5038 -s emulator-5556 install -r android/app/build/outputs/apk/debug/app-debug.apk`, only after verifying the intended emulator. No physical-device installation was done.
+The runner rejects physical serials and checks `ro.kernel.qemu=1`; it does not boot/install. Failed known positives or incomplete negatives return1 after remaining cases. Completion waits for the actual timer and preserves the original six-ray observation, then checks video label, no camera calls, unchanged storage and reload. No timer/event is injected.
 
-The existing exported AGP8.7.3/Gradle8.9 pins are preserved. This Mac's recorded build instead explicitly uses its cached Gradle8.13/AGP8.13.2/JDK17/SDK35, one worker, a768MB Gradle heap, no downloads and its existing debug keystore. No SDK installation, legal-term acceptance or key generation occurred. The debug APK is local only and contains exact third-party credits/notices.
+Fresh checks include65 JS tests, production build,350 crop plus381 pose host assertions,9 optional-model preparation boundaries, offline debug/release APK builds, real six-ray/completion/reload preservation and7 actual emulator identity/lifecycle assertions. An initial fixed800ms cleanup check failed; the bounded5-second recheck observed actual cleanup. Both records are retained.
 
-The emulator was launched read-only with snapshots disabled, two cores,1536MB RAM, software graphics and **both cameras `none`**. Only one emulator was used. The Mac sidecar ports4173/8765 were not listening. External network was denied by the OS sandbox while localhost/Unix IPC remained available. The validation runner requires an emulator serial and `ro.kernel.qemu=1`; it never installs an APK, starts an emulator or operates a physical device.
+[Structured current evidence](verification/native-reference-20261020.json) binds scalar results, APK/source hashes, frozen inputs and diagnostic analyses. [The initial full-frame report](NATIVE-FULLFRAME-BASELINE.md) and its JSON remain historical rejected baseline evidence.
 
-The emulator, task-owned ADB server and scalar-log collection were stopped after verification; ports4173,8765,5038,5556 and5557 have no listener.
+## Remaining acceptance
 
-## Remaining implementation and acceptance
+No independent natural six-alternation positive or calibrated MoveNet event-score gate exists. The new public-domain DVIDS699177 candidate has three visible people and only one complete neutral→left→neutral cycle; it is an untested partial source, not accepted six-event footage. Next obtain precise independent joint/gesture annotations on separate clear-margin natural positives and negatives before proposing any model-specific gate. Keep the .65 baseline and rejected runs.
 
-Do not promote this Lightning/full-frame candidate: positive recognition currently fails. Next work should compare its preprocessing/raw keypoints with the official reference, assess the official crop/loss-recovery strategy without fixture-derived tuning, and use independently annotated natural positive and negative controls for any cross-model confidence calibration. A useful fix must recover actual native positive scoring while preserving negatives; transport-only success is insufficient.
-
-Actual TV capture still needs a proven third-party frame API on a selected supported platform. Fire OS does not imply universal Camera2/UVC support, and Cube video calling is not evidence for this app. Vega requires a separate capture/runtime/UI port rather than reusing APK/AAR. Hardware is unavailable, so real Fire OS loading,32-bit execution, webcam behavior and at least20-minute latency/memory/UI acceptance cannot be completed here. There is no pending permission request. No push, production deployment or upload occurred.
+Actual TV capture requires a proven third-party frame API; Cube calling support does not prove general Camera2/UVC access. Without hardware, FireOS loading,32-bit execution, capture and sustained20-minute latency/memory/UI acceptance cannot be certified. Vega needs a separate port. There is no permission denial or pending approval. Camera remained off, one emulator only, external networking denied during runtime, and no push, deployment, spending or upload occurred.
