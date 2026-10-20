@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "id": "commons-suitcase-both-up-negative-720-855",
+  "frozenAtUtc": "2026-10-20T15:52:37.745621+00:00",
+  "reviewer": "natural_video_contract independent pixel review",
+  "reviewBlindToModelPredictions": true,
+  "modelInferenceUsed": false,
+  "cameraUsed": false,
+  "source": {
+    "path": "/Users/frank/Documents/Codex/2026-10-19/task/natural-candidates-20261020/commons-round2/suitcase-row-and-press.webm",
+    "sha256": "6e0054cc92c28ff1d265f00c2e74ca68540d1d30885d88088d0398c96de26a18",
+    "bytes": 6807467,
+    "author": "Taco Fleur",
+    "assetPage": "https://commons.wikimedia.org/wiki/File:Kettlebell_Suitcase_Row_and_Press.webm",
+    "permanentPage": "https://commons.wikimedia.org/w/index.php?title=File:Kettlebell_Suitcase_Row_and_Press.webm&oldid=1004642243",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Kettlebell_Suitcase_Row_and_Press.webm",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "permissionConfirmation": "Wikimedia VRT ticket2017110310008425 on asset page",
+    "width": 640,
+    "height": 480,
+    "fps": "30/1",
+    "frames": 1561,
+    "timestampNote": "WebM source PTS begins with a small offset; source timestamps below come from ffprobe, frame indices are zero-based decoded order."
+  },
+  "proposedContiguousSelection": {
+    "startFrameInclusive": 720,
+    "endFrameExclusive": 856,
+    "frameCount": 136,
+    "sourceFirstPtsMs": 24003.0,
+    "sourceLastPtsMs": 28503.0,
+    "nominalDurationMs": 4533.333333333333,
+    "frameMap": "selected frame i maps to source frame i+720",
+    "recipeSelectionOnly": "trim=start_frame=720:end_frame=856,setpts=PTS-STARTPTS",
+    "preserveOriginalCadence": true,
+    "retiming": false,
+    "reflection": false,
+    "splicing": false,
+    "resizing": false,
+    "ownerOfEncodingAndFinalManifest": "root; no derivative encoded by this reviewer"
+  },
+  "manualPoseWindows": [
+    {
+      "pose": "both-down",
+      "sourceStartFrameInclusive": 720,
+      "sourceEndFrameInclusive": 735,
+      "selectedStartFrameInclusive": 0,
+      "selectedEndFrameInclusive": 15,
+      "sourceStartPtsMs": 24003.0,
+      "sourceEndPtsMs": 24503.0,
+      "selectedStartPtsMs": 0,
+      "selectedEndPtsMs": 500.0,
+      "consecutiveFramesReviewed": 16,
+      "observedSpanMs": 500.0,
+      "description": "Both wrists at kettlebell handles near knees/shins and well below shoulders throughout. Torso is bent forward; this is a wrist-down pose window, not a claim of ideal upright camera calibration."
+    },
+    {
+      "pose": "both-up",
+      "sourceStartFrameInclusive": 840,
+      "sourceEndFrameInclusive": 855,
+      "selectedStartFrameInclusive": 120,
+      "selectedEndFrameInclusive": 135,
+      "sourceStartPtsMs": 28003.0,
+      "sourceEndPtsMs": 28503.0,
+      "selectedStartPtsMs": 4000.0,
+      "selectedEndPtsMs": 4500.0,
+      "consecutiveFramesReviewed": 16,
+      "observedSpanMs": 500.0,
+      "description": "Both anatomical wrists clearly above their shoulders throughout. Two kettlebells, raised wrists, shoulders and feet remain in frame; one visible person. Neither opposite wrist is down."
+    }
+  ],
+  "wholeSelectionReview": {
+    "everyFrameReviewed": true,
+    "consecutiveSourceFramesReviewed": 136,
+    "sourceStartFrameInclusive": 720,
+    "sourceEndFrameInclusive": 855,
+    "observedMotion": "Both wrists begin down, rise together to rack/chest height, then press overhead together. No held single-up/opposite-down action observed anywhere in this crop.",
+    "expectedGestures": [],
+    "eventWindows": [],
+    "scope": "Negative under the one-up/opposite-down policy only; does not certify a six-gesture goal or positive anatomical left raise.",
+    "onsetUncertainty": "Exact shoulder crossing and both-up onset are intentionally not annotated; only the conservative interior windows are certified. No event emission window applies to the expected empty sequence.",
+    "qualityLimits": [
+      "Backlit low-angle source with letterboxing.",
+      "Initial neutral has a bent torso and moving kettlebells.",
+      "The crop ends during both-up, so no return-down interval is claimed.",
+      "Source is played with unchanged timestamp cadence; original recording speed beyond the published file is not independently known."
+    ]
+  },
+  "pixelReviewEvidence": [
+    {
+      "file": "all-720-735.png",
+      "sourceFrameStart": 720,
+      "sourceFrameEnd": 735,
+      "layout": "row-major; 4 columns x4 rows for 16-frame sheets, otherwise 6 columns x5 rows; trailing empty cells are not frames",
+      "allSourceFramesPresent": true,
+      "tilePixels": "640x480 original source resolution",
+      "sha256": "79f3d9b6691e8b5faaee63a57e2eec22337402dcd38e7624548141245f8c30a0"
+    },
+    {
+      "file": "all-736-765.png",
+      "sourceFrameStart": 736,
+      "sourceFrameEnd": 765,
+      "layout": "row-major; 4 columns x4 rows for 16-frame sheets, otherwise 6 columns x5 rows; trailing empty cells are not frames",
+      "allSourceFramesPresent": true,
+      "tilePixels": "640x480 original source resolution",
+      "sha256": "9b156871175b9e8433f6df6ba7f30ad3f7d33240a632214d85d78f73af7e608a"
+    },
+    {
+      "file": "all-766-795.png",
+      "sourceFrameStart": 766,
+      "sourceFrameEnd": 795,
+      "layout": "row-major; 4 columns x4 rows for 16-frame sheets, otherwise 6 columns x5 rows; trailing empty cells are not frames",
+      "allSourceFramesPresent": true,
+      "tilePixels": "640x480 original source resolution",
+      "sha256": "b984fa841aacc617d6df73058fd990181435749a32ff6cc7392d6bfc476599d6"
+    },
+    {
+      "file": "all-796-825.png",
+      "sourceFrameStart": 796,
+      "sourceFrameEnd": 825,
+      "layout": "row-major; 4 columns x4 rows for 16-frame sheets, otherwise 6 columns x5 rows; trailing empty cells are not frames",
+      "allSourceFramesPresent": true,
+      "tilePixels": "640x480 original source resolution",
+      "sha256": "6da9f8b558a2565580263fa78dca058522b180fa660937e9d49649edd14fcacf"
+    },
+    {
+      "file": "all-826-839.png",
+      "sourceFrameStart": 826,
+      "sourceFrameEnd": 839,
+      "layout": "row-major; 4 columns x4 rows for 16-frame sheets, otherwise 6 columns x5 rows; trailing empty cells are not frames",
+      "allSourceFramesPresent": true,
+      "tilePixels": "640x480 original source resolution",
+      "sha256": "44e19fdfc642f3d7b3587065b5b7f6e6b6cd59e4eb40474a0df0f1ad58df5a55"
+    },
+    {
+      "file": "all-840-855.png",
+      "sourceFrameStart": 840,
+      "sourceFrameEnd": 855,
+      "layout": "row-major; 4 columns x4 rows for 16-frame sheets, otherwise 6 columns x5 rows; trailing empty cells are not frames",
+      "allSourceFramesPresent": true,
+      "tilePixels": "640x480 original source resolution",
+      "sha256": "b5e59bd397403ff60ef8cd438529997f1a7a98413ca424404a18efe4d3845b6c"
+    }
+  ]
+}

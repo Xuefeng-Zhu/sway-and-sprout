@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 1,
+  "dateUtc": "2026-10-20T16:18:16.974612+00:00",
+  "project": "Sway & Sprout",
+  "branch": "work/natural-motion-diagnostics",
+  "implementationCommit": "8afc8db1eae15cc38b217316da86530389967441",
+  "cameraUsed": false,
+  "humanVerified": false,
+  "pushPerformed": false,
+  "deploymentPerformed": false,
+  "artifactUploadPerformed": false,
+  "pendingPermission": false,
+  "defaultBackendChanged": false,
+  "classifierThresholdsChanged": false,
+  "fullModel": {
+    "backend": "mediapipe-full",
+    "packages": {
+      "mediapipe": "1.1.1",
+      "opencv": "5.0.0",
+      "numpy": "2.5.4"
+    },
+    "model": {
+      "path": "models/pose_landmarker_full.task",
+      "bytes": 9398198,
+      "sha256": "4eaa5eb7a98365221087693fcc286334cf0858e2eb6e15b506aa4a7ecdcec4ad",
+      "url": "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/latest/pose_landmarker_full.task"
+    },
+    "runningMode": "IMAGE",
+    "delegate": "CPU",
+    "admissionThreshold": 0.65
+  },
+  "actualCanonicalCli": [
+    {
+      "backend": "mediapipe-full",
+      "case": "clear-held",
+      "exitCode": 0,
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 23.193,
+      "processingSeconds": 3.838,
+      "wallSeconds": 44.822,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "clear-public-arm-fixture.mp4",
+        "sha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "reportFile": "mediapipe-full-clear-held.json"
+    },
+    {
+      "backend": "mediapipe-full",
+      "case": "frontal-held",
+      "exitCode": 0,
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 23.261,
+      "processingSeconds": 3.837,
+      "wallSeconds": 4.594,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "frontal-held-source035.mp4",
+        "sha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "reportFile": "mediapipe-full-frontal-held.json"
+    },
+    {
+      "backend": "mediapipe-full",
+      "case": "nearface-held",
+      "exitCode": 0,
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 23.24,
+      "processingSeconds": 3.69,
+      "wallSeconds": 4.372,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "held-public-arm-fixture.mp4",
+        "sha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "reportFile": "mediapipe-full-nearface-held.json"
+    },
+    {
+      "backend": "mediapipe-full",
+      "case": "right-negative",
+      "exitCode": 0,
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 23.37,
+      "processingSeconds": 10.885,
+      "wallSeconds": 11.57,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "dvids-551039-right-negative-36s-51s.mp4",
+        "sha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+        "fps": 29.97002997002997,
+        "decodedFrames": 450
+      },
+      "reportFile": "mediapipe-full-right-negative.json"
+    },
+    {
+      "backend": "mediapipe-full",
+      "case": "both-up-negative",
+      "exitCode": 0,
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 23.178,
+      "processingSeconds": 3.283,
+      "wallSeconds": 3.957,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "suitcase-both-up-negative.mp4",
+        "sha256": "e5d5cecc1d981e6589432add534a6a09fbd4ee692864a3f0ec4603ef5864ef80",
+        "fps": 30.0,
+        "decodedFrames": 136
+      },
+      "reportFile": "mediapipe-full-both-up-negative.json"
+    },
+    {
+      "backend": "mediapipe-full",
+      "case": "natural-original",
+      "exitCode": 0,
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 23.176,
+      "processingSeconds": 7.604,
+      "wallSeconds": 8.276,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "continuous-source-original640.mp4",
+        "sha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+        "fps": 30.0,
+        "decodedFrames": 319
+      },
+      "reportFile": "mediapipe-full-natural-original.json"
+    },
+    {
+      "backend": "mediapipe-full",
+      "case": "natural-mirror",
+      "exitCode": 0,
+      "events": [
+        "left-raise"
+      ],
+      "rays": 1,
+      "ack": 1,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 23.183,
+      "processingSeconds": 7.604,
+      "wallSeconds": 8.277,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "continuous-source-mirrored640.mp4",
+        "sha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+        "fps": 30.0,
+        "decodedFrames": 319
+      },
+      "reportFile": "mediapipe-full-natural-mirror.json"
+    },
+    {
+      "backend": "opencv",
+      "case": "clear-held",
+      "exitCode": 0,
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 22.436,
+      "processingSeconds": 3.572,
+      "wallSeconds": 3.997,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "clear-public-arm-fixture.mp4",
+        "sha256": "1013d09d909140d42f500b937657ef9e84bd39bb132faf765a027220dde270dc",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "reportFile": "opencv-clear-held.json"
+    },
+    {
+      "backend": "opencv",
+      "case": "frontal-held",
+      "exitCode": 0,
+      "events": [
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise",
+        "left-raise",
+        "right-raise"
+      ],
+      "rays": 6,
+      "ack": 6,
+      "outcome": {
+        "status": "complete-goal-verified",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": true,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 22.305,
+      "processingSeconds": 3.531,
+      "wallSeconds": 3.772,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "frontal-held-source035.mp4",
+        "sha256": "e68c3455561c79178627942663bdab6d65a2095701044c743c1feef6c7b22521",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "reportFile": "opencv-frontal-held.json"
+    },
+    {
+      "backend": "opencv",
+      "case": "nearface-held",
+      "exitCode": 1,
+      "events": [
+        "left-raise"
+      ],
+      "rays": 1,
+      "ack": 1,
+      "outcome": {
+        "status": "failed",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": false,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 22.308,
+      "processingSeconds": 3.509,
+      "wallSeconds": 3.91,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "held-public-arm-fixture.mp4",
+        "sha256": "e9bbe7ea50a037e6e8a0612fe3cea0ae22427bbc8d8dd042bc17e1edd3c4d4eb",
+        "fps": 10.0,
+        "decodedFrames": 152
+      },
+      "reportFile": "opencv-nearface-held.json"
+    },
+    {
+      "backend": "opencv",
+      "case": "right-negative",
+      "exitCode": 0,
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 22.249,
+      "processingSeconds": 10.402,
+      "wallSeconds": 10.657,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "dvids-551039-right-negative-36s-51s.mp4",
+        "sha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+        "fps": 29.97002997002997,
+        "decodedFrames": 450
+      },
+      "reportFile": "opencv-right-negative.json"
+    },
+    {
+      "backend": "opencv",
+      "case": "both-up-negative",
+      "exitCode": 0,
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 22.15,
+      "processingSeconds": 2.998,
+      "wallSeconds": 3.24,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "suitcase-both-up-negative.mp4",
+        "sha256": "e5d5cecc1d981e6589432add534a6a09fbd4ee692864a3f0ec4603ef5864ef80",
+        "fps": 30.0,
+        "decodedFrames": 136
+      },
+      "reportFile": "opencv-both-up-negative.json"
+    },
+    {
+      "backend": "opencv",
+      "case": "natural-original",
+      "exitCode": 0,
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 22.284,
+      "processingSeconds": 7.329,
+      "wallSeconds": 7.57,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "continuous-source-original640.mp4",
+        "sha256": "88b8a08b43a516d7a73bb3fe1574a3742196e07c059c9b0a4ccbd3e1a6d0752c",
+        "fps": 30.0,
+        "decodedFrames": 319
+      },
+      "reportFile": "opencv-natural-original.json"
+    },
+    {
+      "backend": "opencv",
+      "case": "natural-mirror",
+      "exitCode": 0,
+      "events": [],
+      "rays": 0,
+      "ack": 0,
+      "outcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "inferenceMedianMs": 22.368,
+      "processingSeconds": 7.336,
+      "wallSeconds": 7.578,
+      "physicalCameraOpens": 0,
+      "privateProgressSaved": false,
+      "fixture": {
+        "file": "continuous-source-mirrored640.mp4",
+        "sha256": "c9dff270546f41f3b3ba7f267e612f14fdc910e134dce37d2ac19ffbddbee9b7",
+        "fps": 30.0,
+        "decodedFrames": 319
+      },
+      "reportFile": "opencv-natural-mirror.json"
+    }
+  ],
+  "browser": {
+    "passed": true,
+    "method": "Headless disposable Chrome to Vite to real Full IMAGE video sidecar; no semantic route mocks; native external networking denied",
+    "gestureSequence": [
+      "left-raise",
+      "right-raise",
+      "left-raise",
+      "right-raise",
+      "left-raise",
+      "right-raise"
+    ],
+    "rays": 6,
+    "acknowledgedSeq": 6,
+    "sixthRayMs": 13881,
+    "previewAvailableResponses": 53,
+    "physicalCaptureApiCalls": 0,
+    "privateProgressUnchangedAfterSix": true,
+    "privateProgressUnchangedAfterResult": true,
+    "privateProgressUnchangedAfterReload": true,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "httpErrors": [],
+    "captureBodyReadErrors": [],
+    "externalBrowserRequests": [],
+    "screenshotsSaved": 0,
+    "framesSaved": 0,
+    "ownedProcessesStopped": true,
+    "reportSha256": "abdfc06e6333e45856233c2802d76aca964c6d7aa667037e136005b8cf65ee1b",
+    "scriptSha256": "2f3916b591a7b357a0369ca597713318f2f5634b74e9486c04c13b246ecc4c23",
+    "limits": "Only the held constructed near-face input; no natural-six or live-human claim. Earlier harness failures (Unix IPC, first-poll badge race and wrong completed-page heading) are preserved locally; no product changes were needed for them."
+  },
+  "checks": {
+    "pythonTests": {
+      "run": 156,
+      "passed": 156,
+      "physicalCaptureBlocked": true,
+      "externalNetworkDenied": true
+    },
+    "javascriptTests": {
+      "run": 55,
+      "passed": 55
+    },
+    "savedProgress": {
+      "run": 90,
+      "passed": 90
+    },
+    "syntheticLandmarks": {
+      "run": 37,
+      "passed": 37,
+      "evidenceType": "Synthetic landmark state-machine/reducer controls, no human or video recognition"
+    },
+    "decoder": {
+      "run": 6,
+      "passed": 6,
+      "evidenceType": "Synthetic decoder tensors and blank arrays"
+    },
+    "productionBuildPassed": true,
+    "historicalMockBrowserCasesRerun": false
+  },
+  "selectedWindows": {
+    "dvids": {
+      "manualFrames": "neutral1–16, right-up136–151",
+      "defaultNeutral": 16,
+      "defaultRaised": 0,
+      "fullNeutral": 16,
+      "fullRaised": 6,
+      "raisedFrames": 16,
+      "fullLongestRaisedSpanMs": 66.733,
+      "requiredHoldMs": 350,
+      "positivePoseAcceptancePassed": false,
+      "gameNegativeIsNotPositiveRightTest": true
+    },
+    "bothUp": {
+      "manualFrames": "down0–15, both-up120–135",
+      "defaultDown": 13,
+      "defaultBothUp": 13,
+      "fullDown": 15,
+      "fullBothUp": 16,
+      "framesPerWindow": 16,
+      "initialTorsoBent": true,
+      "sourceContinuousUnreflected": true
+    }
+  },
+  "officialReference": {
+    "indices": "11,12 shoulders;15,16 wrists",
+    "detector": "224x224 RGB NCHW [-1,1]",
+    "pose": "256x256 RGB NHWC [0,1]",
+    "visibilityPresence": "raw logits sigmoid once; minimum used; global pose presence separate",
+    "defaultZooVariant": "unspecified by upstream provenance; not called Lite",
+    "all16OverheadRawCoordinatesAlreadyDown": true,
+    "frame148": {
+      "rawWristY": 207.851,
+      "manualYInterval": [
+        60.625,
+        76.25
+      ],
+      "minimumVerticalErrorPx": 131.601,
+      "wristVisibility": 0.244189,
+      "wristPresence": 0.995069,
+      "wholePosePresence": 0.998616,
+      "heatmapPeak": 0.380214
+    },
+    "officialHeatmapRefinementRaisedRecovered": 0,
+    "refinementComparedUsing": "algorithm-equivalent NumPy with separate float32-style scalar replay, not Google C++ execution"
+  },
+  "runtimeParity": {
+    "engines": [
+      "OpenCV5.0.0 CPU",
+      "Microsoft ONNX Runtime1.31.0 CPU"
+    ],
+    "sameInputTensors": true,
+    "sameLockedModels": true,
+    "frames": 35,
+    "gateAgreements": 35,
+    "inputHashChecksPassed": 70,
+    "maximumFourJointDisplacementPx": 9.651e-05,
+    "maximumJointConfidenceDelta": 1.967e-06,
+    "maximumRelativeL2Error": 6.0216e-06,
+    "rawTensorsBitIdentical": false,
+    "decoderPixelIdentity": false,
+    "maximumDecoderChannelDelta": 3,
+    "detectorThresholdCrossingExample": "F139 CLI pixels .6385; prior OpenCV decode .6501; shared-tensor engine comparison remains valid"
+  },
+  "rejectedAlternatives": {
+    "fullVideo": {
+      "clearEvents": 0,
+      "frontalEvents": 6,
+      "nearfaceEvents": 0,
+      "integrated": false
+    },
+    "heavyImage": {
+      "overheadMatches": 9,
+      "frames": 16,
+      "medianInferenceMs": 69.161,
+      "bytes": 30664242,
+      "integrated": false,
+      "fullPipelineTested": false
+    },
+    "appleVision": {
+      "overheadMatches": 15,
+      "frames": 16,
+      "longestOverheadSpanMs": 433.767,
+      "nearfaceLeft": {
+        "matches": 0,
+        "frames": 8
+      },
+      "nearfaceRight": {
+        "matches": 0,
+        "frames": 8
+      },
+      "medianInferenceMs": 47.66,
+      "fullPipelineTested": false,
+      "integrated": false,
+      "crossDecoderPixelIdentityEstablished": false
+    }
+  },
+  "sourceEvidence": [
+    {
+      "localWorkspacePath": "dvids-roi-diagnosis/official-raw-comparison/INTEGRITY.json",
+      "sha256": "13a9be71f225ef0972793e3a290b3ec3b6ccffcf38aa2b56b37e0a9e6f9dbde5"
+    },
+    {
+      "localWorkspacePath": "runtime-parity/evidence-manifest.json",
+      "sha256": "a5558f0305f5fdb655e4e651e22f25f7fd2f53d467140dc482eb9a3696410978"
+    },
+    {
+      "localWorkspacePath": "dvids-roi-diagnosis/apple-vision-experiment/INTEGRITY.json",
+      "sha256": "bbc4b6b704ea3f018f8b908fa1d5e2871bc07d29d049acb171fff36f714b7fdb"
+    },
+    {
+      "localWorkspacePath": "full-image-review/manifest.json",
+      "sha256": "cefebaadefe72b8ce93a280ec4be561578c935a243efcd73c223b51535b502d3"
+    },
+    {
+      "localWorkspacePath": "natural-candidates-20261020/meva/research-outcome.json",
+      "sha256": "4101a721b0f85bbf0e050ed8be53ec356d9d43ef5f786678e3c03bfaa5c009d8"
+    },
+    {
+      "localWorkspacePath": "mediapipe-evaluation/model-provenance.json",
+      "sha256": "95a3151660b81525ffe9d899cd9f29fb1f45354190cac9488647c62832b75932"
+    },
+    {
+      "localWorkspacePath": "mediapipe-evaluation/heavy-model-provenance.json",
+      "sha256": "d2666ec0444e0c97ce47bf02c2c58351f2250b34dc47d3e6ddd05f321f853404"
+    },
+    {
+      "localWorkspacePath": "mediapipe-evaluation/full-selected-windows.json",
+      "sha256": "09e6b9354eefeef6529fd9a63092a2ea85d173213638bb0680374b766f15a5ed"
+    },
+    {
+      "localWorkspacePath": "mediapipe-evaluation/heavy-selected-windows.json",
+      "sha256": "e6aa34e9c6d5b4f5e7700735da6a8fbfd192b8f3279b02280fb03838b5533630"
+    },
+    {
+      "localWorkspacePath": "mediapipe-evaluation/both-up-results/full.json",
+      "sha256": "d5954789606ea4f45a5ac3b262974183227f600b8072816cf2668bfadc4b9d23"
+    },
+    {
+      "localWorkspacePath": "mediapipe-evaluation/both-up-results/opencv.json",
+      "sha256": "68777b39e94ea726fdd177727c123c6e04166fdef9daf367d7375390867433e0"
+    }
+  ],
+  "limits": [
+    "Constructed held/cut/reflected fixtures have expected order but no independently certified event-time windows.",
+    "No independently filmed natural left-positive or alternating-six acceptance.",
+    "Default overhead failure remains; Full6/16 does not meet350ms sustained hold.",
+    "No physical-camera or native Fire TV/Vega runtime verification."
+  ],
+  "nextInput": "Rights-cleared continuous frontal single-person<=30s video with independently visible anatomical left-up/right-down, >=500ms both-down neutrals and >=500ms single-up holds; ideally three L/R alternations. Freeze pixel annotation before inference.",
+  "localEvidenceDirectory": "verification-results/full-image-20261020/",
+  "cliReportHashes": {
+    "mediapipe-full-clear-held.json": "7db609db74d50dfcee5a7fbc78505e1d66ab16c08893effd3f094e1c78e41151",
+    "mediapipe-full-frontal-held.json": "c5724885e27fd3f772ff0d10e15642a40f7b0a7c697e9b78aecfdcad39d8980b",
+    "mediapipe-full-nearface-held.json": "0b0f2bbe0c114d511ee6ec50d1dbf7c2ebab3b0ae53121295c054369de4fbf6b",
+    "mediapipe-full-right-negative.json": "5107be537d885dc9db1ade38907b469318ea7633c6e2dd5f0ce39ff5f1d4993f",
+    "mediapipe-full-both-up-negative.json": "0b750ec19c417a68e23e98d42bd2616bfdd16a695051248245849ffc814d9f33",
+    "mediapipe-full-natural-original.json": "e8298bf9562ab9d087300e0e48e578666b4a3a8de96d2a26d22cd7891305e55a",
+    "mediapipe-full-natural-mirror.json": "c08bf3a548f5cb02977d6f6364b7d4ced9c4bbafcf09b78c7a3cb4c7d446c504",
+    "opencv-clear-held.json": "5e2254a01786c7d52e37a79e764855d1987ffe3915dbe3827aacba1fecbe76d1",
+    "opencv-frontal-held.json": "a20d1c638bf0fdf0efb0ce9238d4f91101ac14c20743142a01281994f99f1828",
+    "opencv-nearface-held.json": "a1371453975ddfd154e08ce9d623b67e185df404996a7ef5512fb4b97e9b96f2",
+    "opencv-right-negative.json": "b0d3ebf01e05e27159b7cd4197ce842cf45b01000f6626f68771658ede68e78e",
+    "opencv-both-up-negative.json": "87f5d7207a495cdffc1315382b3886b864ece71b0817231e2b194f4bb6fbcefa",
+    "opencv-natural-original.json": "316d9f9eba236649aca1f5b209ade0ee561a680a6596a97fc5a7f0b62f2fbb29",
+    "opencv-natural-mirror.json": "cb2a2e8e07745a15f091963aa90f1e8e26e5d44c273158e3fab644b3df08c7dc"
+  },
+  "unchangedSourceHashes": {
+    "sidecar/inference.py": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407",
+    "sidecar/motion.py": "375b9dd92631c13533513c88b7eea9f9b3900f82304c566ee86b373b80a3b458",
+    "sidecar/models.lock.json": "97d2d6f383dc8ce26ea73840305e047b1f068f3445799b14323f71589311ef04",
+    "src/main.js": "94f83192b222b80daf4d987f6278fa1ced00749426eb3e7b0b3cfdf0fbbf466a",
+    "src/motion.js": "9adc0c6d7ff801962b18a6d188873f1c05abf35c12a2739100ddd7c5fd452bc2",
+    "vite.config.js": "f890b10db4223fa5a8b7a6a23c7ab1581b5e20b3d6cd87bb158f25c764aff7fb"
+  },
+  "officialTaskGraph": {
+    "url": "https://github.com/google-ai-edge/mediapipe/blob/master/mediapipe/tasks/cc/vision/pose_landmarker/pose_landmarker_graph.cc",
+    "imageRedetectsPerFrame": true,
+    "streamModeMayReusePreviousRoi": true,
+    "smoothingOnlySinglePoseStream": true,
+    "selectedNumPoses": 2,
+    "imageResultsDoNotEstablishVideoOrMultiPerson": true
+  }
+}

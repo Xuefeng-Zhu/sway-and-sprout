@@ -13,7 +13,38 @@ traces. Inspect all local checkpoints with
 `git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
 been requested. The dated TogetherMove source remains an untouched backup.
 
-## Current milestone
+## Current optional-model milestone
+
+Local commit `8afc8db` integrates the official Google Full IMAGE backend for explicit local videos.
+It improves the same near-face constructed fixture from **1 to6 actual model
+recognition events, game rays and ACKs**, while clear/frontal remain6 and the
+right-only/both-up natural negatives remain0. The default OpenCV Zoo model,
+classifier thresholds and camera command remain unchanged. Use the separately
+pinned environment and OS network-denying launcher in
+[the Full verification report](MEDIAPIPE-FULL-VERIFICATION.md); the optional model
+is rejected for camera/synthetic modes. No capture was performed.
+
+The official-reference audit and exact-tensor OpenCV/ONNX Runtime comparison
+locate the overhead problem in raw outputs for the present model/crop. Full
+only matches6/16 certified overhead frames (longest66.733ms); Heavy costs~69ms
+and matches9/16; Apple Vision has a433.767ms correct overhead run but fails both
+near-face raised controls. Neither alternative is integrated. Full VIDEO mode
+regresses the cut controls, so only stateless IMAGE is available.
+
+The canonical14-case CLI comparison and actual Chrome app replay passed their
+scoped expectations (default near-face remains an explicit exit1). Chrome
+displayed six rays with ACK6 and unchanged isolated saved progress. Fresh checks:
+156 Python,55 JavaScript,90 progress,37 synthetic and six decoder checks, plus
+production build, all passed. Final counts and evidence hashes are in
+[the scalar record](verification/full-image-20261020.json). Full inference costs
+~23.2ms/frame versus~22.3ms default on this Mac. Initial optional-environment
+startup can be slow; the measured cold command was44.8s including3.8s processing.
+All models/media/venvs/raw traces remain ignored. No natural alternating-six,
+independently filmed left-positive or live-user result is claimed. A suitable
+rights-cleared natural left/right clip remains the next acceptance input. There
+is no permission blocker and no push, deployment or upload occurred.
+
+## Prior calibration and natural-control milestone
 
 The calibration and verification gaps below have demonstrated fixes. A general
 single-person natural-motion reliability fix has **not** been demonstrated.
@@ -47,7 +78,7 @@ Physical camera capture stayed off. No live user recognition is claimed.
 Fresh checks and limits are recorded in
 [the development verification record](verification/mac-development-20261020.json).
 The earlier [migration record](MIGRATION-VERIFICATION.md) remains historical.
-The [new natural-control report](NATURAL-CONTROL-VERIFICATION.md) and
+The [prior natural-control report](NATURAL-CONTROL-VERIFICATION.md) and
 [scalar record](verification/natural-control-20261020.json) contain the latest
 licensed footage, frozen truth, rejected experiment and verification results.
 Fresh checks: 137 Python tests, 55 JavaScript tests, 90 saved-progress checks,

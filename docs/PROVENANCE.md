@@ -34,3 +34,21 @@ Official references consulted October 15, 2026:
 - https://amazonappdev2026.devpost.com/resources
 - https://developer.amazon.com/docs/fire-tv/remote-input.html
 - https://developer.amazon.com/docs/fire-tv/getting-started-developing-apps-and-games.html
+
+## Optional local Full-model evaluation
+
+Google MediaPipe1.1.1 and its official Full Pose Landmarker task are pinned
+separately by exact wheel/model hashes. The model card marks the models
+Apache-2.0; installed wheel licenses/notices remain local with the isolated
+environment. See [the Full report](MEDIAPIPE-FULL-VERIFICATION.md) for original
+Google sources, graph/confidence semantics, telemetry/network policy and rejected
+Heavy/Apple Vision comparisons. No exact Lite/Full/Heavy identity is invented for
+the older Zoo ONNX artifact. Model binaries and all evaluation venvs stay ignored.
+
+The newer both-up negative derives from Taco Fleur's
+[Kettlebell Suitcase Row and Press](https://commons.wikimedia.org/wiki/File:Kettlebell_Suitcase_Row_and_Press.webm),
+CC BY-SA4.0 with item-specific VRT confirmation. A contiguous trim/rebase/re-encode
+removes audio; there is no reflection, retiming or duplicated hold. Retain creator,
+source, license and modification notice in the frozen annotation and Full report.
+The media is ignored and was not published. Metadata-only MEVA research and a
+rejected flag-wave source are not positive recognition evidence.

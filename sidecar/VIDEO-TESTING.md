@@ -42,3 +42,16 @@ uses host wall time and file cadence, so it separately checks transport timing.
 Held/cut imagery does not test natural transitions, seated framing, occlusion,
 different people, or real-user camera accuracy. See `fixtures/README.md` for
 provenance and the preserved difficult case.
+
+## Optional Full CPU IMAGE backend
+
+The separately pinned Google Full backend improves the preserved near-face
+constructed fixture from one to six events/rays/ACKs. It remains opt-in and
+file-only; no camera or natural-six success is implied. Use
+`python3 scripts/run-local-pose.py replay /absolute/path/to/local-file.mp4`
+from the project root after the isolated restore in
+[the Full verification report](../docs/MEDIAPIPE-FULL-VERIFICATION.md).
+The launcher denies external networking, permits the existing loopback bridge,
+and offers no camera mode or automatic downloads. Stop it with Ctrl-C after use.
+`--seconds` applies to verification only; replay uses the selected file cadence.
+The default commands above continue to select the existing Zoo backend.

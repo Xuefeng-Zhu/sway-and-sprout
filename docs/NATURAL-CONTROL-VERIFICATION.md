@@ -1,5 +1,9 @@
 # Independently annotated natural-motion control — 2026-10-20
 
+This report preserves the earlier crop experiment. The later
+[Full model verification](MEDIAPIPE-FULL-VERIFICATION.md) adds the optional
+near-face1→6 fix and a separate both-up negative; the overhead failure remains.
+
 New licensed footage reproduces an overhead-wrist tracking failure. A tested
 crop expansion did not resolve sustained recognition and regressed an existing
 result, so it was rejected. Recognition code, model bytes, confidence and

@@ -6,7 +6,7 @@ A cooperative living-room movement garden: three playful moments, seated or stan
 
 This is the canonical development repository, normally checked out at `~/mygit/sway-and-sprout`. The earlier TogetherMove export remains an unchanged backup outside this repository. The private repository is [Xuefeng-Zhu/sway-and-sprout](https://github.com/Xuefeng-Zhu/sway-and-sprout).
 
-The current local branch, milestones, architecture, reproducible checks and next acceptance gate are in the [Mac development handoff](docs/DEVELOPMENT-HANDOFF.md). Natural-motion reliability and live recognition remain unverified. The [latest natural-control report](docs/NATURAL-CONTROL-VERIFICATION.md) records independently frozen public-domain motion, the overhead tracking failure, and a rejected crop expansion.
+The current local branch, milestones, architecture, reproducible checks and next acceptance gate are in the [Mac development handoff](docs/DEVELOPMENT-HANDOFF.md). Natural-motion reliability and live recognition remain unverified. The [natural-control report](docs/NATURAL-CONTROL-VERIFICATION.md) records independent public-domain truth and the rejected crop expansion. The [optional Full model report](docs/MEDIAPIPE-FULL-VERIFICATION.md) records the newer near-face 1→6 improvement through the actual application pipeline and remaining overhead limits.
 
 ## Start on this Mac
 
@@ -41,7 +41,7 @@ Model downloads are pinned by size/hash in `models.lock.json`. The model files, 
 
 See [the migration verification record](docs/MIGRATION-VERIFICATION.md) for checks run from this checkout. The project retains the calibration/arming fix, stale capture-epoch rejection, bounded same-frame preview, explicit input provenance, and guards preventing synthetic/video rays from saving human participation.
 
-High-margin held public poses have produced six alternating gestures and six rays. The preserved near-face fixture produces only one of six expected gestures. Left reflections are disclosed; they are not independently filmed left-arm trials. Normal continuous alternating performance and live user recognition remain unverified. Synthetic tests, public-video inference, and human results are kept distinct.
+High-margin held public poses have produced six alternating gestures and six rays. The default backend retains the near-face failure at one of six expected gestures. A separately pinned, opt-in Google Full IMAGE backend produces all six on that same constructed fixture; see the report above for camera-free file replay and its network-denying launcher. Left reflections are disclosed; they are not independently filmed left-arm trials. Normal continuous alternating performance and live user recognition remain unverified. Synthetic tests, public-video inference, and human results are kept distinct.
 
 ## Compatibility and native source
 
