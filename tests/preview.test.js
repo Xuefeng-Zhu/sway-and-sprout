@@ -116,6 +116,12 @@ test('preview view removes src and confidence/landmark feedback on pause and com
     assert.equal(selectors['#preview-placeholder'].hidden,true);
     assert.equal(selectors['#preview-confidence'].textContent,'80%');
     assert.equal(landmarks[2].label.textContent,'Not clear');
+    assert.match(selectors['#preview-movement'].textContent,/Make both shoulders and wrists clear/);
+    assert.doesNotMatch(selectors['#preview-movement'].textContent,/raise your|hold briefly/i);
+    updateCameraPreview({preview:preview({status:'hold',visibility:{leftShoulder:true,
+      rightShoulder:true,leftWrist:true,rightWrist:true}}),expected:'left'});
+    assert.match(selectors['#preview-movement'].textContent,/wait for the calibration cue/);
+    assert.doesNotMatch(selectors['#preview-movement'].textContent,/raise your|hold briefly/i);
     for(const reason of ['paused','complete','off','unavailable','synthetic']){
       updateCameraPreview({reason});
       assert.equal(selectors['#camera-preview-image'].hidden,true);

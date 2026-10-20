@@ -30,7 +30,7 @@ test.afterEach(async({page},info)=>{
 
 async function mockedSidecar(page){
   const mock={status:'neutral',source:'synthetic',streamId:'synthetic-qa-stream',verified:true,version:'5.0.0',seq:0,
-    events:[],requests:[],previewRequests:[],armed:false,drop:false,invalid:false,lastRound:null};
+    events:[],requests:[],previewRequests:[],armed:false,calibration:null,drop:false,invalid:false,lastRound:null};
   mock.raise=(gesture,fields={})=>mock.events.push({seq:++mock.seq,gesture,confidence:.99,ageMs:0,...fields});
   await page.route('**/motion/events?*',async route=>{
     const url=new URL(route.request().url());
@@ -44,6 +44,7 @@ async function mockedSidecar(page){
       runtime:{opencv:mock.version,verified:mock.verified,source:mock.source},
       source:mock.source,streamId:mock.streamId,status:mock.status,expected:'left',heldMs:0,seq:mock.seq,
       events,metrics:{fps:0,armed:mock.armed}};
+    if(mock.calibration!==null)packet.metrics.calibration=mock.calibration;
     if(mock.invalid)packet.protocol=999;
     await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(packet)});
   });
@@ -76,6 +77,43 @@ async function cameraRound(page,mock,{standing=false}={}){
 }
 
 async function screenshot(page,name){await page.screenshot({path:`${evidence}${name}.png`,fullPage:true});}
+
+test('calibration explains visibility and rest before authorizing an arm raise',async({page})=>{
+  // Camera-labelled JSON only; event and preview routes are both mocked.
+  await page.addInitScript(()=>localStorage.setItem('togethermove.v1',JSON.stringify({completed:['wake'],sessions:3})));
+  const mock=await mockedSidecar(page);mock.source='camera';
+  const diagnostic=(overrides={})=>({reason:'needs-neutral',neutralMs:0,requiredNeutralMs:300,
+    holdMs:0,requiredHoldMs:350,gates:{left:'down',right:'up'},lowConfidence:[],minimumConfidence:.9,
+    fresh:true,ageMs:0,...overrides});
+  mock.calibration=diagnostic();await cameraRound(page,mock);
+  const savedBefore=await page.evaluate(()=>localStorage.getItem('togethermove.v1'));
+  await expect(page.locator('#motion-status')).toContainText('Lower your right wrist below its shoulder');
+  await expect(page.locator('#camera-cue')).toContainText('Wait for Ready');
+  mock.status='low-confidence';mock.calibration=diagnostic({reason:'low-confidence',lowConfidence:['leftWrist'],minimumConfidence:.6496});
+  await expect(page.locator('#motion-status')).toContainText('Visibility first');
+  await expect(page.locator('#camera-cue')).toContainText('left wrist');
+  mock.status='neutral';mock.calibration=diagnostic({reason:'settling-neutral',neutralMs:200,gates:{left:'down',right:'down'}});
+  await expect(page.locator('#motion-status')).toContainText('Resting · 0.2 / 0.3s');
+  await expect(page.locator('#camera-cue')).toContainText('until Ready');
+  mock.calibration=diagnostic({reason:'ready'});mock.armed=false;
+  await expect(page.locator('#camera-cue')).toContainText('Rest both arms');
+  mock.armed=true;mock.status='tracking';
+  await expect(page.locator('#motion-status')).toContainText('Calibration: Ready');
+  await expect(page.locator('#camera-cue')).toContainText('Raise your left hand');
+  mock.status='hold';mock.calibration=diagnostic({reason:'holding',holdMs:100});
+  await expect(page.locator('#camera-cue')).toContainText('Hold your left hand');
+  mock.calibration=diagnostic({reason:'stale',fresh:false,ageMs:400});
+  await expect(page.locator('#camera-cue')).toContainText('fresh camera frame');
+  await expect(page.locator('#motion-status')).toContainText('Fresh frame needed');
+  mock.calibration={reason:'ready'};
+  await expect(page.locator('#camera-cue')).toContainText('current calibration feedback');
+  await expect(page.locator('#motion-status')).toContainText('Calibration unavailable');
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#camera-cue')).toContainText('Camera paused');
+  await expect(page.locator('#sunshine-count')).toHaveText('0');
+  expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
+  await screenshot(page,'mock-calibration-paused-no-camera');
+});
 
 test('synthetic semantic raises grow six rays without keyboard input or focus changes',async({page})=>{
   const mock=await mockedSidecar(page);await cameraRound(page,mock);
@@ -254,8 +292,14 @@ test('switching input source or restarting the service resets evidence and pause
 for(const viewport of [{width:390,height:844},{width:960,height:540}]){
   test(`camera sunshine fits ${viewport.width}x${viewport.height} and reduced motion`,async({page})=>{
     await page.setViewportSize(viewport);await page.emulateMedia({reducedMotion:'reduce'});
-    const mock=await mockedSidecar(page);await cameraRound(page,mock,{standing:true});
+    const mock=await mockedSidecar(page);mock.source='camera';await cameraRound(page,mock,{standing:true});
     mock.raise('left-raise');await expect(page.locator('#sunshine-count')).toHaveText('1');
+    // Exercise bounded worst-case diagnostic copy with camera-labelled JSON.
+    // Both HTTP routes remain mocked; no real capture is involved.
+    mock.status='low-confidence';mock.calibration={reason:'low-confidence',neutralMs:0,requiredNeutralMs:300,
+      holdMs:0,requiredHoldMs:350,gates:{left:'unknown',right:'unknown'},minimumConfidence:0,
+      lowConfidence:['person','leftShoulder','rightShoulder','leftWrist','rightWrist'],fresh:true,ageMs:0};
+    await expect(page.locator('#motion-status')).toContainText('Calibration: Visibility first');
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
     expect(await page.locator('.living-sun').evaluate(node=>getComputedStyle(node).animationName)).toBe('none');
     await expect(page.getByRole('button',{name:'Pause Ⅱ'})).toBeFocused();
@@ -266,6 +310,6 @@ for(const viewport of [{width:390,height:844},{width:960,height:540}]){
         const box=await button.boundingBox();expect(box.y+box.height).toBeLessThanOrEqual(viewport.height);
       }
     }
-    await screenshot(page,`synthetic-camera-${viewport.width}x${viewport.height}`);
+    await screenshot(page,`mock-camera-calibration-${viewport.width}x${viewport.height}`);
   });
 }

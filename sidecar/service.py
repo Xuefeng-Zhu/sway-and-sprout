@@ -170,11 +170,14 @@ class MotionService:
             events = [dict(seq=e["seq"], roundId=e["roundId"], gesture=e["gesture"],
                            confidence=e["confidence"], ageMs=max(0, round(now - e["at"], 2)))
                       for e in self.events if e["seq"] > control["after"]]
+            calibration = self.machine.calibration_snapshot(now)
             return {"protocol": 1, "source": self.source, "streamId": self.stream_id, "runtime": self.runtime,
                     **self.context, "status": self.machine.status,
                     "expected": self.machine.expected, "heldMs": self.machine.held_ms,
                     "seq": self.seq, "events": events,
-                    "metrics": {**self.metrics, "armed": self.machine.armed},
+                    "metrics": {**self.metrics,
+                                "armed": self.machine.armed and calibration["fresh"],
+                                "calibration": calibration},
                     "message": self.message}
 
     def publish_preview(self, token, image, captured_at):

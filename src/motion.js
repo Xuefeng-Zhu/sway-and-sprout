@@ -1,5 +1,7 @@
 // This event client handles semantic motion only. The optional local preview
 // uses its own bounded route and never contributes events or scoring.
+import {sanitizeCalibration} from './calibration.js';
+
 const MAX_EVENT_AGE_MS = 1500;
 const MAX_PACKET_BYTES = 32 * 1024;
 const MAX_EVENTS = 64;
@@ -84,7 +86,7 @@ function validatePacket(packet, context) {
       !Array.isArray(packet.events) || packet.events.length > MAX_EVENTS ||
       !object(metrics) || Object.keys(metrics).length > 32 ||
       Object.entries(metrics).some(([key, value]) => key.length > 64 ||
-        !(finite(value) || typeof value === 'boolean' || value === null))) {
+        (key !== 'calibration' && !(finite(value) || typeof value === 'boolean' || value === null)))) {
     throw motionError('invalid-response', 'Motion service returned an invalid packet.');
   }
   let previous = 0;
@@ -95,7 +97,12 @@ function validatePacket(packet, context) {
     }
     previous = event.seq;
   }
-  return {...packet, metrics};
+  // Older services omit calibration. Invalid optional diagnostics cannot break
+  // valid semantic events, and unbounded nested data never reaches the view.
+  const cleanMetrics=Object.fromEntries(Object.entries(metrics).filter(([key])=>key!=='calibration'));
+  const calibration=sanitizeCalibration(metrics.calibration);
+  if(Object.hasOwn(metrics,'calibration'))cleanMetrics.calibration=calibration;
+  return {...packet, metrics:cleanMetrics};
 }
 
 export async function readBoundedJson(response, maxBytes = MAX_PACKET_BYTES) {

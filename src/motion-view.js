@@ -1,3 +1,5 @@
+import {calibrationFeedback} from './calibration.js';
+
 const messages = {
   waiting:'Connecting to your local camera…',
   tracking:'You’re in view. Follow the sunshine.',
@@ -107,13 +109,15 @@ export function updateCameraPreview({preview,reason='off',expected='left',source
   });
   let movement='Preview off · no camera image';
   if(live&&video){
-    movement=`Video replay · ${videoMessages[preview.status]||'Local file frames only.'}`;
+    movement=['tracking','neutral','hold'].includes(preview.status)?
+      'Video frame visibility · follow the current replay calibration cue.':
+      `Video replay · ${videoMessages[preview.status]||'Local file frames only.'}`;
   }else if(live){
-    const arm=expected==='right'?'Right':'Left';
-    movement=preview.status==='hold'?`${arm} arm · hold briefly (${(preview.heldMs/1000).toFixed(1)}s)`:
-      preview.status==='no-person'?'Move into view with shoulders and both wrists visible.':
+    movement=preview.status==='no-person'?'Move into view with shoulders and both wrists visible.':
       preview.status==='low-confidence'?'Bring both shoulders and wrists into view.':
-      `Rest both arms, then raise your ${arm.toLowerCase()} arm.`;
+      Object.values(preview.visibility).every(Boolean)?
+        'Landmarks visible · wait for the calibration cue before raising.':
+        'Make both shoulders and wrists clear in the view.';
   }else if(state==='synthetic')movement='Synthetic test only · no human camera result';
   else if(state==='waiting'||state==='stale')movement='Waiting for the local inference camera…';
   else if(state==='paused')movement='Paused · camera and preview off';
@@ -124,6 +128,25 @@ export function updateCameraPreview({preview,reason='off',expected='left',source
   if(message.textContent!==movement)message.textContent=movement;
 }
 
+function currentPacket(motion,packet,revision){
+  return packet?.runtime?.verified===true&&packet.active===true&&
+    (!motion.roundId||packet.roundId===motion.roundId)&&
+    (revision===undefined||packet.revision===revision);
+}
+
+function packetFeedback(motion,packet,revision){
+  if(!['camera','video','synthetic'].includes(packet?.source)||!currentPacket(motion,packet,revision))return null;
+  if(!Object.hasOwn(packet.metrics||{},'calibration'))return null;
+  const feedback=calibrationFeedback(packet.metrics.calibration,{expected:motion.expected,
+    armed:packet.metrics?.armed===true&&['tracking','neutral','hold'].includes(packet.status)})||
+    {label:'Calibration unavailable',detail:'Rest both arms. Waiting for current calibration feedback.',
+      cue:'Rest both arms. Wait for current calibration feedback before raising.'};
+  if(packet.source==='camera')return feedback;
+  const input=packet.source==='video'?'Video replay':'Synthetic test';
+  return {label:feedback.label,detail:`${input} input only. No camera is active.`,
+    cue:`${input} calibration: ${feedback.label.toLowerCase()}. No camera is active.`};
+}
+
 function sunshineCue({motion,packet,paused,disconnected,revision}){
   const video=packet?.source==='video';
   if(video&&motion.completed)return 'Replay gathered six simulated rays. No camera was used.';
@@ -132,12 +155,12 @@ function sunshineCue({motion,packet,paused,disconnected,revision}){
   if(motion.completed)return 'You caught the sunshine. Take a little breather.';
   if(paused)return 'Camera paused. Rest both arms.';
   if(disconnected)return 'Rest both arms while the camera reconnects.';
+  const feedback=packetFeedback(motion,packet,revision);
+  if(feedback)return feedback.cue;
   // A visible, confident pose has not necessarily rested long enough to arm.
   // A previous round/revision must not reuse its armed cue after a transition.
-  const armed=packet?.metrics?.armed===true&&packet.runtime?.verified===true&&
-    packet.active===true&&['tracking','neutral','hold'].includes(packet.status)&&
-    (!motion.roundId||packet.roundId===motion.roundId)&&
-    (revision===undefined||packet.revision===revision);
+  const armed=currentPacket(motion,packet,revision)&&packet.metrics?.armed===true&&
+    ['tracking','neutral','hold'].includes(packet.status);
   if(!armed)return video?'Video replay: waiting for both arms to rest.':'Rest both arms below your shoulders for a moment.';
   if(video)return packet.status==='hold'?`Video replay: holding the ${motion.expected} hand up.`:`Video replay: waiting for the ${motion.expected} hand raise.`;
   if(packet.status==='hold')return `Hold your ${motion.expected} hand above your shoulder for a moment.`;
@@ -162,6 +185,8 @@ export function updateSunshine({motion,packet,paused,disconnected=false,notice='
   let status=paused?'Camera input paused. Rest whenever you like.':motion.completed?'Six rays! Enjoy your garden until the timer ends.':messages[disconnected?'disconnected':packet?.status]||messages.waiting;
   if(video)status=motion.completed?'Six simulated rays from this video. Garden progress is unchanged.':videoMessages[paused?'paused':disconnected?'disconnected':packet?.status]||videoMessages.waiting;
   if(packet?.runtime?.verified===false)status=video?'OpenCV 5 runtime is not verified. Video replay progress is unavailable.':'OpenCV 5 runtime is not verified. Camera progress is unavailable; use manual play.';
+  const feedback=!paused&&!disconnected&&!motion.completed?packetFeedback(motion,packet,revision):null;
+  if(feedback)status=`${video?'Video replay calibration':'Calibration'}: ${feedback.label}. ${feedback.detail}`;
   if(synthetic)status=`Synthetic input — ${status}`;
   if(notice)status=notice;
   const node=document.querySelector('#motion-status');
