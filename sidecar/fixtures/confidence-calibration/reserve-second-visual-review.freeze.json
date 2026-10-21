@@ -1,0 +1,191 @@
+{
+  "candidateManifestSha256": "851a5cff071495c0b81c15981e50e830b97c09e09979a755a22faf9004a0f5a0",
+  "candidatePoolSha256": "84b5c4ddf52a802f5d1cc08cb9f1716ab174641671eed5847ebb1117c526bd2d",
+  "frozenAtUtc": "2026-10-21T00:43:13.112922+00:00",
+  "images": [
+    {
+      "decision": "contains_depicted_human",
+      "id": "coco2017_000000509824_no_person_annotation",
+      "noPerson": false,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        640,
+        640
+      ],
+      "reason": "Small sculpted human head/bust on the shelf behind the sofa.",
+      "sha256": "314d60af974f7abb4935d80a6386f47a03dffcf755853ce38f293ce2449bf985",
+      "sourceAsset": "calibration/314d60af974f7abb4935d80a6386f47a03dffcf755853ce38f293ce2449bf985.jpg",
+      "sourceImageId": 509824,
+      "split": "calibration"
+    },
+    {
+      "decision": "ambiguous",
+      "id": "coco2017_000000343934_no_person_annotation",
+      "noPerson": false,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        640,
+        480
+      ],
+      "reason": "Motorcycle and graffiti; small white face/head-like graffiti marks near the top of the dark doorway prevent a confident exclusion of depicted humans.",
+      "sha256": "98a658b99162f68d6c427253b4564914dc1e62e458ff4dae03cd7d29d1e9d245",
+      "sourceAsset": "calibration/98a658b99162f68d6c427253b4564914dc1e62e458ff4dae03cd7d29d1e9d245.jpg",
+      "sourceImageId": 343934,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000458790_no_person_annotation",
+      "noPerson": true,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        500,
+        375
+      ],
+      "reason": "Frosted window with buildings and outdoor structures beyond; no visible human or human depiction.",
+      "sha256": "e47e459ae6eeb0faecae6a0a5b0b13040d225be5c48066cfa2b46aa156a4f67f",
+      "sourceAsset": "calibration/e47e459ae6eeb0faecae6a0a5b0b13040d225be5c48066cfa2b46aa156a4f67f.jpg",
+      "sourceImageId": 458790,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000099053_no_person_annotation",
+      "noPerson": true,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        640,
+        559
+      ],
+      "reason": "Close-up bowl of noodles, vegetables and meat with a fork on a blue cloth; no visible human or human depiction.",
+      "sha256": "a4e8405077a8f93115116f548e7d59b29a092a6ac2f749732a525e7b82c2f35a",
+      "sourceAsset": "calibration/a4e8405077a8f93115116f548e7d59b29a092a6ac2f749732a525e7b82c2f35a.jpg",
+      "sourceImageId": 99053,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000304545_no_person_annotation",
+      "noPerson": true,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        640,
+        522
+      ],
+      "reason": "Close-up luggage handle and bag fabric; no visible human or human depiction.",
+      "sha256": "6fd870d7d530062a891ef165d9e4c5f40df23003e129ec4754b5997ce7014fd7",
+      "sourceAsset": "calibration/6fd870d7d530062a891ef165d9e4c5f40df23003e129ec4754b5997ce7014fd7.jpg",
+      "sourceImageId": 304545,
+      "split": "calibration"
+    },
+    {
+      "decision": "ambiguous",
+      "id": "coco2017_000000293071_no_person_annotation",
+      "noPerson": false,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        335,
+        500
+      ],
+      "reason": "Street, parked cars and fire hydrant; a tiny pale head/upper-body-like shape in the recessed doorway at the upper left is too indistinct to rule out a person.",
+      "sha256": "20f701233b0235e3f6e31e11c8b4364c1aedd954a5fc7d2d5610aaa8318d0528",
+      "sourceAsset": "calibration/20f701233b0235e3f6e31e11c8b4364c1aedd954a5fc7d2d5610aaa8318d0528.jpg",
+      "sourceImageId": 293071,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000426253_no_person_annotation",
+      "noPerson": true,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        640,
+        427
+      ],
+      "reason": "Microwave containing food, cloth and bottle at the side; no distinguishable human or human depiction in the scene or glass.",
+      "sha256": "fe5caefe53627a713211ee5ca0552c09e11f833a4f49f5f43a4cf6ce4004a436",
+      "sourceAsset": "calibration/fe5caefe53627a713211ee5ca0552c09e11f833a4f49f5f43a4cf6ce4004a436.jpg",
+      "sourceImageId": 426253,
+      "split": "heldout"
+    },
+    {
+      "decision": "ambiguous",
+      "id": "coco2017_000000452321_no_person_annotation",
+      "noPerson": false,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        640,
+        480
+      ],
+      "reason": "Buses at a depot; tiny seated figure-like shapes behind bus glazing are too indistinct to confidently exclude occupants.",
+      "sha256": "52e7facbcbf94731d50ff073c5a403aa4582a0ed068a48cab75018dda6a044cb",
+      "sourceAsset": "calibration/52e7facbcbf94731d50ff073c5a403aa4582a0ed068a48cab75018dda6a044cb.jpg",
+      "sourceImageId": 452321,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000138856_no_person_annotation",
+      "noPerson": true,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        640,
+        480
+      ],
+      "reason": "Bread on a cooling rack with pots and kettle on a stove; no visible human or human depiction.",
+      "sha256": "f117909a82792ca630defc62adca57f8a0770d9d64808ed847d4adddd1c14a63",
+      "sourceAsset": "calibration/f117909a82792ca630defc62adca57f8a0770d9d64808ed847d4adddd1c14a63.jpg",
+      "sourceImageId": 138856,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000439290_no_person_annotation",
+      "noPerson": true,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        640,
+        427
+      ],
+      "reason": "Banana bunches, tree stems and dense leaves; no visible human or human depiction.",
+      "sha256": "85ba556003e6514d24b3f2037a62b077242b9cfd3654eada5a2a522346aabb7f",
+      "sourceAsset": "calibration/85ba556003e6514d24b3f2037a62b077242b9cfd3654eada5a2a522346aabb7f.jpg",
+      "sourceImageId": 439290,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000502347_no_person_annotation",
+      "noPerson": true,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        500,
+        375
+      ],
+      "reason": "Airplane above wooded hills, distant marina and pier; no visible human or human depiction.",
+      "sha256": "ddab64360a241da922a5ad6e1ae09299ac50a18418368e3935b2565b94ded8ab",
+      "sourceAsset": "calibration/ddab64360a241da922a5ad6e1ae09299ac50a18418368e3935b2565b94ded8ab.jpg",
+      "sourceImageId": 502347,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000232348_no_person_annotation",
+      "noPerson": true,
+      "originalDetailViewed": true,
+      "originalPixelDimensions": [
+        640,
+        502
+      ],
+      "reason": "Toaster and blender on a tiled counter; no distinguishable human or human depiction, including reflective surfaces.",
+      "sha256": "2c8120553032e12232a900a098b4d42b57c02818eba56b36485ef541bb750a72",
+      "sourceAsset": "calibration/2c8120553032e12232a900a098b4d42b57c02818eba56b36485ef541bb750a72.jpg",
+      "sourceImageId": 232348,
+      "split": "heldout"
+    }
+  ],
+  "modelBlindBeforeInference": true,
+  "pixelReviewMethod": "Independently inspected every unmodified source JPEG with tools.view_image detail=original. Re-inspected three uncertain scenes at the same original detail. No contact sheet labels, other reviewer decisions, model inference, pose outputs, protocol thresholds or confidence scores were read. Decisions use visible source pixels only; ambiguous, real-human and depicted-human scenes are excluded from clear-no-human eligibility.",
+  "reviewer": "/root/reserve_blind_review",
+  "schemaVersion": 1
+}

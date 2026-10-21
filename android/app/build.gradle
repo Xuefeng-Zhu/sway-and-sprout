@@ -1,4 +1,23 @@
 plugins { id 'com.android.application' }
+// Optional frozen calibration assets authorize only this exact manifest at compile time.
+def calibrationPinFile = rootProject.file('../.toolchain/native-calibration/pin.json')
+def calibrationEnabled = false
+def calibrationSha = ''
+def calibrationBytes = 0
+def calibrationId = 'unprepared'
+if (calibrationPinFile.exists()) {
+ if (java.nio.file.Files.isSymbolicLink(calibrationPinFile.toPath())) throw new GradleException('Calibration pin must be a regular file.')
+ def pin = new groovy.json.JsonSlurper().parse(calibrationPinFile)
+ if (pin.schemaVersion != 1 || !(pin.manifestSha256 instanceof String) || !(pin.manifestSha256 ==~ /[0-9a-f]{64}/) ||
+     !(pin.manifestBytes instanceof Number) || pin.manifestBytes.longValue() != pin.manifestBytes.doubleValue() ||
+     pin.manifestBytes < 1 || pin.manifestBytes > 4194304 || !(pin.datasetId instanceof String) ||
+     !(pin.datasetId ==~ /dataset-[0-9a-f]{16}/)) throw new GradleException('Invalid frozen calibration pin.')
+ def manifest = rootProject.file('app/src/debug/assets/calibration/manifest.json')
+ if (!manifest.isFile() || java.nio.file.Files.isSymbolicLink(manifest.toPath()) || manifest.length() != pin.manifestBytes ||
+     java.security.MessageDigest.getInstance('SHA-256').digest(manifest.bytes).encodeHex().toString() != pin.manifestSha256 ||
+     pin.datasetId != 'dataset-' + pin.manifestSha256.substring(0, 16)) throw new GradleException('Restore exact frozen calibration assets with scripts/prepare-native-calibration.py.')
+ calibrationEnabled = true; calibrationSha = pin.manifestSha256; calibrationBytes = pin.manifestBytes.intValue(); calibrationId = pin.datasetId
+}
 android {
  namespace 'com.togethermove.tv'
  compileSdk 35
@@ -6,7 +25,13 @@ android {
  buildFeatures { buildConfig true }
  androidResources { noCompress += ['tflite', 'mp4'] }
  buildTypes {
-  debug { applicationIdSuffix '.motion'; versionNameSuffix '-motion' }
+  debug {
+   applicationIdSuffix '.motion'; versionNameSuffix '-motion'
+   buildConfigField 'boolean', 'NATIVE_CALIBRATION_ENABLED', String.valueOf(calibrationEnabled)
+   buildConfigField 'String', 'NATIVE_CALIBRATION_DATASET_ID', '"' + calibrationId + '"'
+   buildConfigField 'String', 'NATIVE_CALIBRATION_MANIFEST_SHA256', '"' + calibrationSha + '"'
+   buildConfigField 'int', 'NATIVE_CALIBRATION_MANIFEST_BYTES', String.valueOf(calibrationBytes)
+  }
  }
 }
 

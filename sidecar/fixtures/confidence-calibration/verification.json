@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "calibration:no_person_annotation": 20,
+    "calibration:occluded_v1": 6,
+    "calibration:primary_visible": 47,
+    "heldout:no_person_annotation": 20,
+    "heldout:occluded_v1": 3,
+    "heldout:primary_visible": 32
+  },
+  "imageBytes": 20393475,
+  "imagesVerified": 128,
+  "manifestSha256": "4fc65ec9056d346d805044150fc4631a7f48ba277788ce67b80e16303a5864e2",
+  "noModelOrPredictionsUsed": true,
+  "positiveRawAnnotationsVerified": 88,
+  "rawDataReadOnly": true,
+  "schemaVersion": 1,
+  "sourceLabelEquality": true,
+  "splitDisjointKeys": [
+    "sourceImageId",
+    "sourceAnnotationId",
+    "sha256"
+  ]
+}

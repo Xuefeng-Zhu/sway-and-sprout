@@ -1,0 +1,143 @@
+{
+  "finalProvenanceFreezeUtc": "2026-10-20T18:21:42.230024+00:00",
+  "modelsRunBySourceTeam": false,
+  "predictionFilesReadBySourceTeam": false,
+  "cameraAccountsPayUploadsNewTerms": false,
+  "canonicalWrites": false,
+  "sourceByteTotal": 57489384,
+  "items": [
+    {
+      "id": "DVIDS679690",
+      "title": "Kettlebell Overhead Lunge",
+      "creator": "Capt. Matthew Holfinger / U.S. Marine Corps Training and Education Command",
+      "VIRIN": "190510-M-JT909-020",
+      "assetPage": "https://www.dvidshub.net/video/679690/kettlebell-overhead-lunge",
+      "sourceFile": "679690-source.mp4",
+      "sourceSha256": "d1bc8805ba209fb797c19c50ec87814070ef6e7285c115aceada20d78b1dfb00",
+      "sourceBytes": 3704637,
+      "freezeFile": "679690-frozen-source.json",
+      "freezeFileSha256": "c8993608c30c805732cdb66df0829f6ca9f47aa96953e7b31477fafe55859a29",
+      "freezeUtc": "2026-10-20T18:13:31.961883+00:00",
+      "license": "PUBLIC DOMAIN (official page), DVIDS public-use restrictions",
+      "licenseUrl": "https://www.dvidshub.net/about/copyright",
+      "decision": "ready_partial_neutral_then_left",
+      "pageSnapshot": "679690-page.html",
+      "pageSnapshotSha256": "737545214a831aa5fb0341cba2acfaf3ce1f540d87864ba282483c65e1543f19"
+    },
+    {
+      "id": "DVIDS551157",
+      "title": "TRX Forward Lunge with Hip Flexor Stretch",
+      "creator": "Capt. Matthew Holfinger / U.S. Marine Corps Training and Education Command",
+      "VIRIN": "170913-M-JT909-025",
+      "assetPage": "https://www.dvidshub.net/video/551157/trx-forward-lunge-with-hip-flexor-stretch",
+      "sourceFile": "551157-source.mp4",
+      "sourceSha256": "0420c0c0e8a35bdf6d31638337eef451aa9a15f21e5201a24d4a0254aed20a46",
+      "sourceBytes": 8327171,
+      "freezeFile": "551157-frozen-source.json",
+      "freezeFileSha256": "c9176fe8ddfae1d2486e0dc8d0ddf9de020cc2a4750de8bbf3e10f14e1ae3514",
+      "freezeUtc": "2026-10-20T18:13:32.731828+00:00",
+      "license": "PUBLIC DOMAIN (official page), DVIDS public-use restrictions",
+      "licenseUrl": "https://www.dvidshub.net/about/copyright",
+      "decision": "left_holds_only_neutral_occluded",
+      "pageSnapshot": "551157-page.html",
+      "pageSnapshotSha256": "c4a822743d4dd770260f789f3f97a9207475717b7c77cbe8c017c3d5f5b33afa"
+    },
+    {
+      "id": "DVIDS793156",
+      "title": "Hawgsmoke2021 Maintenance Competition",
+      "creator": "Senior Airman Hayden Legg /23rd Wing",
+      "VIRIN": "210430-F-TY831-593",
+      "assetPage": "https://www.dvidshub.net/video/793156/hawgsmoke-2021-maintenance-competition",
+      "sourceFile": "793156-source.mp4",
+      "sourceSha256": "fba74c6382e3b01abf817047a4fcfb963c58e28918d6727fe0c6f566ca1f63f6",
+      "sourceBytes": 37338418,
+      "freezeFile": "793156-frozen-source.json",
+      "freezeFileSha256": "cf85189f29428454e793ccc9d55578073456607b5cece5aad1e6185d2b9b6c23",
+      "freezeUtc": "2026-10-20T18:13:31.161738+00:00",
+      "license": "PUBLIC DOMAIN (official page), DVIDS public-use restrictions",
+      "licenseUrl": "https://www.dvidshub.net/about/copyright",
+      "decision": "sampled_only_no_positive_certified",
+      "pageSnapshot": "793156-page.html",
+      "pageSnapshotSha256": "d3655af53ab45eadec7d0bcbfdc395fb615423bbdb04461296b1f4f3db5408ba"
+    },
+    {
+      "id": "Pexels3048925",
+      "title": "A Woman Doing Side To Side Body Stretches",
+      "creator": "fauxels",
+      "assetPage": "https://www.pexels.com/video/a-woman-doing-side-to-side-body-stretches-3048925/",
+      "sourceFile": "metadata-pexels/3048925-hd-source.mp4",
+      "sourceSha256": "e2a55323e14dfcbab33ff4e611d3dd6632e6ba45edf0a65102bbcdb581dd4569",
+      "sourceBytes": 3736124,
+      "freezeFile": "metadata-pexels/3048925-frozen-before-pixel-review.json",
+      "freezeFileSha256": "b0580c7f7bf69a02145c788b0011b1aa33661bf22c786e870e720abd711fd65b",
+      "freezeUtc": "2026-10-20T18:15:32.975641+00:00",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "decision": "bothup_negative_only"
+    },
+    {
+      "id": "Pexels3195318",
+      "title": "A Woman Bending And Stretching Exercise In The Beach Sand",
+      "creator": "Pressmaster",
+      "assetPage": "https://www.pexels.com/video/a-woman-bending-and-stretching-exercise-in-the-beach-sand-3195318/",
+      "sourceFile": "metadata-pexels/3195318-hd-source.mp4",
+      "sourceSha256": "d8ed25c7734d083a953b0c3f7e29ac75de5ea006bb4cf4b874a29dc6ef122c49",
+      "sourceBytes": 4383034,
+      "freezeFile": "metadata-pexels/3195318-frozen-before-pixel-review.json",
+      "freezeFileSha256": "778970287e09d7bdd081264b48d935719172f67dc505771524c354933bbe9e28",
+      "freezeUtc": "2026-10-20T18:18:25.505215+00:00",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "decision": "sampled_only_no_overhead_positive"
+    }
+  ],
+  "annotationFiles": [
+    {
+      "path": "679690-blind-annotation.json",
+      "sha256": "e5f66c5180b39dd46d4034a3f2660b421441f1f12613d3229e39d0d3c8591755",
+      "bytes": 21190
+    },
+    {
+      "path": "551157-visual-review.json",
+      "sha256": "d1dc5165d936387bc23c7db2459b4d089940ce8126aa879e29d2ecfc730f4798",
+      "bytes": 5553
+    },
+    {
+      "path": "551157-visual-labels.jsonl",
+      "sha256": "7cd210b54b5e17a8b51177f6375704762f502cb3c2730b7aa660e2cd6e04304a",
+      "bytes": 65245
+    },
+    {
+      "path": "metadata-pexels/3048925-independent-visual-annotations.json",
+      "sha256": "db28586601743e3b9d113b91d6b7cf918c58da333d69aec901bb8744994cf4d5",
+      "bytes": 5049
+    },
+    {
+      "path": "metadata-pexels/679690-independent-side-review.json",
+      "sha256": "2ffdaca4bbebe14202839e4e861c81870463aebdb16fa2d4224151cff70f4ee6",
+      "bytes": 913
+    },
+    {
+      "path": "metadata-pexels/3195318-sampled-visual-review.json",
+      "sha256": "1e2cf00e14c9d32558b2a11abda5ecfc842d0d2b29393e751aed1419ef6c4adb",
+      "bytes": 914
+    },
+    {
+      "path": "metadata-pexels/source-license-evidence.json",
+      "sha256": "040e5d414dd35f7702af24e37e7de00b3290dbac2f62f1d991327dd8abfee5e7",
+      "bytes": 3456
+    }
+  ],
+  "readyPositive": "679690-blind-annotation.json",
+  "readyWindowSourceFramesInclusive": [
+    285,
+    367
+  ],
+  "readyWindowSourceSecondsHalfOpen": [
+    9.5,
+    12.266666666666667
+  ],
+  "fullSixAlternatingRaisesCertified": false,
+  "partitionRequirement": "Keep each original source/person in one partition. Do not place reflected, cropped, reencoded or trimmed versions of a source across calibration/heldout. Independent person identity across historical footage remains to verify.",
+  "requiredDvidsDisclaimer": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement."
+}

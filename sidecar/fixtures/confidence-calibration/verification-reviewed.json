@@ -1,0 +1,176 @@
+{
+  "all88PositiveManifestAndGTRowsIdentical": true,
+  "backgroundCounts": {
+    "calibration": 20,
+    "heldout": 20
+  },
+  "backgroundReviewSha256": "bccf74a215e1832f6a781adcdca201156d02262b83c4f40502e1568f590edb9f",
+  "counts": {
+    "calibration:no_person_annotation": 20,
+    "calibration:occluded_v1": 6,
+    "calibration:primary_visible": 47,
+    "heldout:no_person_annotation": 20,
+    "heldout:occluded_v1": 3,
+    "heldout:primary_visible": 32
+  },
+  "frozenAtUtc": "2026-10-21T00:46:19.277538+00:00",
+  "humanGTReviewedSha256": "47c15f65b8517c52754662edc96de862e2fbfc49c2147db4649a96f29875c586",
+  "jpegDimensionsHashesIntegrityVerified": 128,
+  "manifestReviewedSha256": "98ab3ecb0bda14784250bf6639f2f316e641030402154bca1544c271b660cec7",
+  "noPoseModelOrPredictionsUsed": true,
+  "originalV1ManifestUnchanged": true,
+  "replacements": [
+    {
+      "excludedDecision": "ambiguous",
+      "excludedId": "coco2017_000000406570_no_person_annotation",
+      "excludedImageId": 406570,
+      "excludedReason": "Blurred teal upper-left region could be cropped clothing.",
+      "originalReviewSha256": "65a2cea8600ff52c2dbc693978b49ac2768d11ddb46d0fd8d85e23b707713e11",
+      "replacementGlobalCandidateRankZeroBased": 42,
+      "replacementId": "coco2017_000000458790_no_person_annotation",
+      "replacementImageId": 458790,
+      "reserveReviewSha256s": [
+        "89f877b301c38513c779205821aac7aa5123e9a8fe1b5c29a8374b28877a1a0d",
+        "5799c2fe973f00caa37e3414620b3727707ae52c89d5c72c75e1632f658a03dd"
+      ],
+      "split": "calibration"
+    },
+    {
+      "excludedDecision": "contains_human",
+      "excludedId": "coco2017_000000495054_no_person_annotation",
+      "excludedImageId": 495054,
+      "excludedReason": "Kneeling hi-vis ground worker; also nose-art woman.",
+      "originalReviewSha256": "65a2cea8600ff52c2dbc693978b49ac2768d11ddb46d0fd8d85e23b707713e11",
+      "replacementGlobalCandidateRankZeroBased": 43,
+      "replacementId": "coco2017_000000099053_no_person_annotation",
+      "replacementImageId": 99053,
+      "reserveReviewSha256s": [
+        "89f877b301c38513c779205821aac7aa5123e9a8fe1b5c29a8374b28877a1a0d",
+        "5799c2fe973f00caa37e3414620b3727707ae52c89d5c72c75e1632f658a03dd"
+      ],
+      "split": "calibration"
+    },
+    {
+      "excludedDecision": "contains_depicted_human",
+      "excludedId": "coco2017_000000277197_no_person_annotation",
+      "excludedImageId": 277197,
+      "excludedReason": "Paintings/photos depict people.",
+      "originalReviewSha256": "65a2cea8600ff52c2dbc693978b49ac2768d11ddb46d0fd8d85e23b707713e11",
+      "replacementGlobalCandidateRankZeroBased": 44,
+      "replacementId": "coco2017_000000304545_no_person_annotation",
+      "replacementImageId": 304545,
+      "reserveReviewSha256s": [
+        "89f877b301c38513c779205821aac7aa5123e9a8fe1b5c29a8374b28877a1a0d",
+        "5799c2fe973f00caa37e3414620b3727707ae52c89d5c72c75e1632f658a03dd"
+      ],
+      "split": "calibration"
+    },
+    {
+      "excludedDecision": "contains_depicted_human",
+      "excludedId": "coco2017_000000263644_no_person_annotation",
+      "excludedImageId": 263644,
+      "excludedReason": "White human figurine.",
+      "originalReviewSha256": "65a2cea8600ff52c2dbc693978b49ac2768d11ddb46d0fd8d85e23b707713e11",
+      "replacementGlobalCandidateRankZeroBased": 52,
+      "replacementId": "coco2017_000000552902_no_person_annotation",
+      "replacementImageId": 552902,
+      "reserveReviewSha256s": [
+        "76565fc46a6d194bff678f66894b9dfff0c9c1ded7226fefd2cfe3af16eb353f",
+        "6925871a003fcaf1d50a39f2ead5248f401584dc8a1b92425cd7db66e1094624"
+      ],
+      "split": "calibration"
+    },
+    {
+      "excludedDecision": "contains_depicted_human",
+      "excludedId": "coco2017_000000098497_no_person_annotation",
+      "excludedImageId": 98497,
+      "excludedReason": "Surfer silhouette sign.",
+      "originalReviewSha256": "65a2cea8600ff52c2dbc693978b49ac2768d11ddb46d0fd8d85e23b707713e11",
+      "replacementGlobalCandidateRankZeroBased": 48,
+      "replacementId": "coco2017_000000138856_no_person_annotation",
+      "replacementImageId": 138856,
+      "reserveReviewSha256s": [
+        "89f877b301c38513c779205821aac7aa5123e9a8fe1b5c29a8374b28877a1a0d",
+        "5799c2fe973f00caa37e3414620b3727707ae52c89d5c72c75e1632f658a03dd"
+      ],
+      "split": "heldout"
+    },
+    {
+      "excludedDecision": "contains_depicted_human",
+      "excludedId": "coco2017_000000435880_no_person_annotation",
+      "excludedImageId": 435880,
+      "excludedReason": "Fridge human photo collage.",
+      "originalReviewSha256": "65a2cea8600ff52c2dbc693978b49ac2768d11ddb46d0fd8d85e23b707713e11",
+      "replacementGlobalCandidateRankZeroBased": 49,
+      "replacementId": "coco2017_000000439290_no_person_annotation",
+      "replacementImageId": 439290,
+      "reserveReviewSha256s": [
+        "89f877b301c38513c779205821aac7aa5123e9a8fe1b5c29a8374b28877a1a0d",
+        "5799c2fe973f00caa37e3414620b3727707ae52c89d5c72c75e1632f658a03dd"
+      ],
+      "split": "heldout"
+    },
+    {
+      "excludedDecision": "contains_human",
+      "excludedId": "coco2017_000000355677_no_person_annotation",
+      "excludedImageId": 355677,
+      "excludedReason": "Distant swimmer head/outstretched arms.",
+      "originalReviewSha256": "65a2cea8600ff52c2dbc693978b49ac2768d11ddb46d0fd8d85e23b707713e11",
+      "replacementGlobalCandidateRankZeroBased": 50,
+      "replacementId": "coco2017_000000502347_no_person_annotation",
+      "replacementImageId": 502347,
+      "reserveReviewSha256s": [
+        "89f877b301c38513c779205821aac7aa5123e9a8fe1b5c29a8374b28877a1a0d",
+        "5799c2fe973f00caa37e3414620b3727707ae52c89d5c72c75e1632f658a03dd"
+      ],
+      "split": "heldout"
+    },
+    {
+      "excludedDecision": "ambiguous",
+      "excludedId": "coco2017_000000371677_no_person_annotation",
+      "excludedImageId": 371677,
+      "excludedReason": "Tiny monitor avatar unresolved.",
+      "originalReviewSha256": "65a2cea8600ff52c2dbc693978b49ac2768d11ddb46d0fd8d85e23b707713e11",
+      "replacementGlobalCandidateRankZeroBased": 58,
+      "replacementId": "coco2017_000000452084_no_person_annotation",
+      "replacementImageId": 452084,
+      "reserveReviewSha256s": [
+        "76565fc46a6d194bff678f66894b9dfff0c9c1ded7226fefd2cfe3af16eb353f",
+        "6925871a003fcaf1d50a39f2ead5248f401584dc8a1b92425cd7db66e1094624"
+      ],
+      "split": "heldout"
+    }
+  ],
+  "reviewedClearBackgrounds": 40,
+  "schemaVersion": 1,
+  "selectedSourceOriginalSha256": "19cb7d616c77f161208e069958825886f945679351840eed358ae5271b041df7",
+  "selectionReviewedFreezeSha256": "01e9225f09d8b9e14dc5a66c663d88a50f7d2391882dac661d732817ab8bb4de",
+  "sourceImagePersonInstanceAndExactJpegShaSplitDisjoint": true,
+  "sourceReviewFiles": [
+    {
+      "path": "original-visual-review.freeze.json",
+      "reviewer": "/root/natural_footage/coco_zero_visual_review",
+      "sha256": "65a2cea8600ff52c2dbc693978b49ac2768d11ddb46d0fd8d85e23b707713e11"
+    },
+    {
+      "path": "replacement-visual-review.freeze.json",
+      "reviewer": "/root/calibration_data/reserve_visual_review",
+      "sha256": "89f877b301c38513c779205821aac7aa5123e9a8fe1b5c29a8374b28877a1a0d"
+    },
+    {
+      "path": "reserve-second-visual-review.freeze.json",
+      "reviewer": "/root/reserve_blind_review",
+      "sha256": "5799c2fe973f00caa37e3414620b3727707ae52c89d5c72c75e1632f658a03dd"
+    },
+    {
+      "path": "replacement-visual-review-supplemental.freeze.json",
+      "reviewer": "/root/calibration_data/reserve_visual_review",
+      "sha256": "76565fc46a6d194bff678f66894b9dfff0c9c1ded7226fefd2cfe3af16eb353f"
+    },
+    {
+      "path": "reserve-second-visual-review-supplemental.freeze.json",
+      "reviewer": "/root/reserve_blind_review",
+      "sha256": "6925871a003fcaf1d50a39f2ead5248f401584dc8a1b92425cd7db66e1094624"
+    }
+  ]
+}

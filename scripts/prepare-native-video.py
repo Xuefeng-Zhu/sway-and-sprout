@@ -77,13 +77,13 @@ def validate_lock(lock):
     if lock['schemaVersion'] != 1 or lock['runtimeVersion'] != '1.4.2':
         raise ValueError('Unsupported native runtime lock schema/version')
     cases = ['clear', 'frontal', 'nearface', 'right-negative', 'both-up-negative',
-             'natural-original', 'natural-mirror']
+             'natural-original', 'natural-mirror', 'left-natural', 'right-short']
     if [row['case'] for row in lock['fixtures']] != cases:
-        raise ValueError('Expected exactly the seven frozen fixture cases')
+        raise ValueError('Expected exactly the seven baseline and two independently bound study cases')
     for row in lock['fixtures']:
         if type(row['expectationKnown']) is not bool:
             raise ValueError('expectationKnown must be an explicit boolean')
-        if row['case'].startswith('natural-'):
+        if row['case'] in ('natural-original', 'natural-mirror'):
             if row['expectationKnown'] or row['expectedGestures']:
                 raise ValueError('Partial natural clips must remain observed-only')
         elif not row['expectationKnown']:

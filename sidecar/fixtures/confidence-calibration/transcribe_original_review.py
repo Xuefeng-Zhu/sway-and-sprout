@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+"""Faithful transcription of prior model-blind reviewer decisions, not a new pixel review."""
+import datetime,hashlib,json,pathlib
+ROOT=pathlib.Path(__file__).resolve().parent
+message="""Final labels established (all 40 originals individually viewed; six edge cases got independent second pixel review): 32 clear_no_human (16 calibration/16 heldout). Exclude calibration: 263644 contains_depicted_human (white human figurine), 277197 contains_depicted_human (paintings/photos), 406570 ambiguous (blurred teal upper-left region could be cropped clothing), 495054 contains_human (kneeling hi-vis ground worker; also nose-art woman). Exclude heldout: 98497 contains_depicted_human (surfer silhouette sign), 355677 contains_human (distant swimmer head/outstretched arms), 371677 ambiguous (tiny monitor avatar unresolved), 435880 contains_depicted_human (fridge human photo collage). Freeze write attempt hit exec-server transport disconnect; checking outcome before retry. Do not infer until freeze hash confirmed."""
+bad={263644:('contains_depicted_human','White human figurine.'),277197:('contains_depicted_human','Paintings/photos depict people.'),406570:('ambiguous','Blurred teal upper-left region could be cropped clothing.'),495054:('contains_human','Kneeling hi-vis ground worker; also nose-art woman.'),98497:('contains_depicted_human','Surfer silhouette sign.'),355677:('contains_human','Distant swimmer head/outstretched arms.'),371677:('ambiguous','Tiny monitor avatar unresolved.'),435880:('contains_depicted_human','Fridge human photo collage.')}
+raw=(ROOT/'manifest.json').read_bytes();assert hashlib.sha256(raw).hexdigest()=='4fc65ec9056d346d805044150fc4631a7f48ba277788ce67b80e16303a5864e2';m=json.loads(raw)
+p=ROOT/'original-visual-review.freeze.json';when=json.loads(p.read_bytes())['frozenAtUtc'] if p.exists() else datetime.datetime.now(datetime.timezone.utc).isoformat()
+rows=[]
+for image in m['images']:
+ if image['stratum']!='no_person_annotation':continue
+ decision,reason=bad.get(image['sourceImageId'],('clear_no_human','Original model-blind reviewer individually viewed this source image and classified clear_no_human.'))
+ rows.append({'id':image['id'],'sourceImageId':image['sourceImageId'],'sha256':image['sha256'],'split':image['split'],'decision':decision,'noPerson':decision=='clear_no_human','reason':reason})
+report={'schemaVersion':1,'frozenAtUtc':when,'reviewer':'/root/natural_footage/coco_zero_visual_review','transcribedBy':'/root/calibration_data','modelBlindBeforeInference':True,'originalManifestSha256':hashlib.sha256(raw).hexdigest(),'reviewMethod':'Prior independent reviewer inspected both contact sheets and all40 original source JPEGs. Six edge cases received independent second source-pixel review. Final decisions are faithfully transcribed from trusted collaboration history because the reviewer freeze write failed during Mac execution disconnection. This transcription does not claim a new pixel review by the transcriber. No model inference occurred before these decisions or this file freeze.','sourceEvidence':{'kind':'trusted_collaboration_final_decision_message','sender':'/root/natural_footage/coco_zero_visual_review','text':message,'textSha256':hashlib.sha256(message.encode()).hexdigest()},'images':rows}
+encoded=(json.dumps(report,indent=2,sort_keys=True,ensure_ascii=False)+'\n').encode()
+if p.exists():assert p.read_bytes()==encoded
+else:p.write_bytes(encoded)
+p.chmod(0o444);print(json.dumps({'path':str(p),'sha256':hashlib.sha256(encoded).hexdigest(),'clearCalibration':sum(x['noPerson'] and x['split']=='calibration' for x in rows),'clearHeldout':sum(x['noPerson'] and x['split']=='heldout' for x in rows)},indent=2))

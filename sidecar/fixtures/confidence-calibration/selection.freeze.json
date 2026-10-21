@@ -1,0 +1,1232 @@
+{
+  "frozenAtUtc": "2026-10-20T18:18:16.109495+00:00",
+  "images": [
+    {
+      "annotationId": 442619,
+      "id": "coco2017_000000000785_442619",
+      "imageId": 785,
+      "poseStratum": "lowered",
+      "rankSha256": "c9085bb11f697b5a45f026c350f412db9e7b2d177a1dce88bd5229eb3f257778",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 219454,
+      "id": "coco2017_000000009483_219454",
+      "imageId": 9483,
+      "poseStratum": "lowered",
+      "rankSha256": "6f54f753db4a37bd69c06f6e7afbae28b811117228b148f4ce15b7c2d1d327c4",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000012667_no_person_annotation",
+      "imageId": 12667,
+      "poseStratum": "unknown",
+      "rankSha256": "0c0e222c1bb3ee513e2b13b141b401c4c9577dd9183adfe409d60609b15bdd82",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 428692,
+      "id": "coco2017_000000019432_428692",
+      "imageId": 19432,
+      "poseStratum": "lowered",
+      "rankSha256": "cec05c4a344def812d3c0eb54453cbc52a372c249e5b58d8e6ff90547bd88a82",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 1716695,
+      "id": "coco2017_000000022479_1716695",
+      "imageId": 22479,
+      "poseStratum": "lowered",
+      "rankSha256": "18fdcda898eb421f32779a18491d8a41caf9b37f767f6867ad56dfe2331fc377",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 434696,
+      "id": "coco2017_000000022705_434696",
+      "imageId": 22705,
+      "poseStratum": "lowered",
+      "rankSha256": "f2bbd604a0088dae9932fbc1f4e13ac326b215c8e3d4391da407cdf8d5b30cfb",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 430983,
+      "id": "coco2017_000000033368_430983",
+      "imageId": 33368,
+      "poseStratum": "lowered",
+      "rankSha256": "a73701565d35b1cb402dce8db81aa836d2c152d39be811ea0e0ea5ff8092870f",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 449503,
+      "id": "coco2017_000000039551_449503",
+      "imageId": 39551,
+      "poseStratum": "lowered",
+      "rankSha256": "af8bfb1ba3fc8647153a2cc50a556b9aaf0a0d16a43294b28cd28e9790ccaa94",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 1728930,
+      "id": "coco2017_000000042102_1728930",
+      "imageId": 42102,
+      "poseStratum": "lowered",
+      "rankSha256": "8e974c1a4697dd1ccc72f4a420c73a3f72f9f66ec0084b9922d7b021a33e04d4",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 438455,
+      "id": "coco2017_000000050638_438455",
+      "imageId": 50638,
+      "poseStratum": "lowered",
+      "rankSha256": "e025fd76610d0ddcba9c673952ffa936a62c9b3a4ce73926f94ef4f7e1def460",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 451781,
+      "id": "coco2017_000000050811_451781",
+      "imageId": 50811,
+      "poseStratum": "lowered",
+      "rankSha256": "49f8bfa3f28e8a8f73e63ee379dc54567040bf925eec8b86e71e8f4a92e3eb37",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000051309_no_person_annotation",
+      "imageId": 51309,
+      "poseStratum": "unknown",
+      "rankSha256": "076380ce2434674c641c1a552adaa5836e58e61b514a4c82cc2c26754f1b09c4",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 494036,
+      "id": "coco2017_000000054164_494036",
+      "imageId": 54164,
+      "poseStratum": "lowered",
+      "rankSha256": "896ddaf5076acdd2720b5f0694c6938e07f0dbe45111c746e366da39e00dbdbf",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 185090,
+      "id": "coco2017_000000054931_185090",
+      "imageId": 54931,
+      "poseStratum": "lowered",
+      "rankSha256": "40584fe88a8d9ca6d5a5b96b9421a61c4f8f19e1b9e7d70b04cbdd79f16b08b2",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000058029_no_person_annotation",
+      "imageId": 58029,
+      "poseStratum": "unknown",
+      "rankSha256": "09d3c073cb7ddf584b1d443ede22e45a8c26c20f8d54bc03647d79c559d01a38",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 462207,
+      "id": "coco2017_000000060899_462207",
+      "imageId": 60899,
+      "poseStratum": "raised",
+      "rankSha256": "7dde34876decd599f717f0b13204878a6391e074d260e3d5641aaa7845051b56",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000068286_no_person_annotation",
+      "imageId": 68286,
+      "poseStratum": "unknown",
+      "rankSha256": "00554d8038316e52ce3f2b0e24b6f4fea3296621ebd765b0f0290326ad7926d6",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 509683,
+      "id": "coco2017_000000079031_509683",
+      "imageId": 79031,
+      "poseStratum": "lowered",
+      "rankSha256": "f9cf8b3cff825187a08a64e2983dce13589c668e982bd905e64fcfaa03322c7f",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 1710090,
+      "id": "coco2017_000000080671_1710090",
+      "imageId": 80671,
+      "poseStratum": "lowered",
+      "rankSha256": "bcb3025880e241716a551e2cf124ecd54412aba95936a34ad2261d0190016b18",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 429906,
+      "id": "coco2017_000000085772_429906",
+      "imageId": 85772,
+      "poseStratum": "lowered",
+      "rankSha256": "4521910e6c434fde14b4678900b6b1e8a8771885b5bef5470c196d76af73cb3d",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 422400,
+      "id": "coco2017_000000088485_422400",
+      "imageId": 88485,
+      "poseStratum": "lowered",
+      "rankSha256": "f175b78c6f341cc831310f7348e4401ef9f00fa72d2e6149f3530fa26c12ba72",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 425691,
+      "id": "coco2017_000000089078_425691",
+      "imageId": 89078,
+      "poseStratum": "lowered",
+      "rankSha256": "cb0f01f94ddc669b6d6a8ddcf5ff64d4e9d668cffe17767c18df3dd594729860",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 1714559,
+      "id": "coco2017_000000094326_1714559",
+      "imageId": 94326,
+      "poseStratum": "lowered",
+      "rankSha256": "8cdd1a057fa37814bb6780e52e507092e21bd7beaa52c7ea50fc3027a581feb0",
+      "split": "calibration",
+      "stratum": "occluded_v1"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000095899_no_person_annotation",
+      "imageId": 95899,
+      "poseStratum": "unknown",
+      "rankSha256": "1330251bddb452657357b9fac718eac82bf23441eabf0bfc60811d9698f778ce",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 451795,
+      "id": "coco2017_000000096493_451795",
+      "imageId": 96493,
+      "poseStratum": "lowered",
+      "rankSha256": "05a53b0b78d38712ec60004437f3a6891af7c7a011d9e0566854394a6a533ee0",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 500170,
+      "id": "coco2017_000000097278_500170",
+      "imageId": 97278,
+      "poseStratum": "lowered",
+      "rankSha256": "509ca3415f062d9c643419b46baabaa29810ebe50a5b180a31ba4129e764833b",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000098497_no_person_annotation",
+      "imageId": 98497,
+      "poseStratum": "unknown",
+      "rankSha256": "0bab363380af343a6e813bcd0d57956d2938ab396a7bb093fc05fb6671e09360",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000100582_no_person_annotation",
+      "imageId": 100582,
+      "poseStratum": "unknown",
+      "rankSha256": "0d33c84b3c5d90cde79590b485008344e8e1f9673596e7db7034a83b3aaeea79",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000109441_no_person_annotation",
+      "imageId": 109441,
+      "poseStratum": "unknown",
+      "rankSha256": "03f170db485b8a440c82a2dc83b33c547cc28c4c1b912ae49cec99dd075fbb0b",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000110211_no_person_annotation",
+      "imageId": 110211,
+      "poseStratum": "unknown",
+      "rankSha256": "0c89e12b409b6d262b39f1a999e13302e3447174b65bbc41a93a9b06d1206aff",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000119233_no_person_annotation",
+      "imageId": 119233,
+      "poseStratum": "unknown",
+      "rankSha256": "0b176b24f0666c68ada9c405a357b66418fba51e43fa36b679738acfc1478d1c",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 469277,
+      "id": "coco2017_000000122046_469277",
+      "imageId": 122046,
+      "poseStratum": "lowered",
+      "rankSha256": "c071ab48b4aa3e28b0a07ae9e3748a350ed621d012c54a441e4540d3940cd370",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 432364,
+      "id": "coco2017_000000128654_432364",
+      "imageId": 128654,
+      "poseStratum": "raised",
+      "rankSha256": "a017330f8794e79759569af9d3d2d2321f2a1657feea7f240516de096b8ce51e",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000129416_no_person_annotation",
+      "imageId": 129416,
+      "poseStratum": "unknown",
+      "rankSha256": "0145a443e31b54f2e6a794d1726bc052e356ce3266329475d447cdc7bcfaecf9",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 422535,
+      "id": "coco2017_000000130586_422535",
+      "imageId": 130586,
+      "poseStratum": "lowered",
+      "rankSha256": "062c8a49e2a32a151248f3761bca59e7081e0ba13ee9c2f8428228a660b04a62",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 1225044,
+      "id": "coco2017_000000142620_1225044",
+      "imageId": 142620,
+      "poseStratum": "lowered",
+      "rankSha256": "42528155ce91cbd14124d5f113167e3ad79e228a5f6c0b415dfc1c798d1bb2ff",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 445285,
+      "id": "coco2017_000000158956_445285",
+      "imageId": 158956,
+      "poseStratum": "raised",
+      "rankSha256": "63223827355b765d04597545338e8bb97d6d34375f11119e49d0bbe30639c155",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 447694,
+      "id": "coco2017_000000162415_447694",
+      "imageId": 162415,
+      "poseStratum": "raised",
+      "rankSha256": "646aea48aedaf359424284f100706b2f63a6bd68843db697d3f8a3cf0f338c40",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 209396,
+      "id": "coco2017_000000165518_209396",
+      "imageId": 165518,
+      "poseStratum": "lowered",
+      "rankSha256": "e639c9280e83a3ed8159ce307af1acfbf72a764526814f3b798a373d47771b16",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 519484,
+      "id": "coco2017_000000168974_519484",
+      "imageId": 168974,
+      "poseStratum": "lowered",
+      "rankSha256": "88daa3a5980168bd313a17fc3bc6e0a65f4386949c27252e420adae40b27adb5",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 469280,
+      "id": "coco2017_000000170099_469280",
+      "imageId": 170099,
+      "poseStratum": "lowered",
+      "rankSha256": "4e5f8426eb6a6fc541a855ffaf591521d4fa38924106dee79348f223d0615c6c",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 445068,
+      "id": "coco2017_000000172877_445068",
+      "imageId": 172877,
+      "poseStratum": "lowered",
+      "rankSha256": "f7004d45b5a63519cbbc3966dc5d97f1c4ef539851e7688943addef12095ac75",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000172977_no_person_annotation",
+      "imageId": 172977,
+      "poseStratum": "unknown",
+      "rankSha256": "0022e4dab12172d7e35b7fd664de0398ef75dd618b178cdb43e5eafa620fccd5",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 442601,
+      "id": "coco2017_000000173008_442601",
+      "imageId": 173008,
+      "poseStratum": "lowered",
+      "rankSha256": "93e2470cf8ef17a8fe4e82a4b740d8859dda780d84f5fdc2fff08b562f846818",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 521392,
+      "id": "coco2017_000000173830_521392",
+      "imageId": 173830,
+      "poseStratum": "lowered",
+      "rankSha256": "379b0e178be5e5bc42c7d365c4beae2e0ae30e44aa50c27385eaddb37ccdac63",
+      "split": "calibration",
+      "stratum": "occluded_v1"
+    },
+    {
+      "annotationId": 1752244,
+      "id": "coco2017_000000177015_1752244",
+      "imageId": 177015,
+      "poseStratum": "lowered",
+      "rankSha256": "1d26126daa95b694504a137ff74c3809d56d875b39aebe36d3d5bc7a671bab10",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 447701,
+      "id": "coco2017_000000182805_447701",
+      "imageId": 182805,
+      "poseStratum": "lowered",
+      "rankSha256": "f5e1bc370db6222ef5a33b426e786e15f8a1002eabaaa22e2e8825cf2c6e4c82",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 421907,
+      "id": "coco2017_000000185950_421907",
+      "imageId": 185950,
+      "poseStratum": "raised",
+      "rankSha256": "ed5498b83038ec6378424f446e51fcd85d232d12205c8b968d96a4af2f096656",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 430662,
+      "id": "coco2017_000000188592_430662",
+      "imageId": 188592,
+      "poseStratum": "lowered",
+      "rankSha256": "a72a45a8fc17d587ea38ec2bc12be71b42a6bddf878f607a22059de5d8eb9ac5",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 2152500,
+      "id": "coco2017_000000192964_2152500",
+      "imageId": 192964,
+      "poseStratum": "raised",
+      "rankSha256": "2d5d4b5d6e89f2ce3fb49903cf96928c02bba8b3de09147e56fe182a3866975c",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 424921,
+      "id": "coco2017_000000199055_424921",
+      "imageId": 199055,
+      "poseStratum": "raised",
+      "rankSha256": "794db5e43541b690c5c3e97d120a7ffec982c201b14beaaa1d1f478b827668ae",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 459777,
+      "id": "coco2017_000000203639_459777",
+      "imageId": 203639,
+      "poseStratum": "lowered",
+      "rankSha256": "78a963ca27b4a2bd1e139be125679b3f4b712fde56622c3d1df231d3db887f19",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 444711,
+      "id": "coco2017_000000205105_444711",
+      "imageId": 205105,
+      "poseStratum": "raised",
+      "rankSha256": "8c5698c06ffe04176b68d99fdd54621ddf3d826047fb4d7b8029ccbe05e18193",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000205282_no_person_annotation",
+      "imageId": 205282,
+      "poseStratum": "unknown",
+      "rankSha256": "09cb176a75f4c8ce54bf8a40cd4149095d9add0a60389a0d6427dfaef393f236",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 194291,
+      "id": "coco2017_000000213033_194291",
+      "imageId": 213033,
+      "poseStratum": "lowered",
+      "rankSha256": "20b08d9a24a7d377815a67a5267e538dcf47660b558b1603162e21f37405d233",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 432019,
+      "id": "coco2017_000000213171_432019",
+      "imageId": 213171,
+      "poseStratum": "lowered",
+      "rankSha256": "75a939e04b990a44e404998b49ef93c7683038acc07a5812f5b149999acaec9b",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 431999,
+      "id": "coco2017_000000229553_431999",
+      "imageId": 229553,
+      "poseStratum": "lowered",
+      "rankSha256": "33723aae6120aac2f2d57d63b48fcfc06bfe906385be2a6a6ad47040f2eecc08",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000231831_no_person_annotation",
+      "imageId": 231831,
+      "poseStratum": "unknown",
+      "rankSha256": "12896b76520eab92fb5ba82c3a5b545c344002a0a1e1fa4eea1118cdfb43efa0",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 421607,
+      "id": "coco2017_000000237071_421607",
+      "imageId": 237071,
+      "poseStratum": "lowered",
+      "rankSha256": "ba4b48b90dad4496952dd4ad18d1c00a11fa66462f1e19c2290177a579c201a6",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 501149,
+      "id": "coco2017_000000239537_501149",
+      "imageId": 239537,
+      "poseStratum": "lowered",
+      "rankSha256": "18fdeb0e2809bfa202fc6f37ad39ec706ef977546c86e22a73ffdc59aecc5c20",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000252332_no_person_annotation",
+      "imageId": 252332,
+      "poseStratum": "unknown",
+      "rankSha256": "078ac2dd3e4346d4111605df3b0240041cb29e123750f344b93fd223682efa69",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 423444,
+      "id": "coco2017_000000253819_423444",
+      "imageId": 253819,
+      "poseStratum": "raised",
+      "rankSha256": "15cf025249b06de9e9d07c4a82f8976ccba5c5aa439d3521c449273f322d1949",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000260657_no_person_annotation",
+      "imageId": 260657,
+      "poseStratum": "unknown",
+      "rankSha256": "06c246c8015666cf06c567472b96381d3b64120aee21e1e61ddcda42ffb30102",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 484547,
+      "id": "coco2017_000000261061_484547",
+      "imageId": 261061,
+      "poseStratum": "raised",
+      "rankSha256": "06481abc9d9c46dd6511e644613f3ca8585468cf48b62c4d9207470522e954de",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 428410,
+      "id": "coco2017_000000261732_428410",
+      "imageId": 261732,
+      "poseStratum": "raised",
+      "rankSha256": "13e4d411f78ffcfbd1613238e46454d2a198effa4b160c51ebec57594ec2823a",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000263644_no_person_annotation",
+      "imageId": 263644,
+      "poseStratum": "unknown",
+      "rankSha256": "08e0fc66a59f57281a4d2a5cc11bebc10eeb7747b2142883547ae9f2d17b0e8c",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000270705_no_person_annotation",
+      "imageId": 270705,
+      "poseStratum": "unknown",
+      "rankSha256": "0fd3b6a704c84def372cd4ec232a15e757e52b1f64f24ae200a00235225e72e8",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 448079,
+      "id": "coco2017_000000270908_448079",
+      "imageId": 270908,
+      "poseStratum": "lowered",
+      "rankSha256": "10902c41af1eec849a375f3dd8161a877d5cc241a8b7b4af294395d0d800d041",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000273617_no_person_annotation",
+      "imageId": 273617,
+      "poseStratum": "unknown",
+      "rankSha256": "00fa6906179c83552b96ea669d38cd2bdcbb176a3e723b3c581314bebd931b05",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 476757,
+      "id": "coco2017_000000273760_476757",
+      "imageId": 273760,
+      "poseStratum": "lowered",
+      "rankSha256": "fff07415ab553bf1cd63f3b9858d7e79ed71e5f2b44e8e4bf3442fcd53a9e072",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000277197_no_person_annotation",
+      "imageId": 277197,
+      "poseStratum": "unknown",
+      "rankSha256": "0656fc193a131e2082b6432f168771573513ec52b1313e09448fc731c2999f68",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 421933,
+      "id": "coco2017_000000280930_421933",
+      "imageId": 280930,
+      "poseStratum": "lowered",
+      "rankSha256": "5849212aa57bbd66fe969ae60bda6c620376a644c394f8bcab5ff4172d1a5c97",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000310622_no_person_annotation",
+      "imageId": 310622,
+      "poseStratum": "unknown",
+      "rankSha256": "075a93fff1605c6818ab2280940e3d37c9ba7d05bc9cdd1e265886e05d9033f3",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 495970,
+      "id": "coco2017_000000313588_495970",
+      "imageId": 313588,
+      "poseStratum": "lowered",
+      "rankSha256": "cbc68360625a7f43085ee962d581b8d8c0d9171ba71687a344eb57fdb41ec8d2",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 423941,
+      "id": "coco2017_000000321214_423941",
+      "imageId": 321214,
+      "poseStratum": "lowered",
+      "rankSha256": "e47a96aa9d879eb3fa52d962791bc97db54656caec36500b96fb28df863fdb61",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 471486,
+      "id": "coco2017_000000322944_471486",
+      "imageId": 322944,
+      "poseStratum": "lowered",
+      "rankSha256": "0241255364557e0caf3027d2c324f72f5790bfcb663d51125ec30115052b0a0c",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 519905,
+      "id": "coco2017_000000325838_519905",
+      "imageId": 325838,
+      "poseStratum": "lowered",
+      "rankSha256": "d6f05c46cb76dac0673e62ccd4733cae13dd03e6771ad490d36e1e355b132eda",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 496288,
+      "id": "coco2017_000000326128_496288",
+      "imageId": 326128,
+      "poseStratum": "lowered",
+      "rankSha256": "b6a83a333a1636f7b8ed294eab2d4de5880509718ce23ca3943afe579111f167",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000335800_no_person_annotation",
+      "imageId": 335800,
+      "poseStratum": "unknown",
+      "rankSha256": "08dfd04b62fb6dad387d2a8e408bcf6949c58b117a13bf54930097176c513311",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 2164049,
+      "id": "coco2017_000000340451_2164049",
+      "imageId": 340451,
+      "poseStratum": "raised",
+      "rankSha256": "4aa8dcc14f5a38c9fefa2306817fd26ee3ab8c8d01ed5ae6c8ea82c1d7cf0f5a",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 473214,
+      "id": "coco2017_000000352760_473214",
+      "imageId": 352760,
+      "poseStratum": "lowered",
+      "rankSha256": "ba745b25cfe20ade0e1f6d4c5da0dafc4421d2c5dce5dbc0c2d13d72ddf92c45",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000355677_no_person_annotation",
+      "imageId": 355677,
+      "poseStratum": "unknown",
+      "rankSha256": "122b0f86ed71e14acd7ace14b8e1fef185c3bc03d96f73ae973dfefca7555173",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 1242078,
+      "id": "coco2017_000000356505_1242078",
+      "imageId": 356505,
+      "poseStratum": "lowered",
+      "rankSha256": "fa6facd318d9fb2adb8e0d212b4fd0b530082631e933b59206fde69e2445ca37",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 195050,
+      "id": "coco2017_000000357888_195050",
+      "imageId": 357888,
+      "poseStratum": "raised",
+      "rankSha256": "3a90386db4159fee12cf7b2e6cb6a2966406be6b4ac4db1ddadf649e9405ebd0",
+      "split": "calibration",
+      "stratum": "occluded_v1"
+    },
+    {
+      "annotationId": 447901,
+      "id": "coco2017_000000358195_447901",
+      "imageId": 358195,
+      "poseStratum": "lowered",
+      "rankSha256": "2403e747f67d8b5cc92d30f4637614b03f38416bae7a0fe79db2faca0e1ce0e6",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000365766_no_person_annotation",
+      "imageId": 365766,
+      "poseStratum": "unknown",
+      "rankSha256": "118fbfeb1423ed7e9ed8081dcc9717d94e20f48348c2073bb8ee184f7dfa9e87",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 426629,
+      "id": "coco2017_000000366711_426629",
+      "imageId": 366711,
+      "poseStratum": "lowered",
+      "rankSha256": "f3d1937a44dd06e6cb0d5fd63543060e59062f74bfc7e75de0782368439891a1",
+      "split": "heldout",
+      "stratum": "occluded_v1"
+    },
+    {
+      "annotationId": 198284,
+      "id": "coco2017_000000367818_198284",
+      "imageId": 367818,
+      "poseStratum": "raised",
+      "rankSha256": "b5a73040cdd69e9550c24bb27d537de1f353c7cb635cb5783a3b36596da42203",
+      "split": "heldout",
+      "stratum": "occluded_v1"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000369751_no_person_annotation",
+      "imageId": 369751,
+      "poseStratum": "unknown",
+      "rankSha256": "0256218cdc9889a6baaebcaadaed41b2bbc092e46a72435a935caf99539b3726",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 1242999,
+      "id": "coco2017_000000370375_1242999",
+      "imageId": 370375,
+      "poseStratum": "lowered",
+      "rankSha256": "621ff3d92a60d696197989818685c62026c74d5971c0206dd58d9667b8042e06",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 2161893,
+      "id": "coco2017_000000371529_2161893",
+      "imageId": 371529,
+      "poseStratum": "lowered",
+      "rankSha256": "fdacd553edb4d572e0b0f94285c8de89c0a3794a929276316ea32a276b0bd757",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000371677_no_person_annotation",
+      "imageId": 371677,
+      "poseStratum": "unknown",
+      "rankSha256": "124aaa05522aa627d5b68df5dda9be489323e34c4d124939ee7ef5c7aff8e370",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 512047,
+      "id": "coco2017_000000384136_512047",
+      "imageId": 384136,
+      "poseStratum": "lowered",
+      "rankSha256": "e7c72e18278856dd8bbbedb1f17fd85893ee9254f6d43f612845a3c20f092597",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000386134_no_person_annotation",
+      "imageId": 386134,
+      "poseStratum": "unknown",
+      "rankSha256": "07e0b4ef2543b22014c0d07f8dd2ef0b5d9339aa203ae6c039ef598a6d34594a",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 485625,
+      "id": "coco2017_000000398905_485625",
+      "imageId": 398905,
+      "poseStratum": "lowered",
+      "rankSha256": "3336dce4b68c3715d06d0803418aeadc7a1f3c729be4068c443ee68ee650928f",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 224077,
+      "id": "coco2017_000000399764_224077",
+      "imageId": 399764,
+      "poseStratum": "lowered",
+      "rankSha256": "3f79282d13d427088284af210b56e9aa4268960a76eaed79f5537495c4bed417",
+      "split": "calibration",
+      "stratum": "occluded_v1"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000402519_no_person_annotation",
+      "imageId": 402519,
+      "poseStratum": "unknown",
+      "rankSha256": "076ac3d1718bcf93783d27b0d005a10696b7eb28ea16ecb2859f4c2103638164",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000406570_no_person_annotation",
+      "imageId": 406570,
+      "poseStratum": "unknown",
+      "rankSha256": "036b8525f847be2d6861b0a04faab4eb97975fb5976cdadcbc5f1ec6c8bf56d5",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000407518_no_person_annotation",
+      "imageId": 407518,
+      "poseStratum": "unknown",
+      "rankSha256": "096bafdcb2484607424a80f8fcc96511f38fbc52ffbaf4a8e1ebc725708e4202",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000435880_no_person_annotation",
+      "imageId": 435880,
+      "poseStratum": "unknown",
+      "rankSha256": "1068ee8496c3a0a97e92a5516a451a53a2858c4f03348da6ce4b2a697cd19ecc",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 492988,
+      "id": "coco2017_000000437351_492988",
+      "imageId": 437351,
+      "poseStratum": "lowered",
+      "rankSha256": "899380f5172ce47d925dc09434c6caf29145c9d7ec50d953fa0dee0ca6594c92",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000446703_no_person_annotation",
+      "imageId": 446703,
+      "poseStratum": "unknown",
+      "rankSha256": "11796573370a16e5cbeba72a1a61f101e50b50feac06ab707676514e8b865ee1",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 425291,
+      "id": "coco2017_000000451084_425291",
+      "imageId": 451084,
+      "poseStratum": "raised",
+      "rankSha256": "a9434b776f5bdd653d3ff7ed79d39a0be6c9def7d6ada350b4580c93192c4148",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 467980,
+      "id": "coco2017_000000451155_467980",
+      "imageId": 451155,
+      "poseStratum": "lowered",
+      "rankSha256": "cabf5e825e38e73ed23fe7d86103da4fb0238e644dd4cf23375fb11cd8da509a",
+      "split": "heldout",
+      "stratum": "occluded_v1"
+    },
+    {
+      "annotationId": 515572,
+      "id": "coco2017_000000468505_515572",
+      "imageId": 468505,
+      "poseStratum": "lowered",
+      "rankSha256": "763bc0fd5dfa90ce3d27c14c1fe0d3ad39444e8d54d3b67ac4e0ced79e4478ff",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 188447,
+      "id": "coco2017_000000471756_188447",
+      "imageId": 471756,
+      "poseStratum": "lowered",
+      "rankSha256": "a1380a917c9c0e91e06d50e7aeffef1ed9fbb185394080c87cafbeca7e791529",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 454237,
+      "id": "coco2017_000000473406_454237",
+      "imageId": 473406,
+      "poseStratum": "lowered",
+      "rankSha256": "23f0084d9d867c10584754f89167d186e85645524641a76e95a5a5c36c61b7d5",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 475292,
+      "id": "coco2017_000000473869_475292",
+      "imageId": 473869,
+      "poseStratum": "lowered",
+      "rankSha256": "6284c404efe39bffa1ed042d6a711ce8fd5da0d3145d72e7727043319158f758",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000475678_no_person_annotation",
+      "imageId": 475678,
+      "poseStratum": "unknown",
+      "rankSha256": "088606063bf0d7e68da284365dc3fcbb7527d949d9c8a1760e442556c8051727",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 466988,
+      "id": "coco2017_000000476119_466988",
+      "imageId": 476119,
+      "poseStratum": "lowered",
+      "rankSha256": "fb25080aceec6be1f225d2f0dcb85889b7d7ed95fbc865ebc17dc235ee4760f0",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 519833,
+      "id": "coco2017_000000480936_519833",
+      "imageId": 480936,
+      "poseStratum": "lowered",
+      "rankSha256": "90fd4c7b5c20ed08304f79b28377fb068d326197b5e59f820435538b6c92b603",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 228697,
+      "id": "coco2017_000000481386_228697",
+      "imageId": 481386,
+      "poseStratum": "lowered",
+      "rankSha256": "370f68c5c6896356be0eb425d0940db388df44a894f202fd1d1fd7bc04aecd07",
+      "split": "calibration",
+      "stratum": "occluded_v1"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000495054_no_person_annotation",
+      "imageId": 495054,
+      "poseStratum": "unknown",
+      "rankSha256": "05408b25fecd67e0dadcdc1ef78e4975c8eb31ceab8ca0a4c5bb9ac0407ea62a",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000508639_no_person_annotation",
+      "imageId": 508639,
+      "poseStratum": "unknown",
+      "rankSha256": "1063fe90e9516fadc610d9b37feb91487ee688b7da971d1541b9fc29ffa96d26",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 439875,
+      "id": "coco2017_000000527427_439875",
+      "imageId": 527427,
+      "poseStratum": "raised",
+      "rankSha256": "ac0d1777494e5193468b718da7bd147daff043f76e2e6cbf909e8e83edc6aa5d",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 429807,
+      "id": "coco2017_000000529762_429807",
+      "imageId": 529762,
+      "poseStratum": "lowered",
+      "rankSha256": "4e2076646aa9f85289ee5682cff16570fb63fa34d1c0fa691f7d78766fb8cc9f",
+      "split": "calibration",
+      "stratum": "occluded_v1"
+    },
+    {
+      "annotationId": 189976,
+      "id": "coco2017_000000537991_189976",
+      "imageId": 537991,
+      "poseStratum": "lowered",
+      "rankSha256": "9f4cb6301db3c6f1a10feac392c0b6bd5fdf072af6f6f69a2070fd6bdd4d97bc",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 499548,
+      "id": "coco2017_000000544444_499548",
+      "imageId": 544444,
+      "poseStratum": "raised",
+      "rankSha256": "53bef4053ca8e19d9977c4d1b3c5ca7a99ce56004c1488b956d27d730508316e",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 210611,
+      "id": "coco2017_000000546717_210611",
+      "imageId": 546717,
+      "poseStratum": "raised",
+      "rankSha256": "c7c2a4e255758bc8b0d0f540ba97330a1935782a5d200deb5f8c3710e1da1210",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 495052,
+      "id": "coco2017_000000547336_495052",
+      "imageId": 547336,
+      "poseStratum": "lowered",
+      "rankSha256": "337cdc1c86f2aec725c5affbcb2842676f2cb91ff19cd41adc519f9236445df6",
+      "split": "calibration",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000550939_no_person_annotation",
+      "imageId": 550939,
+      "poseStratum": "unknown",
+      "rankSha256": "11f9bc4446506fd4819972e7c7071136ab1276f2821b6d8eca4c633a687cc29d",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000552883_no_person_annotation",
+      "imageId": 552883,
+      "poseStratum": "unknown",
+      "rankSha256": "14d8c833676106546b9bcf36c5d3c6b6dd18a5abd3875b93f96cb26f98bc91ab",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 435295,
+      "id": "coco2017_000000556158_435295",
+      "imageId": 556158,
+      "poseStratum": "lowered",
+      "rankSha256": "c1d0ce7e6a34f671da1e777fe5bd6d3bb5601f714f1ece8bc6d0ba15da8d044d",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": 186054,
+      "id": "coco2017_000000564091_186054",
+      "imageId": 564091,
+      "poseStratum": "lowered",
+      "rankSha256": "d8f17e830962a7aad511e46a87365ccec04cd7fd8f5320bfb1f747cf07d1fbfe",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000565776_no_person_annotation",
+      "imageId": 565776,
+      "poseStratum": "unknown",
+      "rankSha256": "04030e5acd4436448f257f6dabbcfc7c2c4fd0cc3955524742da87dbd039a7e5",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000569917_no_person_annotation",
+      "imageId": 569917,
+      "poseStratum": "unknown",
+      "rankSha256": "135f359e29e76818c80beb8b725032c14574d5b3644da2ac60130d3f8f6d50df",
+      "split": "heldout",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": null,
+      "id": "coco2017_000000572517_no_person_annotation",
+      "imageId": 572517,
+      "poseStratum": "unknown",
+      "rankSha256": "03bb8b26eefebb8aad39715879285ef52080956887190730154fd1a6bfb188f6",
+      "split": "calibration",
+      "stratum": "no_person_annotation"
+    },
+    {
+      "annotationId": 460897,
+      "id": "coco2017_000000581317_460897",
+      "imageId": 581317,
+      "poseStratum": "lowered",
+      "rankSha256": "fe731e91f4ce4f667d2fce74e7b3141348c7bb65d66071bd29f5dea77e38a217",
+      "split": "heldout",
+      "stratum": "primary_visible"
+    }
+  ],
+  "policy": {
+    "allowedLicenseIds": [
+      4,
+      5,
+      8
+    ],
+    "calibrationFraction": 0.6,
+    "identityLimitation": "COCO labels person instances, not persistent physical identities. Split is disjoint in source-image IDs and person-annotation IDs; physical-person identity across distinct photographs cannot be certified. Exact image-byte duplication is checked after download before inference.",
+    "minimumAnnotatedKeypoints": 10,
+    "minimumBBoxImageAreaFraction": 0.1,
+    "minimumShoulderSpanPixels": 40,
+    "minimumTargetJointVisibility": 1,
+    "noPersonAnnotationCaveat": "Zero source person annotations does not prove a person-free image. Independent visual review required before using as person-free ground truth.",
+    "noPersonAnnotationChallenge": {
+      "calibration": 20,
+      "heldout": 20
+    },
+    "personSelection": "Exactly one person annotation in source image, counting num_keypoints=0 and iscrowd annotations; chosen target is noncrowd.",
+    "primaryStratum": "All four target joints v=2; v=1 cases retained separately as occlusion challenge, not declared incorrect.",
+    "ranking": "Ascending SHA256 of seed:image_id:annotation_id within positive strata, seed:no-person-annotation:image_id for no-person-annotation challenge. First calibration count per stratum goes to calibration, rest heldout.",
+    "schemaVersion": 1,
+    "seed": "sway-sprout-human-coco2017-calibration-2026-10-20-v1",
+    "selectionUses": "Only official human annotations, image dimensions, published license metadata, fixed hash seed; no model scores, predictions, clips, fixtures, gate thresholds or acceptance results.",
+    "splitCounts": {
+      "occluded_v1": {
+        "calibration": 6,
+        "heldout": 3
+      },
+      "primary_visible": {
+        "calibration": 47,
+        "heldout": 32
+      }
+    },
+    "targetCoordinateRequirement": "All four target x/y coordinates lie inside original image pixel bounds.",
+    "targetJoints": [
+      "left_shoulder",
+      "right_shoulder",
+      "left_wrist",
+      "right_wrist"
+    ]
+  },
+  "schemaVersion": 1,
+  "selectionBasis": "Official human annotations and image license metadata only; no inference or prediction inspection.",
+  "sourceAnnotationsSha256": "788e2dae83c86bd547be7fab269d6399df5671063d29a61360cdb2cc370d2b14",
+  "summary": {
+    "eligibility": {
+      "adequate_shoulder_geometry": 88,
+      "all_four_target_joints_have_human_coordinates": 135,
+      "allowed_license": 1274,
+      "exactly_one_person_annotation_including_unlabeled_and_crowd": 273,
+      "noncrowd_and_enough_keypoints": 170,
+      "prominent_bbox": 103,
+      "target_coordinates_in_image": 88
+    },
+    "strata": {
+      "no_person_annotation": {
+        "calibration": 20,
+        "eligible": 583,
+        "heldout": 20,
+        "selected": 40
+      },
+      "occluded_v1": {
+        "calibration": 6,
+        "eligible": 9,
+        "heldout": 3,
+        "selected": 9
+      },
+      "primary_visible": {
+        "calibration": 47,
+        "eligible": 79,
+        "heldout": 32,
+        "selected": 79
+      }
+    }
+  }
+}

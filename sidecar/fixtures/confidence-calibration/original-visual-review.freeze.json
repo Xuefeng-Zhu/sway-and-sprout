@@ -1,0 +1,377 @@
+{
+  "frozenAtUtc": "2026-10-21T00:45:02.846684+00:00",
+  "images": [
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000012667_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "0bf182b59b89f534d6f89a2b57c976c47b7f9a95e5e47a7f236b285b9211af14",
+      "sourceImageId": 12667,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000051309_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "843073a1b40d454f132da06607d3ed525ce46eddd87c7f4de0b59378b8a02164",
+      "sourceImageId": 51309,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000058029_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "bdaff927606e8238cc1fc099830c233851e8af4567238d9b5ba5cb5886e5b0f8",
+      "sourceImageId": 58029,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000068286_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "bccb35ba107201ec72066472b2c0f4d789c283b7959fa96e4368ae4cb638b093",
+      "sourceImageId": 68286,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000095899_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "b4e8f6fc5440abc790184973e0ec44428be8a682be6be0894311477727a19251",
+      "sourceImageId": 95899,
+      "split": "heldout"
+    },
+    {
+      "decision": "contains_depicted_human",
+      "id": "coco2017_000000098497_no_person_annotation",
+      "noPerson": false,
+      "reason": "Surfer silhouette sign.",
+      "sha256": "2314fd57bbc82c8b78f04594f2e61d7dda3e1d18f4e9d2946bc2329ee33f9ea1",
+      "sourceImageId": 98497,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000100582_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "670b8c6c5a125c68a9a4c7d446504338561f2b4cac3e6240f776b086a6090a20",
+      "sourceImageId": 100582,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000109441_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "a6099acbb72ebec1c46e522ad26e874742446549d373c52048e0dc18ba15f5d3",
+      "sourceImageId": 109441,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000110211_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "f4eb2c0b04838083a34991f54480b50b9eea95b5a111c7cdfccb2c6a1874ea8d",
+      "sourceImageId": 110211,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000119233_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "24bfe0c95b1dbd6163fb6d36c61a40958d03f8ff6e1a45a2fc4ae8cbb9c4daf2",
+      "sourceImageId": 119233,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000129416_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "4ca2f1f642be18c63c18f6e7bb283ea73e4a9ea2b348542585804f1db1d451f0",
+      "sourceImageId": 129416,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000172977_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "f33f8a6defdd89c71f469b3d069b9833a9fdd2ccdcfb81ff323b61adf46567cb",
+      "sourceImageId": 172977,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000205282_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "82b35c37e5b52aae04650677503465b729785943dc7ab2a9eb4b545f66864625",
+      "sourceImageId": 205282,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000231831_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "1d5fd2d14a5a0ffc6995c37a3e88130aee322f541cba2113f982b538be9a6430",
+      "sourceImageId": 231831,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000252332_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "f2545620c6878bd0faf03dff4f32409a174c1f52bae525170f014abbaae4294b",
+      "sourceImageId": 252332,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000260657_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "f8563a3ced86739aaa630e5308bcee0520cb96a99ace13a66dfad0f86b35cd7d",
+      "sourceImageId": 260657,
+      "split": "calibration"
+    },
+    {
+      "decision": "contains_depicted_human",
+      "id": "coco2017_000000263644_no_person_annotation",
+      "noPerson": false,
+      "reason": "White human figurine.",
+      "sha256": "2a17dee4b96d83938c0d8880b53bb4a898e973a4c6806cbf7dbf21d9f40eee89",
+      "sourceImageId": 263644,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000270705_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "25d07d472c7ad54b5806f912ed770a8a86cf8164d450164af4a1b5975df38038",
+      "sourceImageId": 270705,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000273617_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "18aa7679ef4aa6919c278e7028a381f9a8b6824f77a79c2ffef32da2deaa8795",
+      "sourceImageId": 273617,
+      "split": "calibration"
+    },
+    {
+      "decision": "contains_depicted_human",
+      "id": "coco2017_000000277197_no_person_annotation",
+      "noPerson": false,
+      "reason": "Paintings/photos depict people.",
+      "sha256": "b16875ab1105517e2911558218b3b64f8dbb7dbd1e01c450c805865335e36a84",
+      "sourceImageId": 277197,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000310622_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "11a377fad2f0a910479bc41340ca2ccddd8f2aedc8958aa04c577c3dbd64987f",
+      "sourceImageId": 310622,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000335800_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "cd4f9f9e797d1146db474f98b7560dc443e7e6efa91fa563fece45374b8de7af",
+      "sourceImageId": 335800,
+      "split": "calibration"
+    },
+    {
+      "decision": "contains_human",
+      "id": "coco2017_000000355677_no_person_annotation",
+      "noPerson": false,
+      "reason": "Distant swimmer head/outstretched arms.",
+      "sha256": "cfed285fe730e7db7923cd9324607af6474df4ac71fae66b9cec5e0b7002293f",
+      "sourceImageId": 355677,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000365766_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "d5e83ee05eee360deae2125ac74000e691b6669c8a400ae6e98fb75fa49cd4ee",
+      "sourceImageId": 365766,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000369751_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "57d5d8701f72bcd01989b9252ed1f2d92a54bda330be182e838071c70f7f06ba",
+      "sourceImageId": 369751,
+      "split": "calibration"
+    },
+    {
+      "decision": "ambiguous",
+      "id": "coco2017_000000371677_no_person_annotation",
+      "noPerson": false,
+      "reason": "Tiny monitor avatar unresolved.",
+      "sha256": "8db67d13aac1ef8f1a6c24fa7a542c794c4155343f0b9f8a9527dc4ffa9a405a",
+      "sourceImageId": 371677,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000386134_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "676e88db32dd10e20e60f166df9e4b71a8574d6d552871938ddc8dfce736419f",
+      "sourceImageId": 386134,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000402519_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "67a26f7ec2001238cb1819aff95422ba7b57c6973cef05f60faab97d7c308e2e",
+      "sourceImageId": 402519,
+      "split": "calibration"
+    },
+    {
+      "decision": "ambiguous",
+      "id": "coco2017_000000406570_no_person_annotation",
+      "noPerson": false,
+      "reason": "Blurred teal upper-left region could be cropped clothing.",
+      "sha256": "2790f0224bf5f6315f6480b3c5dc46130dfeeffb1a12bb58b6d686c1cd616065",
+      "sourceImageId": 406570,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000407518_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "e040b3d434af83c78dab765ebcca1719430fd1194f8d938b2f0294393a5d9f59",
+      "sourceImageId": 407518,
+      "split": "heldout"
+    },
+    {
+      "decision": "contains_depicted_human",
+      "id": "coco2017_000000435880_no_person_annotation",
+      "noPerson": false,
+      "reason": "Fridge human photo collage.",
+      "sha256": "2d58fc1e5f143011c23d9109326053f79d9e8b237122a3250003b114aba79f10",
+      "sourceImageId": 435880,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000446703_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "c00090abe4c7f1e57231ac98f09d480ee59fa1d7b5acb4d114834775377df084",
+      "sourceImageId": 446703,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000475678_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "90536452d9eab598526aca535f1e7894e1668b05ea51c32738b37d2c260f3753",
+      "sourceImageId": 475678,
+      "split": "calibration"
+    },
+    {
+      "decision": "contains_human",
+      "id": "coco2017_000000495054_no_person_annotation",
+      "noPerson": false,
+      "reason": "Kneeling hi-vis ground worker; also nose-art woman.",
+      "sha256": "5864a5039d151cdf03efc9dfcde0a52227f9ffdbf3a26cd09c1add8e401058f5",
+      "sourceImageId": 495054,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000508639_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "819434c439824673d4fc441cf5548b7ad851f6ef4c14ad0fff23656abedbee62",
+      "sourceImageId": 508639,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000550939_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "6c991128a1b28a048a4f746ba0aa4a27dbb388039b02c47d2216d8b8954abc9d",
+      "sourceImageId": 550939,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000552883_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "1d494b0de43a2b45254e8407278abbea78fcde4130adee937d57d78d4ae79d49",
+      "sourceImageId": 552883,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000565776_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "1a680f892e0e10c0504f8cbec5f6e8fe116b80124cba694eda5f12b37b91b8b2",
+      "sourceImageId": 565776,
+      "split": "calibration"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000569917_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "a3115bd6b2d9e14b9805482da784c35eeca0a2dd628ac18c59b1a69a21d40277",
+      "sourceImageId": 569917,
+      "split": "heldout"
+    },
+    {
+      "decision": "clear_no_human",
+      "id": "coco2017_000000572517_no_person_annotation",
+      "noPerson": true,
+      "reason": "Original model-blind reviewer individually viewed this source image and classified clear_no_human.",
+      "sha256": "91f4d327a8f83c8df2013b0962baf76794a4bbfefe939a7fc2bad545785d0d35",
+      "sourceImageId": 572517,
+      "split": "calibration"
+    }
+  ],
+  "modelBlindBeforeInference": true,
+  "originalManifestSha256": "4fc65ec9056d346d805044150fc4631a7f48ba277788ce67b80e16303a5864e2",
+  "reviewMethod": "Prior independent reviewer inspected both contact sheets and all40 original source JPEGs. Six edge cases received independent second source-pixel review. Final decisions are faithfully transcribed from trusted collaboration history because the reviewer freeze write failed during Mac execution disconnection. This transcription does not claim a new pixel review by the transcriber. No model inference occurred before these decisions or this file freeze.",
+  "reviewer": "/root/natural_footage/coco_zero_visual_review",
+  "schemaVersion": 1,
+  "sourceEvidence": {
+    "kind": "trusted_collaboration_final_decision_message",
+    "sender": "/root/natural_footage/coco_zero_visual_review",
+    "text": "Final labels established (all 40 originals individually viewed; six edge cases got independent second pixel review): 32 clear_no_human (16 calibration/16 heldout). Exclude calibration: 263644 contains_depicted_human (white human figurine), 277197 contains_depicted_human (paintings/photos), 406570 ambiguous (blurred teal upper-left region could be cropped clothing), 495054 contains_human (kneeling hi-vis ground worker; also nose-art woman). Exclude heldout: 98497 contains_depicted_human (surfer silhouette sign), 355677 contains_human (distant swimmer head/outstretched arms), 371677 ambiguous (tiny monitor avatar unresolved), 435880 contains_depicted_human (fridge human photo collage). Freeze write attempt hit exec-server transport disconnect; checking outcome before retry. Do not infer until freeze hash confirmed.",
+    "textSha256": "27c079fa7a7e241c4058cfd7a6a9dcc1c19c43174c1e8bd1809a048c607201dd"
+  },
+  "transcribedBy": "/root/calibration_data"
+}

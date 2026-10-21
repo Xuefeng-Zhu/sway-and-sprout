@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "frozenBeforeInference": true,
+  "sourceSha256": "d1bc8805ba209fb797c19c50ec87814070ef6e7285c115aceada20d78b1dfb00",
+  "annotationSha256": "e5f66c5180b39dd46d4034a3f2660b421441f1f12613d3229e39d0d3c8591755",
+  "left-natural": {
+    "source": "DVIDS679690",
+    "startFrame": 285,
+    "endFrameExclusive": 368,
+    "spatialCrop": false,
+    "mirror": false,
+    "frameDuplication": false,
+    "retime": false,
+    "expectedGestures": [
+      "left-raise"
+    ],
+    "eventWindowsMs": [
+      [
+        2050,
+        2733.334
+      ]
+    ],
+    "scope": "Independent natural single neutral-to-left cycle only; event dwell fully inside visually certified left window"
+  },
+  "right-short": {
+    "source": "DVIDS551039-right-negative-36s-51s",
+    "startFrame": 0,
+    "endFrameExclusive": 156,
+    "spatialCrop": false,
+    "mirror": false,
+    "frameDuplication": false,
+    "retime": false,
+    "expectedGestures": [],
+    "scope": "Contiguous prefix preserving previously annotated neutral1-16 and rightup136-151; wrong-side negative, not independent positive"
+  }
+}

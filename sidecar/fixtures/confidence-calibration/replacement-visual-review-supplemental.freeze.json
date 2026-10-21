@@ -1,0 +1,143 @@
+{
+  "candidateManifestSha256": "a98da165fcc2053fb72e8f4ec0e26bab78c0e5ade3ad2aa1cb4f5363ffeb64cc",
+  "candidatePoolSha256": "fac651cd742383054feb42961a883d988452a47b5fe8525bd1684cb48611b945",
+  "frozenAtUtc": "2026-10-21T00:45:50.262542+00:00",
+  "images": [
+    {
+      "asset": "calibration/ecae0002c2e7c82e63a47c377d92d05a9d340dbe283e2c4a0fdfe21627e77885.jpg",
+      "decision": "clear_no_human",
+      "globalCandidateRankZeroBased": 52,
+      "id": "coco2017_000000552902_no_person_annotation",
+      "noPerson": true,
+      "reason": "A zebra grazing on grass beside trees and foliage; no visible human, human depiction, or ambiguous humanlike object.",
+      "sha256": "ecae0002c2e7c82e63a47c377d92d05a9d340dbe283e2c4a0fdfe21627e77885",
+      "sourceImageId": 552902,
+      "split": "calibration"
+    },
+    {
+      "asset": "calibration/b8409b5137f8653727eed92c375318c1c947cc2bb0cf75cc972d2293aacd9323.jpg",
+      "decision": "clear_no_human",
+      "globalCandidateRankZeroBased": 53,
+      "id": "coco2017_000000109916_no_person_annotation",
+      "noPerson": true,
+      "reason": "Two cakes in pans on a gas stovetop with kitchen counter objects at the edge; no visible person or human depiction.",
+      "sha256": "b8409b5137f8653727eed92c375318c1c947cc2bb0cf75cc972d2293aacd9323",
+      "sourceImageId": 109916,
+      "split": "calibration"
+    },
+    {
+      "asset": "calibration/1cb2d1fa59bd7f84952f4e24ab7562e3f2939c71fce88a9ae6d55a630ba5a53a.jpg",
+      "decision": "clear_no_human",
+      "globalCandidateRankZeroBased": 54,
+      "id": "coco2017_000000096549_no_person_annotation",
+      "noPerson": true,
+      "reason": "An EgyptAir passenger aircraft on an airfield, with airport fixtures and buildings; no discernible ground personnel or cockpit occupants, and the aircraft logo is a bird motif.",
+      "sha256": "1cb2d1fa59bd7f84952f4e24ab7562e3f2939c71fce88a9ae6d55a630ba5a53a",
+      "sourceImageId": 96549,
+      "split": "calibration"
+    },
+    {
+      "asset": "calibration/bbae0af68dbcd07f29967ce64f85fb0121b93e33783f8380dc02d1dd6e382905.jpg",
+      "decision": "clear_no_human",
+      "globalCandidateRankZeroBased": 55,
+      "id": "coco2017_000000359855_no_person_annotation",
+      "noPerson": true,
+      "reason": "A damaged blue suitcase beside dirt, stones, weeds, and pavement; no visible humans or human depictions.",
+      "sha256": "bbae0af68dbcd07f29967ce64f85fb0121b93e33783f8380dc02d1dd6e382905",
+      "sourceImageId": 359855,
+      "split": "calibration"
+    },
+    {
+      "asset": "calibration/a2fd5c746e964d161f95b260799ebe7a723b319e22072b32fce8d47029f1a977.jpg",
+      "decision": "clear_no_human",
+      "globalCandidateRankZeroBased": 56,
+      "id": "coco2017_000000447522_no_person_annotation",
+      "noPerson": true,
+      "reason": "A close view of rice and vegetables on a plate over a tabletop; no visible human, human depiction, or humanlike reflection.",
+      "sha256": "a2fd5c746e964d161f95b260799ebe7a723b319e22072b32fce8d47029f1a977",
+      "sourceImageId": 447522,
+      "split": "calibration"
+    },
+    {
+      "asset": "calibration/05bb152e0b9079ae7aeba29569550e911e8fc6de22c5282b6b0527d73b463be0.jpg",
+      "decision": "ambiguous",
+      "globalCandidateRankZeroBased": 57,
+      "id": "coco2017_000000451090_no_person_annotation",
+      "noPerson": false,
+      "reason": "A small upright dark-and-yellow form beside the rear of the boat cabin is unresolved at original resolution. I cannot confidently rule out a partially obscured person.",
+      "sha256": "05bb152e0b9079ae7aeba29569550e911e8fc6de22c5282b6b0527d73b463be0",
+      "sourceImageId": 451090,
+      "split": "calibration"
+    },
+    {
+      "asset": "calibration/cde28c002bf0c170efe8b949d53d36cca3673cc49242171d44de9c7e88494b87.jpg",
+      "decision": "clear_no_human",
+      "globalCandidateRankZeroBased": 58,
+      "id": "coco2017_000000452084_no_person_annotation",
+      "noPerson": true,
+      "reason": "Food containers with toast, sausage, egg, tomato slices, and a plastic fork; no visible human or human depiction.",
+      "sha256": "cde28c002bf0c170efe8b949d53d36cca3673cc49242171d44de9c7e88494b87",
+      "sourceImageId": 452084,
+      "split": "heldout"
+    },
+    {
+      "asset": "calibration/c3cf5a23348287dcc7ebf7da4f35b84c2672a12849e6acfcf1789f852c6116db.jpg",
+      "decision": "clear_no_human",
+      "globalCandidateRankZeroBased": 59,
+      "id": "coco2017_000000513688_no_person_annotation",
+      "noPerson": true,
+      "reason": "An empty chair and desk with a laptop, telephone, mouse, paper, and pen; no human or human depiction is visible in the room or screen.",
+      "sha256": "c3cf5a23348287dcc7ebf7da4f35b84c2672a12849e6acfcf1789f852c6116db",
+      "sourceImageId": 513688,
+      "split": "heldout"
+    },
+    {
+      "asset": "calibration/cac12003fbac894b1ae9aae6e7361f74b6a5bc796ec3fd5c8cdc843cff4be320.jpg",
+      "decision": "clear_no_human",
+      "globalCandidateRankZeroBased": 60,
+      "id": "coco2017_000000208901_no_person_annotation",
+      "noPerson": true,
+      "reason": "Underside of an aircraft against a cloudy sky; no humans or human depictions are visible.",
+      "sha256": "cac12003fbac894b1ae9aae6e7361f74b6a5bc796ec3fd5c8cdc843cff4be320",
+      "sourceImageId": 208901,
+      "split": "heldout"
+    },
+    {
+      "asset": "calibration/a6e060e6e23667a937f1130eed8616b97166e546e148cc62c1f82037b4c3738d.jpg",
+      "decision": "clear_no_human",
+      "globalCandidateRankZeroBased": 61,
+      "id": "coco2017_000000435299_no_person_annotation",
+      "noPerson": true,
+      "reason": "An orange cat stepping from a bed toward a tiled floor, with bedding and a plain wall; no visible human or human depiction.",
+      "sha256": "a6e060e6e23667a937f1130eed8616b97166e546e148cc62c1f82037b4c3738d",
+      "sourceImageId": 435299,
+      "split": "heldout"
+    },
+    {
+      "asset": "calibration/70eae5520682d2ad23ff01df57fc4f29cb3f5d4c1d63753d3b7f120f6a0d939b.jpg",
+      "decision": "ambiguous",
+      "globalCandidateRankZeroBased": 62,
+      "id": "coco2017_000000010092_no_person_annotation",
+      "noPerson": false,
+      "reason": "The small framed wall artworks contain unresolved face/body-like forms among foliage. At original resolution I cannot confidently rule out a depicted human.",
+      "sha256": "70eae5520682d2ad23ff01df57fc4f29cb3f5d4c1d63753d3b7f120f6a0d939b",
+      "sourceImageId": 10092,
+      "split": "heldout"
+    },
+    {
+      "asset": "calibration/05107da6f72e8e495bbfaa0e8d638433cb5fd9c35d43bf193ff2b12db0c684bb.jpg",
+      "decision": "clear_no_human",
+      "globalCandidateRankZeroBased": 63,
+      "id": "coco2017_000000079651_no_person_annotation",
+      "noPerson": true,
+      "reason": "Three stout bottles and two bananas on a wooden surface; labels depict dragons and a harp, with no visible humans or human depictions.",
+      "sha256": "05107da6f72e8e495bbfaa0e8d638433cb5fd9c35d43bf193ff2b12db0c684bb",
+      "sourceImageId": 79651,
+      "split": "heldout"
+    }
+  ],
+  "method": "Independent visual inspection of both extended split contact sheets followed by each of the 12 supplemental original JPEGs at its original pixel resolution using view_image. Only supplemental global ranks52..63 are reviewed in this record; the prior 12-image review is preserved unchanged. Decisions use source pixels only. Humans, human depictions, and unresolved humanlike details are excluded. No other reviewer labels, model code, outputs, fixtures, predictions, thresholds, or acceptance results were inspected or run; source annotation labels were not modified.",
+  "modelBlindBeforeInference": true,
+  "reviewer": "/root/calibration_data/reserve_visual_review",
+  "schemaVersion": 1
+}

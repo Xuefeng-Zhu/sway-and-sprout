@@ -37,3 +37,6 @@ artifacts/
 
 # Licensed models/videos in the debug-only native verification APK are restored locally.
 android/app/src/debug/assets/verification/
+
+# Frozen licensed image calibration assets are prepared explicitly and remain local.
+android/app/src/debug/assets/calibration/

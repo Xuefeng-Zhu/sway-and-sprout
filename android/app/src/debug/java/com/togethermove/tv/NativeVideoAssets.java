@@ -33,7 +33,7 @@ final class NativeVideoAssets {
         }
     }
     static ModelPin modelPin(String configAsset) {
-        if (configAsset == null || !configAsset.matches("verification/(clear|frontal|nearface|right-negative|both-up-negative|natural-original|natural-mirror)(\\.(float16|thunder))?\\.json")) {
+        if (configAsset == null || !configAsset.matches("verification/(clear|frontal|nearface|right-negative|both-up-negative|natural-original|natural-mirror|left-natural|right-short)(\\.(float16|thunder))?\\.json")) {
             throw new IllegalArgumentException("config_asset_not_allowed");
         }
         return configAsset.endsWith(".thunder.json") ? THUNDER_MODEL : configAsset.endsWith(".float16.json") ? FLOAT16_MODEL : INT8_MODEL;

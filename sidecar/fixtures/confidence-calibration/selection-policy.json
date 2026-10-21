@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "seed": "sway-sprout-human-coco2017-calibration-2026-10-20-v1",
+  "allowedLicenseIds": [4, 5, 8],
+  "personSelection": "Exactly one person annotation in source image, counting num_keypoints=0 and iscrowd annotations; chosen target is noncrowd.",
+  "minimumAnnotatedKeypoints": 10,
+  "targetJoints": ["left_shoulder", "right_shoulder", "left_wrist", "right_wrist"],
+  "minimumTargetJointVisibility": 1,
+  "primaryStratum": "All four target joints v=2; v=1 cases retained separately as occlusion challenge, not declared incorrect.",
+  "minimumBBoxImageAreaFraction": 0.1,
+  "minimumShoulderSpanPixels": 40,
+  "targetCoordinateRequirement": "All four target x/y coordinates lie inside original image pixel bounds.",
+  "calibrationFraction": 0.6,
+  "splitCounts": {
+    "primary_visible": {"calibration": 47, "heldout": 32},
+    "occluded_v1": {"calibration": 6, "heldout": 3}
+  },
+  "noPersonAnnotationChallenge": {"calibration": 20, "heldout": 20},
+  "noPersonAnnotationCaveat": "Zero source person annotations does not prove a person-free image. Independent visual review required before using as person-free ground truth.",
+  "ranking": "Ascending SHA256 of seed:image_id:annotation_id within positive strata, seed:no-person-annotation:image_id for no-person-annotation challenge. First calibration count per stratum goes to calibration, rest heldout.",
+  "selectionUses": "Only official human annotations, image dimensions, published license metadata, fixed hash seed; no model scores, predictions, clips, fixtures, gate thresholds or acceptance results.",
+  "identityLimitation": "COCO labels person instances, not persistent physical identities. Split is disjoint in source-image IDs and person-annotation IDs; physical-person identity across distinct photographs cannot be certified. Exact image-byte duplication is checked after download before inference."
+}

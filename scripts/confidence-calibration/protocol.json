@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "frozenAtUtc": "2026-10-20T18:18:37Z",
+  "status": "pre-inference protocol; no model outputs inspected for this dataset",
+  "scope": "Separate empirical post-hoc raw-score operating-point pilot, not probability calibration or FireTV certification",
+  "sourceBindings": [
+    {
+      "path": "/Users/frank/mygit/sway-and-sprout/android/app/src/debug/java/com/togethermove/tv/NativeMoveNet.java",
+      "sha256": "e0834c62b7159a383ce3d6746f84f30be4516a5f29f63b330a28c21ed0e1dd14"
+    },
+    {
+      "path": "/Users/frank/mygit/sway-and-sprout/android/app/src/main/java/com/togethermove/tv/PoseGestureMachine.java",
+      "sha256": "5d573c11240c84e1737b75136bd6411e9aa967b4572b3f289caa13a2da0ae677"
+    },
+    {
+      "path": "/Users/frank/mygit/sway-and-sprout/android/app/src/debug/java/com/togethermove/tv/NativePoseDiagnostics.java",
+      "sha256": "36ead45f5423f601e9bce1117cd6eda068bea29240d4b5c42fa0614f78acb151"
+    },
+    {
+      "path": "/Users/frank/mygit/sway-and-sprout/src/motion.js",
+      "sha256": "9158a312e1a6ad25bd32583387987da5c08fb4e0eb35eaacba2788e986484b13"
+    }
+  ],
+  "model": {
+    "id": "movenet-lightning-float16-v4",
+    "sha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+    "runtime": "LiteRT1.4.2 CPU",
+    "threads": 2,
+    "primaryProfile": "image-3pass-reset-each-image",
+    "referenceParityRepetitionRequired": false,
+    "trackedProfileApplicable": false
+  },
+  "data": {
+    "source": "Official COCO2017 val human keypoint annotations, never COCO train",
+    "calibrationPrimary": 47,
+    "heldoutPrimary": 32,
+    "calibrationOccludedChallenge": 6,
+    "heldoutOccludedChallenge": 3,
+    "calibrationNoPersonChallenge": 20,
+    "heldoutNoPersonChallenge": 20,
+    "personImageSelection": {
+      "allowedLicenseIds": [
+        4,
+        5,
+        8
+      ],
+      "annotatedPersonCountExactly": 1,
+      "includeZeroKeypointOrCrowdInPersonCount": true,
+      "targetIsCrowd": false,
+      "minimumLabeledKeypoints": 10,
+      "minimumTargetBboxFractionOfImage": 0.1,
+      "minimumSourceShoulderSpanPx": 40,
+      "primaryRequiredJointVisibility": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "occludedChallengeRequiredJointVisibilityAtLeast": 1,
+      "occludedChallengeAtLeastOneVisibilityEquals": 1,
+      "GTJointIndices": [
+        5,
+        6,
+        9,
+        10
+      ]
+    },
+    "backgroundGroundTruth": "zero person annotations plus independent model-blind visual confirmation of no real people; annotations alone insufficient",
+    "split": "53 person calibration and35 person heldout, plus20/20 background; grouped by original source image and exact/near-duplicate family; deterministic label-only ranking frozen before inference",
+    "datasetManifestSha256": null,
+    "manifestBindingRule": "Fill exact immutable manifest SHA before any batch inference; this may not change numeric rules or sample criteria",
+    "personIdentityDisjointGuaranteed": false,
+    "exclusions": "v0 location missing; corrupt or ambiguous images may be replaced only before inference by frozen next-ranked eligible source, with reason logged"
+  },
+  "executionOrder": [
+    "Freeze protocol, dataset recipe, image bytes, labels, split, independent background review and all SHA256 bindings",
+    "Run calibration images only through actual Android NativeMoveNet; do not inspect heldout predictions",
+    "Compute threshold once from calibration; freeze policy JSON including selected threshold or none, model/profile/protocol/manifest/prediction SHA256",
+    "Run or reveal heldout once with same binary/profile and frozen threshold; never reselect on heldout",
+    "Evaluate fresh independently annotated natural positive/negative clips and unchanged application regressions; retain all failures"
+  ],
+  "labels": {
+    "coordinateSystem": "original decoded bitmap pixels matching COCO width/height; x/y not normalized, anatomical sides",
+    "sourceShoulderSpan": "hypot(GT_ls.x-GT_rs.x,GT_ls.y-GT_rs.y)",
+    "pointError": "hypot(predicted.x-GT.x,predicted.y-GT.y)/GT_shoulder_span",
+    "accuratePrimaryImage": "all4 required point errors<=0.10; invalid mapping/nonfinite/native invalid score fails",
+    "visibilitySemantics": {
+      "0": "not labeled; no valid location, never a coordinate negative",
+      "1": "labeled but not visible; may still be accurately estimated, evaluate separately",
+      "2": "labeled and visible; primary point-estimate accuracy stratum"
+    },
+    "rawAdmission": "all4 points finite/in bounds, all4 raw native scores finite in[0,1], positive predicted shoulder span, minimum raw score>=threshold; do not filter by gesture geometry",
+    "ambiguousLabels": "retain and report separately; never turn model disagreement into a changed GT label"
+  },
+  "scoreSemantics": {
+    "statistic": "minimum of native scores at COCO indices5,6,9,10",
+    "meaning": "uncalibrated MoveNet keypoint score; neither MediaPipe visibility/presence nor measured person/global probability",
+    "remappingAllowed": false,
+    "cropSupportThresholdUnchanged": 0.2,
+    "legacyThresholdUnchanged": 0.65
+  },
+  "thresholdGrid": [
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95
+  ],
+  "exploratorySelection": {
+    "calibrationOnly": true,
+    "minimumPrimaryAdmitted": 20,
+    "maximumEmpiricalIncorrectPrimaryFraction": 0.05,
+    "integerRiskPredicate": "20*incorrectPrimary<=admittedPrimary",
+    "minimumCorrectPrimaryGainVersus065": 5,
+    "maximumCalibrationNoPersonAdmitted": 0,
+    "maximumNewIncorrectOccludedVersus065": 0,
+    "objective": [
+      "maximize correctly admitted primary images",
+      "tie: higher threshold"
+    ],
+    "noFeasibleCandidate": "record none; preserve baseline and do not relax rules after seeing predictions"
+  },
+  "exploratoryHeldoutAcceptance": {
+    "minimumPrimaryAdmitted": 15,
+    "minimumNewCorrectPrimaryVersus065": 5,
+    "maximumNewIncorrectPrimaryVersus065": 0,
+    "maximumNoPersonAdmitted": 0,
+    "maximumNewIncorrectOccludedVersus065": 0,
+    "thresholdRetuningAllowed": false,
+    "interpretation": "empirical debug-video research evidence only, wide finite-sample uncertainty; never production approval"
+  },
+  "productionEvidenceCriterion": {
+    "unchangedDefaultUntilMet": true,
+    "maximumConditionalIncorrectAdmissionRisk": 0.05,
+    "maximumNoPersonAdmissionRisk": 0.05,
+    "oneSidedConfidenceLevel": 0.95,
+    "evaluateOnlyFixedThresholdHeldout": true,
+    "additionalRequirements": [
+      "independent natural temporal positives and hard negatives",
+      "full relevant negative video coverage and zero unexpected scored events",
+      "frontal6events/6rays/ACK6, lifecycle, revision/epoch, pause, realtimer and nonempty-progress regression protection",
+      "resource and actual FireTV/capture acceptance"
+    ],
+    "pilotCannotMeetFormalRiskCriterionEvenWithZeroErrors": true
+  },
+  "uncertainty": {
+    "report": "exact one-sided95% Clopper-Pearson upper bound separately for incorrect among admitted primary images and no-person admission among reviewed background images; full numerators/denominators and two-sided95% intervals where useful",
+    "zeroErrorUpperFormula": "1-0.05**(1/n)",
+    "bestPossiblePrimary32Upper": 0.0893681989862648,
+    "bestPossibleNoPerson20Upper": 0.13910834066826516,
+    "minimumZeroErrorNFor005Bound": 59,
+    "calibrationGridCIs": "descriptive only after grid selection; no unadjusted simultaneous coverage claim",
+    "deploymentCaveat": "small curated COCO image pilot, source identity not guaranteed independent; not deployment prevalence or video-frame independence",
+    "doNotPoolBackgroundAndPrimary": "sampling prevalence is constructed; report stratified risks/coverage"
+  },
+  "geometryDiagnostics": {
+    "maxNormalizedJointError": 0.1,
+    "raiseMarginUnchanged": 0.3,
+    "downMarginUnchanged": 0.2,
+    "worstCaseRaiseMarginErrorInGTShoulderWidths": 0.26,
+    "worstCaseDownMarginErrorInGTShoulderWidths": 0.24,
+    "robustAnnotationClass": "Only call GT left/right/neutral/bothup robust when every required signed GT margin exceeds its .26/.24 error bound; otherwise boundary-ambiguous for geometry, while point error remains reportable",
+    "assumption": "bound concerns predictions within.10 of annotated point estimates, not unknown human annotation uncertainty",
+    "reportSeparately": [
+      "per-joint error and score",
+      "all-four PCK coverage",
+      "robust GT geometry class confusion",
+      "boundary-ambiguous predictions",
+      "v1 visibility challenge",
+      "no-person false admission",
+      "false gesture events in natural clips"
+    ]
+  },
+  "integrationIfJustified": {
+    "mode": "explicit debug-video-only pilot; not camera/synthetic/release",
+    "policyPins": [
+      "model SHA256",
+      "image3pass profile",
+      "threshold",
+      "dataset manifest SHA256",
+      "protocol SHA256",
+      "calibration result SHA256",
+      "policy ID"
+    ],
+    "rawScoresUnchanged": true,
+    "nativeGate": "PoseGestureMachine explicit immutable known policy; preserve baseline constructor=.65",
+    "webGate": "src/motion.js has a second.65gate; pass only validated pinned policy from trusted runtime/source context, never arbitrary packet/intent threshold",
+    "diagnostics": "NativePoseDiagnostics must use active policy and separately preserve baseline counters; report actual threshold",
+    "noGlobalPersonProbability": "never inflate event.confidence to.65; retain raw minimum and name policy explicitly",
+    "unchanged": [
+      ".30/.20 geometry",
+      "300ms neutral",
+      "350ms hold",
+      "500ms cooldown",
+      "300ms gap",
+      "alternation",
+      "source labeling",
+      "epoch/pause/lease/ACK",
+      "stored participation"
+    ]
+  },
+  "nativeStillHarness": {
+    "placement": "debug-only dedicated Activity or bounded batch entry point; same NativeMoveNet class, no WebView scoring or persistence",
+    "assets": "explicit compile-time/manifest-pinned local image list only, no arbitrary URI/network/camera",
+    "decode": "BitmapFactory ARGB_8888,inScaled=false,no EXIF autorotation; require exact source dimensions; no GT bbox crop",
+    "profile": "three same-image passes, reset per independent image; classify no synthetic holds and do not concatenate unrelated images into a video",
+    "output": "scalar imageId, source hash, model/profile ID, raw4scores, mapped4coordinates, invalid mapping flags, source dimensions and timing; no saved tensors/decoded image outputs",
+    "memory": "one bitmap at a time, recycle in finally, one worker, close interpreter on completion/Activity teardown",
+    "referenceParity": "reuse established parity; no perimage reference inference needed for unchanged192 path",
+    "scope": "Android static-image keypoint/gate evidence; not video tracking, application scoring or FireTV throughput"
+  },
+  "prohibitions": [
+    "no threshold fit to existing clear/nearface/frontal acceptance fixtures",
+    "no label changes after predictions",
+    "no using COCO visibility as accuracy or person probability",
+    "no training-set data claimed as independent calibration",
+    "no still-image concatenation/hold synthesis claimed as natural events",
+    "no physical camera/push/deploy/upload/spending/credential changes"
+  ]
+}

@@ -1,0 +1,2410 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-10-21T00:59:34.993330+00:00",
+  "baseCommit": "0c29ec6",
+  "branch": "work/natural-motion-diagnostics",
+  "restoredExecution": true,
+  "uncertainWritesResolved": {
+    "analyze_calibration.py": "absent on resume; now implemented and tested",
+    "data/prepare_background_replacements.py": "absent on resume; now implemented, replacement sources frozen before inference",
+    "natural/679690-551039-source-person-separation.json": "withdrawn; original retained separately, no physical-identity separation used"
+  },
+  "data": {
+    "positiveCalibration": 53,
+    "positiveHeldout": 35,
+    "backgroundsEachSplit": 20,
+    "originalPositiveRowsPreserved": 88,
+    "originalBackgroundsReplaced": 8,
+    "modelBlindReviews": "two independent AI visual reviews per replacement; COCO keypoints are original human annotations",
+    "physicalPersonDisjointness": "unknown; image/annotation/hash disjoint only"
+  },
+  "calibration": {
+    "baseline": {
+      "strata": {
+        "no_person_annotation": {
+          "admitted": 0,
+          "admittedIds": [],
+          "correctAdmitted": null,
+          "coverage": 0.0,
+          "images": 20,
+          "incorrectAdmitted": 0,
+          "incorrectAdmittedIds": [],
+          "incorrectAmongAdmittedUpper95": null,
+          "incorrectFractionAmongAdmitted": null,
+          "newCorrectVersus065": 0,
+          "newIncorrectVersus065": 0,
+          "noPersonAdmissionRate": 0.0,
+          "noPersonAdmissionUpper95": 0.13910834066826516
+        },
+        "occluded_v1": {
+          "admitted": 0,
+          "admittedBoundaryAmbiguousImages": 0,
+          "admittedIds": [],
+          "admittedRobustGeometryConfusion": {},
+          "correctAdmitted": 0,
+          "coverage": 0.0,
+          "images": 6,
+          "incorrectAdmitted": 0,
+          "incorrectAdmittedIds": [],
+          "incorrectAmongAdmittedUpper95": null,
+          "incorrectFractionAmongAdmitted": null,
+          "newCorrectVersus065": 0,
+          "newIncorrectVersus065": 0,
+          "noPersonAdmissionRate": null,
+          "noPersonAdmissionUpper95": null,
+          "perJointCorrectAdmitted": {
+            "leftShoulder": 0,
+            "leftWrist": 0,
+            "rightShoulder": 0,
+            "rightWrist": 0
+          }
+        },
+        "primary_visible": {
+          "admitted": 1,
+          "admittedBoundaryAmbiguousImages": 0,
+          "admittedIds": [
+            "coco2017_000000280930_421933"
+          ],
+          "admittedRobustGeometryConfusion": {
+            "neutral -> neutral": 1
+          },
+          "correctAdmitted": 0,
+          "coverage": 0.02127659574468085,
+          "images": 47,
+          "incorrectAdmitted": 1,
+          "incorrectAdmittedIds": [
+            "coco2017_000000280930_421933"
+          ],
+          "incorrectAmongAdmittedUpper95": 1.0,
+          "incorrectFractionAmongAdmitted": 1.0,
+          "newCorrectVersus065": 0,
+          "newIncorrectVersus065": 0,
+          "noPersonAdmissionRate": null,
+          "noPersonAdmissionUpper95": null,
+          "perJointCorrectAdmitted": {
+            "leftShoulder": 0,
+            "leftWrist": 1,
+            "rightShoulder": 1,
+            "rightWrist": 1
+          }
+        }
+      },
+      "threshold": 0.65
+    },
+    "thresholdTable": [
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "empirical primary incorrect fraction >5%",
+          "background admission",
+          "new incorrect occluded admission"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 11,
+            "admittedIds": [
+              "coco2017_000000051309_no_person_annotation",
+              "coco2017_000000068286_no_person_annotation",
+              "coco2017_000000109441_no_person_annotation",
+              "coco2017_000000129416_no_person_annotation",
+              "coco2017_000000260657_no_person_annotation",
+              "coco2017_000000273617_no_person_annotation",
+              "coco2017_000000310622_no_person_annotation",
+              "coco2017_000000335800_no_person_annotation",
+              "coco2017_000000369751_no_person_annotation",
+              "coco2017_000000402519_no_person_annotation",
+              "coco2017_000000565776_no_person_annotation"
+            ],
+            "correctAdmitted": null,
+            "coverage": 0.55,
+            "images": 20,
+            "incorrectAdmitted": 11,
+            "incorrectAdmittedIds": [
+              "coco2017_000000051309_no_person_annotation",
+              "coco2017_000000068286_no_person_annotation",
+              "coco2017_000000109441_no_person_annotation",
+              "coco2017_000000129416_no_person_annotation",
+              "coco2017_000000260657_no_person_annotation",
+              "coco2017_000000273617_no_person_annotation",
+              "coco2017_000000310622_no_person_annotation",
+              "coco2017_000000335800_no_person_annotation",
+              "coco2017_000000369751_no_person_annotation",
+              "coco2017_000000402519_no_person_annotation",
+              "coco2017_000000565776_no_person_annotation"
+            ],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 11,
+            "noPersonAdmissionRate": 0.55,
+            "noPersonAdmissionUpper95": 0.7413493902510877
+          },
+          "occluded_v1": {
+            "admitted": 5,
+            "admittedBoundaryAmbiguousImages": 1,
+            "admittedIds": [
+              "coco2017_000000094326_1714559",
+              "coco2017_000000357888_195050",
+              "coco2017_000000399764_224077",
+              "coco2017_000000481386_228697",
+              "coco2017_000000529762_429807"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "neutral -> neutral": 2,
+              "neutral -> other": 2
+            },
+            "correctAdmitted": 0,
+            "coverage": 0.8333333333333334,
+            "images": 6,
+            "incorrectAdmitted": 5,
+            "incorrectAdmittedIds": [
+              "coco2017_000000094326_1714559",
+              "coco2017_000000357888_195050",
+              "coco2017_000000399764_224077",
+              "coco2017_000000481386_228697",
+              "coco2017_000000529762_429807"
+            ],
+            "incorrectAmongAdmittedUpper95": 1.0,
+            "incorrectFractionAmongAdmitted": 1.0,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 5,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 2,
+              "leftWrist": 1,
+              "rightShoulder": 3,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 47,
+            "admittedBoundaryAmbiguousImages": 15,
+            "admittedIds": [
+              "coco2017_000000009483_219454",
+              "coco2017_000000022479_1716695",
+              "coco2017_000000042102_1728930",
+              "coco2017_000000050811_451781",
+              "coco2017_000000054164_494036",
+              "coco2017_000000054931_185090",
+              "coco2017_000000060899_462207",
+              "coco2017_000000085772_429906",
+              "coco2017_000000096493_451795",
+              "coco2017_000000097278_500170",
+              "coco2017_000000128654_432364",
+              "coco2017_000000130586_422535",
+              "coco2017_000000142620_1225044",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000168974_519484",
+              "coco2017_000000170099_469280",
+              "coco2017_000000173008_442601",
+              "coco2017_000000177015_1752244",
+              "coco2017_000000188592_430662",
+              "coco2017_000000192964_2152500",
+              "coco2017_000000199055_424921",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000239537_501149",
+              "coco2017_000000253819_423444",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000270908_448079",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000340451_2164049",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000398905_485625",
+              "coco2017_000000437351_492988",
+              "coco2017_000000468505_515572",
+              "coco2017_000000471756_188447",
+              "coco2017_000000473406_454237",
+              "coco2017_000000473869_475292",
+              "coco2017_000000480936_519833",
+              "coco2017_000000537991_189976",
+              "coco2017_000000544444_499548",
+              "coco2017_000000547336_495052"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "both-up -> both-up": 3,
+              "left -> left": 1,
+              "left -> right": 1,
+              "neutral -> neutral": 26,
+              "right -> right": 1
+            },
+            "correctAdmitted": 10,
+            "coverage": 1.0,
+            "images": 47,
+            "incorrectAdmitted": 37,
+            "incorrectAdmittedIds": [
+              "coco2017_000000009483_219454",
+              "coco2017_000000022479_1716695",
+              "coco2017_000000054164_494036",
+              "coco2017_000000054931_185090",
+              "coco2017_000000060899_462207",
+              "coco2017_000000085772_429906",
+              "coco2017_000000128654_432364",
+              "coco2017_000000130586_422535",
+              "coco2017_000000142620_1225044",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000168974_519484",
+              "coco2017_000000170099_469280",
+              "coco2017_000000173008_442601",
+              "coco2017_000000177015_1752244",
+              "coco2017_000000192964_2152500",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000253819_423444",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000270908_448079",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000340451_2164049",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000437351_492988",
+              "coco2017_000000471756_188447",
+              "coco2017_000000473406_454237",
+              "coco2017_000000473869_475292",
+              "coco2017_000000480936_519833",
+              "coco2017_000000544444_499548",
+              "coco2017_000000547336_495052"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.8797699726858044,
+            "incorrectFractionAmongAdmitted": 0.7872340425531915,
+            "newCorrectVersus065": 10,
+            "newIncorrectVersus065": 36,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 33,
+              "leftWrist": 24,
+              "rightShoulder": 28,
+              "rightWrist": 27
+            }
+          }
+        },
+        "threshold": 0.1
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "empirical primary incorrect fraction >5%",
+          "background admission",
+          "new incorrect occluded admission"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 10,
+            "admittedIds": [
+              "coco2017_000000051309_no_person_annotation",
+              "coco2017_000000068286_no_person_annotation",
+              "coco2017_000000109441_no_person_annotation",
+              "coco2017_000000260657_no_person_annotation",
+              "coco2017_000000273617_no_person_annotation",
+              "coco2017_000000310622_no_person_annotation",
+              "coco2017_000000335800_no_person_annotation",
+              "coco2017_000000369751_no_person_annotation",
+              "coco2017_000000402519_no_person_annotation",
+              "coco2017_000000565776_no_person_annotation"
+            ],
+            "correctAdmitted": null,
+            "coverage": 0.5,
+            "images": 20,
+            "incorrectAdmitted": 10,
+            "incorrectAdmittedIds": [
+              "coco2017_000000051309_no_person_annotation",
+              "coco2017_000000068286_no_person_annotation",
+              "coco2017_000000109441_no_person_annotation",
+              "coco2017_000000260657_no_person_annotation",
+              "coco2017_000000273617_no_person_annotation",
+              "coco2017_000000310622_no_person_annotation",
+              "coco2017_000000335800_no_person_annotation",
+              "coco2017_000000369751_no_person_annotation",
+              "coco2017_000000402519_no_person_annotation",
+              "coco2017_000000565776_no_person_annotation"
+            ],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 10,
+            "noPersonAdmissionRate": 0.5,
+            "noPersonAdmissionUpper95": 0.6980460887135065
+          },
+          "occluded_v1": {
+            "admitted": 5,
+            "admittedBoundaryAmbiguousImages": 1,
+            "admittedIds": [
+              "coco2017_000000094326_1714559",
+              "coco2017_000000357888_195050",
+              "coco2017_000000399764_224077",
+              "coco2017_000000481386_228697",
+              "coco2017_000000529762_429807"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "neutral -> neutral": 2,
+              "neutral -> other": 2
+            },
+            "correctAdmitted": 0,
+            "coverage": 0.8333333333333334,
+            "images": 6,
+            "incorrectAdmitted": 5,
+            "incorrectAdmittedIds": [
+              "coco2017_000000094326_1714559",
+              "coco2017_000000357888_195050",
+              "coco2017_000000399764_224077",
+              "coco2017_000000481386_228697",
+              "coco2017_000000529762_429807"
+            ],
+            "incorrectAmongAdmittedUpper95": 1.0,
+            "incorrectFractionAmongAdmitted": 1.0,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 5,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 2,
+              "leftWrist": 1,
+              "rightShoulder": 3,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 45,
+            "admittedBoundaryAmbiguousImages": 14,
+            "admittedIds": [
+              "coco2017_000000009483_219454",
+              "coco2017_000000022479_1716695",
+              "coco2017_000000042102_1728930",
+              "coco2017_000000050811_451781",
+              "coco2017_000000054164_494036",
+              "coco2017_000000054931_185090",
+              "coco2017_000000060899_462207",
+              "coco2017_000000085772_429906",
+              "coco2017_000000096493_451795",
+              "coco2017_000000097278_500170",
+              "coco2017_000000130586_422535",
+              "coco2017_000000142620_1225044",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000168974_519484",
+              "coco2017_000000170099_469280",
+              "coco2017_000000173008_442601",
+              "coco2017_000000177015_1752244",
+              "coco2017_000000188592_430662",
+              "coco2017_000000192964_2152500",
+              "coco2017_000000199055_424921",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000239537_501149",
+              "coco2017_000000253819_423444",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000270908_448079",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000340451_2164049",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000398905_485625",
+              "coco2017_000000437351_492988",
+              "coco2017_000000468505_515572",
+              "coco2017_000000473406_454237",
+              "coco2017_000000473869_475292",
+              "coco2017_000000480936_519833",
+              "coco2017_000000537991_189976",
+              "coco2017_000000544444_499548",
+              "coco2017_000000547336_495052"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "both-up -> both-up": 3,
+              "left -> left": 1,
+              "neutral -> neutral": 26,
+              "right -> right": 1
+            },
+            "correctAdmitted": 10,
+            "coverage": 0.9574468085106383,
+            "images": 47,
+            "incorrectAdmitted": 35,
+            "incorrectAdmittedIds": [
+              "coco2017_000000009483_219454",
+              "coco2017_000000022479_1716695",
+              "coco2017_000000054164_494036",
+              "coco2017_000000054931_185090",
+              "coco2017_000000060899_462207",
+              "coco2017_000000085772_429906",
+              "coco2017_000000130586_422535",
+              "coco2017_000000142620_1225044",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000168974_519484",
+              "coco2017_000000170099_469280",
+              "coco2017_000000173008_442601",
+              "coco2017_000000177015_1752244",
+              "coco2017_000000192964_2152500",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000253819_423444",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000270908_448079",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000340451_2164049",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000437351_492988",
+              "coco2017_000000473406_454237",
+              "coco2017_000000473869_475292",
+              "coco2017_000000480936_519833",
+              "coco2017_000000544444_499548",
+              "coco2017_000000547336_495052"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.8741814243565362,
+            "incorrectFractionAmongAdmitted": 0.7777777777777778,
+            "newCorrectVersus065": 10,
+            "newIncorrectVersus065": 34,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 32,
+              "leftWrist": 24,
+              "rightShoulder": 27,
+              "rightWrist": 27
+            }
+          }
+        },
+        "threshold": 0.15
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "empirical primary incorrect fraction >5%",
+          "background admission",
+          "new incorrect occluded admission"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 2,
+            "admittedIds": [
+              "coco2017_000000109441_no_person_annotation",
+              "coco2017_000000260657_no_person_annotation"
+            ],
+            "correctAdmitted": null,
+            "coverage": 0.1,
+            "images": 20,
+            "incorrectAdmitted": 2,
+            "incorrectAdmittedIds": [
+              "coco2017_000000109441_no_person_annotation",
+              "coco2017_000000260657_no_person_annotation"
+            ],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 2,
+            "noPersonAdmissionRate": 0.1,
+            "noPersonAdmissionUpper95": 0.2826185248858609
+          },
+          "occluded_v1": {
+            "admitted": 4,
+            "admittedBoundaryAmbiguousImages": 1,
+            "admittedIds": [
+              "coco2017_000000094326_1714559",
+              "coco2017_000000357888_195050",
+              "coco2017_000000399764_224077",
+              "coco2017_000000529762_429807"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "neutral -> neutral": 1,
+              "neutral -> other": 2
+            },
+            "correctAdmitted": 0,
+            "coverage": 0.6666666666666666,
+            "images": 6,
+            "incorrectAdmitted": 4,
+            "incorrectAdmittedIds": [
+              "coco2017_000000094326_1714559",
+              "coco2017_000000357888_195050",
+              "coco2017_000000399764_224077",
+              "coco2017_000000529762_429807"
+            ],
+            "incorrectAmongAdmittedUpper95": 1.0,
+            "incorrectFractionAmongAdmitted": 1.0,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 4,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 1,
+              "leftWrist": 1,
+              "rightShoulder": 3,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 44,
+            "admittedBoundaryAmbiguousImages": 14,
+            "admittedIds": [
+              "coco2017_000000009483_219454",
+              "coco2017_000000022479_1716695",
+              "coco2017_000000042102_1728930",
+              "coco2017_000000050811_451781",
+              "coco2017_000000054164_494036",
+              "coco2017_000000054931_185090",
+              "coco2017_000000060899_462207",
+              "coco2017_000000085772_429906",
+              "coco2017_000000096493_451795",
+              "coco2017_000000097278_500170",
+              "coco2017_000000130586_422535",
+              "coco2017_000000142620_1225044",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000168974_519484",
+              "coco2017_000000170099_469280",
+              "coco2017_000000173008_442601",
+              "coco2017_000000177015_1752244",
+              "coco2017_000000188592_430662",
+              "coco2017_000000192964_2152500",
+              "coco2017_000000199055_424921",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000239537_501149",
+              "coco2017_000000253819_423444",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000270908_448079",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000340451_2164049",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000398905_485625",
+              "coco2017_000000437351_492988",
+              "coco2017_000000468505_515572",
+              "coco2017_000000473869_475292",
+              "coco2017_000000480936_519833",
+              "coco2017_000000537991_189976",
+              "coco2017_000000544444_499548",
+              "coco2017_000000547336_495052"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "both-up -> both-up": 3,
+              "left -> left": 1,
+              "neutral -> neutral": 25,
+              "right -> right": 1
+            },
+            "correctAdmitted": 10,
+            "coverage": 0.9361702127659575,
+            "images": 47,
+            "incorrectAdmitted": 34,
+            "incorrectAdmittedIds": [
+              "coco2017_000000009483_219454",
+              "coco2017_000000022479_1716695",
+              "coco2017_000000054164_494036",
+              "coco2017_000000054931_185090",
+              "coco2017_000000060899_462207",
+              "coco2017_000000085772_429906",
+              "coco2017_000000130586_422535",
+              "coco2017_000000142620_1225044",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000168974_519484",
+              "coco2017_000000170099_469280",
+              "coco2017_000000173008_442601",
+              "coco2017_000000177015_1752244",
+              "coco2017_000000192964_2152500",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000253819_423444",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000270908_448079",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000340451_2164049",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000437351_492988",
+              "coco2017_000000473869_475292",
+              "coco2017_000000480936_519833",
+              "coco2017_000000544444_499548",
+              "coco2017_000000547336_495052"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.8711871781850218,
+            "incorrectFractionAmongAdmitted": 0.7727272727272727,
+            "newCorrectVersus065": 10,
+            "newIncorrectVersus065": 33,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 31,
+              "leftWrist": 23,
+              "rightShoulder": 26,
+              "rightWrist": 27
+            }
+          }
+        },
+        "threshold": 0.2
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "empirical primary incorrect fraction >5%",
+          "background admission",
+          "new incorrect occluded admission"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 1,
+            "admittedIds": [
+              "coco2017_000000260657_no_person_annotation"
+            ],
+            "correctAdmitted": null,
+            "coverage": 0.05,
+            "images": 20,
+            "incorrectAdmitted": 1,
+            "incorrectAdmittedIds": [
+              "coco2017_000000260657_no_person_annotation"
+            ],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 1,
+            "noPersonAdmissionRate": 0.05,
+            "noPersonAdmissionUpper95": 0.2161061642068473
+          },
+          "occluded_v1": {
+            "admitted": 2,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [
+              "coco2017_000000399764_224077",
+              "coco2017_000000529762_429807"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "neutral -> neutral": 1,
+              "neutral -> other": 1
+            },
+            "correctAdmitted": 0,
+            "coverage": 0.3333333333333333,
+            "images": 6,
+            "incorrectAdmitted": 2,
+            "incorrectAdmittedIds": [
+              "coco2017_000000399764_224077",
+              "coco2017_000000529762_429807"
+            ],
+            "incorrectAmongAdmittedUpper95": 1.0,
+            "incorrectFractionAmongAdmitted": 1.0,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 2,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 2,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 40,
+            "admittedBoundaryAmbiguousImages": 13,
+            "admittedIds": [
+              "coco2017_000000009483_219454",
+              "coco2017_000000022479_1716695",
+              "coco2017_000000042102_1728930",
+              "coco2017_000000050811_451781",
+              "coco2017_000000054164_494036",
+              "coco2017_000000054931_185090",
+              "coco2017_000000060899_462207",
+              "coco2017_000000085772_429906",
+              "coco2017_000000096493_451795",
+              "coco2017_000000097278_500170",
+              "coco2017_000000130586_422535",
+              "coco2017_000000142620_1225044",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000168974_519484",
+              "coco2017_000000170099_469280",
+              "coco2017_000000173008_442601",
+              "coco2017_000000188592_430662",
+              "coco2017_000000192964_2152500",
+              "coco2017_000000199055_424921",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000239537_501149",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000398905_485625",
+              "coco2017_000000437351_492988",
+              "coco2017_000000468505_515572",
+              "coco2017_000000473869_475292",
+              "coco2017_000000480936_519833",
+              "coco2017_000000537991_189976",
+              "coco2017_000000544444_499548",
+              "coco2017_000000547336_495052"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "both-up -> both-up": 2,
+              "left -> left": 1,
+              "neutral -> neutral": 24
+            },
+            "correctAdmitted": 10,
+            "coverage": 0.851063829787234,
+            "images": 47,
+            "incorrectAdmitted": 30,
+            "incorrectAdmittedIds": [
+              "coco2017_000000009483_219454",
+              "coco2017_000000022479_1716695",
+              "coco2017_000000054164_494036",
+              "coco2017_000000054931_185090",
+              "coco2017_000000060899_462207",
+              "coco2017_000000085772_429906",
+              "coco2017_000000130586_422535",
+              "coco2017_000000142620_1225044",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000168974_519484",
+              "coco2017_000000170099_469280",
+              "coco2017_000000173008_442601",
+              "coco2017_000000192964_2152500",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000437351_492988",
+              "coco2017_000000473869_475292",
+              "coco2017_000000480936_519833",
+              "coco2017_000000544444_499548",
+              "coco2017_000000547336_495052"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.857630117142979,
+            "incorrectFractionAmongAdmitted": 0.75,
+            "newCorrectVersus065": 10,
+            "newIncorrectVersus065": 29,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 28,
+              "leftWrist": 21,
+              "rightShoulder": 24,
+              "rightWrist": 26
+            }
+          }
+        },
+        "threshold": 0.25
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "empirical primary incorrect fraction >5%",
+          "background admission"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 1,
+            "admittedIds": [
+              "coco2017_000000260657_no_person_annotation"
+            ],
+            "correctAdmitted": null,
+            "coverage": 0.05,
+            "images": 20,
+            "incorrectAdmitted": 1,
+            "incorrectAdmittedIds": [
+              "coco2017_000000260657_no_person_annotation"
+            ],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 1,
+            "noPersonAdmissionRate": 0.05,
+            "noPersonAdmissionUpper95": 0.2161061642068473
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 35,
+            "admittedBoundaryAmbiguousImages": 12,
+            "admittedIds": [
+              "coco2017_000000009483_219454",
+              "coco2017_000000022479_1716695",
+              "coco2017_000000042102_1728930",
+              "coco2017_000000050811_451781",
+              "coco2017_000000054164_494036",
+              "coco2017_000000085772_429906",
+              "coco2017_000000097278_500170",
+              "coco2017_000000130586_422535",
+              "coco2017_000000142620_1225044",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000168974_519484",
+              "coco2017_000000170099_469280",
+              "coco2017_000000173008_442601",
+              "coco2017_000000188592_430662",
+              "coco2017_000000192964_2152500",
+              "coco2017_000000199055_424921",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000239537_501149",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000398905_485625",
+              "coco2017_000000468505_515572",
+              "coco2017_000000473869_475292",
+              "coco2017_000000537991_189976",
+              "coco2017_000000544444_499548",
+              "coco2017_000000547336_495052"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "both-up -> both-up": 1,
+              "left -> left": 1,
+              "neutral -> neutral": 21
+            },
+            "correctAdmitted": 9,
+            "coverage": 0.7446808510638298,
+            "images": 47,
+            "incorrectAdmitted": 26,
+            "incorrectAdmittedIds": [
+              "coco2017_000000009483_219454",
+              "coco2017_000000022479_1716695",
+              "coco2017_000000054164_494036",
+              "coco2017_000000085772_429906",
+              "coco2017_000000130586_422535",
+              "coco2017_000000142620_1225044",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000168974_519484",
+              "coco2017_000000170099_469280",
+              "coco2017_000000173008_442601",
+              "coco2017_000000192964_2152500",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000473869_475292",
+              "coco2017_000000544444_499548",
+              "coco2017_000000547336_495052"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.8587833233101381,
+            "incorrectFractionAmongAdmitted": 0.7428571428571429,
+            "newCorrectVersus065": 9,
+            "newIncorrectVersus065": 25,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 25,
+              "leftWrist": 20,
+              "rightShoulder": 22,
+              "rightWrist": 23
+            }
+          }
+        },
+        "threshold": 0.3
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "empirical primary incorrect fraction >5%"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 27,
+            "admittedBoundaryAmbiguousImages": 10,
+            "admittedIds": [
+              "coco2017_000000022479_1716695",
+              "coco2017_000000042102_1728930",
+              "coco2017_000000050811_451781",
+              "coco2017_000000085772_429906",
+              "coco2017_000000097278_500170",
+              "coco2017_000000130586_422535",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000170099_469280",
+              "coco2017_000000188592_430662",
+              "coco2017_000000199055_424921",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000239537_501149",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000398905_485625",
+              "coco2017_000000468505_515572",
+              "coco2017_000000537991_189976",
+              "coco2017_000000547336_495052"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "both-up -> both-up": 1,
+              "neutral -> neutral": 16
+            },
+            "correctAdmitted": 9,
+            "coverage": 0.574468085106383,
+            "images": 47,
+            "incorrectAdmitted": 18,
+            "incorrectAdmittedIds": [
+              "coco2017_000000022479_1716695",
+              "coco2017_000000085772_429906",
+              "coco2017_000000130586_422535",
+              "coco2017_000000158956_445285",
+              "coco2017_000000162415_447694",
+              "coco2017_000000170099_469280",
+              "coco2017_000000203639_459777",
+              "coco2017_000000205105_444711",
+              "coco2017_000000213033_194291",
+              "coco2017_000000213171_432019",
+              "coco2017_000000229553_431999",
+              "coco2017_000000261061_484547",
+              "coco2017_000000261732_428410",
+              "coco2017_000000280930_421933",
+              "coco2017_000000322944_471486",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000547336_495052"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.8137801443256656,
+            "incorrectFractionAmongAdmitted": 0.6666666666666666,
+            "newCorrectVersus065": 9,
+            "newIncorrectVersus065": 17,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 21,
+              "leftWrist": 15,
+              "rightShoulder": 19,
+              "rightWrist": 21
+            }
+          }
+        },
+        "threshold": 0.35
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "empirical primary incorrect fraction >5%"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 19,
+            "admittedBoundaryAmbiguousImages": 6,
+            "admittedIds": [
+              "coco2017_000000022479_1716695",
+              "coco2017_000000042102_1728930",
+              "coco2017_000000085772_429906",
+              "coco2017_000000097278_500170",
+              "coco2017_000000130586_422535",
+              "coco2017_000000158956_445285",
+              "coco2017_000000170099_469280",
+              "coco2017_000000188592_430662",
+              "coco2017_000000199055_424921",
+              "coco2017_000000205105_444711",
+              "coco2017_000000229553_431999",
+              "coco2017_000000239537_501149",
+              "coco2017_000000280930_421933",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000398905_485625",
+              "coco2017_000000468505_515572",
+              "coco2017_000000537991_189976",
+              "coco2017_000000547336_495052"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "both-up -> both-up": 1,
+              "neutral -> neutral": 12
+            },
+            "correctAdmitted": 8,
+            "coverage": 0.40425531914893614,
+            "images": 47,
+            "incorrectAdmitted": 11,
+            "incorrectAdmittedIds": [
+              "coco2017_000000022479_1716695",
+              "coco2017_000000085772_429906",
+              "coco2017_000000130586_422535",
+              "coco2017_000000158956_445285",
+              "coco2017_000000170099_469280",
+              "coco2017_000000205105_444711",
+              "coco2017_000000229553_431999",
+              "coco2017_000000280930_421933",
+              "coco2017_000000358195_447901",
+              "coco2017_000000370375_1242999",
+              "coco2017_000000547336_495052"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.7702790806738375,
+            "incorrectFractionAmongAdmitted": 0.5789473684210527,
+            "newCorrectVersus065": 8,
+            "newIncorrectVersus065": 10,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 17,
+              "leftWrist": 12,
+              "rightShoulder": 15,
+              "rightWrist": 15
+            }
+          }
+        },
+        "threshold": 0.4
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "empirical primary incorrect fraction >5%"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 13,
+            "admittedBoundaryAmbiguousImages": 4,
+            "admittedIds": [
+              "coco2017_000000042102_1728930",
+              "coco2017_000000085772_429906",
+              "coco2017_000000097278_500170",
+              "coco2017_000000158956_445285",
+              "coco2017_000000170099_469280",
+              "coco2017_000000188592_430662",
+              "coco2017_000000199055_424921",
+              "coco2017_000000229553_431999",
+              "coco2017_000000239537_501149",
+              "coco2017_000000280930_421933",
+              "coco2017_000000358195_447901",
+              "coco2017_000000468505_515572",
+              "coco2017_000000537991_189976"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "neutral -> neutral": 9
+            },
+            "correctAdmitted": 7,
+            "coverage": 0.2765957446808511,
+            "images": 47,
+            "incorrectAdmitted": 6,
+            "incorrectAdmittedIds": [
+              "coco2017_000000085772_429906",
+              "coco2017_000000158956_445285",
+              "coco2017_000000170099_469280",
+              "coco2017_000000229553_431999",
+              "coco2017_000000280930_421933",
+              "coco2017_000000358195_447901"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.7129509972056112,
+            "incorrectFractionAmongAdmitted": 0.46153846153846156,
+            "newCorrectVersus065": 7,
+            "newIncorrectVersus065": 5,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 12,
+              "leftWrist": 9,
+              "rightShoulder": 12,
+              "rightWrist": 10
+            }
+          }
+        },
+        "threshold": 0.45
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "empirical primary incorrect fraction >5%"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 10,
+            "admittedBoundaryAmbiguousImages": 2,
+            "admittedIds": [
+              "coco2017_000000042102_1728930",
+              "coco2017_000000085772_429906",
+              "coco2017_000000097278_500170",
+              "coco2017_000000158956_445285",
+              "coco2017_000000170099_469280",
+              "coco2017_000000199055_424921",
+              "coco2017_000000239537_501149",
+              "coco2017_000000280930_421933",
+              "coco2017_000000358195_447901",
+              "coco2017_000000468505_515572"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "neutral -> neutral": 8
+            },
+            "correctAdmitted": 5,
+            "coverage": 0.2127659574468085,
+            "images": 47,
+            "incorrectAdmitted": 5,
+            "incorrectAdmittedIds": [
+              "coco2017_000000085772_429906",
+              "coco2017_000000158956_445285",
+              "coco2017_000000170099_469280",
+              "coco2017_000000280930_421933",
+              "coco2017_000000358195_447901"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.7775588989918709,
+            "incorrectFractionAmongAdmitted": 0.5,
+            "newCorrectVersus065": 5,
+            "newIncorrectVersus065": 4,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 9,
+              "leftWrist": 7,
+              "rightShoulder": 9,
+              "rightWrist": 7
+            }
+          }
+        },
+        "threshold": 0.5
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "empirical primary incorrect fraction >5%",
+          "correct primary gain <5"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 6,
+            "admittedBoundaryAmbiguousImages": 2,
+            "admittedIds": [
+              "coco2017_000000042102_1728930",
+              "coco2017_000000085772_429906",
+              "coco2017_000000097278_500170",
+              "coco2017_000000158956_445285",
+              "coco2017_000000199055_424921",
+              "coco2017_000000280930_421933"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "neutral -> neutral": 4
+            },
+            "correctAdmitted": 3,
+            "coverage": 0.1276595744680851,
+            "images": 47,
+            "incorrectAdmitted": 3,
+            "incorrectAdmittedIds": [
+              "coco2017_000000085772_429906",
+              "coco2017_000000158956_445285",
+              "coco2017_000000280930_421933"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.8468388820247768,
+            "incorrectFractionAmongAdmitted": 0.5,
+            "newCorrectVersus065": 3,
+            "newIncorrectVersus065": 2,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 5,
+              "leftWrist": 5,
+              "rightShoulder": 5,
+              "rightWrist": 4
+            }
+          }
+        },
+        "threshold": 0.55
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "empirical primary incorrect fraction >5%",
+          "correct primary gain <5"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 4,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [
+              "coco2017_000000042102_1728930",
+              "coco2017_000000085772_429906",
+              "coco2017_000000097278_500170",
+              "coco2017_000000280930_421933"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "neutral -> neutral": 4
+            },
+            "correctAdmitted": 2,
+            "coverage": 0.0851063829787234,
+            "images": 47,
+            "incorrectAdmitted": 2,
+            "incorrectAdmittedIds": [
+              "coco2017_000000085772_429906",
+              "coco2017_000000280930_421933"
+            ],
+            "incorrectAmongAdmittedUpper95": 0.9023885371135856,
+            "incorrectFractionAmongAdmitted": 0.5,
+            "newCorrectVersus065": 2,
+            "newIncorrectVersus065": 1,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 3,
+              "leftWrist": 4,
+              "rightShoulder": 4,
+              "rightWrist": 3
+            }
+          }
+        },
+        "threshold": 0.6
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "empirical primary incorrect fraction >5%",
+          "correct primary gain <5"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 1,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [
+              "coco2017_000000280930_421933"
+            ],
+            "admittedRobustGeometryConfusion": {
+              "neutral -> neutral": 1
+            },
+            "correctAdmitted": 0,
+            "coverage": 0.02127659574468085,
+            "images": 47,
+            "incorrectAdmitted": 1,
+            "incorrectAdmittedIds": [
+              "coco2017_000000280930_421933"
+            ],
+            "incorrectAmongAdmittedUpper95": 1.0,
+            "incorrectFractionAmongAdmitted": 1.0,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 1,
+              "rightShoulder": 1,
+              "rightWrist": 1
+            }
+          }
+        },
+        "threshold": 0.65
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "correct primary gain <5"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 47,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          }
+        },
+        "threshold": 0.7
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "correct primary gain <5"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 47,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          }
+        },
+        "threshold": 0.75
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "correct primary gain <5"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 47,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          }
+        },
+        "threshold": 0.8
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "correct primary gain <5"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 47,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          }
+        },
+        "threshold": 0.85
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "correct primary gain <5"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 47,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          }
+        },
+        "threshold": 0.9
+      },
+      {
+        "selectionFeasible": false,
+        "selectionRejections": [
+          "primary admitted <20",
+          "correct primary gain <5"
+        ],
+        "strata": {
+          "no_person_annotation": {
+            "admitted": 0,
+            "admittedIds": [],
+            "correctAdmitted": null,
+            "coverage": 0.0,
+            "images": 20,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": 0.0,
+            "noPersonAdmissionUpper95": 0.13910834066826516
+          },
+          "occluded_v1": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 6,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          },
+          "primary_visible": {
+            "admitted": 0,
+            "admittedBoundaryAmbiguousImages": 0,
+            "admittedIds": [],
+            "admittedRobustGeometryConfusion": {},
+            "correctAdmitted": 0,
+            "coverage": 0.0,
+            "images": 47,
+            "incorrectAdmitted": 0,
+            "incorrectAdmittedIds": [],
+            "incorrectAmongAdmittedUpper95": null,
+            "incorrectFractionAmongAdmitted": null,
+            "newCorrectVersus065": 0,
+            "newIncorrectVersus065": 0,
+            "noPersonAdmissionRate": null,
+            "noPersonAdmissionUpper95": null,
+            "perJointCorrectAdmitted": {
+              "leftShoulder": 0,
+              "leftWrist": 0,
+              "rightShoulder": 0,
+              "rightWrist": 0
+            }
+          }
+        },
+        "threshold": 0.95
+      }
+    ],
+    "selectedThreshold": null,
+    "selectionReason": "no-feasible-calibration-threshold",
+    "thresholdChanged": false,
+    "spatialCriterion": "all four joints PCK <= 0.10 ground-truth shoulder span",
+    "sanity": "No global index/mirror/XY mapping error; robust GT geometry31/32 matches independently reviewed. Strict all4 localization10/47, a different metric from gesture class."
+  },
+  "heldout": {
+    "baseline": {
+      "strata": {
+        "no_person_annotation": {
+          "admitted": 0,
+          "admittedIds": [],
+          "correctAdmitted": null,
+          "coverage": 0.0,
+          "images": 20,
+          "incorrectAdmitted": 0,
+          "incorrectAdmittedIds": [],
+          "incorrectAmongAdmittedUpper95": null,
+          "incorrectFractionAmongAdmitted": null,
+          "newCorrectVersus065": 0,
+          "newIncorrectVersus065": 0,
+          "noPersonAdmissionRate": 0.0,
+          "noPersonAdmissionUpper95": 0.13910834066826516
+        },
+        "occluded_v1": {
+          "admitted": 0,
+          "admittedBoundaryAmbiguousImages": 0,
+          "admittedIds": [],
+          "admittedRobustGeometryConfusion": {},
+          "correctAdmitted": 0,
+          "coverage": 0.0,
+          "images": 3,
+          "incorrectAdmitted": 0,
+          "incorrectAdmittedIds": [],
+          "incorrectAmongAdmittedUpper95": null,
+          "incorrectFractionAmongAdmitted": null,
+          "newCorrectVersus065": 0,
+          "newIncorrectVersus065": 0,
+          "noPersonAdmissionRate": null,
+          "noPersonAdmissionUpper95": null,
+          "perJointCorrectAdmitted": {
+            "leftShoulder": 0,
+            "leftWrist": 0,
+            "rightShoulder": 0,
+            "rightWrist": 0
+          }
+        },
+        "primary_visible": {
+          "admitted": 0,
+          "admittedBoundaryAmbiguousImages": 0,
+          "admittedIds": [],
+          "admittedRobustGeometryConfusion": {},
+          "correctAdmitted": 0,
+          "coverage": 0.0,
+          "images": 32,
+          "incorrectAdmitted": 0,
+          "incorrectAdmittedIds": [],
+          "incorrectAmongAdmittedUpper95": null,
+          "incorrectFractionAmongAdmitted": null,
+          "newCorrectVersus065": 0,
+          "newIncorrectVersus065": 0,
+          "noPersonAdmissionRate": null,
+          "noPersonAdmissionUpper95": null,
+          "perJointCorrectAdmitted": {
+            "leftShoulder": 0,
+            "leftWrist": 0,
+            "rightShoulder": 0,
+            "rightWrist": 0
+          }
+        }
+      },
+      "threshold": 0.65
+    },
+    "candidate": null,
+    "pilotAccepted": false,
+    "status": "baseline-only-no-calibration-candidate",
+    "thresholdRetuned": false
+  },
+  "video": {
+    "cases": [
+      {
+        "name": "left-natural",
+        "nativeModel": "float16",
+        "nativeRefinement": "image",
+        "integrationVerified": true,
+        "recognitionAcceptance": "failed",
+        "observedGestures": [],
+        "expectedGestures": [
+          "left-raise"
+        ],
+        "nativeFileEvents": [],
+        "expectedEventWindowsMs": [
+          [
+            2050,
+            2733.334
+          ]
+        ],
+        "eventTimingVerified": false,
+        "ui": {
+          "count": 0,
+          "source": "video",
+          "screen": "app play camera-mode",
+          "replayLabel": true,
+          "cameraCalls": 0
+        },
+        "progressUnchanged": true,
+        "wallMs": 9454,
+        "lastPacket": {
+          "runtime": {
+            "engine": "litert",
+            "engineVersion": "1.4.2",
+            "platform": "android",
+            "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+            "modelId": "float16",
+            "inputSize": 192,
+            "verified": true
+          },
+          "source": "video",
+          "status": "paused",
+          "seq": 0,
+          "active": true,
+          "revision": 4,
+          "events": [],
+          "metrics": {
+            "armed": false,
+            "decodedFrames": 83,
+            "acceptedFrames": 83,
+            "discardedEpochFrames": 0,
+            "videoFrames": 83,
+            "fileMs": 2766.6666666666665,
+            "fps": 30,
+            "decodeMs": 1.15,
+            "preprocessMs": 38.548126,
+            "inferenceMs": 58.265583,
+            "keypointMinimum": 0.5135855674743652,
+            "nativeRecognizedEvents": 0,
+            "acknowledgedEvents": 0,
+            "fullFileProcessed": true,
+            "singlePoseAssumption": true,
+            "fixedFullFrameLetterbox": false,
+            "dynamicPersonCrop": true,
+            "statelessCropRefinement": true,
+            "modelInferencesPerFrame": 3,
+            "cameraEnabled": false
+          },
+          "at": 11029.100000000035
+        }
+      },
+      {
+        "name": "right-short",
+        "nativeModel": "float16",
+        "nativeRefinement": "image",
+        "integrationVerified": true,
+        "recognitionAcceptance": "passed",
+        "observedGestures": [],
+        "expectedGestures": [],
+        "nativeFileEvents": null,
+        "expectedEventWindowsMs": null,
+        "eventTimingVerified": null,
+        "ui": {
+          "count": 0,
+          "source": "video",
+          "screen": "app play camera-mode",
+          "replayLabel": true,
+          "cameraCalls": 0
+        },
+        "progressUnchanged": true,
+        "wallMs": 16212,
+        "lastPacket": {
+          "runtime": {
+            "engine": "litert",
+            "engineVersion": "1.4.2",
+            "platform": "android",
+            "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+            "modelId": "float16",
+            "inputSize": 192,
+            "verified": true
+          },
+          "source": "video",
+          "status": "paused",
+          "seq": 0,
+          "active": true,
+          "revision": 4,
+          "events": [],
+          "metrics": {
+            "armed": false,
+            "decodedFrames": 156,
+            "acceptedFrames": 156,
+            "discardedEpochFrames": 0,
+            "videoFrames": 156,
+            "fileMs": 5205.2,
+            "fps": 29.97002997002997,
+            "decodeMs": 2.216917,
+            "preprocessMs": 32.897458,
+            "inferenceMs": 59.949957999999995,
+            "keypointMinimum": 0.572048544883728,
+            "nativeRecognizedEvents": 0,
+            "acknowledgedEvents": 0,
+            "fullFileProcessed": true,
+            "singlePoseAssumption": true,
+            "fixedFullFrameLetterbox": false,
+            "dynamicPersonCrop": true,
+            "statelessCropRefinement": true,
+            "modelInferencesPerFrame": 3,
+            "cameraEnabled": false
+          },
+          "at": 17169.400000000023
+        }
+      },
+      {
+        "name": "both-up-negative",
+        "nativeModel": "float16",
+        "nativeRefinement": "image",
+        "integrationVerified": true,
+        "recognitionAcceptance": "passed",
+        "observedGestures": [],
+        "expectedGestures": [],
+        "nativeFileEvents": null,
+        "expectedEventWindowsMs": null,
+        "eventTimingVerified": null,
+        "ui": {
+          "count": 0,
+          "source": "video",
+          "screen": "app play camera-mode",
+          "replayLabel": true,
+          "cameraCalls": 0
+        },
+        "progressUnchanged": true,
+        "wallMs": 15788,
+        "lastPacket": {
+          "runtime": {
+            "engine": "litert",
+            "engineVersion": "1.4.2",
+            "platform": "android",
+            "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+            "modelId": "float16",
+            "inputSize": 192,
+            "verified": true
+          },
+          "source": "video",
+          "status": "paused",
+          "seq": 0,
+          "active": true,
+          "revision": 4,
+          "events": [],
+          "metrics": {
+            "armed": false,
+            "decodedFrames": 136,
+            "acceptedFrames": 136,
+            "discardedEpochFrames": 0,
+            "videoFrames": 136,
+            "fileMs": 4533.333333333333,
+            "fps": 30,
+            "decodeMs": 0.885708,
+            "preprocessMs": 13.428792,
+            "inferenceMs": 53.842832,
+            "keypointMinimum": 0.2722536325454712,
+            "nativeRecognizedEvents": 0,
+            "acknowledgedEvents": 0,
+            "fullFileProcessed": true,
+            "singlePoseAssumption": true,
+            "fixedFullFrameLetterbox": false,
+            "dynamicPersonCrop": true,
+            "statelessCropRefinement": true,
+            "modelInferencesPerFrame": 3,
+            "cameraEnabled": false
+          },
+          "at": 16949.300000000047
+        }
+      }
+    ],
+    "selection": "fixed before native inference; left is independently recorded partial positive; right-short and both-up are negatives",
+    "allInputsCompleted": true,
+    "leftNaturalFailurePreserved": true
+  },
+  "verification": {
+    "javascriptTests": 65,
+    "javascriptBuild": "passed",
+    "analyzerSyntheticTests": 10,
+    "offlinePreparationChecks": 14,
+    "debugBuild": "passed",
+    "releaseBuild": "passed",
+    "releaseCalibrationAssets": 0,
+    "releaseCalibrationActivity": false,
+    "calibrationNativeSamples": 73,
+    "heldoutNativeSamples": 55,
+    "resourcesClosedBothSplits": true,
+    "cameraUsed": false,
+    "physicalDevice": false,
+    "target": "provisional Fire OS7/API28/armeabi-v7a",
+    "actualGuest": "Android TV API34 ARM64",
+    "emulators": 1,
+    "sidecarUsed": false,
+    "newPermissionBlocker": false
+  },
+  "bindings": [
+    {
+      "path": "confidence-calibration/protocol-bound.json",
+      "bytes": 11989,
+      "sha256": "e446a86e315182eb465e75776a1d9ad288b4120994c5710fed24f66f6bfa4d9a"
+    },
+    {
+      "path": "confidence-calibration/data/manifest-reviewed.json",
+      "bytes": 88540,
+      "sha256": "98ab3ecb0bda14784250bf6639f2f316e641030402154bca1544c271b660cec7"
+    },
+    {
+      "path": "confidence-calibration/data/humanGT-reviewed.json",
+      "bytes": 158102,
+      "sha256": "47c15f65b8517c52754662edc96de862e2fbfc49c2147db4649a96f29875c586"
+    },
+    {
+      "path": "confidence-calibration/data/background-reviewed.freeze.json",
+      "bytes": 53228,
+      "sha256": "bccf74a215e1832f6a781adcdca201156d02262b83c4f40502e1568f590edb9f"
+    },
+    {
+      "path": "confidence-calibration/analysis-calibration/selection.freeze.json",
+      "bytes": 6917,
+      "sha256": "dd369b8f1a208835f252b669ba8d56f6b00f56a65593eb9d42080e55cf3d372f"
+    },
+    {
+      "path": "confidence-calibration/runtime/result-calibration.json",
+      "bytes": 196447,
+      "sha256": "49f60eed143932e662c980e1ab4d3cc15000f3efa7c1bb134de5d554cdf54258"
+    },
+    {
+      "path": "confidence-calibration/runtime/result-heldout.json",
+      "bytes": 148438,
+      "sha256": "bdf879e9de17ecd60a89b7bd8a4b4d6836cb1e64d7dff475fbe941131903da31"
+    },
+    {
+      "path": "confidence-calibration/runtime/source-apk-bindings.json",
+      "bytes": 5507,
+      "sha256": "4211d2af895869b0429eb37f15ee02777deb3caf57a5f398e4ab8e2a87795c45"
+    },
+    {
+      "path": "confidence-calibration/video-runtime/result.json",
+      "bytes": 274047,
+      "sha256": "de57a0324553ad5138adee76107523282187d4dfedd5277c4357891f9c668d0e"
+    },
+    {
+      "path": "confidence-calibration/calibration-sanity-review/REPORT.md",
+      "bytes": 2948,
+      "sha256": "199724b7a2d6fcb50cb3869a2b726f9de54c17049707abc4caa3aea6c61e9de0"
+    }
+  ],
+  "limits": [
+    "No qualifying independent MoveNet score threshold; existing0.65 unchanged.",
+    "No human camera result. AI video labels are distinct from COCO human keypoint labels.",
+    "Background image pose admission is not false gesture event rate;0/20 has one-sided95% upper13.91%.",
+    "No natural six-alternation sequence, physical identity separation, FireOS/ARMv7 execution/UVC/Vega or sustained real-device verification.",
+    "A single-image tight spatial criterion is not gesture accuracy; low point recall alone does not prove wrong gesture geometry.",
+    "Media, model binaries, raw logs and build products stay local/ignored. No push/deploy/upload/spending/credentials."
+  ]
+}

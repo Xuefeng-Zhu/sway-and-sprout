@@ -1,0 +1,8 @@
+{
+  "recordedAtUtc": "2026-10-21T00:47:15.578271+00:00",
+  "beforePoseInference": true,
+  "scope": "Full-frame63-bit perceptual-DCT hash screen +FlickrphotoID, not identity recognition or proofagainst everynearduplicate",
+  "images": 128,
+  "crossSplitHammingAtMost6": [],
+  "crossSplitSameFlickrPhotoID": []
+}

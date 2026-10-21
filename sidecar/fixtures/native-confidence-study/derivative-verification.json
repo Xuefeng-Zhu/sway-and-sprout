@@ -1,0 +1,40 @@
+[
+  {
+    "case": "left-natural",
+    "sourceSha256": "d1bc8805ba209fb797c19c50ec87814070ef6e7285c115aceada20d78b1dfb00",
+    "sourceStartFrame": 285,
+    "sourceEndFrameExclusive": 368,
+    "bytes": 1804899,
+    "sha256": "e4cc461c1c8c162c0f2bd0d256dcd99cd229e997b2ac4175715e34e0240ca8c8",
+    "frames": 83,
+    "fps": 30,
+    "ffprobe": {
+      "width": 640,
+      "height": 480,
+      "avg_frame_rate": "30/1",
+      "duration": "2.766667",
+      "nb_frames": "83"
+    },
+    "decodedYUVFrameHashesEqual": true,
+    "frameHashSequenceSha256": "b944617ae18ece40bb80f4efbee2e4db8519b0024e7e308d266000227dd84a00"
+  },
+  {
+    "case": "right-short",
+    "sourceSha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+    "sourceStartFrame": 0,
+    "sourceEndFrameExclusive": 156,
+    "bytes": 5342215,
+    "sha256": "85f473cc8bd8261a2e8046372c01188cc2f3fc6919d9e32e2a52c98aa182f4fa",
+    "frames": 156,
+    "fps": 29.97002997002997,
+    "ffprobe": {
+      "width": 1024,
+      "height": 576,
+      "avg_frame_rate": "30000/1001",
+      "duration": "5.205200",
+      "nb_frames": "156"
+    },
+    "decodedYUVFrameHashesEqual": true,
+    "frameHashSequenceSha256": "129a66fd05c937e33178a97fccbb2b52448531e7b5da87686c7457cd98a86797"
+  }
+]

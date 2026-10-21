@@ -1,0 +1,215 @@
+{
+  "frozenAtUtc": "2026-10-21T00:40:21.623629+00:00",
+  "images": [
+    {
+      "globalCandidateRankZeroBased": 40,
+      "id": "coco2017_000000509824_no_person_annotation",
+      "imageId": 509824,
+      "rankSha256": "14e1a4d692dd167b6efb6e378466fb626bd8ed90e51d1a9609d82f4e746585e7",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000509824.jpg",
+        "date_captured": "2013-11-21 21:51:47",
+        "file_name": "000000509824.jpg",
+        "flickr_url": "http://farm9.staticflickr.com/8321/7918999676_9a3971bdcf_z.jpg",
+        "height": 640,
+        "id": 509824,
+        "license": 4,
+        "width": 640
+      },
+      "split": "calibration"
+    },
+    {
+      "globalCandidateRankZeroBased": 41,
+      "id": "coco2017_000000343934_no_person_annotation",
+      "imageId": 343934,
+      "rankSha256": "15715818abae935be158ad4ce9464353850e7ff64d1fd16f96851a3b78ceb866",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000343934.jpg",
+        "date_captured": "2013-11-15 16:27:00",
+        "file_name": "000000343934.jpg",
+        "flickr_url": "http://farm6.staticflickr.com/5339/10051858643_11783d3e9f_z.jpg",
+        "height": 480,
+        "id": 343934,
+        "license": 4,
+        "width": 640
+      },
+      "split": "calibration"
+    },
+    {
+      "globalCandidateRankZeroBased": 42,
+      "id": "coco2017_000000458790_no_person_annotation",
+      "imageId": 458790,
+      "rankSha256": "163cdf79db72b2339c4d928e402488d6311c1ae6f055e34506fd407b67921870",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000458790.jpg",
+        "date_captured": "2013-11-17 04:12:51",
+        "file_name": "000000458790.jpg",
+        "flickr_url": "http://farm1.staticflickr.com/6/10303978_763e34189e_z.jpg",
+        "height": 375,
+        "id": 458790,
+        "license": 5,
+        "width": 500
+      },
+      "split": "calibration"
+    },
+    {
+      "globalCandidateRankZeroBased": 43,
+      "id": "coco2017_000000099053_no_person_annotation",
+      "imageId": 99053,
+      "rankSha256": "16f5668ed5df093d97584f9998810f78e59c9bdf3a7fe4217aceec3794d18c3b",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000099053.jpg",
+        "date_captured": "2013-11-19 20:54:18",
+        "file_name": "000000099053.jpg",
+        "flickr_url": "http://farm7.staticflickr.com/6020/5884430904_8830bb62b3_z.jpg",
+        "height": 559,
+        "id": 99053,
+        "license": 4,
+        "width": 640
+      },
+      "split": "calibration"
+    },
+    {
+      "globalCandidateRankZeroBased": 44,
+      "id": "coco2017_000000304545_no_person_annotation",
+      "imageId": 304545,
+      "rankSha256": "171edcfd95d3e458672ab7776cfc3b00169c5db154504993d3a10d18851884e5",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000304545.jpg",
+        "date_captured": "2013-11-18 07:26:14",
+        "file_name": "000000304545.jpg",
+        "flickr_url": "http://farm3.staticflickr.com/2505/4156817608_8ba165ecc2_z.jpg",
+        "height": 522,
+        "id": 304545,
+        "license": 5,
+        "width": 640
+      },
+      "split": "calibration"
+    },
+    {
+      "globalCandidateRankZeroBased": 45,
+      "id": "coco2017_000000293071_no_person_annotation",
+      "imageId": 293071,
+      "rankSha256": "1736cc103df914582273ebe5e177b7447ed0ac138cdb0938efde4cb4285b3fde",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000293071.jpg",
+        "date_captured": "2013-11-16 22:12:21",
+        "file_name": "000000293071.jpg",
+        "flickr_url": "http://farm1.staticflickr.com/199/466347034_10b9e3efe4_z.jpg",
+        "height": 500,
+        "id": 293071,
+        "license": 4,
+        "width": 335
+      },
+      "split": "calibration"
+    },
+    {
+      "globalCandidateRankZeroBased": 46,
+      "id": "coco2017_000000426253_no_person_annotation",
+      "imageId": 426253,
+      "rankSha256": "17c63aa97559728719ad83236a0f704e1504d1859edf285c68682e955c8be4f9",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000426253.jpg",
+        "date_captured": "2013-11-24 05:04:45",
+        "file_name": "000000426253.jpg",
+        "flickr_url": "http://farm5.staticflickr.com/4129/4980536343_8b4e5a45a2_z.jpg",
+        "height": 427,
+        "id": 426253,
+        "license": 5,
+        "width": 640
+      },
+      "split": "heldout"
+    },
+    {
+      "globalCandidateRankZeroBased": 47,
+      "id": "coco2017_000000452321_no_person_annotation",
+      "imageId": 452321,
+      "rankSha256": "183e1b4042970330d36e4ce2e03326b6f011219eb3413c8ba8fce929b82ac42d",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000452321.jpg",
+        "date_captured": "2013-11-16 20:25:03",
+        "file_name": "000000452321.jpg",
+        "flickr_url": "http://farm6.staticflickr.com/5334/9618201274_317408969f_z.jpg",
+        "height": 480,
+        "id": 452321,
+        "license": 5,
+        "width": 640
+      },
+      "split": "heldout"
+    },
+    {
+      "globalCandidateRankZeroBased": 48,
+      "id": "coco2017_000000138856_no_person_annotation",
+      "imageId": 138856,
+      "rankSha256": "186f153fa61507d818a2e55b424589bd686a593ecc488d44ba0dfaceb9ea5415",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000138856.jpg",
+        "date_captured": "2013-11-24 02:23:50",
+        "file_name": "000000138856.jpg",
+        "flickr_url": "http://farm5.staticflickr.com/4075/4872855743_1066676766_z.jpg",
+        "height": 480,
+        "id": 138856,
+        "license": 4,
+        "width": 640
+      },
+      "split": "heldout"
+    },
+    {
+      "globalCandidateRankZeroBased": 49,
+      "id": "coco2017_000000439290_no_person_annotation",
+      "imageId": 439290,
+      "rankSha256": "18cd645b1f96970485d6b1c6e21a76f473a654abb87f2d7fac35bafdabf92ec4",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000439290.jpg",
+        "date_captured": "2013-11-19 21:27:44",
+        "file_name": "000000439290.jpg",
+        "flickr_url": "http://farm3.staticflickr.com/2798/4080153258_198168e787_z.jpg",
+        "height": 427,
+        "id": 439290,
+        "license": 4,
+        "width": 640
+      },
+      "split": "heldout"
+    },
+    {
+      "globalCandidateRankZeroBased": 50,
+      "id": "coco2017_000000502347_no_person_annotation",
+      "imageId": 502347,
+      "rankSha256": "1938db6a3d2620fd1e325480cf1b0cd99e48d9ca46bff3b4dda0f2cbb6629db7",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000502347.jpg",
+        "date_captured": "2013-11-16 13:09:54",
+        "file_name": "000000502347.jpg",
+        "flickr_url": "http://farm4.staticflickr.com/3064/2962435573_5a973043c5_z.jpg",
+        "height": 375,
+        "id": 502347,
+        "license": 4,
+        "width": 500
+      },
+      "split": "heldout"
+    },
+    {
+      "globalCandidateRankZeroBased": 51,
+      "id": "coco2017_000000232348_no_person_annotation",
+      "imageId": 232348,
+      "rankSha256": "1942a4a54445af45465ebbe40f235a3aa555c58529f15a0c0f260153968c07ee",
+      "sourceImage": {
+        "coco_url": "http://images.cocodataset.org/val2017/000000232348.jpg",
+        "date_captured": "2013-11-14 18:58:29",
+        "file_name": "000000232348.jpg",
+        "flickr_url": "http://farm7.staticflickr.com/6012/5926562644_dbbbe9fc2a_z.jpg",
+        "height": 502,
+        "id": 232348,
+        "license": 4,
+        "width": 640
+      },
+      "split": "heldout"
+    }
+  ],
+  "originalManifestSha256": "4fc65ec9056d346d805044150fc4631a7f48ba277788ce67b80e16303a5864e2",
+  "recipe": "Same original 583 eligible zero-person-annotation images and same hash rank. Reserve global zero-based ranks40..51; ranks40..45 calibration and46..51 heldout. Source/license/annotation-only selection before pixel review; no pose model, predictions or scores.",
+  "replacementRule": "Within each split retain original clear-no-human images. Match excluded originals in original rank order to first independently clear-no-human reserve images in reserve rank order. Freeze review hashes and complete mapping before inference.",
+  "schemaVersion": 1,
+  "seed": "sway-sprout-human-coco2017-calibration-2026-10-20-v1",
+  "sourceAnnotationsSha256": "788e2dae83c86bd547be7fab269d6399df5671063d29a61360cdb2cc370d2b14"
+}

@@ -1,0 +1,64 @@
+{
+  "actualVerifiedTlsArchiveUrl": "https://s3.amazonaws.com/images.cocodataset.org/annotations/annotations_trainval2017.zip",
+  "annotationsLicense": {
+    "credit": "COCO Consortium",
+    "name": "Creative Commons Attribution 4.0 International",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "archiveBytes": 252907541,
+  "archiveFullSha256": null,
+  "archiveFullSha256Caveat": "Full archive was not downloaded; server ETag is recorded as metadata and is not asserted to be a SHA256.",
+  "boundedExtraction": {
+    "centralDirectoryRange": [
+      252842005,
+      252907540
+    ],
+    "compressedBytes": 2986607,
+    "compression": "ZIP deflate method 8",
+    "crc32Decimal": 668491812,
+    "crc32Verified": true,
+    "entryRange": [
+      249920171,
+      252906876
+    ],
+    "uncompressedBytes": 10020657,
+    "zipEntry": "annotations/person_keypoints_val2017.json"
+  },
+  "dataset": "COCO2017 validation person keypoints",
+  "files": {
+    "archive-central-directory.bin": {
+      "bytes": 65536,
+      "sha256": "a7276b808dd35e1aaff18ca909c0854d303361a7b550e75e7e2689341a30dbe4"
+    },
+    "download.htm": {
+      "bytes": 13225,
+      "sha256": "62e500d3e7be567d97c295f5f56c95a416618d0770dd334a0ab943a4c1e6954b"
+    },
+    "format-data.htm": {
+      "bytes": 15380,
+      "sha256": "a15ea326fbb7a7d5adc349aa8bfd615e442886b0c5cccb819cc9d5bce3185897"
+    },
+    "keypoints-val2017.zip-entry.bin": {
+      "bytes": 2986706,
+      "sha256": "be06d7079977ef04906f75a3cc54cd516bd46d9533be5c2334645f50f041d1d9"
+    },
+    "person_keypoints_val2017.json": {
+      "bytes": 10020657,
+      "sha256": "788e2dae83c86bd547be7fab269d6399df5671063d29a61360cdb2cc370d2b14"
+    },
+    "termsofuse.htm": {
+      "bytes": 2370,
+      "sha256": "bd019f88ee44c29b2f19c5b99888cf5bc2e7c16f57b6e52af8ed3a60462e8bdd"
+    }
+  },
+  "imageLicensePolicy": "Only COCO metadata license IDs 4 (CC BY 2.0), 5 (CC BY-SA 2.0), 8 (US Government Work) eligible. Per-image source metadata preserved verbatim; current Flickr page credit metadata recorded where available.",
+  "officialArchiveUrl": "http://images.cocodataset.org/annotations/annotations_trainval2017.zip",
+  "officialDocuments": {
+    "download.htm": "https://raw.githubusercontent.com/cocodataset/cocodataset.github.io/master/dataset/download.htm",
+    "format-data.htm": "https://raw.githubusercontent.com/cocodataset/cocodataset.github.io/master/dataset/format-data.htm",
+    "termsofuse.htm": "https://raw.githubusercontent.com/cocodataset/cocodataset.github.io/master/dataset/termsofuse.htm"
+  },
+  "schemaVersion": 1,
+  "serverEtag": "f4bbac642086de4f52a3fdda2de5fa2c",
+  "serverLastModified": "Tue, 10 Jul 2018 17:58:17 GMT"
+}

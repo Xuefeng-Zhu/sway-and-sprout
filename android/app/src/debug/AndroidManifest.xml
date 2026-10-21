@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
  <uses-permission android:name="android.permission.INTERNET" />
- <application android:label="Sway &amp; Sprout Motion" tools:replace="android:label" />
+ <application android:label="Sway &amp; Sprout Motion" tools:replace="android:label">
+  <activity android:name=".NativeCalibrationActivity" android:exported="true" android:label="Local Keypoint Calibration" />
+ </application>
 </manifest>

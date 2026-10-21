@@ -1,0 +1,653 @@
+{
+  "sourceId": "DVIDS679690",
+  "title": "Kettlebell Overhead Lunge",
+  "creator": "Capt. Matthew Holfinger / U.S. Marine Corps Training and Education Command",
+  "assetPage": "https://www.dvidshub.net/video/679690/kettlebell-overhead-lunge",
+  "VIRIN": "190510-M-JT909-020",
+  "sourceFile": "679690-source.mp4",
+  "sourceSha256": "d1bc8805ba209fb797c19c50ec87814070ef6e7285c115aceada20d78b1dfb00",
+  "sourceBytes": 3704637,
+  "fpsNumerator": 30,
+  "fpsDenominator": 1,
+  "annotationFreezeUtc": "2026-10-20T18:17:28.938925+00:00",
+  "poseModelsRun": false,
+  "predictionFilesRead": false,
+  "sourceIsUnmodified": true,
+  "mirroringRetimingSplicingDuplicatingUsed": false,
+  "reviewer": "primary visual reviewer; independently corroborated anatomical side of full frame360 by second visual reviewer",
+  "reviewMethod": "Source hash frozen before first pixel review. Every annotated frame285\u2013367 included on reviewed source-derived exact-frame contact sheets; direct original-resolution frame360 also reviewed. Neutral and hold sheets preserve4:3 aspect. Transition sheet is a conservative ambiguity exclusion, not a precise event-onset estimate. No model confidence or landmarks used.",
+  "target": "Single foreground woman, green T-shirt/shorts, gym; three-quarter frontal view facing image-right. No spatial crop performed.",
+  "intervals": [
+    {
+      "startFrame": 285,
+      "endFrameInclusive": 316,
+      "state": "neutral",
+      "firstTimestampMs": 9500,
+      "lastTimestampMs": 10533.333333333334,
+      "firstToLastSpanMs": 1033.333333333334,
+      "frameSupportDurationMs": 1066.6666666666667
+    },
+    {
+      "startFrame": 317,
+      "endFrameInclusive": 335,
+      "state": "ambiguous",
+      "reason": "conservative transition exclusion"
+    },
+    {
+      "startFrame": 336,
+      "endFrameInclusive": 367,
+      "state": "left",
+      "firstTimestampMs": 11200,
+      "lastTimestampMs": 12233.333333333334,
+      "firstToLastSpanMs": 1033.333333333334,
+      "frameSupportDurationMs": 1066.6666666666667
+    }
+  ],
+  "perFrame": [
+    {
+      "frame": 285,
+      "timestampMs": 9500.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 286,
+      "timestampMs": 9533.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 287,
+      "timestampMs": 9566.666666666666,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 288,
+      "timestampMs": 9600.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 289,
+      "timestampMs": 9633.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 290,
+      "timestampMs": 9666.666666666666,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 291,
+      "timestampMs": 9700.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 292,
+      "timestampMs": 9733.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 293,
+      "timestampMs": 9766.666666666666,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 294,
+      "timestampMs": 9800.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 295,
+      "timestampMs": 9833.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 296,
+      "timestampMs": 9866.666666666666,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 297,
+      "timestampMs": 9900.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 298,
+      "timestampMs": 9933.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 299,
+      "timestampMs": 9966.666666666666,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 300,
+      "timestampMs": 10000.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 301,
+      "timestampMs": 10033.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 302,
+      "timestampMs": 10066.666666666666,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 303,
+      "timestampMs": 10100.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 304,
+      "timestampMs": 10133.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 305,
+      "timestampMs": 10166.666666666666,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 306,
+      "timestampMs": 10200.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 307,
+      "timestampMs": 10233.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 308,
+      "timestampMs": 10266.666666666666,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 309,
+      "timestampMs": 10300.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 310,
+      "timestampMs": 10333.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 311,
+      "timestampMs": 10366.666666666666,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 312,
+      "timestampMs": 10400.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 313,
+      "timestampMs": 10433.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 314,
+      "timestampMs": 10466.666666666666,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 315,
+      "timestampMs": 10500.0,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 316,
+      "timestampMs": 10533.333333333334,
+      "state": "neutral",
+      "confidence": "high",
+      "basis": "Both wrists visibly below their shoulders"
+    },
+    {
+      "frame": 317,
+      "timestampMs": 10566.666666666666,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 318,
+      "timestampMs": 10600.0,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 319,
+      "timestampMs": 10633.333333333334,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 320,
+      "timestampMs": 10666.666666666666,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 321,
+      "timestampMs": 10700.0,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 322,
+      "timestampMs": 10733.333333333334,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 323,
+      "timestampMs": 10766.666666666666,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 324,
+      "timestampMs": 10800.0,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 325,
+      "timestampMs": 10833.333333333334,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 326,
+      "timestampMs": 10866.666666666666,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 327,
+      "timestampMs": 10900.0,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 328,
+      "timestampMs": 10933.333333333334,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 329,
+      "timestampMs": 10966.666666666666,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 330,
+      "timestampMs": 11000.0,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 331,
+      "timestampMs": 11033.333333333334,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 332,
+      "timestampMs": 11066.666666666666,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 333,
+      "timestampMs": 11100.0,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 334,
+      "timestampMs": 11133.333333333334,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 335,
+      "timestampMs": 11166.666666666666,
+      "state": "ambiguous",
+      "confidence": "uncertain",
+      "basis": "Arm lifting transition; conservative exclusion from stable hold labels"
+    },
+    {
+      "frame": 336,
+      "timestampMs": 11200.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 337,
+      "timestampMs": 11233.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 338,
+      "timestampMs": 11266.666666666666,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 339,
+      "timestampMs": 11300.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 340,
+      "timestampMs": 11333.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 341,
+      "timestampMs": 11366.666666666666,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 342,
+      "timestampMs": 11400.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 343,
+      "timestampMs": 11433.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 344,
+      "timestampMs": 11466.666666666666,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 345,
+      "timestampMs": 11500.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 346,
+      "timestampMs": 11533.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 347,
+      "timestampMs": 11566.666666666666,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 348,
+      "timestampMs": 11600.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 349,
+      "timestampMs": 11633.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 350,
+      "timestampMs": 11666.666666666666,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 351,
+      "timestampMs": 11700.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 352,
+      "timestampMs": 11733.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 353,
+      "timestampMs": 11766.666666666666,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 354,
+      "timestampMs": 11800.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 355,
+      "timestampMs": 11833.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 356,
+      "timestampMs": 11866.666666666666,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 357,
+      "timestampMs": 11900.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 358,
+      "timestampMs": 11933.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 359,
+      "timestampMs": 11966.666666666666,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 360,
+      "timestampMs": 12000.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 361,
+      "timestampMs": 12033.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 362,
+      "timestampMs": 12066.666666666666,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 363,
+      "timestampMs": 12100.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 364,
+      "timestampMs": 12133.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 365,
+      "timestampMs": 12166.666666666666,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 366,
+      "timestampMs": 12200.0,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    },
+    {
+      "frame": 367,
+      "timestampMs": 12233.333333333334,
+      "state": "left",
+      "confidence": "moderate-high",
+      "basis": "Anatomical left wrist clearly above head/shoulder, right hand on hip below right shoulder"
+    }
+  ],
+  "limits": [
+    "A partial natural both-down to left-up example; does not certify six alternating raises.",
+    "The clip begins with an already raised other arm; that earlier sequence is outside this annotation.",
+    "Camera is oblique and source subject modest in640x480 player rendition. Anatomical-left assignment corroborated from frame360 only; interval continuation determined by primary reviewer.",
+    "No exact anatomical joint coordinate boxes or shoulder-height boundaries are supplied; stable windows use visibly separated geometry and transition frames are conservatively ambiguous.",
+    "No source-person independence claim versus other historical DVIDS footage until compared; preserve source-grouping if same person is later identified."
+  ],
+  "licenseStatement": "Official asset page explicitly marks PUBLIC DOMAIN, without asset-specific copyrighted-material warning.",
+  "licenseUrl": "https://www.dvidshub.net/about/copyright",
+  "nonEndorsementNotice": "The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.",
+  "evidenceSheets": [
+    {
+      "file": "679690-neutral.jpg",
+      "sha256": "e0f70a258561b0365c70878e72fb4eca22a4b32c949fc52d16362420f8556bef"
+    },
+    {
+      "file": "679690-transition.jpg",
+      "sha256": "65dfcddce0727c1efb70c656da248821db6b4c9fb26554a8343e219ac0563132"
+    },
+    {
+      "file": "679690-hold.jpg",
+      "sha256": "88d621018b115ae9844c844645cba7c29c403f096004ea054927825b97782dea"
+    }
+  ]
+}

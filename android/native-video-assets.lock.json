@@ -5,7 +5,7 @@
   "purpose": "Local opt-in native video diagnostics; no camera or physical Fire TV acceptance claim. Media stays ignored and is not published.",
   "artifactDownloadExplicitOnly": true,
   "fixtureDownloadEnabled": false,
-  "expectationsSource": "docs/verification/full-image-20261020.json (known-five expected sequence, natural-two observed-only)",
+  "expectationsSource": "docs/verification/full-image-20261020.json (known-five expected sequence, natural-two observed-only); newleft/shortcontrols bound to pre-inference annotation/contiguous trims",
   "artifacts": [
     {
       "role": "core",
@@ -307,6 +307,54 @@
       "licenseSource": "https://www.pexels.com/license/",
       "creator": "Artem Podrez",
       "mediaDownloadEnabled": false
+    },
+    {
+      "case": "left-natural",
+      "source": "sidecar/fixtures/.cache/native-confidence-study/left-natural.mp4",
+      "asset": "verification/left-natural.mp4",
+      "config": "verification/left-natural.json",
+      "bytes": 1804899,
+      "sha256": "e4cc461c1c8c162c0f2bd0d256dcd99cd229e997b2ac4175715e34e0240ca8c8",
+      "fps": 30,
+      "frames": 83,
+      "expectedGestures": [
+        "left-raise"
+      ],
+      "expectationKnown": true,
+      "expectationScope": "Independent natural single neutral-to-left cycle only; event dwell fully inside visually certified left window",
+      "decodedPixelPreservation": {
+        "sourceSha256": "d1bc8805ba209fb797c19c50ec87814070ef6e7285c115aceada20d78b1dfb00",
+        "startFrame": 285,
+        "endFrameExclusive": 368,
+        "yuvFrameHashesEqual": true,
+        "sequenceSha256": "b944617ae18ece40bb80f4efbee2e4db8519b0024e7e308d266000227dd84a00"
+      },
+      "eventWindowsMs": [
+        [
+          2050,
+          2733.334
+        ]
+      ]
+    },
+    {
+      "case": "right-short",
+      "source": "sidecar/fixtures/.cache/native-confidence-study/right-short.mp4",
+      "asset": "verification/right-short.mp4",
+      "config": "verification/right-short.json",
+      "bytes": 5342215,
+      "sha256": "85f473cc8bd8261a2e8046372c01188cc2f3fc6919d9e32e2a52c98aa182f4fa",
+      "fps": 29.97002997002997,
+      "frames": 156,
+      "expectedGestures": [],
+      "expectationKnown": true,
+      "expectationScope": "Contiguous prefix preserving previously annotated neutral1-16 and rightup136-151; wrong-side negative, not independent positive",
+      "decodedPixelPreservation": {
+        "sourceSha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+        "startFrame": 0,
+        "endFrameExclusive": 156,
+        "yuvFrameHashesEqual": true,
+        "sequenceSha256": "129a66fd05c937e33178a97fccbb2b52448531e7b5da87686c7457cd98a86797"
+      }
     }
   ]
 }

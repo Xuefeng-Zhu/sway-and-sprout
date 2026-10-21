@@ -7,7 +7,7 @@ final class NativeVideoFactory {
   if(!intent.getBooleanExtra("nativeVideo",false))return null;
   String name=intent.getStringExtra("nativeVideoCase");
   if(name==null)name="clear";
-  java.util.Set<String> allowed=new java.util.HashSet<>(java.util.Arrays.asList("clear","frontal","nearface","right-negative","both-up-negative","natural-original","natural-mirror"));
+  java.util.Set<String> allowed=new java.util.HashSet<>(java.util.Arrays.asList("clear","frontal","nearface","right-negative","both-up-negative","natural-original","natural-mirror","left-natural","right-short"));
   if(!allowed.contains(name))throw new IllegalArgumentException("Unknown native verification fixture");
   String model=intent.getStringExtra("nativeModel");
   if(model==null)model="int8";

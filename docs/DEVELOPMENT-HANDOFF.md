@@ -13,6 +13,12 @@ traces. Inspect all local checkpoints with
 `git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
 been requested. The dated TogetherMove source remains an untouched backup.
 
+## Native confidence pilot — 2026-10-21
+
+Mac execution restored with all eight pre-existing debug calibration files preserved. The reviewed53/35 person split and20/20 backgrounds are frozen; eight bad backgrounds were replaced before inference. Actual Android73calibration +55heldout samples completed with resources closed. **No qualifying MoveNet score gate exists under the frozen spatial/coverage/error rule, so0.65 and gesture rules remain unchanged.** Heldout baseline admits0/32 visible positives and0/20 backgrounds; no refitting. Calibration-only coordinate review found no global mapping defect and distinguishes strict all-four PCK10/47 from robust geometry31/32.
+
+New independently recorded left-natural83frames fails0/1 through native inference/UI/ACK; right-short156 and both-up136 complete with0events and unchanged participation. This does not establish natural-six or resolve prior long-file latency. Read [pilot results](NATIVE-CONFIDENCE-VERIFICATION.md), [mapping sanity](NATIVE-CONFIDENCE-SANITY.md), [frozen evidence](verification/native-confidence-20261021.json) and the source/label recipes under `sidecar/fixtures/confidence-calibration/`. Existing frontal6 and regression evidence remain bound to unchanged model/gate sources. No real Fire TV, camera, push/deploy/upload/spending or credentials. Optional portable MediaPipe native audit is in progress; no candidate is promoted.
+
 ## Current native Android milestone — official reference parity, 2026-10-20
 
 Local correction commit `053e2eb` replaces rejected full-frame preprocessing with official Android dynamic torso cropping and sampled actual Support API tensor checks. Both the prepared bytes and same-interpreter51-float outputs match exactly on all sampled checks; source crop/inverse math separately passes350 golden assertions. This is the declared sampled boundary, not independent decoder/ROI or full-runtime parity. Read [native results](NATIVE-VIDEO-VERIFICATION.md) and [precise reference scope](MOVENET-REFERENCE-PARITY.md).

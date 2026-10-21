@@ -14,7 +14,7 @@ try {
  await options.guard();guardPassed=true;
  result.device={api:(await adb(['shell','getprop','ro.build.version.sdk'])).trim(),abi:(await adb(['shell','getprop','ro.product.cpu.abi'])).trim(),model:(await adb(['shell','getprop','ro.product.model'])).trim()};
  for(const name of cases){
-  if(!/^(clear|frontal|nearface|right-negative|both-up-negative|natural-original|natural-mirror)$/.test(name))throw Error('unknown case');
+  if(!/^(clear|frontal|nearface|right-negative|both-up-negative|natural-original|natural-mirror|left-natural|right-short)$/.test(name))throw Error('unknown case');
   const row={name,nativeModel:options.model,nativeRefinement:options.refinement,packets:[],pageErrors:[],consoleErrors:[],startedAt:new Date().toISOString()};result.cases.push(row);
   await adb(['shell','am','force-stop','com.togethermove.tv.motion']);
   await adb(['shell','am','start','-n','com.togethermove.tv.motion/com.togethermove.tv.MainActivity','--ez','nativeVideo','true','--es','nativeVideoCase',name,'--es','nativeModel',options.model,'--es','nativeRefinement',options.refinement]);
@@ -51,7 +51,15 @@ try {
   row.observedGestures=[...events.entries()].sort((a,b)=>a[0]-b[0]).map(e=>e[1]);
   row.expectationScope='Frozen event sequence/count, UI rays and ACK; negative zero does not establish robust tracking';row.expectationKnown=expected.expectationKnown;row.expectedGestures=expected.expectationKnown?expected.expectedGestures:null;
   const expectedCount=expected.expectedGestures.length;
-  row.recognitionAcceptance=expected.expectationKnown?(row.integrationVerified&&JSON.stringify(row.observedGestures)===JSON.stringify(expected.expectedGestures)&&row.ui.count===expectedCount&&row.lastPacket?.metrics?.acknowledgedEvents===expectedCount&&(expectedCount>0||row.lastPacket?.metrics?.fullFileProcessed===true)?'passed':'failed'):'observed-only';
+  // New independently annotated natural case additionally binds native file-time events.
+  if(expected.eventWindowsMs){
+   const text=await adb(['logcat','-d','--pid='+pid,'-s','SwayNativeVideo:I']);
+   const nativeRows=text.split('\n').flatMap(line=>{try{return [JSON.parse(line.slice(line.indexOf('{')))];}catch{return [];}});
+   row.nativeFileEvents=nativeRows.filter(item=>item.kind==='event'&&item.configAsset?.split('/').at(-1)===name+(options.model==='int8'?'':'.'+options.model)+'.json').map(item=>({seq:item.seq,gesture:item.gesture,fileMs:item.eventFileMs}));
+   row.expectedEventWindowsMs=expected.eventWindowsMs;
+   row.eventTimingVerified=row.nativeFileEvents.length===expected.eventWindowsMs.length&&row.nativeFileEvents.every((item,i)=>Number.isFinite(item.fileMs)&&item.fileMs>=expected.eventWindowsMs[i][0]&&item.fileMs<=expected.eventWindowsMs[i][1]);
+  }
+  row.recognitionAcceptance=expected.expectationKnown?(row.integrationVerified&&row.eventTimingVerified!==false&&JSON.stringify(row.observedGestures)===JSON.stringify(expected.expectedGestures)&&row.ui.count===expectedCount&&row.lastPacket?.metrics?.acknowledgedEvents===expectedCount&&(expectedCount>0||row.lastPacket?.metrics?.fullFileProcessed===true)?'passed':'failed'):'observed-only';
   // Preserve row.ui/packets as the original scoring snapshot. Completion is a
   // separate real-timer observation; no reducer, timer or native event is injected.
   row.completion={requested:options.completion,status:options.completion?'not-exercised-no-six-rays':'not-requested'};
