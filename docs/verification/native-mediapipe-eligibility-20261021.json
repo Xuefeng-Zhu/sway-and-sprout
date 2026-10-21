@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-10-21T01:10:28.241674+00:00",
+  "baseCommit": "7982621",
+  "status": "paused-before-integration-by-explicit-telemetry-condition",
+  "pausedAction": {
+    "action": "Install/link the official MediaPipe1.1.1 Android dependency closure into an experimental native APK and initialize PoseLandmarker for the three fixed clips",
+    "target": "com.google.mediapipe:tasks-vision:1.1.1 + tasks-core:1.1.1",
+    "executed": false,
+    "reason": "Stock SDK unconditionally initializes remote statistics before graph construction; no public supported telemetry-off/logger-injection route found. Latest delegation explicitly requires pausing this action if telemetry is required and forbids bypass.",
+    "approvalReviewDenied": false,
+    "pendingApproval": false,
+    "uncertainExecution": false
+  },
+  "composition": [
+    {
+      "split": "calibration",
+      "visiblePersonImages": 47,
+      "occludedPersonImages": 6,
+      "personImages": 53,
+      "reviewedBackgroundImages": 20,
+      "totalInferenceImages": 73
+    },
+    {
+      "split": "heldout",
+      "visiblePersonImages": 32,
+      "occludedPersonImages": 3,
+      "personImages": 35,
+      "reviewedBackgroundImages": 20,
+      "totalInferenceImages": 55
+    }
+  ],
+  "staticEligibility": {
+    "api24Minimum": true,
+    "provisionalApi28Compatible": true,
+    "armeabiV7aLibraryPresent": true,
+    "elfClass": 1,
+    "elfMachine": 40,
+    "armv7LibraryBytes": 10099244,
+    "playServicesRequiredByDeclaredClosure": false,
+    "closureCoordinates": 22,
+    "runtimeExecutionVerified": false,
+    "fireTVVerified": false,
+    "vegaVerified": false,
+    "stockDependenciesFullyStaged": false,
+    "fullMergedStockManifestVerified": false,
+    "stockTransportPermissionClosure": "Exact required transport AARs not cached; no dependency installation attempted after privacy condition failed. Root AAR manifests add no permissions; transitive merged manifest remains unverified."
+  },
+  "callChain": [
+    {
+      "method": "PoseLandmarker.createFromOptions",
+      "bytecodeOffset": 181,
+      "calls": "TaskRunner.create"
+    },
+    {
+      "method": "TaskRunner.create four-argument",
+      "bytecodeOffset": 9,
+      "calls": "TasksStatsLoggerFactory.create",
+      "beforeGraphLoadOffset": 34,
+      "beforeGraphStartOffset": 102
+    },
+    {
+      "method": "TasksStatsLoggerFactory.create",
+      "bytecodeOffset": 3,
+      "calls": "TasksStatsProtoLogger.create",
+      "conditional": false
+    },
+    {
+      "method": "TasksStatsProtoLogger constructor",
+      "bytecodeOffsets": [
+        100,
+        105
+      ],
+      "creates": "RemoteLoggingClient"
+    },
+    {
+      "method": "RemoteLoggingClient constructor",
+      "bytecodeOffsets": [
+        8,
+        14,
+        37
+      ],
+      "actions": [
+        "TransportRuntime.initialize",
+        "CCTDestination.INSTANCE",
+        "TransportFactory.getTransport"
+      ]
+    },
+    {
+      "method": "RemoteLoggingClient.logEvent",
+      "bytecodeOffset": 8,
+      "calls": "Transport.send"
+    }
+  ],
+  "officialApiReview": {
+    "checked": [
+      "TaskRunner public overloads and private constructor",
+      "PoseLandmarker factories and options builder",
+      "BaseOptions builder",
+      "TasksStatsLoggerFactory",
+      "TasksStatsDummyLogger"
+    ],
+    "supportedOptOutFound": false,
+    "dummyLoggerExists": true,
+    "dummyLoggerInjectableThroughPublicPoseApi": false
+  },
+  "previousModifiedArtifact": {
+    "keptLocalUnexecuted": true,
+    "stockCoreSha256": "38fa5886edfe8dd8c83292f4c2fb069488b6e8f3856c1c42042eaf13432d0b61",
+    "modifiedCoreSha256": "449fdec6f0e62892357554e70403991cdbd1928087aafc3d87083787d78b8b65",
+    "status": "Local replacement class is not an official telemetry-off option. Not integrated/executed under latest instruction."
+  },
+  "recommendation": "Stop the stock1.1.1 AAR candidate under the current no-telemetry/no-bypass condition; preserve existing default and0.65. Resume only with a verified official telemetry-off runtime, or explicit revised authority for a maintained SDK fork. No inference claim follows this audit.",
+  "limits": [
+    "Statistics transport capability is established; frame upload is NOT established or alleged.",
+    "No candidate APK build, graph initialization, natural-left/negative inference, or full regression occurred in this continuation.",
+    "No heldout predictions were reopened/retuned and no annotations changed.",
+    "No emulator/camera started; no network send, dependency installation, credential/permission change, push, deploy, upload or spending occurred.",
+    "Android/API/ABI evidence is static and does not certify FireOS/ARMv7 loading, UVC, sustained performance or actualTV."
+  ],
+  "evidence": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-feasibility/tasks-core-1.1.1.aar",
+      "bytes": 29679922,
+      "sha256": "38fa5886edfe8dd8c83292f4c2fb069488b6e8f3856c1c42042eaf13432d0b61"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-feasibility/tasks-vision-1.1.1.aar",
+      "bytes": 610482,
+      "sha256": "cf6565d27feb96b411bbb2e5cb38b3db37e0e0d3109f30ec0c9a8178055051e6"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-feasibility/effective-runtime-closure.json",
+      "bytes": 11154,
+      "sha256": "6a8c6037656ca913181c01e49f63ee16561ee7c6dde04ace2f986c6885e3d5cd"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-feasibility/artifact-abi-evidence.json",
+      "bytes": 1883,
+      "sha256": "4b230ffe15f6ca2877acb3f5660558da7c493e9b93c3e7958a3c48d647ce54bf"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-feasibility/TasksStatsLoggerFactory.javap.txt",
+      "bytes": 828,
+      "sha256": "ceca4a03e4fb00335b518f8eb184e1fbe57910c32e7e3fdb56caa2587808f5ae"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-feasibility/TasksStatsProtoLogger.javap.txt",
+      "bytes": 56414,
+      "sha256": "f5ed273447c2bffff16aa83502b87b3d734bbfd5987cde38bc3b4be1b13e58ac"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-feasibility/RemoteLoggingClient.javap.txt",
+      "bytes": 3173,
+      "sha256": "0091071e0459365f106f40e9279b1a1c9e348e7844f8429758383de4b3e2f893"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-feasibility/BaseOptions$Builder.javap.txt",
+      "bytes": 7130,
+      "sha256": "ea087cd49e2ba4077cc101997716f5759548f9d7b9f677c0fa29556fee11e0ef"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-feasibility/PoseLandmarker$PoseLandmarkerOptions$Builder.javap.txt",
+      "bytes": 4410,
+      "sha256": "c1615d2fd008227313046c6d02c93abfc26eb3b2e334321aaf73949532d75abe"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-feasibility/no-telemetry-patch-evidence.json",
+      "bytes": 2111,
+      "sha256": "d5da361f5b1b0f3870a0431d8056f9895dc85b4be536471fc04c28dbaf51b92e"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-experiment/composition.json",
+      "bytes": 966,
+      "sha256": "a1fcfaadd84d6f2c6ba8e25eedc3c4b2b6eae3f3ce0f6cfa099a349023824866"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-experiment/TaskRunner.javap.txt",
+      "bytes": 30290,
+      "sha256": "fcf5de27ad847fa0fa0eebe4c331b9e4a6c598ec53d3979c61bc800919248ef3"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-experiment/TasksStatsLoggerFactory.javap.txt",
+      "bytes": 812,
+      "sha256": "46908eae726c3d93fcec5b47baf5d06cee3c1d0df7fdb36f65599ab1c2ab78af"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-experiment/TasksStatsDummyLogger.javap.txt",
+      "bytes": 1351,
+      "sha256": "f3e400be20bd2dbc2ba07dc5730ac62e169ed468f1a8a90fa23ad155dd92e07b"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/mediapipe-experiment/PoseLandmarker.javap.txt",
+      "bytes": 28196,
+      "sha256": "a5ce88d6553b0ee5ba21119ceef23af99ba4f2c77d02eb7d62eb67a8c6b1e6d4"
+    }
+  ]
+}
