@@ -23,17 +23,27 @@ const videoMessages={
   disconnected:'Local video replay connection lost.',
   paused:'Local video replay is paused.',
 };
+const activityMessages={
+  waiting:'Getting a clear view. Move in a way that feels comfortable.',
+  ready:'Move your way—wave, reach, stretch or sway.',
+  tracking:'Small movements count. Keep moving your way.',
+  neutral:'Take your time. Move again whenever you like.',
+  hold:'Small movements count. No pose or hold is required.',
+  'low-confidence':'Try keeping a hand or your upper body clearly in view. Manual play is always here.',
+  'no-person':'Keep one person comfortably in view.',
+};
 
-export function sunshineMarkup(){
+export function sunshineMarkup({policy='strict'}={}){
+  const activity=policy==='activity';
   return `<aside class="sunshine-garden" aria-label="Live sunshine garden" data-motion-count="0">
     <div class="camera-badge" id="camera-source">LOCAL CAMERA · CONNECTING</div>
     <section class="camera-preview" data-preview-state="off" aria-label="Camera framing and movement feedback">
       <div class="preview-heading"><b id="preview-title">Your camera view</b><span id="preview-state">Off</span></div>
       <div class="preview-viewport">
         <img id="camera-preview-image" alt="Live local camera view with shoulder, arm, and wrist markers" hidden>
-        <div class="preview-placeholder" id="preview-placeholder"><b id="preview-placeholder-title">Camera is off</b><span id="preview-placeholder-detail">Start or resume to see your shoulders and both hands.</span></div>
+      <div class="preview-placeholder" id="preview-placeholder"><b id="preview-placeholder-title">Camera is off</b><span id="preview-placeholder-detail">${activity?'Start or resume to move your way.':'Start or resume to see your shoulders and both hands.'}</span></div>
       </div>
-      <div class="preview-confidence"><span>Landmark confidence <b id="preview-confidence">—</b></span><meter id="preview-confidence-meter" min="0" max="1" value="0" aria-label="Landmark confidence" aria-valuetext="Not available"></meter></div>
+      <div class="preview-confidence"${activity?' hidden style="display:none"':''}><span>Landmark confidence <b id="preview-confidence">—</b></span><meter id="preview-confidence-meter" min="0" max="1" value="0" aria-label="Landmark confidence" aria-valuetext="Not available"></meter></div>
       <div class="preview-visibility" aria-label="Visible landmarks">${[['leftShoulder','L shoulder'],['rightShoulder','R shoulder'],['leftWrist','L wrist'],['rightWrist','R wrist']].map(([key,label])=>`<span data-landmark="${key}">${label}<b>—</b></span>`).join('')}</div>
       <p id="preview-movement" class="preview-movement" role="status">Preview off · no camera image</p>
     </section>
@@ -52,10 +62,10 @@ export function sunshineMarkup(){
       </svg>
       <span class="sunshine-pop" id="sunshine-pop"></span>
     </div>
-    <div class="sunshine-details"><div class="sunshine-caption"><span class="sunshine-count"><b id="sunshine-count">0</b><span> / 6 rays</span></span><span id="sunshine-next">Left hand next</span></div>
+    <div class="sunshine-details"><div class="sunshine-caption"><span class="sunshine-count"><b id="sunshine-count">0</b><span> / 6 rays</span></span><span id="sunshine-next">${activity?'Every little move counts':'Left hand next'}</span></div>
     <div class="signal-status" id="motion-status" role="status" aria-live="polite">Connecting to your local camera…</div></div>
     </div>
-    <p class="camera-local-note">Unmirrored · L/R are your left/right.<br>Frames stay on this Mac. Nothing is recorded.</p>
+    <p class="camera-local-note">${activity?'Move comfortably. Either side or both together.':'Unmirrored · L/R are your left/right.'}<br>Frames stay on this Mac. Nothing is recorded.</p>
   </aside>`;
 }
 
@@ -79,6 +89,7 @@ export function updateCameraPreview({preview,reason='off',expected='left',source
   const image=panel.querySelector('#camera-preview-image');
   const placeholder=panel.querySelector('#preview-placeholder');
   const video=(preview?.source||source)==='video';
+  const activity=expected==='any'||preview?.policy==='activity';
   const live=preview?.available===true&&['camera','video'].includes(preview.source);
   const state=live?'live':preview?.source==='synthetic'?'synthetic':preview?.status||reason;
   panel.dataset.previewState=state;
@@ -94,7 +105,7 @@ export function updateCameraPreview({preview,reason='off',expected='left',source
     image.height=preview.height;
   }else{
     image.removeAttribute('src');
-    const [title,detail]=video?[state==='complete'?'Replay complete':state==='paused'?'Video replay paused':'Video replay off','No camera is active. Replay frames are local.']:previewOffMessages[state]||previewOffMessages.unavailable;
+    const [title,detail]=video?[state==='complete'?'Replay complete':state==='paused'?'Video replay paused':'Video replay off','No camera is active. Replay frames are local.']:activity&&state==='waiting'?['Opening your local view…','Keep a hand or your upper body clearly in view.']:activity&&state==='off'?['Camera is off','Start or resume to move your way.']:previewOffMessages[state]||previewOffMessages.unavailable;
     panel.querySelector('#preview-placeholder-title').textContent=title;
     panel.querySelector('#preview-placeholder-detail').textContent=detail;
   }
@@ -109,7 +120,11 @@ export function updateCameraPreview({preview,reason='off',expected='left',source
     node.querySelector('b').textContent=live?(visible?'Visible':'Not clear'):'—';
   });
   let movement='Preview off · no camera image';
-  if(live&&video){
+  if(live&&activity){
+    movement=preview.status==='no-person'?'Keep one person comfortably in view.':
+      preview.status==='low-confidence'?'Keep a hand or your upper body clearly in view.':
+      video?'Local video activity · simulated rays · no camera.':'Move your way—wave, reach, stretch or sway. Small movements count.';
+  }else if(live&&video){
     movement=['tracking','neutral','hold'].includes(preview.status)?
       'Video frame visibility · follow the current replay calibration cue.':
       `Video replay · ${videoMessages[preview.status]||'Local file frames only.'}`;
@@ -132,10 +147,12 @@ export function updateCameraPreview({preview,reason='off',expected='left',source
 function currentPacket(motion,packet,revision){
   return packet?.runtime?.verified===true&&validMotionRuntime(packet.runtime)&&packet.active===true&&
     (!motion.roundId||packet.roundId===motion.roundId)&&
-    (revision===undefined||packet.revision===revision);
+    (revision===undefined||packet.revision===revision)&&
+    (packet.policy??'strict')===(motion.policy??'strict');
 }
 
 function packetFeedback(motion,packet,revision){
+  if(motion.policy==='activity')return null;
   if(!['camera','video','synthetic'].includes(packet?.source)||!currentPacket(motion,packet,revision))return null;
   if(!Object.hasOwn(packet.metrics||{},'calibration'))return null;
   const feedback=calibrationFeedback(packet.metrics.calibration,{expected:motion.expected,
@@ -150,12 +167,18 @@ function packetFeedback(motion,packet,revision){
 
 function sunshineCue({motion,packet,paused,disconnected,revision}){
   const video=packet?.source==='video';
+  const activity=motion.policy==='activity';
   if(video&&motion.completed)return 'Replay gathered six simulated rays. No camera was used.';
   if(video&&paused)return 'Video replay paused. No camera is active.';
   if(video&&disconnected)return 'Waiting for the local video replay connection.';
   if(motion.completed)return 'You caught the sunshine. Take a little breather.';
-  if(paused)return 'Camera paused. Rest both arms.';
-  if(disconnected)return 'Rest both arms while the camera reconnects.';
+  if(paused)return activity?'Paused. Rest whenever you like.':'Camera paused. Rest both arms.';
+  if(disconnected)return activity?'Take your time while the camera reconnects.':'Rest both arms while the camera reconnects.';
+  if(activity){
+    if(!currentPacket(motion,packet,revision))return video?'Waiting for local video activity. No camera is active.':'Move your way—wave, reach, stretch or sway. Small movements count.';
+    return video?'Local video activity helps gather simulated rays. No camera is active.':
+      activityMessages[packet.status]||'Move your way—wave, reach, stretch or sway. Small movements count.';
+  }
   const feedback=packetFeedback(motion,packet,revision);
   if(feedback)return feedback.cue;
   // A visible, confident pose has not necessarily rested long enough to arm.
@@ -175,7 +198,8 @@ export function updateSunshine({motion,packet,paused,disconnected=false,notice='
   garden.dataset.motionCount=String(motion.count);
   garden.style.setProperty('--growth',String(motion.count/6));
   document.querySelector('#sunshine-count').textContent=motion.count;
-  document.querySelector('#sunshine-next').textContent=motion.completed?'Your sunshine is gathered!':`${motion.expected==='left'?'Left':'Right'} hand next`;
+  const activity=motion.policy==='activity';
+  document.querySelector('#sunshine-next').textContent=motion.completed?'Your sunshine is gathered!':activity?'Every little move counts':`${motion.expected==='left'?'Left':'Right'} hand next`;
   garden.querySelectorAll('[data-ray]').forEach((ray,i)=>ray.classList.toggle('collected',i<motion.count));
   const synthetic=packet?.source==='synthetic',video=packet?.source==='video';
   const badge=document.querySelector('#camera-source');
@@ -184,7 +208,9 @@ export function updateSunshine({motion,packet,paused,disconnected=false,notice='
   if(inputLabel)inputLabel.textContent=video?' · VIDEO REPLAY · NO CAMERA':synthetic?' · SYNTHETIC TEST · NO CAMERA':' · CAMERA';
   garden.dataset.motionSource=packet?.source||'waiting';
   let status=paused?'Camera input paused. Rest whenever you like.':motion.completed?'Six rays! Enjoy your garden until the timer ends.':messages[disconnected?'disconnected':packet?.status]||messages.waiting;
+  if(activity&&!paused&&!motion.completed&&!disconnected)status=activityMessages[packet?.status]||activityMessages.waiting;
   if(video)status=motion.completed?'Six simulated rays from this video. Garden progress is unchanged.':videoMessages[paused?'paused':disconnected?'disconnected':packet?.status]||videoMessages.waiting;
+  if(video&&activity&&!paused&&!disconnected&&!motion.completed)status='Local video activity · simulated rays · garden progress is unchanged.';
   if(packet?.runtime?.verified===false){
     const runtimeLabel=packet.runtime.engine==='litert'?'Local inference runtime':'OpenCV 5 runtime';
     status=video?`${runtimeLabel} is not verified. Video replay progress is unavailable.`:`${runtimeLabel} is not verified. Camera progress is unavailable; use manual play.`;

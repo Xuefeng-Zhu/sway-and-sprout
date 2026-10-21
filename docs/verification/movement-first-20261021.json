@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-10-21T08:20:20.909757+00:00",
+  "baseCommit": "45ced16",
+  "branch": "work/activity-progression",
+  "outcome": "functional-verification-passed; native runtime performance remains unverified",
+  "scope": "Movement-first policy with retained strict diagnostics. Synthetic functional evidence; no natural-video accuracy or hardware claim.",
+  "policy": {
+    "defaultGameplay": "activity",
+    "legacySixFieldRequests": "strict",
+    "explicitPolicies": [
+      "strict",
+      "activity"
+    ],
+    "event": "activity",
+    "expected": "any",
+    "featureConfidenceMinimum": 0.65,
+    "maxFrameGapMs": 300,
+    "movementWindowMs": 1500,
+    "movementPathThresholdBodyWidths": 0.2,
+    "noiseDeadbandBodyWidths": 0.025,
+    "minimumMovementSpanMs": 250,
+    "minimumMovementSamples": 3,
+    "scoringCooldownMs": 1000,
+    "rayCap": 6,
+    "controlLeaseMs": 1500,
+    "eventTtlMs": 1500
+  },
+  "checks": {
+    "node": {
+      "passed": true,
+      "tests": 97,
+      "command": "npm test"
+    },
+    "python": {
+      "testsRun": 168,
+      "errors": 0,
+      "failures": 0,
+      "passed": true,
+      "scope": "Existing pinned models on synthetic/blank tensors, mocks and loopback only; external network denied"
+    },
+    "productionBuild": {
+      "passed": true,
+      "command": "npm run build -- --config <existing-canonical-checkout>/vite.config.js --configLoader native",
+      "dependencies": "Existing pinned canonical node_modules, no installation; development-only proxy config reused"
+    },
+    "activityParity": {
+      "passed": true,
+      "scope": "Synthetic functional parity only; no inference or recognition accuracy claim",
+      "cases": {
+        "small-left": {
+          "frames": 101,
+          "eventTimesMs": [
+            500,
+            1600,
+            2800,
+            4000
+          ],
+          "jsRays": 4
+        },
+        "small-right": {
+          "frames": 101,
+          "eventTimesMs": [
+            500,
+            1600,
+            2800,
+            4000
+          ],
+          "jsRays": 4
+        },
+        "both-arms": {
+          "frames": 101,
+          "eventTimesMs": [
+            500,
+            1600,
+            2800,
+            4000
+          ],
+          "jsRays": 4
+        },
+        "torso-sway": {
+          "frames": 101,
+          "eventTimesMs": [
+            500,
+            1600,
+            2800,
+            4000
+          ],
+          "jsRays": 4
+        },
+        "static": {
+          "frames": 101,
+          "eventTimesMs": [],
+          "jsRays": 0
+        },
+        "jitter": {
+          "frames": 101,
+          "eventTimesMs": [],
+          "jsRays": 0
+        },
+        "camera-translation": {
+          "frames": 101,
+          "eventTimesMs": [],
+          "jsRays": 0
+        },
+        "missing-unrelated": {
+          "frames": 101,
+          "eventTimesMs": [
+            500,
+            1600,
+            2800,
+            4000
+          ],
+          "jsRays": 4
+        },
+        "missing-all": {
+          "frames": 101,
+          "eventTimesMs": [],
+          "jsRays": 0
+        },
+        "jump": {
+          "frames": 101,
+          "eventTimesMs": [],
+          "jsRays": 0
+        },
+        "gap-reset": {
+          "frames": 101,
+          "eventTimesMs": [],
+          "jsRays": 0
+        }
+      },
+      "duplicateEventsCounted": false,
+      "boundedRays": 6,
+      "cameraUsed": false,
+      "publicMediaProcessed": false
+    },
+    "nativeSource": {
+      "passed": true,
+      "scope": "Compile-only Android sources and synthetic/fake-clock host Java checks",
+      "sourceCount": 19,
+      "aarPins": [
+        {
+          "file": "litert-1.4.2.aar",
+          "sha256": "9b02cdf9db0a698b341b59e75c54ab8221d6304577cc43830d01024caf1fca74",
+          "bytes": 8305790
+        },
+        {
+          "file": "litert-api-1.4.2.aar",
+          "sha256": "66c2ba8086bd5cbf89bec2bd81c3de6c1a852312829cd55bc30c9dd26ffa357c",
+          "bytes": 23589
+        },
+        {
+          "file": "tensorflow-lite-support-api-0.4.4.aar",
+          "sha256": "072481f7f3822074996a06afb1d784efd8287319b38e3e48572bb299079298e4",
+          "bytes": 85482
+        }
+      ],
+      "hostChecks": {
+        "NativePoseMathTest": "NativePoseMathTest: 381 assertions passed (synthetic host Java only)",
+        "MoveNetCropTest": "MoveNetCropTest: 350 assertions passed (official scalar reference only)",
+        "MotionQueryTest": "MotionQueryTest: 32 assertions passed (synthetic, no camera/network)",
+        "ReplayFrameGuardTest": "ReplayFrameGuardTest: 41 assertions passed (fake clock; no emulator)"
+      },
+      "apkBuilt": false,
+      "emulatorUsed": false,
+      "cameraUsed": false,
+      "mediaProcessed": false
+    },
+    "progressPreservation": {
+      "passed": true,
+      "checksRun": 90,
+      "checksPassed": 90,
+      "simulatedScenarios": 48,
+      "modelReferenceChecks": 12,
+      "cameraManualScenarios": 30,
+      "sourceHashes": {
+        "src/model.js": "31c4b4f3296f9bbc56ba6e8ba7a127759d92d263d88a96e603044c78c31d50f9",
+        "src/main.js": "b7ca84c72d1726c0500211eea70b6560c68013efa2a7ef9e8118dd2615a9fe01"
+      },
+      "cameraOpened": false,
+      "servicesOpened": false,
+      "realAppStorageAccessed": false,
+      "actualProjectFilesWritten": false,
+      "testMethod": "Actual main module in a VM; actual model and reducer; in-memory DOM/storage; inert clients/timers",
+      "failures": [],
+      "rawResultSha256": "8870b7f3b06a97d95bc721912bc2903dc83a16a09e78623af5021555c161923b"
+    },
+    "mockedBrowser": {
+      "passed": true,
+      "stats": {
+        "startTime": "2026-10-21T07:14:37.096Z",
+        "duration": 9047.586000000001,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "rawResultSha256": "3ece65aa2d517c68367f15e5e0849df16417111b49bbdce09f7ebd9726517f94",
+      "cases": [
+        "activity six-ray flow with no anatomical cues and synthetic progress isolation",
+        "retained strict calibration diagnostic flow"
+      ],
+      "routes": "All motion and preview requests mocked; OS external networking denied",
+      "cameraUsed": false
+    },
+    "independentReview": {
+      "blockingFindings": 0,
+      "reviewed": [
+        "Policy binding and strict compatibility",
+        "Per-feature confidence, reset and event limits",
+        "ACK, freshness and pause guards",
+        "Early/final frame guard and bitmap recycling",
+        "Original-round attribution of discarded frame statistics"
+      ]
+    }
+  },
+  "issuesAndResolution": [
+    {
+      "issue": "Visible historical replay only accepted 8/188 frames and took 236.365 wall seconds for 120 active-animation seconds",
+      "evidence": "Historical result preserved in dated task/windowed-replay-20261021/demo-result.json; matching APK and first eight landmark rows; 28 observed packet gaps above the 1.5-second lease",
+      "resolution": "Added primitive timing/control-gap diagnostics and deterministic safety checks. Root cause of broad slowdown remains unproven; no new emulator run."
+    },
+    {
+      "issue": "An epoch/lease-invalid frame still incurred inference after decoding",
+      "resolution": "Check unchanged frame guard immediately after decode and retain final guard. Stale work is recycled and counted as skippedStaleInferences. This avoids wasted inference, without extending lease or claiming throughput recovery."
+    },
+    {
+      "issue": "Old in-flight work could update replacement-round diagnostic counters",
+      "resolution": "Capture RunStats with the frame attempt and attribute discarded work to its original round."
+    },
+    {
+      "issue": "Isolated worktree had no ignored dependencies/models, and initial full Python run could not bind loopback inside the filesystem sandbox",
+      "resolution": "Reuse explicit existing dependency/cache paths. Python executes modified worktree code with canonical pinned model resources under the existing OS external-network deny policy permitting loopback. Final full suite passes; no installs/downloads."
+    },
+    {
+      "issue": "Some delegated tasks hit model-capacity errors and work was paused for SayGo QA",
+      "resolution": "Inspected and preserved partial work, completed with available agents/root, stopped review/test activity for requested pause, resumed only on parent authorization."
+    },
+    {
+      "issue": "Generated synthetic CSV used CRLF, which the staged whitespace check flagged",
+      "resolution": "Normalized line endings to LF without changing numeric data, then reran the cross-language fixture verification and staged whitespace check."
+    }
+  ],
+  "limits": [
+    "Thresholds are provisional gameplay settings, not calibrated recognition accuracy.",
+    "Translation/jitter fixtures do not establish arbitrary camera-rotation or real-world noise robustness.",
+    "No Pexels or other natural footage downloaded or processed for this change. No claim that historical footage is newly cleared.",
+    "No APK packaged/installed or emulator/device execution of this change. Android checks are source compilation and host tests only.",
+    "Physical Fire TV unavailable; no hardware performance, camera recognition or deployment claim.",
+    "The historical failed visible replay remains failed; new movement policy does not repair missing-frame evidence."
+  ],
+  "boundaries": {
+    "physicalCameraUsed": false,
+    "newSoftwareInstalled": false,
+    "newModelsOrRuntimeBuilds": false,
+    "externalNetworkCalls": false,
+    "publicMediaProcessed": false,
+    "paidCalls": false,
+    "uploadsPushDeploy": false,
+    "sayGoTouched": false,
+    "sharedPort8000Touched": false
+  },
+  "sourceSha256": {
+    "android/app/src/debug/java/com/togethermove/tv/NativeMoveNet.java": "53307323a8963290d79988e9eb41de502b7186dabad81bff4ae9426e38ebb8d0",
+    "android/app/src/debug/java/com/togethermove/tv/NativeVideoReplay.java": "b51e2ef87e810f447734c73b06647083daee1f4a9ebb6c8b4cbacb4a44064d4b",
+    "android/app/src/main/java/com/togethermove/tv/ActivityMachine.java": "39fd1a84f43503e8eecc9993482a60a128e471e670a4fe4a9179c94abaedf8f9",
+    "android/app/src/main/java/com/togethermove/tv/MotionQuery.java": "33558a16df1eceeecc4e8095400b8070032bf0c942870a3a42c418e7cedd7901",
+    "android/app/src/main/java/com/togethermove/tv/PoseGestureMachine.java": "8d58f6d29795f69c03e025e6c44dd8fb58004a41872b0d95352b092db632e658",
+    "android/app/src/main/java/com/togethermove/tv/ReplayFrameGuard.java": "f8616e1d95fdc5829f75771ea3cf288de93acd7f297e709ef694e948aef0586b",
+    "android/tests/com/togethermove/tv/ActivityParityTest.java": "920228265b6034871c51633f44cf66d528c629f14a26edc5188f7358733a11fe",
+    "android/tests/com/togethermove/tv/MotionQueryTest.java": "6efbd49bcd16e3e52460c3949a3d38b678a5b3e585de632eeff3068acac8b5c5",
+    "android/tests/com/togethermove/tv/ReplayFrameGuardTest.java": "ed4cd1313d840a060ae18aaf793c6dea78c95ea91ce493eaebbc1f0960c53c87",
+    "scripts/verify-activity-parity.py": "aab96a127facf413857b422e75b07aca4e56e1d6de5ce25c86a4602dd388e166",
+    "scripts/verify-native-source.py": "1d4aaa7f87eef1683dedd94c0bfdfd602ec877034c569e86a2b1aa35757ecae6",
+    "scripts/verify-simulated-progress-preservation.mjs": "0b3acabf39696820f7a376b6ca63d79b2d6f80ae821b8243c824652c5fb1cfde",
+    "sidecar/activity.py": "5daefcd870dc9e5b7f5e39cf92d9220fa0096d7ba78fb72dad71a769d74dbe86",
+    "sidecar/inference.py": "26139ebc1eb19f6c7890801dba7eefcf7aa60bfa7485910fcfa90135949e31be",
+    "sidecar/mediapipe_full.py": "27e799b9d2058c6382fe690040973f40ee0ae8df3444a73118b8cbacfbefeb12",
+    "sidecar/motion.py": "e8d8381c18de179bb5e610e509cf15c849060f9f62e24c2ae23e23d54df0d89a",
+    "sidecar/run.py": "4bc8f2605b86b1ce439ddbbab5aaa341dc25b7d882a0d686ed1af3784956bdbc",
+    "sidecar/service.py": "85c2af8dab664e927f6a6d2a298a72d001f603227afe34d7a13f3020e66ba626",
+    "sidecar/test_activity.py": "41e742efe117d09d2fb0fbcf6234b15753ec8dc64a4a9eb338c6dccfff38d16b",
+    "sidecar/test_activity_service.py": "001f46a44e2182b1a79ed69a23a0c7c3b86f00cc4dee745ebfbebd9eb2f5dbb4",
+    "sidecar/test_pose_contract.py": "6b5c0d3f3140001a60fe6104e9dafeebde52c1dcc76261a71b0fab9656b4a086",
+    "src/main.js": "b7ca84c72d1726c0500211eea70b6560c68013efa2a7ef9e8118dd2615a9fe01",
+    "src/motion-view.js": "e9b004e2852eccd1514b3edc61ef3b3df80a414ee39f067e64db2172426cc3eb",
+    "src/motion.js": "5b26acca0f82ce9c2ba98185463229b973bd99e38bef611685ccc3b830466bb7",
+    "src/preview.js": "b901ad68cdac78893d4d72ef14969887835cc7a4105af8ddf729b05f2c0e6993",
+    "src/round-clock.js": "539eb3d00eae58fd97ec35bbeca2874267005102584ef8e0cc1c1bec7113ff26",
+    "tests/browser/motion.spec.js": "0cf5ecfb99ba69c04f1811090a46931ed25dc07e852a2e7b64b3a5888efe18f6",
+    "tests/fixtures/activity-traces.csv": "904f6785f315a5cfbf715896865d662059afbece183fd8512f64029342646078",
+    "tests/motion-view.test.js": "8b53e284f688cec6623af8f6b61b7b4b51600108428f5513c77c1c71c84613f9",
+    "tests/motion.test.js": "e301be43f0401c3b352d5269c331406d52c027eb86b41b2fa5732fc1f4591e84",
+    "tests/preview.test.js": "cc1196f6ec080f0f289287f73a12d751a4e6f4d2968d3cd31a36b327f08fd4eb",
+    "tests/round-clock.test.js": "7d55e1470d4e33b19bf2468d20df39e48ab9ef56b4de9af5572f2020a4e2c0a6",
+    "tests/video-source.test.js": "59091a6ff3914ad2b92b8e29d93efd6f11646fe1203b6252ce3143859cfdb670"
+  }
+}

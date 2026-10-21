@@ -14,6 +14,18 @@ const preview=(overrides={})=>({...context(),source:'camera',available:true,
 const response=value=>new Response(JSON.stringify(value));
 const deferred=()=>{let resolve;const promise=new Promise(done=>{resolve=done;});return {promise,resolve};};
 
+test('activity preview accepts any movement feature only in the matching activity context',async()=>{
+  const current={...context(),policy:'activity'};
+  for(const [fields,valid] of [[{policy:'activity',expected:'any'},true],
+    [{policy:'strict',expected:'left'},false],[{expected:'left'},false]]){
+    let images=0;
+    const client=createPreviewClient({getContext:()=>current,onPreview:()=>images++,
+      fetchImpl:async()=>response(preview(fields))});
+    assert.equal((await client.pollOnce())!==null,valid);
+    assert.equal(images,valid?1:0);client.stop();
+  }
+});
+
 test('preview uses one fixed local request with the semantic context and no cache',async()=>{
   const pending=deferred();let received,calls=0,options;
   const client=createPreviewClient({getContext:context,onPreview:value=>{received=value;},

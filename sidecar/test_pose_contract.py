@@ -63,6 +63,14 @@ class PoseContractOfflineTests(unittest.TestCase):
                     self.np.testing.assert_allclose((point.x, point.y), coordinates[index], atol=.0001)
                 self.assertAlmostEqual(observation.confidence, .97, places=6)
 
+    def test_optional_hip_points_retain_image_coordinates_for_activity_features(self):
+        coordinates = {**self.coordinates(), 23:(365, 390), 24:(275, 390)}
+        for full_body in ((320,100), (420,200)):
+            observation, _ = self.decode(coordinates, full_body)
+            for point, index in ((observation.left_hip,23), (observation.right_hip,24)):
+                self.np.testing.assert_allclose((point.x,point.y), coordinates[index], atol=.0001)
+                self.assertGreaterEqual(point.confidence, .65)
+
     def test_visibility_and_presence_sigmoid_are_not_coordinates_or_world_output(self):
         observation, _ = self.decode(self.coordinates(), visibility=.91, presence=.73)
         for point in (observation.left_shoulder, observation.right_shoulder,

@@ -12,6 +12,7 @@ const project=path.resolve(process.argv[2]||fileURLToPath(new URL('../',import.m
 const output=path.resolve(process.argv[3]||'simulated-progress-preservation-result.json');
 const model=await import(pathToFileURL(path.join(project,'src/model.js')).href);
 const {createMotionState,acceptMotionEvent}=await import(pathToFileURL(path.join(project,'src/motion.js')).href);
+const {roundTickDelta}=await import(pathToFileURL(path.join(project,'src/round-clock.js')).href);
 const main=readFileSync(path.join(project,'src/main.js'),'utf8');
 const seeds=[
   {name:'existing-other',completed:['wake'],sessions:3},
@@ -31,7 +32,7 @@ function harness(seed,{manual=false}={}){
   let stored=raw,callbacks,id=0;
   const writes=[],nodes={};
   const root={innerHTML:'',querySelectorAll:()=>[],querySelector:()=>({focus(){}})};
-  const sandbox={...model,createMotionState,acceptMotionEvent,
+  const sandbox={...model,createMotionState,acceptMotionEvent,roundTickDelta,URLSearchParams,location:{search:''},
     createMotionClient:options=>{callbacks=options;return {start(){},stop(){}};},
     createPreviewClient:()=>({start(){},stop(){}}),sunshineMarkup:()=>'',
     updateSunshine(){},updateCameraPreview(){},
@@ -59,10 +60,10 @@ function harness(seed,{manual=false}={}){
       callbacks.onPacket({protocol:1,source,streamId:'offline-fixture-stream',
         runtime:{opencv:'5.0.0-fixture',verified:true,source},
         clientId:current.clientId,roundId:current.roundId,revision:current.revision,
-        active:true,mode:'seated',status:'tracking',expected:rays===6?'left':'left',
+        active:true,mode:'seated',policy:current.motion.policy,status:'tracking',expected:current.motion.expected,
         heldMs:0,seq:rays,metrics:{armed:true},
         events:Array.from({length:rays},(_,index)=>({seq:index+1,roundId:current.roundId,
-          gesture:index%2?'right-raise':'left-raise',confidence:1,ageMs:0}))});
+          gesture:current.motion.policy==='activity'?'activity':index%2?'right-raise':'left-raise',confidence:1,ageMs:0}))});
     }};
 }
 

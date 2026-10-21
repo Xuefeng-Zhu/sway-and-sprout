@@ -40,9 +40,9 @@ async function mockedSidecar(page){
     if(mock.drop){await route.abort('failed');return;}
     const events=mock.events.splice(0).map(event=>({roundId:context.roundId,...event}));
     const packet={protocol:1,clientId:context.clientId,roundId:context.roundId,
-      revision:Number(context.revision),active:context.active==='1',mode:context.mode,
+      revision:Number(context.revision),active:context.active==='1',mode:context.mode,policy:context.policy||'strict',
       runtime:{opencv:mock.version,verified:mock.verified,source:mock.source},
-      source:mock.source,streamId:mock.streamId,status:mock.status,expected:'left',heldMs:0,seq:mock.seq,
+      source:mock.source,streamId:mock.streamId,status:mock.status,expected:context.policy==='activity'?'any':'left',heldMs:0,seq:mock.seq,
       events,metrics:{fps:0,armed:mock.armed}};
     if(mock.calibration!==null)packet.metrics.calibration=mock.calibration;
     if(mock.invalid)packet.protocol=999;
@@ -55,15 +55,15 @@ async function mockedSidecar(page){
     mock.previewRequests.push(context);
     await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({
       source:mock.source,available:false,clientId:context.clientId,roundId:context.roundId,
-      revision:Number(context.revision),active:context.active==='1',mode:context.mode,
+      revision:Number(context.revision),active:context.active==='1',mode:context.mode,policy:context.policy||'strict',
       status:mock.source==='synthetic'?'synthetic':context.active==='1'?'waiting':'paused',
     })});
   });
   return mock;
 }
 
-async function cameraRound(page,mock,{standing=false}={}){
-  await page.goto('/');
+async function cameraRound(page,mock,{standing=false,policy='strict'}={}){
+  await page.goto(`/?policy=${policy}`);
   await expect(page).toHaveTitle('Sway & Sprout — Grow together');
   await page.getByRole('button',{name:/02 Catch/}).click();
   if(standing){await page.locator('[data-action="mode:standing"]').click();await expect(page.locator('[data-action="mode:standing"]')).toHaveClass(/selected/);}
@@ -77,6 +77,25 @@ async function cameraRound(page,mock,{standing=false}={}){
 }
 
 async function screenshot(page,name){await page.screenshot({path:`${evidence}${name}.png`,fullPage:true});}
+
+test('activity play gathers bounded rays without an anatomical cue and preserves synthetic progress',async({page})=>{
+  const mock=await mockedSidecar(page);mock.status='tracking';
+  await cameraRound(page,mock,{policy:'activity'});
+  const savedBefore=await page.evaluate(()=>localStorage.getItem('togethermove.v1'));
+  await expect(page.locator('#camera-cue')).toContainText('Small movements count');
+  await expect(page.locator('.preview-confidence')).toBeHidden();
+  await expect(page.locator('#sunshine-next')).toHaveText('Every little move counts');
+  await expect(page.locator('#camera-cue')).not.toContainText(/left hand|right hand|Hold your|Rest both/);
+  for(let count=1;count<=6;count++){
+    mock.raise('activity');
+    await expect(page.locator('#sunshine-count')).toHaveText(String(count));
+  }
+  mock.events.push({seq:mock.seq,gesture:'activity',confidence:.99,ageMs:0});
+  await expect(page.locator('#sunshine-count')).toHaveText('6');
+  await expect.poll(()=>mock.requests.at(-1)?.active).toBe('0');
+  expect(mock.requests.every(request=>request.policy==='activity')).toBe(true);
+  expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
+});
 
 test('calibration explains visibility and rest before authorizing an arm raise',async({page})=>{
   // Camera-labelled JSON only; event and preview routes are both mocked.

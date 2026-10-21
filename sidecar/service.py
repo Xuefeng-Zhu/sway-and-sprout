@@ -21,6 +21,7 @@ MAX_RESPONSE_BYTES = 220 * 1024
 PREVIEW_VISIBILITY = {"leftShoulder", "rightShoulder", "leftWrist", "rightWrist"}
 UUID = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$")
 FIELDS = {"clientId", "roundId", "revision", "active", "mode", "after"}
+POLICIES = ("strict", "activity")
 
 
 class ProtocolError(ValueError):
@@ -37,11 +38,12 @@ def parse_control(target):
         raise ProtocolError("Unknown endpoint", 404)
     try:
         query = parse_qs(parsed.query, strict_parsing=True, keep_blank_values=True,
-                         max_num_fields=6)
+                         max_num_fields=7)
     except ValueError as exc:
         raise ProtocolError("Malformed query") from exc
-    if set(query) != FIELDS or any(len(values) != 1 for values in query.values()):
-        raise ProtocolError("Exactly six unique control fields required")
+    if (set(query) not in (FIELDS, FIELDS | {"policy"})
+            or any(len(values) != 1 for values in query.values())):
+        raise ProtocolError("Six unique control fields and an optional policy required")
     item = {key: value[0] for key, value in query.items()}
     if not UUID.fullmatch(item["clientId"]) or not UUID.fullmatch(item["roundId"]):
         raise ProtocolError("Canonical lowercase UUIDs required")
@@ -53,6 +55,8 @@ def parse_control(target):
             raise ProtocolError("Unsafe integer")
     if item["active"] not in ("0", "1") or item["mode"] not in ("seated", "standing"):
         raise ProtocolError("Invalid activity or mode")
+    if item.get("policy", "strict") not in POLICIES:
+        raise ProtocolError("Unknown motion policy")
     item["active"] = item["active"] == "1"
     return item
 
@@ -67,6 +71,7 @@ class MotionService:
         self.clock = clock or (lambda: time.monotonic() * 1000)
         self.lock = threading.RLock()
         self.machine = GestureMachine()
+        self.policy = "strict"
         self.events = deque(maxlen=64)
         self.history = deque(maxlen=64)  # Semantic ACK ledger only; never landmarks or frames.
         self.seq = 0
@@ -96,7 +101,8 @@ class MotionService:
         self._capture_epoch += 1
         # Only gestures acknowledged by the game survive a transport reset.
         # A queued event may have been discarded by a pause/revision race.
-        self.machine.expected = self.ack_expected
+        if self.policy == "strict":
+            self.machine.expected = self.ack_expected
         self.machine.reset_temporal()
         self.events.clear()
         self.latest_preview = None
@@ -104,12 +110,15 @@ class MotionService:
     def _acknowledge(self, after):
         if after < self.ack_seq or after > self.seq:
             return  # Old request, or first request following a new sidecar stream.
-        for event in self.history:
-            if self.ack_seq < event["seq"] <= after:
-                self.ack_expected = "right" if event["gesture"] == "left-raise" else "left"
+        if self.policy == "strict":
+            for event in self.history:
+                if self.ack_seq < event["seq"] <= after:
+                    self.ack_expected = "right" if event["gesture"] == "left-raise" else "left"
         while self.events and self.events[0]["seq"] <= after:
             self.events.popleft()
         self.ack_seq = after
+        if self.policy == "activity":
+            return  # Activity credit has no anatomical ordering to reconcile.
         expected = self.ack_expected
         for event in self.events:
             if event["gesture"] != expected + "-raise":
@@ -122,13 +131,37 @@ class MotionService:
 
     def _expire_pending(self, now):
         if self.events and now - self.events[0]["at"] > EVENT_TTL_MS:
-            # Later pending events depend on this alternating sequence too.
+            # Expired credit must not survive a transport reset in either policy.
             self._reset_temporal()
 
+    def _new_round(self, policy):
+        if policy != self.policy:
+            if policy == "activity":
+                from activity import ActivityMachine
+                self.machine = ActivityMachine()
+            else:
+                self.machine = GestureMachine()
+            self.policy = policy
+        self.machine.new_round()
+        self.latest_preview = None
+        self.events.clear()
+        self.history.clear()
+        self.ack_expected, self.ack_seq = self.machine.expected, 0
+
+    @staticmethod
+    def _policy_control(control):
+        policy = control.get("policy", "strict")
+        if policy not in POLICIES:
+            raise ProtocolError("Unknown motion policy")
+        return dict(control, policy=policy)
+
     def poll(self, control):
+        control = self._policy_control(control)
         now = self.clock()
         with self.lock:
             old = self.context
+            if old and old["roundId"] == control["roundId"] and old["policy"] != control["policy"]:
+                raise ProtocolError("Changing motion policy requires a new round", 409)
             if control["clientId"] in self.retired_clients:
                 raise ProtocolError("Client retired; create a new client ID", 409)
             if old and old["clientId"] != control["clientId"]:
@@ -141,26 +174,18 @@ class MotionService:
             if old:
                 if control["revision"] < old["revision"]:
                     raise ProtocolError("Stale control revision", 409)
-                changed = any(control[k] != old[k] for k in ("roundId", "active", "mode"))
+                changed = any(control[k] != old[k] for k in ("roundId", "active", "mode", "policy"))
                 if control["revision"] == old["revision"] and changed:
                     raise ProtocolError("Changed context requires a newer revision", 409)
                 if control["roundId"] != old["roundId"]:
-                    self.latest_preview = None
-                    self.machine.new_round()
-                    self.events.clear()
-                    self.history.clear()
-                    self.ack_expected, self.ack_seq = "left", 0
+                    self._new_round(control["policy"])
                 else:
                     # ACK before clearing a previous control epoch's pending data.
                     self._acknowledge(control["after"])
                     if control["revision"] != old["revision"] or now - self.last_poll > LEASE_MS:
                         self._reset_temporal()
             else:
-                self.latest_preview = None
-                self.machine.new_round()
-                self.events.clear()
-                self.history.clear()
-                self.ack_expected, self.ack_seq = "left", 0
+                self._new_round(control["policy"])
             self.context = {k: v for k, v in control.items() if k != "after"}
             self.last_poll = now
             if not control["active"]:
@@ -208,10 +233,11 @@ class MotionService:
 
     def preview(self, control):
         """Read without polling, acknowledging, extending leases, or opening capture."""
+        control = self._policy_control(control)
         with self.lock:
             now = self.clock()
             response = {"source": self.source, "available": False,
-                        **{key: control[key] for key in ("clientId", "roundId", "revision", "active", "mode")},
+                        **{key: control[key] for key in ("clientId", "roundId", "revision", "active", "mode", "policy")},
                         "expected": self.machine.expected, "heldMs": self.machine.held_ms}
             if self.source not in ("camera", "video"):
                 return dict(response, status="synthetic")
@@ -222,7 +248,7 @@ class MotionService:
             if not control["active"]:
                 return dict(response, status="paused")
             if any(control[key] != self.context[key]
-                   for key in ("clientId", "roundId", "revision", "active", "mode")):
+                   for key in ("clientId", "roundId", "revision", "active", "mode", "policy")):
                 return dict(response, status="unauthorized")
             image = self.latest_preview
             if image is None:

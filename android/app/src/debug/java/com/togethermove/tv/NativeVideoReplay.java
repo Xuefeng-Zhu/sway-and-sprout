@@ -39,7 +39,6 @@ import java.util.concurrent.ExecutionException;
  */
 public final class NativeVideoReplay implements MotionSource {
     private static final String TAG = "SwayNativeVideo";
-    private static final long LEASE_MS = 1500;
     private static final long EVENT_TTL_MS = 1500;
     // Serial process-wide ownership also covers Activity recreation while an old
     // decoder finishes its in-flight frame. No second graph starts in parallel.
@@ -54,6 +53,7 @@ public final class NativeVideoReplay implements MotionSource {
     private final NativeVideoAssets.ModelPin modelPin;
     private final boolean statelessCrop;
     private final PoseGestureMachine machine = new PoseGestureMachine();
+    private final ActivityMachine activity = new ActivityMachine();
     private final List<PendingEvent> pending = new ArrayList<>();
     private final List<PendingEvent> history = new ArrayList<>();
     private final LinkedHashSet<String> retiredClients = new LinkedHashSet<>();
@@ -121,8 +121,8 @@ public final class NativeVideoReplay implements MotionSource {
             put(output, "available", false);
             put(output, "status", closed ? "stopped" : failed ? "camera-error" : completed ? "paused" :
                     isRunning(wall()) ? "waiting" : "paused");
-            put(output, "expected", machine.expected);
-            put(output, "heldMs", machine.heldMs);
+            put(output, "expected", expected());
+            put(output, "heldMs", heldMs());
             return json(200, output);
         }
     }
@@ -156,7 +156,7 @@ public final class NativeVideoReplay implements MotionSource {
             if (closed) return;
             closed = true;
             epoch++;
-            machine.lost("paused");
+            lose("paused");
             pending.clear();
             activeThread = workerThread;
             if (activeThread != null) activeThread.interrupt();
@@ -177,7 +177,7 @@ public final class NativeVideoReplay implements MotionSource {
     private String applyControl(Control incoming, long now) {
         if (retiredClients.contains(incoming.clientId)) return "retired_client";
         if (context != null && !context.clientId.equals(incoming.clientId)) {
-            if (now - lastPollWall <= LEASE_MS) return "client_lease_owned";
+            if (ReplayFrameGuard.leaseFresh(now, lastPollWall)) return "client_lease_owned";
             if (retiredClients.size() >= 32) return "client_bound_reached";
             retiredClients.add(context.clientId);
             report("client-replaced");
@@ -185,19 +185,23 @@ public final class NativeVideoReplay implements MotionSource {
         }
         if (context != null) {
             if (incoming.revision < context.revision) return "stale_revision";
+            if (!MotionQuery.policyChangeAllowed(context.roundId, context.policy, incoming.roundId, incoming.policy)) return "policy_change_requires_new_round";
             if (incoming.revision == context.revision && (!incoming.roundId.equals(context.roundId)
-                    || incoming.active != context.active || !incoming.mode.equals(context.mode))) return "revision_conflict";
+                    || incoming.active != context.active || !incoming.mode.equals(context.mode)
+                    || !incoming.policy.equals(context.policy))) return "revision_conflict";
         }
         if (incoming.after > seq) return "future_ack";
+        long pollGap = context == null ? 0 : Math.max(0, now - lastPollWall);
         boolean newRound = context == null || !incoming.roundId.equals(context.roundId);
         boolean newRevision = context == null || incoming.revision != context.revision;
         if (newRound) {
             if (context != null) report("round-replaced");
             machine.newRound();
+            activity.newRound();
             pending.clear();
             history.clear();
             ackSeq = 0;
-            ackExpected = "left";
+            ackExpected = "activity".equals(incoming.policy) ? "any" : "left";
             frameIndex = 0;
             stats = new RunStats();
             completed = false;
@@ -205,16 +209,20 @@ public final class NativeVideoReplay implements MotionSource {
             epoch++;
         } else {
             acknowledge(incoming.after);
-            if (newRevision || leaseExpired || now - lastPollWall > LEASE_MS) invalidate("waiting");
+            if (newRevision || leaseExpired || !ReplayFrameGuard.leaseFresh(now, lastPollWall)) {
+                if (!ReplayFrameGuard.leaseFresh(now, lastPollWall)) stats.controlLeaseBreaks++;
+                invalidate("waiting");
+            }
         }
         context = incoming;
+        stats.lastPollGapMs = pollGap;
         lastPollWall = now;
         leaseExpired = false;
         // Lifecycle suspension requires a newer control revision before resuming;
         // an in-flight GET from before onPause cannot restart video advancement.
         if (hostSuspended && !hostPaused && incoming.revision > suspendedRevision) hostSuspended = false;
         expirePending(now);
-        if (!incoming.active || hostSuspended || hostPaused) machine.lost("paused");
+        if (!incoming.active || hostSuspended || hostPaused) lose("paused");
         if (!incoming.active && stats.acceptedFrames > 0 && (newRevision || newRound)) report("paused");
         return null;
     }
@@ -223,12 +231,13 @@ public final class NativeVideoReplay implements MotionSource {
         if (after < ackSeq) return;
         for (PendingEvent event : history) {
             if (event.seq > ackSeq && event.seq <= after) {
-                ackExpected = "left-raise".equals(event.gesture) ? "right" : "left";
+                if (!activityPolicy()) ackExpected = "left-raise".equals(event.gesture) ? "right" : "left";
                 stats.acknowledgedEvents++;
             }
         }
         ackSeq = after;
         pending.removeIf(event -> event.seq <= after);
+        if (activityPolicy()) return;
         String expected = ackExpected;
         for (PendingEvent event : pending) {
             if (!event.gesture.equals(expected + "-raise")) {
@@ -262,12 +271,27 @@ public final class NativeVideoReplay implements MotionSource {
         machine.resetTemporal();
         machine.expected = ackExpected;
         machine.status = status;
+        activity.lost(status);
         nextFrameWall = 0;
     }
 
+    private boolean activityPolicy() { return context != null && "activity".equals(context.policy); }
+    private String expected() { return activityPolicy() ? activity.expected : machine.expected; }
+    private String status() { return activityPolicy() ? activity.status : machine.status; }
+    private boolean armed() { return activityPolicy() ? activity.armed : machine.armed; }
+    private int heldMs() { return activityPolicy() ? activity.heldMs : machine.heldMs; }
+    private void lose(String value) { machine.lost(value); activity.lost(value); }
+    private boolean lifecycleActive() {
+        return verified && !failed && !completed && context != null && context.active && !hostSuspended && !hostPaused;
+    }
     private boolean isRunning(long now) {
-        return verified && !failed && !closed && !completed && context != null && context.active
-                && !hostSuspended && !hostPaused && !leaseExpired && now - lastPollWall <= LEASE_MS;
+        return lifecycleActive() && !closed && !leaseExpired && ReplayFrameGuard.leaseFresh(now, lastPollWall);
+    }
+
+    /** Caller holds lock; used both after decode and after inference. */
+    private int frameDiscardReason(long token) {
+        int reason = ReplayFrameGuard.reason(closed, token, epoch, lifecycleActive(), wall(), lastPollWall);
+        return reason == ReplayFrameGuard.ACCEPT && leaseExpired ? ReplayFrameGuard.LEASE_EXPIRED : reason;
     }
 
     private JSONObject packet(Control incoming, long now) {
@@ -275,9 +299,9 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "protocol", 1);
         put(output, "runtime", runtime());
         put(output, "status", failed ? "camera-error" : completed || !incoming.active || hostSuspended || hostPaused || leaseExpired
-                ? "paused" : machine.status);
-        put(output, "expected", machine.expected);
-        put(output, "heldMs", machine.heldMs);
+                ? "paused" : status());
+        put(output, "expected", expected());
+        put(output, "heldMs", heldMs());
         put(output, "seq", seq);
         JSONArray events = new JSONArray();
         for (PendingEvent event : pending) {
@@ -291,7 +315,7 @@ public final class NativeVideoReplay implements MotionSource {
         }
         put(output, "events", events);
         JSONObject metrics = new JSONObject();
-        put(metrics, "armed", machine.armed);
+        put(metrics, "armed", armed());
         put(metrics, "decodedFrames", stats.decodedFrames);
         put(metrics, "acceptedFrames", stats.acceptedFrames);
         put(metrics, "discardedEpochFrames", stats.discardedEpochFrames);
@@ -311,6 +335,11 @@ public final class NativeVideoReplay implements MotionSource {
         put(metrics, "statelessCropRefinement", statelessCrop);
         put(metrics, "modelInferencesPerFrame", statelessCrop ? 3 : 1);
         put(metrics, "cameraEnabled", false);
+        put(metrics, "controlEpoch", epoch);
+        put(metrics, "lastPollGapMs", stats.lastPollGapMs);
+        put(metrics, "controlLeaseBreaks", stats.controlLeaseBreaks);
+        put(metrics, "lastDiscardReason", stats.lastDiscardReason);
+        put(metrics, "skippedStaleInferences", stats.skippedStaleInferences);
         put(output, "metrics", metrics);
         if (failed) put(output, "error", failure);
         return output;
@@ -336,6 +365,7 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "revision", incoming.revision);
         put(output, "active", incoming.active);
         put(output, "mode", incoming.mode);
+        put(output, "policy", incoming.policy);
         return output;
     }
 
@@ -368,11 +398,13 @@ public final class NativeVideoReplay implements MotionSource {
             while (true) {
                 long token;
                 int index;
+                RunStats attemptStats;
                 synchronized (lock) {
                     while (!closed) {
                         long now = wall();
-                        if (context != null && context.active && !leaseExpired && now - lastPollWall > LEASE_MS) {
+                        if (context != null && context.active && !leaseExpired && !ReplayFrameGuard.leaseFresh(now, lastPollWall)) {
                             leaseExpired = true;
+                            stats.controlLeaseBreaks++;
                             invalidate("paused");
                             report("lease-expired");
                         }
@@ -383,28 +415,52 @@ public final class NativeVideoReplay implements MotionSource {
                     if (closed) break;
                     token = epoch;
                     index = frameIndex;
+                    attemptStats = stats;
                 }
                 if (token != inferenceEpoch) { model.resetTracking(); inferenceEpoch = token; }
                 long started = SystemClock.elapsedRealtimeNanos();
                 Bitmap bitmap = video.getFrameAtIndex(index);
                 if (bitmap == null) throw new IOException("video_decode_returned_no_frame");
                 long decoded = SystemClock.elapsedRealtimeNanos();
+                int beforeInference;
+                synchronized (lock) {
+                    // Decode may have outlived its control epoch. Do not spend
+                    // three inference passes on an already-invalid frame.
+                    attemptStats.decodedFrames++;
+                    expirePending(wall());
+                    beforeInference = frameDiscardReason(token);
+                    if (beforeInference != ReplayFrameGuard.ACCEPT) {
+                        attemptStats.lastDiscardReason = beforeInference;
+                        attemptStats.discardedEpochFrames++;
+                        attemptStats.skippedStaleInferences++;
+                    }
+                }
+                if (beforeInference != ReplayFrameGuard.ACCEPT) {
+                    bitmap.recycle();
+                    continue;
+                }
                 NativeMoveNet.Result result;
                 try { result = model.infer(bitmap, index < 3 || index % 30 == 0 || index + 1 == loaded.frames); }
                 finally { bitmap.recycle(); }
                 long finished = SystemClock.elapsedRealtimeNanos();
                 synchronized (lock) {
-                    stats.decodedFrames++;
                     expirePending(wall());
-                    if (closed || token != epoch || !isRunning(wall())) {
-                        stats.discardedEpochFrames++;
+                    int discardReason = frameDiscardReason(token);
+                    if (discardReason != ReplayFrameGuard.ACCEPT) {
+                        // A new round can replace stats while this frame runs.
+                        // Attribute discarded work to its original round only.
+                        attemptStats.lastDiscardReason = discardReason;
+                        attemptStats.discardedEpochFrames++;
                         continue;
                     }
+                    stats.lastDiscardReason = ReplayFrameGuard.ACCEPT;
                     double decodeMs = (decoded - started) / 1000000.0;
                     double totalMs = (finished - started) / 1000000.0;
                     stats.record(decodeMs, result, totalMs);
-                    PoseGestureMachine.Event recognized = machine.update(result.observation, index * 1000.0 / loaded.fps);
-                    stats.pose.observe(result, index * 1000.0 / loaded.fps, machine);
+                    PoseGestureMachine.Event recognized = activityPolicy()
+                            ? activity.update(result.observation, index * 1000.0 / loaded.fps)
+                            : machine.update(result.observation, index * 1000.0 / loaded.fps);
+                    if (!activityPolicy()) stats.pose.observe(result, index * 1000.0 / loaded.fps, machine);
                     JSONObject poseFrame = new JSONObject();
                     put(poseFrame, "kind", "pose-frame"); put(poseFrame, "configAsset", configAsset);
                     put(poseFrame, "frameIndex", index); put(poseFrame, "fileMs", index * 1000.0 / loaded.fps);
@@ -417,7 +473,8 @@ public final class NativeVideoReplay implements MotionSource {
                         put(poseFrame, frameNames[joint] + "Y", framePoints[joint].y);
                         put(poseFrame, frameNames[joint] + "Score", framePoints[joint].confidence);
                     }
-                    put(poseFrame, "status", machine.status); put(poseFrame, "armed", machine.armed);
+                    put(poseFrame, "status", status()); put(poseFrame, "armed", armed());
+                    put(poseFrame, "policy", context.policy);
                     Log.i(TAG, poseFrame.toString());
                     if (index < 3 || index % 30 == 0 || index + 1 == loaded.frames) {
                         frameDiagnostic(result, index, index * 1000.0 / loaded.fps);
@@ -439,7 +496,7 @@ public final class NativeVideoReplay implements MotionSource {
                     nextFrameWall = wall() + Math.max(0, Math.round(1000.0 / loaded.fps - totalMs));
                     if (frameIndex >= loaded.frames) {
                         completed = true;
-                        machine.lost("paused");
+                        lose("paused");
                         report("finished");
                     }
                 }
@@ -507,6 +564,7 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "inputSize", modelPin.inputSize);
         put(output, "verified", verified);
         put(output, "configAsset", configAsset);
+        put(output, "policy", context == null ? "strict" : context.policy);
         put(output, "api", Build.VERSION.SDK_INT);
         put(output, "abi", Build.SUPPORTED_ABIS.length == 0 ? "unknown" : Build.SUPPORTED_ABIS[0]);
         put(output, "threads", 2);
@@ -529,10 +587,10 @@ public final class NativeVideoReplay implements MotionSource {
     private void report(String kind) {
         JSONObject output = logBase(kind);
         put(output, "observedGestures", new JSONArray(stats.observed));
-        put(output, "expectedGestures", config == null ? new JSONArray() : new JSONArray(config.expectedGestures));
-        put(output, "expectationKnown", config != null && config.expectationKnown);
-        put(output, "expectedSequenceEvaluated", completed && config != null && config.expectationKnown);
-        if (completed && config != null && config.expectationKnown) {
+        put(output, "expectedGestures", activityPolicy() || config == null ? new JSONArray() : new JSONArray(config.expectedGestures));
+        put(output, "expectationKnown", !activityPolicy() && config != null && config.expectationKnown);
+        put(output, "expectedSequenceEvaluated", !activityPolicy() && completed && config != null && config.expectationKnown);
+        if (!activityPolicy() && completed && config != null && config.expectationKnown) {
             put(output, "exactExpectedSequence", stats.observed.equals(config.expectedGestures));
         }
         put(output, "declaredVideoFrames", config == null ? 0 : config.frames);
@@ -559,6 +617,7 @@ public final class NativeVideoReplay implements MotionSource {
         JSONObject output = new JSONObject();
         put(output, "kind", "frame-diagnostic");
         put(output, "configAsset", configAsset);
+        put(output, "policy", context == null ? "strict" : context.policy);
         put(output, "frameIndex", index); put(output, "fileMs", fileMs);
         put(output, "decodedProbeCrc32", result.decodedProbeCrc32);
         put(output, "inputCrc32", result.inputCrc32); put(output, "outputCrc32", result.outputCrc32);
@@ -582,8 +641,8 @@ public final class NativeVideoReplay implements MotionSource {
                 put(output, names[i] + fields[j], Float.isFinite(value) ? value : JSONObject.NULL);
             }
         }
-        put(output, "machineExpected", machine.expected); put(output, "machineStatus", machine.status);
-        put(output, "machineArmed", machine.armed); put(output, "machineHeldMs", machine.heldMs);
+        put(output, "machineExpected", expected()); put(output, "machineStatus", status());
+        put(output, "machineArmed", armed()); put(output, "machineHeldMs", heldMs());
         Log.i(TAG, output.toString());
     }
 
@@ -612,16 +671,17 @@ public final class NativeVideoReplay implements MotionSource {
     }
 
     private static final class Control {
-        final String clientId, roundId, mode;
+        final String clientId, roundId, mode, policy;
         final long revision, after;
         final boolean active;
         private Control(String[] values) {
             clientId = values[0]; roundId = values[1]; revision = Long.parseLong(values[2]);
-            active = "1".equals(values[3]); mode = values[4]; after = Long.parseLong(values[5]);
+            active = "1".equals(values[3]); mode = values[4]; after = Long.parseLong(values[5]); policy = values[6];
         }
         static Control parse(String raw) {
             String[] pairs = MotionQuery.canonicalize(raw).split("&");
-            String[] values = new String[6];
+            String[] values = new String[7];
+            values[6] = "strict";
             for (int i = 0; i < pairs.length; i++) values[i] = pairs[i].substring(pairs[i].indexOf('=') + 1);
             return new Control(values);
         }
@@ -636,6 +696,8 @@ public final class NativeVideoReplay implements MotionSource {
     }
     private static final class RunStats {
         int decodedFrames, acceptedFrames, discardedEpochFrames, acknowledgedEvents;
+        int controlLeaseBreaks, lastDiscardReason, skippedStaleInferences;
+        long lastPollGapMs;
         int parityChecks, parityByteDifferences, parityMaxByteDelta, defaultCropFrames;
         double parityOutputMaxDelta, referenceTotalMs;
         double lastDecodeMs, lastPreprocessMs, lastInferenceMs, lastMinimum;

@@ -20,6 +20,8 @@ class Observation:
     left_wrist: Landmark
     right_wrist: Landmark
     confidence: float = 1.0
+    left_hip: Landmark | None = None
+    right_hip: Landmark | None = None
 
 
 @dataclass(frozen=True)

@@ -12,6 +12,7 @@ from pathlib import Path
 from inference import OpenCVPose
 from pose_backend import BACKENDS, close_pose, create_pose
 from motion import synthetic_observation
+from activity import synthetic_activity_observation
 from service import MotionService, make_server
 from video_input import video_worker
 
@@ -95,7 +96,9 @@ def synthetic_worker(service, stop):
             if now - stage_started >= 0.75:
                 stage = service.machine.expected if stage == "neutral" else "neutral"
                 stage_started = now
-            service.observe(token, synthetic_observation(stage), "tracking", 0.0, 20.0)
+            observation = (synthetic_activity_observation(now * 1000) if service.policy == "activity"
+                           else synthetic_observation(stage))
+            service.observe(token, observation, "tracking", 0.0, 20.0)
             last_token = token
         stop.wait(0.05)
 

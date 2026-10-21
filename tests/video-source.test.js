@@ -6,6 +6,7 @@ import * as model from '../src/model.js';
 import {createMotionClient,createMotionState,acceptMotionEvent} from '../src/motion.js';
 import {createPreviewClient} from '../src/preview.js';
 import {updateSunshine,updateCameraPreview} from '../src/motion-view.js';
+import {roundTickDelta} from '../src/round-clock.js';
 
 const context=()=>({clientId:'browser-1',roundId:'round-1',revision:1,active:true,mode:'seated',after:0});
 const packet=(source='video')=>({protocol:1,...context(),source,
@@ -88,7 +89,7 @@ test('video and synthetic completion return unchanged progress; camera and manua
 function appHarness(search=''){
   let callbacks,id=0;const writes=[];const nodes={};
   const root={innerHTML:'',querySelectorAll:()=>[],querySelector:()=>({focus(){}})};
-  const sandbox={...model,createMotionState,acceptMotionEvent,URLSearchParams,location:{search},
+  const sandbox={...model,createMotionState,acceptMotionEvent,roundTickDelta,URLSearchParams,location:{search},
     createMotionClient:options=>{callbacks=options;return {start(){},stop(){}};},
     createPreviewClient:()=>({start(){},stop(){}}),sunshineMarkup:()=>'',updateSunshine(){},updateCameraPreview(){},
     document:{querySelector:selector=>selector==='#app'?root:nodes[selector]||= {textContent:'',style:{},classList:{toggle(){}}},
@@ -104,10 +105,22 @@ function appHarness(search=''){
   return {api,writes,root,nodes,motionOptions:callbacks,send(source,six=true){
     const current=api.read();
     callbacks.onPacket({...packet(source),roundId:current.roundId,revision:current.revision,
+      policy:current.motion.policy,expected:current.motion.policy==='activity'?'any':'left',
       seq:six?6:0,events:six?Array.from({length:6},(_,index)=>({seq:index+1,roundId:current.roundId,
-        gesture:index%2?'right-raise':'left-raise',confidence:1,ageMs:0})):[]});
+        gesture:current.motion.policy==='activity'?'activity':index%2?'right-raise':'left-raise',confidence:1,ageMs:0})):[]});
   }};
 }
+
+test('ordinary play defaults to free activity while strict replay remains an explicit diagnostic',()=>{
+  const ordinary=appHarness();
+  assert.equal(ordinary.api.read().motion.policy,'activity');
+  assert.equal(ordinary.motionOptions.getContext().policy,'activity');
+  assert.match(ordinary.root.innerHTML,/wave, reach, stretch or sway/);
+  assert.doesNotMatch(ordinary.root.innerHTML,/Six alternating raises|Left, rest, right|above your shoulder/);
+  assert.equal(appHarness('?policy=strict').api.read().motion.policy,'strict');
+  assert.equal(appHarness('?input=video-verification').api.read().motion.policy,'strict');
+  assert.equal(appHarness('?input=video-verification&policy=activity').api.read().motion.policy,'activity');
+});
 
 test('real automatic finish path saves camera progress but never saves six video or synthetic rays',()=>{
   for(const source of ['video','synthetic','camera']){
@@ -159,8 +172,8 @@ test('actual LiteRT video client, reducer and finish path preserve six acknowled
     const current=app.motionOptions.getContext(),next=current.after+1;
     return response({...packet(),...current,runtime:identity,
       seq:current.active?next:current.after,
-      expected:next%2?'left':'right',events:current.active?[{seq:next,roundId:current.roundId,
-        gesture:next%2?'left-raise':'right-raise',confidence:.9,ageMs:0}]:[]});
+      expected:current.policy==='activity'?'any':next%2?'left':'right',events:current.active?[{seq:next,roundId:current.roundId,
+        gesture:current.policy==='activity'?'activity':next%2?'left-raise':'right-raise',confidence:.9,ageMs:0}]:[]});
   }});
   try{
     const initial=app.api.read();

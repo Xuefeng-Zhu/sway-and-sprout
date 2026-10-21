@@ -97,7 +97,8 @@ class OpenCVPose:
 
         # MediaPipe anatomical left/right; input is never horizontally flipped.
         observation = Observation(point(11), point(12), point(15), point(16),
-                                  min(float(people[0][-1]), pose_confidence))
+                                  min(float(people[0][-1]), pose_confidence),
+                                  left_hip=point(23), right_hip=point(24))
         return observation, "tracking", self._ms(started)
 
     def _input_frame(self, frame):

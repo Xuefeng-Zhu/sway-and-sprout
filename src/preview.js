@@ -32,7 +32,7 @@ function validatePreview(packet, context) {
       !/^data:image\/jpeg;base64,[A-Za-z0-9+/]+={0,2}$/.test(packet.jpeg) ||
       !packet.visibility || VISIBILITY_KEYS.some(key => typeof packet.visibility[key] !== 'boolean') ||
       !finite(packet.confidence) || packet.confidence < 0 || packet.confidence > 1 ||
-      !['left', 'right'].includes(packet.expected) ||
+      !((context.policy ?? 'strict') === 'activity' ? packet.expected === 'any' : ['left', 'right'].includes(packet.expected)) ||
       !finite(packet.heldMs) || packet.heldMs < 0 || packet.heldMs > 60000) {
     throw previewError('The local camera returned an invalid preview image.');
   }

@@ -97,3 +97,24 @@ test('a claimed verified runtime with invalid identity cannot authorize an armed
     assertRest(renderCue({packet:packet({runtime,metrics:{armed:true}})}));
   }
 });
+
+test('activity cues encourage comfortable movement without sides, height or holding requirements',()=>{
+  const move={...motion(),policy:'activity',expected:'any'};
+  for(const status of ['waiting','tracking','neutral','hold','ready']){
+    const cue=renderCue({motion:move,packet:packet({policy:'activity',expected:'any',status})});
+    assert.match(cue,/move|movement|time/i);
+    assert.doesNotMatch(cue,/left hand|right hand|above your shoulder|rest both|hold your/i);
+  }
+  const cue=renderCue({motion:move,packet:null});
+  assert.match(cue,/wave, reach, stretch or sway/);
+  assert.match(cue,/Small movements count/);
+});
+
+test('activity visibility guidance allows a clear hand or upper body and never prescribes a pose',()=>{
+  const move={...motion(),policy:'activity',expected:'any'};
+  const cue=renderCue({motion:move,packet:packet({policy:'activity',expected:'any',status:'low-confidence'})});
+  assert.match(cue,/a hand or your upper body/);
+  assert.doesNotMatch(cue,/both wrists|raise|hold|below your shoulders/i);
+  assert.match(renderCue({motion:move,paused:true}),/Rest whenever you like/);
+  assert.match(renderCue({motion:move,disconnected:true}),/reconnects/);
+});

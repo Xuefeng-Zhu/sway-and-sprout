@@ -157,7 +157,9 @@ final class NativeMoveNet implements Closeable {
             for (float[] point : output[0][0]) for (float value : point) checksumInt(outputChecksum, Float.floatToRawIntBits(value));
             PoseGestureMachine.Point ls = points[0], rs = points[1], lw = points[2], rw = points[3];
             double minimum = Math.min(Math.min(ls.confidence, rs.confidence), Math.min(lw.confidence, rw.confidence));
-            PoseGestureMachine.Observation observation = new PoseGestureMachine.Observation(ls, rs, lw, rw, minimum);
+            PoseGestureMachine.Observation observation = new PoseGestureMachine.Observation(ls, rs, lw, rw, minimum,
+                    optionalPoint(original, output[0][0], 11, imageWidth, imageHeight),
+                    optionalPoint(original, output[0][0], 12, imageWidth, imageHeight));
             return new Result(observation, (prepared - before) / 1000000.0, (inferred - prepared) / 1000000.0,
                     minimum, decodedProbe.getValue(), inputChecksum.getValue(), outputChecksum.getValue(),
                     red / (double) pixels.length, green / (double) pixels.length, blue / (double) pixels.length,
@@ -168,6 +170,14 @@ final class NativeMoveNet implements Closeable {
             if (square != null && square != detect) square.recycle();
             detect.recycle();
         }
+    }
+
+    private static PoseGestureMachine.Point optionalPoint(float[][] original, float[][] raw, int index, int width, int height) {
+        float x = original[index][0], y = original[index][1], confidence = raw[index][2];
+        boolean valid = Float.isFinite(x) && Float.isFinite(y) && Float.isFinite(confidence)
+                && confidence >= 0 && confidence <= 1 && x >= 0 && x <= width && y >= 0 && y <= height
+                && raw[index][0] >= 0 && raw[index][0] <= 1 && raw[index][1] >= 0 && raw[index][1] <= 1;
+        return valid ? new PoseGestureMachine.Point(x, y, confidence) : new PoseGestureMachine.Point(0, 0, 0);
     }
 
     private static void checksumInt(CRC32 checksum, int value) {

@@ -14,15 +14,17 @@ const identifier = value => typeof value === 'string' && value.length > 0 &&
   value.length <= 128 && !/[\u0000-\u001f\u007f]/.test(value);
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 
-export function createMotionState(roundId) {
+export function createMotionState(roundId, policy = 'strict') {
   if (!identifier(roundId)) throw new TypeError('A bounded round ID is required.');
-  return {roundId, count: 0, target: 6, expected: 'left', lastSeq: 0,
+  if (!['strict', 'activity'].includes(policy)) throw new TypeError('A supported motion policy is required.');
+  return {roundId, policy, count: 0, target: 6, expected: policy === 'activity' ? 'any' : 'left', lastSeq: 0,
     completed: false, lastGesture: null, status: 'waiting'};
 }
 
-function validEvent(event) {
+function validEvent(event, policy = 'strict') {
   return object(event) && sequence(event.seq) && event.seq > 0 &&
-    identifier(event.roundId) && ['left-raise', 'right-raise'].includes(event.gesture) &&
+    identifier(event.roundId) && (policy === 'activity' ? event.gesture === 'activity' :
+      ['left-raise', 'right-raise'].includes(event.gesture)) &&
     finite(event.confidence) && event.confidence >= 0 && event.confidence <= 1 &&
     finite(event.ageMs) && event.ageMs >= 0;
 }
@@ -34,7 +36,8 @@ function validEvent(event) {
  * receivedAt is an optional LOCAL receipt timestamp, not a camera clock.
  */
 export function acceptMotionEvent(state, event, {active, now = Date.now()} = {}) {
-  if (!active || state.completed || !validEvent(event) || event.roundId !== state.roundId ||
+  const policy = state.policy ?? 'strict';
+  if (!active || state.completed || !validEvent(event, policy) || event.roundId !== state.roundId ||
       event.seq <= state.lastSeq) return state;
   let age = event.ageMs;
   if (event.receivedAt !== undefined) {
@@ -43,9 +46,9 @@ export function acceptMotionEvent(state, event, {active, now = Date.now()} = {})
   }
   if (age > MAX_EVENT_AGE_MS) return state;
   const consumed = {...state, lastSeq: event.seq};
-  if (event.confidence < 0.65 || event.gesture !== `${state.expected}-raise`) return consumed;
+  if (event.confidence < 0.65 || (policy === 'strict' && event.gesture !== `${state.expected}-raise`)) return consumed;
   const count = Math.min(state.count + 1, state.target);
-  return {...consumed, count, expected: state.expected === 'left' ? 'right' : 'left',
+  return {...consumed, count, expected: policy === 'activity' ? 'any' : state.expected === 'left' ? 'right' : 'left',
     completed: count === state.target, lastGesture: event.gesture,
     status: count === state.target ? 'complete' : 'tracking'};
 }
@@ -60,27 +63,33 @@ export function snapshotContext(getContext) {
   const context = getContext();
   if (!object(context) || !identifier(context.clientId) || !identifier(context.roundId) ||
       !sequence(context.revision) || typeof context.active !== 'boolean' ||
-      !['seated', 'standing'].includes(context.mode) || !sequence(context.after)) {
+      !['seated', 'standing'].includes(context.mode) || !sequence(context.after) ||
+      (context.policy !== undefined && !['strict', 'activity'].includes(context.policy))) {
     throw motionError('invalid-context', 'Motion context is incomplete.');
   }
   return {clientId: context.clientId, roundId: context.roundId, revision: context.revision,
-    active: context.active, mode: context.mode, after: context.after};
+    active: context.active, mode: context.mode, after: context.after,
+    ...(context.policy === undefined ? {} : {policy: context.policy})};
 }
 
 export function sameContext(first, current) {
   return first.clientId === current.clientId && first.roundId === current.roundId &&
-    first.revision === current.revision && first.active === current.active && first.mode === current.mode;
+    first.revision === current.revision && first.active === current.active && first.mode === current.mode &&
+    (first.policy ?? 'strict') === (current.policy ?? 'strict');
 }
 
 function validatePacket(packet, context) {
   const runtime = packet?.runtime;
   const metrics = packet?.metrics ?? {};
+  const policy = context.policy ?? 'strict';
   if (!object(packet) || packet.protocol !== 1 || !validMotionRuntime(runtime) ||
       !['synthetic', 'camera', 'video'].includes(packet.source) ||
       (runtime.source !== undefined && runtime.source !== packet.source) ||
       packet.clientId !== context.clientId || packet.roundId !== context.roundId ||
       packet.revision !== context.revision || !STATUSES.has(packet.status) ||
-      !['left', 'right'].includes(packet.expected) || !finite(packet.heldMs) ||
+      (packet.policy ?? 'strict') !== policy ||
+      (policy === 'activity' && (packet.active !== context.active || packet.mode !== context.mode)) ||
+      !(policy === 'activity' ? packet.expected === 'any' : ['left', 'right'].includes(packet.expected)) || !finite(packet.heldMs) ||
       packet.heldMs < 0 || packet.heldMs > 60000 || !sequence(packet.seq) ||
       !Array.isArray(packet.events) || packet.events.length > MAX_EVENTS ||
       !object(metrics) || Object.keys(metrics).length > 32 ||
@@ -90,7 +99,7 @@ function validatePacket(packet, context) {
   }
   let previous = 0;
   for (const event of packet.events) {
-    if (!validEvent(event) || event.roundId !== context.roundId ||
+    if (!validEvent(event, policy) || event.roundId !== context.roundId ||
         event.seq <= previous || event.seq > packet.seq || event.receivedAt !== undefined) {
       throw motionError('invalid-response', 'Motion service returned invalid events.');
     }

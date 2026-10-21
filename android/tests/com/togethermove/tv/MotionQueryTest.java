@@ -15,6 +15,16 @@ public final class MotionQueryTest {
  }
  public static void main(String[] args) {
   accepts(BASE);
+  accepts(BASE + "&policy=activity");
+  accepts(BASE + "&policy=strict");
+  if (!MotionQuery.canonicalize(BASE + "&policy=activity").endsWith("&policy=activity")) throw new AssertionError("policy lost");
+  if (MotionQuery.policyChangeAllowed("round", "strict", "round", "activity")) throw new AssertionError("policy changed in round");
+  if (!MotionQuery.policyChangeAllowed("round", "strict", "next", "activity")) throw new AssertionError("new round cannot choose policy");
+  if (!MotionQuery.policyChangeAllowed("round", "activity", "round", "activity")) throw new AssertionError("stable policy rejected");
+  assertions += 4;
+  rejects(BASE + "&policy=unknown");
+  rejects(BASE + "&policy=activity&policy=strict");
+  rejects(BASE.replace("after=0", "policy=activity"));
   accepts(BASE.replace("seated", "standing").replace("active=1", "active=0"));
   accepts(BASE.replace("revision=0", "revision=9007199254740991").replace("after=0", "after=9007199254740991"));
   accepts(BASE.toUpperCase(java.util.Locale.ROOT).replace("CLIENTID", "clientId").replace("ROUNDID", "roundId").replace("REVISION", "revision").replace("ACTIVE", "active").replace("MODE", "mode").replace("AFTER", "after").replace("SEATED", "seated"));

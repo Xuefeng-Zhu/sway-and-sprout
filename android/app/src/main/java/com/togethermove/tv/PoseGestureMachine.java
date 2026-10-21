@@ -32,14 +32,24 @@ public final class PoseGestureMachine {
         public final Point leftWrist;
         public final Point rightWrist;
         public final double confidence;
+        public final Point leftHip;
+        public final Point rightHip;
 
         public Observation(Point leftShoulder, Point rightShoulder,
                            Point leftWrist, Point rightWrist, double confidence) {
+            this(leftShoulder, rightShoulder, leftWrist, rightWrist, confidence, null, null);
+        }
+
+        public Observation(Point leftShoulder, Point rightShoulder,
+                           Point leftWrist, Point rightWrist, double confidence,
+                           Point leftHip, Point rightHip) {
             this.leftShoulder = leftShoulder;
             this.rightShoulder = rightShoulder;
             this.leftWrist = leftWrist;
             this.rightWrist = rightWrist;
             this.confidence = confidence;
+            this.leftHip = leftHip;
+            this.rightHip = rightHip;
         }
     }
 

@@ -76,7 +76,8 @@ class MediaPipeFullPose(OpenCVPose):
 
         # MediaPipe anatomical indices, top-left origin, no reflection. The task
         # admits poses at .65 but exposes no actual detector/global presence score.
-        observation = Observation(point(11), point(12), point(15), point(16), self.threshold)
+        observation = Observation(point(11), point(12), point(15), point(16), self.threshold,
+                                  left_hip=point(23), right_hip=point(24))
         return observation, "tracking", self._ms(started)
 
     def close(self):

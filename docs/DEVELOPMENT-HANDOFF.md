@@ -13,6 +13,25 @@ traces. Inspect all local checkpoints with
 `git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
 been requested. The dated TogetherMove source remains an untouched backup.
 
+## Movement-first gameplay — 2026-10-21
+
+The user's goal is comfortable movement, without prescribed anatomical order or
+pose holds. The isolated `work/activity-progression` branch adds explicit activity
+events across Python, Java and JS, per-feature confidence, bounded movement credit
+and forgiving cues. Strict recognition and historical evidence remain available
+as diagnostics. Manual play, pause/reset, ACK/deduplication, the six-ray cap and
+simulated/replay progress isolation remain enforced.
+
+97 Node tests, 168 Python tests, 11 cross-language synthetic cases, 90 progress
+checks, two mocked browser checks, frontend build and compile-only verification of
+19 Android sources passed. The unchanged 1.5-second lease now has primitive stall
+diagnostics; stale decoded work skips avoidable inference. No updated APK,
+emulator, physical camera or public media was executed. The earlier visible
+replay's slowdown remains unresolved, and physical Fire TV is unavailable.
+[Implementation, encountered issues and limits](MOVEMENT-FIRST-20261021.md) and
+[source-bound verification](verification/movement-first-20261021.json) distinguish
+functional checks from runtime/hardware evidence. No push or deployment.
+
 ## 120-second native replay UI rerun — 2026-10-21
 
 User-authorized commit `ddef01e` extends only exact `input=video-verification` + Sunshine replay input to120 seconds. Normal authored/manual/ordinary camera/video/synthetic and other challenges remain30; all motion/model thresholds and six-ray input-stop behavior are unchanged. Shared duration controls countdown, bar and termination; no clock acceleration.

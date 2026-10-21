@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {acceptMotionEvent, createMotionClient, createMotionState} from '../src/motion.js';
+import {acceptMotionEvent, createMotionClient, createMotionState, snapshotContext, sameContext} from '../src/motion.js';
 
 const event = (seq = 1, overrides = {}) => ({seq, roundId: 'round-1', gesture: 'left-raise',
   confidence: 0.9, ageMs: 0, ...overrides});
@@ -217,4 +217,78 @@ test('invalid local context cannot initiate a request', async () => {
   assert.equal(await client.pollOnce(), null);
   assert.equal(called, false);
   assert.equal(errors[0].code, 'invalid-context');
+});
+
+test('activity rays have no anatomical ordering and complete only once at six', () => {
+  let state = createMotionState('round-1', 'activity');
+  assert.equal(state.expected, 'any');
+  for (let seq = 1; seq <= 6; seq++) {
+    const next = event(seq, {gesture: 'activity'});
+    state = acceptMotionEvent(state, next, {active: true});
+    assert.equal(state.count, seq);
+    assert.equal(state.expected, 'any');
+    assert.equal(acceptMotionEvent(state, next, {active: true}), state);
+  }
+  assert.equal(state.completed, true);
+  assert.equal(state.lastSeq, 6);
+  assert.equal(acceptMotionEvent(state, event(7, {gesture: 'activity'}), {active: true}), state);
+});
+
+test('activity scoring preserves confidence, pause, freshness, round and sequence guards', () => {
+  const initial = createMotionState('round-1', 'activity');
+  const move = (seq, fields = {}) => event(seq, {gesture: 'activity', ...fields});
+  const weak = acceptMotionEvent(initial, move(1, {confidence: .64}), {active: true});
+  assert.equal(weak.count, 0);
+  assert.equal(weak.lastSeq, 1);
+  assert.equal(acceptMotionEvent(weak, move(1), {active: true}), weak);
+  for (const invalid of [move(2, {roundId: 'previous'}), move(2, {ageMs: 1501}),
+    move(2, {receivedAt: 1000}), event(2), event(2, {gesture: 'right-raise'}),
+    move(2, {confidence: NaN})]) {
+    assert.equal(acceptMotionEvent(weak, invalid, {active: true, now: 2501}), weak);
+  }
+  assert.equal(acceptMotionEvent(weak, move(2), {active: false}), weak);
+  const counted = acceptMotionEvent(weak, move(2), {active: true});
+  assert.equal(counted.count, 1);
+  assert.equal(acceptMotionEvent(counted, move(1), {active: true}), counted);
+  assert.equal(acceptMotionEvent(createMotionState('round-1'), move(1), {active: true}).count, 0);
+});
+
+test('explicit activity policy is bound to requests, packets and event schema', async () => {
+  const current = {...context(), policy: 'activity'};
+  const value = packet({...current, expected: 'any', policy: 'activity',
+    events: [event(1, {gesture: 'activity'})]});
+  const client = createMotionClient({getContext: () => current, onPacket() {}, fetchImpl: async url => {
+    assert.equal(new URL(url, 'https://local').searchParams.get('policy'), 'activity');
+    return response(value);
+  }});
+  const result = await client.pollOnce();
+  assert.equal(result.policy, 'activity');
+  assert.equal(result.expected, 'any');
+  assert.equal(result.events[0].gesture, 'activity');
+  client.stop();
+  for (const changes of [{policy: undefined}, {policy: 'strict'}, {expected: 'left'},
+    {events: [event()]}, {active: false}, {mode: 'standing'}]) {
+    const errors = [];
+    const invalid = createMotionClient({getContext: () => current, onPacket: () => assert.fail('policy mismatch delivered'),
+      onError: error => errors.push(error), fetchImpl: async () => response({...value, ...changes})});
+    assert.equal(await invalid.pollOnce(), null);
+    assert.equal(errors[0].code, 'invalid-response');
+    invalid.stop();
+  }
+});
+
+test('a policy change discards an in-flight response and unknown local policies cannot fetch', async () => {
+  const current = context(), pending = deferred();
+  let delivered = 0;
+  const client = createMotionClient({getContext: () => current, onPacket: () => delivered++, fetchImpl: () => pending.promise});
+  const waiting = client.pollOnce();
+  current.policy = 'activity';
+  pending.resolve(response(packet()));
+  assert.equal(await waiting, null);
+  assert.equal(delivered, 0);
+  client.stop();
+  assert.equal(sameContext(context(), {...context(), policy: 'strict'}), true);
+  assert.equal(sameContext(context(), {...context(), policy: 'activity'}), false);
+  assert.throws(() => snapshotContext(() => ({...context(), policy: 'unknown'})), /incomplete/);
+  assert.throws(() => createMotionState('round-1', 'unknown'), /supported motion policy/);
 });

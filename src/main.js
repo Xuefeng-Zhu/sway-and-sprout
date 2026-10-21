@@ -3,15 +3,20 @@ import {challenges,normalizeProgress,complete,phaseAt,nearest} from './model.js'
 import {createMotionState,acceptMotionEvent,createMotionClient} from './motion.js';
 import {createPreviewClient} from './preview.js';
 import {sunshineMarkup,updateSunshine,updateCameraPreview} from './motion-view.js';
+import {roundTickDelta} from './round-clock.js';
 
 const root=document.querySelector('#app');
 let saved;
 try{saved=JSON.parse(localStorage.getItem('togethermove.v1'));}catch{}
-const nativeVideoCheck=new URLSearchParams(location.search).get('input')==='video-verification';
+const query=new URLSearchParams(location.search);
+const nativeVideoCheck=query.get('input')==='video-verification';
+// Strict recognition stays available for explicitly selected diagnostic sessions.
+const motionPolicy=query.get('policy')==='strict'||(nativeVideoCheck&&query.get('policy')!=='activity')?'strict':'activity';
 let progress=normalizeProgress(saved),screen='home',mode='seated',selected=0;
 let elapsed=0,paused=false,last=0,frame=0,storageFailed=false,returnScreen='home';
+let roundTiming={wallMs:0,creditedMs:0,stalledMs:0,callbacks:0};
 let inputMode='manual',roundId=crypto.randomUUID(),revision=0;
-let motion=createMotionState(roundId),packet=null,disconnected=false;
+let motion=createMotionState(roundId,motionPolicy),packet=null,disconnected=false;
 let roundSource=null,streamId=null,motionNotice='';
 const clientId=crypto.randomUUID();
 const cameraMode=()=>inputMode==='camera'&&challenges[selected].id==='sun';
@@ -21,11 +26,11 @@ const videoRound=()=>roundSource==='video'||packet?.source==='video';
 const diagnosticReplayRound=()=>nativeVideoCheck&&cameraMode();
 const roundSeconds=()=>diagnosticReplayRound()?120:challenges[selected].duration;
 const motionClient=createMotionClient({
-  getContext:()=>({clientId,roundId,revision,active:cameraActive(),mode,after:motion.lastSeq}),
+  getContext:()=>({clientId,roundId,revision,active:cameraActive(),mode,after:motion.lastSeq,policy:motionPolicy}),
   onPacket(value){
     if(cameraMode()&&screen==='play'&&((roundSource&&roundSource!==value.source)||(streamId&&value.streamId&&streamId!==value.streamId))){
       resetRound();elapsed=0;paused=true;revision++;packet=value;streamId=value.streamId||null;
-      motionNotice='The input service changed. This input round was reset. Resume with both arms resting.';
+      motionNotice=motionPolicy==='activity'?'The input service changed. This round was reset. Resume when you’re ready.':'The input service changed. This input round was reset. Resume with both arms resting.';
       render();return;
     }
     packet=value;disconnected=false;
@@ -48,7 +53,7 @@ const motionClient=createMotionClient({
   onError(){disconnected=true;previewClient.stop('unavailable');updateSunshine({motion,packet,paused,disconnected,notice:motionNotice,revision});if(!cameraMode()||screen==='celebrate')motionClient.stop();},
 });
 const previewClient=createPreviewClient({
-  getContext:()=>({clientId,roundId,revision,active:cameraActive(),mode,after:motion.lastSeq}),
+  getContext:()=>({clientId,roundId,revision,active:cameraActive(),mode,after:motion.lastSeq,policy:motionPolicy}),
   onPreview(preview){updateCameraPreview({preview,expected:motion.expected});},
   onClear(reason){updateCameraPreview({reason,expected:motion.expected,source:packet?.source});},
 });
@@ -66,7 +71,7 @@ function shell(content){
 }
 function inputChoices(){
   if(challenges[selected].id!=='sun')return '';
-  return `<fieldset class="input-choices"><legend>HOW WOULD YOU LIKE TO PLAY?</legend><div class="input-options">${button('<b>Manual play</b><small>Follow along, then confirm</small>','input:manual',inputMode==='manual'?'selected':'',`aria-pressed="${inputMode==='manual'}"`)}${button(nativeVideoCheck?'<b>Video replay</b><small>Bundled test · no camera</small>':'<b>Camera sunshine</b><small>One player · local processing</small>','input:camera',inputMode==='camera'?'selected':'',`aria-pressed="${inputMode==='camera'}"`)}</div><p class="camera-setup-note">${nativeVideoCheck?'Video replay uses a 120-second diagnostic round. It does not open a camera or change your saved garden.':inputMode==='camera'?'Camera is off. One person only: face the camera with both shoulders and wrists visible. Rest both arms below your shoulders, with hands clear of your face. After Start, wait for Ready, then follow the cue. Frames stay on this device; nothing is recorded.':'Manual play uses your own confirmation. No camera is needed.'}</p></fieldset>`;
+  return `<fieldset class="input-choices"><legend>HOW WOULD YOU LIKE TO PLAY?</legend><div class="input-options">${button('<b>Manual play</b><small>Follow along, then confirm</small>','input:manual',inputMode==='manual'?'selected':'',`aria-pressed="${inputMode==='manual'}"`)}${button(nativeVideoCheck?'<b>Video replay</b><small>Bundled test · no camera</small>':'<b>Camera sunshine</b><small>One player · local processing</small>','input:camera',inputMode==='camera'?'selected':'',`aria-pressed="${inputMode==='camera'}"`)}</div><p class="camera-setup-note">${nativeVideoCheck?'Video replay uses a 120-second diagnostic round. It does not open a camera or change your saved garden.':inputMode==='camera'?motionPolicy==='activity'?'Camera is off. Keep one person in view. After Start, wave, reach, stretch or sway in a way that feels comfortable. Small movements count. Frames stay on this device; nothing is recorded.':'Camera is off. One person only: face the camera with both shoulders and wrists visible. Rest both arms below your shoulders, with hands clear of your face. After Start, wait for Ready, then follow the cue. Frames stay on this device; nothing is recorded.':'Manual play uses your own confirmation. No camera is needed.'}</p></fieldset>`;
 }
 function render(){
   // Remove the current image and invalidate requests before replacing the DOM.
@@ -78,7 +83,7 @@ function render(){
     shell(`<section class="panel setup-panel"><div><p class="step">MAKE YOURSELF AT HOME</p><h1>Move your way.</h1><p>Choose a starting position. Everyone can adapt<br class="desktop"> any movement, rest, or simply watch along.</p><div class="choices">${button('<b>Seated</b><small>Comfortably in your chair</small>','mode:seated',mode==='seated'?'selected':'',`aria-pressed="${mode==='seated'}"`)}${button('<b>Standing</b><small>A little room around you</small>','mode:standing',mode==='standing'?'selected':'',`aria-pressed="${mode==='standing'}"`)}</div>${inputChoices()}<p class="safety">Keep movements comfortable. Clear a little space.<br>Rest whenever you need. Manual play is always available.</p>${button(`Start ${challenges[selected].name.toLowerCase()} →`,'start','primary','autofocus')}</div><aside class="setup-art"><span>✿</span><h2>One little move.<br>A brighter garden.</h2><p>About 2 minutes for all three moments.<br>No accounts. No cloud processing.</p></aside></section>`);
   }else if(screen==='play'){
     const c=challenges[selected],camera=cameraMode();
-    shell(`<section class="play-panel" style="--accent:${c.color}"><div class="instruction"><p class="step">MOMENT ${selected+1} OF 3 · ${mode.toUpperCase()}${camera?'<span id="motion-input-mode"> · CAMERA</span>':' · MANUAL'}</p><h1>${c.name}</h1><p id="${camera?'camera-cue':'cue'}" class="cue">${camera?'Start with both arms resting.':c[mode][phaseAt(elapsed)]}</p><div class="timer"><div class="track"><div id="bar"></div></div><span id="time"></span></div><p class="subtle">${camera?'Six alternating raises. Left, rest, right, rest. Your own pace.':'Go at your own pace. Small movements count.'}</p><div class="actions">${button(paused?'Resume →':'Pause Ⅱ','pause','primary','autofocus')}${button('Change position','switch')}${camera?button('Use manual play','manual'):''}${button('Back to garden','home')}</div></div>${camera?sunshineMarkup():`<div class="motion-art ${c.id}"><div class="halo"></div><span>${c.symbol}</span><p>Together is the whole point.</p></div>`}</section>${paused?'<div class="pause-note" role="status">Taking a breather. Resume whenever you’re ready.</div>':''}`);
+    shell(`<section class="play-panel" style="--accent:${c.color}"><div class="instruction"><p class="step">MOMENT ${selected+1} OF 3 · ${mode.toUpperCase()}${camera?'<span id="motion-input-mode"> · CAMERA</span>':' · MANUAL'}</p><h1>${c.name}</h1><p id="${camera?'camera-cue':'cue'}" class="cue">${camera?(motionPolicy==='activity'?'Move your way—wave, reach, stretch or sway.':'Start with both arms resting.'):c[mode][phaseAt(elapsed)]}</p><div class="timer"><div class="track"><div id="bar"></div></div><span id="time"></span></div><p class="subtle">${camera?(motionPolicy==='activity'?'Small movements help gather six rays. Either side, together, at your own pace.':'Six alternating raises. Left, rest, right, rest. Your own pace.'):'Go at your own pace. Small movements count.'}</p><div class="actions">${button(paused?'Resume →':'Pause Ⅱ','pause','primary','autofocus')}${button('Change position','switch')}${camera?button('Use manual play','manual'):''}${button('Back to garden','home')}</div></div>${camera?sunshineMarkup({policy:motionPolicy}):`<div class="motion-art ${c.id}"><div class="halo"></div><span>${c.symbol}</span><p>Together is the whole point.</p></div>`}</section>${paused?'<div class="pause-note" role="status">Taking a breather. Resume whenever you’re ready.</div>':''}`);
     updateTimer();
     if(camera)updateSunshine({motion,packet,paused,disconnected,notice:motionNotice,revision});
     if(!paused){last=performance.now();frame=requestAnimationFrame(tick);}
@@ -97,7 +102,7 @@ function render(){
     const all=progress.completed.length===3;
     shell(`<section class="center-panel celebration"><div class="celebration-blooms" aria-hidden="true">${challenges.map(c=>`<span style="color:${c.color};opacity:${progress.completed.includes(c.id)?1:.2}">${c.symbol}</span>`).join('')}</div><p class="step">${progress.completed.length} OF 3 MOMENTS GROWN${cameraMode()&&motion.completed?` · ${roundSource==='synthetic'?'SYNTHETIC TEST':'CAMERA SUNSHINE'}`:''}</p><h1>${all?'Look what you grew.':'A little more life.'}</h1><p>${all?'Three little moments. One lovely thing you did together.':'Your shared garden grows with every moment you join.'}</p><div class="actions">${button(all?'Grow together again →':'Next moment →',all?'restart':'next','primary','autofocus')}${button('Back to garden','home')}</div><p class="subtle">${storageFailed?'Progress could not be saved on this device.':'Your garden is saved on this device.'}</p></section>`);
   }else if(screen==='help'){
-    shell(`<section class="panel help-panel"><h1>A garden for everyone.</h1><div class="help-grid"><div><h2>1. Get comfortable</h2><p>Pick seated or standing. Adapt your movement, rest, or watch along. Manual play works without a camera.</p></div><div><h2>2. Catch sunshine</h2><p>Optional camera play is for one person. Rest both arms below your shoulders and wait for Ready. Raise the indicated hand, then rest both arms again. Visible markers alone do not mean Ready. Pause with Space or your remote.</p></div><div><h2>3. Keep it local</h2><p>OpenCV 5 processes camera frames on this Mac. The live view shows the same camera and its shoulder / wrist markers. Frames are not saved or uploaded; pausing clears the view and stops capture.</p></div></div><p class="safety">This is playful entertainment, not exercise instruction or medical advice. Stop if uncomfortable.<br>Camera play needs the local sidecar. Manual confirmation is always available.</p>${button('Back to garden','home','primary','autofocus')}</section>`);
+    shell(`<section class="panel help-panel"><h1>A garden for everyone.</h1><div class="help-grid"><div><h2>1. Get comfortable</h2><p>Pick seated or standing. Adapt your movement, rest, or watch along. Manual play works without a camera.</p></div><div><h2>2. Catch sunshine</h2><p>Optional camera play is for one person. Move your way—wave, reach, stretch or sway. Small, comfortable movements count; there is no required side or pose. Pause with Space or your remote.</p></div><div><h2>3. Keep it local</h2><p>OpenCV 5 processes camera frames on this Mac. The live view shows the same camera and its shoulder / wrist markers. Frames are not saved or uploaded; pausing clears the view and stops capture.</p></div></div><p class="safety">This is playful entertainment, not exercise instruction or medical advice. Stop if uncomfortable.<br>Camera play needs the local sidecar. Manual confirmation is always available.</p>${button('Back to garden','home','primary','autofocus')}</section>`);
   }
   syncPreview();
 }
@@ -112,14 +117,19 @@ function updateTimer(){
 function finish(){const next=complete(progress,challenges[selected].id,videoRound()?'video':roundSource||packet?.source||'manual');if(next!==progress){progress=next;save();}screen='celebrate';revision++;render();}
 function tick(now){
   if(screen!=='play'||paused)return;
-  elapsed+=Math.min((now-last)/1000,.25);last=now;
+  const delta=roundTickDelta(last,now);last=now;
+  elapsed+=delta.creditedMs/1000;
+  for(const key of ['wallMs','creditedMs','stalledMs'])roundTiming[key]+=delta[key];
+  roundTiming.callbacks++;
   if(elapsed>=roundSeconds()){
     if(cameraMode()&&motion.completed){finish();return;}
     screen='check';revision++;render();return;
   }
   updateTimer();frame=requestAnimationFrame(tick);
 }
-function resetRound(){roundId=crypto.randomUUID();motion=createMotionState(roundId);packet=null;disconnected=false;roundSource=null;motionNotice='';}
+function resetRound(){roundId=crypto.randomUUID();motion=createMotionState(roundId,motionPolicy);packet=null;disconnected=false;roundSource=null;motionNotice='';roundTiming={wallMs:0,creditedMs:0,stalledMs:0,callbacks:0};}
+// Primitive, read-only diagnostics. This does not inject a clock or drive input.
+window.togetherMoveTiming=()=>({...roundTiming,roundSeconds:roundSeconds(),paused});
 function act(action){
   revision++;
   if(action==='home'){screen='home';inputMode='manual';paused=false;}
