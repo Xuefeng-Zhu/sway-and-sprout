@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "overallStatus": "incomplete-runtime-probe",
+  "passed": false,
+  "sourceCommit": "25abbd3d16651967f05b196069c7319d85c2dd46",
+  "scope": "Exact committed APK only; later UI/source changes are outside this evidence.",
+  "build": {
+    "status": "debug-apk-built",
+    "apkSha256": "e20ba3cc0c030741484c98d54f9477f2beae7b8928ac206e83dd9d688cfe0dbf",
+    "apkBytes": 22750906,
+    "apkRelativePath": "android/app/build/outputs/apk/debug/app-debug.apk",
+    "toolchain": {
+      "jdk": "17.0.20+8",
+      "gradle": "8.13",
+      "agp": "8.13.2",
+      "compileSdk": 35,
+      "existingOfflineDependenciesOnly": true,
+      "existingDebugKeystoreReused": true
+    },
+    "approvalChronology": [
+      "Initial build-only no-fork override was rejected before execution because automatic review applied the earlier read-only diagnosis restriction.",
+      "Fresh parent authorization clarified superseding testing/build scope; one retry of the known-not-executed override was approved and executed under the original policy.",
+      "The approved retry still failed in the compiler worker with EPERM.",
+      "A direct-javac fallback and offline packaging had launched before the subsequent coordinating-agent stop arrived and completed before process inspection; no later build route was started."
+    ],
+    "noForkRetry": {
+      "startedAtUtc": "2026-10-21T08:43:14.507675+00:00",
+      "finishedAtUtc": "2026-10-21T08:43:21.265034+00:00",
+      "exitCode": 1,
+      "task": ":app:compileDebugJavaWithJavac",
+      "failure": "WorkerDaemonStarter -> TcpIncomingConnector.accept -> java.net.SocketException: Operation not permitted",
+      "fork": false,
+      "incremental": false
+    },
+    "directJavac": {
+      "sourceCount": 19,
+      "classCount": 34,
+      "exitCode": 0,
+      "finishedAtUtc": "2026-10-21T08:44:24.636412+00:00",
+      "inputs": "Exact main/debug sources plus this worktree generated BuildConfig; Android 35 jar and three hash-pinned existing AAR class jars"
+    },
+    "packaging": {
+      "offline": true,
+      "sdkDownload": false,
+      "excludedTask": ":app:compileDebugJavaWithJavac",
+      "exitCode": 0,
+      "finishedAtUtc": "2026-10-21T08:44:32.784431+00:00"
+    },
+    "trackedSourceChangedForBuild": false,
+    "worktreeCleanAtBuild": true,
+    "canonicalCleanAtBuild": true,
+    "mediaOrModelsCopied": false
+  },
+  "network": {
+    "originalProfileSha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222",
+    "originalProfileUnchanged": true,
+    "probeChildrenUsedOriginalProfile": true,
+    "externalNoPayloadConnectDeniedErrno": 1,
+    "leaseMs": 1500,
+    "eventTtlMs": 1500
+  },
+  "probe": {
+    "startedAtUtc": "2026-10-21T08:49:25.485088+00:00",
+    "finishedAtUtc": "2026-10-21T08:50:08.472183+00:00",
+    "emulatorRuns": 1,
+    "mode": "windowed",
+    "avd": "codex_mac_tv_api34",
+    "startupLimitSeconds": 90,
+    "activeProbeLimitSeconds": 60,
+    "activeProbeStarted": false,
+    "bootSeconds": 16.761005,
+    "installSucceeded": true,
+    "installedApkSha256": "e20ba3cc0c030741484c98d54f9477f2beae7b8928ac206e83dd9d688cfe0dbf",
+    "activityStartOutput": "Starting: Intent { cmp=com.togethermove.tv.motion/com.togethermove.tv.MainActivity }",
+    "stopStage": "First app pidof returned exit 1; check=True raised CalledProcessError before WebView attachment or active probe.",
+    "launchInterpretation": "Cannot distinguish an app crash from an app not yet ready; Starting output is not proof of a running activity.",
+    "cameraEnabled": false,
+    "naturalMediaUsed": false,
+    "videoDecoded": false,
+    "videoFrameCoverage": null,
+    "runtimeMeasurementsObtained": {
+      "webViewScore": false,
+      "ack": false,
+      "gameTimer": false,
+      "pollAge": false,
+      "activeEpochOrInvalidationReason": false,
+      "appOrEmulatorCpuVersusWall": false
+    },
+    "pauseResetDedupRuntimeVerified": false
+  },
+  "syntheticService": {
+    "opencv": "5.0.0",
+    "runtimeVerification": "locked hashes + both zero-image DNN forwards + exact output shapes",
+    "zeroTensorWarmupMs": 46.75,
+    "polls": 0,
+    "observationsAccepted": 0,
+    "observationsRejected": 0,
+    "eventsGenerated": 0,
+    "lastAckSeq": 0,
+    "processWallSeconds": 1.317064,
+    "processCpuSeconds": 0.385178,
+    "timingScope": "Service startup, zero-tensor verification and shutdown only; no active poll or inference throughput measurement.",
+    "auditScope": "Ready, worker-idle cleanup invalidation and cleanup rows only; no gameplay poll-age or epoch measurement."
+  },
+  "cleanup": {
+    "appForceStopped": true,
+    "emulatorKillCommandExitCode": 0,
+    "gracefulEmulatorWaitSeconds": 12,
+    "emulatorExitCode": -9,
+    "emulatorStopped": true,
+    "taskAdbPort": 5041,
+    "taskAdbStopped": true,
+    "preexistingAdbPort5038Untouched": true,
+    "syntheticStopped": true,
+    "workerAliveAfterJoin": false,
+    "httpAliveAfterJoin": false,
+    "tokenAfterStop": null,
+    "pendingEventsAfterStop": 0,
+    "parentSubsequentProcessCheck": "Parent reported no remaining task-owned processes; observation is recorded in task conversation, not these operational JSON files."
+  },
+  "supervisorRepair": {
+    "change": "Expected empty pidof rc0/rc1 now retries within real3second deadline using check=False; stdout/stderr/returncode retained; bounded task-only failure logcat collected beforecleanup",
+    "testsRun": 14,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "scope": "Deterministic fake-clock and fake-response tests; no subprocess, device, service or build execution",
+    "networkProfileUnchanged": true,
+    "safetyFunctionsUnchanged": true,
+    "activeGuard58SecondsPresent": true,
+    "oneEmulatorRunMarkerPreserved": true,
+    "secondProbeExecuted": false,
+    "scriptSha256Before": "99e76d347faceb4ebb2ccc16f38a6475fc652ca79bacb21ae67151884a3e8eb7",
+    "scriptSha256After": "1353fb2ce0baca78ac16763ae5735bd4cbd9f31852c954900edeb2a25ba760d0"
+  },
+  "remainingLimits": [
+    "PID supervisor handling is repaired by deterministic tests only; no second emulator run validated it.",
+    "No activity-event to JS score to ACK result, pause/reset/dedup runtime result, game timer, active epoch, poll age or CPU/wall comparison was obtained.",
+    "No video decode occurred, so frame coverage is not applicable.",
+    "The earlier visible replay slowdown and frame-discard root cause remain unresolved.",
+    "No physical Fire TV, human-camera or natural-media accuracy/performance claim is supported."
+  ],
+  "operationalEvidence": {
+    "location": "Sibling task-local probe-20261021 directory, outside the checkout; operational logs remain untracked.",
+    "sha256": {
+      "build-attempt-6.json": "2c96e26ef4b0c95f721ee2460c3fa2073d6c0c31fe1e460f7c2cda27dd054b73",
+      "gradle-attempt-6.log": "eb450f6191a96c7e2bee45a15b010356c24156064123c0a0a28146c2d79a7b23",
+      "javac-direct-result.json": "7bde515fb283b21986e9f10cdf8a9b276205667235de9af73f50f742d7b3c2a5",
+      "build-result.json": "cab35b1a1595bbea2addb31e922d5db2f9fd76ffe6ff9002146fc72a518de36f",
+      "gradle-debug.log": "ce750ebd6090ac0251af3c19ace2f91439165663cc90886f42dfbf6e47b375e2",
+      "probe-result.json": "a1fad724290ea043196162cb98d4be1c3c9f951b3a47093d4a364344dc5556f5",
+      "synthetic.summary.json": "660deaef52187869b421aea064c1d98d08eb704674fe68dd807c367f6c631eb3",
+      "synthetic.audit.jsonl": "18a5ed5bfd10dc63fdd7c426df31faa6391e8e8ca614652e2a9a0af652c02adb",
+      "pid-supervisor-fix-result.json": "cc63f99149dc8c5491c65c86c70818cc71616decdaa52f70e1b9705aa9f90653",
+      "run_probe.py": "1353fb2ce0baca78ac16763ae5735bd4cbd9f31852c954900edeb2a25ba760d0",
+      "test_run_probe.py": "9cc2569bf444856bf45818bab6758b72f714a3184651d104511ce3150099b0f2"
+    }
+  }
+}
