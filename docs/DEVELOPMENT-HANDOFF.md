@@ -4,14 +4,35 @@ Every move helps your garden grow.
 
 Canonical checkout: `~/mygit/sway-and-sprout`. Private remote:
 [Xuefeng-Zhu/sway-and-sprout](https://github.com/Xuefeng-Zhu/sway-and-sprout).
-Local development branch: `work/natural-motion-diagnostics`. Its starting point
-is `ed4e1f5f12003319fc2cb4a93c4c203fee104adb` on `main`/`origin/main`.
-Local milestones: `89a0f9c` explains calibration/readiness; `d48a3ac` binds video
-acceptance and reconstruction; `25b9de9` records the initial diagnosis. The next
-local milestone `b1b049e` adds authored event timing and generic bound-file
-traces. Inspect all local checkpoints with
-`git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
-been requested. The dated TogetherMove source remains an untouched backup.
+The active development branch is `work/activity-progression` in the isolated
+worktree; canonical stays at `45ced16`. A reviewed non-force push to that private
+feature branch is authorized. Publication, deployment and competition submission
+are separate pending actions.
+
+The older `work/natural-motion-diagnostics` branch began at
+`ed4e1f5f12003319fc2cb4a93c4c203fee104adb`. Its `89a0f9c`, `d48a3ac`,
+`25b9de9` and `b1b049e` checkpoints remain diagnostic history. The dated
+TogetherMove source remains an untouched backup.
+
+## Current continuation — 21 October 2026
+
+The active isolated branch is `work/activity-progression`; canonical remains
+`45ced16`. A private feature-branch push is authorized. The older branch/push
+statements below describe earlier milestones. SayGo is no longer recording;
+Mac lock remains the visual-test blocker. No unlock is attempted.
+
+Actual permitted OpenCV file inference reached 136/136 frames and EOF, producing
+three activity events, three rays, growth 0.5 and ACK 3 through actual game code
+in a VM; saved participation was unchanged. This is functional integration,
+not accuracy, rendered native or hardware evidence.
+[Source-bound result and input license](MOTION-TO-GARDEN-20261021.md).
+
+Optional web Save/Restore/Delete now uses a minimal AWS-oriented summary API,
+locally tested with fake storage. It is disabled by default and in the existing
+native host. No AWS resource, permission or spend exists for this component.
+[Product behavior, deployment proposal and approval needs](AWS-GARDEN-BACKUP.md).
+Owner-authored code/docs now use MIT, preserving third-party terms in
+[the notices](../THIRD-PARTY-NOTICES.md). Private visibility is unchanged.
 
 ## Garden journey and bounded probe continuation — 2026-10-21
 
@@ -26,8 +47,8 @@ allowed exactly one retry of the previously denied fixture preparation; it
 succeeded. A separate offline diagnostic APK now includes only generated geometry
 and the existing pinned FP16 model, SHA-256
 `611b55e431a95c43f3e263662b74bcffd71097cf45a8fbff075eb8451362a10d`.
-It has not been installed or run. Desktop/emulator work is paused while SayGo
-records; no unlock is attempted. No demo is recorded.
+It has not been installed or run. The Mac is locked; no unlock is attempted.
+SayGo recording is no longer reserving the runtime. No demo is recorded.
 See the [fixture preparation and APK pins](NATIVE-FIXTURE-PREPARATION-20261021.md).
 See the [current native result and exact blockers](NATIVE-JOURNEY-20261021.md).
 The [earlier APK checkpoint](NATIVE-UI-CHECKPOINT-20261021.md) remains historical.

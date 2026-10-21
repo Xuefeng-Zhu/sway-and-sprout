@@ -17,6 +17,7 @@ sidecar/fixtures/**/*.mp4
 sidecar/fixtures/**/*.png
 verification-results/
 .DS_Store
+.devpost-hackathon-state.json
 
 # Generated evidence and local credentials never belong in source history.
 artifacts/
@@ -40,3 +41,6 @@ android/app/src/debug/assets/verification/
 
 # Frozen licensed image calibration assets are prepared explicitly and remain local.
 android/app/src/debug/assets/calibration/
+
+# Also ignore a worktree symlink to existing local model assets.
+sidecar/models

@@ -1,5 +1,12 @@
 # Portable local verification
 
+> Historical migration instructions. The public-media commands below do not
+> authorize new downloads or analysis. Current work excludes Pexels, uncleared
+> DVIDS and unlicensed YouTube inputs; do not run their preparation/inference
+> recipes. Use the current verification report and its explicitly permitted,
+> hash-bound existing input instead. Old strict-pose expectations remain
+> diagnostic history, not movement-first gameplay requirements.
+
 Run commands from the canonical repository root. The inference/classifier code,
 model lock and core verifiers already resolve files relative to their source.
 Migration changes test/tool paths and stale simulated-progress assertions.
