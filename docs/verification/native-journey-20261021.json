@@ -1,0 +1,643 @@
+{
+  "schema": 1,
+  "recordedAtUtc": "2026-10-21T16:09:37.277074+00:00",
+  "status": "native-manual-passed-synthetic-and-demo-blocked",
+  "applicationSourceCommit": "f23f9e72c138147632745bbe8e16aa538f56b4d5",
+  "instrumentationCommit": "5afb212c6500be1dcd405393167deb26e7bbb9b3",
+  "apk": {
+    "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-next/app-debug-f23f9e72c138-59e03ce8d16c.apk",
+    "bytes": 22800431,
+    "sha256": "59e03ce8d16c43e1caf110f79e626ebdf2c53c5fcdd086db09aa8576c59c023d",
+    "nativeVideoModelOrMediaAssets": []
+  },
+  "sourceSha256": {
+    "android/app/src/debug/java/com/togethermove/tv/NativeVideoAssets.java": "d3bd71d48b67ec4831fa50717b7b0d0bff8bf2993adf88fdeded83de66192764",
+    "android/app/src/debug/java/com/togethermove/tv/NativeVideoCase.java": "508b8b9a3472758eebd7a74d738b39cb5581909457b11ccaf5cef6b8a89c54c6",
+    "android/app/src/debug/java/com/togethermove/tv/NativeVideoFactory.java": "d53a31dc2a424860cc91e0a5782e8564be9fdb8942b9f9a736ad4dd034870544",
+    "android/app/src/debug/java/com/togethermove/tv/NativeVideoReplay.java": "53dda6b89ca17b8702c6dd208df770ab5a0f8e502b170a2aad8bdbe17471bd47",
+    "android/app/src/debug/java/com/togethermove/tv/ReplayAttemptTiming.java": "9336bc09c3025615b8ee26e48d838c6c2ca215c5ab658448703c24e11c9f40d0",
+    "android/tests/com/togethermove/tv/NativeVideoCaseTest.java": "b400584d1d4bb3c0a03194f52d9f9a6a165cb4716adec2fc2cd6038a4b154832",
+    "android/tests/com/togethermove/tv/ReplayAttemptTimingTest.java": "6ac4ee414144880b4881ca4b48670a029bde90931faacbb30e0f8565322e3217",
+    "scripts/native-video-evidence.mjs": "d7f3bdcf86ec21cdccf8d2a435a37f64b713f29c7d023e0ba215a87be29f6aa0",
+    "scripts/verify-native-source.py": "6b7af257fd3514420fea1fa31c364f3a575b3e68199e5164e15160055996abf7",
+    "scripts/verify-native-video.mjs": "41ce2c231c7b592cb859e6176a6c3d8144dc249d3a5a37acf0487a46bd42e6b7",
+    "src/main.js": "65bb6b3b61858d5c14e70b04460521a797a5d02c1c06bf489264fbd52e782871",
+    "src/style.css": "c3a3b36194a555a7e4fc22db31f600ee903a6e7d64571e78404974ed84f7b989",
+    "tests/browser/app.spec.js": "d21f5bda4dde49f97f086fbd9baa336e3b8e1009edd862ab57534185a823ce7c",
+    "tests/native-video-cli.test.js": "a14497dc699a7d4c16d25b6ad207ba6e89d4a65864e506e313df7b96eac36b0b",
+    "tests/native-video-evidence.test.js": "e4b91d526b951c29a5bc27048d49506f6f539b1136574ed54c80c213eedef413"
+  },
+  "verification": {
+    "nodeTestsPassed": 118,
+    "progressChecksPassed": 90,
+    "javaSourcesCompiled": 21,
+    "compiledClasses": 37,
+    "javaHostAssertionsPassed": 1067,
+    "browserRegressionsPassed": 6,
+    "finalTargetedBrowserStatesPassed": 26,
+    "webBuildPassed": true,
+    "apkBuildPassed": true
+  },
+  "nativeManual": {
+    "passed": true,
+    "activeWallMs": 14144,
+    "layoutChecksPassed": 32,
+    "viewportCss": [
+      960,
+      540
+    ],
+    "input": "automated manual self-report buttons",
+    "humanMovementVerified": false,
+    "nativePoseInferenceUsed": false,
+    "pauseProof": {
+      "wallMs": 1009,
+      "timerUnchanged": true,
+      "countUnchanged": true
+    },
+    "resumeProof": {
+      "creditedMsBefore": 333.3000000000002,
+      "creditedMsAfter": 599.9000000000005,
+      "naturalRaf": true
+    },
+    "manualFixture": {
+      "input": "Automated manual self-report button test; not observed human movement",
+      "initialCompletedCount": 1,
+      "initialSessions": 0,
+      "moments": [
+        {
+          "moment": 1,
+          "counted": 6,
+          "confirmed": true,
+          "journeyTended": 1,
+          "savedCompletedCount": 2
+        },
+        {
+          "moment": 2,
+          "counted": 6,
+          "confirmed": true,
+          "journeyTended": 2,
+          "savedCompletedCount": 2
+        },
+        {
+          "moment": 3,
+          "counted": 6,
+          "confirmed": true,
+          "journeyTended": 3,
+          "savedCompletedCount": 3
+        }
+      ],
+      "harvestedKeySha256": "51becaeacccb33ac116d61fa42ef1f71a341e821d27b7ea59357ea437fe5c974",
+      "reloadSavedExactly": true
+    },
+    "progressOriginalRestored": true,
+    "beforeSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c",
+    "afterSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c",
+    "cameraCalls": 0,
+    "microphoneCalls": 0,
+    "cleanupPassed": true
+  },
+  "attempts": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021",
+      "sourceCommit": "2b3c24d7bb43d58c4855fd96cf680400fad8b4f2",
+      "apkSha256": "50de6d11ff5496d549db40f0a12f0b8c0f39633391913f2c49b4e87b3c90a530",
+      "startedAtUtc": "2026-10-21T15:25:55.813681+00:00",
+      "finishedAtUtc": "2026-10-21T15:26:31.200996+00:00",
+      "passed": false,
+      "activeWallMs": null,
+      "failure": "browserType.connectOverCDP: socket hang up\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:9342\u001b[22m\n",
+      "storageRestored": false,
+      "completionChecks": {
+        "supervisorNoError": false,
+        "controllerPassed": false,
+        "gardenStorageRestored": false,
+        "serviceSummaryPresent": true,
+        "serviceNoError": true,
+        "serviceStopAcknowledged": true,
+        "serviceStopped": true,
+        "serviceThreadsJoined": true,
+        "serviceTokenReleased": true,
+        "serviceQueueEmpty": true,
+        "ownedProcessesStopped": true,
+        "appForceStopConfirmed": true,
+        "taskPortsClosed": true
+      },
+      "reportSha256": "928e513449ed5b07a01775395dbe241d732de98ded64ab10ecf038f6486fac52"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2",
+      "sourceCommit": "2b3c24d7bb43d58c4855fd96cf680400fad8b4f2",
+      "apkSha256": "50de6d11ff5496d549db40f0a12f0b8c0f39633391913f2c49b4e87b3c90a530",
+      "startedAtUtc": "2026-10-21T15:29:05.850214+00:00",
+      "finishedAtUtc": "2026-10-21T15:30:11.488608+00:00",
+      "passed": false,
+      "activeWallMs": 26320,
+      "failure": "Insufficient bounded time remains for an honest natural30-second round; stopped without extending deadline",
+      "storageRestored": true,
+      "completionChecks": {
+        "supervisorNoError": false,
+        "controllerPassed": false,
+        "gardenStorageRestored": true,
+        "serviceSummaryPresent": true,
+        "serviceNoError": true,
+        "serviceStopAcknowledged": true,
+        "serviceStopped": true,
+        "serviceThreadsJoined": true,
+        "serviceTokenReleased": true,
+        "serviceQueueEmpty": true,
+        "ownedProcessesStopped": true,
+        "appForceStopConfirmed": true,
+        "taskPortsClosed": true
+      },
+      "reportSha256": "80e5577edb6440853bc06ed09aef16b80bc1ecd65a56ce25649de562e370347f"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed",
+      "sourceCommit": "f23f9e72c138147632745bbe8e16aa538f56b4d5",
+      "apkSha256": "59e03ce8d16c43e1caf110f79e626ebdf2c53c5fcdd086db09aa8576c59c023d",
+      "startedAtUtc": "2026-10-21T15:53:33.803202+00:00",
+      "finishedAtUtc": "2026-10-21T15:54:03.930334+00:00",
+      "passed": false,
+      "activeWallMs": null,
+      "failure": "Expected exactly one existing Sway & Sprout WebView",
+      "storageRestored": false,
+      "completionChecks": {
+        "supervisorNoError": false,
+        "controllerPassed": false,
+        "gardenStorageRestored": false,
+        "serviceSummaryPresent": true,
+        "serviceNoError": true,
+        "serviceStopAcknowledged": true,
+        "serviceStopped": true,
+        "serviceThreadsJoined": true,
+        "serviceTokenReleased": true,
+        "serviceQueueEmpty": true,
+        "ownedProcessesStopped": true,
+        "appForceStopConfirmed": true,
+        "taskPortsClosed": true
+      },
+      "reportSha256": "5a4adc51caed65a3b025a982856e39834b54b614b5c3681199875f0344afd4cb"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2",
+      "sourceCommit": "f23f9e72c138147632745bbe8e16aa538f56b4d5",
+      "apkSha256": "59e03ce8d16c43e1caf110f79e626ebdf2c53c5fcdd086db09aa8576c59c023d",
+      "startedAtUtc": "2026-10-21T15:58:00.923237+00:00",
+      "finishedAtUtc": "2026-10-21T15:58:53.723066+00:00",
+      "passed": false,
+      "activeWallMs": 6697,
+      "failure": "Native layout manual-next-setup-1: scene outside viewport",
+      "storageRestored": true,
+      "completionChecks": {
+        "supervisorNoError": false,
+        "controllerPassed": false,
+        "gardenStorageRestored": true,
+        "serviceSummaryPresent": true,
+        "serviceNoError": true,
+        "serviceStopAcknowledged": true,
+        "serviceStopped": true,
+        "serviceThreadsJoined": true,
+        "serviceTokenReleased": true,
+        "serviceQueueEmpty": true,
+        "ownedProcessesStopped": true,
+        "appForceStopConfirmed": true,
+        "taskPortsClosed": true
+      },
+      "reportSha256": "f7a5440d9a1e299117ba55d8baf2357f5b74d8780ce3bcb3187d1fc5c630c107"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3",
+      "sourceCommit": "f23f9e72c138147632745bbe8e16aa538f56b4d5",
+      "apkSha256": "59e03ce8d16c43e1caf110f79e626ebdf2c53c5fcdd086db09aa8576c59c023d",
+      "startedAtUtc": "2026-10-21T16:00:55.273391+00:00",
+      "finishedAtUtc": "2026-10-21T16:01:39.226470+00:00",
+      "passed": true,
+      "activeWallMs": 14144,
+      "failure": null,
+      "storageRestored": true,
+      "completionChecks": {
+        "supervisorNoError": true,
+        "controllerPassed": true,
+        "gardenStorageRestored": true,
+        "serviceSummaryPresent": true,
+        "serviceNoError": true,
+        "serviceStopAcknowledged": true,
+        "serviceStopped": true,
+        "serviceThreadsJoined": true,
+        "serviceTokenReleased": true,
+        "serviceQueueEmpty": true,
+        "ownedProcessesStopped": true,
+        "appForceStopConfirmed": true,
+        "taskPortsClosed": true
+      },
+      "reportSha256": "595f56d29a1a5cfb49dd3c7e8b2c10169f93054293d1ef36f985b65fe5a08edf"
+    }
+  ],
+  "blockedSyntheticRound": {
+    "observedAtUtc": "2026-10-21T16:06:02.453679+00:00",
+    "method": "Read-only IORegistry after the preflight lock stop; no desktop control/unlock",
+    "flags": [
+      {
+        "CGSSessionScreenIsLocked": true,
+        "CGSSessionScreenLockedTime": 1792598528,
+        "kCGSSessionOnConsoleKey": true,
+        "kCGSessionLoginDoneKey": true
+      }
+    ],
+    "emulatorStarted": false,
+    "probeRunMarkerExists": false,
+    "status": "blocked-before-emulator-start"
+  },
+  "fixtureDenial": {
+    "status": "denied-not-executed",
+    "action": "Prepare local twenty-frame synthetic geometry video, config and existing pinned FP16 model under the original network-denied profile",
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 /Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/prepare_synthetic.py",
+    "workdir": "/Users/frank/Documents/Codex/2026-10-20/task-3/sway-and-sprout",
+    "requestedExecution": "require_escalated host launcher; every ffmpeg/ffprobe child still uses sandbox-exec with unchanged browser-only.sb",
+    "reviewerReason": "The command creates synthetic video/config/model fixture files, while the trusted scope permits only designing or locating the fixture without creating it yet.",
+    "firstDefaultSandboxAttempt": {
+      "result": "failed before video generation",
+      "childCommand": "sandbox-exec -f /Users/frank/Documents/Codex/2026-10-19/task/mediapipe-evaluation/browser/browser-only.sb /opt/homebrew/bin/ffmpeg -version",
+      "exitCode": 71,
+      "stderr": "sandbox-exec: sandbox_apply: Operation not permitted",
+      "evidence": "command-1.json"
+    },
+    "automaticApprovalReviewDenied": true,
+    "retryAfterDenial": false,
+    "alternateRouteAttempted": false,
+    "videoCreated": false,
+    "configCreated": false,
+    "modelCopied": false,
+    "fixtureManifestCreated": false,
+    "parentNotified": true,
+    "unaffectedWork": "Android source compilation, fake-clock host checks and primitive evidence-filter tests can continue",
+    "nextRequiredAction": "Resolve the fixture-creation scope with materially relevant trusted authorization before any one allowed retry"
+  },
+  "demoRecorded": false,
+  "submissionMaterialsCompleted": false,
+  "nativeReplaySlowdownResolved": false,
+  "physicalFireTvVerified": false,
+  "liveHumanRecognitionVerified": false,
+  "networkProfileSha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222",
+  "networkProfileUnchanged": true,
+  "canonicalCommit": "45ced16d3e8457db3329f1ec5dc875afc5fc5e84",
+  "canonicalClean": true,
+  "remaining": [
+    "Run prepared synthetic-only full score/ACK/reset/natural30second check in an available desktop session",
+    "Resolve explicit fixture-creation scope before one known-not-executed retry of denied preparation",
+    "Run bounded Float16/image geometry throughput diagnostic if preparation authorized",
+    "Record labelled complete demo and prepare local submission materials after native checks pass"
+  ],
+  "artifacts": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/probe-result.json",
+      "bytes": 9551,
+      "sha256": "928e513449ed5b07a01775395dbe241d732de98ded64ab10ecf038f6486fac52"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/webview-result.json",
+      "bytes": 2585,
+      "sha256": "88cc072ae3c7f286f91d378f8c8695bc86bb44586028651c26bf7eace0fe4870"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/run_probe.py",
+      "bytes": 18535,
+      "sha256": "d98107a215a252c3b24e8da8dd1580399a31e68606abf6fc6ca7daf028120818"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/webview_probe.mjs",
+      "bytes": 28324,
+      "sha256": "d12f4b87d97c340e3eb752a1a676788b6a82794252093a0953c130fa070f81ca"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/synthetic_service.py",
+      "bytes": 18085,
+      "sha256": "625a8c8c08ec772a09604d9966f4b59d143a37b2e3e088886a5d320793ad82f8"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/synthetic.summary.json",
+      "bytes": 2197,
+      "sha256": "996126282c46cf05fe9387fedcfb14d5d6fec411dfe8f0abbf5af7c9daffcd00"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/synthetic.audit.jsonl",
+      "bytes": 418,
+      "sha256": "30e1d8ea6f27b08aab2e6d100b21ca5d94d44fe129bb7e8cfb604273243d1cc6"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/supervisor.log",
+      "bytes": 334,
+      "sha256": "2a69a42db82273efab994dc6d0379a8f691d163c7038214e0cd708faae62d9d1"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/probe-result.json",
+      "bytes": 180669,
+      "sha256": "80e5577edb6440853bc06ed09aef16b80bc1ecd65a56ce25649de562e370347f"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/webview-result.json",
+      "bytes": 160187,
+      "sha256": "81cc79328de47695412c14bbef91733e2e09fb1f4941b9319f5c4cc6364e7042"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/run_probe.py",
+      "bytes": 21991,
+      "sha256": "89d9b0fecd0dfd4aa375372a6bebe7f91b269de7e9da2ce90c63eaaa3e538bf9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/webview_probe.mjs",
+      "bytes": 28324,
+      "sha256": "d12f4b87d97c340e3eb752a1a676788b6a82794252093a0953c130fa070f81ca"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/synthetic_service.py",
+      "bytes": 18085,
+      "sha256": "625a8c8c08ec772a09604d9966f4b59d143a37b2e3e088886a5d320793ad82f8"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/synthetic.summary.json",
+      "bytes": 2414,
+      "sha256": "c6a8f8926a0e34bcca25af5e68d212d2cfea4c7c98cd4889153c21bde8553b76"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/synthetic.audit.jsonl",
+      "bytes": 34440,
+      "sha256": "7b733f6559849de067b679ccab5bbc8bd5df1350e6190f773666a8d2a461f136"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/supervisor.log",
+      "bytes": 334,
+      "sha256": "cab9a8622749a049ed5ee46764211b7ad3efad12de2340ccad623543a3001690"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/01-native-entry.png",
+      "bytes": 188260,
+      "sha256": "5d00d44f57f2167d0159ddb897f462ae22d101acad9c5510fa8403c56c846887"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/02-native-manual-three-counts.png",
+      "bytes": 166426,
+      "sha256": "e49e0d2e7b80fcfe902496f00ea974d7f0300261292f7928d4d66ad4e6c1e5b6"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/03-native-manual-fixture-harvest.png",
+      "bytes": 128800,
+      "sha256": "7b730a5108037b192d911d380ac072e7ea35181224d3d6db6b3fecaf4a1d56c4"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/attempt-2/04-native-saved-fixture-reload.png",
+      "bytes": 191854,
+      "sha256": "aac3ab8ddf369c2c6ea97314edf7a20e5eaf43e31af6d672567d25cef30f497a"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/probe-result.json",
+      "bytes": 10561,
+      "sha256": "5a4adc51caed65a3b025a982856e39834b54b614b5c3681199875f0344afd4cb"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/webview-result.json",
+      "bytes": 2385,
+      "sha256": "404eadf3e1885686d4b043528ab2b177fd20861c53a818bbeb43c595261f54d0"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/run_probe.py",
+      "bytes": 23154,
+      "sha256": "a7be44ec3124acb1f6380b78dcfd09a875d2b95265734dda839cb1ec5f1a33ca"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/webview_probe.mjs",
+      "bytes": 27835,
+      "sha256": "87909719b4d2b25fca85f4c49d551ac0352d8f9155505b8c4b753ff68b2e0634"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/synthetic_service.py",
+      "bytes": 18085,
+      "sha256": "bf16c755e21aa4649585fefcbcd2e798777a71803afecc379dfa9539201a17bc"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/synthetic.summary.json",
+      "bytes": 2197,
+      "sha256": "89e6060a859ee739868f63b4a8cde4fa12ee084f8f3da1d9e9e1071dadd208d9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/synthetic.audit.jsonl",
+      "bytes": 419,
+      "sha256": "70ce842321a098989c5ee3a46a879efd9b133aa94139f53b4d2da11d642066b9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/supervisor.log",
+      "bytes": 334,
+      "sha256": "159f9d6938edae79277ef504d6b06cc62c41fa84dd5508ed533995b8c125db82"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/probe-result.json",
+      "bytes": 175064,
+      "sha256": "f7a5440d9a1e299117ba55d8baf2357f5b74d8780ce3bcb3187d1fc5c630c107"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/webview-result.json",
+      "bytes": 152657,
+      "sha256": "371a8fee0f55b9266429eadd1350a2c58cfda55bcab055d7eafb238c7876b9cb"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/run_probe.py",
+      "bytes": 23154,
+      "sha256": "a7be44ec3124acb1f6380b78dcfd09a875d2b95265734dda839cb1ec5f1a33ca"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/webview_probe.mjs",
+      "bytes": 27833,
+      "sha256": "8b31ac3441c460f89f44975648081759769508d913e30209fff13c7aba65e0dc"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/synthetic_service.py",
+      "bytes": 18085,
+      "sha256": "bf16c755e21aa4649585fefcbcd2e798777a71803afecc379dfa9539201a17bc"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/synthetic.summary.json",
+      "bytes": 2199,
+      "sha256": "0079d3087217d5489ff4397c3e874aec12f3f344add8b534bcc2dfb9b927bf75"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/synthetic.audit.jsonl",
+      "bytes": 421,
+      "sha256": "d670ef3e065012798754d44c7bbb1434ec1a539e42c7fd8c7231f45ddeec7950"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/supervisor.log",
+      "bytes": 334,
+      "sha256": "4d6ae2a0eaaf905dd0ce1f5d0671a45840c4796797cffa2add2b958d80c09c9c"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/wait_native_page.mjs",
+      "bytes": 1005,
+      "sha256": "423eb8871d82655592a7688d594299b29ab532084dd16d321529b267cc317fe9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/01-native-manual-entry.png",
+      "bytes": 155071,
+      "sha256": "5f2b6d5687d4c1d19de5fbbdf42b848453ff09bd1571e1325b98382fadcabd61"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-2/02-native-manual-three-counts.png",
+      "bytes": 162084,
+      "sha256": "3d70c4d15822c20f8cfbb415f04f8b43de7171359f1ae2d4c2e25346ec926070"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/probe-result.json",
+      "bytes": 340113,
+      "sha256": "595f56d29a1a5cfb49dd3c7e8b2c10169f93054293d1ef36f985b65fe5a08edf"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/webview-result.json",
+      "bytes": 308233,
+      "sha256": "db26712ea7de8a49495453c3fc35272c7892ba70a63d027932ce72a016a1f1da"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/run_probe.py",
+      "bytes": 23154,
+      "sha256": "a7be44ec3124acb1f6380b78dcfd09a875d2b95265734dda839cb1ec5f1a33ca"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/webview_probe.mjs",
+      "bytes": 28463,
+      "sha256": "1ce3e973218531c865c451a4cc37dbf6e741d7dff178a96024ac42d0c6ed78b3"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/synthetic_service.py",
+      "bytes": 18085,
+      "sha256": "bf16c755e21aa4649585fefcbcd2e798777a71803afecc379dfa9539201a17bc"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/synthetic.summary.json",
+      "bytes": 2198,
+      "sha256": "0e67b64366329c25dd0242331a7738e8bcc6927c891c0ea4b052aa5d9be250b0"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/synthetic.audit.jsonl",
+      "bytes": 419,
+      "sha256": "0ecfe44450c26741d1f409cc46f2aa00054c1384bcbaff2966b6aa5a4c36899f"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/supervisor.log",
+      "bytes": 343,
+      "sha256": "5f00724956fd3159ac0cdfbc72447a952424901f11fe9e6cab47cba006323125"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/wait_native_page.mjs",
+      "bytes": 1005,
+      "sha256": "423eb8871d82655592a7688d594299b29ab532084dd16d321529b267cc317fe9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/01-native-manual-entry.png",
+      "bytes": 155071,
+      "sha256": "5f2b6d5687d4c1d19de5fbbdf42b848453ff09bd1571e1325b98382fadcabd61"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/02-native-manual-three-counts.png",
+      "bytes": 162084,
+      "sha256": "f92a6cceec425a908d61db903060a3a27b1f216036a2873eb970f4a96c172f0f"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/03-native-manual-fixture-harvest.png",
+      "bytes": 142067,
+      "sha256": "11f263af379c60703d162c60200bc0af050946a5143523fab1d6906618a8d0d7"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/manual-fixed/attempt-3/04-native-saved-fixture-reload.png",
+      "bytes": 156825,
+      "sha256": "828cfa1d34cb45ccfe7671de7e948492fe41715954f41d7fba7bce7dc48aea76"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-next/build-result.json",
+      "bytes": 20938,
+      "sha256": "3e7fd9f881be782f473b60c814c05b04dba90984dd075365dd0efa6be73e19e1"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-next/build_ui.py",
+      "bytes": 15002,
+      "sha256": "8e7bf0f9d1f2a276282e85612b268d8d58d716501621b2cb0731d9907a4a9d16"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-next/supervisor.log",
+      "bytes": 2332,
+      "sha256": "bef922257d2e0bf40721176fb05229408f430e115eb30264df8b0d8b992eaf3d"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/node-tests-final.log",
+      "bytes": 11290,
+      "sha256": "735aab2f54b23fef536d07550fc21a21df6e8f2edc98efb8516aeb574ccf7702"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/web-build-final.log",
+      "bytes": 461,
+      "sha256": "e8c2b87cf28ef5d834af858d224e3a265d58888635900e9e5b356c386c772f4f"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/progress-preservation-final.json",
+      "bytes": 617,
+      "sha256": "154cc1989f87995b19b1a63cdeb91f96c2ce547f8b7d21c2d26cbd924016a3c9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/source-host-verification-postguard.json",
+      "bytes": 1340,
+      "sha256": "2423c10b633dcdbf4b9ba8322486e781ceeffebb360d15caa42ae3a9be0355f3"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/node-evidence-tests.log",
+      "bytes": 1975,
+      "sha256": "c51a3d4cd3088adf700cbe9d4bc64e4a4d894bdf604f00fe65adaa19bdf090cd"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/node-postguard-tests.log",
+      "bytes": 307,
+      "sha256": "6d77d2b494c337775aae0e82bffa98702e28ba9f92008195f916fab0fff079d2"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/operation-denied.json",
+      "bytes": 1626,
+      "sha256": "e87b8deac279cb1780caf8423a0e1ca6e2f5801448d6c84e4eed14a9ebd81a56"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/command-1.json",
+      "bytes": 309,
+      "sha256": "75ea050c94be7228f9ba0317fee9fb90de7d929a387226fb6aed9671f23de50b"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/prepare_synthetic.py",
+      "bytes": 6139,
+      "sha256": "05f5b4b9d3ee4a0555e495e63b1b230f038b67b342561ba80721e2b60cca7ed7"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/synthetic-fixed/supervisor.log",
+      "bytes": 548,
+      "sha256": "e1a97f62659875da7bf50b76ad58f31af70177c2fe9ada2412b5de71eb7101f9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/synthetic-fixed/blocked-console.json",
+      "bytes": 451,
+      "sha256": "8dcb7cbd066dbc57fdf69d816f3971aa9a1d24117b422b45ee0da6a9386454af"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/synthetic-fixed/webview_probe.mjs",
+      "bytes": 27942,
+      "sha256": "477cb6be5ff4fb5d09b82fa5f5a2f2feb44c09b8eb7b9456439e192bfbbb0908"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-next/app-debug-f23f9e72c138-59e03ce8d16c.apk",
+      "bytes": 22800431,
+      "sha256": "59e03ce8d16c43e1caf110f79e626ebdf2c53c5fcdd086db09aa8576c59c023d"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/tv-layout-qa-20261021/summary.json",
+      "bytes": 1224,
+      "sha256": "094beb9b95c475ecc32526b25136353de6dcc75046ce7333ab433bc9128826c4"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/tv-layout-qa-20261021/README.md",
+      "bytes": 1406,
+      "sha256": "0cea5064b8ef54f4a938ee4603fab76872d12522f7ceef0a9f8660f5e3127bd3"
+    }
+  ]
+}

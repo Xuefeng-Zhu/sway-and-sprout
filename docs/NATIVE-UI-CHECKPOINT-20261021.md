@@ -1,5 +1,9 @@
 # Latest UI APK checkpoint — 2026-10-21
 
+Superseded by the [subsequent native journey result](NATIVE-JOURNEY-20261021.md):
+the corrected `f23f9e7` APK passed the complete manual native journey. This page
+preserves the earlier `2b3c24d` build and initial lock checkpoint.
+
 The current garden UI was built into a new debug APK. Native runtime verification
 did **not** start: a read-only Mac console check reported
 `CGSSessionScreenIsLocked: true` at 13:58:18.847768 UTC. The user explicitly

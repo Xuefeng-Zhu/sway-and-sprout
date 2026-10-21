@@ -15,13 +15,16 @@ been requested. The dated TogetherMove source remains an untouched backup.
 
 ## Garden journey and bounded probe continuation — 2026-10-21
 
-Latest native continuation: the complete UI at `2b3c24d` now has an offline debug
-APK, SHA-256 `50de6d11ff5496d549db40f0a12f0b8c0f39633391913f2c49b4e87b3c90a530`.
-Its five packaged web assets match the current build. The Mac was confirmed
-locked before emulator startup; no unlock, installation or native rerun was
-attempted. Native journey checks and demo recording remain pending. See the
-[latest APK checkpoint](NATIVE-UI-CHECKPOINT-20261021.md) for the preserved deliverable,
-exact build evidence, failed verifier correction and safe continuation.
+Latest native continuation: `5afb212` adds separate attempt timing and `f23f9e7`
+fixes the confirmed 960×540 clipping. The corrected APK SHA-256 is
+`59e03ce8d16c43e1caf110f79e626ebdf2c53c5fcdd086db09aa8576c59c023d`.
+Its complete scripted manual native journey passed in 14.144 active seconds with
+32 layout checks, harvest/replay/reload, exact storage restoration and confirmed
+cleanup. It contains no video/model fixture. The separate synthetic completion
+was stopped before startup when the Mac locked again; the throughput fixture was
+separately denied before execution by approval review. No demo is recorded.
+See the [current native result and exact blockers](NATIVE-JOURNEY-20261021.md).
+The [earlier APK checkpoint](NATIVE-UI-CHECKPOINT-20261021.md) remains historical.
 
 The current continuation is in the isolated `work/activity-progression` worktree,
 based on `45ced16`. The canonical checkout remains at that base. Older branch names,
