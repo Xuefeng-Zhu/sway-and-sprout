@@ -1,0 +1,5907 @@
+{
+  "schemaVersion": 1,
+  "caseId": "both-press",
+  "coordinateSpace": "decoded",
+  "analysisType": "independent conservative allowed-gate reachability using literal current GestureMachine.update",
+  "annotationPath": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/cases/both-press/annotations.proposal.json",
+  "annotationSha256": "1255ba95e7a62ed0ef683cdce83700c51c25804615be31dc879fa42ca63543e6",
+  "jointRegionFreezeSha256": "dc57331b073ee5ff23d172182edacd700f7c996e56d62d5b3e142d8e6f763bcf",
+  "sourceSha256": "194a415a2c7da6f66db03c81f4f82bcf571e808a2cff1d0c37b59e8b4dd2c59f",
+  "derivativeSha256": "ae063da22a896d4c80508d23ceff136467c436fbcbc0984a38872a12bd7f5be8",
+  "contractSha256": "e6845536e78da88d3275e435edeec1e4fe040f9a83a955cbf1639218070a22b6",
+  "protocolSha256": "9ad4d17795b938684d086cb17aefe03a47f6e072364126007ba8fdb4a56928f6",
+  "motionPath": "/Users/frank/mygit/sway-and-sprout/sidecar/motion.py",
+  "motionSha256": "375b9dd92631c13533513c88b7eea9f9b3900f82304c566ee86b373b80a3b458",
+  "analysisScriptSha256": "1c39414cdce6d05bc2ba1de1643f6ae1b5d68be172b6cc05bd3c83a55c3cf7da",
+  "fpsNumerator": 30000,
+  "fpsDenominator": 1001,
+  "frameCount": 210,
+  "timestampFormula": "i*1000/(fpsNumerator/fpsDenominator), exact float operations used by literal machine",
+  "initialExpected": "left",
+  "classifierConfiguration": {
+    "hold_ms": 350,
+    "neutral_ms": 300,
+    "cooldown_ms": 500,
+    "min_confidence": 0.65,
+    "max_frame_gap_ms": 300,
+    "raise_margin": 0.3,
+    "neutral_margin": 0.2
+  },
+  "confidenceGateAppliedToLabels": false,
+  "phaseRepresentativeConfidence": 1.0,
+  "syntheticArithmeticOnly": true,
+  "notVideoOrModelInference": true,
+  "actualLiteralTransitionsChecked": 7444,
+  "independentlyRecomputedGeometryRows": 210,
+  "eventCountOuterBounds": [
+    0,
+    0
+  ],
+  "zeroEventsProvenWithinAnnotatedGateSuperset": true,
+  "expectedSequenceDerived": [],
+  "regionOrAnnotationChanged": false,
+  "notHumanConfirmedAcceptance": true,
+  "scope": "Conditional on original AI visual regions and frozen deterministic full-frame clock; Cartesian-product phase relaxation can add possibilities, never exclude a region-consistent configuration. Zero under this superset proves zero within those annotations; does not validate region accuracy, actual model scores, camera or UI.",
+  "perFrame": [
+    {
+      "frame": 0,
+      "timeMs": 0.0,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 1,
+      "timeMs": 33.36666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 2,
+      "timeMs": 66.73333333333333,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 3,
+      "timeMs": 100.10000000000001,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 4,
+      "timeMs": 133.46666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 5,
+      "timeMs": 166.83333333333334,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 6,
+      "timeMs": 200.20000000000002,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 7,
+      "timeMs": 233.56666666666666,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 8,
+      "timeMs": 266.93333333333334,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 9,
+      "timeMs": 300.3,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 10,
+      "timeMs": 333.6666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 11,
+      "timeMs": 367.03333333333336,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 12,
+      "timeMs": 400.40000000000003,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 13,
+      "timeMs": 433.76666666666665,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 14,
+      "timeMs": 467.1333333333333,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 15,
+      "timeMs": 500.5,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 16,
+      "timeMs": 533.8666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 17,
+      "timeMs": 567.2333333333333,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 18,
+      "timeMs": 600.6,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 19,
+      "timeMs": 633.9666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 20,
+      "timeMs": 667.3333333333334,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 21,
+      "timeMs": 700.7,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 22,
+      "timeMs": 734.0666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 23,
+      "timeMs": 767.4333333333334,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 24,
+      "timeMs": 800.8000000000001,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 25,
+      "timeMs": 834.1666666666666,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 26,
+      "timeMs": 867.5333333333333,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 27,
+      "timeMs": 900.9,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 28,
+      "timeMs": 934.2666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 29,
+      "timeMs": 967.6333333333333,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 30,
+      "timeMs": 1001.0,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 31,
+      "timeMs": 1034.3666666666668,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 32,
+      "timeMs": 1067.7333333333333,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 33,
+      "timeMs": 1101.1,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 34,
+      "timeMs": 1134.4666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 35,
+      "timeMs": 1167.8333333333333,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 36,
+      "timeMs": 1201.2,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 37,
+      "timeMs": 1234.5666666666666,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 38,
+      "timeMs": 1267.9333333333334,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 39,
+      "timeMs": 1301.3,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 40,
+      "timeMs": 1334.6666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 41,
+      "timeMs": 1368.0333333333333,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 42,
+      "timeMs": 1401.4,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 43,
+      "timeMs": 1434.7666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 44,
+      "timeMs": 1468.1333333333334,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 45,
+      "timeMs": 1501.5,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 46,
+      "timeMs": 1534.8666666666668,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 47,
+      "timeMs": 1568.2333333333333,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 48,
+      "timeMs": 1601.6000000000001,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 49,
+      "timeMs": 1634.9666666666667,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 50,
+      "timeMs": 1668.3333333333333,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 51,
+      "timeMs": 1701.7,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 52,
+      "timeMs": 1735.0666666666666,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 53,
+      "timeMs": 1768.4333333333334,
+      "leftAllowed": [
+        "down"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 2,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 54,
+      "timeMs": 1801.8,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 4,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 55,
+      "timeMs": 1835.1666666666667,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 6,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 56,
+      "timeMs": 1868.5333333333333,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 8,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 57,
+      "timeMs": 1901.9,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 10,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 58,
+      "timeMs": 1935.2666666666667,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 12,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 59,
+      "timeMs": 1968.6333333333334,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 14,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 60,
+      "timeMs": 2002.0,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 16,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 61,
+      "timeMs": 2035.3666666666668,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 18,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 62,
+      "timeMs": 2068.7333333333336,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 20,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 63,
+      "timeMs": 2102.1,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 22,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 64,
+      "timeMs": 2135.4666666666667,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 23,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 65,
+      "timeMs": 2168.8333333333335,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 24,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 66,
+      "timeMs": 2202.2,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 25,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 67,
+      "timeMs": 2235.5666666666666,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 26,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 68,
+      "timeMs": 2268.9333333333334,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 27,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 69,
+      "timeMs": 2302.3,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 28,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 70,
+      "timeMs": 2335.6666666666665,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition"
+      ],
+      "reachableStateCount": 29,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 71,
+      "timeMs": 2369.0333333333333,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 30,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 72,
+      "timeMs": 2402.4,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 31,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 73,
+      "timeMs": 2435.766666666667,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 32,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 74,
+      "timeMs": 2469.133333333333,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 33,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 75,
+      "timeMs": 2502.5,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 34,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 76,
+      "timeMs": 2535.866666666667,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 35,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 77,
+      "timeMs": 2569.2333333333336,
+      "leftAllowed": [
+        "down",
+        "transition"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 36,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 78,
+      "timeMs": 2602.6,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 38,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78
+      ],
+      "holdSinceFrames": [
+        78
+      ],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 79,
+      "timeMs": 2635.9666666666667,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 40,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
+      "holdSinceFrames": [
+        78,
+        79
+      ],
+      "maximumHeldMs": 33,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 80,
+      "timeMs": 2669.3333333333335,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 42,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "holdSinceFrames": [
+        78,
+        79,
+        80
+      ],
+      "maximumHeldMs": 66,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 81,
+      "timeMs": 2702.7000000000003,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 44,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81
+      ],
+      "holdSinceFrames": [
+        78,
+        79,
+        80,
+        81
+      ],
+      "maximumHeldMs": 100,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 82,
+      "timeMs": 2736.0666666666666,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 46,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82
+      ],
+      "holdSinceFrames": [
+        78,
+        79,
+        80,
+        81,
+        82
+      ],
+      "maximumHeldMs": 133,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 83,
+      "timeMs": 2769.4333333333334,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 48,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83
+      ],
+      "holdSinceFrames": [
+        78,
+        79,
+        80,
+        81,
+        82,
+        83
+      ],
+      "maximumHeldMs": 166,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 84,
+      "timeMs": 2802.8,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 50,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        0,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "holdSinceFrames": [
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "maximumHeldMs": 200,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 85,
+      "timeMs": 2836.1666666666665,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 86,
+      "timeMs": 2869.5333333333333,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 87,
+      "timeMs": 2902.9,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 88,
+      "timeMs": 2936.266666666667,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 89,
+      "timeMs": 2969.633333333333,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 90,
+      "timeMs": 3003.0,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 91,
+      "timeMs": 3036.366666666667,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 92,
+      "timeMs": 3069.7333333333336,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 2,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        92
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 93,
+      "timeMs": 3103.1,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 3,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        92,
+        93
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 94,
+      "timeMs": 3136.4666666666667,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 4,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 95,
+      "timeMs": 3169.8333333333335,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 5,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94,
+        95
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 96,
+      "timeMs": 3203.2000000000003,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 6,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94,
+        95,
+        96
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 97,
+      "timeMs": 3236.5666666666666,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 7,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 98,
+      "timeMs": 3269.9333333333334,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 8,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 99,
+      "timeMs": 3303.3,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 9,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 100,
+      "timeMs": 3336.6666666666665,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 10,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 101,
+      "timeMs": 3370.0333333333333,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 11,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 102,
+      "timeMs": 3403.4,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 14,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102
+      ],
+      "holdSinceFrames": [
+        102
+      ],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 103,
+      "timeMs": 3436.766666666667,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 17,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "holdSinceFrames": [
+        102,
+        103
+      ],
+      "maximumHeldMs": 33,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 104,
+      "timeMs": 3470.133333333333,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 20,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "holdSinceFrames": [
+        102,
+        103,
+        104
+      ],
+      "maximumHeldMs": 66,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 105,
+      "timeMs": 3503.5,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 106,
+      "timeMs": 3536.866666666667,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 107,
+      "timeMs": 3570.2333333333336,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 108,
+      "timeMs": 3603.6,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 109,
+      "timeMs": 3636.9666666666667,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 110,
+      "timeMs": 3670.3333333333335,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 2,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        110
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 111,
+      "timeMs": 3703.7000000000003,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 112,
+      "timeMs": 3737.0666666666666,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 113,
+      "timeMs": 3770.4333333333334,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 114,
+      "timeMs": 3803.8,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 115,
+      "timeMs": 3837.1666666666665,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 116,
+      "timeMs": 3870.5333333333333,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 117,
+      "timeMs": 3903.9,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 118,
+      "timeMs": 3937.266666666667,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 119,
+      "timeMs": 3970.633333333333,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 120,
+      "timeMs": 4004.0,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 121,
+      "timeMs": 4037.366666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 122,
+      "timeMs": 4070.7333333333336,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 123,
+      "timeMs": 4104.1,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 124,
+      "timeMs": 4137.466666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 125,
+      "timeMs": 4170.833333333333,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 126,
+      "timeMs": 4204.2,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 127,
+      "timeMs": 4237.566666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 128,
+      "timeMs": 4270.933333333333,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 129,
+      "timeMs": 4304.3,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 130,
+      "timeMs": 4337.666666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 131,
+      "timeMs": 4371.033333333334,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 132,
+      "timeMs": 4404.4,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 133,
+      "timeMs": 4437.766666666666,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 134,
+      "timeMs": 4471.133333333333,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 135,
+      "timeMs": 4504.5,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 136,
+      "timeMs": 4537.866666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 137,
+      "timeMs": 4571.233333333334,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 138,
+      "timeMs": 4604.6,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 139,
+      "timeMs": 4637.966666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 140,
+      "timeMs": 4671.333333333333,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 141,
+      "timeMs": 4704.7,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 142,
+      "timeMs": 4738.066666666667,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 143,
+      "timeMs": 4771.433333333333,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 144,
+      "timeMs": 4804.8,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 145,
+      "timeMs": 4838.166666666667,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 146,
+      "timeMs": 4871.533333333334,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 147,
+      "timeMs": 4904.9,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 148,
+      "timeMs": 4938.266666666666,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 149,
+      "timeMs": 4971.633333333333,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 150,
+      "timeMs": 5005.0,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 151,
+      "timeMs": 5038.366666666667,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 152,
+      "timeMs": 5071.733333333334,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 153,
+      "timeMs": 5105.1,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 154,
+      "timeMs": 5138.466666666667,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 155,
+      "timeMs": 5171.833333333333,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 156,
+      "timeMs": 5205.2,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 2,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        156
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 157,
+      "timeMs": 5238.566666666667,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 3,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        156,
+        157
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 158,
+      "timeMs": 5271.933333333333,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 4,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        156,
+        157,
+        158
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 159,
+      "timeMs": 5305.3,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 5,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        156,
+        157,
+        158,
+        159
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 160,
+      "timeMs": 5338.666666666667,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 6,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        156,
+        157,
+        158,
+        159,
+        160
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 161,
+      "timeMs": 5372.033333333334,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 7,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        156,
+        157,
+        158,
+        159,
+        160,
+        161
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 162,
+      "timeMs": 5405.400000000001,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 8,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 163,
+      "timeMs": 5438.766666666666,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 9,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 164,
+      "timeMs": 5472.133333333333,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 10,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 165,
+      "timeMs": 5505.5,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 11,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165
+      ],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 166,
+      "timeMs": 5538.866666666667,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 14,
+      "reachableArmed": [
+        false,
+        true
+      ],
+      "neutralSinceFrames": [
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166
+      ],
+      "holdSinceFrames": [
+        166
+      ],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 167,
+      "timeMs": 5572.233333333334,
+      "leftAllowed": [
+        "down",
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 168,
+      "timeMs": 5605.6,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 169,
+      "timeMs": 5638.966666666667,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 170,
+      "timeMs": 5672.333333333333,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 171,
+      "timeMs": 5705.7,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 172,
+      "timeMs": 5739.066666666667,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 173,
+      "timeMs": 5772.433333333333,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 174,
+      "timeMs": 5805.8,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 175,
+      "timeMs": 5839.166666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 176,
+      "timeMs": 5872.533333333334,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 177,
+      "timeMs": 5905.900000000001,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 178,
+      "timeMs": 5939.266666666666,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 179,
+      "timeMs": 5972.633333333333,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 180,
+      "timeMs": 6006.0,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 181,
+      "timeMs": 6039.366666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 182,
+      "timeMs": 6072.733333333334,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 183,
+      "timeMs": 6106.1,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 184,
+      "timeMs": 6139.466666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 185,
+      "timeMs": 6172.833333333333,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 186,
+      "timeMs": 6206.2,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 187,
+      "timeMs": 6239.566666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 188,
+      "timeMs": 6272.933333333333,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 189,
+      "timeMs": 6306.3,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 190,
+      "timeMs": 6339.666666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 191,
+      "timeMs": 6373.033333333334,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 192,
+      "timeMs": 6406.400000000001,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 193,
+      "timeMs": 6439.766666666666,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 194,
+      "timeMs": 6473.133333333333,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 195,
+      "timeMs": 6506.5,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 196,
+      "timeMs": 6539.866666666667,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 197,
+      "timeMs": 6573.233333333334,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 198,
+      "timeMs": 6606.6,
+      "leftAllowed": [
+        "up"
+      ],
+      "rightAllowed": [
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 199,
+      "timeMs": 6639.966666666667,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 200,
+      "timeMs": 6673.333333333333,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 201,
+      "timeMs": 6706.7,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 202,
+      "timeMs": 6740.066666666667,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 203,
+      "timeMs": 6773.433333333333,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 204,
+      "timeMs": 6806.8,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 205,
+      "timeMs": 6840.166666666667,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 206,
+      "timeMs": 6873.533333333334,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 207,
+      "timeMs": 6906.900000000001,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 208,
+      "timeMs": 6940.266666666666,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    },
+    {
+      "frame": 209,
+      "timeMs": 6973.633333333333,
+      "leftAllowed": [
+        "transition",
+        "up"
+      ],
+      "rightAllowed": [
+        "transition",
+        "up"
+      ],
+      "reachableStateCount": 1,
+      "reachableArmed": [
+        false
+      ],
+      "neutralSinceFrames": [],
+      "holdSinceFrames": [],
+      "maximumHeldMs": 0,
+      "possibleEmittedGestures": [],
+      "eventCountOuterBounds": [
+        0,
+        0
+      ]
+    }
+  ]
+}

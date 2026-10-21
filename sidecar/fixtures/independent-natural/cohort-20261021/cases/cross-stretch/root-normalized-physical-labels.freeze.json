@@ -1,0 +1,5344 @@
+{
+  "schemaVersion": 1,
+  "authorType": "AI",
+  "humanConfirmed": false,
+  "annotationPath": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/cases/cross-stretch/ai-visual-annotations.freeze.json",
+  "annotationSha256": "f747e1815a2fd640ae82e1a1a30b5db8c04e74c8f964441a76be963fe3f265c1",
+  "derivation": "Lossless field normalization only; no new region/label/model-derived edits",
+  "perFrame": [
+    {
+      "frame": 0,
+      "sourceFrame": 150,
+      "atVideoMs": 0.0,
+      "allowedGatesSource": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 1,
+      "sourceFrame": 151,
+      "atVideoMs": 33.333333333333336,
+      "allowedGatesSource": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 2,
+      "sourceFrame": 152,
+      "atVideoMs": 66.66666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 3,
+      "sourceFrame": 153,
+      "atVideoMs": 100.0,
+      "allowedGatesSource": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 4,
+      "sourceFrame": 154,
+      "atVideoMs": 133.33333333333334,
+      "allowedGatesSource": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 5,
+      "sourceFrame": 155,
+      "atVideoMs": 166.66666666666666,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 6,
+      "sourceFrame": 156,
+      "atVideoMs": 200.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 7,
+      "sourceFrame": 157,
+      "atVideoMs": 233.33333333333334,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 8,
+      "sourceFrame": 158,
+      "atVideoMs": 266.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 9,
+      "sourceFrame": 159,
+      "atVideoMs": 300.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 10,
+      "sourceFrame": 160,
+      "atVideoMs": 333.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 11,
+      "sourceFrame": 161,
+      "atVideoMs": 366.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 12,
+      "sourceFrame": 162,
+      "atVideoMs": 400.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 13,
+      "sourceFrame": 163,
+      "atVideoMs": 433.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 14,
+      "sourceFrame": 164,
+      "atVideoMs": 466.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 15,
+      "sourceFrame": 165,
+      "atVideoMs": 500.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 16,
+      "sourceFrame": 166,
+      "atVideoMs": 533.3333333333334,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 17,
+      "sourceFrame": 167,
+      "atVideoMs": 566.6666666666666,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 18,
+      "sourceFrame": 168,
+      "atVideoMs": 600.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 19,
+      "sourceFrame": 169,
+      "atVideoMs": 633.3333333333334,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 20,
+      "sourceFrame": 170,
+      "atVideoMs": 666.6666666666666,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 21,
+      "sourceFrame": 171,
+      "atVideoMs": 700.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 22,
+      "sourceFrame": 172,
+      "atVideoMs": 733.3333333333334,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 23,
+      "sourceFrame": 173,
+      "atVideoMs": 766.6666666666666,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 24,
+      "sourceFrame": 174,
+      "atVideoMs": 800.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 25,
+      "sourceFrame": 175,
+      "atVideoMs": 833.3333333333334,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 26,
+      "sourceFrame": 176,
+      "atVideoMs": 866.6666666666666,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 27,
+      "sourceFrame": 177,
+      "atVideoMs": 900.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 28,
+      "sourceFrame": 178,
+      "atVideoMs": 933.3333333333334,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 29,
+      "sourceFrame": 179,
+      "atVideoMs": 966.6666666666666,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 30,
+      "sourceFrame": 180,
+      "atVideoMs": 1000.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 31,
+      "sourceFrame": 181,
+      "atVideoMs": 1033.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 32,
+      "sourceFrame": 182,
+      "atVideoMs": 1066.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 33,
+      "sourceFrame": 183,
+      "atVideoMs": 1100.0,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 34,
+      "sourceFrame": 184,
+      "atVideoMs": 1133.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 35,
+      "sourceFrame": 185,
+      "atVideoMs": 1166.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 36,
+      "sourceFrame": 186,
+      "atVideoMs": 1200.0,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 37,
+      "sourceFrame": 187,
+      "atVideoMs": 1233.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 38,
+      "sourceFrame": 188,
+      "atVideoMs": 1266.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 39,
+      "sourceFrame": 189,
+      "atVideoMs": 1300.0,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 40,
+      "sourceFrame": 190,
+      "atVideoMs": 1333.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 41,
+      "sourceFrame": 191,
+      "atVideoMs": 1366.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 42,
+      "sourceFrame": 192,
+      "atVideoMs": 1400.0,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 43,
+      "sourceFrame": 193,
+      "atVideoMs": 1433.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 44,
+      "sourceFrame": 194,
+      "atVideoMs": 1466.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 45,
+      "sourceFrame": 195,
+      "atVideoMs": 1500.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 46,
+      "sourceFrame": 196,
+      "atVideoMs": 1533.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 47,
+      "sourceFrame": 197,
+      "atVideoMs": 1566.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 48,
+      "sourceFrame": 198,
+      "atVideoMs": 1600.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 49,
+      "sourceFrame": 199,
+      "atVideoMs": 1633.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 50,
+      "sourceFrame": 200,
+      "atVideoMs": 1666.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 51,
+      "sourceFrame": 201,
+      "atVideoMs": 1700.0,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 52,
+      "sourceFrame": 202,
+      "atVideoMs": 1733.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 53,
+      "sourceFrame": 203,
+      "atVideoMs": 1766.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 54,
+      "sourceFrame": 204,
+      "atVideoMs": 1800.0,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 55,
+      "sourceFrame": 205,
+      "atVideoMs": 1833.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 56,
+      "sourceFrame": 206,
+      "atVideoMs": 1866.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 57,
+      "sourceFrame": 207,
+      "atVideoMs": 1900.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 58,
+      "sourceFrame": 208,
+      "atVideoMs": 1933.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 59,
+      "sourceFrame": 209,
+      "atVideoMs": 1966.6666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 60,
+      "sourceFrame": 210,
+      "atVideoMs": 2000.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 61,
+      "sourceFrame": 211,
+      "atVideoMs": 2033.3333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 62,
+      "sourceFrame": 212,
+      "atVideoMs": 2066.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 63,
+      "sourceFrame": 213,
+      "atVideoMs": 2100.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 64,
+      "sourceFrame": 214,
+      "atVideoMs": 2133.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 65,
+      "sourceFrame": 215,
+      "atVideoMs": 2166.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 66,
+      "sourceFrame": 216,
+      "atVideoMs": 2200.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 67,
+      "sourceFrame": 217,
+      "atVideoMs": 2233.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 68,
+      "sourceFrame": 218,
+      "atVideoMs": 2266.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 69,
+      "sourceFrame": 219,
+      "atVideoMs": 2300.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 70,
+      "sourceFrame": 220,
+      "atVideoMs": 2333.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 71,
+      "sourceFrame": 221,
+      "atVideoMs": 2366.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 72,
+      "sourceFrame": 222,
+      "atVideoMs": 2400.0,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 73,
+      "sourceFrame": 223,
+      "atVideoMs": 2433.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 74,
+      "sourceFrame": 224,
+      "atVideoMs": 2466.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 75,
+      "sourceFrame": 225,
+      "atVideoMs": 2500.0,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 76,
+      "sourceFrame": 226,
+      "atVideoMs": 2533.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 77,
+      "sourceFrame": 227,
+      "atVideoMs": 2566.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 78,
+      "sourceFrame": 228,
+      "atVideoMs": 2600.0,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 79,
+      "sourceFrame": 229,
+      "atVideoMs": 2633.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 80,
+      "sourceFrame": 230,
+      "atVideoMs": 2666.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 81,
+      "sourceFrame": 231,
+      "atVideoMs": 2700.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 82,
+      "sourceFrame": 232,
+      "atVideoMs": 2733.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 83,
+      "sourceFrame": 233,
+      "atVideoMs": 2766.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 84,
+      "sourceFrame": 234,
+      "atVideoMs": 2800.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 85,
+      "sourceFrame": 235,
+      "atVideoMs": 2833.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 86,
+      "sourceFrame": 236,
+      "atVideoMs": 2866.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 87,
+      "sourceFrame": 237,
+      "atVideoMs": 2900.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 88,
+      "sourceFrame": 238,
+      "atVideoMs": 2933.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 89,
+      "sourceFrame": 239,
+      "atVideoMs": 2966.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 90,
+      "sourceFrame": 240,
+      "atVideoMs": 3000.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 91,
+      "sourceFrame": 241,
+      "atVideoMs": 3033.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 92,
+      "sourceFrame": 242,
+      "atVideoMs": 3066.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 93,
+      "sourceFrame": 243,
+      "atVideoMs": 3100.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 94,
+      "sourceFrame": 244,
+      "atVideoMs": 3133.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 95,
+      "sourceFrame": 245,
+      "atVideoMs": 3166.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 96,
+      "sourceFrame": 246,
+      "atVideoMs": 3200.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 97,
+      "sourceFrame": 247,
+      "atVideoMs": 3233.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 98,
+      "sourceFrame": 248,
+      "atVideoMs": 3266.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 99,
+      "sourceFrame": 249,
+      "atVideoMs": 3300.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 100,
+      "sourceFrame": 250,
+      "atVideoMs": 3333.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 101,
+      "sourceFrame": 251,
+      "atVideoMs": 3366.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 102,
+      "sourceFrame": 252,
+      "atVideoMs": 3400.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 103,
+      "sourceFrame": 253,
+      "atVideoMs": 3433.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 104,
+      "sourceFrame": 254,
+      "atVideoMs": 3466.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 105,
+      "sourceFrame": 255,
+      "atVideoMs": 3500.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 106,
+      "sourceFrame": 256,
+      "atVideoMs": 3533.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 107,
+      "sourceFrame": 257,
+      "atVideoMs": 3566.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 108,
+      "sourceFrame": 258,
+      "atVideoMs": 3600.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 109,
+      "sourceFrame": 259,
+      "atVideoMs": 3633.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 110,
+      "sourceFrame": 260,
+      "atVideoMs": 3666.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 111,
+      "sourceFrame": 261,
+      "atVideoMs": 3700.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 112,
+      "sourceFrame": 262,
+      "atVideoMs": 3733.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 113,
+      "sourceFrame": 263,
+      "atVideoMs": 3766.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 114,
+      "sourceFrame": 264,
+      "atVideoMs": 3800.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 115,
+      "sourceFrame": 265,
+      "atVideoMs": 3833.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 116,
+      "sourceFrame": 266,
+      "atVideoMs": 3866.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 117,
+      "sourceFrame": 267,
+      "atVideoMs": 3900.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 118,
+      "sourceFrame": 268,
+      "atVideoMs": 3933.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 119,
+      "sourceFrame": 269,
+      "atVideoMs": 3966.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 120,
+      "sourceFrame": 270,
+      "atVideoMs": 4000.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 121,
+      "sourceFrame": 271,
+      "atVideoMs": 4033.3333333333335,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 122,
+      "sourceFrame": 272,
+      "atVideoMs": 4066.6666666666665,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 123,
+      "sourceFrame": 273,
+      "atVideoMs": 4100.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 124,
+      "sourceFrame": 274,
+      "atVideoMs": 4133.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 125,
+      "sourceFrame": 275,
+      "atVideoMs": 4166.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 126,
+      "sourceFrame": 276,
+      "atVideoMs": 4200.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 127,
+      "sourceFrame": 277,
+      "atVideoMs": 4233.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 128,
+      "sourceFrame": 278,
+      "atVideoMs": 4266.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 129,
+      "sourceFrame": 279,
+      "atVideoMs": 4300.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 130,
+      "sourceFrame": 280,
+      "atVideoMs": 4333.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 131,
+      "sourceFrame": 281,
+      "atVideoMs": 4366.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 132,
+      "sourceFrame": 282,
+      "atVideoMs": 4400.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 133,
+      "sourceFrame": 283,
+      "atVideoMs": 4433.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 134,
+      "sourceFrame": 284,
+      "atVideoMs": 4466.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 135,
+      "sourceFrame": 285,
+      "atVideoMs": 4500.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 136,
+      "sourceFrame": 286,
+      "atVideoMs": 4533.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 137,
+      "sourceFrame": 287,
+      "atVideoMs": 4566.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 138,
+      "sourceFrame": 288,
+      "atVideoMs": 4600.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 139,
+      "sourceFrame": 289,
+      "atVideoMs": 4633.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 140,
+      "sourceFrame": 290,
+      "atVideoMs": 4666.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 141,
+      "sourceFrame": 291,
+      "atVideoMs": 4700.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 142,
+      "sourceFrame": 292,
+      "atVideoMs": 4733.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 143,
+      "sourceFrame": 293,
+      "atVideoMs": 4766.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 144,
+      "sourceFrame": 294,
+      "atVideoMs": 4800.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 145,
+      "sourceFrame": 295,
+      "atVideoMs": 4833.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 146,
+      "sourceFrame": 296,
+      "atVideoMs": 4866.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 147,
+      "sourceFrame": 297,
+      "atVideoMs": 4900.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 148,
+      "sourceFrame": 298,
+      "atVideoMs": 4933.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 149,
+      "sourceFrame": 299,
+      "atVideoMs": 4966.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 150,
+      "sourceFrame": 300,
+      "atVideoMs": 5000.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 151,
+      "sourceFrame": 301,
+      "atVideoMs": 5033.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 152,
+      "sourceFrame": 302,
+      "atVideoMs": 5066.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 153,
+      "sourceFrame": 303,
+      "atVideoMs": 5100.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 154,
+      "sourceFrame": 304,
+      "atVideoMs": 5133.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 155,
+      "sourceFrame": 305,
+      "atVideoMs": 5166.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 156,
+      "sourceFrame": 306,
+      "atVideoMs": 5200.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 157,
+      "sourceFrame": 307,
+      "atVideoMs": 5233.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 158,
+      "sourceFrame": 308,
+      "atVideoMs": 5266.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 159,
+      "sourceFrame": 309,
+      "atVideoMs": 5300.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 160,
+      "sourceFrame": 310,
+      "atVideoMs": 5333.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 161,
+      "sourceFrame": 311,
+      "atVideoMs": 5366.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 162,
+      "sourceFrame": 312,
+      "atVideoMs": 5400.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 163,
+      "sourceFrame": 313,
+      "atVideoMs": 5433.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 164,
+      "sourceFrame": 314,
+      "atVideoMs": 5466.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 165,
+      "sourceFrame": 315,
+      "atVideoMs": 5500.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 166,
+      "sourceFrame": 316,
+      "atVideoMs": 5533.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 167,
+      "sourceFrame": 317,
+      "atVideoMs": 5566.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 168,
+      "sourceFrame": 318,
+      "atVideoMs": 5600.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 169,
+      "sourceFrame": 319,
+      "atVideoMs": 5633.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 170,
+      "sourceFrame": 320,
+      "atVideoMs": 5666.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 171,
+      "sourceFrame": 321,
+      "atVideoMs": 5700.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 172,
+      "sourceFrame": 322,
+      "atVideoMs": 5733.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 173,
+      "sourceFrame": 323,
+      "atVideoMs": 5766.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 174,
+      "sourceFrame": 324,
+      "atVideoMs": 5800.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 175,
+      "sourceFrame": 325,
+      "atVideoMs": 5833.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 176,
+      "sourceFrame": 326,
+      "atVideoMs": 5866.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 177,
+      "sourceFrame": 327,
+      "atVideoMs": 5900.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 178,
+      "sourceFrame": 328,
+      "atVideoMs": 5933.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 179,
+      "sourceFrame": 329,
+      "atVideoMs": 5966.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": true
+    },
+    {
+      "frame": 180,
+      "sourceFrame": 330,
+      "atVideoMs": 6000.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 181,
+      "sourceFrame": 331,
+      "atVideoMs": 6033.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 182,
+      "sourceFrame": 332,
+      "atVideoMs": 6066.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 183,
+      "sourceFrame": 333,
+      "atVideoMs": 6100.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 184,
+      "sourceFrame": 334,
+      "atVideoMs": 6133.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 185,
+      "sourceFrame": 335,
+      "atVideoMs": 6166.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 186,
+      "sourceFrame": 336,
+      "atVideoMs": 6200.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 187,
+      "sourceFrame": 337,
+      "atVideoMs": 6233.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 188,
+      "sourceFrame": 338,
+      "atVideoMs": 6266.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 189,
+      "sourceFrame": 339,
+      "atVideoMs": 6300.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 190,
+      "sourceFrame": 340,
+      "atVideoMs": 6333.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 191,
+      "sourceFrame": 341,
+      "atVideoMs": 6366.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 192,
+      "sourceFrame": 342,
+      "atVideoMs": 6400.0,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 193,
+      "sourceFrame": 343,
+      "atVideoMs": 6433.333333333333,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    },
+    {
+      "frame": 194,
+      "sourceFrame": 344,
+      "atVideoMs": 6466.666666666667,
+      "allowedGatesSource": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "allowedGatesFullWorking": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "poseDefinitelyNegativeBothCoordinateSpaces": false
+    }
+  ]
+}

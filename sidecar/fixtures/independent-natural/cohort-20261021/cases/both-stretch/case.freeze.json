@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "caseId": "independent-both-stretch",
+  "caseLabel": "Pexels7628775 seated bilateral stretch and return",
+  "sourceGroupId": "pexels-arthouse-studio-7628775",
+  "role": "both-arm-stretch-negative-intervals-with-transition-uncertainty",
+  "status": "CASE_AND_AI_ANNOTATIONS_FROZEN_BEFORE_INFERENCE_PARENT_COHORT_PENDING",
+  "frozenUtc": "2026-10-21T04:40:29.977267+00:00",
+  "contractSha256": "e6845536e78da88d3275e435edeec1e4fe040f9a83a955cbf1639218070a22b6",
+  "protocolSha256": "9ad4d17795b938684d086cb17aefe03a47f6e072364126007ba8fdb4a56928f6",
+  "source": {
+    "url": "https://www.pexels.com/video/woman-stretching-her-arms-7628775/",
+    "mediaUrl": "https://videos.pexels.com/video-files/7628775/7628775-hd_1080_1920_25fps.mp4",
+    "creator": "ArtHouse Studio",
+    "title": "Woman Stretching Her Arms",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "licenseEvidence": {
+      "assetSnapshot": "metadata/pexels-7628775-web-snapshot.txt",
+      "assetSnapshotSha256": "76b99e3fb121561b1be154955b07845d309f4a1e5600c537a53b449fe457c44a",
+      "licenseSnapshot": "metadata/pexels-4586958-web-snapshot.txt",
+      "licenseSnapshotSha256": "9d893f945c1596dec4952c5be9a63bff5f4e2b826b543d8a62d338bd31b34334",
+      "sourceFreezePath": "discovery/pexels-7628775/source.freeze.json",
+      "sourceFreezeSha256": "1e643f98967f38adc09edee82d972fcd708a9bc3fbb5081142f2d8ad306cdf90"
+    },
+    "sha256": "0a0751b76927648477fca5fd2ec413b7546c2916e1d402229e6622e9a97acd1a",
+    "bytes": 4529124,
+    "relativePath": "../../discovery/pexels-7628775/source.mp4"
+  },
+  "sourceIndependence": {
+    "priorExcludedCreatorGroupMatch": false,
+    "newCreatorAndAssetGroup": true,
+    "physicalPersonIdentityIndependenceVerified": false,
+    "claimLimit": "Credited creator/asset group differs from excluded prior material. No facial identity matching or participant-identity separation claim."
+  },
+  "derivative": {
+    "relativePath": "pexels-7628775-both-stretch-0000-0187.mp4",
+    "sha256": "740cac6c9f5704153d4a75ba4a764b85393a1f3ca94c95b594701e0beda543d8",
+    "bytes": 34053248,
+    "sourceStartFrame": 0,
+    "sourceEndFrameExclusive": 188,
+    "frameMap": {
+      "path": "source-frame-map.freeze.json",
+      "sha256": "061d92cc0355ebf9de41951cbf189da05d39913e9e72fda9321af37dc1f55c05"
+    },
+    "pixelCadenceVerification": {
+      "path": "derivative-verification.freeze.json",
+      "sha256": "3ffb4be7573a672832c999424da0fbe3bf53182ce3594a3a014236667e31505e",
+      "orderedYuvFramesExactlyEqual": true,
+      "comparedFrameCount": 188,
+      "noResizeMirrorRetimeSpliceOrRepeatedFrames": true
+    }
+  },
+  "displayTime": {
+    "frameCount": 188,
+    "fpsNumerator": 25,
+    "fpsDenominator": 1,
+    "fpsFloatForVerifier": 25.0,
+    "timeBase": "1/12800",
+    "firstPts": 0,
+    "cfrVerified": true,
+    "ptsMapHash": "061d92cc0355ebf9de41951cbf189da05d39913e9e72fda9321af37dc1f55c05",
+    "clipDurationSecondsByFrameCount": 7.52,
+    "lastObservedSampleTimeMs": 7480.0
+  },
+  "coordinates": {
+    "decodedDimensions": [
+      1080,
+      1920
+    ],
+    "sidecarWorkingDimensions": [
+      640,
+      1137
+    ],
+    "decodedToSidecarWorkingTransform": {
+      "scaleX": 0.5925925925925926,
+      "scaleY": 0.5921875,
+      "offsetX": 0,
+      "offsetY": 0
+    },
+    "nativeRestoredCoordinates": "decoded-source-pixels",
+    "warning": "Do not normalize working-image points using decoded dimensions. Geometry for slight integer-resize anisotropy is separately enclosed."
+  },
+  "annotation": {
+    "path": "ai-visual-annotations.freeze.json",
+    "sha256": "0173b9252909b35f725b7e4d5377d29e1762949fcd7c91f0b02728a462f64221",
+    "perFrameCount": 188,
+    "authorType": "AI",
+    "authorId": "OpenAI Codex /root/calibration_data",
+    "predictionBlind": true,
+    "humanConfirmed": false,
+    "humanConfirmationStatus": "not-human-confirmed",
+    "labelProvenance": "AI source-pixel visual review under frozen contract. Not human, user-supplied, or user-approved annotation.",
+    "manualVisualRegions": {
+      "path": "manual-visual-regions.freeze.json",
+      "sha256": "0b2e7ef11a479794619f8866f93836965bb9bd7bb3e8bac999fdb6e003ce449c"
+    },
+    "independentSideReview": {
+      "path": "independent-side-review.json",
+      "sha256": "6308c781b98dd8e64876ab784a2ff67334cc5f6d8d9b320a0ebad88c91227a45"
+    },
+    "independentConsistencyReview": {
+      "path": "independent-consistency-review.json",
+      "sha256": "a1c0fc18a5fe499f7602f8bb1c1fa1fe6baa33179b23a43f615b601495581dc2",
+      "scope": "Formula, conservative gate bounds, schema/visibility and sampled negative predicate/ranges; preliminary AI only."
+    }
+  },
+  "opportunities": [],
+  "definitePositiveOpportunityCount": 0,
+  "expectationKnown": false,
+  "expectedSequence": null,
+  "wholeCaseExpectedEventCount": null,
+  "certifiedNegativeIntervals": [
+    {
+      "intervalId": "both-stretch-pose-negative-1",
+      "startFrame": 32,
+      "endFrameInclusive": 35,
+      "startMs": 1280.0,
+      "endMs": 1400.0,
+      "durationMsByObservedSampleSpan": 120.0,
+      "scope": "Sampled instantaneous pose-negative: neither left-up/right-down nor right-up/left-down is allowed by any recorded region configuration in either coordinate space, independently of temporal/expected-side state.",
+      "notWholeSequenceZeroEventProof": true,
+      "unknownFramesExcluded": true
+    },
+    {
+      "intervalId": "both-stretch-pose-negative-2",
+      "startFrame": 56,
+      "endFrameInclusive": 56,
+      "startMs": 2240.0,
+      "endMs": 2240.0,
+      "durationMsByObservedSampleSpan": 0.0,
+      "scope": "Sampled instantaneous pose-negative: neither left-up/right-down nor right-up/left-down is allowed by any recorded region configuration in either coordinate space, independently of temporal/expected-side state.",
+      "notWholeSequenceZeroEventProof": true,
+      "unknownFramesExcluded": true
+    },
+    {
+      "intervalId": "both-stretch-pose-negative-3",
+      "startFrame": 60,
+      "endFrameInclusive": 69,
+      "startMs": 2400.0,
+      "endMs": 2760.0,
+      "durationMsByObservedSampleSpan": 360.0,
+      "scope": "Sampled instantaneous pose-negative: neither left-up/right-down nor right-up/left-down is allowed by any recorded region configuration in either coordinate space, independently of temporal/expected-side state.",
+      "notWholeSequenceZeroEventProof": true,
+      "unknownFramesExcluded": true
+    },
+    {
+      "intervalId": "both-stretch-pose-negative-4",
+      "startFrame": 89,
+      "endFrameInclusive": 164,
+      "startMs": 3560.0,
+      "endMs": 6560.0,
+      "durationMsByObservedSampleSpan": 3000.0,
+      "scope": "Sampled instantaneous pose-negative: neither left-up/right-down nor right-up/left-down is allowed by any recorded region configuration in either coordinate space, independently of temporal/expected-side state.",
+      "notWholeSequenceZeroEventProof": true,
+      "unknownFramesExcluded": true
+    },
+    {
+      "intervalId": "both-stretch-pose-negative-5",
+      "startFrame": 173,
+      "endFrameInclusive": 184,
+      "startMs": 6920.0,
+      "endMs": 7360.0,
+      "durationMsByObservedSampleSpan": 440.0,
+      "scope": "Sampled instantaneous pose-negative: neither left-up/right-down nor right-up/left-down is allowed by any recorded region configuration in either coordinate space, independently of temporal/expected-side state.",
+      "notWholeSequenceZeroEventProof": true,
+      "unknownFramesExcluded": true
+    }
+  ],
+  "certifiedNegativeSampleCount": 103,
+  "certifiedNegativeObservedSpanMs": 3920.0,
+  "uncertainPhysicalGateIntervals": [
+    {
+      "startFrame": 0,
+      "endFrameInclusive": 31,
+      "kind": "one-or-more-joint-gates-not-singleton"
+    },
+    {
+      "startFrame": 33,
+      "endFrameInclusive": 88,
+      "kind": "one-or-more-joint-gates-not-singleton"
+    },
+    {
+      "startFrame": 165,
+      "endFrameInclusive": 181,
+      "kind": "one-or-more-joint-gates-not-singleton"
+    },
+    {
+      "startFrame": 185,
+      "endFrameInclusive": 187,
+      "kind": "one-or-more-joint-gates-not-singleton"
+    }
+  ],
+  "uncertainEventCountReason": "Broad frozen visual bounds and unknown lap/return centres leave transitions unadjudicable. No zero-event sequence is manufactured. Positive event recall has zero definite opportunities and is unestimable.",
+  "runtimePins": null,
+  "predeclaredExecutionProfile": null,
+  "parentCohortFreezeRequiredBeforeInference": true,
+  "modelInferencePerformed": false,
+  "cameraUsed": false,
+  "canonicalSourceChanged": false,
+  "historicalAnnotationsChanged": false,
+  "preliminaryDiagnosticOnly": true,
+  "noNaturalPositiveSixAlternationOrAcceptanceClaim": true
+}

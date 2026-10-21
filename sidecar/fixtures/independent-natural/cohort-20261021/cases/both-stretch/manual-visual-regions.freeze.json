@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 1,
+  "caseId": "independent-both-stretch",
+  "frozenUtc": "2026-10-21T04:33:15.330678+00:00",
+  "contractSha256": "e6845536e78da88d3275e435edeec1e4fe040f9a83a955cbf1639218070a22b6",
+  "protocolSha256": "9ad4d17795b938684d086cb17aefe03a47f6e072364126007ba8fdb4a56928f6",
+  "sourceSha256": "0a0751b76927648477fca5fd2ec413b7546c2916e1d402229e6622e9a97acd1a",
+  "sourceFrameCount": 188,
+  "sourceFrameRangeInclusive": [
+    0,
+    187
+  ],
+  "authorType": "AI",
+  "authorId": "OpenAI Codex /root/calibration_data",
+  "predictionBlind": true,
+  "humanConfirmed": false,
+  "humanConfirmationStatus": "not-human-confirmed",
+  "labelProvenance": "AI source-pixel visual review under frozen contract. Not human, user-supplied, or user-approved annotation.",
+  "modelPredictionsRead": false,
+  "modelResultsRead": false,
+  "poseModelRun": false,
+  "cameraUsed": false,
+  "coordinateSpace": {
+    "width": 1080,
+    "height": 1920,
+    "origin": "top-left",
+    "unmirrored": true,
+    "anatomicalLeft": "image-right connected arm",
+    "anatomicalRight": "image-left connected arm"
+  },
+  "method": "All188 chosen display-order frames were visually inspected at quarter-resolution in source-only sheets; source180..199 inspected for trim boundary. Thirteen initial full-resolution source frames0,25,35,40,50,75,100,125,150,160,170,174,179 were viewed for joint neighborhoods. Independent AI reviewer separately checked sides/occlusion and full187. Manual visual construction handles below form conservative boxes by taking the union of adjacent handles plus margins. This is an envelope, not point tracking or model interpolation. Every chosen frame was inspected for envelope suitability. Cuff/hand/hair-hidden or cropped centres are null/unknown even when a local context box exists. Shoulders are broadly bounded through visible upper-arm/torso clothing contours, not exact cloth seams. No physical gate was calculated before these manual regions were fixed.",
+  "fullChosenFrameCountVisuallyInspected": 188,
+  "additionalBoundaryFramesInspected": [
+    188,
+    199
+  ],
+  "manualShoulderHandles": [
+    [
+      0,
+      660,
+      925,
+      420,
+      925
+    ],
+    [
+      27,
+      660,
+      925,
+      420,
+      925
+    ],
+    [
+      40,
+      665,
+      915,
+      410,
+      900
+    ],
+    [
+      56,
+      680,
+      915,
+      405,
+      885
+    ],
+    [
+      75,
+      695,
+      900,
+      425,
+      875
+    ],
+    [
+      100,
+      660,
+      895,
+      410,
+      880
+    ],
+    [
+      128,
+      640,
+      885,
+      400,
+      875
+    ],
+    [
+      150,
+      640,
+      890,
+      405,
+      875
+    ],
+    [
+      160,
+      655,
+      890,
+      405,
+      880
+    ],
+    [
+      164,
+      655,
+      905,
+      405,
+      890
+    ],
+    [
+      172,
+      660,
+      920,
+      405,
+      900
+    ],
+    [
+      179,
+      655,
+      925,
+      410,
+      915
+    ],
+    [
+      183,
+      650,
+      935,
+      405,
+      925
+    ],
+    [
+      187,
+      645,
+      950,
+      400,
+      940
+    ]
+  ],
+  "manualWristHandles": [
+    [
+      0,
+      460,
+      1260,
+      365,
+      1260
+    ],
+    [
+      27,
+      460,
+      1260,
+      365,
+      1260
+    ],
+    [
+      32,
+      450,
+      1215,
+      310,
+      1180
+    ],
+    [
+      35,
+      475,
+      1170,
+      300,
+      1130
+    ],
+    [
+      40,
+      540,
+      1045,
+      300,
+      1000
+    ],
+    [
+      44,
+      540,
+      950,
+      285,
+      900
+    ],
+    [
+      48,
+      535,
+      875,
+      280,
+      805
+    ],
+    [
+      52,
+      580,
+      825,
+      340,
+      760
+    ],
+    [
+      56,
+      610,
+      800,
+      390,
+      735
+    ],
+    [
+      60,
+      630,
+      780,
+      430,
+      700
+    ],
+    [
+      64,
+      655,
+      775,
+      465,
+      675
+    ],
+    [
+      68,
+      665,
+      750,
+      475,
+      665
+    ],
+    [
+      72,
+      675,
+      740,
+      490,
+      660
+    ],
+    [
+      75,
+      680,
+      730,
+      490,
+      660
+    ],
+    [
+      80,
+      705,
+      680,
+      515,
+      620
+    ],
+    [
+      84,
+      730,
+      655,
+      520,
+      590
+    ],
+    [
+      88,
+      740,
+      620,
+      510,
+      555
+    ],
+    [
+      92,
+      770,
+      580,
+      510,
+      535
+    ],
+    [
+      96,
+      760,
+      535,
+      500,
+      495
+    ],
+    [
+      100,
+      725,
+      510,
+      485,
+      455
+    ],
+    [
+      104,
+      715,
+      490,
+      480,
+      430
+    ],
+    [
+      112,
+      700,
+      455,
+      485,
+      415
+    ],
+    [
+      120,
+      685,
+      440,
+      470,
+      400
+    ],
+    [
+      128,
+      670,
+      425,
+      450,
+      395
+    ],
+    [
+      136,
+      655,
+      420,
+      445,
+      395
+    ],
+    [
+      144,
+      650,
+      415,
+      435,
+      395
+    ],
+    [
+      150,
+      650,
+      420,
+      430,
+      390
+    ],
+    [
+      154,
+      655,
+      420,
+      430,
+      400
+    ],
+    [
+      158,
+      735,
+      435,
+      390,
+      420
+    ],
+    [
+      160,
+      790,
+      450,
+      350,
+      430
+    ],
+    [
+      162,
+      900,
+      480,
+      305,
+      440
+    ],
+    [
+      164,
+      1020,
+      500,
+      250,
+      480
+    ],
+    [
+      165,
+      1080,
+      560,
+      215,
+      540
+    ],
+    [
+      172,
+      1010,
+      1140,
+      80,
+      1050
+    ],
+    [
+      173,
+      860,
+      1195,
+      130,
+      1090
+    ],
+    [
+      174,
+      790,
+      1215,
+      175,
+      1090
+    ],
+    [
+      175,
+      730,
+      1195,
+      200,
+      1100
+    ],
+    [
+      176,
+      665,
+      1135,
+      220,
+      1100
+    ],
+    [
+      177,
+      650,
+      1100,
+      230,
+      1100
+    ],
+    [
+      179,
+      600,
+      1090,
+      230,
+      1110
+    ],
+    [
+      180,
+      600,
+      1100,
+      210,
+      1110
+    ],
+    [
+      181,
+      585,
+      1150,
+      195,
+      1145
+    ],
+    [
+      182,
+      590,
+      1205,
+      190,
+      1180
+    ],
+    [
+      183,
+      570,
+      1255,
+      180,
+      1235
+    ],
+    [
+      184,
+      565,
+      1315,
+      170,
+      1275
+    ],
+    [
+      185,
+      580,
+      1350,
+      160,
+      1300
+    ],
+    [
+      187,
+      615,
+      1370,
+      150,
+      1320
+    ]
+  ],
+  "handleColumns": {
+    "shoulders": [
+      "frame",
+      "LSx",
+      "LSy",
+      "RSx",
+      "RSy"
+    ],
+    "wrists": [
+      "frame",
+      "LWx",
+      "LWy",
+      "RWx",
+      "RWy"
+    ]
+  },
+  "defaultMarginsPixels": {
+    "shoulderX": 65,
+    "shoulderY": 75,
+    "wristX": 45,
+    "wristY": 50
+  },
+  "blurredWristMarginsPixels": {
+    "sourceRangesInclusive": [
+      [
+        28,
+        64
+      ],
+      [
+        152,
+        187
+      ]
+    ],
+    "x": 65,
+    "y": 65
+  },
+  "unknownJointIntervals": [
+    {
+      "joint": "right_wrist",
+      "sourceStartFrame": 0,
+      "sourceEndFrameExclusive": 32,
+      "reason": "Projected centre hidden by overlapping left hand and cuff at lap. Connected cuff/forearm context is visible, but is not promoted to a centre or down gate.",
+      "contextBoxXYXY": [
+        300,
+        1190,
+        440,
+        1330
+      ]
+    },
+    {
+      "joint": "left_wrist",
+      "sourceStartFrame": 70,
+      "sourceEndFrameExclusive": 89,
+      "reason": "Conservative hidden-centre interval near hair/back of head and broad cuff. Visible local neighborhood retained as context only; no symmetry imputation."
+    },
+    {
+      "joint": "left_wrist",
+      "sourceStartFrame": 165,
+      "sourceEndFrameExclusive": 173,
+      "reason": "Distal arm/wrist unlocalizable at image-right edge or strongly blurred as it returns. Offscreen centre not imputed."
+    },
+    {
+      "joint": "right_wrist",
+      "sourceStartFrame": 165,
+      "sourceEndFrameExclusive": 173,
+      "reason": "Conservative near-edge/blurred/possibly truncated wrist uncertainty; a partly cropped hand does not prove a fully cropped wrist. No precise centre assigned."
+    },
+    {
+      "joint": "right_wrist",
+      "sourceStartFrame": 185,
+      "sourceEndFrameExclusive": 188,
+      "reason": "Right terminal forearm/wrist obscured by lap/thigh/white clothing near the ending. No fabricated wrist centre.",
+      "contextBoxXYXY": [
+        90,
+        1210,
+        260,
+        1400
+      ]
+    }
+  ],
+  "personObservation": "One visibly continuous seated participant in all188 chosen frames; no physical identity or demographic independence claim.",
+  "independentReview": {
+    "path": "independent-side-review.json",
+    "sha256": "6308c781b98dd8e64876ab784a2ff67334cc5f6d8d9b320a0ebad88c91227a45",
+    "scope": "Sampled anatomical-side/visibility review only; no dense gate or event certification."
+  },
+  "inspectionSheets": [
+    {
+      "path": "review-frames/contact-0000-0015.png",
+      "sha256": "c953b175c95491f180995215eb5d76549c7d308db0062142fafce6d559a22dd3"
+    },
+    {
+      "path": "review-frames/contact-0016-0031.png",
+      "sha256": "2b2f8a3de4c52e30687ad7a68c465efd07aaa2c73b225c4e133d92aebded6daf"
+    },
+    {
+      "path": "review-frames/contact-0032-0047.png",
+      "sha256": "73a09bd4b8e881fba59116967f09aad3c1c4d6f2269a587a39d8d6dbe3e5c76c"
+    },
+    {
+      "path": "review-frames/contact-0048-0063.png",
+      "sha256": "ba96fc811f418c3bc46c82264a6885e51813e21984394b6fb61322fcdb897e72"
+    },
+    {
+      "path": "review-frames/contact-0064-0079.png",
+      "sha256": "a4931f1bd0eae8c0ed748f9123711c60db1ac27ce32c3e8b932b93103fcb5fe4"
+    },
+    {
+      "path": "review-frames/contact-0080-0095.png",
+      "sha256": "5be9573a94b7e8f2d515c55a16a017d89b81688f0a363817b5708e8488df09f1"
+    },
+    {
+      "path": "review-frames/contact-0096-0111.png",
+      "sha256": "5023cafb5a93d934d0c9a089c5048bff1e2c5412ae57eb0fcb64d0c12e3a7c88"
+    },
+    {
+      "path": "review-frames/contact-0112-0127.png",
+      "sha256": "c2e180741a8c5720ec26c3c1f4776bb4e5ac5468a1cfb8cc1b5ee382f43893a7"
+    },
+    {
+      "path": "review-frames/contact-0128-0143.png",
+      "sha256": "387911d755276e57afef2b8f2b3babdf203fdd23e8b7a63183708c7069ca13d8"
+    },
+    {
+      "path": "review-frames/contact-0144-0159.png",
+      "sha256": "99462f5002305c74ed8bbe5672c9df5283662eb0766bf973b9b358eed83cb8fe"
+    },
+    {
+      "path": "review-frames/contact-0160-0175.png",
+      "sha256": "78c87b0b8e1ecfaa44008c6d70caeb53fb669f4470906d4c73f3c1f65b222339"
+    },
+    {
+      "path": "review-frames/contact-0176-0179.png",
+      "sha256": "16d9974086c723f01ba3fef456aff81c11479c2e5150c631297c1c4724c794e2"
+    },
+    {
+      "path": "review-frames/contact-0180-0195.png",
+      "sha256": "127811883263cfd877014eadf1b9290212e37f557671f62b54ba0139bdecdba2"
+    },
+    {
+      "path": "review-frames/contact-0196-0199.png",
+      "sha256": "ec4531c9e588b3d2cc60ab9456fa377cc5f40d1f2b957f85dd16cb0b725d2c0f"
+    }
+  ],
+  "precisionLimit": "Broad preliminary AI uncertainty regions; they are not independently human-annotated point GT or a validated localization benchmark. Human confirmation absent. Regions may overstate uncertainty and must not be tightened after predictions."
+}

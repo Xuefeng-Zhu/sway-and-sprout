@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "annotationSha256": "1255ba95e7a62ed0ef683cdce83700c51c25804615be31dc879fa42ca63543e6",
+  "jointRegionFreezeSha256": "dc57331b073ee5ff23d172182edacd700f7c996e56d62d5b3e142d8e6f763bcf",
+  "all210AnnotationJointRegionsExactlyEqualOriginalFrozenRows": true,
+  "proofSha256": "130f99b837ef6975c59926fa525cf0cf9b915406f944bdfca343e4ec806ad773",
+  "oldRegionsAndAnnotationsUnchanged": true
+}

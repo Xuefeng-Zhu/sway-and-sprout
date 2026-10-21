@@ -1,0 +1,52 @@
+{
+  "assetId": "Pexels7628775",
+  "assetLicenseEvidence": "Official asset page links License Free to Pexels License.",
+  "assetPage": "https://www.pexels.com/video/woman-stretching-her-arms-7628775/",
+  "creator": "ArtHouse Studio",
+  "ffprobe": {
+    "format": {
+      "duration": "11.120000",
+      "size": "4529124"
+    },
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "avg_frame_rate": "25/1",
+        "codec_name": "h264",
+        "codec_type": "video",
+        "height": 1920,
+        "nb_frames": "278",
+        "width": 1080
+      }
+    ]
+  },
+  "frozenUtc": "2026-10-21T04:18:20.374583+00:00",
+  "license": "Pexels License",
+  "licenseUrl": "https://www.pexels.com/license/",
+  "maximumDownloadBytes": 25165824,
+  "modelRun": false,
+  "newContractAnnotationsCreated": false,
+  "officialAssetSnapshot": "metadata/pexels-7628775-web-snapshot.txt",
+  "officialAssetSnapshotSha256": "76b99e3fb121561b1be154955b07845d309f4a1e5600c537a53b449fe457c44a",
+  "officialLicenseSnapshot": "metadata/pexels-4586958-web-snapshot.txt",
+  "officialLicenseSnapshotSha256": "9d893f945c1596dec4952c5be9a63bff5f4e2b826b543d8a62d338bd31b34334",
+  "physicalPersonIdentityIndependenceVerified": false,
+  "pixelsReviewedBeforeFreeze": false,
+  "preflightSha256": "1d156e879bccb1947b410b8402d9273dc3a99a8baa0c4b107b0fb114cbe54a25",
+  "priorExcludedCreatorGroupMatch": false,
+  "resolvedSourceUrl": "https://videos.pexels.com/video-files/7628775/7628775-hd_1080_1920_25fps.mp4",
+  "responseHeaders": {
+    "Content-Length": "4529124",
+    "Content-Type": "video/mp4",
+    "ETag": "\"1a64199d1ab32e59317a383982cd2ed8\"",
+    "Last-Modified": "Tue, 26 Mar 2024 21:00:41 GMT"
+  },
+  "schemaVersion": 1,
+  "sourceBytes": 4529124,
+  "sourceProductionGroup": "Pexels/ArtHouse Studio/7628775",
+  "sourceSha256": "0a0751b76927648477fca5fd2ec413b7546c2916e1d402229e6622e9a97acd1a",
+  "sourceUrl": "https://videos.pexels.com/video-files/7628775/7628775-hd_1080_1920_25fps.mp4",
+  "sourceUrlEvidence": "Exact official asset download link redirect observed through web reader",
+  "title": "Woman Stretching Her Arms"
+}

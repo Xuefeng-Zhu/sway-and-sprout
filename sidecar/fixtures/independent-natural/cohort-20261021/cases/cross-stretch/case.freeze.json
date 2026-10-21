@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "status": "frozen-case-input-awaiting-whole-cohort-root-freeze",
+  "frozenAtUtc": "2026-10-21T04:40:24.050553+00:00",
+  "caseId": "cross-stretch",
+  "sourceGroupId": "Pexels/RDNE Stock project/8401267",
+  "role": "natural crossed-arm geometric challenge with incomplete/uncertain physical labels; not a guaranteed-zero negative or certified positive",
+  "contractSha256": "e6845536e78da88d3275e435edeec1e4fe040f9a83a955cbf1639218070a22b6",
+  "protocolSha256": "9ad4d17795b938684d086cb17aefe03a47f6e072364126007ba8fdb4a56928f6",
+  "selection": {
+    "path": "selection-before-annotation.json",
+    "sha256": "1c0391852625ebb44dcaf2e661661052268b9dbb04db4872ea0a977b390510fa",
+    "selectedBeforeAnnotations": true,
+    "selectedBeforePrediction": true
+  },
+  "source": {
+    "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/discovery/pexels-8401267/source.mp4",
+    "sha256": "1a5e675b9d134170f2880124d91db6211d9a71a8b0eb86e4aedf05d40f1770b5",
+    "url": "https://videos.pexels.com/video-files/8401267/8401267-hd_1920_1080_30fps.mp4",
+    "assetPage": "https://www.pexels.com/video/a-woman-stretching-her-arms-in-the-street-8401267/",
+    "creator": "RDNE Stock project",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "licenseEvidence": {
+      "assetSnapshot": "metadata/pexels-8401267-web-snapshot.txt",
+      "assetSnapshotSha256": "4d3d01532d17ddbc19cd8d6dbaea85a7539502d50d646d5f30035d5b6118ddb2",
+      "licenseSnapshot": "metadata/pexels-4586958-web-snapshot.txt",
+      "licenseSnapshotSha256": "9d893f945c1596dec4952c5be9a63bff5f4e2b826b543d8a62d338bd31b34334"
+    },
+    "metadataPath": "../../discovery/pexels-8401267/source.freeze.json",
+    "metadataSha256": "8a20bbf25e30b9e36a745a4c8c10a0622f47923bc9116fdb79bfcce0e8f804bd",
+    "actorIdentityIndependenceClaim": false
+  },
+  "derivative": {
+    "path": "cross-stretch.mp4",
+    "sha256": "5274502db878258fd9176617d054171770891728911ab9a51ee90386e2da6a03",
+    "bytes": 54743200,
+    "sourceStartFrame": 150,
+    "sourceEndFrameExclusive": 345,
+    "frameMap": "sourceFrame=clipFrame+150; clipFrame 0..194",
+    "sourceOffsetSeconds": 5,
+    "resize": false,
+    "retime": false,
+    "mirror": false,
+    "splice": false,
+    "losslessDecodedYuv420p": true,
+    "pixelCadenceVerification": {
+      "path": "derivative-verification.json",
+      "sha256": "cfed19c4f066ccab6337a2f627db4dcb5180153bb9159f49a575cbc6d3effbfb",
+      "all195FrameHashesEqual": true,
+      "orderedYuvHashSequenceSha256": "78ea5d60b6f4fd0f641553fdcdfe855b34b58e17793455038cc5e30710831b2d"
+    }
+  },
+  "displayTime": {
+    "frameCount": 195,
+    "fpsNumerator": 30,
+    "fpsDenominator": 1,
+    "timeBase": "1/15360",
+    "firstPts": 0,
+    "cfrVerified": true,
+    "maximumPtsDeviationSeconds": 0,
+    "duplicatePts": 0,
+    "gaps": 0,
+    "classifierTimestampFormula": "clipFrame*1000/30, unrounded float; int hold truncation",
+    "durationMs": 6500,
+    "lastSampleMs": 6466.666666666667,
+    "ptsMapHash": "cfed19c4f066ccab6337a2f627db4dcb5180153bb9159f49a575cbc6d3effbfb"
+  },
+  "coordinates": {
+    "decodedDimensions": [
+      1920,
+      1080
+    ],
+    "annotationDimensions": [
+      1920,
+      1080
+    ],
+    "workingDimensions": null,
+    "decodedToWorkingTransform": "Physical annotations stay in decoded source pixels. Execution must report its actual working dimensions and transform; no model executed yet. Existing Python width cap anticipates 640x360, source pixels /3, but actual run must verify."
+  },
+  "annotation": {
+    "path": "ai-visual-annotations.freeze.json",
+    "sha256": "f747e1815a2fd640ae82e1a1a30b5db8c04e74c8f964441a76be963fe3f265c1",
+    "authorType": "AI",
+    "authorId": "Codex /root/native_resume_review",
+    "predictionBlind": true,
+    "humanConfirmed": false,
+    "humanConfirmationStatus": "not-human-confirmed",
+    "labelProvenance": "AI visual annotations of public footage, authored after contract freeze and before this cohort model inference; not human-, user-supplied or user-approved labels.",
+    "perFrameCount": 195,
+    "perFrameReference": "ai-visual-annotations.freeze.json#/perFrame",
+    "regionSegmentsReference": "ai-visual-annotations.freeze.json#/segments",
+    "pointAccuracyGroundTruth": false
+  },
+  "opportunities": [],
+  "definitePositiveOpportunityCount": 0,
+  "positiveRecallDenominatorStatus": "unestimable",
+  "certifiedNegativeIntervals": [
+    {
+      "startFrame": 32,
+      "endFrameExclusive": 44,
+      "sampleSupportStartMs": 1066.6666666666667,
+      "sampleSupportEndExclusiveMs": 1466.6666666666667,
+      "sampleCount": 12,
+      "exposureMs": 400.0,
+      "basis": "both down",
+      "unknownJointFramesIncluded": 0,
+      "meaning": "No valid expected-side raise at these observed samples under any annotated joint configuration; coverage uses [t_i,t_i+1) sample bins, not a subframe continuous-motion claim."
+    },
+    {
+      "startFrame": 51,
+      "endFrameExclusive": 56,
+      "sampleSupportStartMs": 1700.0,
+      "sampleSupportEndExclusiveMs": 1866.6666666666667,
+      "sampleCount": 5,
+      "exposureMs": 166.66666666666666,
+      "basis": "both down",
+      "unknownJointFramesIncluded": 0,
+      "meaning": "No valid expected-side raise at these observed samples under any annotated joint configuration; coverage uses [t_i,t_i+1) sample bins, not a subframe continuous-motion claim."
+    },
+    {
+      "startFrame": 72,
+      "endFrameExclusive": 81,
+      "sampleSupportStartMs": 2400.0,
+      "sampleSupportEndExclusiveMs": 2700.0,
+      "sampleCount": 9,
+      "exposureMs": 300.0,
+      "basis": "neither wrist can be up",
+      "unknownJointFramesIncluded": 0,
+      "meaning": "No valid expected-side raise at these observed samples under any annotated joint configuration; coverage uses [t_i,t_i+1) sample bins, not a subframe continuous-motion claim."
+    },
+    {
+      "startFrame": 150,
+      "endFrameExclusive": 180,
+      "sampleSupportStartMs": 5000.0,
+      "sampleSupportEndExclusiveMs": 6000.0,
+      "sampleCount": 30,
+      "exposureMs": 1000.0,
+      "basis": "neither wrist can be down",
+      "unknownJointFramesIncluded": 0,
+      "meaning": "No valid expected-side raise at these observed samples under any annotated joint configuration; coverage uses [t_i,t_i+1) sample bins, not a subframe continuous-motion claim."
+    }
+  ],
+  "certifiedNegativeSampleCount": 56,
+  "certifiedNegativeExposureMs": 1866.6666666666667,
+  "certifiedNegativeMinutes": 0.031111111111111114,
+  "unknownTimeExcludedFromNegativeExposure": true,
+  "uncertainIntervals": [
+    {
+      "startFrame": 0,
+      "endFrameExclusive": 32,
+      "reason": "Initial crossed pose/release/cropped wrists: incomplete joints and uncertain gates; not certified negative exposure."
+    },
+    {
+      "startFrame": 44,
+      "endFrameExclusive": 51,
+      "reason": "Left wrist occluded."
+    },
+    {
+      "startFrame": 56,
+      "endFrameExclusive": 72,
+      "reason": "Wrists cropped or blurred; continuous neutral not certified."
+    },
+    {
+      "startFrame": 81,
+      "endFrameExclusive": 150,
+      "reason": "A left-up/right-down hold is not excluded. Onset, opposite-down support, and resulting expected-side state are not definite."
+    },
+    {
+      "startFrame": 180,
+      "endFrameExclusive": 195,
+      "reason": "Right-wrist gate near cutoff. Outer-state analysis can exclude a new event after the preceding no-neutral/no-down span, but this is omitted from the minimal physical-negative exposure."
+    }
+  ],
+  "expectedSequence": null,
+  "wholeClipGuaranteedZeroExpected": false,
+  "possibleLeftCorrectRunOuterBounds": {
+    "startFrame": 81,
+    "endFrameExclusive": 150,
+    "meaning": "Envelope permits left-up/right-down at some/all samples; not a demonstrated filmed continuous run, definite opportunity, or an event acceptance window. No exact onset or positive count is invented."
+  },
+  "bounds": {
+    "path": "bound-analysis.freeze.json",
+    "sha256": "0961653ff1963035ae5de7c7df5483ef6ed178c2fbbbefc0f0d019726a0bf946",
+    "eventCountOuterBounds": [
+      0,
+      3
+    ],
+    "notAttainabilityProof": true,
+    "definiteEventTimingWindow": null,
+    "pureStateParity": {
+      "path": "pure-state-parity.json",
+      "sha256": "01b1bc1ec3aeb120c4180a79e1d7c7d18e60f820b6ce1d05687640e7d78dc0bd",
+      "transitionsChecked": 201885,
+      "syntheticArithmeticOnly": true
+    },
+    "algorithmPath": "prepare-visual-bounds.py",
+    "algorithmSha256": "36b8d05b03ddd5a17e8cdf8b73eaeef2eade36ca60d92f2f4e8c797de2b27ec4"
+  },
+  "runtimePins": null,
+  "predeclaredExecutionProfile": null,
+  "executionPerformed": false,
+  "cameraUsed": false,
+  "preliminaryDiagnosticOnly": true,
+  "humanValidationRequiredBeforeAcceptance": true,
+  "wholeCohortFreezeRequiredBeforePrediction": true,
+  "historicalEvidenceChanged": false,
+  "canonicalSourceChanged": false
+}

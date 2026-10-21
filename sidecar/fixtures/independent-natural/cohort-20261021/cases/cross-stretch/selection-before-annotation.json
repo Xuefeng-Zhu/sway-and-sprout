@@ -1,0 +1,14 @@
+{
+  "caseId": "cross-stretch",
+  "sourceGroupId": "Pexels/RDNE Stock project/8401267",
+  "sourcePath": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/discovery/pexels-8401267/source.mp4",
+  "sourceSha256": "1a5e675b9d134170f2880124d91db6211d9a71a8b0eb86e4aedf05d40f1770b5",
+  "sourceStartFrame": 150,
+  "sourceEndFrameExclusive": 345,
+  "sourceFpsNumerator": 30,
+  "sourceFpsDenominator": 1,
+  "purpose": "Physical wrist-gate challenge; opportunity count unknown until blind annotation, not selected as positive or negative from model output",
+  "noModelInference": true,
+  "contractSha256": "e6845536e78da88d3275e435edeec1e4fe040f9a83a955cbf1639218070a22b6",
+  "cohortStatus": "candidate pending complete visual annotation"
+}

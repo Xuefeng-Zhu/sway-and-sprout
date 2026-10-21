@@ -1,0 +1,52 @@
+{
+  "assetId": "Pexels8401267",
+  "assetLicenseEvidence": "Official asset page links License Free to Pexels License.",
+  "assetPage": "https://www.pexels.com/video/a-woman-stretching-her-arms-in-the-street-8401267/",
+  "creator": "RDNE Stock project",
+  "ffprobe": {
+    "format": {
+      "duration": "15.066667",
+      "size": "5499990"
+    },
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "avg_frame_rate": "30/1",
+        "codec_name": "h264",
+        "codec_type": "video",
+        "height": 1080,
+        "nb_frames": "452",
+        "width": 1920
+      }
+    ]
+  },
+  "frozenUtc": "2026-10-21T04:18:21.654231+00:00",
+  "license": "Pexels License",
+  "licenseUrl": "https://www.pexels.com/license/",
+  "maximumDownloadBytes": 25165824,
+  "modelRun": false,
+  "newContractAnnotationsCreated": false,
+  "officialAssetSnapshot": "metadata/pexels-8401267-web-snapshot.txt",
+  "officialAssetSnapshotSha256": "4d3d01532d17ddbc19cd8d6dbaea85a7539502d50d646d5f30035d5b6118ddb2",
+  "officialLicenseSnapshot": "metadata/pexels-4586958-web-snapshot.txt",
+  "officialLicenseSnapshotSha256": "9d893f945c1596dec4952c5be9a63bff5f4e2b826b543d8a62d338bd31b34334",
+  "physicalPersonIdentityIndependenceVerified": false,
+  "pixelsReviewedBeforeFreeze": false,
+  "preflightSha256": "16fe203853f222e79113bf60cfb306dfae0fd76eea1adffdf8ce601c942bbed5",
+  "priorExcludedCreatorGroupMatch": false,
+  "resolvedSourceUrl": "https://videos.pexels.com/video-files/8401267/8401267-hd_1920_1080_30fps.mp4",
+  "responseHeaders": {
+    "Content-Length": "5499990",
+    "Content-Type": "video/mp4",
+    "ETag": "\"8037d5d07b5834a8f8a6ec843f103d65\"",
+    "Last-Modified": "Tue, 26 Mar 2024 21:58:16 GMT"
+  },
+  "schemaVersion": 1,
+  "sourceBytes": 5499990,
+  "sourceProductionGroup": "Pexels/RDNE Stock project/8401267",
+  "sourceSha256": "1a5e675b9d134170f2880124d91db6211d9a71a8b0eb86e4aedf05d40f1770b5",
+  "sourceUrl": "https://videos.pexels.com/video-files/8401267/8401267-hd_1920_1080_30fps.mp4",
+  "sourceUrlEvidence": "Exact official asset download link redirect observed through web reader",
+  "title": "A Woman Stretching her Arms in the Street"
+}

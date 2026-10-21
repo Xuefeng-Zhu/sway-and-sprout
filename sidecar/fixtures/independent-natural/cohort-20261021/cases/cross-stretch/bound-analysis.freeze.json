@@ -1,0 +1,3057 @@
+{
+  "schemaVersion": 1,
+  "caseId": "cross-stretch",
+  "analysisType": "conservative interval geometry and exact phase-state outer-bound enumeration, no model inference",
+  "algorithmSha256": "36b8d05b03ddd5a17e8cdf8b73eaeef2eade36ca60d92f2f4e8c797de2b27ec4",
+  "sourceMotionPath": "/Users/frank/mygit/sway-and-sprout/sidecar/motion.py",
+  "sourceMotionSha256": "375b9dd92631c13533513c88b7eea9f9b3900f82304c566ee86b373b80a3b458",
+  "frameCount": 195,
+  "timestamps": "i*1000/30 float, no rounding; int hold truncation",
+  "confidenceGateApplied": false,
+  "allPlausibleRegionConfigurationsCovered": true,
+  "outerApproximationNotAttainabilityProof": true,
+  "noExactPossibleEligibilityClaim": true,
+  "guaranteedEventCount": null,
+  "eventCountOuterBounds": [
+    0,
+    3
+  ],
+  "definitePositiveOpportunityCount": 0,
+  "perFrame": [
+    {
+      "frame": 0,
+      "sourceFrame": 150,
+      "timeMs": 0.0,
+      "stateCount": 2,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 1,
+      "sourceFrame": 151,
+      "timeMs": 33.333333333333336,
+      "stateCount": 3,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 2,
+      "sourceFrame": 152,
+      "timeMs": 66.66666666666667,
+      "stateCount": 4,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 3,
+      "sourceFrame": 153,
+      "timeMs": 100.0,
+      "stateCount": 5,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 4,
+      "sourceFrame": 154,
+      "timeMs": 133.33333333333334,
+      "stateCount": 6,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 5,
+      "sourceFrame": 155,
+      "timeMs": 166.66666666666666,
+      "stateCount": 7,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 6,
+      "sourceFrame": 156,
+      "timeMs": 200.0,
+      "stateCount": 8,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 7,
+      "sourceFrame": 157,
+      "timeMs": 233.33333333333334,
+      "stateCount": 9,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 8,
+      "sourceFrame": 158,
+      "timeMs": 266.6666666666667,
+      "stateCount": 10,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 9,
+      "sourceFrame": 159,
+      "timeMs": 300.0,
+      "stateCount": 11,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 10,
+      "sourceFrame": 160,
+      "timeMs": 333.3333333333333,
+      "stateCount": 14,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 11,
+      "sourceFrame": 161,
+      "timeMs": 366.6666666666667,
+      "stateCount": 17,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 12,
+      "sourceFrame": 162,
+      "timeMs": 400.0,
+      "stateCount": 20,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 13,
+      "sourceFrame": 163,
+      "timeMs": 433.3333333333333,
+      "stateCount": 23,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 14,
+      "sourceFrame": 164,
+      "timeMs": 466.6666666666667,
+      "stateCount": 26,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 15,
+      "sourceFrame": 165,
+      "timeMs": 500.0,
+      "stateCount": 29,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 16,
+      "sourceFrame": 166,
+      "timeMs": 533.3333333333334,
+      "stateCount": 32,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 17,
+      "sourceFrame": 167,
+      "timeMs": 566.6666666666666,
+      "stateCount": 35,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 18,
+      "sourceFrame": 168,
+      "timeMs": 600.0,
+      "stateCount": 38,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 19,
+      "sourceFrame": 169,
+      "timeMs": 633.3333333333334,
+      "stateCount": 41,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 20,
+      "sourceFrame": 170,
+      "timeMs": 666.6666666666666,
+      "stateCount": 44,
+      "eventCountOuterBounds": [
+        0,
+        0
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 21,
+      "sourceFrame": 171,
+      "timeMs": 700.0,
+      "stateCount": 45,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 22,
+      "sourceFrame": 172,
+      "timeMs": 733.3333333333334,
+      "stateCount": 48,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 23,
+      "sourceFrame": 173,
+      "timeMs": 766.6666666666666,
+      "stateCount": 53,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 24,
+      "sourceFrame": 174,
+      "timeMs": 800.0,
+      "stateCount": 57,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 25,
+      "sourceFrame": 175,
+      "timeMs": 833.3333333333334,
+      "stateCount": 63,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 26,
+      "sourceFrame": 176,
+      "timeMs": 866.6666666666666,
+      "stateCount": 70,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 27,
+      "sourceFrame": 177,
+      "timeMs": 900.0,
+      "stateCount": 78,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 28,
+      "sourceFrame": 178,
+      "timeMs": 933.3333333333334,
+      "stateCount": 87,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 29,
+      "sourceFrame": 179,
+      "timeMs": 966.6666666666666,
+      "stateCount": 97,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 30,
+      "sourceFrame": 180,
+      "timeMs": 1000.0,
+      "stateCount": 108,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 31,
+      "sourceFrame": 181,
+      "timeMs": 1033.3333333333333,
+      "stateCount": 121,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 32,
+      "sourceFrame": 182,
+      "timeMs": 1066.6666666666667,
+      "stateCount": 108,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 33,
+      "sourceFrame": 183,
+      "timeMs": 1100.0,
+      "stateCount": 107,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 34,
+      "sourceFrame": 184,
+      "timeMs": 1133.3333333333333,
+      "stateCount": 107,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 35,
+      "sourceFrame": 185,
+      "timeMs": 1166.6666666666667,
+      "stateCount": 105,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 36,
+      "sourceFrame": 186,
+      "timeMs": 1200.0,
+      "stateCount": 104,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 37,
+      "sourceFrame": 187,
+      "timeMs": 1233.3333333333333,
+      "stateCount": 104,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 38,
+      "sourceFrame": 188,
+      "timeMs": 1266.6666666666667,
+      "stateCount": 102,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 39,
+      "sourceFrame": 189,
+      "timeMs": 1300.0,
+      "stateCount": 101,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 40,
+      "sourceFrame": 190,
+      "timeMs": 1333.3333333333333,
+      "stateCount": 100,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 41,
+      "sourceFrame": 191,
+      "timeMs": 1366.6666666666667,
+      "stateCount": 99,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 42,
+      "sourceFrame": 192,
+      "timeMs": 1400.0,
+      "stateCount": 99,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 43,
+      "sourceFrame": 193,
+      "timeMs": 1433.3333333333333,
+      "stateCount": 99,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 44,
+      "sourceFrame": 194,
+      "timeMs": 1466.6666666666667,
+      "stateCount": 112,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 45,
+      "sourceFrame": 195,
+      "timeMs": 1500.0,
+      "stateCount": 125,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 46,
+      "sourceFrame": 196,
+      "timeMs": 1533.3333333333333,
+      "stateCount": 138,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 47,
+      "sourceFrame": 197,
+      "timeMs": 1566.6666666666667,
+      "stateCount": 151,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 48,
+      "sourceFrame": 198,
+      "timeMs": 1600.0,
+      "stateCount": 164,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 49,
+      "sourceFrame": 199,
+      "timeMs": 1633.3333333333333,
+      "stateCount": 177,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 50,
+      "sourceFrame": 200,
+      "timeMs": 1666.6666666666667,
+      "stateCount": 190,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 51,
+      "sourceFrame": 201,
+      "timeMs": 1700.0,
+      "stateCount": 183,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 52,
+      "sourceFrame": 202,
+      "timeMs": 1733.3333333333333,
+      "stateCount": 183,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 53,
+      "sourceFrame": 203,
+      "timeMs": 1766.6666666666667,
+      "stateCount": 183,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 54,
+      "sourceFrame": 204,
+      "timeMs": 1800.0,
+      "stateCount": 183,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 55,
+      "sourceFrame": 205,
+      "timeMs": 1833.3333333333333,
+      "stateCount": 183,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 56,
+      "sourceFrame": 206,
+      "timeMs": 1866.6666666666667,
+      "stateCount": 219,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 57,
+      "sourceFrame": 207,
+      "timeMs": 1900.0,
+      "stateCount": 255,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 58,
+      "sourceFrame": 208,
+      "timeMs": 1933.3333333333333,
+      "stateCount": 291,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 59,
+      "sourceFrame": 209,
+      "timeMs": 1966.6666666666667,
+      "stateCount": 327,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 60,
+      "sourceFrame": 210,
+      "timeMs": 2000.0,
+      "stateCount": 363,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 61,
+      "sourceFrame": 211,
+      "timeMs": 2033.3333333333333,
+      "stateCount": 399,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 62,
+      "sourceFrame": 212,
+      "timeMs": 2066.6666666666665,
+      "stateCount": 435,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 63,
+      "sourceFrame": 213,
+      "timeMs": 2100.0,
+      "stateCount": 471,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 64,
+      "sourceFrame": 214,
+      "timeMs": 2133.3333333333335,
+      "stateCount": 507,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 65,
+      "sourceFrame": 215,
+      "timeMs": 2166.6666666666665,
+      "stateCount": 543,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 66,
+      "sourceFrame": 216,
+      "timeMs": 2200.0,
+      "stateCount": 567,
+      "eventCountOuterBounds": [
+        0,
+        1
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 67,
+      "sourceFrame": 217,
+      "timeMs": 2233.3333333333335,
+      "stateCount": 581,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "frame": 68,
+      "sourceFrame": 218,
+      "timeMs": 2266.6666666666665,
+      "stateCount": 609,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "frame": 69,
+      "sourceFrame": 219,
+      "timeMs": 2300.0,
+      "stateCount": 615,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "frame": 70,
+      "sourceFrame": 220,
+      "timeMs": 2333.3333333333335,
+      "stateCount": 635,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "frame": 71,
+      "sourceFrame": 221,
+      "timeMs": 2366.6666666666665,
+      "stateCount": 657,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "frame": 72,
+      "sourceFrame": 222,
+      "timeMs": 2400.0,
+      "stateCount": 546,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 73,
+      "sourceFrame": 223,
+      "timeMs": 2433.3333333333335,
+      "stateCount": 567,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 74,
+      "sourceFrame": 224,
+      "timeMs": 2466.6666666666665,
+      "stateCount": 588,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 75,
+      "sourceFrame": 225,
+      "timeMs": 2500.0,
+      "stateCount": 609,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 76,
+      "sourceFrame": 226,
+      "timeMs": 2533.3333333333335,
+      "stateCount": 630,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 77,
+      "sourceFrame": 227,
+      "timeMs": 2566.6666666666665,
+      "stateCount": 651,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 78,
+      "sourceFrame": 228,
+      "timeMs": 2600.0,
+      "stateCount": 673,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 79,
+      "sourceFrame": 229,
+      "timeMs": 2633.3333333333335,
+      "stateCount": 696,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 80,
+      "sourceFrame": 230,
+      "timeMs": 2666.6666666666665,
+      "stateCount": 720,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 81,
+      "sourceFrame": 231,
+      "timeMs": 2700.0,
+      "stateCount": 751,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 82,
+      "sourceFrame": 232,
+      "timeMs": 2733.3333333333335,
+      "stateCount": 786,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 83,
+      "sourceFrame": 233,
+      "timeMs": 2766.6666666666665,
+      "stateCount": 822,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 84,
+      "sourceFrame": 234,
+      "timeMs": 2800.0,
+      "stateCount": 859,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 85,
+      "sourceFrame": 235,
+      "timeMs": 2833.3333333333335,
+      "stateCount": 897,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 86,
+      "sourceFrame": 236,
+      "timeMs": 2866.6666666666665,
+      "stateCount": 936,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 87,
+      "sourceFrame": 237,
+      "timeMs": 2900.0,
+      "stateCount": 975,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 88,
+      "sourceFrame": 238,
+      "timeMs": 2933.3333333333335,
+      "stateCount": 1013,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 89,
+      "sourceFrame": 239,
+      "timeMs": 2966.6666666666665,
+      "stateCount": 1050,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 90,
+      "sourceFrame": 240,
+      "timeMs": 3000.0,
+      "stateCount": 73,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 91,
+      "sourceFrame": 241,
+      "timeMs": 3033.3333333333335,
+      "stateCount": 79,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 92,
+      "sourceFrame": 242,
+      "timeMs": 3066.6666666666665,
+      "stateCount": 85,
+      "eventCountOuterBounds": [
+        0,
+        2
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 93,
+      "sourceFrame": 243,
+      "timeMs": 3100.0,
+      "stateCount": 90,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 94,
+      "sourceFrame": 244,
+      "timeMs": 3133.3333333333335,
+      "stateCount": 94,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 95,
+      "sourceFrame": 245,
+      "timeMs": 3166.6666666666665,
+      "stateCount": 97,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 96,
+      "sourceFrame": 246,
+      "timeMs": 3200.0,
+      "stateCount": 99,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 97,
+      "sourceFrame": 247,
+      "timeMs": 3233.3333333333335,
+      "stateCount": 100,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 98,
+      "sourceFrame": 248,
+      "timeMs": 3266.6666666666665,
+      "stateCount": 101,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 99,
+      "sourceFrame": 249,
+      "timeMs": 3300.0,
+      "stateCount": 102,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 100,
+      "sourceFrame": 250,
+      "timeMs": 3333.3333333333335,
+      "stateCount": 103,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 101,
+      "sourceFrame": 251,
+      "timeMs": 3366.6666666666665,
+      "stateCount": 104,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 102,
+      "sourceFrame": 252,
+      "timeMs": 3400.0,
+      "stateCount": 105,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 103,
+      "sourceFrame": 253,
+      "timeMs": 3433.3333333333335,
+      "stateCount": 106,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 104,
+      "sourceFrame": 254,
+      "timeMs": 3466.6666666666665,
+      "stateCount": 107,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 105,
+      "sourceFrame": 255,
+      "timeMs": 3500.0,
+      "stateCount": 108,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 106,
+      "sourceFrame": 256,
+      "timeMs": 3533.3333333333335,
+      "stateCount": 109,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 107,
+      "sourceFrame": 257,
+      "timeMs": 3566.6666666666665,
+      "stateCount": 110,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 108,
+      "sourceFrame": 258,
+      "timeMs": 3600.0,
+      "stateCount": 111,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 109,
+      "sourceFrame": 259,
+      "timeMs": 3633.3333333333335,
+      "stateCount": 112,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 110,
+      "sourceFrame": 260,
+      "timeMs": 3666.6666666666665,
+      "stateCount": 113,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 111,
+      "sourceFrame": 261,
+      "timeMs": 3700.0,
+      "stateCount": 114,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 112,
+      "sourceFrame": 262,
+      "timeMs": 3733.3333333333335,
+      "stateCount": 115,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 113,
+      "sourceFrame": 263,
+      "timeMs": 3766.6666666666665,
+      "stateCount": 116,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 114,
+      "sourceFrame": 264,
+      "timeMs": 3800.0,
+      "stateCount": 117,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 115,
+      "sourceFrame": 265,
+      "timeMs": 3833.3333333333335,
+      "stateCount": 118,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 116,
+      "sourceFrame": 266,
+      "timeMs": 3866.6666666666665,
+      "stateCount": 119,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 117,
+      "sourceFrame": 267,
+      "timeMs": 3900.0,
+      "stateCount": 120,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 118,
+      "sourceFrame": 268,
+      "timeMs": 3933.3333333333335,
+      "stateCount": 121,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 119,
+      "sourceFrame": 269,
+      "timeMs": 3966.6666666666665,
+      "stateCount": 122,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 120,
+      "sourceFrame": 270,
+      "timeMs": 4000.0,
+      "stateCount": 123,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 121,
+      "sourceFrame": 271,
+      "timeMs": 4033.3333333333335,
+      "stateCount": 124,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 122,
+      "sourceFrame": 272,
+      "timeMs": 4066.6666666666665,
+      "stateCount": 125,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 123,
+      "sourceFrame": 273,
+      "timeMs": 4100.0,
+      "stateCount": 126,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 124,
+      "sourceFrame": 274,
+      "timeMs": 4133.333333333333,
+      "stateCount": 127,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 125,
+      "sourceFrame": 275,
+      "timeMs": 4166.666666666667,
+      "stateCount": 128,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 126,
+      "sourceFrame": 276,
+      "timeMs": 4200.0,
+      "stateCount": 129,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 127,
+      "sourceFrame": 277,
+      "timeMs": 4233.333333333333,
+      "stateCount": 130,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 128,
+      "sourceFrame": 278,
+      "timeMs": 4266.666666666667,
+      "stateCount": 131,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 129,
+      "sourceFrame": 279,
+      "timeMs": 4300.0,
+      "stateCount": 132,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 130,
+      "sourceFrame": 280,
+      "timeMs": 4333.333333333333,
+      "stateCount": 133,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 131,
+      "sourceFrame": 281,
+      "timeMs": 4366.666666666667,
+      "stateCount": 134,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 132,
+      "sourceFrame": 282,
+      "timeMs": 4400.0,
+      "stateCount": 135,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 133,
+      "sourceFrame": 283,
+      "timeMs": 4433.333333333333,
+      "stateCount": 136,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 134,
+      "sourceFrame": 284,
+      "timeMs": 4466.666666666667,
+      "stateCount": 137,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 135,
+      "sourceFrame": 285,
+      "timeMs": 4500.0,
+      "stateCount": 138,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 136,
+      "sourceFrame": 286,
+      "timeMs": 4533.333333333333,
+      "stateCount": 139,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 137,
+      "sourceFrame": 287,
+      "timeMs": 4566.666666666667,
+      "stateCount": 140,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 138,
+      "sourceFrame": 288,
+      "timeMs": 4600.0,
+      "stateCount": 141,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 139,
+      "sourceFrame": 289,
+      "timeMs": 4633.333333333333,
+      "stateCount": 142,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 140,
+      "sourceFrame": 290,
+      "timeMs": 4666.666666666667,
+      "stateCount": 143,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 141,
+      "sourceFrame": 291,
+      "timeMs": 4700.0,
+      "stateCount": 144,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 142,
+      "sourceFrame": 292,
+      "timeMs": 4733.333333333333,
+      "stateCount": 145,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 143,
+      "sourceFrame": 293,
+      "timeMs": 4766.666666666667,
+      "stateCount": 146,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 144,
+      "sourceFrame": 294,
+      "timeMs": 4800.0,
+      "stateCount": 147,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 145,
+      "sourceFrame": 295,
+      "timeMs": 4833.333333333333,
+      "stateCount": 148,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 146,
+      "sourceFrame": 296,
+      "timeMs": 4866.666666666667,
+      "stateCount": 149,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 147,
+      "sourceFrame": 297,
+      "timeMs": 4900.0,
+      "stateCount": 150,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 148,
+      "sourceFrame": 298,
+      "timeMs": 4933.333333333333,
+      "stateCount": 151,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 149,
+      "sourceFrame": 299,
+      "timeMs": 4966.666666666667,
+      "stateCount": 152,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": [
+        "left"
+      ]
+    },
+    {
+      "frame": 150,
+      "sourceFrame": 300,
+      "timeMs": 5000.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 151,
+      "sourceFrame": 301,
+      "timeMs": 5033.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 152,
+      "sourceFrame": 302,
+      "timeMs": 5066.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 153,
+      "sourceFrame": 303,
+      "timeMs": 5100.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 154,
+      "sourceFrame": 304,
+      "timeMs": 5133.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 155,
+      "sourceFrame": 305,
+      "timeMs": 5166.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 156,
+      "sourceFrame": 306,
+      "timeMs": 5200.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 157,
+      "sourceFrame": 307,
+      "timeMs": 5233.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 158,
+      "sourceFrame": 308,
+      "timeMs": 5266.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 159,
+      "sourceFrame": 309,
+      "timeMs": 5300.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 160,
+      "sourceFrame": 310,
+      "timeMs": 5333.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 161,
+      "sourceFrame": 311,
+      "timeMs": 5366.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 162,
+      "sourceFrame": 312,
+      "timeMs": 5400.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 163,
+      "sourceFrame": 313,
+      "timeMs": 5433.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 164,
+      "sourceFrame": 314,
+      "timeMs": 5466.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 165,
+      "sourceFrame": 315,
+      "timeMs": 5500.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 166,
+      "sourceFrame": 316,
+      "timeMs": 5533.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 167,
+      "sourceFrame": 317,
+      "timeMs": 5566.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 168,
+      "sourceFrame": 318,
+      "timeMs": 5600.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 169,
+      "sourceFrame": 319,
+      "timeMs": 5633.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 170,
+      "sourceFrame": 320,
+      "timeMs": 5666.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 171,
+      "sourceFrame": 321,
+      "timeMs": 5700.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 172,
+      "sourceFrame": 322,
+      "timeMs": 5733.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 173,
+      "sourceFrame": 323,
+      "timeMs": 5766.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 174,
+      "sourceFrame": 324,
+      "timeMs": 5800.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 175,
+      "sourceFrame": 325,
+      "timeMs": 5833.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 176,
+      "sourceFrame": 326,
+      "timeMs": 5866.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 177,
+      "sourceFrame": 327,
+      "timeMs": 5900.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 178,
+      "sourceFrame": 328,
+      "timeMs": 5933.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 179,
+      "sourceFrame": 329,
+      "timeMs": 5966.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 180,
+      "sourceFrame": 330,
+      "timeMs": 6000.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 181,
+      "sourceFrame": 331,
+      "timeMs": 6033.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 182,
+      "sourceFrame": 332,
+      "timeMs": 6066.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 183,
+      "sourceFrame": 333,
+      "timeMs": 6100.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 184,
+      "sourceFrame": 334,
+      "timeMs": 6133.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 185,
+      "sourceFrame": 335,
+      "timeMs": 6166.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 186,
+      "sourceFrame": 336,
+      "timeMs": 6200.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 187,
+      "sourceFrame": 337,
+      "timeMs": 6233.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 188,
+      "sourceFrame": 338,
+      "timeMs": 6266.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 189,
+      "sourceFrame": 339,
+      "timeMs": 6300.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 190,
+      "sourceFrame": 340,
+      "timeMs": 6333.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 191,
+      "sourceFrame": 341,
+      "timeMs": 6366.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 192,
+      "sourceFrame": 342,
+      "timeMs": 6400.0,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 193,
+      "sourceFrame": 343,
+      "timeMs": 6433.333333333333,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    },
+    {
+      "frame": 194,
+      "sourceFrame": 344,
+      "timeMs": 6466.666666666667,
+      "stateCount": 80,
+      "eventCountOuterBounds": [
+        0,
+        3
+      ],
+      "emissionSidesNotExcludedByOuterBounds": []
+    }
+  ],
+  "regionCalculations": [
+    {
+      "segmentId": "visual-00",
+      "startFrame": 0,
+      "endFrameExclusive": 5,
+      "jointRegions": {
+        "left_shoulder": [
+          1300,
+          1450,
+          330,
+          450
+        ],
+        "right_shoulder": null,
+        "left_wrist": [
+          750,
+          900,
+          480,
+          620
+        ],
+        "right_wrist": [
+          990,
+          1110,
+          300,
+          460
+        ]
+      },
+      "shoulderSpanOuterBounds": [
+        1e-05,
+        2202.9071700822983
+      ],
+      "leftQOuterBounds": [
+        -28999999.999999996,
+        -0.013618367767571082
+      ],
+      "rightQOuterBounds": null,
+      "allowedGates": {
+        "left": [
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "unknownJointNames": [
+        "right_shoulder"
+      ],
+      "reason": "First crossed pose: left wrist visible with watch; opposite shoulder hidden by arms. No point imputed for hidden shoulder.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-01",
+      "startFrame": 5,
+      "endFrameExclusive": 16,
+      "jointRegions": {
+        "left_shoulder": [
+          1340,
+          1490,
+          350,
+          520
+        ],
+        "right_shoulder": [
+          990,
+          1160,
+          370,
+          560
+        ],
+        "left_wrist": null,
+        "right_wrist": null
+      },
+      "shoulderSpanOuterBounds": [
+        180.0,
+        542.3098745182499
+      ],
+      "leftQOuterBounds": null,
+      "rightQOuterBounds": null,
+      "allowedGates": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "unknownJointNames": [
+        "left_wrist",
+        "right_wrist"
+      ],
+      "reason": "Release and arm crossing; motion blur/partial occlusion prevents bounded wrist centres. Unknown, not neutral certification.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-02",
+      "startFrame": 16,
+      "endFrameExclusive": 32,
+      "jointRegions": {
+        "left_shoulder": [
+          1370,
+          1520,
+          370,
+          530
+        ],
+        "right_shoulder": [
+          990,
+          1160,
+          380,
+          550
+        ],
+        "left_wrist": null,
+        "right_wrist": null
+      },
+      "shoulderSpanOuterBounds": [
+        210.0,
+        559.7320787662612
+      ],
+      "leftQOuterBounds": null,
+      "rightQOuterBounds": null,
+      "allowedGates": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "unknownJointNames": [
+        "left_wrist",
+        "right_wrist"
+      ],
+      "reason": "Wrists approach or pass the lower crop during downward swing. No offscreen coordinates invented.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-03",
+      "startFrame": 32,
+      "endFrameExclusive": 44,
+      "jointRegions": {
+        "left_shoulder": [
+          1370,
+          1510,
+          365,
+          520
+        ],
+        "right_shoulder": [
+          1000,
+          1150,
+          370,
+          530
+        ],
+        "left_wrist": [
+          1450,
+          1860,
+          700,
+          950
+        ],
+        "right_wrist": [
+          850,
+          1040,
+          810,
+          1065
+        ]
+      },
+      "shoulderSpanOuterBounds": [
+        220.0,
+        536.0270515561691
+      ],
+      "leftQOuterBounds": [
+        -2.659090909090909,
+        -0.33580394772508637
+      ],
+      "rightQOuterBounds": [
+        -3.159090909090909,
+        -0.5223616964612455
+      ],
+      "allowedGates": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "unknownJointNames": [],
+      "reason": "Both wrists visibly well below shoulders, including all frames in this interval.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-04",
+      "startFrame": 44,
+      "endFrameExclusive": 51,
+      "jointRegions": {
+        "left_shoulder": [
+          1360,
+          1500,
+          370,
+          520
+        ],
+        "right_shoulder": [
+          1000,
+          1150,
+          370,
+          530
+        ],
+        "left_wrist": null,
+        "right_wrist": [
+          830,
+          1050,
+          820,
+          1065
+        ]
+      },
+      "shoulderSpanOuterBounds": [
+        210.0,
+        524.9761899362675
+      ],
+      "leftQOuterBounds": null,
+      "rightQOuterBounds": [
+        -3.3095238095238093,
+        -0.552406005375608
+      ],
+      "allowedGates": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "unknownJointNames": [
+        "left_wrist"
+      ],
+      "reason": "Left wrist partly behind torso; right wrist remains visibly low. Left remains unknown.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-05",
+      "startFrame": 51,
+      "endFrameExclusive": 56,
+      "jointRegions": {
+        "left_shoulder": [
+          1350,
+          1470,
+          370,
+          520
+        ],
+        "right_shoulder": [
+          970,
+          1140,
+          380,
+          535
+        ],
+        "left_wrist": [
+          1460,
+          1650,
+          780,
+          970
+        ],
+        "right_wrist": [
+          720,
+          1010,
+          900,
+          1070
+        ]
+      },
+      "shoulderSpanOuterBounds": [
+        210.0,
+        526.5216044950103
+      ],
+      "leftQOuterBounds": [
+        -2.857142857142857,
+        -0.4938068975334211
+      ],
+      "rightQOuterBounds": [
+        -3.2857142857142856,
+        -0.693228913844995
+      ],
+      "allowedGates": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down"
+        ]
+      },
+      "unknownJointNames": [],
+      "reason": "Both wrist centres visible and low; broad regions include moving watch wrist.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-06",
+      "startFrame": 56,
+      "endFrameExclusive": 72,
+      "jointRegions": {
+        "left_shoulder": [
+          1330,
+          1480,
+          370,
+          540
+        ],
+        "right_shoulder": [
+          970,
+          1150,
+          360,
+          550
+        ],
+        "left_wrist": null,
+        "right_wrist": null
+      },
+      "shoulderSpanOuterBounds": [
+        180.0,
+        540.8326913195984
+      ],
+      "leftQOuterBounds": null,
+      "rightQOuterBounds": null,
+      "allowedGates": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "unknownJointNames": [
+        "left_wrist",
+        "right_wrist"
+      ],
+      "reason": "Wrists again near lower crop/blurred while arms start moving. Do not infer a continuous neutral span across this interval.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-07",
+      "startFrame": 72,
+      "endFrameExclusive": 81,
+      "jointRegions": {
+        "left_shoulder": [
+          1320,
+          1480,
+          370,
+          540
+        ],
+        "right_shoulder": [
+          980,
+          1150,
+          350,
+          530
+        ],
+        "left_wrist": [
+          1190,
+          1530,
+          650,
+          1080
+        ],
+        "right_wrist": [
+          1020,
+          1730,
+          550,
+          1080
+        ]
+      },
+      "shoulderSpanOuterBounds": [
+        170.0,
+        534.8831648126533
+      ],
+      "leftQOuterBounds": [
+        -4.176470588235294,
+        -0.20565238772943678
+      ],
+      "rightQOuterBounds": [
+        -4.294117647058823,
+        -0.037391343223533956
+      ],
+      "allowedGates": {
+        "left": [
+          "down"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "unknownJointNames": [],
+      "reason": "Rising arm exchange: both wrist centres remain below own shoulder; broad bounds allow down or transition, never up.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-08",
+      "startFrame": 81,
+      "endFrameExclusive": 90,
+      "jointRegions": {
+        "left_shoulder": [
+          1340,
+          1480,
+          395,
+          515
+        ],
+        "right_shoulder": [
+          1000,
+          1140,
+          365,
+          485
+        ],
+        "left_wrist": [
+          1170,
+          1370,
+          340,
+          800
+        ],
+        "right_wrist": [
+          1570,
+          1760,
+          425,
+          650
+        ]
+      },
+      "shoulderSpanOuterBounds": [
+        200.0,
+        502.8916384272063
+      ],
+      "leftQOuterBounds": [
+        -2.025,
+        0.875
+      ],
+      "rightQOuterBounds": [
+        -1.425,
+        0.3
+      ],
+      "allowedGates": {
+        "left": [
+          "up",
+          "down",
+          "transition"
+        ],
+        "right": [
+          "down",
+          "transition"
+        ]
+      },
+      "unknownJointNames": [],
+      "reason": "Left wrist bends upward rapidly while right arm extends across chest. Left onset and opposite-down cutoff uncertain.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-09",
+      "startFrame": 90,
+      "endFrameExclusive": 120,
+      "jointRegions": {
+        "left_shoulder": [
+          1300,
+          1460,
+          395,
+          515
+        ],
+        "right_shoulder": [
+          1000,
+          1150,
+          345,
+          480
+        ],
+        "left_wrist": [
+          1260,
+          1410,
+          260,
+          400
+        ],
+        "right_wrist": [
+          1600,
+          1760,
+          410,
+          540
+        ]
+      },
+      "shoulderSpanOuterBounds": [
+        150.0,
+        490.40799340956914
+      ],
+      "leftQOuterBounds": [
+        -0.03333333333333333,
+        1.7
+      ],
+      "rightQOuterBounds": [
+        -1.3,
+        0.4666666666666667
+      ],
+      "allowedGates": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "unknownJointNames": [],
+      "reason": "Bent left wrist high, opposite straight wrist near the down cutoff. Left shoulder partly visible/obscured; deliberately broad region, no exact point claim.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-10",
+      "startFrame": 120,
+      "endFrameExclusive": 150,
+      "jointRegions": {
+        "left_shoulder": [
+          1240,
+          1400,
+          350,
+          510
+        ],
+        "right_shoulder": [
+          940,
+          1120,
+          320,
+          450
+        ],
+        "left_wrist": [
+          1190,
+          1380,
+          190,
+          340
+        ],
+        "right_wrist": [
+          1550,
+          1740,
+          250,
+          490
+        ]
+      },
+      "shoulderSpanOuterBounds": [
+        120.0,
+        497.69468552517213
+      ],
+      "leftQOuterBounds": [
+        0.020092639706304892,
+        2.6666666666666665
+      ],
+      "rightQOuterBounds": [
+        -1.4166666666666667,
+        1.6666666666666667
+      ],
+      "allowedGates": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "unknownJointNames": [],
+      "reason": "Crossed pose moves upward. Broad shoulder/wrist bounds do not establish continuous opposite-down or a definite left-up onset.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-11",
+      "startFrame": 150,
+      "endFrameExclusive": 180,
+      "jointRegions": {
+        "left_shoulder": [
+          1220,
+          1400,
+          350,
+          510
+        ],
+        "right_shoulder": [
+          930,
+          1100,
+          330,
+          450
+        ],
+        "left_wrist": [
+          1180,
+          1340,
+          190,
+          300
+        ],
+        "right_wrist": [
+          1530,
+          1730,
+          190,
+          340
+        ]
+      },
+      "shoulderSpanOuterBounds": [
+        120.0,
+        503.2891812864648
+      ],
+      "leftQOuterBounds": [
+        0.09934646294640047,
+        2.6666666666666665
+      ],
+      "rightQOuterBounds": [
+        -0.08333333333333333,
+        2.1666666666666665
+      ],
+      "allowedGates": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "transition"
+        ]
+      },
+      "unknownJointNames": [],
+      "reason": "Stable high crossed pose: both wrist regions exclude down relative to own shoulder over all bounded configurations.",
+      "everyFrameVisuallyInspected": true
+    },
+    {
+      "segmentId": "visual-12",
+      "startFrame": 180,
+      "endFrameExclusive": 195,
+      "jointRegions": {
+        "left_shoulder": [
+          1200,
+          1380,
+          350,
+          520
+        ],
+        "right_shoulder": [
+          920,
+          1080,
+          350,
+          460
+        ],
+        "left_wrist": [
+          1150,
+          1320,
+          230,
+          335
+        ],
+        "right_wrist": [
+          1510,
+          1730,
+          280,
+          420
+        ]
+      },
+      "shoulderSpanOuterBounds": [
+        120.0,
+        490.40799340956914
+      ],
+      "leftQOuterBounds": [
+        0.030586777135731963,
+        2.4166666666666665
+      ],
+      "rightQOuterBounds": [
+        -0.5833333333333334,
+        1.5
+      ],
+      "allowedGates": {
+        "left": [
+          "up",
+          "transition"
+        ],
+        "right": [
+          "up",
+          "down",
+          "transition"
+        ]
+      },
+      "unknownJointNames": [],
+      "reason": "Straight wrist settles toward shoulder height; bent left wrist excludes down. Right down/transition uncertainty retained.",
+      "everyFrameVisuallyInspected": true
+    }
+  ],
+  "minimalNegativeIntervals": [
+    {
+      "startFrame": 32,
+      "endFrameExclusive": 44,
+      "sampleSupportStartMs": 1066.6666666666667,
+      "sampleSupportEndExclusiveMs": 1466.6666666666667,
+      "sampleCount": 12,
+      "exposureMs": 400.0,
+      "basis": "both down",
+      "unknownJointFramesIncluded": 0,
+      "meaning": "No valid expected-side raise at these observed samples under any annotated joint configuration; coverage uses [t_i,t_i+1) sample bins, not a subframe continuous-motion claim."
+    },
+    {
+      "startFrame": 51,
+      "endFrameExclusive": 56,
+      "sampleSupportStartMs": 1700.0,
+      "sampleSupportEndExclusiveMs": 1866.6666666666667,
+      "sampleCount": 5,
+      "exposureMs": 166.66666666666666,
+      "basis": "both down",
+      "unknownJointFramesIncluded": 0,
+      "meaning": "No valid expected-side raise at these observed samples under any annotated joint configuration; coverage uses [t_i,t_i+1) sample bins, not a subframe continuous-motion claim."
+    },
+    {
+      "startFrame": 72,
+      "endFrameExclusive": 81,
+      "sampleSupportStartMs": 2400.0,
+      "sampleSupportEndExclusiveMs": 2700.0,
+      "sampleCount": 9,
+      "exposureMs": 300.0,
+      "basis": "neither wrist can be up",
+      "unknownJointFramesIncluded": 0,
+      "meaning": "No valid expected-side raise at these observed samples under any annotated joint configuration; coverage uses [t_i,t_i+1) sample bins, not a subframe continuous-motion claim."
+    },
+    {
+      "startFrame": 150,
+      "endFrameExclusive": 180,
+      "sampleSupportStartMs": 5000.0,
+      "sampleSupportEndExclusiveMs": 6000.0,
+      "sampleCount": 30,
+      "exposureMs": 1000.0,
+      "basis": "neither wrist can be down",
+      "unknownJointFramesIncluded": 0,
+      "meaning": "No valid expected-side raise at these observed samples under any annotated joint configuration; coverage uses [t_i,t_i+1) sample bins, not a subframe continuous-motion claim."
+    }
+  ],
+  "negativeExposureMs": 1866.6666666666667,
+  "warnings": [
+    "Cartesian-product phase branches may include geometrically dependent or visually implausible combinations, so possible-emission bounds do not prove physical events.",
+    "Unknown wrist/shoulder observations branch conservatively; they are excluded from negative exposure.",
+    "No exact physical onset, timed positive acceptance, probability calibration, or point-accuracy claim."
+  ]
+}

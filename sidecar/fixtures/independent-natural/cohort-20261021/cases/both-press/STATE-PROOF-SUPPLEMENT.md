@@ -1,0 +1,13 @@
+# Physical state proof supplement — before model inference
+
+The first `annotations.proposal.json` deliberately left whole-case event sequence indeterminate because a relaxed geometric left-up/right-down run spans clip 92–104 (400.4 ms). That first result considered hold length without carrying all possible arming histories. Its bytes and the frozen joint regions remain unchanged.
+
+The exact frozen state rules add a decisive constraint. Clip 85–91 excludes right-down in every visual interpretation. Under a left-first round, every path therefore disarms and clears neutral/hold. At clip 92 a fresh neutral can begin; it cannot arm until clip 101 (300.3 ms). A subsequent raised hold would have only clips 102–104 before forced invalidity at 105, so it cannot reach 350 ms. The isolated potential frame 110 is insufficient. The later geometric candidate 156–166 spans only 333.667 ms, also below 350 ms.
+
+`prove-physical-reference.py` enumerates the complete relaxed gate-state superset across all 210 frozen frames, including every allowed left/right gate combination. At most 50 states survive per frame. **No possible path emits any event.** Because the gate combinations over-approximate physically attainable joint configurations, zero events in that superset proves zero for every contained interpretation, conditional on the preliminary AI visual regions. It does not prove exact per-frame pose or human ground truth.
+
+The checker was independently exercised against the unchanged pure Python `motion.GestureMachine` on 121 synthetic gate paths, 25,260 updates and 15 emitted events, with zero state/event mismatches. These are checker-validation tests, not natural-video recognition results. No pose model or SDK was imported; no camera was opened.
+
+`reference-state-proof.json` records the region/annotation/checker/production hashes and all 210 state-count summaries. The root must independently review this derivation before cohort freeze. If accepted, a separately versioned derived event reference may be `[]`, while retaining all original visual ambiguity and the original conservative proposal. No region is tightened and no model output is consulted. Certified both-up/neutral strata remain separately available; full-case event-negative exposure should not be silently substituted for pose-certification coverage.
+
+Independent literal-state review by `/root/native_resume_review` confirms zero with 7,444 literal transitions and all 210 geometry rows recomputed. `case.freeze.json` now freezes the operative derived reference `[]`; original proposal `null` and all annotation/region bytes remain unchanged. This precedes both model runs.

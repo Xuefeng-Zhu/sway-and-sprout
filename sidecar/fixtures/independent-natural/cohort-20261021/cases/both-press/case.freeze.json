@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "status": "CASE_AND_AI_ANNOTATION_REFERENCE_FROZEN_BEFORE_MODEL_INFERENCE",
+  "caseId": "both-press",
+  "sourceGroupId": "AFN-Sasebo-Robert-Price-Kelly-Stratoti",
+  "role": "partial-certified-negative-exposure; whole-event-sequence-indeterminate",
+  "source": {
+    "page": "https://www.dvidshub.net/video/768147/kneeling-overhead-press-fitness-workout",
+    "title": "Kneeling Overhead Press - Fitness Workout",
+    "creator": "Petty Officer 2nd Class Robert Price / AFN Sasebo",
+    "directMediaUrl": "https://d34w7g4gy10iej.cloudfront.net/video/2010/DOD_108006492/DOD_108006492-1024x576-1769k.mp4",
+    "license": "Official asset page explicitly marks PUBLIC DOMAIN; DVIDS public-use restrictions apply",
+    "licenseUrl": "https://www.dvidshub.net/about/copyright",
+    "licenseEvidence": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/discovery-source-b/dvids768147-page.html",
+    "pageSha256": "038ae7c668384fcd8c6ed498302e9d4fe75e1bad069139d597fd3b60960aaa7c",
+    "sha256": "194a415a2c7da6f66db03c81f4f82bcf571e808a2cff1d0c37b59e8b4dd2c59f"
+  },
+  "derivative": {
+    "file": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/cases/both-press/both-press.mp4",
+    "sha256": "ae063da22a896d4c80508d23ceff136467c436fbcbc0984a38872a12bd7f5be8",
+    "bytes": 8814596,
+    "sourceStartFrameInclusive": 180,
+    "sourceEndFrameExclusive": 390,
+    "sourceStartSeconds": 6.006,
+    "sourceEndSecondsExclusive": 13.013,
+    "frameCount": 210,
+    "transform": "Contiguous trim[180,390), reset PTS to0, losslesslibx264qp0yuv420p, audio omitted; no spatialcrop,mirror,duplication,splicing orretiming. Originalsource retained.",
+    "pixelCadenceVerification": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/cases/both-press/derivative-verification.json",
+    "pixelCadenceVerificationSha256": "9edf447ac3e634d9817f860f944377b6fb8064474c86fcb5c7a0c606afb6e8b8",
+    "all210YuvFramesIdentical": true,
+    "allDisplayPtsCfr": true
+  },
+  "displayTime": {
+    "fpsNumerator": 30000,
+    "fpsDenominator": 1001,
+    "timeBase": "1/30000",
+    "clipFirstPts": 0,
+    "sourcePtsOffset": 180180,
+    "durationSeconds": 7.007,
+    "lastSampleMs": 6973.633333333333,
+    "clock": "unrounded frameIndex*1000/(30000/1001)"
+  },
+  "coordinates": {
+    "decodedDimensions": [
+      1024,
+      576
+    ],
+    "fullWorkingDimensions": [
+      640,
+      360
+    ],
+    "decodedToFullWorkingScale": 0.625,
+    "nativeMoveNetCoordinates": "restoreddecodedsourcepixels1024x576",
+    "anatomicalSides": "frontal participant anatomicalleft=screenright; watchonleftwrist",
+    "unmirrored": true
+  },
+  "annotation": {
+    "file": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/cases/both-press/annotations.proposal.json",
+    "sha256": "1255ba95e7a62ed0ef683cdce83700c51c25804615be31dc879fa42ca63543e6",
+    "jointRegionsFile": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/cases/both-press/joint-regions.freeze.json",
+    "jointRegionsSha256": "dc57331b073ee5ff23d172182edacd700f7c996e56d62d5b3e142d8e6f763bcf",
+    "authorType": "AI",
+    "authorId": "/root/independent_video_sources",
+    "predictionBlind": true,
+    "humanConfirmed": false,
+    "humanConfirmationStatus": "not-human-confirmed",
+    "labelProvenance": "AI source-pixel visual review; not human-, user-supplied or user-approved labels",
+    "all210FramesReviewed": true,
+    "nativeFullFramesInspected": [
+      180,
+      220,
+      245,
+      255,
+      265,
+      275,
+      280,
+      290,
+      305,
+      329,
+      350,
+      360,
+      380,
+      389
+    ],
+    "originalExpectedSequenceField": null,
+    "operativeEventReference": "derivedEventReference.expectedSequence, prospectively derived before models, without changing original annotation bytes"
+  },
+  "individualWristOnsetIntervals": [
+    {
+      "side": "left",
+      "lastDefinitelyNotUpClipFrame": 77,
+      "lastDefinitelyNotUpSourceFrame": 257,
+      "firstDefinitelyUpClipFrame": 119,
+      "firstDefinitelyUpSourceFrame": 299,
+      "allowedCrossingSampleInterval": [
+        78,
+        119
+      ],
+      "scope": "physicalindividualwristonsetonly, not an expected-side eventopportunity; precedingintermediategates remainuncertain"
+    },
+    {
+      "side": "right",
+      "lastDefinitelyNotUpClipFrame": 70,
+      "lastDefinitelyNotUpSourceFrame": 250,
+      "firstDefinitelyUpClipFrame": 120,
+      "firstDefinitelyUpSourceFrame": 300,
+      "allowedCrossingSampleInterval": [
+        71,
+        120
+      ],
+      "scope": "physicalindividualwristonsetonly, not an expected-side eventopportunity; precedingintermediategates remainuncertain"
+    }
+  ],
+  "opportunities": [],
+  "definitePositiveDenominator": 0,
+  "expectedSequence": [],
+  "wholeSequenceReason": "Independent literal-state reachability proves zero events in the conservative Cartesian gate superset conditional on frozen preliminary AI visual regions. Geometry ambiguity remains unchanged.",
+  "certifiedNegativeIntervals": [
+    {
+      "kind": "neutral",
+      "startClipFrame": 0,
+      "endClipFrameInclusive": 52,
+      "startSourceFrame": 180,
+      "endSourceFrameInclusive": 232,
+      "startClipMs": 0.0,
+      "endClipMs": 1735.0666666666666,
+      "certifiedDurationMs": 1735.0666666666666,
+      "durationRule": "closed first-to-last sample span; no extra tail-frame duration"
+    },
+    {
+      "kind": "both-up",
+      "startClipFrame": 120,
+      "endClipFrameInclusive": 140,
+      "startSourceFrame": 300,
+      "endSourceFrameInclusive": 320,
+      "startClipMs": 4004.0,
+      "endClipMs": 4671.333333333333,
+      "certifiedDurationMs": 667.3333333333334,
+      "durationRule": "closed first-to-last sample span; no extra tail-frame duration"
+    },
+    {
+      "kind": "both-up",
+      "startClipFrame": 175,
+      "endClipFrameInclusive": 198,
+      "startSourceFrame": 355,
+      "endSourceFrameInclusive": 378,
+      "startClipMs": 5839.166666666667,
+      "endClipMs": 6606.6,
+      "certifiedDurationMs": 767.4333333333334,
+      "durationRule": "closed first-to-last sample span; no extra tail-frame duration"
+    }
+  ],
+  "certifiedNegativeDurationMs": 3169.8333333333335,
+  "possibleLeftGateRunsRelaxed": [
+    {
+      "startClipFrame": 78,
+      "endClipFrameInclusive": 84,
+      "sampleSpanMs": 200.2,
+      "firstHoldEligibleClipFrameRelaxed": null
+    },
+    {
+      "startClipFrame": 92,
+      "endClipFrameInclusive": 104,
+      "sampleSpanMs": 400.4,
+      "firstHoldEligibleClipFrameRelaxed": 103
+    },
+    {
+      "startClipFrame": 110,
+      "endClipFrameInclusive": 110,
+      "sampleSpanMs": 0.0,
+      "firstHoldEligibleClipFrameRelaxed": null
+    },
+    {
+      "startClipFrame": 156,
+      "endClipFrameInclusive": 166,
+      "sampleSpanMs": 333.6666666666667,
+      "firstHoldEligibleClipFrameRelaxed": null
+    }
+  ],
+  "predeclaredExecutionProfile": null,
+  "runtimePins": "rootmustpopulatefromexistingruntimesincohortfreeze",
+  "contractSha256": "e6845536e78da88d3275e435edeec1e4fe040f9a83a955cbf1639218070a22b6",
+  "protocolSha256": "9ad4d17795b938684d086cb17aefe03a47f6e072364126007ba8fdb4a56928f6",
+  "annotationsCompleteAtUtc": "2026-10-21T04:38:53.518551+00:00",
+  "modelInferenceRun": false,
+  "cameraUsed": false,
+  "oldAnnotationThresholdDefaultChanged": false,
+  "limitations": [
+    "No definitepositiveopportunity, so eventrecall unestimable.",
+    "Source/creator group differsfromoldassets, but no biometric identityseparationclaim.",
+    "AI preliminarydiagnostics only; nothumanGT/acceptance/FireTVreadiness.",
+    "Per-frame gate uncertainty remains. Reference[] is conditional on AI regions and independent state proof, not human-confirmed accuracy."
+  ],
+  "frozenAtUtc": "2026-10-21T04:45:04.834009+00:00",
+  "originalConservativeProposal": {
+    "file": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/cases/both-press/case.proposal.json",
+    "sha256": "bfcc84ce19892c08d7a2f8d737bf372b1a78c32a75dde5b2d3b86c04e5fa3273",
+    "expectedSequence": null,
+    "preservedUnchanged": true
+  },
+  "derivedEventReference": {
+    "expectedSequence": [],
+    "eventCountOuterBounds": [
+      0,
+      0
+    ],
+    "file": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/cases/both-press/derived-zero-proof.json",
+    "sha256": "130f99b837ef6975c59926fa525cf0cf9b915406f944bdfca343e4ec806ad773",
+    "regionBindingFile": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/cases/both-press/derived-zero-proof-region-binding.json",
+    "regionBindingSha256": "0a8618f53cefac2ef74789313d9e4137ea283845134fb05d1267a5a4991d4a83",
+    "independentReviewer": "/root/native_resume_review",
+    "actualLiteralTransitionsChecked": 7444,
+    "all210GeometryRowsRecomputed": true,
+    "modelInference": false,
+    "confidenceGateAppliedToPhysicalLabels": false,
+    "humanConfirmed": false
+  },
+  "fullCaseEventNegativeSupport": {
+    "startClipFrame": 0,
+    "endClipFrameInclusive": 209,
+    "startClipMs": 0,
+    "endClipMs": 6973.633333333333,
+    "durationMsFirstToLastSample": 6973.633333333333,
+    "basis": "Independent literal-state superset proof; all event interpretations are zero. This is event-state support, separate from per-frame pose-certification coverage; do not add overlapping negative strata."
+  },
+  "primaryPoseCertifiedNegativeDurationMs": 3169.8333333333335
+}

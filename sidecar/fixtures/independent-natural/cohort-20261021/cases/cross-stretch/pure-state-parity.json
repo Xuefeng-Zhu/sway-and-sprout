@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "type": "Pure phase-state arithmetic parity against existing motion.py, no inference",
+  "transitionsChecked": 201885,
+  "frames": 195,
+  "endingStates": 80,
+  "confidenceForSyntheticParityObservations": 1,
+  "thisIsNotVideoInference": true,
+  "algorithmSha256": "36b8d05b03ddd5a17e8cdf8b73eaeef2eade36ca60d92f2f4e8c797de2b27ec4",
+  "motionSha256": "375b9dd92631c13533513c88b7eea9f9b3900f82304c566ee86b373b80a3b458",
+  "candidateAnnotationSha256": "f806ca41a93b1c50f8ff260d73345daa38ad309d6ec897f22b46194b60d64bba"
+}

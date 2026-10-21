@@ -1,0 +1,1516 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "0a0751b76927648477fca5fd2ec413b7546c2916e1d402229e6622e9a97acd1a",
+  "derivativeSha256": "740cac6c9f5704153d4a75ba4a764b85393a1f3ca94c95b594701e0beda543d8",
+  "sourceTimeBase": "1/25",
+  "derivativeTimeBase": "1/12800",
+  "fpsNumerator": 25,
+  "fpsDenominator": 1,
+  "frameCount": 188,
+  "frames": [
+    {
+      "clipFrame": 0,
+      "sourceFrame": 0,
+      "sourcePts": 0,
+      "clipPts": 0,
+      "fileTimeMs": 0.0,
+      "decodedYuv420pSha256": "8fd182d1b517f99ddfdf8b1cf0d2fbabc2a20984a982716ee7c111faee713133"
+    },
+    {
+      "clipFrame": 1,
+      "sourceFrame": 1,
+      "sourcePts": 1,
+      "clipPts": 512,
+      "fileTimeMs": 40.0,
+      "decodedYuv420pSha256": "d4cd09638ff5f42ddb3e94badb93a6baa72e6592c6025b7e548d0c77d3f8c9eb"
+    },
+    {
+      "clipFrame": 2,
+      "sourceFrame": 2,
+      "sourcePts": 2,
+      "clipPts": 1024,
+      "fileTimeMs": 80.0,
+      "decodedYuv420pSha256": "ccb33612ce07c3c17e07b89eed00e4041a32bc0897a0052f9c4b5974d4de174e"
+    },
+    {
+      "clipFrame": 3,
+      "sourceFrame": 3,
+      "sourcePts": 3,
+      "clipPts": 1536,
+      "fileTimeMs": 120.0,
+      "decodedYuv420pSha256": "70d1cbd91d9bc88a91dc2c23de2399bb470dea9bc13abc7de130f8a76f859b7c"
+    },
+    {
+      "clipFrame": 4,
+      "sourceFrame": 4,
+      "sourcePts": 4,
+      "clipPts": 2048,
+      "fileTimeMs": 160.0,
+      "decodedYuv420pSha256": "9b15deec20b230adee7592d0779723274a9dcda7d1c07ccb97ee1ede6449fa8a"
+    },
+    {
+      "clipFrame": 5,
+      "sourceFrame": 5,
+      "sourcePts": 5,
+      "clipPts": 2560,
+      "fileTimeMs": 200.0,
+      "decodedYuv420pSha256": "aede4d73ad6a0d70d0597a8187bd74b2e64079b9e80bbe186c4b95ec582abb1a"
+    },
+    {
+      "clipFrame": 6,
+      "sourceFrame": 6,
+      "sourcePts": 6,
+      "clipPts": 3072,
+      "fileTimeMs": 240.0,
+      "decodedYuv420pSha256": "ff1d353b412cce939ff32afd3f74fdbe959ff28148ea9c070c5ef5d4c3ed334a"
+    },
+    {
+      "clipFrame": 7,
+      "sourceFrame": 7,
+      "sourcePts": 7,
+      "clipPts": 3584,
+      "fileTimeMs": 280.0,
+      "decodedYuv420pSha256": "e29247baaf8f880a49787469888bd8c681503535aa03686765a797187b76919e"
+    },
+    {
+      "clipFrame": 8,
+      "sourceFrame": 8,
+      "sourcePts": 8,
+      "clipPts": 4096,
+      "fileTimeMs": 320.0,
+      "decodedYuv420pSha256": "d4ec120d8f2826b46247d4f292d4a70ef516a0896ca064a591d01c6da5b1b345"
+    },
+    {
+      "clipFrame": 9,
+      "sourceFrame": 9,
+      "sourcePts": 9,
+      "clipPts": 4608,
+      "fileTimeMs": 360.0,
+      "decodedYuv420pSha256": "cc8e3d9bd95cb5a243b72bb8d966835a239be99c4c676be3ae8739d98bc3e27b"
+    },
+    {
+      "clipFrame": 10,
+      "sourceFrame": 10,
+      "sourcePts": 10,
+      "clipPts": 5120,
+      "fileTimeMs": 400.0,
+      "decodedYuv420pSha256": "2e91c9a367d3743f53912cce5080dd8b42385ba41559a5207416cefc9a53affd"
+    },
+    {
+      "clipFrame": 11,
+      "sourceFrame": 11,
+      "sourcePts": 11,
+      "clipPts": 5632,
+      "fileTimeMs": 440.0,
+      "decodedYuv420pSha256": "a49514ce41d7a270236a2a9e1e434ed05c7ba03addf8e0df1174df0927c371f5"
+    },
+    {
+      "clipFrame": 12,
+      "sourceFrame": 12,
+      "sourcePts": 12,
+      "clipPts": 6144,
+      "fileTimeMs": 480.0,
+      "decodedYuv420pSha256": "6390a1793b1d85ec87f128326403ed234763908ad2e5a340bc890cd31e9e2330"
+    },
+    {
+      "clipFrame": 13,
+      "sourceFrame": 13,
+      "sourcePts": 13,
+      "clipPts": 6656,
+      "fileTimeMs": 520.0,
+      "decodedYuv420pSha256": "3e9e4c94171c132ca6d0dfdb322ad5b34f6b863c183cf500bd2a116acb8a40bf"
+    },
+    {
+      "clipFrame": 14,
+      "sourceFrame": 14,
+      "sourcePts": 14,
+      "clipPts": 7168,
+      "fileTimeMs": 560.0,
+      "decodedYuv420pSha256": "01dabee502b7966dad2eca4915756802bc48bacbdbab7372d302d1c74157a388"
+    },
+    {
+      "clipFrame": 15,
+      "sourceFrame": 15,
+      "sourcePts": 15,
+      "clipPts": 7680,
+      "fileTimeMs": 600.0,
+      "decodedYuv420pSha256": "357dddc3e0cfc1472a326546ebe282dd8514413cc73d986480c3944c6c82b537"
+    },
+    {
+      "clipFrame": 16,
+      "sourceFrame": 16,
+      "sourcePts": 16,
+      "clipPts": 8192,
+      "fileTimeMs": 640.0,
+      "decodedYuv420pSha256": "5454c21be909555ae173ad42b3ff5f3f19469bda4655e662bad2ced3a95a5c7e"
+    },
+    {
+      "clipFrame": 17,
+      "sourceFrame": 17,
+      "sourcePts": 17,
+      "clipPts": 8704,
+      "fileTimeMs": 680.0,
+      "decodedYuv420pSha256": "abfdb1f1d02d83fb721be6c50872a8802ca23435838f90a6f72cda42044e4b91"
+    },
+    {
+      "clipFrame": 18,
+      "sourceFrame": 18,
+      "sourcePts": 18,
+      "clipPts": 9216,
+      "fileTimeMs": 720.0,
+      "decodedYuv420pSha256": "cc44cbbc39b35af55c45bea2c2d07eee23787bc5ad4c8621c85e548ed728875c"
+    },
+    {
+      "clipFrame": 19,
+      "sourceFrame": 19,
+      "sourcePts": 19,
+      "clipPts": 9728,
+      "fileTimeMs": 760.0,
+      "decodedYuv420pSha256": "f915d7ae117d4213adfccbcd5c7b53a82a3c8f54e1da66c782202cf7899aee3b"
+    },
+    {
+      "clipFrame": 20,
+      "sourceFrame": 20,
+      "sourcePts": 20,
+      "clipPts": 10240,
+      "fileTimeMs": 800.0,
+      "decodedYuv420pSha256": "2c61ac8827f97883ff7ead691582022cb519a913c41892d5575dfaee17bc6a40"
+    },
+    {
+      "clipFrame": 21,
+      "sourceFrame": 21,
+      "sourcePts": 21,
+      "clipPts": 10752,
+      "fileTimeMs": 840.0,
+      "decodedYuv420pSha256": "e956895001845b0f2f3369601b34cb3485303c3bd6a3c51284201f0127fa0cc5"
+    },
+    {
+      "clipFrame": 22,
+      "sourceFrame": 22,
+      "sourcePts": 22,
+      "clipPts": 11264,
+      "fileTimeMs": 880.0,
+      "decodedYuv420pSha256": "5da2c4441f825c8ae5fac992a7717fea17a1d5a5866648fb2bdcf0b08c512cf4"
+    },
+    {
+      "clipFrame": 23,
+      "sourceFrame": 23,
+      "sourcePts": 23,
+      "clipPts": 11776,
+      "fileTimeMs": 920.0,
+      "decodedYuv420pSha256": "b5a057b0df7738321eca9dbf8300b78f4b370987c3d4f727c48b4fa373db8ebc"
+    },
+    {
+      "clipFrame": 24,
+      "sourceFrame": 24,
+      "sourcePts": 24,
+      "clipPts": 12288,
+      "fileTimeMs": 960.0,
+      "decodedYuv420pSha256": "e8007e96ff50ab16cb85533796473f465a7d31fcf54e1762b2a1e1057fced1fc"
+    },
+    {
+      "clipFrame": 25,
+      "sourceFrame": 25,
+      "sourcePts": 25,
+      "clipPts": 12800,
+      "fileTimeMs": 1000.0,
+      "decodedYuv420pSha256": "99e83badce17f943170eb8fd3fef9a634326b31442f0a9f401b1778ad850dfae"
+    },
+    {
+      "clipFrame": 26,
+      "sourceFrame": 26,
+      "sourcePts": 26,
+      "clipPts": 13312,
+      "fileTimeMs": 1040.0,
+      "decodedYuv420pSha256": "eca0c9de57d7f7661639b7aac04a08556a531ae5edf827be05fc2cbf538a8f63"
+    },
+    {
+      "clipFrame": 27,
+      "sourceFrame": 27,
+      "sourcePts": 27,
+      "clipPts": 13824,
+      "fileTimeMs": 1080.0,
+      "decodedYuv420pSha256": "02b77450c64c9e3c6d07eee58a6c6f4472f2440d18fb69c249b36e065cee4822"
+    },
+    {
+      "clipFrame": 28,
+      "sourceFrame": 28,
+      "sourcePts": 28,
+      "clipPts": 14336,
+      "fileTimeMs": 1120.0,
+      "decodedYuv420pSha256": "e2d40a52a18231739d1a50a48e9aa74a09b174e1286582998285c2da8307bfe2"
+    },
+    {
+      "clipFrame": 29,
+      "sourceFrame": 29,
+      "sourcePts": 29,
+      "clipPts": 14848,
+      "fileTimeMs": 1160.0,
+      "decodedYuv420pSha256": "561c5b2c2f9cfc219751b7342ca743a6782c0a6f37009e756e6e8521067932a6"
+    },
+    {
+      "clipFrame": 30,
+      "sourceFrame": 30,
+      "sourcePts": 30,
+      "clipPts": 15360,
+      "fileTimeMs": 1200.0,
+      "decodedYuv420pSha256": "643c8f478630bfc8182bbfb96f90de655a35bfe1d2c849531ea9705631c14c29"
+    },
+    {
+      "clipFrame": 31,
+      "sourceFrame": 31,
+      "sourcePts": 31,
+      "clipPts": 15872,
+      "fileTimeMs": 1240.0,
+      "decodedYuv420pSha256": "12849c1b83b4ec66b0e890dd6faf101b46186396e4872ba1b3188e73e2dee522"
+    },
+    {
+      "clipFrame": 32,
+      "sourceFrame": 32,
+      "sourcePts": 32,
+      "clipPts": 16384,
+      "fileTimeMs": 1280.0,
+      "decodedYuv420pSha256": "9f97ae149f78ebcec3a070fd522c14fba9845934bf693f57b4efea4c9c7ae452"
+    },
+    {
+      "clipFrame": 33,
+      "sourceFrame": 33,
+      "sourcePts": 33,
+      "clipPts": 16896,
+      "fileTimeMs": 1320.0,
+      "decodedYuv420pSha256": "36f535f36e3d6d8a1f38186247bfb110a1ab0b0a5cf5713d85645a82c77c942a"
+    },
+    {
+      "clipFrame": 34,
+      "sourceFrame": 34,
+      "sourcePts": 34,
+      "clipPts": 17408,
+      "fileTimeMs": 1360.0,
+      "decodedYuv420pSha256": "402df879d27d47e8c4d350e7eba99613b62c39b7165d1a42f339475ee51ce75d"
+    },
+    {
+      "clipFrame": 35,
+      "sourceFrame": 35,
+      "sourcePts": 35,
+      "clipPts": 17920,
+      "fileTimeMs": 1400.0,
+      "decodedYuv420pSha256": "a544e2115a9042ff1bea6dc74b58051f262147fd500b988422a97eda1c2698c7"
+    },
+    {
+      "clipFrame": 36,
+      "sourceFrame": 36,
+      "sourcePts": 36,
+      "clipPts": 18432,
+      "fileTimeMs": 1440.0,
+      "decodedYuv420pSha256": "64ae6876b56d0728d3a6f8e4626736b1cb3fc11055da7e32b85a71834e27eeac"
+    },
+    {
+      "clipFrame": 37,
+      "sourceFrame": 37,
+      "sourcePts": 37,
+      "clipPts": 18944,
+      "fileTimeMs": 1480.0,
+      "decodedYuv420pSha256": "85c5e7cb8afb20e7e9350ec5b5db5e60579e25b33bfb65c5bc5ff873971c4b70"
+    },
+    {
+      "clipFrame": 38,
+      "sourceFrame": 38,
+      "sourcePts": 38,
+      "clipPts": 19456,
+      "fileTimeMs": 1520.0,
+      "decodedYuv420pSha256": "4f86f1d801f0584a3be4b7f3b11742a9db30d607047821679a1ef1dfeb90e513"
+    },
+    {
+      "clipFrame": 39,
+      "sourceFrame": 39,
+      "sourcePts": 39,
+      "clipPts": 19968,
+      "fileTimeMs": 1560.0,
+      "decodedYuv420pSha256": "5f85929f28d8f3eeebe755e8429f2f050897999f29657001e56a0c1966d605dd"
+    },
+    {
+      "clipFrame": 40,
+      "sourceFrame": 40,
+      "sourcePts": 40,
+      "clipPts": 20480,
+      "fileTimeMs": 1600.0,
+      "decodedYuv420pSha256": "a22112e02ecfc469aa9559253f1cb305b17ba16e224886e32709165b14598dc3"
+    },
+    {
+      "clipFrame": 41,
+      "sourceFrame": 41,
+      "sourcePts": 41,
+      "clipPts": 20992,
+      "fileTimeMs": 1640.0,
+      "decodedYuv420pSha256": "45ba20c952b0214f43ad338eb631244553d58f2316d0884c4459cfe25bb4d2b7"
+    },
+    {
+      "clipFrame": 42,
+      "sourceFrame": 42,
+      "sourcePts": 42,
+      "clipPts": 21504,
+      "fileTimeMs": 1680.0,
+      "decodedYuv420pSha256": "756ae69fe94ad7f7d566732ed270c159f5e9f4b3764c4e1d740e69535f804824"
+    },
+    {
+      "clipFrame": 43,
+      "sourceFrame": 43,
+      "sourcePts": 43,
+      "clipPts": 22016,
+      "fileTimeMs": 1720.0,
+      "decodedYuv420pSha256": "9f7461edd02342f910a0ca8589ac0823e71c9b16fe9d693c457dda482bb6ba49"
+    },
+    {
+      "clipFrame": 44,
+      "sourceFrame": 44,
+      "sourcePts": 44,
+      "clipPts": 22528,
+      "fileTimeMs": 1760.0,
+      "decodedYuv420pSha256": "d1cc79240b5f1b6826cc0a4756c886ea01817cffe0f8da11df4bf11e7c5abb4d"
+    },
+    {
+      "clipFrame": 45,
+      "sourceFrame": 45,
+      "sourcePts": 45,
+      "clipPts": 23040,
+      "fileTimeMs": 1800.0,
+      "decodedYuv420pSha256": "b98c87f3c10f529590664e64041c3a2023e8c4cb8c9fba52dc1ea81d90c87223"
+    },
+    {
+      "clipFrame": 46,
+      "sourceFrame": 46,
+      "sourcePts": 46,
+      "clipPts": 23552,
+      "fileTimeMs": 1840.0,
+      "decodedYuv420pSha256": "5ab5ca55fb6f075aaaed4a0d7cc3c3b7420086c95be3e25645e70b7fcbfc3965"
+    },
+    {
+      "clipFrame": 47,
+      "sourceFrame": 47,
+      "sourcePts": 47,
+      "clipPts": 24064,
+      "fileTimeMs": 1880.0,
+      "decodedYuv420pSha256": "16d8a6b478bb739a0b4b75d953f30951c872ab6d98034fccf7ede73eb80f1f3a"
+    },
+    {
+      "clipFrame": 48,
+      "sourceFrame": 48,
+      "sourcePts": 48,
+      "clipPts": 24576,
+      "fileTimeMs": 1920.0,
+      "decodedYuv420pSha256": "a4b0471ab290c62dd4d4587ef06ba5e0e081711922c92c928e6088415b61aca5"
+    },
+    {
+      "clipFrame": 49,
+      "sourceFrame": 49,
+      "sourcePts": 49,
+      "clipPts": 25088,
+      "fileTimeMs": 1960.0,
+      "decodedYuv420pSha256": "159525710769077edae0e48545556d673ec991543cb684e36bf48cf853e04ff5"
+    },
+    {
+      "clipFrame": 50,
+      "sourceFrame": 50,
+      "sourcePts": 50,
+      "clipPts": 25600,
+      "fileTimeMs": 2000.0,
+      "decodedYuv420pSha256": "f715663ba96d3d17ae6b943833d7f3ef12be6edb1d610a7aa1b10824ff2bde92"
+    },
+    {
+      "clipFrame": 51,
+      "sourceFrame": 51,
+      "sourcePts": 51,
+      "clipPts": 26112,
+      "fileTimeMs": 2040.0,
+      "decodedYuv420pSha256": "24072b68eacd15dbba97a4064263a39a029ccf1a4956cf0ed4902b9b932c2840"
+    },
+    {
+      "clipFrame": 52,
+      "sourceFrame": 52,
+      "sourcePts": 52,
+      "clipPts": 26624,
+      "fileTimeMs": 2080.0,
+      "decodedYuv420pSha256": "dd6f3732d7a709bd8ef38092f2dd4d1ea8573e4dadc18a35edff04693f218457"
+    },
+    {
+      "clipFrame": 53,
+      "sourceFrame": 53,
+      "sourcePts": 53,
+      "clipPts": 27136,
+      "fileTimeMs": 2120.0,
+      "decodedYuv420pSha256": "3afca2844ce1d4811ec342b69eb7628df3b59aea607ee3f1793df5207a392bea"
+    },
+    {
+      "clipFrame": 54,
+      "sourceFrame": 54,
+      "sourcePts": 54,
+      "clipPts": 27648,
+      "fileTimeMs": 2160.0,
+      "decodedYuv420pSha256": "4de04bd0f859af46b8931a1081be1ea34306080ff4091210c6667828208e1c00"
+    },
+    {
+      "clipFrame": 55,
+      "sourceFrame": 55,
+      "sourcePts": 55,
+      "clipPts": 28160,
+      "fileTimeMs": 2200.0,
+      "decodedYuv420pSha256": "ca25951903a8dc2f058c1582eb860e50eb51aff278687e816e1971f0fe71c4e5"
+    },
+    {
+      "clipFrame": 56,
+      "sourceFrame": 56,
+      "sourcePts": 56,
+      "clipPts": 28672,
+      "fileTimeMs": 2240.0,
+      "decodedYuv420pSha256": "de1ab337ebef5a3f40d8eabf9614fefb0848b86eaffc12d2cc89428f71157812"
+    },
+    {
+      "clipFrame": 57,
+      "sourceFrame": 57,
+      "sourcePts": 57,
+      "clipPts": 29184,
+      "fileTimeMs": 2280.0,
+      "decodedYuv420pSha256": "be568e313705545afb85d1ebf73e4aa9ed29a4609670ae5c2425d388750f7247"
+    },
+    {
+      "clipFrame": 58,
+      "sourceFrame": 58,
+      "sourcePts": 58,
+      "clipPts": 29696,
+      "fileTimeMs": 2320.0,
+      "decodedYuv420pSha256": "edec80af6e1467eeb178f6324ef025c5673cec492cef4f91905c97416be68a17"
+    },
+    {
+      "clipFrame": 59,
+      "sourceFrame": 59,
+      "sourcePts": 59,
+      "clipPts": 30208,
+      "fileTimeMs": 2360.0,
+      "decodedYuv420pSha256": "db45b5eb9cc583a0b839c412fb6faa42fb6492801ce29190b2adf2e85ad31bdb"
+    },
+    {
+      "clipFrame": 60,
+      "sourceFrame": 60,
+      "sourcePts": 60,
+      "clipPts": 30720,
+      "fileTimeMs": 2400.0,
+      "decodedYuv420pSha256": "13944658cc83be9395f379ab9ce8e59ae3bb275355e4984f74e885f2a8bd7136"
+    },
+    {
+      "clipFrame": 61,
+      "sourceFrame": 61,
+      "sourcePts": 61,
+      "clipPts": 31232,
+      "fileTimeMs": 2440.0,
+      "decodedYuv420pSha256": "e6637ac4975f3df613d7b30f356d0fe72fc9f8a9bf40a6f097dfa5218dc320ca"
+    },
+    {
+      "clipFrame": 62,
+      "sourceFrame": 62,
+      "sourcePts": 62,
+      "clipPts": 31744,
+      "fileTimeMs": 2480.0,
+      "decodedYuv420pSha256": "2b2ed61a10f4ad807d772f82a3f17ae77156f68f9d7b8c7a628507e2c9a0431a"
+    },
+    {
+      "clipFrame": 63,
+      "sourceFrame": 63,
+      "sourcePts": 63,
+      "clipPts": 32256,
+      "fileTimeMs": 2520.0,
+      "decodedYuv420pSha256": "8f046005d757adfd92187e8bfad8dee5a1cbe90bab814ce1176e51f8604c0592"
+    },
+    {
+      "clipFrame": 64,
+      "sourceFrame": 64,
+      "sourcePts": 64,
+      "clipPts": 32768,
+      "fileTimeMs": 2560.0,
+      "decodedYuv420pSha256": "54ddb4a3c5f4b1f9a6793429e3b4c504fc80161cb2018c075e4853620c7e1f2e"
+    },
+    {
+      "clipFrame": 65,
+      "sourceFrame": 65,
+      "sourcePts": 65,
+      "clipPts": 33280,
+      "fileTimeMs": 2600.0,
+      "decodedYuv420pSha256": "3ef38ec905cdffcdfdb6e30bda09dc40eeb3039f28066b98250c8b39798e73c9"
+    },
+    {
+      "clipFrame": 66,
+      "sourceFrame": 66,
+      "sourcePts": 66,
+      "clipPts": 33792,
+      "fileTimeMs": 2640.0,
+      "decodedYuv420pSha256": "48f21f89b4376db2893bffdf1b2a786bac365c8a72073279a1454f9eeb01fade"
+    },
+    {
+      "clipFrame": 67,
+      "sourceFrame": 67,
+      "sourcePts": 67,
+      "clipPts": 34304,
+      "fileTimeMs": 2680.0,
+      "decodedYuv420pSha256": "465c187d79ee2bf8e0dd9c82ce6a3867874e1748f7e8bbfd993edbbe57ef0afe"
+    },
+    {
+      "clipFrame": 68,
+      "sourceFrame": 68,
+      "sourcePts": 68,
+      "clipPts": 34816,
+      "fileTimeMs": 2720.0,
+      "decodedYuv420pSha256": "051da06617ce6bfbd43c977b96c3cb2f0cde72a1e3d3e5c9d9bbf97e0174121a"
+    },
+    {
+      "clipFrame": 69,
+      "sourceFrame": 69,
+      "sourcePts": 69,
+      "clipPts": 35328,
+      "fileTimeMs": 2760.0,
+      "decodedYuv420pSha256": "f415f3e2d8fff676440a33443e2a6ff60cc9e411dc0f6ae85a1834e6176932a0"
+    },
+    {
+      "clipFrame": 70,
+      "sourceFrame": 70,
+      "sourcePts": 70,
+      "clipPts": 35840,
+      "fileTimeMs": 2800.0,
+      "decodedYuv420pSha256": "2af12d7eaef6df06fe236821529fae90da8a1cde3ebdb2c6d5473db8b9fee307"
+    },
+    {
+      "clipFrame": 71,
+      "sourceFrame": 71,
+      "sourcePts": 71,
+      "clipPts": 36352,
+      "fileTimeMs": 2840.0,
+      "decodedYuv420pSha256": "e3a1a8c2a17d279cdcd5c03a4475062a322057c08260669d9df1752ef5b3be85"
+    },
+    {
+      "clipFrame": 72,
+      "sourceFrame": 72,
+      "sourcePts": 72,
+      "clipPts": 36864,
+      "fileTimeMs": 2880.0,
+      "decodedYuv420pSha256": "2f8f1d4cffa49ad7313dd8021d805f440671bbb4dbfaa119ab07aec133c0300b"
+    },
+    {
+      "clipFrame": 73,
+      "sourceFrame": 73,
+      "sourcePts": 73,
+      "clipPts": 37376,
+      "fileTimeMs": 2920.0,
+      "decodedYuv420pSha256": "cd36f5909c993a273d6d0b390f868aa5597c620d37c2b704e775cfa52e994f9e"
+    },
+    {
+      "clipFrame": 74,
+      "sourceFrame": 74,
+      "sourcePts": 74,
+      "clipPts": 37888,
+      "fileTimeMs": 2960.0,
+      "decodedYuv420pSha256": "04b7ce2ca578ffc0baca2c7252c124f6eb530d713ab489161d2f67a325e7cf56"
+    },
+    {
+      "clipFrame": 75,
+      "sourceFrame": 75,
+      "sourcePts": 75,
+      "clipPts": 38400,
+      "fileTimeMs": 3000.0,
+      "decodedYuv420pSha256": "7a2571f087e9a8c5795846de5952cb4945f0843ec0a599ae68af902db192cd0c"
+    },
+    {
+      "clipFrame": 76,
+      "sourceFrame": 76,
+      "sourcePts": 76,
+      "clipPts": 38912,
+      "fileTimeMs": 3040.0,
+      "decodedYuv420pSha256": "a0ccdc5d18e10728a2b459d247330b95752d90c0fc85fc3d5b922ce71f6d97a1"
+    },
+    {
+      "clipFrame": 77,
+      "sourceFrame": 77,
+      "sourcePts": 77,
+      "clipPts": 39424,
+      "fileTimeMs": 3080.0,
+      "decodedYuv420pSha256": "b7db5873e0abd2f861197470bde22a1e4375e3a58f466ceb10881c98290b568e"
+    },
+    {
+      "clipFrame": 78,
+      "sourceFrame": 78,
+      "sourcePts": 78,
+      "clipPts": 39936,
+      "fileTimeMs": 3120.0,
+      "decodedYuv420pSha256": "450ae8e3c66cab5a478cd496a95b5fba957f5d1ef0e4a04abc21d0fe0b3a86da"
+    },
+    {
+      "clipFrame": 79,
+      "sourceFrame": 79,
+      "sourcePts": 79,
+      "clipPts": 40448,
+      "fileTimeMs": 3160.0,
+      "decodedYuv420pSha256": "3576b0b51fd159e574569048dc44fc5edf6eb34dae9df4194a346f9ec02ee237"
+    },
+    {
+      "clipFrame": 80,
+      "sourceFrame": 80,
+      "sourcePts": 80,
+      "clipPts": 40960,
+      "fileTimeMs": 3200.0,
+      "decodedYuv420pSha256": "2e05f9bc5c124d6a44076b6efe92f28f534176ea1f5022139b09eb60324361c6"
+    },
+    {
+      "clipFrame": 81,
+      "sourceFrame": 81,
+      "sourcePts": 81,
+      "clipPts": 41472,
+      "fileTimeMs": 3240.0,
+      "decodedYuv420pSha256": "8fc74976b6d5fc3d2dc7e8b587cedb476dc3132018fc0dfa35fdb2ced51666ab"
+    },
+    {
+      "clipFrame": 82,
+      "sourceFrame": 82,
+      "sourcePts": 82,
+      "clipPts": 41984,
+      "fileTimeMs": 3280.0,
+      "decodedYuv420pSha256": "dd68154cc04a1296735ede6f0cdd088f290d1c260f3c1df55d82d5fe74a86fe1"
+    },
+    {
+      "clipFrame": 83,
+      "sourceFrame": 83,
+      "sourcePts": 83,
+      "clipPts": 42496,
+      "fileTimeMs": 3320.0,
+      "decodedYuv420pSha256": "c03d07b47d1421c56d68daf074d34ffcaa3762ceecc628694c8276a290bfc745"
+    },
+    {
+      "clipFrame": 84,
+      "sourceFrame": 84,
+      "sourcePts": 84,
+      "clipPts": 43008,
+      "fileTimeMs": 3360.0,
+      "decodedYuv420pSha256": "78698007b70ddc64e68e4c89b5819f85e94c9aee101dbed08f50f71f6a5e1eaf"
+    },
+    {
+      "clipFrame": 85,
+      "sourceFrame": 85,
+      "sourcePts": 85,
+      "clipPts": 43520,
+      "fileTimeMs": 3400.0,
+      "decodedYuv420pSha256": "e7a26703798bb95f884db25ec2df3ae09bd1b7815b650d06d22d091d853dd0f4"
+    },
+    {
+      "clipFrame": 86,
+      "sourceFrame": 86,
+      "sourcePts": 86,
+      "clipPts": 44032,
+      "fileTimeMs": 3440.0,
+      "decodedYuv420pSha256": "ba650647675d69e8703ba2d63148b86ce132398e0cd4b185e1ba3e031095fe59"
+    },
+    {
+      "clipFrame": 87,
+      "sourceFrame": 87,
+      "sourcePts": 87,
+      "clipPts": 44544,
+      "fileTimeMs": 3480.0,
+      "decodedYuv420pSha256": "f5ca1752b6c248c9396bcbb04e2ba3b3bef716104957d867fff29d542479b5cd"
+    },
+    {
+      "clipFrame": 88,
+      "sourceFrame": 88,
+      "sourcePts": 88,
+      "clipPts": 45056,
+      "fileTimeMs": 3520.0,
+      "decodedYuv420pSha256": "6b79f00225ea4643603800f0e5fd2e0cd0b94a16691757c50e2a2eae9b7c29fc"
+    },
+    {
+      "clipFrame": 89,
+      "sourceFrame": 89,
+      "sourcePts": 89,
+      "clipPts": 45568,
+      "fileTimeMs": 3560.0,
+      "decodedYuv420pSha256": "687be653ff34e14fa081eb9b5d60d7332ed035b1df691cb6976ee3de9e63e1a9"
+    },
+    {
+      "clipFrame": 90,
+      "sourceFrame": 90,
+      "sourcePts": 90,
+      "clipPts": 46080,
+      "fileTimeMs": 3600.0,
+      "decodedYuv420pSha256": "94007fb8a99a3d54d6bd88e0ab1037964c8bd0dc4f727a657f63540bbac4a7a5"
+    },
+    {
+      "clipFrame": 91,
+      "sourceFrame": 91,
+      "sourcePts": 91,
+      "clipPts": 46592,
+      "fileTimeMs": 3640.0,
+      "decodedYuv420pSha256": "ef525769d5d5ce343fa43a2e3cc68d280d45a62573c90803da604098c238f826"
+    },
+    {
+      "clipFrame": 92,
+      "sourceFrame": 92,
+      "sourcePts": 92,
+      "clipPts": 47104,
+      "fileTimeMs": 3680.0,
+      "decodedYuv420pSha256": "44ed024e51ee96815745dceb16bdbbe3cafda36e67501437a236fd1f059b69db"
+    },
+    {
+      "clipFrame": 93,
+      "sourceFrame": 93,
+      "sourcePts": 93,
+      "clipPts": 47616,
+      "fileTimeMs": 3720.0,
+      "decodedYuv420pSha256": "86d3d3624230554d3af5ae2d207aedefc2484ef7fb6074ecd3313667331efdfb"
+    },
+    {
+      "clipFrame": 94,
+      "sourceFrame": 94,
+      "sourcePts": 94,
+      "clipPts": 48128,
+      "fileTimeMs": 3760.0,
+      "decodedYuv420pSha256": "58962513af2c713205d47e902bff2d8618c6f9e43a9abaded5a2b14f69998f4a"
+    },
+    {
+      "clipFrame": 95,
+      "sourceFrame": 95,
+      "sourcePts": 95,
+      "clipPts": 48640,
+      "fileTimeMs": 3800.0,
+      "decodedYuv420pSha256": "a46023abca0795d059c3da88543e19b04e920b92f94979d56e5dcb4454348715"
+    },
+    {
+      "clipFrame": 96,
+      "sourceFrame": 96,
+      "sourcePts": 96,
+      "clipPts": 49152,
+      "fileTimeMs": 3840.0,
+      "decodedYuv420pSha256": "ccfc97d88bf2e88583af5d2e88067c81632415ee4511e8659780f1b7dc6b6029"
+    },
+    {
+      "clipFrame": 97,
+      "sourceFrame": 97,
+      "sourcePts": 97,
+      "clipPts": 49664,
+      "fileTimeMs": 3880.0,
+      "decodedYuv420pSha256": "d98a1efe92ffe23db3b46e2c98d94a17aea27569f44b36249bb52eaf7bf9d6f4"
+    },
+    {
+      "clipFrame": 98,
+      "sourceFrame": 98,
+      "sourcePts": 98,
+      "clipPts": 50176,
+      "fileTimeMs": 3920.0,
+      "decodedYuv420pSha256": "9076affc9e29b0d919e909fd4a158cd5addc5960b1380dae03ec91f28aaf7e19"
+    },
+    {
+      "clipFrame": 99,
+      "sourceFrame": 99,
+      "sourcePts": 99,
+      "clipPts": 50688,
+      "fileTimeMs": 3960.0,
+      "decodedYuv420pSha256": "8046b3771a6d3212fc78601c01f0eb0b28bac117d7063a0c2d995061269868ac"
+    },
+    {
+      "clipFrame": 100,
+      "sourceFrame": 100,
+      "sourcePts": 100,
+      "clipPts": 51200,
+      "fileTimeMs": 4000.0,
+      "decodedYuv420pSha256": "52b82665b474e34151da0332bdf0699baf8845ea6e4134368fb87129ca42f792"
+    },
+    {
+      "clipFrame": 101,
+      "sourceFrame": 101,
+      "sourcePts": 101,
+      "clipPts": 51712,
+      "fileTimeMs": 4040.0,
+      "decodedYuv420pSha256": "da7d2fc3f6ff925ae16e2b103951cb1971f31f83d746cd8ce4de4e9f344ee1c1"
+    },
+    {
+      "clipFrame": 102,
+      "sourceFrame": 102,
+      "sourcePts": 102,
+      "clipPts": 52224,
+      "fileTimeMs": 4080.0,
+      "decodedYuv420pSha256": "0151afe0c62af43391b797d696d63d6bdd07ed6c2ba2f8c89613e4fafa00448e"
+    },
+    {
+      "clipFrame": 103,
+      "sourceFrame": 103,
+      "sourcePts": 103,
+      "clipPts": 52736,
+      "fileTimeMs": 4120.0,
+      "decodedYuv420pSha256": "7723e0cb1c72f7b95b4f75e06a1f189263e670a43b60cf24156f7d9cd160ec14"
+    },
+    {
+      "clipFrame": 104,
+      "sourceFrame": 104,
+      "sourcePts": 104,
+      "clipPts": 53248,
+      "fileTimeMs": 4160.0,
+      "decodedYuv420pSha256": "01d28d2b9467d31f6867a2e2f37c2f6222b67b8aa80f2a4db626c2f88d09d468"
+    },
+    {
+      "clipFrame": 105,
+      "sourceFrame": 105,
+      "sourcePts": 105,
+      "clipPts": 53760,
+      "fileTimeMs": 4200.0,
+      "decodedYuv420pSha256": "1007d06a3f6c35d81cf196fdef949020afb6f5f80e14a42f573030b44d6ef5f7"
+    },
+    {
+      "clipFrame": 106,
+      "sourceFrame": 106,
+      "sourcePts": 106,
+      "clipPts": 54272,
+      "fileTimeMs": 4240.0,
+      "decodedYuv420pSha256": "81f28f8cb3b1c8733fa8b3a7778c20ff911003a32e9987dfcdc830ce4e391af9"
+    },
+    {
+      "clipFrame": 107,
+      "sourceFrame": 107,
+      "sourcePts": 107,
+      "clipPts": 54784,
+      "fileTimeMs": 4280.0,
+      "decodedYuv420pSha256": "8b4f469835288db9bcd0ab0c2c89ad7c25ec5f8ff404a1f19ad016471d986ee9"
+    },
+    {
+      "clipFrame": 108,
+      "sourceFrame": 108,
+      "sourcePts": 108,
+      "clipPts": 55296,
+      "fileTimeMs": 4320.0,
+      "decodedYuv420pSha256": "65cdf72fcbdff7ba80d50e95a5419c8da9e6c0ce64853abcca60e0070a838743"
+    },
+    {
+      "clipFrame": 109,
+      "sourceFrame": 109,
+      "sourcePts": 109,
+      "clipPts": 55808,
+      "fileTimeMs": 4360.0,
+      "decodedYuv420pSha256": "f77b8e0b78cbb77ffb108187ad53ed005546de3d474d3eb153f948eb1621f1de"
+    },
+    {
+      "clipFrame": 110,
+      "sourceFrame": 110,
+      "sourcePts": 110,
+      "clipPts": 56320,
+      "fileTimeMs": 4400.0,
+      "decodedYuv420pSha256": "3a565bf21e30f7e341d3755a46a4d7761b39a54b4828fcdad500b58d0919c533"
+    },
+    {
+      "clipFrame": 111,
+      "sourceFrame": 111,
+      "sourcePts": 111,
+      "clipPts": 56832,
+      "fileTimeMs": 4440.0,
+      "decodedYuv420pSha256": "f29949200d249ba5ad6c327b496664eb917d798742a9ad4bbf46e0cd34f59fba"
+    },
+    {
+      "clipFrame": 112,
+      "sourceFrame": 112,
+      "sourcePts": 112,
+      "clipPts": 57344,
+      "fileTimeMs": 4480.0,
+      "decodedYuv420pSha256": "72f91a5a02a7aa28bb38b699d15696d30a62db169be5b67cd6e45d25a9ca56b8"
+    },
+    {
+      "clipFrame": 113,
+      "sourceFrame": 113,
+      "sourcePts": 113,
+      "clipPts": 57856,
+      "fileTimeMs": 4520.0,
+      "decodedYuv420pSha256": "98e9fac29779b32ed54bb15166f120e447871c4f767197d7eabf02fab4a0d158"
+    },
+    {
+      "clipFrame": 114,
+      "sourceFrame": 114,
+      "sourcePts": 114,
+      "clipPts": 58368,
+      "fileTimeMs": 4560.0,
+      "decodedYuv420pSha256": "04f3df00ca66a87431e324f0c53f7cf079973f764f9fe13d4552a5f9826486ef"
+    },
+    {
+      "clipFrame": 115,
+      "sourceFrame": 115,
+      "sourcePts": 115,
+      "clipPts": 58880,
+      "fileTimeMs": 4600.0,
+      "decodedYuv420pSha256": "1aa66b027e1127e75eba09d6f7d4a992ac881363828837b82dca92dfeeb256b5"
+    },
+    {
+      "clipFrame": 116,
+      "sourceFrame": 116,
+      "sourcePts": 116,
+      "clipPts": 59392,
+      "fileTimeMs": 4640.0,
+      "decodedYuv420pSha256": "5d8fea9e25d81834582f788211a2fde0a6e768a9b53469b1eabb1ea9b6d3f1d8"
+    },
+    {
+      "clipFrame": 117,
+      "sourceFrame": 117,
+      "sourcePts": 117,
+      "clipPts": 59904,
+      "fileTimeMs": 4680.0,
+      "decodedYuv420pSha256": "e75e9d6980a420dd26571aa454a6f1dfa6ad7f4f3d649cb7cc8a98e0a4de8291"
+    },
+    {
+      "clipFrame": 118,
+      "sourceFrame": 118,
+      "sourcePts": 118,
+      "clipPts": 60416,
+      "fileTimeMs": 4720.0,
+      "decodedYuv420pSha256": "489d583580f72bbc961f15942a614566928c294ac2c32088b45f5aa2197c7fb9"
+    },
+    {
+      "clipFrame": 119,
+      "sourceFrame": 119,
+      "sourcePts": 119,
+      "clipPts": 60928,
+      "fileTimeMs": 4760.0,
+      "decodedYuv420pSha256": "0bbc13bb4f41acfe3986f0b6391df2130770bc6006c5c802430399b0a4b2767f"
+    },
+    {
+      "clipFrame": 120,
+      "sourceFrame": 120,
+      "sourcePts": 120,
+      "clipPts": 61440,
+      "fileTimeMs": 4800.0,
+      "decodedYuv420pSha256": "46b5c4e5f5ef8c5f9dd9c1aa80675b81dcd728c546ee243f69b44bca9bdc910b"
+    },
+    {
+      "clipFrame": 121,
+      "sourceFrame": 121,
+      "sourcePts": 121,
+      "clipPts": 61952,
+      "fileTimeMs": 4840.0,
+      "decodedYuv420pSha256": "7779e058ef78bf392b73122edb7e2e4babc321d8d90d5fdadd5edb75555e5f61"
+    },
+    {
+      "clipFrame": 122,
+      "sourceFrame": 122,
+      "sourcePts": 122,
+      "clipPts": 62464,
+      "fileTimeMs": 4880.0,
+      "decodedYuv420pSha256": "5c87f54dc9e660b89b46cf2cb65c0a0293402a6791c1e86552eff47dfe913fb6"
+    },
+    {
+      "clipFrame": 123,
+      "sourceFrame": 123,
+      "sourcePts": 123,
+      "clipPts": 62976,
+      "fileTimeMs": 4920.0,
+      "decodedYuv420pSha256": "33b0695b48b358b0e2a78c23c73ebc99c46bb57d958dddd3defbfd757cb9f953"
+    },
+    {
+      "clipFrame": 124,
+      "sourceFrame": 124,
+      "sourcePts": 124,
+      "clipPts": 63488,
+      "fileTimeMs": 4960.0,
+      "decodedYuv420pSha256": "85e4dcf4c1289bea3cdc387bef79e1bbe2012aa4c6134df65e4e46afec25989a"
+    },
+    {
+      "clipFrame": 125,
+      "sourceFrame": 125,
+      "sourcePts": 125,
+      "clipPts": 64000,
+      "fileTimeMs": 5000.0,
+      "decodedYuv420pSha256": "765f7abe0e6fdafe38d4f03da67925fbc5de52896078d6b5560cf24138094e6c"
+    },
+    {
+      "clipFrame": 126,
+      "sourceFrame": 126,
+      "sourcePts": 126,
+      "clipPts": 64512,
+      "fileTimeMs": 5040.0,
+      "decodedYuv420pSha256": "512f629510c9c7293e6fb80f016dea221c0aa1b1820a82037fa891a9c4fc87dd"
+    },
+    {
+      "clipFrame": 127,
+      "sourceFrame": 127,
+      "sourcePts": 127,
+      "clipPts": 65024,
+      "fileTimeMs": 5080.0,
+      "decodedYuv420pSha256": "7b944db0e0780dbc248d18a6b77e380c68e3529a6274fcef8409e4f85ce3fbfb"
+    },
+    {
+      "clipFrame": 128,
+      "sourceFrame": 128,
+      "sourcePts": 128,
+      "clipPts": 65536,
+      "fileTimeMs": 5120.0,
+      "decodedYuv420pSha256": "31dda4f700480d15b95914f0ce7af3c71a2096cdbe9b3e2af44f5df6598fffb4"
+    },
+    {
+      "clipFrame": 129,
+      "sourceFrame": 129,
+      "sourcePts": 129,
+      "clipPts": 66048,
+      "fileTimeMs": 5160.0,
+      "decodedYuv420pSha256": "a69ba4f0dc667326c01191b31c85352d98694a24a51a3e0f85ad2f0c76ede9ff"
+    },
+    {
+      "clipFrame": 130,
+      "sourceFrame": 130,
+      "sourcePts": 130,
+      "clipPts": 66560,
+      "fileTimeMs": 5200.0,
+      "decodedYuv420pSha256": "afe74ce9e0df6b6a633ff539580e8f5d5c19f98c516d4c4ca689281cf166cdee"
+    },
+    {
+      "clipFrame": 131,
+      "sourceFrame": 131,
+      "sourcePts": 131,
+      "clipPts": 67072,
+      "fileTimeMs": 5240.0,
+      "decodedYuv420pSha256": "70dc78f5c78f68d31fa316141f5e5962d93026290ba8f0306873a8806dc6cf86"
+    },
+    {
+      "clipFrame": 132,
+      "sourceFrame": 132,
+      "sourcePts": 132,
+      "clipPts": 67584,
+      "fileTimeMs": 5280.0,
+      "decodedYuv420pSha256": "eb19b5b8e8f9b159b266ffb6c6a2faa0935864a65662c0aa6383eee831e20628"
+    },
+    {
+      "clipFrame": 133,
+      "sourceFrame": 133,
+      "sourcePts": 133,
+      "clipPts": 68096,
+      "fileTimeMs": 5320.0,
+      "decodedYuv420pSha256": "d8899982688b27dcafbc1ddb9bcfdfed87462ff5c87657e8ac1f359234653376"
+    },
+    {
+      "clipFrame": 134,
+      "sourceFrame": 134,
+      "sourcePts": 134,
+      "clipPts": 68608,
+      "fileTimeMs": 5360.0,
+      "decodedYuv420pSha256": "01ed6fc62050c7293b484797f2fab42f8698603c39c792d74647a996ff36b528"
+    },
+    {
+      "clipFrame": 135,
+      "sourceFrame": 135,
+      "sourcePts": 135,
+      "clipPts": 69120,
+      "fileTimeMs": 5400.0,
+      "decodedYuv420pSha256": "6ca1a970aa47d21eb445a73bdc92c4d0853fe89d3bdcf224f683029fe7715294"
+    },
+    {
+      "clipFrame": 136,
+      "sourceFrame": 136,
+      "sourcePts": 136,
+      "clipPts": 69632,
+      "fileTimeMs": 5440.0,
+      "decodedYuv420pSha256": "79c10f7cb8c42cd4431981f20c0451c9e8c963743b69804e1216d30b67f69747"
+    },
+    {
+      "clipFrame": 137,
+      "sourceFrame": 137,
+      "sourcePts": 137,
+      "clipPts": 70144,
+      "fileTimeMs": 5480.0,
+      "decodedYuv420pSha256": "97b5b1a8fb11d0f7454521c16e9dcd3204686c5e52b304eabf6f401ad5a7f060"
+    },
+    {
+      "clipFrame": 138,
+      "sourceFrame": 138,
+      "sourcePts": 138,
+      "clipPts": 70656,
+      "fileTimeMs": 5520.0,
+      "decodedYuv420pSha256": "b7f51003b53a1e45107b2312953774c75be5a654c551a56640cb070d4a089a65"
+    },
+    {
+      "clipFrame": 139,
+      "sourceFrame": 139,
+      "sourcePts": 139,
+      "clipPts": 71168,
+      "fileTimeMs": 5560.0,
+      "decodedYuv420pSha256": "587f1db718f519f6965d57663619200fd6e6891edc4e9aabafd9279384f1095b"
+    },
+    {
+      "clipFrame": 140,
+      "sourceFrame": 140,
+      "sourcePts": 140,
+      "clipPts": 71680,
+      "fileTimeMs": 5600.0,
+      "decodedYuv420pSha256": "47112630adaf003bdd3d72abe001df391bff063c54358a3b87cc15aca5f08c70"
+    },
+    {
+      "clipFrame": 141,
+      "sourceFrame": 141,
+      "sourcePts": 141,
+      "clipPts": 72192,
+      "fileTimeMs": 5640.0,
+      "decodedYuv420pSha256": "d6f20ea6c57c9aa6cf3ec8235283f1a796392e107f98aa8ac68c5dc8ddb51a83"
+    },
+    {
+      "clipFrame": 142,
+      "sourceFrame": 142,
+      "sourcePts": 142,
+      "clipPts": 72704,
+      "fileTimeMs": 5680.0,
+      "decodedYuv420pSha256": "74adc0abf495bc25e4af7b3985befb1e4d223d40daf034ba65bf052df574b8f1"
+    },
+    {
+      "clipFrame": 143,
+      "sourceFrame": 143,
+      "sourcePts": 143,
+      "clipPts": 73216,
+      "fileTimeMs": 5720.0,
+      "decodedYuv420pSha256": "7b2da40e82f365921d0295661f7c947fcb160a3646661752d4a81c3e86d6b48c"
+    },
+    {
+      "clipFrame": 144,
+      "sourceFrame": 144,
+      "sourcePts": 144,
+      "clipPts": 73728,
+      "fileTimeMs": 5760.0,
+      "decodedYuv420pSha256": "7cce648787b78022a9db4ee8cf8695d2b5753a31cbc93215d728dd009e75bad9"
+    },
+    {
+      "clipFrame": 145,
+      "sourceFrame": 145,
+      "sourcePts": 145,
+      "clipPts": 74240,
+      "fileTimeMs": 5800.0,
+      "decodedYuv420pSha256": "d8d4a88aa95351482bd1e5066e91fe7ec92130d8f0f84b9e59ce044fe8ef9dad"
+    },
+    {
+      "clipFrame": 146,
+      "sourceFrame": 146,
+      "sourcePts": 146,
+      "clipPts": 74752,
+      "fileTimeMs": 5840.0,
+      "decodedYuv420pSha256": "93bff845e85b0f36cce8e68a5339ff58ed1ff704466f927a0b49815b31818b46"
+    },
+    {
+      "clipFrame": 147,
+      "sourceFrame": 147,
+      "sourcePts": 147,
+      "clipPts": 75264,
+      "fileTimeMs": 5880.0,
+      "decodedYuv420pSha256": "ba32d0bb2fe35e97d7e3c8ce544f2879370e1b5f0771b4c097ef6031c202e077"
+    },
+    {
+      "clipFrame": 148,
+      "sourceFrame": 148,
+      "sourcePts": 148,
+      "clipPts": 75776,
+      "fileTimeMs": 5920.0,
+      "decodedYuv420pSha256": "474bddb89618b4ecd523969c9feb801dbcbae39ec67b808b001a7c7e9724d283"
+    },
+    {
+      "clipFrame": 149,
+      "sourceFrame": 149,
+      "sourcePts": 149,
+      "clipPts": 76288,
+      "fileTimeMs": 5960.0,
+      "decodedYuv420pSha256": "0ff337c1168b96e2d34e5881fc92ec111816b676e0f0777bb361fc3c5c42e28e"
+    },
+    {
+      "clipFrame": 150,
+      "sourceFrame": 150,
+      "sourcePts": 150,
+      "clipPts": 76800,
+      "fileTimeMs": 6000.0,
+      "decodedYuv420pSha256": "149714a309753e9e011dfab3aa965c2f30780f9b62585cc1e47610e4f8eb7d89"
+    },
+    {
+      "clipFrame": 151,
+      "sourceFrame": 151,
+      "sourcePts": 151,
+      "clipPts": 77312,
+      "fileTimeMs": 6040.0,
+      "decodedYuv420pSha256": "28642369d498e7f3eb6f88f77787b37451da644f51f556ea3685f5647b22c42f"
+    },
+    {
+      "clipFrame": 152,
+      "sourceFrame": 152,
+      "sourcePts": 152,
+      "clipPts": 77824,
+      "fileTimeMs": 6080.0,
+      "decodedYuv420pSha256": "a0b8fffc07bdf8f14d9e1c68750367975e063ed832bb74dc173b10b031b4508d"
+    },
+    {
+      "clipFrame": 153,
+      "sourceFrame": 153,
+      "sourcePts": 153,
+      "clipPts": 78336,
+      "fileTimeMs": 6120.0,
+      "decodedYuv420pSha256": "7dd7c50e3cf6a44039edb167c7a9b9c1a81e8b39ae2ae874b4be7e72d718bb7f"
+    },
+    {
+      "clipFrame": 154,
+      "sourceFrame": 154,
+      "sourcePts": 154,
+      "clipPts": 78848,
+      "fileTimeMs": 6160.0,
+      "decodedYuv420pSha256": "e4214d1eef43f9aaa7817b0fc0713cf294fa930a5aa2e79ca5b368900e6fa45e"
+    },
+    {
+      "clipFrame": 155,
+      "sourceFrame": 155,
+      "sourcePts": 155,
+      "clipPts": 79360,
+      "fileTimeMs": 6200.0,
+      "decodedYuv420pSha256": "d5000b1fe48b8eed519f22422c5b19da0a55bc3452a7792ea7ce9a442756aefb"
+    },
+    {
+      "clipFrame": 156,
+      "sourceFrame": 156,
+      "sourcePts": 156,
+      "clipPts": 79872,
+      "fileTimeMs": 6240.0,
+      "decodedYuv420pSha256": "ad6309304e1806bd9dbf960287e68b39a1894a9460c084f5d684d9018d7165f7"
+    },
+    {
+      "clipFrame": 157,
+      "sourceFrame": 157,
+      "sourcePts": 157,
+      "clipPts": 80384,
+      "fileTimeMs": 6280.0,
+      "decodedYuv420pSha256": "17ad2d1a7eb2eed8a37bb89e87b88c6c870ea27c7d66064849e0fd37e655e200"
+    },
+    {
+      "clipFrame": 158,
+      "sourceFrame": 158,
+      "sourcePts": 158,
+      "clipPts": 80896,
+      "fileTimeMs": 6320.0,
+      "decodedYuv420pSha256": "a17e762c351bb4d8c3cab2f45179b260ff824d26c8fc19e7514a44d0b58cc534"
+    },
+    {
+      "clipFrame": 159,
+      "sourceFrame": 159,
+      "sourcePts": 159,
+      "clipPts": 81408,
+      "fileTimeMs": 6360.0,
+      "decodedYuv420pSha256": "01a376277869e45b944768040822d13b93cbb18e972c1c78cd8271e56b39443b"
+    },
+    {
+      "clipFrame": 160,
+      "sourceFrame": 160,
+      "sourcePts": 160,
+      "clipPts": 81920,
+      "fileTimeMs": 6400.0,
+      "decodedYuv420pSha256": "b9ac7d4894955ca3d2e3e0ea51fb2dbb40387fb866c1a6a3623f279f2acd8979"
+    },
+    {
+      "clipFrame": 161,
+      "sourceFrame": 161,
+      "sourcePts": 161,
+      "clipPts": 82432,
+      "fileTimeMs": 6440.0,
+      "decodedYuv420pSha256": "46e7c49214d95fb515820310252850c183027e1a54a8cc22d9bc2153c06f6e3d"
+    },
+    {
+      "clipFrame": 162,
+      "sourceFrame": 162,
+      "sourcePts": 162,
+      "clipPts": 82944,
+      "fileTimeMs": 6480.0,
+      "decodedYuv420pSha256": "01fd9570857f4125dde76aac1f304efd34432ae05c93c95abb26d87f0e4ca558"
+    },
+    {
+      "clipFrame": 163,
+      "sourceFrame": 163,
+      "sourcePts": 163,
+      "clipPts": 83456,
+      "fileTimeMs": 6520.0,
+      "decodedYuv420pSha256": "705f28b930ec52b2ac61363281518d37815136df9b15d741999ff25c83338efe"
+    },
+    {
+      "clipFrame": 164,
+      "sourceFrame": 164,
+      "sourcePts": 164,
+      "clipPts": 83968,
+      "fileTimeMs": 6560.0,
+      "decodedYuv420pSha256": "369a2d793a584714e18a810f38440460fac681d0a23e362b4ece9a0be15f35e6"
+    },
+    {
+      "clipFrame": 165,
+      "sourceFrame": 165,
+      "sourcePts": 165,
+      "clipPts": 84480,
+      "fileTimeMs": 6600.0,
+      "decodedYuv420pSha256": "987e1597ce6a0d13210596bd6c7b52d6adcd73440f85513d24a265b0824ebbf3"
+    },
+    {
+      "clipFrame": 166,
+      "sourceFrame": 166,
+      "sourcePts": 166,
+      "clipPts": 84992,
+      "fileTimeMs": 6640.0,
+      "decodedYuv420pSha256": "7019cb7cc2d09714befac340841d4a3139738a8ab68baa3a57aa4e638113c581"
+    },
+    {
+      "clipFrame": 167,
+      "sourceFrame": 167,
+      "sourcePts": 167,
+      "clipPts": 85504,
+      "fileTimeMs": 6680.0,
+      "decodedYuv420pSha256": "b6b2cd314aedd97ca579690f76d8137df1288043367dc6707a519de9a43fb14d"
+    },
+    {
+      "clipFrame": 168,
+      "sourceFrame": 168,
+      "sourcePts": 168,
+      "clipPts": 86016,
+      "fileTimeMs": 6720.0,
+      "decodedYuv420pSha256": "cac8a6adcdacac988e1c4220eab9559cecc4331abeba52271a0ea4bf5b48012e"
+    },
+    {
+      "clipFrame": 169,
+      "sourceFrame": 169,
+      "sourcePts": 169,
+      "clipPts": 86528,
+      "fileTimeMs": 6760.0,
+      "decodedYuv420pSha256": "e85744392e50c4331f770e55c036814333019c074052b20f4ec01cc866c44128"
+    },
+    {
+      "clipFrame": 170,
+      "sourceFrame": 170,
+      "sourcePts": 170,
+      "clipPts": 87040,
+      "fileTimeMs": 6800.0,
+      "decodedYuv420pSha256": "609a7b24c31418e9a6ae2f8d977c58d0936daebb613df02ca5f781cc82243d43"
+    },
+    {
+      "clipFrame": 171,
+      "sourceFrame": 171,
+      "sourcePts": 171,
+      "clipPts": 87552,
+      "fileTimeMs": 6840.0,
+      "decodedYuv420pSha256": "ce1b875db7116e64014468a4f5f1f02b29c41e57a005784a4e72ede68dca78a3"
+    },
+    {
+      "clipFrame": 172,
+      "sourceFrame": 172,
+      "sourcePts": 172,
+      "clipPts": 88064,
+      "fileTimeMs": 6880.0,
+      "decodedYuv420pSha256": "f52fbbb4f6ff5d01833466b7ac61d5f0858b41505c85c5e0d7e8fd5658c7741f"
+    },
+    {
+      "clipFrame": 173,
+      "sourceFrame": 173,
+      "sourcePts": 173,
+      "clipPts": 88576,
+      "fileTimeMs": 6920.0,
+      "decodedYuv420pSha256": "3c6e79d0df35aed2c7a29f867ef491c5d5d13043d8d59960f3a306f589506b09"
+    },
+    {
+      "clipFrame": 174,
+      "sourceFrame": 174,
+      "sourcePts": 174,
+      "clipPts": 89088,
+      "fileTimeMs": 6960.0,
+      "decodedYuv420pSha256": "a12dfa35c81427a1ece7ad14321573b2be1abc87410c3ad638842ba95ab6761e"
+    },
+    {
+      "clipFrame": 175,
+      "sourceFrame": 175,
+      "sourcePts": 175,
+      "clipPts": 89600,
+      "fileTimeMs": 7000.0,
+      "decodedYuv420pSha256": "5211613b8fd64ab1eeb6e0dd2f9846970341c952d1bc6f4a8538b1cb4d129f8a"
+    },
+    {
+      "clipFrame": 176,
+      "sourceFrame": 176,
+      "sourcePts": 176,
+      "clipPts": 90112,
+      "fileTimeMs": 7040.0,
+      "decodedYuv420pSha256": "d4d60673231b9d653b5e97991204a99781c21a600bd2fdfe6b232a45af123572"
+    },
+    {
+      "clipFrame": 177,
+      "sourceFrame": 177,
+      "sourcePts": 177,
+      "clipPts": 90624,
+      "fileTimeMs": 7080.0,
+      "decodedYuv420pSha256": "50e73655467906ccad34a6524f5a064859669911d1d9c019114ac9d3287805e3"
+    },
+    {
+      "clipFrame": 178,
+      "sourceFrame": 178,
+      "sourcePts": 178,
+      "clipPts": 91136,
+      "fileTimeMs": 7120.0,
+      "decodedYuv420pSha256": "0cd09fee47a05b3c3ae5718686a79b84e4dc68032461461026533ea4a77807e7"
+    },
+    {
+      "clipFrame": 179,
+      "sourceFrame": 179,
+      "sourcePts": 179,
+      "clipPts": 91648,
+      "fileTimeMs": 7160.0,
+      "decodedYuv420pSha256": "40f72c41033b56f7f78a17833f43ad02f8829177250badf5d5d19ec19235b4b5"
+    },
+    {
+      "clipFrame": 180,
+      "sourceFrame": 180,
+      "sourcePts": 180,
+      "clipPts": 92160,
+      "fileTimeMs": 7200.0,
+      "decodedYuv420pSha256": "edce139d5aeecedb0b0a07a2b2e62614df1e9691ae181f426cb07111e32fe340"
+    },
+    {
+      "clipFrame": 181,
+      "sourceFrame": 181,
+      "sourcePts": 181,
+      "clipPts": 92672,
+      "fileTimeMs": 7240.0,
+      "decodedYuv420pSha256": "a1ea7a93e1af76962456b65ce76b1db619de02a89a38873c0f79a0e7fd81ca08"
+    },
+    {
+      "clipFrame": 182,
+      "sourceFrame": 182,
+      "sourcePts": 182,
+      "clipPts": 93184,
+      "fileTimeMs": 7280.0,
+      "decodedYuv420pSha256": "e7aca05357d5d2a1b4757c47dfc7204c1f0294a2a2affdae03b1d86f4966cb13"
+    },
+    {
+      "clipFrame": 183,
+      "sourceFrame": 183,
+      "sourcePts": 183,
+      "clipPts": 93696,
+      "fileTimeMs": 7320.0,
+      "decodedYuv420pSha256": "b066f4329234b7c168974ad14f271dd61bc146bd9d43a2b9bb808d91fecacbbb"
+    },
+    {
+      "clipFrame": 184,
+      "sourceFrame": 184,
+      "sourcePts": 184,
+      "clipPts": 94208,
+      "fileTimeMs": 7360.0,
+      "decodedYuv420pSha256": "425954d798a16923bc0c0c496e2b1978a18d489656e0d97b372436e717a5be50"
+    },
+    {
+      "clipFrame": 185,
+      "sourceFrame": 185,
+      "sourcePts": 185,
+      "clipPts": 94720,
+      "fileTimeMs": 7400.0,
+      "decodedYuv420pSha256": "58cf7c9ce371bb280b3d54d213a119acb5622b4401e507e6e218c0c20809a954"
+    },
+    {
+      "clipFrame": 186,
+      "sourceFrame": 186,
+      "sourcePts": 186,
+      "clipPts": 95232,
+      "fileTimeMs": 7440.0,
+      "decodedYuv420pSha256": "7bb661e4081fea17233ac3f9c8ecf7e3a3b3a1bf7d0477582f1b3eaa50284e11"
+    },
+    {
+      "clipFrame": 187,
+      "sourceFrame": 187,
+      "sourcePts": 187,
+      "clipPts": 95744,
+      "fileTimeMs": 7480.0,
+      "decodedYuv420pSha256": "8c60de1b056b1b3b284bd9257eb4956912f87a098677515b6468bc5b6f99e534"
+    }
+  ]
+}

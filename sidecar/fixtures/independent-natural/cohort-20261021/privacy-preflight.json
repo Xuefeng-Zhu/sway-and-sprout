@@ -1,0 +1,13 @@
+{
+  "sdkImported": false,
+  "sdkInitialized": false,
+  "modelInference": false,
+  "noPayloadSent": true,
+  "udpConnectResult": "EPERM",
+  "errno": 1,
+  "profileSha256": "5c358b8d847211333e7ba22df82d84f796b5f30a41a2682209a949d783adbd08",
+  "outerDenyAllNetworkActive": true,
+  "noUnsandboxedFallback": true,
+  "cameraOpened": false,
+  "initialNestedSandboxAttempt": "OS sandbox_apply denied before Python execution; this fresh attempt uses the same approved outer network-denying profile"
+}
