@@ -141,9 +141,10 @@ Zhu. `THIRD-PARTY-NOTICES.md` preserves separate dependency, wrapper, model and
 media terms. The permitted Taco Fleur excerpt is CC BY-SA 4.0; it is excluded
 from the source/package, and MIT does not cover it. The repository remains private.
 
-Current code checkpoint: `3a301733a5b0deabd3834b1a7cbc2f17ab0167a9`
-(license commit `97f4a4a`, then backup). Final documentation/source identity will
-be recorded in the regenerated package manifest after private-push verification.
+Application code checkpoint: `3a301733a5b0deabd3834b1a7cbc2f17ab0167a9`
+(license commit `97f4a4a`, then backup). The permitted-motion evidence is in
+`ae318e3`. The supporting package manifest records the final branch tip and
+verified private remote; these checkpoints do not rebind older APK measurements.
 
 ## Official form copy and links
 
@@ -151,7 +152,7 @@ be recorded in the regenerated package manifest after private-push verification.
 | --- | --- |
 | Title | Sway & Sprout |
 | One-line summary | A small movement. A growing garden. |
-| Repository URL — required, ID 28209 | https://github.com/Xuefeng-Zhu/sway-and-sprout — private. Reviewed changes on `work/activity-progression` are awaiting the authorized private push and remote-SHA verification. Judge access is not arranged. |
+| Repository URL — required, ID 28209 | https://github.com/Xuefeng-Zhu/sway-and-sprout/tree/work/activity-progression — private feature branch. The supporting manifest pins the verified remote SHA. Judge access is not arranged. |
 | Testing instructions — required, ID 28210 | Use `REVIEWER-GUIDE.md` from the supporting package after confirming the exact source. It separates manual play, file inference and local backup tests. |
 | Working web endpoint — optional, ID 28211 | Missing. An arranged live screen-share is an allowed alternative; none is arranged. |
 | Video | Missing. Prepare a public or unlisted judge-accessible video of at most five minutes. No upload is authorized. |
@@ -183,7 +184,7 @@ Four unedited native screenshots show entry, three manual counts, harvest and
 saved-garden reload. They come from source `f23f9e7`, temporary test storage and
 automated manual input. They do not show detected motion or the newer backup UI.
 `SCREENSHOTS.md` retains their provenance and hashes. The old package manifest
-and ZIP await regeneration. No complete demo recording exists yet.
+and ZIP bind the final source/private-remote checkpoint. No complete demo recording exists yet.
 
 ## Readiness and sources
 
