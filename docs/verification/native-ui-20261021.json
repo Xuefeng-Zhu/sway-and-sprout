@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "recordedAtUtc": "2026-10-21T14:05:19.584461+00:00",
+  "status": "build-verified-native-blocked-before-start",
+  "applicationSourceCommit": "2b3c24d7bb43d58c4855fd96cf680400fad8b4f2",
+  "branch": "work/activity-progression",
+  "apk": {
+    "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/sway-and-sprout-ui-2b3c24d-debug.apk",
+    "bytes": 22756785,
+    "sha256": "50de6d11ff5496d549db40f0a12f0b8c0f39633391913f2c49b4e87b3c90a530"
+  },
+  "build": {
+    "recipe": "Direct existing JDK javac, followed by cached offline Gradle packaging with JavaCompile excluded; no blocked compiler-worker retry.",
+    "commandsPassed": 5,
+    "javaSources": 19,
+    "compiledClasses": 34,
+    "webAssetsMatch": true,
+    "dexMarkerOnlyNotRuntimeProof": true,
+    "verificationCorrection": {
+      "initialRecord": "build-attempt-1.json",
+      "cause": "Verifier incorrectly assumed MainActivity must be in classes.dex; the packaged app uses classes3.dex.",
+      "action": "Checked every DEX and corrected the verifier without rebuilding or changing APK bytes.",
+      "buildOrPackagingRepeated": false
+    }
+  },
+  "networkPolicy": {
+    "sha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222",
+    "unchanged": true
+  },
+  "blocker": {
+    "action": "Start one bounded windowed Android TV emulator and verify latest APK journey",
+    "target": "Connected Mac console session",
+    "reason": "CGSSessionScreenIsLocked=true in read-only IORegistry observation",
+    "observedAtUtc": "2026-10-21T13:58:18.847768+00:00",
+    "status": "not-attempted-user-instructed-stop-on-lock",
+    "approvalDenied": false,
+    "pendingOperation": false,
+    "uncertainExecution": false,
+    "unlockAttempted": false
+  },
+  "native": {
+    "emulatorStarted": false,
+    "apkInstalled": false,
+    "activityStarted": false,
+    "pidWaiterRun": false,
+    "journeyRun": false,
+    "ackOrTimingMetricsCollected": false,
+    "videoFramesDecoded": 0,
+    "demoRecorded": false,
+    "localSubmissionMaterialsPrepared": false,
+    "physicalFireTvVerified": false,
+    "humanRecognitionVerified": false
+  },
+  "preservation": {
+    "canonicalCommit": "45ced16d3e8457db3329f1ec5dc875afc5fc5e84",
+    "canonicalCleanAfterBuild": true,
+    "unrelatedChangesTouched": false,
+    "historicalOperationalFolderReused": false,
+    "newMediaCopiedOrAnalyzed": false,
+    "cameraUsed": false,
+    "microphoneUsed": false,
+    "externalUploadOrSubmission": false
+  },
+  "artifacts": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/build-result.json",
+      "bytes": 20145,
+      "sha256": "3d59b24c5c479fd246c2f403e81d1851182b3835d9f85febb29a0074bc27b838"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/build-attempt-1.json",
+      "bytes": 18784,
+      "sha256": "9bf70e8a75d7e0853958a6f0f5ae396bcc1efd828dd872b77abfa4ac070b9f11"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/build_ui.py",
+      "bytes": 7525,
+      "sha256": "d5d25a3f60932c0e50dcbaa1ce448f265cf404e91018299ad1d4fb733c3c1388"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/web-build.log",
+      "bytes": 461,
+      "sha256": "0f09e0eb5b2fa70fed2f543d91cfb869ecbe79e43ec06ba7c84d02722bc39ae8"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/android-sync.log",
+      "bytes": 166,
+      "sha256": "6950b9f322023ab308fba688dbd57b12bb22a67db52c1f97168ca574948d1310"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/generate-build-config.log",
+      "bytes": 835,
+      "sha256": "843431587ec3efbdb00eaf2c9688c480f3b6da002e9731a2de89eaf9fe46c980"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/direct-javac.log",
+      "bytes": 222,
+      "sha256": "6f5836337c70fecd2383817c85afbd2bd74a2d821e448ee0f4c23ff3088280b8"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/offline-package.log",
+      "bytes": 2495,
+      "sha256": "01f79af86154275d53d337072dd7966342c8e96442049f9f48188333064e61c1"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/console-lock-state.json",
+      "bytes": 345,
+      "sha256": "12a176de699db9b808a63b03eb0bb3c308fa3aeb28c1de6dbb759274b02711f0"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/process-check.json",
+      "bytes": 515,
+      "sha256": "027aacab658c4cfed690c2592a18a2f0fa6e36d126f73873bd8c7b1f1a5bec7f"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/sway-and-sprout-ui-2b3c24d-debug.apk",
+      "bytes": 22756785,
+      "sha256": "50de6d11ff5496d549db40f0a12f0b8c0f39633391913f2c49b4e87b3c90a530"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-20261021/independent-static-review.json",
+      "bytes": 2550,
+      "sha256": "6d136e221d6c87fcd3340b0ff2ed13a8fd89e4a8035e8cebc1954253ccf3028b"
+    }
+  ],
+  "pending": [
+    "Native manual entry/activity/growth/harvest/replay and saved-garden checks",
+    "Native synthetic score/ACK, pause/resume, dedup and progress isolation",
+    "Bounded explicitly synthetic native video throughput with per-attempt CPU/wall/epoch/poll-age diagnostics",
+    "Complete native demo and local submission materials only after native checks pass"
+  ],
+  "independentStaticReview": {
+    "hashesMatch": true,
+    "signatureVerified": true,
+    "signatureScheme": "v2",
+    "certificateDn": "C=US, O=Android, CN=Android Debug",
+    "package": "com.togethermove.tv.motion",
+    "minSdk": 25,
+    "targetSdk": 35,
+    "debuggable": true,
+    "permissions": [
+      "android.permission.INTERNET"
+    ],
+    "runtimeVerified": false
+  }
+}
