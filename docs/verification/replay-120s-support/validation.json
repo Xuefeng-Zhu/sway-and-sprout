@@ -1,0 +1,25 @@
+{
+  "nodeTests": {
+    "passed": 86,
+    "failed": 0,
+    "command": "npm test",
+    "scope": "App timing/progress and native evidence mocks; not natural recognition results"
+  },
+  "webBuild": {
+    "command": "npm run build",
+    "result": "passed",
+    "bundle": "dist/assets/index-B38YSqf0.js"
+  },
+  "androidSync": {
+    "command": "npm run android:sync",
+    "result": "passed; generated assets only"
+  },
+  "androidDebugBuild": {
+    "result": "BUILD SUCCESSFUL in6s",
+    "command": "existing cached Gradle --offline --no-daemon --max-workers=1 :app:assembleDebug",
+    "newDependenciesOrSdkTerms": false
+  },
+  "normalRoundSeconds": 30,
+  "explicitNativeReplayRoundSeconds": 120,
+  "motionThresholdsChanged": false
+}

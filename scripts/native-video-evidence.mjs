@@ -47,6 +47,23 @@ export function nativeUiScoreVerified(ui){
   ui.badgeText==='VIDEO REPLAY · NO CAMERA';
 }
 
+export function nativeDiagnosticRoundVerified(round){
+ return round?.roundSecondsText==='120'&&round.diagnosticReplayText==='true'&&round.timerText==='120s';
+}
+
+export function nativeCompletionVerified(completion, count){
+ const label=`${count} OF 6 SIMULATED RAYS`;
+ return Number.isInteger(count)&&count>=0&&count<=6&&completion?.realTimerElapsed===true&&completion.realWallMs>=119000&&
+  completion.celebration?.screen?.split(' ').includes('celebrate')===true&&
+  completion.celebration.heading==='Replay result.'&&completion.celebration.rayLabel?.includes(label)===true&&
+  completion.celebration.replayLabel===true&&completion.celebration.cameraCalls===0&&
+  completion.progressUnchangedAtCelebration===true&&completion.progressUnchangedAfterReload===true&&
+  completion.reload?.screen==='app home'&&completion.reload.cameraCalls===0&&
+  completion.inactivePacket?.active===false&&completion.inactivePacket.metrics?.acknowledgedEvents===count&&
+  (count===6?completion.path==='six-ray-auto-celebration':completion.path==='check-confirmation'&&
+   completion.check?.heading==='Replay finished.'&&completion.check.rayLabel?.includes(label)===true&&completion.realCompleteButtonClicked===true);
+}
+
 export function assessNativeCase(row, expected, nativeRows){
  row.nativePoseFrameCoverage=nativeFrameCoverage(nativeRows,expected);
  row.nativeFileEvents=nativeRows.filter(item=>item.kind==='event')

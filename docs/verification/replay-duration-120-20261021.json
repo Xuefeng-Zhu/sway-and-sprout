@@ -1,0 +1,536 @@
+{
+  "schemaVersion": 1,
+  "scope": "Same two frozen Pexels clips through real native game UI with explicit120-second diagnostic; normal production30seconds unchanged",
+  "appCommit": "ddef01e",
+  "normalRoundSeconds": 30,
+  "diagnosticRoundSeconds": 120,
+  "motionThresholdsChanged": false,
+  "recognitionInterpretation": "Observed only: no definite positive opportunities; not a new positive or FireTV performance result",
+  "executionAccepted": true,
+  "completionStatus": "passed",
+  "recognitionStatus": "observed-only-incomplete-reference",
+  "device": {
+    "api": "34",
+    "abi": "arm64-v8a",
+    "model": "sdk_google_atv64_arm64"
+  },
+  "cases": [
+    {
+      "name": "independent-both-stretch",
+      "initialRound": {
+        "roundSecondsText": "120",
+        "diagnosticReplayText": "true",
+        "timerText": "120s",
+        "at": 2623
+      },
+      "roundMarkerVerified": true,
+      "eofWallMs": 50982,
+      "wallMs": 51543,
+      "ui": {
+        "gardenPresent": true,
+        "countText": "0",
+        "count": 0,
+        "countLabel": "0",
+        "raySlots": 6,
+        "collectedRays": 0,
+        "source": "video",
+        "badgeText": "VIDEO REPLAY \u00b7 NO CAMERA",
+        "screen": "app play camera-mode",
+        "replayLabel": true,
+        "cameraCalls": 0
+      },
+      "nativePoseFrameCoverage": {
+        "expectedFrames": 188,
+        "loggedFrames": 188,
+        "uniqueFrames": 188,
+        "missingIndices": [],
+        "duplicateIndices": [],
+        "invalidIndices": [],
+        "badTimestampIndices": [],
+        "complete": true
+      },
+      "nativeFileEvents": [],
+      "observedGestures": [],
+      "nativeScoringMatches": true,
+      "completeFileVerified": true,
+      "nativeDeliveryMatches": true,
+      "integrationVerified": true,
+      "executionAcceptance": "passed",
+      "recognitionAcceptance": "observed-only",
+      "completion": {
+        "requested": true,
+        "status": "passed",
+        "roundSeconds": 120,
+        "realWallMs": 121751,
+        "realTimerElapsed": true,
+        "path": "check-confirmation",
+        "check": {
+          "screen": "app check camera-mode",
+          "heading": "Replay finished.",
+          "rayLabel": "VIDEO REPLAY \u00b7 NO CAMERA \u00b7 0 OF 6 SIMULATED RAYS"
+        },
+        "inactivePacket": {
+          "runtime": {
+            "engine": "litert",
+            "engineVersion": "1.4.2",
+            "platform": "android",
+            "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+            "modelId": "float16",
+            "inputSize": 192,
+            "verified": true
+          },
+          "source": "video",
+          "status": "paused",
+          "seq": 0,
+          "active": false,
+          "revision": 5,
+          "events": [],
+          "metrics": {
+            "armed": false,
+            "decodedFrames": 188,
+            "acceptedFrames": 188,
+            "discardedEpochFrames": 0,
+            "videoFrames": 188,
+            "fileMs": 7520,
+            "fps": 25,
+            "decodeMs": 16.152166,
+            "preprocessMs": 164.45499999999998,
+            "inferenceMs": 83.538708,
+            "keypointMinimum": 0.1285976767539978,
+            "nativeRecognizedEvents": 0,
+            "acknowledgedEvents": 0,
+            "fullFileProcessed": true,
+            "singlePoseAssumption": true,
+            "fixedFullFrameLetterbox": false,
+            "dynamicPersonCrop": true,
+            "statelessCropRefinement": true,
+            "modelInferencesPerFrame": 3,
+            "cameraEnabled": false
+          },
+          "at": 124302.90000000001
+        },
+        "completeButtonLabel": "View replay result",
+        "realCompleteButtonClicked": true,
+        "celebration": {
+          "screen": "app celebrate camera-mode",
+          "heading": "Replay result.",
+          "rayLabel": "VIDEO REPLAY \u00b7 NO CAMERA \u00b7 0 OF 6 SIMULATED RAYS",
+          "replayLabel": true,
+          "storageSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c",
+          "cameraCalls": 0
+        },
+        "progressUnchangedAtCelebration": true,
+        "reload": {
+          "screen": "app home",
+          "storageSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c",
+          "cameraCalls": 0
+        },
+        "progressUnchangedAfterReload": true
+      },
+      "nativeClosedSummary": {
+        "kind": "stopped",
+        "source": "video",
+        "engine": "litert",
+        "engineVersion": "1.4.2",
+        "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+        "modelId": "float16",
+        "inputSize": 192,
+        "verified": false,
+        "configAsset": "verification/independent-both-stretch.float16.json",
+        "api": 34,
+        "abi": "arm64-v8a",
+        "threads": 2,
+        "scalarFrameDiagnostics": true,
+        "capture": "bundled-public-video",
+        "personCount": "unknown-singlepose-model",
+        "inputTransform": "official-three-pass-stateless-crop-square-before-bilinear-rgb-uint8-192-no-mirror",
+        "decodedFrames": 188,
+        "acceptedFrames": 188,
+        "discardedEpochFrames": 0,
+        "nextFrameIndex": 188,
+        "fullFileProcessed": true,
+        "resourcesClosed": true,
+        "cleanupSucceeded": true,
+        "nativeRecognizedEvents": 0,
+        "acknowledgedEvents": 0,
+        "expectationKnown": false,
+        "expectedSequenceEvaluated": false,
+        "declaredVideoFrames": 188,
+        "declaredFps": 25,
+        "decodeMeanMs": 47.00042797872338,
+        "preprocessMeanMs": 120.67957384042545,
+        "inferenceMeanMs": 79.22542671808507,
+        "inferenceP95Ms": 148.56229,
+        "frameMeanMs": 265.3675772340427,
+        "frameP95Ms": 550.865834,
+        "referenceParityChecks": 30,
+        "referenceByteDifferences": 0,
+        "referenceMaxByteDelta": 0,
+        "referenceOutputMaxDelta": 0,
+        "referenceMeanMs": 79.3105306,
+        "modelInferencesPerFrame": 3,
+        "defaultCropFrames": 65,
+        "processPssKiB": 81287
+      },
+      "resourcesClosed": true,
+      "cleanupHome": {
+        "screen": "app home",
+        "storageSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c",
+        "progressUnchanged": true,
+        "cameraCalls": 0
+      },
+      "fullFlowExecutionVerified": true,
+      "caseWallMs": 128132,
+      "nativeScalarLog": {
+        "available": true,
+        "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.native-scalar.jsonl",
+        "sha256": "e83aa16dc08652339e3540c53565979d8590978bce4158481c8e859ef9740f12",
+        "rows": 188,
+        "pid": "2528",
+        "configAsset": "verification/independent-both-stretch.float16.json",
+        "phase": "final"
+      },
+      "eofNativeScalarLog": {
+        "available": true,
+        "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.eof.native-scalar.jsonl",
+        "sha256": "e83aa16dc08652339e3540c53565979d8590978bce4158481c8e859ef9740f12",
+        "rows": 188,
+        "pid": "2528",
+        "configAsset": "verification/independent-both-stretch.float16.json",
+        "phase": "eof"
+      },
+      "nativeSummaryLog": {
+        "available": true,
+        "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.native-summary.jsonl",
+        "sha256": "30771f216de6b0debb6f1080d88dc85506c2fa3334703e0f0c8c0cfa055e6ba4",
+        "rows": 6,
+        "pid": "2528",
+        "configAsset": "verification/independent-both-stretch.float16.json",
+        "phase": "final"
+      },
+      "eofNativeSummaryLog": {
+        "available": true,
+        "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.eof.native-summary.jsonl",
+        "sha256": "dfb8518a6a2bab4a22289a9a8ba2dcd84818a7aa98815662747492c6e23c6eed",
+        "rows": 2,
+        "pid": "2528",
+        "configAsset": "verification/independent-both-stretch.float16.json",
+        "phase": "eof"
+      },
+      "score": 0,
+      "ackAtScoring": 0,
+      "nativeRecognizedEventsAtScoring": 0,
+      "discardedEpochFrames": 0
+    },
+    {
+      "name": "independent-cross-stretch",
+      "initialRound": {
+        "roundSecondsText": "120",
+        "diagnosticReplayText": "true",
+        "timerText": "120s",
+        "at": 1169.8999999999942
+      },
+      "roundMarkerVerified": true,
+      "eofWallMs": 41124,
+      "wallMs": 41646,
+      "ui": {
+        "gardenPresent": true,
+        "countText": "0",
+        "count": 0,
+        "countLabel": "0",
+        "raySlots": 6,
+        "collectedRays": 0,
+        "source": "video",
+        "badgeText": "VIDEO REPLAY \u00b7 NO CAMERA",
+        "screen": "app play camera-mode",
+        "replayLabel": true,
+        "cameraCalls": 0
+      },
+      "nativePoseFrameCoverage": {
+        "expectedFrames": 195,
+        "loggedFrames": 195,
+        "uniqueFrames": 195,
+        "missingIndices": [],
+        "duplicateIndices": [],
+        "invalidIndices": [],
+        "badTimestampIndices": [],
+        "complete": true
+      },
+      "nativeFileEvents": [],
+      "observedGestures": [],
+      "nativeScoringMatches": true,
+      "completeFileVerified": true,
+      "nativeDeliveryMatches": true,
+      "integrationVerified": true,
+      "executionAcceptance": "passed",
+      "recognitionAcceptance": "observed-only",
+      "completion": {
+        "requested": true,
+        "status": "passed",
+        "roundSeconds": 120,
+        "realWallMs": 120798,
+        "realTimerElapsed": true,
+        "path": "check-confirmation",
+        "check": {
+          "screen": "app check camera-mode",
+          "heading": "Replay finished.",
+          "rayLabel": "VIDEO REPLAY \u00b7 NO CAMERA \u00b7 0 OF 6 SIMULATED RAYS"
+        },
+        "inactivePacket": {
+          "runtime": {
+            "engine": "litert",
+            "engineVersion": "1.4.2",
+            "platform": "android",
+            "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+            "modelId": "float16",
+            "inputSize": 192,
+            "verified": true
+          },
+          "source": "video",
+          "status": "paused",
+          "seq": 0,
+          "active": false,
+          "revision": 5,
+          "events": [],
+          "metrics": {
+            "armed": false,
+            "decodedFrames": 195,
+            "acceptedFrames": 195,
+            "discardedEpochFrames": 0,
+            "videoFrames": 195,
+            "fileMs": 6500,
+            "fps": 30,
+            "decodeMs": 9.510792,
+            "preprocessMs": 62.057542,
+            "inferenceMs": 53.787999,
+            "keypointMinimum": 0.467256635427475,
+            "nativeRecognizedEvents": 0,
+            "acknowledgedEvents": 0,
+            "fullFileProcessed": true,
+            "singlePoseAssumption": true,
+            "fixedFullFrameLetterbox": false,
+            "dynamicPersonCrop": true,
+            "statelessCropRefinement": true,
+            "modelInferencesPerFrame": 3,
+            "cameraEnabled": false
+          },
+          "at": 121806.70000000001
+        },
+        "completeButtonLabel": "View replay result",
+        "realCompleteButtonClicked": true,
+        "celebration": {
+          "screen": "app celebrate camera-mode",
+          "heading": "Replay result.",
+          "rayLabel": "VIDEO REPLAY \u00b7 NO CAMERA \u00b7 0 OF 6 SIMULATED RAYS",
+          "replayLabel": true,
+          "storageSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c",
+          "cameraCalls": 0
+        },
+        "progressUnchangedAtCelebration": true,
+        "reload": {
+          "screen": "app home",
+          "storageSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c",
+          "cameraCalls": 0
+        },
+        "progressUnchangedAfterReload": true
+      },
+      "nativeClosedSummary": {
+        "kind": "stopped",
+        "source": "video",
+        "engine": "litert",
+        "engineVersion": "1.4.2",
+        "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+        "modelId": "float16",
+        "inputSize": 192,
+        "verified": false,
+        "configAsset": "verification/independent-cross-stretch.float16.json",
+        "api": 34,
+        "abi": "arm64-v8a",
+        "threads": 2,
+        "scalarFrameDiagnostics": true,
+        "capture": "bundled-public-video",
+        "personCount": "unknown-singlepose-model",
+        "inputTransform": "official-three-pass-stateless-crop-square-before-bilinear-rgb-uint8-192-no-mirror",
+        "decodedFrames": 195,
+        "acceptedFrames": 195,
+        "discardedEpochFrames": 0,
+        "nextFrameIndex": 195,
+        "fullFileProcessed": true,
+        "resourcesClosed": true,
+        "cleanupSucceeded": true,
+        "nativeRecognizedEvents": 0,
+        "acknowledgedEvents": 0,
+        "expectationKnown": false,
+        "expectedSequenceEvaluated": false,
+        "declaredVideoFrames": 195,
+        "declaredFps": 30,
+        "decodeMeanMs": 28.679055758974368,
+        "preprocessMeanMs": 93.851652425641,
+        "inferenceMeanMs": 68.02640363076928,
+        "inferenceP95Ms": 131.800416,
+        "frameMeanMs": 205.84656826153824,
+        "frameP95Ms": 332.857292,
+        "referenceParityChecks": 30,
+        "referenceByteDifferences": 0,
+        "referenceMaxByteDelta": 0,
+        "referenceOutputMaxDelta": 0,
+        "referenceMeanMs": 65.62378886666667,
+        "modelInferencesPerFrame": 3,
+        "defaultCropFrames": 195,
+        "processPssKiB": 108441
+      },
+      "resourcesClosed": true,
+      "cleanupHome": {
+        "screen": "app home",
+        "storageSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c",
+        "progressUnchanged": true,
+        "cameraCalls": 0
+      },
+      "fullFlowExecutionVerified": true,
+      "caseWallMs": 124614,
+      "nativeScalarLog": {
+        "available": true,
+        "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.native-scalar.jsonl",
+        "sha256": "8b40b2c2de2553a688c8f7c339b7e755f736093ddaa82f7fedc5ebdd37ca991f",
+        "rows": 195,
+        "pid": "3143",
+        "configAsset": "verification/independent-cross-stretch.float16.json",
+        "phase": "final"
+      },
+      "eofNativeScalarLog": {
+        "available": true,
+        "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.eof.native-scalar.jsonl",
+        "sha256": "8b40b2c2de2553a688c8f7c339b7e755f736093ddaa82f7fedc5ebdd37ca991f",
+        "rows": 195,
+        "pid": "3143",
+        "configAsset": "verification/independent-cross-stretch.float16.json",
+        "phase": "eof"
+      },
+      "nativeSummaryLog": {
+        "available": true,
+        "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.native-summary.jsonl",
+        "sha256": "1bbf7464e116dc5de03d52a03938194c578f05bd0e89d7de908ddbd960e27989",
+        "rows": 6,
+        "pid": "3143",
+        "configAsset": "verification/independent-cross-stretch.float16.json",
+        "phase": "final"
+      },
+      "eofNativeSummaryLog": {
+        "available": true,
+        "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.eof.native-summary.jsonl",
+        "sha256": "8b657188b6477c15919cf28aee991fc3c209ac10d04c56dbbca3a155e3843fc9",
+        "rows": 2,
+        "pid": "3143",
+        "configAsset": "verification/independent-cross-stretch.float16.json",
+        "phase": "eof"
+      },
+      "score": 0,
+      "ackAtScoring": 0,
+      "nativeRecognizedEventsAtScoring": 0,
+      "discardedEpochFrames": 0
+    }
+  ],
+  "evidencePins": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/baseline.freeze.json",
+      "sha256": "3cdb7ea6a561c927e0a711332b2679a141cc37bb6f9bf8f90fec2ce88c78ac87",
+      "bytes": 7198
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/execution-plan.freeze.json",
+      "sha256": "002d61ca7dcfbc2254cf0def39a2e08ca81a8669a6a097bce0cd23b162f84755",
+      "bytes": 13417
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/validation.json",
+      "sha256": "cb905cbe6938ac8db1dc263dd5d6c3a77470038c4a99de65f662d2c659186631",
+      "bytes": 726
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/final-state.json",
+      "sha256": "c8af5863da07cecb2e7b34cd6436389cbf2dabf095ed1a40f379d904f0cc9849",
+      "bytes": 398
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/native-control/privacy-preflight.json",
+      "sha256": "18d00ab2f9f890b7ef5cfc4e1f7d699ee481d10f743d3a784c38a1730a956d55",
+      "bytes": 478
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/native-control/control-result.json",
+      "sha256": "9de40bc6e050a72713cd630769fb74ebb7eff4b8bf363d7a19869f071fc50bcc",
+      "bytes": 2480
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.eof.native-scalar.jsonl",
+      "sha256": "e83aa16dc08652339e3540c53565979d8590978bce4158481c8e859ef9740f12",
+      "bytes": 93232
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.eof.native-summary.jsonl",
+      "sha256": "dfb8518a6a2bab4a22289a9a8ba2dcd84818a7aa98815662747492c6e23c6eed",
+      "bytes": 2384
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.json",
+      "sha256": "c602088224707ff68b90f26a6571cc7d4971e71cfdbb2fccf9bb1040d07dffd3",
+      "bytes": 548313
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.native-scalar.jsonl",
+      "sha256": "e83aa16dc08652339e3540c53565979d8590978bce4158481c8e859ef9740f12",
+      "bytes": 93232
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.native-summary.jsonl",
+      "sha256": "30771f216de6b0debb6f1080d88dc85506c2fa3334703e0f0c8c0cfa055e6ba4",
+      "bytes": 7331
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.eof.native-scalar.jsonl",
+      "sha256": "8b40b2c2de2553a688c8f7c339b7e755f736093ddaa82f7fedc5ebdd37ca991f",
+      "bytes": 98543
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.eof.native-summary.jsonl",
+      "sha256": "8b657188b6477c15919cf28aee991fc3c209ac10d04c56dbbca3a155e3843fc9",
+      "bytes": 2394
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.json",
+      "sha256": "155debd5d4d5133af1a9609e0ca214ff2daf3dc75ed00118ef440b2636d63e37",
+      "bytes": 480809
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.native-scalar.jsonl",
+      "sha256": "8b40b2c2de2553a688c8f7c339b7e755f736093ddaa82f7fedc5ebdd37ca991f",
+      "bytes": 98543
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.native-summary.jsonl",
+      "sha256": "1bbf7464e116dc5de03d52a03938194c578f05bd0e89d7de908ddbd960e27989",
+      "bytes": 7377
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/result.json",
+      "sha256": "25da71dfb2922f433e744b9e5f9d920debd9a7a41747b5438965fe05e6aa07c9",
+      "bytes": 1165527
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/analysis-review/ui-120-result-review.json",
+      "sha256": "257538a48f166b43e252a6ef134f249cd401ae0e115d32d09ed6f77b6995094f",
+      "bytes": 24015
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/analysis-review/ui-120-result-review.md",
+      "sha256": "f563ec0abc7153b9b98989331389f593efa81b6ba319cae292ec999344bcc0a8",
+      "bytes": 5379
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/analysis-review/numeric-ui-120-independent.json",
+      "sha256": "82b134d23c2ff3e9a2fb97a7ae0f23c576d20c9fec74a733509472585d2389f6",
+      "bytes": 142481
+    }
+  ],
+  "independentReviewStatus": "passed; two saved-data recomputations, no reinference"
+}

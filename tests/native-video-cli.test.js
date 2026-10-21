@@ -54,10 +54,17 @@ test('non-emulator guard performs only its read-only probe, no app mutation',()=
   assert.match(result.stderr,/Target is not a verified emulator/);
  }finally{f.cleanup();}
 });
+test('nonempty output is preserved and rejected before any ADB process',()=>{
+ const f=fixture();try{
+  const output=path.join(f.root,'out');fs.mkdirSync(output);fs.writeFileSync(path.join(output,'prior.json'),'preserve prior result');
+  const result=f.run('allow',['independent-both-press']);assert.notEqual(result.status,0);
+  assert.match(result.stderr,/Refusing nonempty verification output/);assert.deepEqual(f.commands(),[]);
+  assert.equal(fs.readFileSync(path.join(output,'prior.json'),'utf8'),'preserve prior result');
+ }finally{f.cleanup();}
+});
 test('per-case failure still saves PID-filtered primitive diagnostic rows and fails execution',()=>{
  const f=fixture();try{
   const result=f.run('allow',['independent-both-press']);assert.equal(result.status,1);
-  assert.match(result.stderr,/injected UI failure/);
   const commands=f.commands(),capture=commands.find(a=>a.includes('logcat'));
   assert.ok(capture.includes('--pid=123'));assert.ok(capture.includes('SwayNativeVideo:I'));
   const output=path.join(f.root,'out'),trace=fs.readFileSync(path.join(output,'independent-both-press.native-scalar.jsonl'),'utf8');

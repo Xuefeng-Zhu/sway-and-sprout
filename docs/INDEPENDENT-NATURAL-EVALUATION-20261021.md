@@ -2,6 +2,27 @@
 
 Preliminary AI visual annotations were frozen before either model ran. This round does not establish positive-recognition improvement or justify a MediaPipe native port: the selected material contains **zero definite positive opportunities** under the existing game rules. No human supplied or confirmed these labels. Human validation remains necessary before acceptance. A post-run provenance review also found conflicting copyright notices on the DVIDS case: it is not cleared for redistribution; the two Pexels cases retain their recorded license evidence.
 
+## Authorized 120-second diagnostic UI rerun
+
+The user's duration request is implemented in local commit `ddef01e`. Only the existing exact `?input=video-verification` entry with Sunshine's replay input receives a **120-second diagnostic round**, before any model packet arrives. The normal authored rounds, ordinary camera/video/synthetic sessions without this diagnostic marker, manual play and other challenges retain **30 seconds**. Countdown, progress bar and termination share one duration helper. Recognition thresholds, model/crop/state-machine behavior and the six-ray input-stop rule are unchanged.
+
+The same two previously interrupted Pexels clips were rerun through the **real game UI**, with the existing native LiteRT/Lightning FP16 three-pass profile. No input frames, annotation bounds or expected sequences changed. The 120-second budget was sufficient; no further extension, clock acceleration, frame skipping, synthetic events or early-result substitution was used.
+
+| Clip | Original 30-second UI coverage | New complete UI coverage | Model events / real UI rays / ACK | File EOF wall time | Real timer completion wall time | Result flow / native close |
+| --- | --- | --- | --- | --- | --- | --- |
+| both-stretch | 99/188, failed/incomplete | **188/188** | **0 / 0 / 0** | 50.982 s | 121.751 s | Passed / closed |
+| cross-stretch | 138/195, failed/incomplete | **195/195** | **0 / 0 / 0** | 41.124 s | 120.798 s | Passed / closed |
+
+Each run verified the actual initial **120s** countdown and explicit diagnostic DOM marker, every frame index/file timestamp exactly once, zero discarded epoch frames, a present scored garden with six empty ray slots, and matching native events/real reducer score/ACK. The first EOF observation and settled scoring observation are retained independently of the subsequent result screens.
+
+Both then waited for the application's real timer, entered **Replay finished**, clicked the real **View replay result** button, reached **Replay result**, reloaded to home with unchanged saved progress, and finished the Activity. Final stopped summaries independently confirm `resourcesClosed=true`, `cleanupSucceeded=true`, `verified=false`; fresh host process inspection confirms the one emulator and isolated ADB server are stopped. Browser camera-call counters remained zero and both emulator camera inputs were explicitly disabled.
+
+The existing RAF/pause rules accumulate active app time, so elapsed wall measurements are reported separately rather than promising an exact 120.000-second wall cutoff. Neither the timer nor native event times were injected. The two known clips remain **observed-only**: they contain zero definite positive opportunities. Matching zero events, score and ACK resolves the truncated replay check; it does not demonstrate new positive recognition, calibrated confidence, live-camera operation or Fire TV hardware performance. Confidence admissions remain 5/188 and 36/195 under the unchanged 0.65 gate.
+
+The original ten UI evidence files and all 71 historical frozen inputs are byte-identical. Fifteen original semantic source pins remain unchanged; `src/main.js` is the explicit authorized duration/UI change, bound by its new hash. The older 16-pin and 30-second records below are historical results, not rewritten acceptance passes. The DVIDS case was not rerun; its provenance correction remains applicable.
+
+Affected verification passed **86 Node tests**, the frontend build/sync, and the existing cached offline debug APK build. Pure/mock checks test the duration and evidence guards; the two real replay executions supply the UI/EOF/completion/cleanup evidence. Read [structured results and raw hashes](verification/replay-duration-120-20261021.json) and [independent review](verification/replay-120s-support/analysis-review/ui-120-result-review.md). Raw EOF/final traces and app packets remain local in `confidence-calibration/replay-duration-120-20261021/`; media, models, APK and operational logs remain ignored. No camera, new tools/SDK terms, upload, push, deployment, spending or credential changes.
+
 ## Frozen evaluation and sources
 
 The [evaluation contract](/Users/frank/mygit/sway-and-sprout/docs/NATURAL-EVALUATION-CONTRACT.md) records the existing geometry, 300 ms neutral, continuous 350 ms hold, opposite-arm condition, 500 ms cooldown, >300 ms gap reset and confidence/loss handling. Physical wrist/shoulder uncertainty is separate from model confidence; an uncertain onset remains an interval. Thresholds, previous annotations/failures and production defaults were preserved.

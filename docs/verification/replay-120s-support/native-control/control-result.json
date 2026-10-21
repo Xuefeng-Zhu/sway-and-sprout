@@ -1,0 +1,81 @@
+{
+  "status": "verification-completed",
+  "profileSha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222",
+  "adbBinarySha256": "1811e253b21b12cbfda7201ebaf86c10e7ddcb5c606a7a81f7c82b4c429c2d3b",
+  "emulatorBinarySha256": "5e2249e94368759aabd8fa942d2961cfef07b980a44639a2ec9b7ced3fbe2281",
+  "apkSha256": "47c86aba27d390b90c32f9b5a8f59b5cbe857b9774db46e9de0c29451b49b070",
+  "apkBytes": 174918057,
+  "adbCommand": [
+    "/Users/frank/Library/Android/sdk/platform-tools/adb",
+    "-L",
+    "tcp:localhost:5038",
+    "nodaemon",
+    "server"
+  ],
+  "emulatorCommand": [
+    "/Users/frank/Documents/Codex/2026-10-15/task/android-test-sdk/emulator/emulator",
+    "-avd",
+    "codex_mac_tv_api34",
+    "-port",
+    "5556",
+    "-read-only",
+    "-no-snapshot",
+    "-memory",
+    "1536",
+    "-cores",
+    "2",
+    "-gpu",
+    "swiftshader_indirect",
+    "-no-window",
+    "-no-audio",
+    "-no-boot-anim",
+    "-no-metrics",
+    "-camera-front",
+    "none",
+    "-camera-back",
+    "none"
+  ],
+  "environment": {
+    "ANDROID_HOME": "/Users/frank/Documents/Codex/2026-10-15/task/android-test-sdk",
+    "ANDROID_USER_HOME": "/Users/frank/Documents/Codex/2026-10-15/task/android-user",
+    "ANDROID_AVD_HOME": "/Users/frank/Documents/Codex/2026-10-15/task/android-avd",
+    "ANDROID_EMULATOR_HOME": "/Users/frank/Documents/Codex/2026-10-15/task/android-emulator-home",
+    "ADB_SERVER_SOCKET": "tcp:localhost:5038"
+  },
+  "physicalCameraEnabled": false,
+  "newCredentials": false,
+  "scope": "Android TV API34 ARM64 emulator; not Fire OS or physical hardware",
+  "bootSeconds": 14.35231825,
+  "device": {
+    "api": "34",
+    "abi": "arm64-v8a",
+    "model": "sdk_google_atv64_arm64"
+  },
+  "installOutput": "Performing Streamed Install\nSuccess",
+  "logBufferOutput": "",
+  "verificationCommand": [
+    "/Users/frank/.nvm/versions/node/v24.14.1/bin/node",
+    "scripts/verify-native-video.mjs",
+    "--adb",
+    "/Users/frank/Library/Android/sdk/platform-tools/adb",
+    "--adb-port",
+    "5038",
+    "--serial",
+    "emulator-5556",
+    "--model",
+    "float16",
+    "--refinement",
+    "image",
+    "--completion",
+    "true",
+    "--out",
+    "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results",
+    "independent-both-stretch",
+    "independent-cross-stretch"
+  ],
+  "verificationExitCode": 0,
+  "cleanup": {
+    "emulator": "stopped-by-task-owned-adb",
+    "isolatedAdb": "stopped-task-owned-server"
+  }
+}

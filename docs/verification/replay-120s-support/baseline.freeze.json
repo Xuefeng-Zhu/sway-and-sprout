@@ -1,0 +1,150 @@
+{
+  "status": "BASELINE_SAVED_BEFORE_120_SECOND_NATIVE_UI_RUN",
+  "atUtc": "2026-10-21T05:20:32.899557+00:00",
+  "authorizedAppChange": [
+    {
+      "path": "src/main.js",
+      "originalSha256": "7c5671a0bcd0a3c1960433e82a3bd3effb4851bdd633be44b87ac7dbaa3781f4",
+      "currentSha256": "5a78c6d2252c64c9d30ccd91eb597876c7377b757d8887543f9eb6b3e2dd3d74"
+    }
+  ],
+  "unchangedPins": [
+    {
+      "path": "AGENTS.md",
+      "originalSha256": "77c717a755d0bd142609701a10f00ea2057c78124ad6077fac5562af4466def7",
+      "currentSha256": "77c717a755d0bd142609701a10f00ea2057c78124ad6077fac5562af4466def7"
+    },
+    {
+      "path": "sidecar/motion.py",
+      "originalSha256": "375b9dd92631c13533513c88b7eea9f9b3900f82304c566ee86b373b80a3b458",
+      "currentSha256": "375b9dd92631c13533513c88b7eea9f9b3900f82304c566ee86b373b80a3b458"
+    },
+    {
+      "path": "sidecar/service.py",
+      "originalSha256": "cae49767c0ec32a1ce02fe294b64364bfa89b795058d901abbf69aedd6c751d4",
+      "currentSha256": "cae49767c0ec32a1ce02fe294b64364bfa89b795058d901abbf69aedd6c751d4"
+    },
+    {
+      "path": "sidecar/video_input.py",
+      "originalSha256": "00cdf1aa7e90eb2c1a6056dcca0226d8aff3c64fabd5dd6b3115169c25bd462e",
+      "currentSha256": "00cdf1aa7e90eb2c1a6056dcca0226d8aff3c64fabd5dd6b3115169c25bd462e"
+    },
+    {
+      "path": "sidecar/verify_video.py",
+      "originalSha256": "3544bcd5789b31361a61ef871b5b166c94ab1a3d348f01768df2c51e33e35385",
+      "currentSha256": "3544bcd5789b31361a61ef871b5b166c94ab1a3d348f01768df2c51e33e35385"
+    },
+    {
+      "path": "sidecar/inference.py",
+      "originalSha256": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407",
+      "currentSha256": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407"
+    },
+    {
+      "path": "sidecar/mediapipe_full.py",
+      "originalSha256": "4102c6773172920fc55d02128144c8f0f62d9410da6dae9c478e57085a856529",
+      "currentSha256": "4102c6773172920fc55d02128144c8f0f62d9410da6dae9c478e57085a856529"
+    },
+    {
+      "path": "sidecar/pose_backend.py",
+      "originalSha256": "7c03dd12f744bac641dc1f071e56ea1400fa15897d3a6121e27bb97af0dfcc83",
+      "currentSha256": "7c03dd12f744bac641dc1f071e56ea1400fa15897d3a6121e27bb97af0dfcc83"
+    },
+    {
+      "path": "src/motion.js",
+      "originalSha256": "9158a312e1a6ad25bd32583387987da5c08fb4e0eb35eaacba2788e986484b13",
+      "currentSha256": "9158a312e1a6ad25bd32583387987da5c08fb4e0eb35eaacba2788e986484b13"
+    },
+    {
+      "path": "src/runtime.js",
+      "originalSha256": "c2d95a9c34a3b7bd4f361b7cf4f8c1f41f6bc9c863b3b81a658a83ede5310a05",
+      "currentSha256": "c2d95a9c34a3b7bd4f361b7cf4f8c1f41f6bc9c863b3b81a658a83ede5310a05"
+    },
+    {
+      "path": "src/model.js",
+      "originalSha256": "31c4b4f3296f9bbc56ba6e8ba7a127759d92d263d88a96e603044c78c31d50f9",
+      "currentSha256": "31c4b4f3296f9bbc56ba6e8ba7a127759d92d263d88a96e603044c78c31d50f9"
+    },
+    {
+      "path": "scripts/score-motion-fixture.mjs",
+      "originalSha256": "97ba23862bc5ee14d90551fb540a62bf782f0c09954ea5709ae9e74a35a31c61",
+      "currentSha256": "97ba23862bc5ee14d90551fb540a62bf782f0c09954ea5709ae9e74a35a31c61"
+    },
+    {
+      "path": "android/app/src/debug/java/com/togethermove/tv/NativeMoveNet.java",
+      "originalSha256": "e0834c62b7159a383ce3d6746f84f30be4516a5f29f63b330a28c21ed0e1dd14",
+      "currentSha256": "e0834c62b7159a383ce3d6746f84f30be4516a5f29f63b330a28c21ed0e1dd14"
+    },
+    {
+      "path": "android/app/src/main/java/com/togethermove/tv/PoseGestureMachine.java",
+      "originalSha256": "5d573c11240c84e1737b75136bd6411e9aa967b4572b3f289caa13a2da0ae677",
+      "currentSha256": "5d573c11240c84e1737b75136bd6411e9aa967b4572b3f289caa13a2da0ae677"
+    },
+    {
+      "path": "android/app/src/debug/java/com/togethermove/tv/NativeVideoReplay.java",
+      "originalSha256": "0547c62e1b47cac4651bbd6522bb33646f90d4e102276e168f0bcd7fd5b2fcd3",
+      "currentSha256": "0547c62e1b47cac4651bbd6522bb33646f90d4e102276e168f0bcd7fd5b2fcd3"
+    }
+  ],
+  "frozenInputFilesUnchanged": 71,
+  "originalUiResults": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-cross-stretch.native-scalar.jsonl",
+      "sha256": "7e5cac2d476f1cf7b1a42eb77d2bd8bf33a1a1482197f6b8a2b00645a185b93d",
+      "bytes": 69649
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-stretch.json",
+      "sha256": "9819f83d3ceb47232a3a7cc0cb89f885ef18bb99b73eaefa067bfd4fb73e798d",
+      "bytes": 154437
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-cross-stretch.native-summary.jsonl",
+      "sha256": "231775f11af2229759313a57cf6ec9164c2be84549011cbde2dc43a5c0828d58",
+      "bytes": 2392
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/result.json",
+      "sha256": "84448549d2bbcebc06ca6609229d5562225448a841ff3f8d5b394b682d0d3b4f",
+      "bytes": 543978
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-press.json",
+      "sha256": "64cb00511584555784eda9f24b95241e93298031c3326d76079c72fca9acaa90",
+      "bytes": 153928
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-stretch.native-summary.jsonl",
+      "sha256": "dfe8cdda3cd0eae8df6ce9301a9a4b91f0f5fc4a83f2404b4d817aca02ea43fd",
+      "bytes": 2388
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-cross-stretch.json",
+      "sha256": "f22b546f085ab57c3d2d13fa7c2af52b100e2e5e5cb9ed09a16b75334fbfa73b",
+      "bytes": 169833
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-stretch.native-scalar.jsonl",
+      "sha256": "c5d49b9d65b2a30d114d7b0575ee5a20280202e03cade5d8d6778dc5ace73484",
+      "bytes": 49092
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-press.native-summary.jsonl",
+      "sha256": "907112e22b3dc1a7ff88a1ee27eddc89f0beefc4c5bf6a351ec1c04cc45655fe",
+      "bytes": 2453
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-press.native-scalar.jsonl",
+      "sha256": "aab9d36943f3e56fe3eb8c8172a11d9a667126a3be411aa23fb3035b95fae2d9",
+      "bytes": 105613
+    }
+  ],
+  "cases": [
+    "independent-both-stretch",
+    "independent-cross-stretch"
+  ],
+  "definitePositiveOpportunities": 0,
+  "newAnnotations": false,
+  "normalRoundSeconds": 30,
+  "diagnosticRoundSeconds": 120,
+  "physicalCameraEnabled": false
+}

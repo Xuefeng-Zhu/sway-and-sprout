@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {nativeScalarRows,nativeSummaryRows,nativeUiScoreVerified,nativeFrameCoverage,assessNativeCase} from '../scripts/native-video-evidence.mjs';
+import {nativeScalarRows,nativeSummaryRows,nativeUiScoreVerified,nativeDiagnosticRoundVerified,nativeCompletionVerified,nativeFrameCoverage,assessNativeCase} from '../scripts/native-video-evidence.mjs';
 
 const config='verification/independent-both-press.float16.json';
 const expected={frames:2,fps:30,expectationKnown:false,expectedGestures:[]};
@@ -79,4 +79,35 @@ test('unknown truth still requires native events, front-end rays and ACK to agre
  const value=row();value.observedGestures=['left-raise'];value.ui=ui(1);
  value.lastPacket.metrics.nativeRecognizedEvents=1;value.lastPacket.metrics.acknowledgedEvents=1;
  assessNativeCase(value,expected,[...frames(),{...event,seq:2}]);assert.equal(value.nativeEventLogValid,false);
+});
+
+test('only the explicit diagnostic marker and observed initial120s countdown pass',()=>{
+ const valid={roundSecondsText:'120',diagnosticReplayText:'true',timerText:'120s'};
+ assert.equal(nativeDiagnosticRoundVerified(valid),true);
+ for(const change of [{roundSecondsText:'30'},{diagnosticReplayText:'false'},{timerText:'30s'},{timerText:null}])
+  assert.equal(nativeDiagnosticRoundVerified({...valid,...change}),false);
+ assert.equal(nativeDiagnosticRoundVerified(null),false);
+});
+
+function completion(count=0){return {realTimerElapsed:true,realWallMs:120250,
+ path:count===6?'six-ray-auto-celebration':'check-confirmation',realCompleteButtonClicked:count!==6,
+ check:{heading:'Replay finished.',rayLabel:`VIDEO REPLAY · NO CAMERA · ${count} OF 6 SIMULATED RAYS`},
+ celebration:{screen:'app celebrate camera-mode',heading:'Replay result.',rayLabel:`VIDEO REPLAY · NO CAMERA · ${count} OF 6 SIMULATED RAYS`,replayLabel:true,cameraCalls:0},
+ progressUnchangedAtCelebration:true,progressUnchangedAfterReload:true,reload:{screen:'app home',cameraCalls:0},
+ inactivePacket:{active:false,metrics:{acknowledgedEvents:count}}};}
+
+test('zero/subsix completion requires the real timer, check confirmation, inactive ACK and unchanged reload',()=>{
+ const valid=completion();assert.equal(nativeCompletionVerified(valid,0),true);
+ for(const mutate of [c=>c.realWallMs=30000,c=>c.realTimerElapsed=false,c=>c.realCompleteButtonClicked=false,
+  c=>c.check.heading='How did that feel?',c=>c.celebration.rayLabel='6 OF 6 SIMULATED RAYS',
+  c=>c.inactivePacket.active=true,c=>c.inactivePacket.metrics.acknowledgedEvents=1,c=>c.progressUnchangedAfterReload=false,
+  c=>c.reload.cameraCalls=1]){
+  const value=structuredClone(valid);mutate(value);assert.equal(nativeCompletionVerified(value,0),false);
+ }
+ assert.equal(nativeCompletionVerified({},0),false);
+});
+
+test('six-ray auto celebration remains a separate valid path and cannot replace zero-ray confirmation',()=>{
+ assert.equal(nativeCompletionVerified(completion(6),6),true);
+ const value=completion();value.path='six-ray-auto-celebration';assert.equal(nativeCompletionVerified(value,0),false);
 });

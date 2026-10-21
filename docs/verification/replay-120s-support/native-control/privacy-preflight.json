@@ -1,0 +1,12 @@
+{
+  "profile": "/Users/frank/Documents/Codex/2026-10-19/task/mediapipe-evaluation/browser/browser-only.sb",
+  "profileSha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222",
+  "physicalCameraEnabled": false,
+  "externalUploadAllowed": false,
+  "externalNoSendProbe": {
+    "errno": 1,
+    "message": "[Errno 1] Operation not permitted"
+  },
+  "enforced": true,
+  "parentInventorySha256": "f539eca1d046602c0f318e3b1740edbd0f58ef80641bdf71610c397f6d7f90e3"
+}

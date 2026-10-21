@@ -13,6 +13,14 @@ traces. Inspect all local checkpoints with
 `git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
 been requested. The dated TogetherMove source remains an untouched backup.
 
+## 120-second native replay UI rerun — 2026-10-21
+
+User-authorized commit `ddef01e` extends only exact `input=video-verification` + Sunshine replay input to120 seconds. Normal authored/manual/ordinary camera/video/synthetic and other challenges remain30; all motion/model thresholds and six-ray input-stop behavior are unchanged. Shared duration controls countdown, bar and termination; no clock acceleration.
+
+Actual UI reruns now complete both previously interrupted Pexels clips: **188/188** and **195/195**, zero dropped/duplicate frames,0events/UI0/ACK0. EOF walls50.982/41.124s; real timer/check completion121.751/120.798s. Both traversed Replay finished→real View replay result click→Replay result→reload home with unchanged progress, then Activity destruction with decoder/interpreter closed. The single existing API34ARM64 emulator and isolatedADB5038 are stopped; camera stayed off under the existing OS network-denying execution.
+
+These are replay-flow successes, **not new positive recognition or FireTV performance evidence**; both frozen exact sequences remain unknown with0definite positives. Original30-second failures and all10raw UI files remain intact,71frozen inputs unchanged.15core semantic pins match; src/main.js has the authorized duration-only hash.86Node tests/frontend build+sync/offline debug build passed. [Updated report](INDEPENDENT-NATURAL-EVALUATION-20261021.md), [structured evidence](verification/replay-duration-120-20261021.json) and [independent review](verification/replay-120s-support/analysis-review/ui-120-result-review.md) preserve both time budgets. No new tools,source builds,uploads,push/deploy or credentials. DVIDS was not rerun; its redistribution eligibility remains uncleared.
+
 ## Independent natural-video diagnostic comparison — 2026-10-21
 
 The [completed report](INDEPENDENT-NATURAL-EVALUATION-20261021.md) preserves a prediction-blind AI-annotated cohort of three new public sources/593 frames, frozen before either model. All 71 protected inputs and 16 semantic source pins are unchanged. **There are zero definite positive opportunities, so recall and positive timing benefit remain unestimable.** Human confirmation is still required before acceptance; no user supplied or approved these labels. Do not start Full source builds/porting on this evidence.

@@ -1,0 +1,708 @@
+{
+  "schemaVersion": 1,
+  "scope": "Independent saved-data review of the authorized two-case 120-second native UI rerun",
+  "planSha256": "002d61ca7dcfbc2254cf0def39a2e08ca81a8669a6a097bce0cd23b162f84755",
+  "baselineSha256": "3cdb7ea6a561c927e0a711332b2679a141cc37bb6f9bf8f90fec2ce88c78ac87",
+  "annotationAuthorType": "AI",
+  "humanConfirmed": false,
+  "definitePositiveOpportunities": 0,
+  "eventRecall": null,
+  "eventRecallReason": "unestimable: zero definite physical positive opportunities",
+  "originalFrozenFilesUnchanged": 71,
+  "originalUiEvidenceFilesUnchanged": 10,
+  "unchangedCurrentSemanticPins": 15,
+  "authorizedAppChange": [
+    {
+      "path": "src/main.js",
+      "originalSha256": "7c5671a0bcd0a3c1960433e82a3bd3effb4851bdd633be44b87ac7dbaa3781f4",
+      "currentSha256": "5a78c6d2252c64c9d30ccd91eb597876c7377b757d8887543f9eb6b3e2dd3d74"
+    }
+  ],
+  "all16CurrentPinsUnchangedClaim": false,
+  "inputBindings": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/result.json",
+      "sha256": "25da71dfb2922f433e744b9e5f9d920debd9a7a41747b5438965fe05e6aa07c9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.json",
+      "sha256": "c602088224707ff68b90f26a6571cc7d4971e71cfdbb2fccf9bb1040d07dffd3"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.native-scalar.jsonl",
+      "sha256": "e83aa16dc08652339e3540c53565979d8590978bce4158481c8e859ef9740f12"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.native-summary.jsonl",
+      "sha256": "30771f216de6b0debb6f1080d88dc85506c2fa3334703e0f0c8c0cfa055e6ba4"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.eof.native-scalar.jsonl",
+      "sha256": "e83aa16dc08652339e3540c53565979d8590978bce4158481c8e859ef9740f12"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-both-stretch.eof.native-summary.jsonl",
+      "sha256": "dfb8518a6a2bab4a22289a9a8ba2dcd84818a7aa98815662747492c6e23c6eed"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.json",
+      "sha256": "155debd5d4d5133af1a9609e0ca214ff2daf3dc75ed00118ef440b2636d63e37"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.native-scalar.jsonl",
+      "sha256": "8b40b2c2de2553a688c8f7c339b7e755f736093ddaa82f7fedc5ebdd37ca991f"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.native-summary.jsonl",
+      "sha256": "1bbf7464e116dc5de03d52a03938194c578f05bd0e89d7de908ddbd960e27989"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.eof.native-scalar.jsonl",
+      "sha256": "8b40b2c2de2553a688c8f7c339b7e755f736093ddaa82f7fedc5ebdd37ca991f"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results/independent-cross-stretch.eof.native-summary.jsonl",
+      "sha256": "8b657188b6477c15919cf28aee991fc3c209ac10d04c56dbbca3a155e3843fc9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/native-control/control-result.json",
+      "sha256": "9de40bc6e050a72713cd630769fb74ebb7eff4b8bf363d7a19869f071fc50bcc"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/native-control/privacy-preflight.json",
+      "sha256": "18d00ab2f9f890b7ef5cfc4e1f7d699ee481d10f743d3a784c38a1730a956d55"
+    }
+  ],
+  "controller": {
+    "status": "verification-completed",
+    "profileSha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222",
+    "adbBinarySha256": "1811e253b21b12cbfda7201ebaf86c10e7ddcb5c606a7a81f7c82b4c429c2d3b",
+    "emulatorBinarySha256": "5e2249e94368759aabd8fa942d2961cfef07b980a44639a2ec9b7ced3fbe2281",
+    "apkSha256": "47c86aba27d390b90c32f9b5a8f59b5cbe857b9774db46e9de0c29451b49b070",
+    "apkBytes": 174918057,
+    "adbCommand": [
+      "/Users/frank/Library/Android/sdk/platform-tools/adb",
+      "-L",
+      "tcp:localhost:5038",
+      "nodaemon",
+      "server"
+    ],
+    "emulatorCommand": [
+      "/Users/frank/Documents/Codex/2026-10-15/task/android-test-sdk/emulator/emulator",
+      "-avd",
+      "codex_mac_tv_api34",
+      "-port",
+      "5556",
+      "-read-only",
+      "-no-snapshot",
+      "-memory",
+      "1536",
+      "-cores",
+      "2",
+      "-gpu",
+      "swiftshader_indirect",
+      "-no-window",
+      "-no-audio",
+      "-no-boot-anim",
+      "-no-metrics",
+      "-camera-front",
+      "none",
+      "-camera-back",
+      "none"
+    ],
+    "environment": {
+      "ANDROID_HOME": "/Users/frank/Documents/Codex/2026-10-15/task/android-test-sdk",
+      "ANDROID_USER_HOME": "/Users/frank/Documents/Codex/2026-10-15/task/android-user",
+      "ANDROID_AVD_HOME": "/Users/frank/Documents/Codex/2026-10-15/task/android-avd",
+      "ANDROID_EMULATOR_HOME": "/Users/frank/Documents/Codex/2026-10-15/task/android-emulator-home",
+      "ADB_SERVER_SOCKET": "tcp:localhost:5038"
+    },
+    "physicalCameraEnabled": false,
+    "newCredentials": false,
+    "scope": "Android TV API34 ARM64 emulator; not Fire OS or physical hardware",
+    "bootSeconds": 14.35231825,
+    "device": {
+      "api": "34",
+      "abi": "arm64-v8a",
+      "model": "sdk_google_atv64_arm64"
+    },
+    "installOutput": "Performing Streamed Install\nSuccess",
+    "logBufferOutput": "",
+    "verificationCommand": [
+      "/Users/frank/.nvm/versions/node/v24.14.1/bin/node",
+      "scripts/verify-native-video.mjs",
+      "--adb",
+      "/Users/frank/Library/Android/sdk/platform-tools/adb",
+      "--adb-port",
+      "5038",
+      "--serial",
+      "emulator-5556",
+      "--model",
+      "float16",
+      "--refinement",
+      "image",
+      "--completion",
+      "true",
+      "--out",
+      "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/replay-duration-120-20261021/results",
+      "independent-both-stretch",
+      "independent-cross-stretch"
+    ],
+    "verificationExitCode": 0,
+    "cleanup": {
+      "emulator": "stopped-by-task-owned-adb",
+      "isolatedAdb": "stopped-task-owned-server"
+    }
+  },
+  "controllerChecks": {
+    "controllerCompletedSuccessfully": true,
+    "recordedOsNetworkDenyEnforced": true,
+    "bothEmulatedCamerasDisabled": true,
+    "taskOwnedEmulatorStopped": true,
+    "isolatedAdbStopped": true
+  },
+  "privacyPreflight": {
+    "profile": "/Users/frank/Documents/Codex/2026-10-19/task/mediapipe-evaluation/browser/browser-only.sb",
+    "profileSha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222",
+    "physicalCameraEnabled": false,
+    "externalUploadAllowed": false,
+    "externalNoSendProbe": {
+      "errno": 1,
+      "message": "[Errno 1] Operation not permitted"
+    },
+    "enforced": true,
+    "parentInventorySha256": "f539eca1d046602c0f318e3b1740edbd0f58ef80641bdf71610c397f6d7f90e3"
+  },
+  "cases": [
+    {
+      "caseId": "independent-both-stretch",
+      "frames": 188,
+      "expectedFrames": 188,
+      "checks": {
+        "caseIdentity": true,
+        "unknownExpectationPreserved": true,
+        "unknownNotNegativeAccepted": true,
+        "nativeScalarLogBoundHash": true,
+        "nativeSummaryLogBoundHash": true,
+        "eofNativeScalarLogBoundHash": true,
+        "eofNativeSummaryLogBoundHash": true,
+        "completeUniqueOrderedFrameCoverage": true,
+        "scalarPhaseUnchangedAfterEOF": true,
+        "ptsWithinFrozenStreamTick": true,
+        "orderedEventDelivery": true,
+        "finalAndFirstEOFComplete": true,
+        "nativeRuntimeProfile": true,
+        "EOFUiScoreAndRaysMatchEvents": true,
+        "EOFProtocolAcknowledgment": true,
+        "actualInitial120SecondDiagnosticUi": true,
+        "realTimerObserved": true,
+        "realCheckAndResultButton": true,
+        "actualReplayResultUi": true,
+        "inactiveAtCompletion": true,
+        "progressHashesUnchangedThroughWholeFlow": true,
+        "reloadAndCleanupHome": true,
+        "zeroObservedCameraCalls": true,
+        "nativeStoppedAndClosed": true,
+        "stoppedAcknowledgment": true,
+        "noPageOrConsoleErrors": true,
+        "harnessFullFlowFlags": true
+      },
+      "allIndependentChecksPassed": true,
+      "failedChecks": [],
+      "counts": {
+        "admittedFrames": 5,
+        "abstainedFrames": 183,
+        "validGeometryFrames": 188,
+        "certifiedNegativeSamples": 103,
+        "admittedNegativeSamples": 2
+      },
+      "classifierStatuses": {
+        "low-confidence": 183,
+        "neutral": 5
+      },
+      "events": [],
+      "uiCount": 0,
+      "uiRays": 0,
+      "protocolAcknowledgedEvents": 0,
+      "maximumPtsErrorMs": 0.0,
+      "eofWallMs": 50982,
+      "scoringSnapshotWallMs": 51543,
+      "realCompletionWallMs": 121751,
+      "actualAtLeast120000WallMs": true,
+      "declaredHarnessTimerToleranceMs": 1000,
+      "completionPath": "check-confirmation",
+      "caseWallMs": 128132,
+      "gateConflicts": [],
+      "negativeSingleArmConflicts": [],
+      "nativePerformanceSummary": {
+        "kind": "stopped",
+        "source": "video",
+        "engine": "litert",
+        "engineVersion": "1.4.2",
+        "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+        "modelId": "float16",
+        "inputSize": 192,
+        "verified": false,
+        "configAsset": "verification/independent-both-stretch.float16.json",
+        "api": 34,
+        "abi": "arm64-v8a",
+        "threads": 2,
+        "scalarFrameDiagnostics": true,
+        "capture": "bundled-public-video",
+        "personCount": "unknown-singlepose-model",
+        "inputTransform": "official-three-pass-stateless-crop-square-before-bilinear-rgb-uint8-192-no-mirror",
+        "decodedFrames": 188,
+        "acceptedFrames": 188,
+        "discardedEpochFrames": 0,
+        "nextFrameIndex": 188,
+        "fullFileProcessed": true,
+        "resourcesClosed": true,
+        "cleanupSucceeded": true,
+        "nativeRecognizedEvents": 0,
+        "acknowledgedEvents": 0,
+        "expectationKnown": false,
+        "expectedSequenceEvaluated": false,
+        "declaredVideoFrames": 188,
+        "declaredFps": 25,
+        "decodeMeanMs": 47.00042797872338,
+        "preprocessMeanMs": 120.67957384042545,
+        "inferenceMeanMs": 79.22542671808507,
+        "inferenceP95Ms": 148.56229,
+        "frameMeanMs": 265.3675772340427,
+        "frameP95Ms": 550.865834,
+        "referenceParityChecks": 30,
+        "referenceByteDifferences": 0,
+        "referenceMaxByteDelta": 0,
+        "referenceOutputMaxDelta": 0,
+        "referenceMeanMs": 79.3105306,
+        "modelInferencesPerFrame": 3,
+        "defaultCropFrames": 65,
+        "processPssKiB": 81287
+      },
+      "closedSummary": {
+        "kind": "stopped",
+        "source": "video",
+        "engine": "litert",
+        "engineVersion": "1.4.2",
+        "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+        "modelId": "float16",
+        "inputSize": 192,
+        "verified": false,
+        "configAsset": "verification/independent-both-stretch.float16.json",
+        "api": 34,
+        "abi": "arm64-v8a",
+        "threads": 2,
+        "scalarFrameDiagnostics": true,
+        "capture": "bundled-public-video",
+        "personCount": "unknown-singlepose-model",
+        "inputTransform": "official-three-pass-stateless-crop-square-before-bilinear-rgb-uint8-192-no-mirror",
+        "decodedFrames": 188,
+        "acceptedFrames": 188,
+        "discardedEpochFrames": 0,
+        "nextFrameIndex": 188,
+        "fullFileProcessed": true,
+        "resourcesClosed": true,
+        "cleanupSucceeded": true,
+        "nativeRecognizedEvents": 0,
+        "acknowledgedEvents": 0,
+        "expectationKnown": false,
+        "expectedSequenceEvaluated": false,
+        "declaredVideoFrames": 188,
+        "declaredFps": 25,
+        "decodeMeanMs": 47.00042797872338,
+        "preprocessMeanMs": 120.67957384042545,
+        "inferenceMeanMs": 79.22542671808507,
+        "inferenceP95Ms": 148.56229,
+        "frameMeanMs": 265.3675772340427,
+        "frameP95Ms": 550.865834,
+        "referenceParityChecks": 30,
+        "referenceByteDifferences": 0,
+        "referenceMaxByteDelta": 0,
+        "referenceOutputMaxDelta": 0,
+        "referenceMeanMs": 79.3105306,
+        "modelInferencesPerFrame": 3,
+        "defaultCropFrames": 65,
+        "processPssKiB": 81287
+      },
+      "recognitionAcceptance": "observed-only",
+      "expectationKnown": false,
+      "expectedGestures": null
+    },
+    {
+      "caseId": "independent-cross-stretch",
+      "frames": 195,
+      "expectedFrames": 195,
+      "checks": {
+        "caseIdentity": true,
+        "unknownExpectationPreserved": true,
+        "unknownNotNegativeAccepted": true,
+        "nativeScalarLogBoundHash": true,
+        "nativeSummaryLogBoundHash": true,
+        "eofNativeScalarLogBoundHash": true,
+        "eofNativeSummaryLogBoundHash": true,
+        "completeUniqueOrderedFrameCoverage": true,
+        "scalarPhaseUnchangedAfterEOF": true,
+        "ptsWithinFrozenStreamTick": true,
+        "orderedEventDelivery": true,
+        "finalAndFirstEOFComplete": true,
+        "nativeRuntimeProfile": true,
+        "EOFUiScoreAndRaysMatchEvents": true,
+        "EOFProtocolAcknowledgment": true,
+        "actualInitial120SecondDiagnosticUi": true,
+        "realTimerObserved": true,
+        "realCheckAndResultButton": true,
+        "actualReplayResultUi": true,
+        "inactiveAtCompletion": true,
+        "progressHashesUnchangedThroughWholeFlow": true,
+        "reloadAndCleanupHome": true,
+        "zeroObservedCameraCalls": true,
+        "nativeStoppedAndClosed": true,
+        "stoppedAcknowledgment": true,
+        "noPageOrConsoleErrors": true,
+        "harnessFullFlowFlags": true
+      },
+      "allIndependentChecksPassed": true,
+      "failedChecks": [],
+      "counts": {
+        "admittedFrames": 36,
+        "abstainedFrames": 159,
+        "validGeometryFrames": 195,
+        "certifiedNegativeSamples": 56,
+        "admittedNegativeSamples": 14
+      },
+      "classifierStatuses": {
+        "low-confidence": 159,
+        "neutral": 33,
+        "tracking": 3
+      },
+      "events": [],
+      "uiCount": 0,
+      "uiRays": 0,
+      "protocolAcknowledgedEvents": 0,
+      "maximumPtsErrorMs": 0.0,
+      "eofWallMs": 41124,
+      "scoringSnapshotWallMs": 41646,
+      "realCompletionWallMs": 120798,
+      "actualAtLeast120000WallMs": true,
+      "declaredHarnessTimerToleranceMs": 1000,
+      "completionPath": "check-confirmation",
+      "caseWallMs": 124614,
+      "gateConflicts": [
+        {
+          "frame": 96,
+          "sides": [
+            "left"
+          ],
+          "predicted": {
+            "left": "down",
+            "right": "transition"
+          },
+          "allowed": {
+            "left": [
+              "up",
+              "transition"
+            ],
+            "right": [
+              "up",
+              "down",
+              "transition"
+            ]
+          },
+          "admitted": false
+        },
+        {
+          "frame": 97,
+          "sides": [
+            "left"
+          ],
+          "predicted": {
+            "left": "down",
+            "right": "transition"
+          },
+          "allowed": {
+            "left": [
+              "up",
+              "transition"
+            ],
+            "right": [
+              "up",
+              "down",
+              "transition"
+            ]
+          },
+          "admitted": false
+        },
+        {
+          "frame": 98,
+          "sides": [
+            "left"
+          ],
+          "predicted": {
+            "left": "down",
+            "right": "transition"
+          },
+          "allowed": {
+            "left": [
+              "up",
+              "transition"
+            ],
+            "right": [
+              "up",
+              "down",
+              "transition"
+            ]
+          },
+          "admitted": false
+        },
+        {
+          "frame": 99,
+          "sides": [
+            "left"
+          ],
+          "predicted": {
+            "left": "down",
+            "right": "transition"
+          },
+          "allowed": {
+            "left": [
+              "up",
+              "transition"
+            ],
+            "right": [
+              "up",
+              "down",
+              "transition"
+            ]
+          },
+          "admitted": false
+        },
+        {
+          "frame": 104,
+          "sides": [
+            "left"
+          ],
+          "predicted": {
+            "left": "down",
+            "right": "transition"
+          },
+          "allowed": {
+            "left": [
+              "up",
+              "transition"
+            ],
+            "right": [
+              "up",
+              "down",
+              "transition"
+            ]
+          },
+          "admitted": false
+        },
+        {
+          "frame": 106,
+          "sides": [
+            "left"
+          ],
+          "predicted": {
+            "left": "down",
+            "right": "up"
+          },
+          "allowed": {
+            "left": [
+              "up",
+              "transition"
+            ],
+            "right": [
+              "up",
+              "down",
+              "transition"
+            ]
+          },
+          "admitted": false
+        },
+        {
+          "frame": 107,
+          "sides": [
+            "left"
+          ],
+          "predicted": {
+            "left": "down",
+            "right": "up"
+          },
+          "allowed": {
+            "left": [
+              "up",
+              "transition"
+            ],
+            "right": [
+              "up",
+              "down",
+              "transition"
+            ]
+          },
+          "admitted": false
+        },
+        {
+          "frame": 109,
+          "sides": [
+            "left"
+          ],
+          "predicted": {
+            "left": "down",
+            "right": "up"
+          },
+          "allowed": {
+            "left": [
+              "up",
+              "transition"
+            ],
+            "right": [
+              "up",
+              "down",
+              "transition"
+            ]
+          },
+          "admitted": false
+        },
+        {
+          "frame": 110,
+          "sides": [
+            "left"
+          ],
+          "predicted": {
+            "left": "down",
+            "right": "up"
+          },
+          "allowed": {
+            "left": [
+              "up",
+              "transition"
+            ],
+            "right": [
+              "up",
+              "down",
+              "transition"
+            ]
+          },
+          "admitted": false
+        }
+      ],
+      "negativeSingleArmConflicts": [],
+      "nativePerformanceSummary": {
+        "kind": "stopped",
+        "source": "video",
+        "engine": "litert",
+        "engineVersion": "1.4.2",
+        "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+        "modelId": "float16",
+        "inputSize": 192,
+        "verified": false,
+        "configAsset": "verification/independent-cross-stretch.float16.json",
+        "api": 34,
+        "abi": "arm64-v8a",
+        "threads": 2,
+        "scalarFrameDiagnostics": true,
+        "capture": "bundled-public-video",
+        "personCount": "unknown-singlepose-model",
+        "inputTransform": "official-three-pass-stateless-crop-square-before-bilinear-rgb-uint8-192-no-mirror",
+        "decodedFrames": 195,
+        "acceptedFrames": 195,
+        "discardedEpochFrames": 0,
+        "nextFrameIndex": 195,
+        "fullFileProcessed": true,
+        "resourcesClosed": true,
+        "cleanupSucceeded": true,
+        "nativeRecognizedEvents": 0,
+        "acknowledgedEvents": 0,
+        "expectationKnown": false,
+        "expectedSequenceEvaluated": false,
+        "declaredVideoFrames": 195,
+        "declaredFps": 30,
+        "decodeMeanMs": 28.679055758974368,
+        "preprocessMeanMs": 93.851652425641,
+        "inferenceMeanMs": 68.02640363076928,
+        "inferenceP95Ms": 131.800416,
+        "frameMeanMs": 205.84656826153824,
+        "frameP95Ms": 332.857292,
+        "referenceParityChecks": 30,
+        "referenceByteDifferences": 0,
+        "referenceMaxByteDelta": 0,
+        "referenceOutputMaxDelta": 0,
+        "referenceMeanMs": 65.62378886666667,
+        "modelInferencesPerFrame": 3,
+        "defaultCropFrames": 195,
+        "processPssKiB": 108441
+      },
+      "closedSummary": {
+        "kind": "stopped",
+        "source": "video",
+        "engine": "litert",
+        "engineVersion": "1.4.2",
+        "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+        "modelId": "float16",
+        "inputSize": 192,
+        "verified": false,
+        "configAsset": "verification/independent-cross-stretch.float16.json",
+        "api": 34,
+        "abi": "arm64-v8a",
+        "threads": 2,
+        "scalarFrameDiagnostics": true,
+        "capture": "bundled-public-video",
+        "personCount": "unknown-singlepose-model",
+        "inputTransform": "official-three-pass-stateless-crop-square-before-bilinear-rgb-uint8-192-no-mirror",
+        "decodedFrames": 195,
+        "acceptedFrames": 195,
+        "discardedEpochFrames": 0,
+        "nextFrameIndex": 195,
+        "fullFileProcessed": true,
+        "resourcesClosed": true,
+        "cleanupSucceeded": true,
+        "nativeRecognizedEvents": 0,
+        "acknowledgedEvents": 0,
+        "expectationKnown": false,
+        "expectedSequenceEvaluated": false,
+        "declaredVideoFrames": 195,
+        "declaredFps": 30,
+        "decodeMeanMs": 28.679055758974368,
+        "preprocessMeanMs": 93.851652425641,
+        "inferenceMeanMs": 68.02640363076928,
+        "inferenceP95Ms": 131.800416,
+        "frameMeanMs": 205.84656826153824,
+        "frameP95Ms": 332.857292,
+        "referenceParityChecks": 30,
+        "referenceByteDifferences": 0,
+        "referenceMaxByteDelta": 0,
+        "referenceOutputMaxDelta": 0,
+        "referenceMeanMs": 65.62378886666667,
+        "modelInferencesPerFrame": 3,
+        "defaultCropFrames": 195,
+        "processPssKiB": 108441
+      },
+      "recognitionAcceptance": "observed-only",
+      "expectationKnown": false,
+      "expectedGestures": null
+    }
+  ],
+  "totals": {
+    "frames": 383,
+    "admittedFrames": 41,
+    "abstainedFrames": 342,
+    "events": 0,
+    "uiRays": 0,
+    "protocolAcknowledgments": 0,
+    "gateConflicts": 9,
+    "admittedGateConflicts": 0,
+    "certifiedNegativeSamples": 159,
+    "admittedNegativeSamples": 16,
+    "negativeSingleArmConflicts": 0
+  },
+  "allIndependentCaseChecksPassed": true,
+  "allIndependentControllerChecksPassed": true,
+  "limitations": [
+    "These two clips retain unknown whole-case gesture expectations; observed-only is not a negative acceptance pass.",
+    "Zero definite positives prevents recall, positive reliability or new backend-benefit claims.",
+    "0 events/score/ACK does not demonstrate positive recognition, scoring or ACK behavior.",
+    "API34 ARM64 emulator results do not establish Fire OS, ARMv7, UVC camera or real Fire TV sustained performance.",
+    "Prior 30-second UI failures remain preserved historical failures; this is a separate authorized-duration experiment."
+  ]
+}
