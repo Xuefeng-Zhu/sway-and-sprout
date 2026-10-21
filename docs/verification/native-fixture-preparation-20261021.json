@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-10-21T16:21:14.622168+00:00",
+  "scope": "offline generated-fixture and diagnostic-APK preparation only",
+  "sourceCommit": "127a1aecd9c00a76e2149e88b92bd074dc6a15c9",
+  "applicationSourceCommit": "f23f9e72c138147632745bbe8e16aa538f56b4d5",
+  "applicationSourceBytesUnchanged": true,
+  "fixtureStatus": "prepared",
+  "fixtureApprovalStatus": "approved-retry-executed-prepared",
+  "postDenialRetryCount": 1,
+  "fixtureMetadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 360,
+        "r_frame_rate": "10/1",
+        "duration": "2.000000",
+        "nb_frames": "20",
+        "nb_read_frames": "20"
+      }
+    ]
+  },
+  "assetPins": [
+    {
+      "asset": "verification/synthetic-throughput.mp4",
+      "bytes": 106451,
+      "sha256": "02a3981f53dbe702966fde26097eff112e53a1b94cae925e17eec951dcc811bd"
+    },
+    {
+      "asset": "verification/synthetic-throughput.float16.json",
+      "bytes": 554,
+      "sha256": "dc33f6d10b13e9e48d6dba56af25289a93a008e2ae427aac1b60a4b3220a5000"
+    },
+    {
+      "asset": "verification/movenet-lightning-float16.tflite",
+      "bytes": 4758512,
+      "sha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab"
+    }
+  ],
+  "buildStatus": "debug-apk-built",
+  "buildStages": [
+    {
+      "stage": "web-build",
+      "exitCode": 0
+    },
+    {
+      "stage": "android-sync",
+      "exitCode": 0
+    },
+    {
+      "stage": "generate-build-config",
+      "exitCode": 0
+    },
+    {
+      "stage": "direct-javac",
+      "exitCode": 0
+    },
+    {
+      "stage": "offline-package",
+      "exitCode": 0
+    }
+  ],
+  "javaSourceCount": 21,
+  "compiledClassCount": 37,
+  "apkAssetAllowlistMatched": true,
+  "apkWebAssetsMatchBuild": true,
+  "diagnosticApk": {
+    "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-video-fixture/app-debug-127a1aecd9c0-611b55e431a9.apk",
+    "bytes": 27665840,
+    "sha256": "611b55e431a95c43f3e263662b74bcffd71097cf45a8fbff075eb8451362a10d"
+  },
+  "diagnosticApkInstalled": false,
+  "preservedTestedManualApk": {
+    "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-next/app-debug-f23f9e72c138-59e03ce8d16c.apk",
+    "bytes": 22800431,
+    "sha256": "59e03ce8d16c43e1caf110f79e626ebdf2c53c5fcdd086db09aa8576c59c023d"
+  },
+  "networkProfileSha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222",
+  "networkProfileSha256After": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222",
+  "canonicalCommitAfter": "45ced16d3e8457db3329f1ec5dc875afc5fc5e84",
+  "canonicalStatusAfter": "",
+  "runtimeEvidenceAdded": false,
+  "emulatorStarted": false,
+  "cameraUsed": false,
+  "microphoneUsed": false,
+  "macUnlockAttempted": false,
+  "desktopWorkPausedForSayGo": true,
+  "newSoftwareInstalled": false,
+  "externalUpload": false,
+  "nativeReplaySlowdownResolved": false,
+  "demoRecorded": false,
+  "pending": [
+    "Complete synthetic activity round and ACK/reset checks",
+    "Bounded native generated-video timing and frame-coverage probe",
+    "Labelled full demo and local submission materials",
+    "Physical Fire TV and live recognition remain unverified"
+  ],
+  "artifactPins": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/prepare_synthetic.py",
+      "bytes": 6139,
+      "sha256": "05f5b4b9d3ee4a0555e495e63b1b230f038b67b342561ba80721e2b60cca7ed7"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/operation-denied.json",
+      "bytes": 1626,
+      "sha256": "e87b8deac279cb1780caf8423a0e1ca6e2f5801448d6c84e4eed14a9ebd81a56"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/operation-retry-result.json",
+      "bytes": 1134,
+      "sha256": "f3133b6779ae5e662302aea0713204b6f544fbb4ccba230b7a829db870117ae0"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/fixture-pins.json",
+      "bytes": 4830,
+      "sha256": "e440beb2a91f0f8e5ee22aee468130e21d5aec607bf1548e3fe52038418ae9ce"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-video-fixture/build_ui.py",
+      "bytes": 14984,
+      "sha256": "37795d42e55d42565ff6caed0ba39cf24aa1655cc2b2a1b4e2041a347d7238a7"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-video-fixture/build-result.json",
+      "bytes": 21884,
+      "sha256": "527a4263efe27328487a76c536053f46072b582fa7ebb7b05608394378c7ef7f"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/prep-attempt-1/command-1.json",
+      "bytes": 1086,
+      "sha256": "dbacb024456510fdd7c784eed80471bb71414de5fd2585f79f68f2d80bac6fcc"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/prep-attempt-1/command-2.json",
+      "bytes": 784,
+      "sha256": "5abc8afbfffb41e071557e930a739d4d0be6f7dd3bc20b8a76c34ac16b646fff"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/throughput-prep/prep-attempt-1/command-3.json",
+      "bytes": 955,
+      "sha256": "e5749daac55f158cbe96e1af2017c8f15db76cb1cd43484f648c172adf1f6183"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-video-fixture/web-build.log",
+      "bytes": 461,
+      "sha256": "47521ba29519be3daea2a066a3127af7e0d7ed093605da3225aa19c5cba2e615"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-video-fixture/android-sync.log",
+      "bytes": 166,
+      "sha256": "6950b9f322023ab308fba688dbd57b12bb22a67db52c1f97168ca574948d1310"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-video-fixture/generate-build-config.log",
+      "bytes": 835,
+      "sha256": "1c5cf078c2cb3cf63143d83799c8073858a2bf22b8c9a4a83b670229ce8a9ab1"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-video-fixture/direct-javac.log",
+      "bytes": 222,
+      "sha256": "6f5836337c70fecd2383817c85afbd2bd74a2d821e448ee0f4c23ff3088280b8"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-20/task-3/native-ui-resume-20261021/build-video-fixture/offline-package.log",
+      "bytes": 2495,
+      "sha256": "50ba3d36fa8cb3036b63d7e974bdb8c31769a3153a14ebb0410cbaa7c4eae89b"
+    }
+  ],
+  "independentStaticReview": {
+    "status": "passed",
+    "apkAndAssetPinsMatch": true,
+    "mp4AndTfliteUncompressed": true,
+    "fiveWebAssetsMatch": true,
+    "twentyOneJavaSourcesAndThirtySevenClassesMatch": true,
+    "newReplayClassesPresentInDex": true,
+    "runtimeExecutedByReviewer": false
+  }
+}

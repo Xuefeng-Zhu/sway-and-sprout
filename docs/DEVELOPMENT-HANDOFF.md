@@ -21,8 +21,14 @@ fixes the confirmed 960×540 clipping. The corrected APK SHA-256 is
 Its complete scripted manual native journey passed in 14.144 active seconds with
 32 layout checks, harvest/replay/reload, exact storage restoration and confirmed
 cleanup. It contains no video/model fixture. The separate synthetic completion
-was stopped before startup when the Mac locked again; the throughput fixture was
-separately denied before execution by approval review. No demo is recorded.
+was stopped before startup when the Mac locked again. Fresh scope clarification
+allowed exactly one retry of the previously denied fixture preparation; it
+succeeded. A separate offline diagnostic APK now includes only generated geometry
+and the existing pinned FP16 model, SHA-256
+`611b55e431a95c43f3e263662b74bcffd71097cf45a8fbff075eb8451362a10d`.
+It has not been installed or run. Desktop/emulator work is paused while SayGo
+records; no unlock is attempted. No demo is recorded.
+See the [fixture preparation and APK pins](NATIVE-FIXTURE-PREPARATION-20261021.md).
 See the [current native result and exact blockers](NATIVE-JOURNEY-20261021.md).
 The [earlier APK checkpoint](NATIVE-UI-CHECKPOINT-20261021.md) remains historical.
 

@@ -2,9 +2,11 @@
 
 The corrected debug APK passed the complete scripted manual journey in the
 windowed Android TV emulator. The remaining synthetic completion and demo did
-not run because the Mac locked again. The video throughput fixture is separately
-blocked by automatic approval review. Historical replay slowdown remains
-unresolved.
+not run because the Mac locked again. The earlier video-fixture scope denial was
+resolved by a single approved retry: preparation and a separate offline diagnostic
+APK succeeded. See the [later preparation checkpoint](NATIVE-FIXTURE-PREPARATION-20261021.md).
+That APK has not run. Historical replay slowdown remains unresolved; desktop and
+emulator work is paused while SayGo records.
 
 ## Source and APK
 
@@ -82,7 +84,7 @@ passed; after the presentation-class adjustment the targeted 960×540 test again
 passed all 26 states. Camera and browser errors were zero. These browser results
 are separate from the native manual result.
 
-## Exact remaining blockers
+## Runtime blocker and historical fixture denial
 
 At **16:06:02.454 UTC**, read-only IORegistry confirmed
 `CGSSessionScreenIsLocked: true`. The synthetic-only scenario stopped before
@@ -91,16 +93,20 @@ complete demo remain pending; no demo or submission material is presented as
 finished. Resume the prepared isolated synthetic controller only in an available
 desktop session, then record the labelled demo after successful native checks.
 
-The proposed video-fixture action was `exec_command` with `require_escalated`,
+At the original 16:06 checkpoint, the proposed video-fixture action was
+`exec_command` with `require_escalated`,
 running `PYTHONDONTWRITEBYTECODE=1 python3 .../throughput-prep/prepare_synthetic.py`.
 It would generate 20 geometry frames at 640×360/10 fps, create their config and
 copy an existing pinned FP16 model into ignored debug assets. Automatic review
 **denied it before execution**, stating: “The command creates synthetic
 video/config/model fixture files, while the trusted scope permits only designing
-or locating the fixture without creating it yet.” No post-denial retry occurred;
-no fixture, copied model or asset manifest exists. The stated missing scope is
-fixture creation. An earlier nested-sandbox `ffmpeg -version` command failed with
-exit 71 before generation and is also preserved. Do not bypass either boundary.
+or locating the fixture without creating it yet.” At that checkpoint no
+post-denial retry had occurred and no fixture, copied model or asset manifest
+existed. An earlier nested-sandbox `ffmpeg -version` command failed with exit 71
+before generation and is also preserved. Later scope clarification explicitly
+authorized creation; one approved retry succeeded at 16:14:25 UTC. The original
+denial and this report's structured manifest remain historical evidence; the
+later preparation checkpoint records the resolved scope and new asset hashes.
 
 The model intended for that future diagnostic matches the historical Float16
 model/refinement, but geometry input would still have a different crop workload.
