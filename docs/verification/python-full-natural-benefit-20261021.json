@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "scope": "Existing Python Full versus prior native MoveNet diagnostic outputs. Different decoders/runtimes/platforms; no pixel/runtime parity or landmark-error GT claim.",
+  "rawReportsPreserved": true,
+  "thresholdsAnnotationsChanged": false,
+  "coordinateAudit": [
+    {
+      "case": "left-natural",
+      "rawSha256": "8eb751b930495a90189b60a30aecf3768ee92c4f6830c38a49cb8c823bd1dc85",
+      "auditedSha256": "18cefb93d785aa388aac65b95baf43c522bf88c616334e92a7acf17af55d0c7c",
+      "sourceSize": [
+        640,
+        480
+      ],
+      "inferenceSize": [
+        640,
+        480
+      ]
+    },
+    {
+      "case": "right-short",
+      "rawSha256": "2367446416d17b8a3bca9751295301821b2fd6c626de3b35514b4ec0a44f5749",
+      "auditedSha256": "84cbce3fd3f2c060d166de023d7ba8f5038541809565d72cb7031d98ea209d65",
+      "sourceSize": [
+        1024,
+        576
+      ],
+      "inferenceSize": [
+        640,
+        360
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case": "left-natural",
+      "completeFrames": 83,
+      "events": [
+        {
+          "gesture": "left-raise",
+          "seq": 1,
+          "atVideoMs": 1633.3333333333333,
+          "confidence": 0.65
+        }
+      ],
+      "validFrozenWindowEvents": 0,
+      "timing": {
+        "passed": false,
+        "boundaryRule": "inclusive",
+        "timestampMeaning": "event emission in unrounded deterministic file milliseconds",
+        "expectedEventCount": 1,
+        "observedEventCount": 1,
+        "checks": [
+          {
+            "index": 0,
+            "expectedGesture": "left-raise",
+            "startMs": 2050,
+            "endMs": 2733.334,
+            "observedGesture": "left-raise",
+            "atVideoMs": 1633.3333333333333,
+            "passed": false,
+            "reason": "early"
+          }
+        ]
+      },
+      "outcome": {
+        "status": "failed",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": false,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "windows": [
+        {
+          "name": "certified-neutral",
+          "full": {
+            "frames": 32,
+            "startFrame": 0,
+            "endFrameInclusive": 31,
+            "targetGeometry": "left-down/right-down",
+            "geometryOnlyMatches": 32,
+            "confidenceAdmittedMatches": 9,
+            "confidenceRejectedFrames": 23,
+            "geometryOnlyLongestSampleSpanMs": 1033.3333333333333,
+            "admittedLongestSampleSpanMs": 266.66666666666663
+          },
+          "moveNet": {
+            "frames": 32,
+            "startFrame": 0,
+            "endFrameInclusive": 31,
+            "targetGeometry": "left-down/right-down",
+            "geometryOnlyMatches": 32,
+            "confidenceAdmittedMatches": 4,
+            "confidenceRejectedFrames": 28,
+            "geometryOnlyLongestSampleSpanMs": 1033.3333333333333,
+            "admittedLongestSampleSpanMs": 100.0
+          }
+        },
+        {
+          "name": "certified-left",
+          "full": {
+            "frames": 32,
+            "startFrame": 51,
+            "endFrameInclusive": 82,
+            "targetGeometry": "left-up/right-down",
+            "geometryOnlyMatches": 32,
+            "confidenceAdmittedMatches": 32,
+            "confidenceRejectedFrames": 0,
+            "geometryOnlyLongestSampleSpanMs": 1033.3333333333335,
+            "admittedLongestSampleSpanMs": 1033.3333333333335
+          },
+          "moveNet": {
+            "frames": 32,
+            "startFrame": 51,
+            "endFrameInclusive": 82,
+            "targetGeometry": "left-up/right-down",
+            "geometryOnlyMatches": 32,
+            "confidenceAdmittedMatches": 1,
+            "confidenceRejectedFrames": 31,
+            "geometryOnlyLongestSampleSpanMs": 1033.3333333333335,
+            "admittedLongestSampleSpanMs": 0
+          }
+        }
+      ],
+      "fullInferenceMedianMs": 23.241,
+      "fullProcessingSeconds": 2.292,
+      "fullInitializationMs": 1789.9446249939501,
+      "fullCaseWallSecondsIncludingInitialization": 4.128523709019646,
+      "gameScore": 1,
+      "ack": 1,
+      "modelClosed": true,
+      "timingInterpretation": "Eventframe49/source334 lies within blind uncertain-transition32..50;416.667ms before fixed2050ms lowerbound. Window violation is verified; a false gesture in that ambiguously annotated transition is not established."
+    },
+    {
+      "case": "right-short",
+      "completeFrames": 156,
+      "events": [],
+      "validFrozenWindowEvents": 0,
+      "timing": {
+        "passed": true,
+        "boundaryRule": "inclusive",
+        "timestampMeaning": "event emission in unrounded deterministic file milliseconds",
+        "expectedEventCount": 0,
+        "observedEventCount": 0,
+        "checks": []
+      },
+      "outcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": true,
+        "eventTimingMatched": true,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "windows": [
+        {
+          "name": "certified-neutral",
+          "full": {
+            "frames": 16,
+            "startFrame": 1,
+            "endFrameInclusive": 16,
+            "targetGeometry": "left-down/right-down",
+            "geometryOnlyMatches": 16,
+            "confidenceAdmittedMatches": 16,
+            "confidenceRejectedFrames": 0,
+            "geometryOnlyLongestSampleSpanMs": 500.5,
+            "admittedLongestSampleSpanMs": 500.5
+          },
+          "moveNet": {
+            "frames": 16,
+            "startFrame": 1,
+            "endFrameInclusive": 16,
+            "targetGeometry": "left-down/right-down",
+            "geometryOnlyMatches": 16,
+            "confidenceAdmittedMatches": 16,
+            "confidenceRejectedFrames": 0,
+            "geometryOnlyLongestSampleSpanMs": 500.5,
+            "admittedLongestSampleSpanMs": 500.5
+          }
+        },
+        {
+          "name": "certified-right",
+          "full": {
+            "frames": 16,
+            "startFrame": 136,
+            "endFrameInclusive": 151,
+            "targetGeometry": "left-down/right-up",
+            "geometryOnlyMatches": 9,
+            "confidenceAdmittedMatches": 6,
+            "confidenceRejectedFrames": 10,
+            "geometryOnlyLongestSampleSpanMs": 233.5666666666666,
+            "admittedLongestSampleSpanMs": 66.73333333333358
+          },
+          "moveNet": {
+            "frames": 16,
+            "startFrame": 136,
+            "endFrameInclusive": 151,
+            "targetGeometry": "left-down/right-up",
+            "geometryOnlyMatches": 16,
+            "confidenceAdmittedMatches": 1,
+            "confidenceRejectedFrames": 15,
+            "geometryOnlyLongestSampleSpanMs": 500.5,
+            "admittedLongestSampleSpanMs": 0
+          }
+        }
+      ],
+      "fullInferenceMedianMs": 23.353,
+      "fullProcessingSeconds": 3.831,
+      "fullInitializationMs": 67.7575001027435,
+      "fullCaseWallSecondsIncludingInitialization": 3.9046202080789953,
+      "gameScore": 0,
+      "ack": 0,
+      "modelClosed": true
+    }
+  ],
+  "bothUpReused": {
+    "path": "/Users/frank/mygit/sway-and-sprout/verification-results/full-image-20261020/mediapipe-full-both-up-negative.json",
+    "sha256": "0b750ec19c417a68e23e98d42bd2616bfdd16a695051248245849ffc814d9f33",
+    "frames": 136,
+    "events": 0,
+    "score": 0,
+    "ack": 0,
+    "inferenceMedianMs": 23.178,
+    "processingSeconds": 3.283,
+    "reusedNotRerun": true,
+    "limitation": "Historical scalar acceptance and categorical gates, no all-frame joint coordinates or separate visibility/presence; not current frontend/browser revalidation."
+  },
+  "recommendation": "NO-GO for further native Full port investment or backend promotion on this round. Preserve optional Mac diagnostic use: confidence-admitted left coverage improves, but stricttiming fails, neutral readiness is not achieved whollyinside certifiedneutral, and heldrightcoverage isshortof350ms. No thresholds/windows changed. Requires new independent timedpositive evidence before revisiting a costlyportable implementation.",
+  "limits": [
+    "One natural left cycle and two selected negative controls, no natural alternating6 or livehuman.",
+    "The two negativecontrols have0events, not a calibrated production falsepositive rate.",
+    "Pointwise landmark accuracy is not measured without independent joint-coordinate GT; confidence semantics differ.",
+    "Full timings are MacPython measurements, not FireTV or portable native speed comparisons.",
+    "Current JS reducer/service exercised, no browser/UIrender or real30secondround test.",
+    "Original source metadata error preservedandcorrected in separateviews; originalobservations/events retained.",
+    "All-network OS policy before SDKimport/initialization; no telemety-off claim, no camera/frameexport/AndroidSDK/sourcebuild."
+  ],
+  "createdAtUtc": "2026-10-21T02:45:10.127194+00:00",
+  "baseCommit": "28d1097",
+  "modelSha256": "4eaa5eb7a98365221087693fcc286334cf0858e2eb6e15b506aa4a7ecdcec4ad",
+  "bindings": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/plan.freeze.json",
+      "bytes": 1912,
+      "sha256": "bb8b7602bcf88f78bd4e7112f2986409426198b1d51ba341ba9b11f39fe46cd1"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/preflight.json",
+      "bytes": 461,
+      "sha256": "a4085e6ae4055f6811a9857034ac30be270199170ee74d2fcafed1dd9aae3cf6"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/run_existing_full.py",
+      "bytes": 6346,
+      "sha256": "9289686402480b9e72abcabb1ec653681a330f70689362c0b4143a109370cae4"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/analyze_results.py",
+      "bytes": 8564,
+      "sha256": "94a51aa1acc457618f2fa9c613573df266002e9bd6abfc0ebf8472efe546d4f1"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/REPORT.md",
+      "bytes": 6191,
+      "sha256": "ecd3a048554bac04d153311354d9c891489c51678bae6d922622ffd2316ac231"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/independent-review.md",
+      "bytes": 7164,
+      "sha256": "f7a05a8dd24535cc0f944f5a8a0315074868ca89f368f434cce3dbdb6801610a"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/results/left-natural.json",
+      "bytes": 105407,
+      "sha256": "8eb751b930495a90189b60a30aecf3768ee92c4f6830c38a49cb8c823bd1dc85"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/results/right-short.json",
+      "bytes": 191034,
+      "sha256": "2367446416d17b8a3bca9751295301821b2fd6c626de3b35514b4ec0a44f5749"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/results/left-natural.coordinate-audited.json",
+      "bytes": 183029,
+      "sha256": "18cefb93d785aa388aac65b95baf43c522bf88c616334e92a7acf17af55d0c7c"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/results/right-short.coordinate-audited.json",
+      "bytes": 334874,
+      "sha256": "84cbce3fd3f2c060d166de023d7ba8f5038541809565d72cb7031d98ea209d65"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/results/summary.json",
+      "bytes": 5350,
+      "sha256": "6659965bb20be3ffd76f914c5c8b439ef690927af35861af83b79f2c39ea928e"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-privacy/PYTHON-FULL-PRIVACY-AUDIT.md",
+      "bytes": 5070,
+      "sha256": "5c3314c77e2e37a92d4df92ee75f677d3979b284a0b1883328ccfd5f2ddb5751"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-privacy/decision-evidence.json",
+      "bytes": 4951,
+      "sha256": "554ec748caa728da88fae60f7e4acfa659f5f2cd081121e23e72152625c3eae0"
+    }
+  ],
+  "execution": {
+    "camera": false,
+    "newDependenciesInstalled": false,
+    "sourceOrAndroidBuild": false,
+    "modelFramesNewlyInferred": 239,
+    "bothUpFramesReused": 136,
+    "graphsClosed": true,
+    "processExited": true,
+    "sdkTelemetryDisabledClaim": false,
+    "allNetworkDeniedBeforeImport": true,
+    "savedPixelFrames": 0,
+    "annotationsOrThresholdsChanged": false,
+    "heldoutImagesUsed": false,
+    "browserRenderTest": false,
+    "fireTVVerified": false
+  },
+  "coordinateTraceUse": "Use separate coordinate-audited views; originals intentionally preserved with metadata defect disclosed.",
+  "postprocessingValidation": {
+    "rawObservationsEventsGatesAndTimingUnchanged": true,
+    "coordinateScalingCorrectForAllPresentPoints": true,
+    "newFrames": 239,
+    "noReinference": true
+  }
+}
