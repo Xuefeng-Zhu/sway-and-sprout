@@ -1,0 +1,13 @@
+{
+  "verifiedAtUtc": "2026-10-21T05:08:42.208949+00:00",
+  "emulatorProcesses": 0,
+  "taskOwnedAdbServers": 0,
+  "protectedFilesUnchanged": 71,
+  "semanticPinsUnchanged": 16,
+  "physicalCameraUsed": false,
+  "pendingPermissionBlocker": false,
+  "fullGraphsClosed": true,
+  "nativeBridgeAllResourcesClosed": true,
+  "originalUiFailureResultsPreserved": true,
+  "note": "Process check read only, outside nested OS sandbox; inference used recorded network-denying policies."
+}

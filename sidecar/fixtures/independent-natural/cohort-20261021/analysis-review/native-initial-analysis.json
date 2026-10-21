@@ -1,0 +1,955 @@
+{
+  "schemaVersion": 1,
+  "scope": "Saved first native attempt: covered frames only; no inference or protected edits",
+  "planSha256": "fb84346ad034457d469ff7963f54ec3e518be2675f39ac7aedfbf37cf389f73b",
+  "inputBindings": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-press.json",
+      "sha256": "64cb00511584555784eda9f24b95241e93298031c3326d76079c72fca9acaa90"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-press.native-scalar.jsonl",
+      "sha256": "aab9d36943f3e56fe3eb8c8172a11d9a667126a3be411aa23fb3035b95fae2d9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-press.native-summary.jsonl",
+      "sha256": "907112e22b3dc1a7ff88a1ee27eddc89f0beefc4c5bf6a351ec1c04cc45655fe"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-stretch.json",
+      "sha256": "9819f83d3ceb47232a3a7cc0cb89f885ef18bb99b73eaefa067bfd4fb73e798d"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-stretch.native-scalar.jsonl",
+      "sha256": "c5d49b9d65b2a30d114d7b0575ee5a20280202e03cade5d8d6778dc5ace73484"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-both-stretch.native-summary.jsonl",
+      "sha256": "dfe8cdda3cd0eae8df6ce9301a9a4b91f0f5fc4a83f2404b4d817aca02ea43fd"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-cross-stretch.json",
+      "sha256": "f22b546f085ab57c3d2d13fa7c2af52b100e2e5e5cb9ed09a16b75334fbfa73b"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-cross-stretch.native-scalar.jsonl",
+      "sha256": "7e5cac2d476f1cf7b1a42eb77d2bd8bf33a1a1482197f6b8a2b00645a185b93d"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/movenet-results/independent-cross-stretch.native-summary.jsonl",
+      "sha256": "231775f11af2229759313a57cf6ec9164c2be84549011cbde2dc43a5c0828d58"
+    }
+  ],
+  "frozenFilesReverified": 71,
+  "sourcePinsReverified": 16,
+  "annotationAuthorType": "AI",
+  "humanConfirmed": false,
+  "preliminaryDiagnosticOnly": true,
+  "definitePositiveOpportunities": 0,
+  "eventRecall": null,
+  "eventRecallReason": "Unestimable: zero definite physical positives; cohort also incomplete",
+  "confidenceMeaning": "MoveNet required-keypoint model scores; global minimum of four scores; not visibility/presence or calibrated correctness probability",
+  "geometryMethod": "Strict .30/.20 gates in source pixels; compare with frozen source-coordinate allowed sets, confidence ignored and admission reported separately",
+  "cases": [
+    {
+      "caseId": "independent-both-press",
+      "expectedFrames": 210,
+      "coveredFrames": 210,
+      "completeFileEvidence": true,
+      "missingIndices": [],
+      "executionAcceptance": "passed",
+      "recognitionAcceptance": "passed",
+      "terminationReason": "full-file",
+      "expectationKnown": true,
+      "expectedGestures": [],
+      "classifierStatuses": {
+        "neutral": 103,
+        "low-confidence": 93,
+        "tracking": 14
+      },
+      "counts": {
+        "admittedFrames": 117,
+        "abstainedFrames": 93,
+        "validGeometryFrames": 210,
+        "coveredNegativeSamples": 156,
+        "admittedNegativeSamples": 93
+      },
+      "weakJointFrameCounts": {
+        "left_shoulder": 21,
+        "right_shoulder": 33,
+        "left_wrist": 24,
+        "right_wrist": 44
+      },
+      "maximumPtsErrorMs": 9.094947017729282e-13,
+      "allowedStreamTickMs": 0.03333333333333333,
+      "geometry": {
+        "sourcePixelGatePairs": {
+          "down/down": 81,
+          "down/transition": 3,
+          "transition/transition": 49,
+          "up/transition": 3,
+          "up/up": 74
+        },
+        "singletonGatePairs": {
+          "physicalFramesCovered": 98,
+          "validPredictionFrames": 98,
+          "matchingFrames": 98,
+          "admittedFrames": 55
+        },
+        "incompatibilitiesWithAllowedSets": [],
+        "unavailableGeometryFrames": [],
+        "singleArmRunsIgnoringConfidence": {
+          "left": [],
+          "right": []
+        },
+        "admittedSingleArmRuns": {
+          "left": [],
+          "right": []
+        },
+        "negativeFrameSingleArmConflicts": []
+      },
+      "negativeExposure": {
+        "coveredSampleBins": 156,
+        "coveredSampleBinSeconds": 5.2052000000000005,
+        "closedFirstToLastSeconds": 5.071733333333333
+      },
+      "nativeFileEvents": [],
+      "observedGestures": [],
+      "lastPacket": {
+        "runtime": {
+          "engine": "litert",
+          "engineVersion": "1.4.2",
+          "platform": "android",
+          "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+          "modelId": "float16",
+          "inputSize": 192,
+          "verified": true
+        },
+        "source": "video",
+        "status": "paused",
+        "seq": 0,
+        "active": true,
+        "revision": 4,
+        "events": [],
+        "metrics": {
+          "armed": false,
+          "decodedFrames": 210,
+          "acceptedFrames": 210,
+          "discardedEpochFrames": 0,
+          "videoFrames": 210,
+          "fileMs": 7007,
+          "fps": 29.97002997002997,
+          "decodeMs": 4.632292,
+          "preprocessMs": 25.895625,
+          "inferenceMs": 72.387125,
+          "keypointMinimum": 0.6525411605834961,
+          "nativeRecognizedEvents": 0,
+          "acknowledgedEvents": 0,
+          "fullFileProcessed": true,
+          "singlePoseAssumption": true,
+          "fixedFullFrameLetterbox": false,
+          "dynamicPersonCrop": true,
+          "statelessCropRefinement": true,
+          "modelInferencesPerFrame": 3,
+          "cameraEnabled": false
+        },
+        "at": 29050
+      },
+      "ui": {
+        "gardenPresent": true,
+        "countText": "0",
+        "count": 0,
+        "countLabel": "0",
+        "raySlots": 6,
+        "collectedRays": 0,
+        "source": "video",
+        "badgeText": "VIDEO REPLAY \u00b7 NO CAMERA",
+        "screen": "app play camera-mode",
+        "replayLabel": true,
+        "cameraCalls": 0
+      },
+      "uiScoringEvidenceVerified": true,
+      "nativeScoringMatches": true,
+      "progressUnchanged": true,
+      "performanceSummary": {
+        "kind": "finished",
+        "source": "video",
+        "engine": "litert",
+        "engineVersion": "1.4.2",
+        "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+        "modelId": "float16",
+        "inputSize": 192,
+        "verified": true,
+        "configAsset": "verification/independent-both-press.float16.json",
+        "api": 34,
+        "abi": "arm64-v8a",
+        "threads": 2,
+        "scalarFrameDiagnostics": true,
+        "capture": "bundled-public-video",
+        "personCount": "unknown-singlepose-model",
+        "inputTransform": "official-three-pass-stateless-crop-square-before-bilinear-rgb-uint8-192-no-mirror",
+        "decodedFrames": 210,
+        "acceptedFrames": 210,
+        "discardedEpochFrames": 0,
+        "nextFrameIndex": 210,
+        "fullFileProcessed": true,
+        "resourcesClosed": false,
+        "cleanupSucceeded": true,
+        "nativeRecognizedEvents": 0,
+        "acknowledgedEvents": 0,
+        "expectationKnown": true,
+        "expectedSequenceEvaluated": true,
+        "exactExpectedSequence": true,
+        "declaredVideoFrames": 210,
+        "declaredFps": 29.97002997002997,
+        "decodeMeanMs": 14.340595828571427,
+        "preprocessMeanMs": 29.46979143809524,
+        "inferenceMeanMs": 69.69167745238097,
+        "inferenceP95Ms": 127.82999999999998,
+        "frameMeanMs": 123.47950978095248,
+        "frameP95Ms": 206.915708,
+        "referenceParityChecks": 30,
+        "referenceByteDifferences": 0,
+        "referenceMaxByteDelta": 0,
+        "referenceOutputMaxDelta": 0,
+        "referenceMeanMs": 61.181634833333334,
+        "modelInferencesPerFrame": 3,
+        "defaultCropFrames": 0,
+        "processPssKiB": 143463
+      },
+      "lastSummaryResourcesClosed": false,
+      "performanceScope": "Native decode/preprocess/inference/frame statistics; inference includes selected three-pass profile; frame/reference-check overhead recorded separately; app-process PSS snapshot only, not sustained/full-TV peak. Runner wall times are separate.",
+      "wallMs": 27294,
+      "caseWallMs": 30424
+    },
+    {
+      "caseId": "independent-both-stretch",
+      "expectedFrames": 188,
+      "coveredFrames": 99,
+      "completeFileEvidence": false,
+      "missingIndices": [
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187
+      ],
+      "executionAcceptance": "failed",
+      "recognitionAcceptance": "failed",
+      "terminationReason": "inactive-before-full-file",
+      "expectationKnown": false,
+      "expectedGestures": null,
+      "classifierStatuses": {
+        "low-confidence": 99
+      },
+      "counts": {
+        "admittedFrames": 0,
+        "abstainedFrames": 99,
+        "validGeometryFrames": 99,
+        "coveredNegativeSamples": 25,
+        "admittedNegativeSamples": 0
+      },
+      "weakJointFrameCounts": {
+        "left_shoulder": 13,
+        "right_shoulder": 5,
+        "left_wrist": 97,
+        "right_wrist": 80
+      },
+      "maximumPtsErrorMs": 0.0,
+      "allowedStreamTickMs": 0.078125,
+      "geometry": {
+        "sourcePixelGatePairs": {
+          "down/down": 45,
+          "down/transition": 1,
+          "transition/transition": 3,
+          "up/up": 50
+        },
+        "singletonGatePairs": {
+          "physicalFramesCovered": 11,
+          "validPredictionFrames": 11,
+          "matchingFrames": 11,
+          "admittedFrames": 0
+        },
+        "incompatibilitiesWithAllowedSets": [],
+        "unavailableGeometryFrames": [],
+        "singleArmRunsIgnoringConfidence": {
+          "left": [],
+          "right": []
+        },
+        "admittedSingleArmRuns": {
+          "left": [],
+          "right": []
+        },
+        "negativeFrameSingleArmConflicts": []
+      },
+      "negativeExposure": {
+        "coveredSampleBins": 25,
+        "coveredSampleBinSeconds": 1.0,
+        "closedFirstToLastSeconds": 0.84
+      },
+      "nativeFileEvents": [],
+      "observedGestures": [],
+      "lastPacket": {
+        "runtime": {
+          "engine": "litert",
+          "engineVersion": "1.4.2",
+          "platform": "android",
+          "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+          "modelId": "float16",
+          "inputSize": 192,
+          "verified": true
+        },
+        "source": "video",
+        "status": "paused",
+        "seq": 0,
+        "active": false,
+        "revision": 5,
+        "events": [],
+        "metrics": {
+          "armed": false,
+          "decodedFrames": 100,
+          "acceptedFrames": 99,
+          "discardedEpochFrames": 1,
+          "videoFrames": 188,
+          "fileMs": 3960,
+          "fps": 25,
+          "decodeMs": 6.452125,
+          "preprocessMs": 52.595833,
+          "inferenceMs": 44.951167000000005,
+          "keypointMinimum": 0.5749431848526001,
+          "nativeRecognizedEvents": 0,
+          "acknowledgedEvents": 0,
+          "fullFileProcessed": false,
+          "singlePoseAssumption": true,
+          "fixedFullFrameLetterbox": false,
+          "dynamicPersonCrop": true,
+          "statelessCropRefinement": true,
+          "modelInferencesPerFrame": 3,
+          "cameraEnabled": false
+        },
+        "at": 35068.4
+      },
+      "ui": {
+        "gardenPresent": false,
+        "countText": null,
+        "count": null,
+        "countLabel": null,
+        "raySlots": null,
+        "collectedRays": null,
+        "source": null,
+        "badgeText": null,
+        "screen": "app check camera-mode",
+        "replayLabel": true,
+        "cameraCalls": 0
+      },
+      "uiScoringEvidenceVerified": false,
+      "nativeScoringMatches": false,
+      "progressUnchanged": true,
+      "performanceSummary": {
+        "kind": "paused",
+        "source": "video",
+        "engine": "litert",
+        "engineVersion": "1.4.2",
+        "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+        "modelId": "float16",
+        "inputSize": 192,
+        "verified": true,
+        "configAsset": "verification/independent-both-stretch.float16.json",
+        "api": 34,
+        "abi": "arm64-v8a",
+        "threads": 2,
+        "scalarFrameDiagnostics": true,
+        "capture": "bundled-public-video",
+        "personCount": "unknown-singlepose-model",
+        "inputTransform": "official-three-pass-stateless-crop-square-before-bilinear-rgb-uint8-192-no-mirror",
+        "decodedFrames": 99,
+        "acceptedFrames": 99,
+        "discardedEpochFrames": 0,
+        "nextFrameIndex": 99,
+        "fullFileProcessed": false,
+        "resourcesClosed": false,
+        "cleanupSucceeded": true,
+        "nativeRecognizedEvents": 0,
+        "acknowledgedEvents": 0,
+        "expectationKnown": false,
+        "expectedSequenceEvaluated": false,
+        "declaredVideoFrames": 188,
+        "declaredFps": 25,
+        "decodeMeanMs": 42.60337372727274,
+        "preprocessMeanMs": 138.0533216464647,
+        "inferenceMeanMs": 77.68667426262624,
+        "inferenceP95Ms": 147.562125,
+        "frameMeanMs": 311.1600943838384,
+        "frameP95Ms": 1384.472667,
+        "referenceParityChecks": 18,
+        "referenceByteDifferences": 0,
+        "referenceMaxByteDelta": 0,
+        "referenceOutputMaxDelta": 0,
+        "referenceMeanMs": 261.45584977777776,
+        "modelInferencesPerFrame": 3,
+        "defaultCropFrames": 0,
+        "processPssKiB": 150060
+      },
+      "lastSummaryResourcesClosed": false,
+      "performanceScope": "Native decode/preprocess/inference/frame statistics; inference includes selected three-pass profile; frame/reference-check overhead recorded separately; app-process PSS snapshot only, not sustained/full-TV peak. Runner wall times are separate.",
+      "wallMs": 31894,
+      "caseWallMs": 39293
+    },
+    {
+      "caseId": "independent-cross-stretch",
+      "expectedFrames": 195,
+      "coveredFrames": 138,
+      "completeFileEvidence": false,
+      "missingIndices": [
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194
+      ],
+      "executionAcceptance": "failed",
+      "recognitionAcceptance": "failed",
+      "terminationReason": "inactive-before-full-file",
+      "expectationKnown": false,
+      "expectedGestures": null,
+      "classifierStatuses": {
+        "low-confidence": 102,
+        "neutral": 33,
+        "tracking": 3
+      },
+      "counts": {
+        "admittedFrames": 36,
+        "abstainedFrames": 102,
+        "validGeometryFrames": 138,
+        "coveredNegativeSamples": 26,
+        "admittedNegativeSamples": 14
+      },
+      "weakJointFrameCounts": {
+        "left_shoulder": 25,
+        "right_shoulder": 9,
+        "left_wrist": 88,
+        "right_wrist": 93
+      },
+      "maximumPtsErrorMs": 0.0,
+      "allowedStreamTickMs": 0.06510416666666667,
+      "geometry": {
+        "sourcePixelGatePairs": {
+          "transition/down": 7,
+          "down/down": 78,
+          "transition/transition": 34,
+          "transition/up": 10,
+          "down/transition": 5,
+          "down/up": 4
+        },
+        "singletonGatePairs": {
+          "physicalFramesCovered": 17,
+          "validPredictionFrames": 17,
+          "matchingFrames": 17,
+          "admittedFrames": 14
+        },
+        "incompatibilitiesWithAllowedSets": [
+          {
+            "frame": 96,
+            "sourceFrame": 246,
+            "sides": [
+              "left"
+            ],
+            "predicted": {
+              "left": "down",
+              "right": "transition"
+            },
+            "allowed": {
+              "left": [
+                "up",
+                "transition"
+              ],
+              "right": [
+                "up",
+                "down",
+                "transition"
+              ]
+            },
+            "admitted": false
+          },
+          {
+            "frame": 97,
+            "sourceFrame": 247,
+            "sides": [
+              "left"
+            ],
+            "predicted": {
+              "left": "down",
+              "right": "transition"
+            },
+            "allowed": {
+              "left": [
+                "up",
+                "transition"
+              ],
+              "right": [
+                "up",
+                "down",
+                "transition"
+              ]
+            },
+            "admitted": false
+          },
+          {
+            "frame": 98,
+            "sourceFrame": 248,
+            "sides": [
+              "left"
+            ],
+            "predicted": {
+              "left": "down",
+              "right": "transition"
+            },
+            "allowed": {
+              "left": [
+                "up",
+                "transition"
+              ],
+              "right": [
+                "up",
+                "down",
+                "transition"
+              ]
+            },
+            "admitted": false
+          },
+          {
+            "frame": 99,
+            "sourceFrame": 249,
+            "sides": [
+              "left"
+            ],
+            "predicted": {
+              "left": "down",
+              "right": "transition"
+            },
+            "allowed": {
+              "left": [
+                "up",
+                "transition"
+              ],
+              "right": [
+                "up",
+                "down",
+                "transition"
+              ]
+            },
+            "admitted": false
+          },
+          {
+            "frame": 104,
+            "sourceFrame": 254,
+            "sides": [
+              "left"
+            ],
+            "predicted": {
+              "left": "down",
+              "right": "transition"
+            },
+            "allowed": {
+              "left": [
+                "up",
+                "transition"
+              ],
+              "right": [
+                "up",
+                "down",
+                "transition"
+              ]
+            },
+            "admitted": false
+          },
+          {
+            "frame": 106,
+            "sourceFrame": 256,
+            "sides": [
+              "left"
+            ],
+            "predicted": {
+              "left": "down",
+              "right": "up"
+            },
+            "allowed": {
+              "left": [
+                "up",
+                "transition"
+              ],
+              "right": [
+                "up",
+                "down",
+                "transition"
+              ]
+            },
+            "admitted": false
+          },
+          {
+            "frame": 107,
+            "sourceFrame": 257,
+            "sides": [
+              "left"
+            ],
+            "predicted": {
+              "left": "down",
+              "right": "up"
+            },
+            "allowed": {
+              "left": [
+                "up",
+                "transition"
+              ],
+              "right": [
+                "up",
+                "down",
+                "transition"
+              ]
+            },
+            "admitted": false
+          },
+          {
+            "frame": 109,
+            "sourceFrame": 259,
+            "sides": [
+              "left"
+            ],
+            "predicted": {
+              "left": "down",
+              "right": "up"
+            },
+            "allowed": {
+              "left": [
+                "up",
+                "transition"
+              ],
+              "right": [
+                "up",
+                "down",
+                "transition"
+              ]
+            },
+            "admitted": false
+          },
+          {
+            "frame": 110,
+            "sourceFrame": 260,
+            "sides": [
+              "left"
+            ],
+            "predicted": {
+              "left": "down",
+              "right": "up"
+            },
+            "allowed": {
+              "left": [
+                "up",
+                "transition"
+              ],
+              "right": [
+                "up",
+                "down",
+                "transition"
+              ]
+            },
+            "admitted": false
+          }
+        ],
+        "unavailableGeometryFrames": [],
+        "singleArmRunsIgnoringConfidence": {
+          "left": [],
+          "right": [
+            {
+              "firstFrame": 106,
+              "lastFrame": 107,
+              "samples": 2,
+              "closedFirstToLastMs": 33.33333333333303
+            },
+            {
+              "firstFrame": 109,
+              "lastFrame": 110,
+              "samples": 2,
+              "closedFirstToLastMs": 33.33333333333303
+            }
+          ]
+        },
+        "admittedSingleArmRuns": {
+          "left": [],
+          "right": []
+        },
+        "negativeFrameSingleArmConflicts": []
+      },
+      "negativeExposure": {
+        "coveredSampleBins": 26,
+        "coveredSampleBinSeconds": 0.8666666666666667,
+        "closedFirstToLastSeconds": 0.7666666666666663
+      },
+      "nativeFileEvents": [],
+      "observedGestures": [],
+      "lastPacket": {
+        "runtime": {
+          "engine": "litert",
+          "engineVersion": "1.4.2",
+          "platform": "android",
+          "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+          "modelId": "float16",
+          "inputSize": 192,
+          "verified": true
+        },
+        "source": "video",
+        "status": "paused",
+        "seq": 0,
+        "active": false,
+        "revision": 5,
+        "events": [],
+        "metrics": {
+          "armed": false,
+          "decodedFrames": 139,
+          "acceptedFrames": 138,
+          "discardedEpochFrames": 1,
+          "videoFrames": 195,
+          "fileMs": 4600,
+          "fps": 30,
+          "decodeMs": 43.017333,
+          "preprocessMs": 75.322125,
+          "inferenceMs": 27.817459,
+          "keypointMinimum": 0.448756605386734,
+          "nativeRecognizedEvents": 0,
+          "acknowledgedEvents": 0,
+          "fullFileProcessed": false,
+          "singlePoseAssumption": true,
+          "fixedFullFrameLetterbox": false,
+          "dynamicPersonCrop": true,
+          "statelessCropRefinement": true,
+          "modelInferencesPerFrame": 3,
+          "cameraEnabled": false
+        },
+        "at": 32226.100000000006
+      },
+      "ui": {
+        "gardenPresent": false,
+        "countText": null,
+        "count": null,
+        "countLabel": null,
+        "raySlots": null,
+        "collectedRays": null,
+        "source": null,
+        "badgeText": null,
+        "screen": "app check camera-mode",
+        "replayLabel": true,
+        "cameraCalls": 0
+      },
+      "uiScoringEvidenceVerified": false,
+      "nativeScoringMatches": false,
+      "progressUnchanged": true,
+      "performanceSummary": {
+        "kind": "paused",
+        "source": "video",
+        "engine": "litert",
+        "engineVersion": "1.4.2",
+        "modelSha256": "0fac2226112d0371903ca86e3853cec24ef603a0b2f96f589b180f0ebdd135ab",
+        "modelId": "float16",
+        "inputSize": 192,
+        "verified": true,
+        "configAsset": "verification/independent-cross-stretch.float16.json",
+        "api": 34,
+        "abi": "arm64-v8a",
+        "threads": 2,
+        "scalarFrameDiagnostics": true,
+        "capture": "bundled-public-video",
+        "personCount": "unknown-singlepose-model",
+        "inputTransform": "official-three-pass-stateless-crop-square-before-bilinear-rgb-uint8-192-no-mirror",
+        "decodedFrames": 138,
+        "acceptedFrames": 138,
+        "discardedEpochFrames": 0,
+        "nextFrameIndex": 138,
+        "fullFileProcessed": false,
+        "resourcesClosed": false,
+        "cleanupSucceeded": true,
+        "nativeRecognizedEvents": 0,
+        "acknowledgedEvents": 0,
+        "expectationKnown": false,
+        "expectedSequenceEvaluated": false,
+        "declaredVideoFrames": 195,
+        "declaredFps": 30,
+        "decodeMeanMs": 32.98200552173913,
+        "preprocessMeanMs": 98.7652400217391,
+        "inferenceMeanMs": 68.5188780942029,
+        "inferenceP95Ms": 131.446249,
+        "frameMeanMs": 216.14353039855072,
+        "frameP95Ms": 394.846667,
+        "referenceParityChecks": 21,
+        "referenceByteDifferences": 0,
+        "referenceMaxByteDelta": 0,
+        "referenceOutputMaxDelta": 0,
+        "referenceMeanMs": 61.64218652380952,
+        "modelInferencesPerFrame": 3,
+        "defaultCropFrames": 138,
+        "processPssKiB": 131603
+      },
+      "lastSummaryResourcesClosed": false,
+      "performanceScope": "Native decode/preprocess/inference/frame statistics; inference includes selected three-pass profile; frame/reference-check overhead recorded separately; app-process PSS snapshot only, not sustained/full-TV peak. Runner wall times are separate.",
+      "wallMs": 30967,
+      "caseWallMs": 34776
+    }
+  ],
+  "totals": {
+    "plannedFrames": 593,
+    "coveredFrames": 447,
+    "missingFrames": 146,
+    "admittedFrames": 153,
+    "abstainedFrames": 294,
+    "validGeometryFrames": 447,
+    "coveredNegativeSamples": 207,
+    "admittedNegativeSamples": 107,
+    "gateIncompatibilities": 9,
+    "admittedGateIncompatibilities": 0,
+    "negativeFrameSingleArmConflicts": 0,
+    "admittedNegativeFrameSingleArmConflicts": 0
+  },
+  "limitations": [
+    "Two clips terminated before full-file completion; missing rows are not negative outcomes or abstentions.",
+    "Partial clips have no verified end-of-clip UI score; no whole-cohort zero-score claim.",
+    "Source gate compatibility with broad AI uncertainty bounds is not point accuracy.",
+    "No definite physical positives: no recall, timing-acceptance or candidate-benefit claim.",
+    "API34 ARM64 Android emulator measurements are not Fire TV/ARMv7, real camera or sustained hardware evidence.",
+    "Saved lifecycle summaries do not yet confirm final resource closure; root owns final cleanup."
+  ]
+}

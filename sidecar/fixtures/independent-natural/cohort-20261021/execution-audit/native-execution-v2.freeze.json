@@ -1,0 +1,7 @@
+{
+  "status": "FROZEN_BEFORE_FIRST_NATIVE_INFERENCE",
+  "supersedesLauncherOnly": "native-execution.freeze.json",
+  "reason": "First launcher stopped at ps subprocess restriction before Android tools or inference; external-network EPERM guard passed. Same OS profile retained. Fresh parent process inventory replaces restricted child ps. Frozen cohort and recognizer untouched.",
+  "launcher": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/run_native_bounded_v2.py",
+  "launcherSha256": "aa89749ec79cd8dbffdafd5d328cc0fa6990c36c70f5bb0dc0770ec90ebeebe0"
+}

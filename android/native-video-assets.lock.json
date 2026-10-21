@@ -368,7 +368,7 @@
       "expectedGestures": [],
       "expectationKnown": true,
       "evidenceType": "preliminary-AI-annotated-natural-video",
-      "license": "Official asset page explicitly marks PUBLIC DOMAIN; DVIDS public-use restrictions apply",
+      "license": "Conflicting PUBLIC DOMAIN and asset-specific copyrighted-material/distribution-restriction notices; redistribution eligibility uncleared",
       "sourcePage": "https://www.dvidshub.net/video/768147/kneeling-overhead-press-fitness-workout",
       "licenseSource": "https://www.dvidshub.net/about/copyright",
       "creator": "Petty Officer 2nd Class Robert Price / AFN Sasebo",
@@ -398,7 +398,10 @@
         }
       },
       "caseRecordSha256": "41d2a0b2938a213233531a1af02e4b81404b93a8934bef87705893ac0c35ef5a",
-      "normalizedLabelsSha256": "c3c575c05e955270104cca3cfa533cce6e9861f7910666a579945fcd100537a7"
+      "normalizedLabelsSha256": "c3c575c05e955270104cca3cfa533cce6e9861f7910666a579945fcd100537a7",
+      "initialLicenseInterpretation": "Official asset page explicitly marks PUBLIC DOMAIN; DVIDS public-use restrictions apply",
+      "redistributionEligible": false,
+      "provenanceCorrection": "sidecar/fixtures/independent-natural/cohort-20261021/analysis-review/DVIDS768147-PROVENANCE-CORRECTION.md"
     },
     {
       "case": "independent-both-stretch",

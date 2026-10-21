@@ -1,0 +1,39 @@
+{
+  "status": "FROZEN_BEFORE_FIRST_NATIVE_INFERENCE",
+  "fullComparisonAlreadyCompleted": true,
+  "cohortSha256": "fb84346ad034457d469ff7963f54ec3e518be2675f39ac7aedfbf37cf389f73b",
+  "frozenAtUtc": "2026-10-21T04:56:15.802424+00:00",
+  "thresholdsChanged": false,
+  "newRuntimeOrModel": false,
+  "pins": [
+    {
+      "path": "/Users/frank/mygit/sway-and-sprout/scripts/native-video-evidence.mjs",
+      "sha256": "56fa22121b1c254dae8b824c8fcc283a15f442c0e850c58531ecfd8df4e67950"
+    },
+    {
+      "path": "/Users/frank/mygit/sway-and-sprout/scripts/verify-native-video.mjs",
+      "sha256": "e2b08043c5cfc55d943d90192549c117e79df7f176fa35ca209f9e0001886a99"
+    },
+    {
+      "path": "/Users/frank/mygit/sway-and-sprout/scripts/native-emulator-options.mjs",
+      "sha256": "75e3fc3d559c45201a5675b5515a39fdff9ed42b7679414b5a3c7dc8ff43b480"
+    },
+    {
+      "path": "/Users/frank/mygit/sway-and-sprout/scripts/prepare-native-video.py",
+      "sha256": "eac962ad0594c362ade685e4f58d967294e901e49823c7602a37b5ae281dbf76"
+    },
+    {
+      "path": "/Users/frank/mygit/sway-and-sprout/android/native-video-assets.lock.json",
+      "sha256": "785c54e48016dc2ce75744bab588f2ff3293385d46cb9e4f0db6b0dbfa8ef652"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/run_native_bounded.py",
+      "sha256": "358d82383f8e016d9acfabdbf02037838f59f459ece720f1c57ea6ffc3b21e50"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/mediapipe-evaluation/browser/browser-only.sb",
+      "sha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222"
+    }
+  ],
+  "physicalCameraEnabled": false
+}

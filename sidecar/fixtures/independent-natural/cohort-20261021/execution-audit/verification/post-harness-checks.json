@@ -1,0 +1,26 @@
+{
+  "status": "completed-before-native-inference",
+  "checks": [
+    {
+      "command": "npm test",
+      "passed": 78,
+      "failed": 0,
+      "kind": "Node regression/mock"
+    },
+    {
+      "command": "npm run build",
+      "result": "passed"
+    },
+    {
+      "command": "python3 scripts/prepare-native-video.py --check",
+      "result": "passed;12fixtures/3models/36configs;no network"
+    },
+    {
+      "command": "cached Gradle --offline --no-daemon --max-workers=1 :app:assembleDebug",
+      "result": "BUILD SUCCESSFUL in8s;37tasks,7executed",
+      "newSoftwareOrSdkInstalled": false
+    }
+  ],
+  "recognizerDefaultsChanged": false,
+  "note": "Counts are recorded tool outcomes; mocks and asset/build checks do not establish recognition quality."
+}

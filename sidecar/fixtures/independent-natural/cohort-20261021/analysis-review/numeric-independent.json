@@ -1,0 +1,617 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "Independent pure-stdlib recomputation of existing raw Full results; no inference or SDK import",
+  "scope": "AI-visual preliminary diagnostic only; no human ground truth or acceptance claim",
+  "planSha256": "fb84346ad034457d469ff7963f54ec3e518be2675f39ac7aedfbf37cf389f73b",
+  "humanConfirmed": false,
+  "definitePhysicalPositiveOpportunities": 0,
+  "eventRecall": null,
+  "eventRecallReason": "No definite physical positive opportunities; zero events is not positive recognition success",
+  "cases": [
+    {
+      "caseId": "independent-both-press",
+      "rawResultSha256": "c4cb27385b6380f604aec6bc90d8bceebc4272c43be7a465f1db960d12a8a9cd",
+      "frozenFrames": 210,
+      "decodedFrames": 210,
+      "recordedFrames": 210,
+      "allRowsOrderedExactly": true,
+      "completeFrozenCoverage": true,
+      "inferenceStatusesRecomputed": {
+        "tracking": 210
+      },
+      "classifierStatusesRecomputed": {
+        "neutral": 141,
+        "tracking": 69
+      },
+      "gateCountsRecomputed": {
+        "left-down/right-down": 78,
+        "left-down/right-transition": 4,
+        "left-transition/right-transition": 45,
+        "left-up/right-transition": 1,
+        "left-up/right-up": 80,
+        "left-transition/right-up": 2
+      },
+      "recordedAggregatesMatch": true,
+      "observationsPresent": 210,
+      "allFourAndGlobalAdmission": {
+        "admitted": 210,
+        "denominator": 210,
+        "rejected": 0
+      },
+      "weakJointCountsBelow065OrNonfiniteOverAllFrames": {},
+      "weakCountOverlap": "A frame may have multiple weak joints; counts must not be summed as unique rejected frames",
+      "invalidScoreCountsOutside0to1OrNonfinite": {},
+      "zeroTripletMarkers": {},
+      "zeroTripletInterpretation": "Adapter invalid/masked output marker; not independent evidence of source visibility or a separate raw model score",
+      "jointScores": {
+        "left_shoulder": {
+          "count": 210,
+          "min": 0.9966163039207458,
+          "p05": 0.9990318208932877,
+          "median": 0.9997070729732513,
+          "mean": 0.9996207943984441,
+          "p95": 0.9999866485595703,
+          "max": 0.9999966621398926
+        },
+        "right_shoulder": {
+          "count": 210,
+          "min": 0.9990147352218628,
+          "p05": 0.9995640337467193,
+          "median": 0.9999321103096008,
+          "mean": 0.9998734579199836,
+          "p95": 0.9999985158443451,
+          "max": 0.9999997615814209
+        },
+        "left_wrist": {
+          "count": 210,
+          "min": 0.8147081136703491,
+          "p05": 0.8990208238363266,
+          "median": 0.991600900888443,
+          "mean": 0.9724028635592687,
+          "p95": 0.9983965426683425,
+          "max": 0.9990981817245483
+        },
+        "right_wrist": {
+          "count": 210,
+          "min": 0.892774760723114,
+          "p05": 0.9236516267061233,
+          "median": 0.9881034791469574,
+          "mean": 0.977795819725309,
+          "p95": 0.9980406373739242,
+          "max": 0.9990164041519165
+        }
+      },
+      "fourJointMinimum": {
+        "count": 210,
+        "min": 0.8147081136703491,
+        "p05": 0.8990208238363266,
+        "median": 0.985143631696701,
+        "mean": 0.9688697545301347,
+        "p95": 0.9977496773004532,
+        "max": 0.9990164041519165
+      },
+      "observationGlobalScore": {
+        "count": 210,
+        "min": 0.65,
+        "p05": 0.65,
+        "median": 0.65,
+        "mean": 0.65,
+        "p95": 0.65,
+        "max": 0.65
+      },
+      "events": [],
+      "eventCount": 0,
+      "scoredRays": 0,
+      "acknowledgedSeq": 0,
+      "pipelineMatches": true,
+      "expectationKnown": true,
+      "expectedGestures": [],
+      "legacyOutcome": {
+        "status": "negative-control-matched",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": true,
+        "expectedSequenceMatched": true,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "physicalAnnotationCoverage": {
+        "certifiedPoseNegativeSamples": 156,
+        "denominator": 210,
+        "allFourSingletonPhysicalGateSamples": 98,
+        "admittedAtCertifiedPoseNegativeSamples": 156,
+        "admittedAtSingletonPhysicalGateSamples": 98,
+        "certifiedPoseNegativeSampleBinsMs": 5205.2,
+        "closedFirstToLastNegativeSpansMs": 5071.733333333334,
+        "negativeFrameRunsInclusive": [
+          [
+            0,
+            70
+          ],
+          [
+            108,
+            109
+          ],
+          [
+            112,
+            152
+          ],
+          [
+            168,
+            209
+          ]
+        ]
+      },
+      "timing": {
+        "adapterInferenceMsRecomputed": {
+          "count": 210,
+          "min": 23.009,
+          "p05": 23.148,
+          "median": 23.733,
+          "mean": 24.093376190476192,
+          "p95": 25.7085,
+          "max": 38.875
+        },
+        "reportedMedianMatchesRoundedRecompute": true,
+        "initializationMs": 1832.2072920855135,
+        "processingSeconds": 5.545,
+        "caseWallSecondsIncludingInitialization": 7.636725833872333,
+        "meaning": "Mac Full adapter timing includes resize/RGB/task/mapping; processing includes decode/preview/service/JS scorer; not Fire TV or native-kernel benchmark"
+      },
+      "clock": {
+        "frozenFps": 29.97002997002997,
+        "decodedFps": 29.97002997002997,
+        "observedVerifierFpsValues": [
+          29.97002997002997
+        ],
+        "streamTickToleranceMs": 0.03333333333333333,
+        "maximumAbsoluteTraceMinusFrozenPtsMs": {
+          "plannedFrameMs": 9.094947017729282e-13,
+          "atVideoMs": 9.094947017729282e-13,
+          "serviceObservationMs": 9.094947017729282e-13,
+          "deliveryAtVideoMs": 9.094947017729282e-13
+        },
+        "allTraceClocksWithinStreamTick": true
+      },
+      "coordinateDimensions": [
+        [
+          1024,
+          576,
+          640,
+          360
+        ]
+      ],
+      "derivedSourcePointScaleMatches": true,
+      "maximumDerivedScaleErrorPixels": 0,
+      "executionStatus": "completed",
+      "validationFailures": [],
+      "modelClosed": true,
+      "previewCacheCleared": true,
+      "physicalCameraOpens": 0,
+      "inferenceOutputFramesSaved": 0,
+      "uploadedFrames": 0,
+      "humanConfirmed": false,
+      "planShaMatches": true,
+      "weakWristOverlapFrames": 0
+    },
+    {
+      "caseId": "independent-both-stretch",
+      "rawResultSha256": "927ef7ddd78906347d9c62136bbca10daccd2eb3ce1b900344215ac1d18cfdb8",
+      "frozenFrames": 188,
+      "decodedFrames": 188,
+      "recordedFrames": 188,
+      "allRowsOrderedExactly": true,
+      "completeFrozenCoverage": true,
+      "inferenceStatusesRecomputed": {
+        "tracking": 188
+      },
+      "classifierStatusesRecomputed": {
+        "low-confidence": 75,
+        "neutral": 104,
+        "tracking": 9
+      },
+      "gateCountsRecomputed": {
+        "low-confidence": 75,
+        "left-down/right-down": 27,
+        "left-down/right-transition": 2,
+        "left-transition/right-transition": 4,
+        "left-transition/right-up": 2,
+        "left-up/right-up": 78
+      },
+      "recordedAggregatesMatch": true,
+      "observationsPresent": 188,
+      "allFourAndGlobalAdmission": {
+        "admitted": 113,
+        "denominator": 188,
+        "rejected": 75
+      },
+      "weakJointCountsBelow065OrNonfiniteOverAllFrames": {
+        "right_wrist": 73,
+        "left_wrist": 14
+      },
+      "weakCountOverlap": "A frame may have multiple weak joints; counts must not be summed as unique rejected frames",
+      "invalidScoreCountsOutside0to1OrNonfinite": {},
+      "zeroTripletMarkers": {
+        "left_wrist": 1
+      },
+      "zeroTripletInterpretation": "Adapter invalid/masked output marker; not independent evidence of source visibility or a separate raw model score",
+      "jointScores": {
+        "left_shoulder": {
+          "count": 188,
+          "min": 0.9862805604934692,
+          "p05": 0.9948623776435852,
+          "median": 0.9989161491394043,
+          "mean": 0.9983155153533245,
+          "p95": 0.9999163806438446,
+          "max": 0.9999927282333374
+        },
+        "right_shoulder": {
+          "count": 188,
+          "min": 0.996040940284729,
+          "p05": 0.9975098192691803,
+          "median": 0.9996533989906311,
+          "mean": 0.9992919678383685,
+          "p95": 0.9999304413795471,
+          "max": 0.9999755620956421
+        },
+        "left_wrist": {
+          "count": 188,
+          "min": 0.0,
+          "p05": 0.5866149336099624,
+          "median": 0.9219509959220886,
+          "mean": 0.8775369800785755,
+          "p95": 0.9753080517053604,
+          "max": 0.9913845062255859
+        },
+        "right_wrist": {
+          "count": 188,
+          "min": 0.1937112808227539,
+          "p05": 0.23978590071201325,
+          "median": 0.8474692404270172,
+          "mean": 0.7002962429789786,
+          "p95": 0.9666915148496628,
+          "max": 0.9831211566925049
+        }
+      },
+      "fourJointMinimum": {
+        "count": 188,
+        "min": 0.0,
+        "p05": 0.2322395220398903,
+        "median": 0.836897224187851,
+        "mean": 0.6875340382152415,
+        "p95": 0.958641666173935,
+        "max": 0.9761888980865479
+      },
+      "observationGlobalScore": {
+        "count": 188,
+        "min": 0.65,
+        "p05": 0.65,
+        "median": 0.65,
+        "mean": 0.65,
+        "p95": 0.65,
+        "max": 0.65
+      },
+      "events": [],
+      "eventCount": 0,
+      "scoredRays": 0,
+      "acknowledgedSeq": 0,
+      "pipelineMatches": true,
+      "expectationKnown": false,
+      "expectedGestures": null,
+      "legacyOutcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "physicalAnnotationCoverage": {
+        "certifiedPoseNegativeSamples": 103,
+        "denominator": 188,
+        "allFourSingletonPhysicalGateSamples": 80,
+        "admittedAtCertifiedPoseNegativeSamples": 87,
+        "admittedAtSingletonPhysicalGateSamples": 75,
+        "certifiedPoseNegativeSampleBinsMs": 4120.0,
+        "closedFirstToLastNegativeSpansMs": 3920.0,
+        "negativeFrameRunsInclusive": [
+          [
+            32,
+            35
+          ],
+          [
+            56,
+            56
+          ],
+          [
+            60,
+            69
+          ],
+          [
+            89,
+            164
+          ],
+          [
+            173,
+            184
+          ]
+        ]
+      },
+      "timing": {
+        "adapterInferenceMsRecomputed": {
+          "count": 188,
+          "min": 24.112,
+          "p05": 24.305699999999998,
+          "median": 24.878,
+          "mean": 25.270382978723408,
+          "p95": 26.96055,
+          "max": 31.997
+        },
+        "reportedMedianMatchesRoundedRecompute": true,
+        "initializationMs": 71.56049995683134,
+        "processingSeconds": 5.214,
+        "caseWallSecondsIncludingInitialization": 5.43857966712676,
+        "meaning": "Mac Full adapter timing includes resize/RGB/task/mapping; processing includes decode/preview/service/JS scorer; not Fire TV or native-kernel benchmark"
+      },
+      "clock": {
+        "frozenFps": 25.0,
+        "decodedFps": 25.0,
+        "observedVerifierFpsValues": [
+          25.0
+        ],
+        "streamTickToleranceMs": 0.078125,
+        "maximumAbsoluteTraceMinusFrozenPtsMs": {
+          "plannedFrameMs": 0.0,
+          "atVideoMs": 0.0,
+          "serviceObservationMs": 0.0,
+          "deliveryAtVideoMs": 0.0
+        },
+        "allTraceClocksWithinStreamTick": true
+      },
+      "coordinateDimensions": [
+        [
+          1080,
+          1920,
+          640,
+          1137
+        ]
+      ],
+      "derivedSourcePointScaleMatches": true,
+      "maximumDerivedScaleErrorPixels": 0,
+      "executionStatus": "completed",
+      "validationFailures": [],
+      "modelClosed": true,
+      "previewCacheCleared": true,
+      "physicalCameraOpens": 0,
+      "inferenceOutputFramesSaved": 0,
+      "uploadedFrames": 0,
+      "humanConfirmed": false,
+      "planShaMatches": true,
+      "weakWristOverlapFrames": 12
+    },
+    {
+      "caseId": "independent-cross-stretch",
+      "rawResultSha256": "7b52649074c95a19a9f66ec8f84ef4aa27d558039fdb56a4fb9a59b178d07715",
+      "frozenFrames": 195,
+      "decodedFrames": 195,
+      "recordedFrames": 195,
+      "allRowsOrderedExactly": true,
+      "completeFrozenCoverage": true,
+      "inferenceStatusesRecomputed": {
+        "tracking": 195
+      },
+      "classifierStatusesRecomputed": {
+        "neutral": 147,
+        "low-confidence": 12,
+        "tracking": 36
+      },
+      "gateCountsRecomputed": {
+        "left-down/right-up": 2,
+        "left-down/right-transition": 4,
+        "left-down/right-down": 64,
+        "low-confidence": 12,
+        "left-transition/right-down": 3,
+        "left-transition/right-transition": 8,
+        "left-up/right-transition": 64,
+        "left-transition/right-up": 2,
+        "left-up/right-down": 6,
+        "left-up/right-up": 30
+      },
+      "recordedAggregatesMatch": true,
+      "observationsPresent": 195,
+      "allFourAndGlobalAdmission": {
+        "admitted": 183,
+        "denominator": 195,
+        "rejected": 12
+      },
+      "weakJointCountsBelow065OrNonfiniteOverAllFrames": {
+        "right_wrist": 5,
+        "left_wrist": 9
+      },
+      "weakCountOverlap": "A frame may have multiple weak joints; counts must not be summed as unique rejected frames",
+      "invalidScoreCountsOutside0to1OrNonfinite": {},
+      "zeroTripletMarkers": {},
+      "zeroTripletInterpretation": "Adapter invalid/masked output marker; not independent evidence of source visibility or a separate raw model score",
+      "jointScores": {
+        "left_shoulder": {
+          "count": 195,
+          "min": 0.9693489074707031,
+          "p05": 0.9906016767024994,
+          "median": 0.9984623193740845,
+          "mean": 0.997280105872032,
+          "p95": 0.9999206185340881,
+          "max": 0.9999809265136719
+        },
+        "right_shoulder": {
+          "count": 195,
+          "min": 0.9428744912147522,
+          "p05": 0.9864423990249633,
+          "median": 0.9992461204528809,
+          "mean": 0.9971081174336947,
+          "p95": 0.9998693704605103,
+          "max": 0.999901533126831
+        },
+        "left_wrist": {
+          "count": 195,
+          "min": 0.09764309227466583,
+          "p05": 0.7556817710399628,
+          "median": 0.9917872548103333,
+          "mean": 0.9377399870982537,
+          "p95": 0.9988650321960449,
+          "max": 0.9993357062339783
+        },
+        "right_wrist": {
+          "count": 195,
+          "min": 0.5258786082267761,
+          "p05": 0.7696828365325927,
+          "median": 0.9976515173912048,
+          "mean": 0.9538106927504906,
+          "p95": 0.9995167851448059,
+          "max": 0.9997146725654602
+        }
+      },
+      "fourJointMinimum": {
+        "count": 195,
+        "min": 0.09764309227466583,
+        "p05": 0.6168232500553131,
+        "median": 0.9895057082176208,
+        "mean": 0.9216487831030137,
+        "p95": 0.9987897276878357,
+        "max": 0.9993357062339783
+      },
+      "observationGlobalScore": {
+        "count": 195,
+        "min": 0.65,
+        "p05": 0.65,
+        "median": 0.65,
+        "mean": 0.65,
+        "p95": 0.65,
+        "max": 0.65
+      },
+      "events": [],
+      "eventCount": 0,
+      "scoredRays": 0,
+      "acknowledgedSeq": 0,
+      "pipelineMatches": true,
+      "expectationKnown": false,
+      "expectedGestures": null,
+      "legacyOutcome": {
+        "status": "observed-only",
+        "pipelineConsistent": true,
+        "sequenceExpectationPresent": false,
+        "expectedSequenceMatched": null,
+        "eventTimingExpectationPresent": false,
+        "eventTimingMatched": null,
+        "completeGoalVerified": false,
+        "scope": "selected local fixture only",
+        "liveUserVerified": false
+      },
+      "physicalAnnotationCoverage": {
+        "certifiedPoseNegativeSamples": 56,
+        "denominator": 195,
+        "allFourSingletonPhysicalGateSamples": 17,
+        "admittedAtCertifiedPoseNegativeSamples": 54,
+        "admittedAtSingletonPhysicalGateSamples": 17,
+        "certifiedPoseNegativeSampleBinsMs": 1866.6666666666667,
+        "closedFirstToLastNegativeSpansMs": 1733.3333333333333,
+        "negativeFrameRunsInclusive": [
+          [
+            32,
+            43
+          ],
+          [
+            51,
+            55
+          ],
+          [
+            72,
+            80
+          ],
+          [
+            150,
+            179
+          ]
+        ]
+      },
+      "timing": {
+        "adapterInferenceMsRecomputed": {
+          "count": 195,
+          "min": 23.718,
+          "p05": 24.3729,
+          "median": 25.187,
+          "mean": 25.360758974358973,
+          "p95": 26.3732,
+          "max": 31.495
+        },
+        "reportedMedianMatchesRoundedRecompute": true,
+        "initializationMs": 72.0591249410063,
+        "processingSeconds": 5.546,
+        "caseWallSecondsIncludingInitialization": 5.770932500017807,
+        "meaning": "Mac Full adapter timing includes resize/RGB/task/mapping; processing includes decode/preview/service/JS scorer; not Fire TV or native-kernel benchmark"
+      },
+      "clock": {
+        "frozenFps": 30.0,
+        "decodedFps": 30.0,
+        "observedVerifierFpsValues": [
+          30.0
+        ],
+        "streamTickToleranceMs": 0.06510416666666667,
+        "maximumAbsoluteTraceMinusFrozenPtsMs": {
+          "plannedFrameMs": 0.0,
+          "atVideoMs": 0.0,
+          "serviceObservationMs": 0.0,
+          "deliveryAtVideoMs": 0.0
+        },
+        "allTraceClocksWithinStreamTick": true
+      },
+      "coordinateDimensions": [
+        [
+          1920,
+          1080,
+          640,
+          360
+        ]
+      ],
+      "derivedSourcePointScaleMatches": true,
+      "maximumDerivedScaleErrorPixels": 0,
+      "executionStatus": "completed",
+      "validationFailures": [],
+      "modelClosed": true,
+      "previewCacheCleared": true,
+      "physicalCameraOpens": 0,
+      "inferenceOutputFramesSaved": 0,
+      "uploadedFrames": 0,
+      "humanConfirmed": false,
+      "planShaMatches": true,
+      "weakWristOverlapFrames": 2
+    }
+  ],
+  "totals": {
+    "frames": 593,
+    "admittedFrames": 506,
+    "rejectedFrames": 87,
+    "events": 0,
+    "scoredRays": 0,
+    "acknowledgedSeqSum": 0,
+    "allGraphsClosed": true,
+    "allClocksWithinFrozenTick": true,
+    "allFullFileCoverage": true,
+    "allAggregatesMatchRecompute": true,
+    "certifiedPoseNegativeSampleBinsMs": 11191.866666666667,
+    "zeroEmissionsPerNegativeSampleBinMinute": 0,
+    "negativeExposureInterpretation": "Instantaneously pose-negative sample bins: count/fps, excluding unknowns; also report closed first-to-last spans separately. Not a subframe continuous-motion claim or general FPR estimate.",
+    "uniqueRejectedFramesAreNotSumOfWeakJointCounts": true
+  },
+  "inputIntegrity": {
+    "frozenFileCount": 71,
+    "frozenFilesAllMatch": true,
+    "sourcePinCount": 16,
+    "sourcePinsAllMatch": true,
+    "mismatches": []
+  }
+}

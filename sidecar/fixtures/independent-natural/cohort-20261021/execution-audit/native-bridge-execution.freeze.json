@@ -1,0 +1,22 @@
+{
+  "status": "FROZEN_BEFORE_FIRST_BRIDGE_SUPPLEMENT_INFERENCE",
+  "frozenAtUtc": "2026-10-21T05:06:02.260898+00:00",
+  "cohortUnchanged": true,
+  "recognizerUnchanged": true,
+  "physicalCameraEnabled": false,
+  "scope": "Existing NativeVideoReplay bridge only; actual UI failures preserved, no UI/score/game acceptance",
+  "pins": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/run_native_bridge_bounded.py",
+      "sha256": "d3ba7f0609c44d94047529120495dbc03dcf01519de6ef492d389e9713553c47"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/independent-natural-evaluation/native-bridge-comparison.mjs",
+      "sha256": "e96b66ef1718f86aa194dc31cfa72adbaf7c9bc2ce3075e79e4a36b627e2b602"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/mediapipe-evaluation/browser/browser-only.sb",
+      "sha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222"
+    }
+  ]
+}
