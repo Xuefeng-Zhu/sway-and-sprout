@@ -1,0 +1,54 @@
+{
+  "annotationKind": "Model-blind AI visual annotations; not human-annotated ground truth.",
+  "clips": [
+    {
+      "case": "left-natural",
+      "decodedYuv420pSha256SequenceLfSha256": "a11a361f70d89b394fe580494bb13c88ade02330504d2ca64717edd4dca5bed2",
+      "derivativeBytes": 1804899,
+      "derivativeSha256": "e4cc461c1c8c162c0f2bd0d256dcd99cd229e997b2ac4175715e34e0240ca8c8",
+      "endFrameExclusive": 368,
+      "filename": "left-natural.mp4",
+      "frames": 83,
+      "priorFrameHashSequenceSha256AsRecorded": "b944617ae18ece40bb80f4efbee2e4db8519b0024e7e308d266000227dd84a00",
+      "sourceSha256": "d1bc8805ba209fb797c19c50ec87814070ef6e7285c115aceada20d78b1dfb00",
+      "startFrame": 285,
+      "video": {
+        "fps": "30/1",
+        "height": 480,
+        "width": 640
+      }
+    },
+    {
+      "case": "right-short",
+      "decodedYuv420pSha256SequenceLfSha256": "74151a8fbe71cb528d611a7a2a1f43f11dcf1b65cdc4de6d73ebe3c5222148d6",
+      "derivativeBytes": 5342215,
+      "derivativeSha256": "85f473cc8bd8261a2e8046372c01188cc2f3fc6919d9e32e2a52c98aa182f4fa",
+      "endFrameExclusive": 156,
+      "filename": "right-short.mp4",
+      "frames": 156,
+      "priorFrameHashSequenceSha256AsRecorded": "129a66fd05c937e33178a97fccbb2b52448531e7b5da87686c7457cd98a86797",
+      "sourceSha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+      "startFrame": 0,
+      "video": {
+        "fps": "30000/1001",
+        "height": 576,
+        "width": 1024
+      }
+    }
+  ],
+  "observedEncoderMetadata": {
+    "byteReproductionAcrossVersionsClaimed": false,
+    "exactPriorCommandRecovered": false,
+    "ffmpeg": "8.1.1",
+    "libavcodec": "62.28.101",
+    "libavformat": "62.12.101",
+    "x264": "core165r3222b35605a"
+  },
+  "schemaVersion": 1,
+  "scope": "Fixed local natural study excerpts; no natural six-alternating-event certification or physical-person identity separation.",
+  "sequencePinDefinition": "For each decoded yuv420p frame compute SHA256 using ffmpeg framehash; join lowercase hex digests with LF including finalLF; SHA256 UTF-8 bytes of that string. Prior frameHashSequenceSha256 is retained verbatim as a separate legacy field; its original serialization is unspecified.",
+  "sourceMetadataFiles": {
+    "derivative-verification.json": "58534ca64294c3a621fa097f5d2d94a13c4cc80293afe6303fe8601f18662d31",
+    "selection-before-inference.json": "285397fe10c744144b8fc694498b14394b493fffb68af83a9173fa21dc8a1c39"
+  }
+}

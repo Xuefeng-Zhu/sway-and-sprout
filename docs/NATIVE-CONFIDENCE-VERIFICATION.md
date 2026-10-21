@@ -32,6 +32,8 @@ New public-domain DVIDS679690 supplies a separately recorded contiguous neutral�
 | Right-short continuous prefix |156/156|0/0/0|Wrong-side negative passes|
 | Both-up |136/136|0/0/0|Negative passes|
 
+Primary inference means are58.6–67.5ms per frame (sum of three calls); diagnostic native frame means96.9–106.8ms, P95 163.2–178.9ms. These exclude polling/rendering and are emulator results, not camera-to-render or Fire TV performance. ProcessPSS snapshots151034–153564KiB omit renderer/system sustained peaks.
+
 All report `video`, no camera calls, unchanged participation and no page errors. The short right prefix supplements the previously incomplete450-frame negative; it does not erase that performance failure or establish right-positive recognition. No natural alternating-six or live-person success is claimed. Existing frontal6/UI6/ACK6, timer/reload and lifecycle evidence is preserved; unchanged engine/gate sources remain hash-bound to that prior evidence.
 
 ## Reproduce and limits
@@ -41,3 +43,5 @@ All report `video`, no camera calls, unchanged participation and no page errors.
 Fresh validation:65 JS tests, production build,10 analyzer tests,14 offline preparation/CLI checks and debug/release builds passed. Release has no calibration Activity/assets or native runtime libraries. Source/APK/input/result hashes and scoped counts are in [structured evidence](verification/native-confidence-20261021.json). Full scalar traces stay in the local dated workspace and are not uploaded.
 
 One camera-disabled Android TV API34 ARM64 emulator is the only execution target. Fire OS7/API28/armeabi-v7a is provisional; ELF32 binary presence is static evidence only. There is no Fire TV hardware, so FireOS loading,32-bit execution, UVC capture, Vega and sustained device memory/latency are unresolved. No push, deployment, upload, spending or credential changes occurred.
+
+The sole emulator and isolated ADB5038 were stopped; emulator/WebView-forwarding ports are closed. Under the latest no-expansion instruction, optional native MediaPipe audit/artifact/adapter drafts stay in the dated workspace only. No MediaPipe APK build, graph initialization, inference or canonical integration occurred. Stock telemetry initialization and a deterministic official-dummy factory replacement were audited; this is preparation, not an accepted recognition backend.

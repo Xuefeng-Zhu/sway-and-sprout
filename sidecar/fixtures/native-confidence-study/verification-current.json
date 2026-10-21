@@ -1,0 +1,60 @@
+{
+  "clips": [
+    {
+      "canonicalDerivativePinMatches": true,
+      "canonicalPinNeedsExplicitReviewAndUpdate": false,
+      "case": "left-natural",
+      "decodedYuv420pFrameSequenceEqual": true,
+      "decodedYuv420pSha256SequenceLfSha256": "a11a361f70d89b394fe580494bb13c88ade02330504d2ca64717edd4dca5bed2",
+      "derivative": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/video-fixtures/left-natural.mp4",
+      "derivativeBytes": 1804899,
+      "derivativeSha256": "e4cc461c1c8c162c0f2bd0d256dcd99cd229e997b2ac4175715e34e0240ca8c8",
+      "ffprobe": {
+        "avg_frame_rate": "30/1",
+        "codec_name": "h264",
+        "height": 480,
+        "nb_frames": "83",
+        "pix_fmt": "yuv420p",
+        "width": 640
+      },
+      "frames": 83,
+      "source": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/natural/679690-source.mp4",
+      "sourceEndFrameExclusive": 368,
+      "sourceSha256": "d1bc8805ba209fb797c19c50ec87814070ef6e7285c115aceada20d78b1dfb00",
+      "sourceStartFrame": 285
+    },
+    {
+      "canonicalDerivativePinMatches": true,
+      "canonicalPinNeedsExplicitReviewAndUpdate": false,
+      "case": "right-short",
+      "decodedYuv420pFrameSequenceEqual": true,
+      "decodedYuv420pSha256SequenceLfSha256": "74151a8fbe71cb528d611a7a2a1f43f11dcf1b65cdc4de6d73ebe3c5222148d6",
+      "derivative": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/video-fixtures/right-short.mp4",
+      "derivativeBytes": 5342215,
+      "derivativeSha256": "85f473cc8bd8261a2e8046372c01188cc2f3fc6919d9e32e2a52c98aa182f4fa",
+      "ffprobe": {
+        "avg_frame_rate": "30000/1001",
+        "codec_name": "h264",
+        "height": 576,
+        "nb_frames": "156",
+        "pix_fmt": "yuv420p",
+        "width": 1024
+      },
+      "frames": 156,
+      "source": "/Users/frank/mygit/sway-and-sprout/sidecar/fixtures/.cache/natural-controls/dvids-551039-right-negative-36s-51s.mp4",
+      "sourceEndFrameExclusive": 156,
+      "sourceSha256": "14100151f96412b84ea4fb3b9b01db1a8e3a7b2741109c452026c95b1b771e4d",
+      "sourceStartFrame": 0
+    }
+  ],
+  "ffmpegVersion": "ffmpeg version 8.1.1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffprobeVersion": "ffprobe version 8.1.1 Copyright (c) 2007-2026 the FFmpeg developers",
+  "lockSha256": "eaeafb22fe73759d33ead497038de02bc44492985e9317249cbeed306ff036a5",
+  "mode": "verify",
+  "networkDownloads": false,
+  "overwrites": false,
+  "poseInference": false,
+  "reconstructionCommands": [],
+  "schemaVersion": 1,
+  "verifiedAtUtc": "2026-10-21T00:59:47.821049+00:00"
+}
