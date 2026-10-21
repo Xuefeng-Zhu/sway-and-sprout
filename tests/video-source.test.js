@@ -97,11 +97,11 @@ function appHarness(search=''){
     crypto:{randomUUID:()=>`id-${++id}`},performance:{now:()=>0},requestAnimationFrame:()=>1,cancelAnimationFrame(){},
   };
   const main=readFileSync(new URL('../src/main.js',import.meta.url),'utf8').replace(/^import .*;\n/gm,'');
-  const hooks=`\nglobalThis.hooks={act,finish,read:()=>({progress,screen,roundId,revision,motion}),check:()=>{screen='check';render();},advanceToEnd:()=>{elapsed=challenges[selected].duration;tick(0);}};`;
+  const hooks=`\nglobalThis.hooks={act,finish,read:()=>({progress,screen,roundId,revision,motion,elapsed,roundSeconds:roundSeconds()}),check:()=>{screen='check';render();},advanceToElapsed:seconds=>{elapsed=seconds;tick(0);},advanceToEnd:()=>{elapsed=roundSeconds();tick(0);}};`;
   vm.runInNewContext(main+hooks,sandbox);
   const api=sandbox.hooks;
   api.act('choose:1');api.act('input:camera');api.act('start');
-  return {api,writes,root,motionOptions:callbacks,send(source,six=true){
+  return {api,writes,root,nodes,motionOptions:callbacks,send(source,six=true){
     const current=api.read();
     callbacks.onPacket({...packet(source),roundId:current.roundId,revision:current.revision,
       seq:six?6:0,events:six?Array.from({length:6},(_,index)=>({seq:index+1,roundId:current.roundId,
@@ -210,4 +210,57 @@ test('native verification entry identifies recorded input before any packet with
   assert.match(app.root.innerHTML,/does not open a camera/);
   assert.doesNotMatch(app.root.innerHTML,/OpenCV 5 on this Mac/);
   assert.equal(app.writes.length,0);
+});
+
+
+test('explicit native replay gets 120 seconds before packets and reaches its real check path at 120',()=>{
+  const app=appHarness('?input=video-verification');
+  assert.equal(app.api.read().roundSeconds,120);
+  assert.equal(app.nodes['#time'].textContent,'120s');
+  assert.match(app.root.innerHTML,/data-round-seconds="120" data-diagnostic-replay="true"/);
+  app.send('video',false);
+  assert.equal(app.api.read().roundSeconds,120);
+  app.api.advanceToElapsed(30);
+  assert.equal(app.api.read().screen,'play');assert.equal(app.nodes['#time'].textContent,'90s');
+  app.api.advanceToElapsed(119.9);assert.equal(app.api.read().screen,'play');
+  app.api.advanceToEnd();assert.equal(app.api.read().screen,'check');
+  assert.match(app.root.innerHTML,/Replay finished/);
+  app.api.act('complete');assert.equal(app.api.read().screen,'celebrate');
+  assert.match(app.root.innerHTML,/Replay result/);assert.equal(app.writes.length,0);
+  assert.deepEqual([...app.api.read().progress.completed],['wake']);
+});
+
+test('normal camera, video and synthetic sessions keep the authored 30-second deadline',()=>{
+  for(const source of ['camera','video','synthetic']){
+    const app=appHarness();app.send(source,false);
+    assert.equal(app.api.read().roundSeconds,30);
+    assert.match(app.root.innerHTML,/data-round-seconds="30" data-diagnostic-replay="false"/);
+    app.api.advanceToElapsed(29.9);assert.equal(app.api.read().screen,'play');
+    app.api.advanceToEnd();assert.equal(app.api.read().screen,'check');
+  }
+});
+
+test('diagnostic duration cannot extend manual play, other challenges or an unrecognized query',()=>{
+  const app=appHarness('?input=video-verification');
+  app.api.act('manual');assert.equal(app.api.read().roundSeconds,30);
+  for(const choice of [0,2]){
+    app.api.act('choose:'+choice);app.api.act('input:camera');app.api.act('start');
+    assert.equal(app.api.read().roundSeconds,30);
+  }
+  for(const search of ['?input=video-verification-extra','?input=video','?roundSeconds=120']){
+    assert.equal(appHarness(search).api.read().roundSeconds,30);
+  }
+  assert.equal(appHarness('?input=video-verification&roundSeconds=999').api.read().roundSeconds,120);
+  assert.ok(model.challenges.every(challenge=>challenge.duration===30));
+});
+
+
+test('six diagnostic replay rays deactivate input but wait for 120 seconds without saving participation',()=>{
+  const app=appHarness('?input=video-verification');app.send('video',true);
+  assert.equal(app.api.read().motion.count,6);assert.equal(app.api.read().motion.completed,true);
+  assert.equal(app.motionOptions.getContext().active,false);
+  app.api.advanceToElapsed(30);assert.equal(app.api.read().screen,'play');
+  app.api.advanceToEnd();assert.equal(app.api.read().screen,'celebrate');
+  assert.match(app.root.innerHTML,/Replay result/);assert.equal(app.writes.length,0);
+  assert.deepEqual([...app.api.read().progress.completed],['wake']);
 });
