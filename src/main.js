@@ -5,12 +5,20 @@ import {createPreviewClient} from './preview.js';
 import {sunshineMarkup,updateSunshine,updateCameraPreview} from './motion-view.js';
 import {roundTickDelta} from './round-clock.js';
 import {gardenMarkup} from './garden-view.js';
+import {cloudBackupLocationAllowed,createCloudGardenClient,cloudGardenErrorMessage,mergeGardenProgress} from './cloud-garden.js';
 
 const root=document.querySelector('#app');
 let saved;
 try{saved=JSON.parse(localStorage.getItem('togethermove.v1'));}catch{}
 const query=new URLSearchParams(location.search);
 const nativeVideoCheck=query.get('input')==='video-verification';
+// Empty by default. Native hosts retain their existing network restrictions.
+const configuredCloud=document.querySelector('meta[name="sway-garden-api"]')?.content;
+let cloudStorage;
+try{cloudStorage=localStorage;}catch{}
+const cloudGarden=typeof configuredCloud==='string'&&configuredCloud&&cloudBackupLocationAllowed(location)?
+  createCloudGardenClient({endpoint:configuredCloud,storage:cloudStorage}):null;
+let cloudStatus='',cloudDeleteConfirm=false;
 // Strict recognition stays available for explicitly selected diagnostic sessions.
 const motionPolicy=query.get('policy')==='strict'||(nativeVideoCheck&&query.get('policy')!=='activity')?'strict':'activity';
 let progress=normalizeProgress(saved),screen='home',mode='seated',selected=0;
@@ -24,6 +32,7 @@ const clientId=crypto.randomUUID();
 const cameraMode=()=>inputMode==='camera'&&challenges[selected].id==='sun';
 const cameraActive=()=>cameraMode()&&screen==='play'&&!paused&&!motion.completed;
 const simulatedSource=()=>testSource||(['video','synthetic'].includes(roundSource)?roundSource:null)||(['video','synthetic'].includes(packet?.source)?packet.source:null);
+const cloudAvailable=()=>cloudGarden?.snapshot().configured&&!cameraMode()&&!simulatedSource()&&['home','cloud'].includes(screen);
 const videoRound=()=>simulatedSource()==='video';
 // Only the explicit native recorded-video diagnostic gets a longer diagnostic round.
 const diagnosticReplayRound=()=>nativeVideoCheck&&cameraMode();
@@ -72,7 +81,7 @@ function save(){try{localStorage.setItem('togethermove.v1',JSON.stringify(progre
 const button=(label,action,cls='',extra='')=>`<button class="${cls}" data-action="${action}" ${extra}>${label}</button>`;
 function shell(content){
   const roundMetadata=screen==='play'?` data-round-seconds="${roundSeconds()}" data-diagnostic-replay="${diagnosticReplayRound()}"`:'';
-  root.innerHTML=`<div class="app ${screen}${screen==='play'&&paused?' is-paused':''}${cameraMode()?' camera-mode':''}"${roundMetadata}><header><div class="brand" aria-label="Sway &amp; Sprout">Sway <span>&amp; Sprout</span></div><nav aria-label="Main navigation">${button('Garden','home',screen==='home'?'active':'')}${button('How to play','help')}</nav></header><main>${content}</main><footer><span><kbd>↔ ↕</kbd> Navigate</span><span><kbd>OK</kbd> Select</span><span><kbd>↶</kbd> Back</span><span><kbd>II</kbd> Pause</span><span class="privacy">${nativeVideoCheck?'Video diagnostic · no camera':'Manual play · optional local camera'}</span></footer></div>`;
+  root.innerHTML=`<div class="app ${screen}${screen==='play'&&paused?' is-paused':''}${cameraMode()?' camera-mode':''}"${roundMetadata}><header><div class="brand" aria-label="Sway &amp; Sprout">Sway <span>&amp; Sprout</span></div><nav aria-label="Main navigation">${button('Garden','home',screen==='home'?'active':'')}${button('How to play','help')}${cloudAvailable()?button('Garden backup','cloud',screen==='cloud'?'active':''):''}</nav></header><main>${content}</main><footer><span><kbd>↔ ↕</kbd> Navigate</span><span><kbd>OK</kbd> Select</span><span><kbd>↶</kbd> Back</span><span><kbd>II</kbd> Pause</span><span class="privacy">${nativeVideoCheck?'Video diagnostic · no camera':'Manual play · optional local camera'}</span></footer></div>`;
   root.querySelectorAll('button').forEach(b=>b.onclick=()=>act(b.dataset.action));
   (renderFocus&&root.querySelector(`[data-action="${renderFocus}"]`)||root.querySelector('[autofocus]')||root.querySelector('main button'))?.focus();
 }
@@ -119,6 +128,9 @@ function render(focusAction=''){
     shell(`<section class="center-panel celebration">${journeyStrip()}<p class="step">${journeyCompleted.length} OF 3 MOMENTS TENDED THIS VISIT${cameraMode()&&motion.completed?' · CAMERA SUNSHINE':''}</p><h1>${all?'Ready to harvest.':'Your garden is growing.'}</h1><div class="garden-change">${gardenMarkup({kind:'garden',completed:progress.completed,label:`${progress.completed.length} of 3 blooms saved`})}</div><p>${all?'Three moments tended. Gather your garden.':`${challenges[selected].name} added a little life.<br>Keep going whenever you’re ready.`}</p><div class="actions">${button(all?'Harvest garden →':'Next moment →',all?'harvest':'next','primary','autofocus')}${button('Back to garden','home')}</div><p class="subtle">${storageFailed?'Progress could not be saved on this device.':inputMode==='manual'?'Your self-reported moment is saved on this device.':'Your garden is saved on this device.'}</p></section>`);
   }else if(screen==='harvest'){
     shell(`<section class="center-panel harvest"><p class="step">THREE MOMENTS · ONE GARDEN</p><h1>Your garden, gathered.</h1>${gardenMarkup({kind:'harvest',completed:progress.completed,label:'A bloom for every moment you tended'})}<p>You made a little time to move.<br>This garden is yours to keep.</p><div class="actions">${button('Grow again →','restart','primary','autofocus')}${button('Back to garden','home')}</div><p class="harvest-note">${storageFailed?'Your garden is visible here, but could not be saved on this device.':'Your blooms stay saved when you grow again. No streaks or scores to chase.'}</p></section>`);
+  }else if(screen==='cloud'&&cloudAvailable()){
+    const state=cloudGarden.snapshot(),disabled=state.busy?'disabled':'';
+    shell(`<section class="panel backup-panel"><div><p class="step">OPTIONAL GARDEN BACKUP</p><h1>Keep your blooms.</h1><p>Only saved blooms and harvest totals leave this device.<br>No images or movement data.</p><p class="backup-status" role="status" aria-live="polite">${cloudStatus||'Nothing is sent until you choose an action.'}</p><div class="actions">${cloudDeleteConfirm?`${button('Delete cloud copy','cloud-delete-confirm','primary',disabled)}${button('Keep it','cloud-delete-cancel','',disabled)}`:`${button('Back up garden','cloud-backup','primary',disabled)}${button('Restore saved blooms','cloud-restore','',disabled||(!state.hasIdentity?'disabled':''))}${button('Delete cloud copy','cloud-delete','',disabled||(!state.hasIdentity||!state.version?'disabled':''))}`}${button('Back to garden','home')}</div><p class="backup-key-note">Backup belongs to this browser. Clearing all browser data also removes its key.</p></div><aside>${gardenMarkup({kind:'garden',completed:progress.completed,label:`${progress.completed.length} of 3 blooms saved on this device`})}</aside></section>`);
   }else if(screen==='help'){
     shell(`<section class="panel help-panel"><h1>A garden at your pace.</h1><div class="help-grid"><div><h2>1. Move your way</h2><p>Sit or stand. Wave, reach, stretch or sway in a comfortable range. A small movement is welcome. Rest whenever you like.</p></div><div><h2>2. Watch it grow</h2><p>In manual play, press “Count my movement” after you move. You confirm your own participation. Optional camera sunshine gathers up to six rays from detected activity.</p></div><div><h2>3. Gather your garden</h2><p>Confirm a moment to save its bloom. Tend all three moments this visit to harvest. Growing again keeps the blooms you already earned.</p></div></div><p class="safety">Camera play is opt-in for one player. Frames stay local and are not recorded.<br>Pause or Back stops activity input. Manual play is always available.</p>${button('Return to where I was →','return','primary','autofocus')}</section>`);
   }
@@ -157,15 +169,40 @@ function tick(now){
 function resetRound(){roundId=crypto.randomUUID();motion=createMotionState(roundId,motionPolicy);packet=null;disconnected=false;roundSource=null;testSource=diagnosticReplayRound()?'video':null;manualCount=0;motionNotice='';roundTiming={wallMs:0,creditedMs:0,stalledMs:0,callbacks:0};}
 // Primitive, read-only diagnostics. This does not inject a clock or drive input.
 window.togetherMoveTiming=()=>({...roundTiming,roundSeconds:roundSeconds(),paused});
+async function cloudAction(action){
+  if(screen!=='cloud'||!cloudAvailable()||cloudGarden.snapshot().busy)return;
+  if(action==='cloud-delete'){cloudDeleteConfirm=true;cloudStatus='Delete the cloud copy? Your saved garden on this device stays.';render('cloud-delete-cancel');return;}
+  if(action==='cloud-delete-cancel'){cloudDeleteConfirm=false;cloudStatus='';render('cloud-backup');return;}
+  if(!['cloud-backup','cloud-restore','cloud-delete-confirm'].includes(action)||(action==='cloud-delete-confirm'&&!cloudDeleteConfirm))return;
+  const requestRevision=++revision,context={active:false,source:simulatedSource()||'confirmed'};
+  cloudStatus=action==='cloud-backup'?'Backing up your saved garden…':action==='cloud-restore'?'Looking for your saved blooms…':'Deleting the cloud copy…';
+  cloudDeleteConfirm=false;
+  try{
+    const pending=action==='cloud-backup'?cloudGarden.backup(progress,context):action==='cloud-restore'?cloudGarden.restore(context):cloudGarden.remove(context);
+    render('home');
+    const record=await pending;
+    if(screen!=='cloud'||revision!==requestRevision)return;
+    if(action==='cloud-restore'){progress=mergeGardenProgress(progress,record.progress);save();cloudStatus=storageFailed?'Cloud copy read, but this device could not save it.':'Saved blooms restored. Your current visit is unchanged.';}
+    else cloudStatus=action==='cloud-backup'?'Your saved garden was backed up.':'Cloud copy deleted. Your garden stays on this device.';
+  }catch(error){if(screen!=='cloud'||revision!==requestRevision)return;cloudStatus=cloudGardenErrorMessage(error);}
+  render('cloud-backup');
+}
 function act(action){
+  if(action.startsWith('cloud-'))return cloudAction(action);
+  if(action==='cloud'&&!cloudAvailable())return;
   if(action==='return'){back();return;}
   if(action==='manual-count'&&(screen!=='play'||cameraMode()||paused||manualCount>=6))return;
   if(action==='finish-moment'){
     if(screen==='play'&&!paused&&!cameraMode()&&manualCount===6){screen='check';revision++;render();}
     return;
   }
+  if(screen==='cloud'){
+    if(cloudGarden?.snapshot().busy)cloudStatus=cloudGardenErrorMessage({code:'cancelled'});
+    cloudGarden?.cancel();cloudDeleteConfirm=false;
+  }
   revision++;
   if(action==='home'){screen='home';inputMode='manual';paused=false;}
+  else if(action==='cloud'){screen='cloud';cloudStatus='';cloudDeleteConfirm=false;}
   else if(action==='help'){if(screen!=='help'){returnScreen=screen;returnFocus=document.activeElement?.dataset?.action||'';}screen='help';}
   else if(action==='setup'){selected=Math.max(0,challenges.findIndex(c=>!journeyCompleted.includes(c.id)));inputMode='manual';screen='setup';}
   else if(action.startsWith('choose:')){selected=Number(action.split(':')[1]);inputMode='manual';screen='setup';}
@@ -192,6 +229,7 @@ function act(action){
   render(action.startsWith('mode:')||action.startsWith('input:')?action:'');
 }
 function back(){
+  if(screen==='cloud'){cloudGarden?.cancel();cloudDeleteConfirm=false;}
   if(screen==='play'){
     if(paused){screen='home';inputMode='manual';paused=false;}
     else paused=true;
@@ -215,5 +253,5 @@ document.addEventListener('keydown',e=>{
   else if(e.key==='Escape'||e.key==='Backspace'){e.preventDefault();back();}
   else if(e.key===' '||e.key==='MediaPlayPause'){e.preventDefault();if(screen==='play')act('pause');}
 });
-window.addEventListener('pagehide',()=>{previewClient.stop();motionClient.stop();});
+window.addEventListener('pagehide',()=>{revision++;cloudGarden?.cancel();previewClient.stop();motionClient.stop();});
 render();
