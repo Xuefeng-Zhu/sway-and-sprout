@@ -32,7 +32,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Debug-only recorded public-video inference, inside the Android app process.
+ * Debug-only bundled video inference, inside the Android app process.
  * Frames exist only in memory. There is no camera, image export, socket or sidecar.
  * One bounded worker owns the decoder and CPU interpreter. File time drives the
  * classifier; monotonic wall time drives transport leases and event freshness.
@@ -317,6 +317,7 @@ public final class NativeVideoReplay implements MotionSource {
         JSONObject metrics = new JSONObject();
         put(metrics, "armed", armed());
         put(metrics, "decodedFrames", stats.decodedFrames);
+        put(metrics, "attemptedFrames", stats.attemptedFrames);
         put(metrics, "acceptedFrames", stats.acceptedFrames);
         put(metrics, "discardedEpochFrames", stats.discardedEpochFrames);
         put(metrics, "videoFrames", config == null ? 0 : config.frames);
@@ -397,7 +398,9 @@ public final class NativeVideoReplay implements MotionSource {
             long inferenceEpoch = Long.MIN_VALUE;
             while (true) {
                 long token;
+                long attemptId;
                 int index;
+                String attemptRound;
                 RunStats attemptStats;
                 synchronized (lock) {
                     while (!closed) {
@@ -416,12 +419,29 @@ public final class NativeVideoReplay implements MotionSource {
                     token = epoch;
                     index = frameIndex;
                     attemptStats = stats;
+                    attemptId = ++attemptStats.attemptedFrames;
+                    attemptRound = context.roundId;
                 }
                 if (token != inferenceEpoch) { model.resetTracking(); inferenceEpoch = token; }
-                long started = SystemClock.elapsedRealtimeNanos();
-                Bitmap bitmap = video.getFrameAtIndex(index);
-                if (bitmap == null) throw new IOException("video_decode_returned_no_frame");
-                long decoded = SystemClock.elapsedRealtimeNanos();
+                ReplayAttemptTiming.Sample started = timingSample();
+                Bitmap bitmap;
+                try { bitmap = video.getFrameAtIndex(index); }
+                catch (RuntimeException | LinkageError error) {
+                    ReplayAttemptTiming.Sample decodeFailed = timingSample();
+                    synchronized (lock) {
+                        frameAttempt(attemptId, attemptRound, index, token, "decode-error", -1,
+                                new ReplayAttemptTiming(started, decodeFailed, timingSample(), null), null);
+                    }
+                    throw error;
+                }
+                ReplayAttemptTiming.Sample decoded = timingSample();
+                if (bitmap == null) {
+                    synchronized (lock) {
+                        frameAttempt(attemptId, attemptRound, index, token, "decode-error", -1,
+                                new ReplayAttemptTiming(started, decoded, timingSample(), null), null);
+                    }
+                    throw new IOException("video_decode_returned_no_frame");
+                }
                 int beforeInference;
                 synchronized (lock) {
                     // Decode may have outlived its control epoch. Do not spend
@@ -433,6 +453,8 @@ public final class NativeVideoReplay implements MotionSource {
                         attemptStats.lastDiscardReason = beforeInference;
                         attemptStats.discardedEpochFrames++;
                         attemptStats.skippedStaleInferences++;
+                        frameAttempt(attemptId, attemptRound, index, token, "decode-discard", beforeInference,
+                                new ReplayAttemptTiming(started, decoded, timingSample(), null), null);
                     }
                 }
                 if (beforeInference != ReplayFrameGuard.ACCEPT) {
@@ -440,22 +462,35 @@ public final class NativeVideoReplay implements MotionSource {
                     continue;
                 }
                 NativeMoveNet.Result result;
+                ReplayAttemptTiming.Sample modelStarted = timingSample();
                 try { result = model.infer(bitmap, index < 3 || index % 30 == 0 || index + 1 == loaded.frames); }
+                catch (RuntimeException | LinkageError error) {
+                    ReplayAttemptTiming.Sample inferenceFailed = timingSample();
+                    synchronized (lock) {
+                        frameAttempt(attemptId, attemptRound, index, token, "inference-error", -1,
+                                new ReplayAttemptTiming(started, decoded, modelStarted, inferenceFailed, timingSample()), null);
+                    }
+                    throw error;
+                }
                 finally { bitmap.recycle(); }
-                long finished = SystemClock.elapsedRealtimeNanos();
+                ReplayAttemptTiming.Sample processingEnd = timingSample();
                 synchronized (lock) {
                     expirePending(wall());
                     int discardReason = frameDiscardReason(token);
+                    ReplayAttemptTiming timing = new ReplayAttemptTiming(started, decoded, modelStarted, processingEnd, timingSample());
                     if (discardReason != ReplayFrameGuard.ACCEPT) {
                         // A new round can replace stats while this frame runs.
                         // Attribute discarded work to its original round only.
                         attemptStats.lastDiscardReason = discardReason;
                         attemptStats.discardedEpochFrames++;
+                        frameAttempt(attemptId, attemptRound, index, token, "inference-discard", discardReason, timing, result);
                         continue;
                     }
                     stats.lastDiscardReason = ReplayFrameGuard.ACCEPT;
-                    double decodeMs = (decoded - started) / 1000000.0;
-                    double totalMs = (finished - started) / 1000000.0;
+                    frameAttempt(attemptId, attemptRound, index, token, "accepted", ReplayFrameGuard.ACCEPT, timing, result);
+                    double decodeMs = timing.decWallMs();
+                    // Preserve historical frameMean/pace semantics: processing ends before the decision lock wait.
+                    double totalMs = timing.processingWallMs();
                     stats.record(decodeMs, result, totalMs);
                     PoseGestureMachine.Event recognized = activityPolicy()
                             ? activity.update(result.observation, index * 1000.0 / loaded.fps)
@@ -569,10 +604,11 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "abi", Build.SUPPORTED_ABIS.length == 0 ? "unknown" : Build.SUPPORTED_ABIS[0]);
         put(output, "threads", 2);
         put(output, "scalarFrameDiagnostics", true);
-        put(output, "capture", "bundled-public-video");
-        put(output, "personCount", "unknown-singlepose-model");
+        put(output, "capture", NativeVideoCase.isSynthetic(configAsset) ? "generated-synthetic-video" : "bundled-public-video");
+        put(output, "personCount", NativeVideoCase.isSynthetic(configAsset) ? "synthetic-no-person" : "unknown-singlepose-model");
         put(output, "inputTransform", (statelessCrop ? "official-three-pass-stateless" : "official-android-tracked") + "-crop-square-before-bilinear-rgb-uint8-" + modelPin.inputSize + "-no-mirror");
         put(output, "decodedFrames", stats.decodedFrames);
+        put(output, "attemptedFrames", stats.attemptedFrames);
         put(output, "acceptedFrames", stats.acceptedFrames);
         put(output, "discardedEpochFrames", stats.discardedEpochFrames);
         put(output, "nextFrameIndex", frameIndex);
@@ -646,6 +682,52 @@ public final class NativeVideoReplay implements MotionSource {
         Log.i(TAG, output.toString());
     }
 
+    /** Caller holds lock. Attempts stay separate from accepted pose-frame coverage. */
+    private void frameAttempt(long attemptId, String attemptRound, int index, long token, String phase,
+                              int reason, ReplayAttemptTiming timing, NativeMoveNet.Result result) {
+        JSONObject output = new JSONObject();
+        put(output, "kind", "frame-attempt"); put(output, "source", "video");
+        put(output, "configAsset", configAsset); put(output, "modelSha256", modelPin.sha256);
+        put(output, "attemptId", attemptId); put(output, "roundId", attemptRound);
+        put(output, "frameIndex", index); put(output, "attemptEpoch", token); put(output, "controlEpoch", epoch);
+        put(output, "phase", phase); put(output, "discardReason", reason);
+        put(output, "controlPollAgeMs", Math.max(0, wall() - lastPollWall));
+        put(output, "controlLeaseMs", ReplayFrameGuard.LEASE_MS);
+        put(output, "inferenceStarted", timing.inferenceStarted());
+        put(output, "wallTimingAvailable", Double.isFinite(timing.totalWallMs()));
+        put(output, "workerCpuAvailable", Double.isFinite(timing.totalWorkerCpuMs()));
+        put(output, "processCpuAvailable", Double.isFinite(timing.totalProcessCpuMs()));
+        put(output, "decodeWallMs", finiteOrNull(timing.decWallMs()));
+        put(output, "decodeWorkerCpuMs", finiteOrNull(timing.decWorkerCpuMs()));
+        put(output, "decodeProcessCpuMs", finiteOrNull(timing.decProcessCpuMs()));
+        put(output, "guardWallMs", finiteOrNull(timing.guardWallMs()));
+        put(output, "guardWorkerCpuMs", finiteOrNull(timing.guardWorkerCpuMs()));
+        put(output, "guardProcessCpuMs", finiteOrNull(timing.guardProcessCpuMs()));
+        put(output, "modelWallMs", finiteOrNull(timing.modelWallMs()));
+        put(output, "modelWorkerCpuMs", finiteOrNull(timing.modelWorkerCpuMs()));
+        put(output, "modelProcessCpuMs", finiteOrNull(timing.modelProcessCpuMs()));
+        put(output, "postGuardWallMs", finiteOrNull(timing.postGuardWallMs()));
+        put(output, "postGuardWorkerCpuMs", finiteOrNull(timing.postGuardWorkerCpuMs()));
+        put(output, "postGuardProcessCpuMs", finiteOrNull(timing.postGuardProcessCpuMs()));
+        put(output, "processingWallMs", finiteOrNull(timing.processingWallMs()));
+        put(output, "totalWallMs", finiteOrNull(timing.totalWallMs()));
+        put(output, "totalWorkerCpuMs", finiteOrNull(timing.totalWorkerCpuMs()));
+        put(output, "totalProcessCpuMs", finiteOrNull(timing.totalProcessCpuMs()));
+        put(output, "preprocessMs", result == null ? JSONObject.NULL : finiteOrNull(result.preprocessMs));
+        put(output, "inferenceMs", result == null ? JSONObject.NULL : finiteOrNull(result.inferenceMs));
+        put(output, "referenceMs", result == null ? JSONObject.NULL : finiteOrNull(result.referenceMs));
+        // Worker CPU excludes interpreter threads; process CPU includes other app work.
+        put(output, "cpuScope", "worker-thread-and-app-process");
+        Log.i(TAG, output.toString());
+    }
+
+    private static ReplayAttemptTiming.Sample timingSample() {
+        return new ReplayAttemptTiming.Sample(SystemClock.elapsedRealtimeNanos(), Debug.threadCpuTimeNanos(),
+                android.os.Process.getElapsedCpuTime());
+    }
+
+    private static Object finiteOrNull(double value) { return Double.isFinite(value) ? value : JSONObject.NULL; }
+
     private static String failureCode(Throwable error) {
         String message = error.getMessage();
         return message != null && message.matches("[a-z0-9_]{1,80}") ? message : "native_video_initialization_or_inference_failed";
@@ -696,6 +778,7 @@ public final class NativeVideoReplay implements MotionSource {
     }
     private static final class RunStats {
         int decodedFrames, acceptedFrames, discardedEpochFrames, acknowledgedEvents;
+        long attemptedFrames;
         int controlLeaseBreaks, lastDiscardReason, skippedStaleInferences;
         long lastPollGapMs;
         int parityChecks, parityByteDifferences, parityMaxByteDelta, defaultCropFrames;

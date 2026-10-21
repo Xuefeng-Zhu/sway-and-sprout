@@ -48,11 +48,16 @@ def verify(java_home, android_jar, cache_root):
         run([java_home / "bin/javac", "--release", "17", "-cp", os.pathsep.join(map(str,jars)),
              "-d", temporary / "debug", *sources])
         base = ROOT / "android/app/src/main/java/com/togethermove/tv"
+        debug_base = ROOT / "android/app/src/debug/java/com/togethermove/tv"
         tests = ROOT / "android/tests/com/togethermove/tv"
         classes = ["PoseGestureMachine", "PoseCoordinates", "MoveNetCrop", "ActivityMachine", "ReplayFrameGuard", "MotionQuery"]
-        checks = ["NativePoseMathTest", "MoveNetCropTest", "MotionQueryTest", "ReplayFrameGuardTest"]
+        debug_classes = ["NativeVideoCase", "ReplayAttemptTiming"]
+        checks = ["NativePoseMathTest", "MoveNetCropTest", "MotionQueryTest", "ReplayFrameGuardTest",
+                  "NativeVideoCaseTest", "ReplayAttemptTimingTest"]
         run([java_home / "bin/javac", "--release", "17", "-d", temporary / "host",
-             *[base / (name + ".java") for name in classes], *[tests / (name + ".java") for name in checks]])
+             *[base / (name + ".java") for name in classes],
+             *[debug_base / (name + ".java") for name in debug_classes],
+             *[tests / (name + ".java") for name in checks]])
         outputs = {name:run([java_home / "bin/java", "-cp", temporary / "host", "com.togethermove.tv." + name])
                    for name in checks}
     return {"passed":True, "scope":"Compile-only Android sources and synthetic/fake-clock host Java checks",

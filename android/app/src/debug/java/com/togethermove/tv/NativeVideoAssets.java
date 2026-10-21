@@ -33,10 +33,8 @@ final class NativeVideoAssets {
         }
     }
     static ModelPin modelPin(String configAsset) {
-        if (configAsset == null || !configAsset.matches("verification/(clear|frontal|nearface|right-negative|both-up-negative|natural-original|natural-mirror|left-natural|right-short|independent-both-press|independent-both-stretch|independent-cross-stretch)(\\.(float16|thunder))?\\.json")) {
-            throw new IllegalArgumentException("config_asset_not_allowed");
-        }
-        return configAsset.endsWith(".thunder.json") ? THUNDER_MODEL : configAsset.endsWith(".float16.json") ? FLOAT16_MODEL : INT8_MODEL;
+        String model = NativeVideoCase.modelId(configAsset);
+        return "thunder".equals(model) ? THUNDER_MODEL : "float16".equals(model) ? FLOAT16_MODEL : INT8_MODEL;
     }
     static final int MAX_VIDEO_BYTES = 256 * 1024 * 1024;
     final ModelPin modelPin;
@@ -86,6 +84,11 @@ final class NativeVideoAssets {
             names.add(name);
         }
         expectedGestures = Collections.unmodifiableList(names);
+        if (NativeVideoCase.isSynthetic(configPath) &&
+                (!"verification/synthetic-throughput.mp4".equals(videoAsset) || frames != 20 || fps != 10.0 ||
+                 expectationKnown || !names.isEmpty() || !"generated-ffmpeg-testsrc2".equals(fixture.getString("provenance")))) {
+            throw new IOException("synthetic_fixture_contract");
+        }
         byte[] modelBytes = read(assets, modelAsset, modelPin.bytes);
         if (modelBytes.length != modelPin.bytes || !modelPin.sha256.equals(sha256(modelBytes))) throw new IOException("model_hash_or_size_mismatch");
         modelBuffer = ByteBuffer.allocateDirect(modelPin.bytes).order(ByteOrder.nativeOrder());

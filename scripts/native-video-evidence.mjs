@@ -1,5 +1,5 @@
 // Pure scalar evidence checks; no ADB, browser, SDK, camera or inference imports.
-const identityFields='kind source engine engineVersion modelSha256 modelId inputSize verified configAsset api abi threads scalarFrameDiagnostics capture personCount inputTransform decodedFrames acceptedFrames discardedEpochFrames nextFrameIndex fullFileProcessed resourcesClosed cleanupSucceeded nativeRecognizedEvents acknowledgedEvents';
+const identityFields='kind source engine engineVersion modelSha256 modelId inputSize verified configAsset api abi threads scalarFrameDiagnostics capture personCount inputTransform attemptedFrames decodedFrames acceptedFrames discardedEpochFrames nextFrameIndex fullFileProcessed resourcesClosed cleanupSucceeded nativeRecognizedEvents acknowledgedEvents';
 function filteredScalarRows(text,configAsset,kinds,fields){
  const rows=[],keys=new Set(fields.split(' '));
  for(const line of text.split('\n')){
@@ -24,6 +24,17 @@ export function nativeSummaryRows(text,configAsset){
  return filteredScalarRows(text,configAsset,
   ['finished','stopped','paused','suspended','client-replaced','round-replaced','lease-expired'],identityFields+
   ' expectationKnown expectedSequenceEvaluated exactExpectedSequence declaredVideoFrames declaredFps decodeMeanMs preprocessMeanMs inferenceMeanMs inferenceP95Ms frameMeanMs frameP95Ms referenceParityChecks referenceByteDifferences referenceMaxByteDelta referenceOutputMaxDelta referenceMeanMs modelInferencesPerFrame defaultCropFrames processPssKiB');
+}
+
+// Retried/discarded attempts are diagnostics, never accepted pose-frame coverage.
+export function nativeAttemptRows(text,configAsset){
+ return filteredScalarRows(text,configAsset,['frame-attempt'],identityFields+
+  ' attemptId roundId frameIndex attemptEpoch controlEpoch phase discardReason controlPollAgeMs controlLeaseMs inferenceStarted'+
+  ' decodeWallMs decodeWorkerCpuMs decodeProcessCpuMs guardWallMs guardWorkerCpuMs guardProcessCpuMs'+
+  ' modelWallMs modelWorkerCpuMs modelProcessCpuMs'+
+  ' postGuardWallMs postGuardWorkerCpuMs postGuardProcessCpuMs processingWallMs'+
+  ' totalWallMs totalWorkerCpuMs totalProcessCpuMs preprocessMs inferenceMs referenceMs cpuScope'+
+  ' wallTimingAvailable workerCpuAvailable processCpuAvailable');
 }
 
 export function nativeFrameCoverage(rows, expected){

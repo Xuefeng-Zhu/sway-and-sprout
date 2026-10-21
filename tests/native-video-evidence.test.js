@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {nativeScalarRows,nativeSummaryRows,nativeUiScoreVerified,nativeDiagnosticRoundVerified,nativeCompletionVerified,nativeFrameCoverage,assessNativeCase} from '../scripts/native-video-evidence.mjs';
+import {nativeScalarRows,nativeSummaryRows,nativeAttemptRows,nativeUiScoreVerified,nativeDiagnosticRoundVerified,nativeCompletionVerified,nativeFrameCoverage,assessNativeCase} from '../scripts/native-video-evidence.mjs';
 
 const config='verification/independent-both-press.float16.json';
 const expected={frames:2,fps:30,expectationKnown:false,expectedGestures:[]};
@@ -20,6 +20,38 @@ test('complete trace needs each frozen frame exactly once at deterministic file 
  assert.equal(nativeFrameCoverage(frames(),expected).complete,true);
  for(const values of [frames().slice(0,1),[...frames(),frames()[1]],[{...frames()[0],fileMs:1},frames()[1]],
   [frames()[0],{...frames()[1],frameIndex:3}]])assert.equal(nativeFrameCoverage(values,expected).complete,false);
+});
+
+test('attempt evidence preserves both discard phases and accepted timing without pixels or nonfinite values',()=>{
+ const attempt={kind:'frame-attempt',configAsset:config,attemptId:1,frameIndex:0,attemptEpoch:4,controlEpoch:4,
+  phase:'accepted',discardReason:0,controlPollAgeMs:50,controlLeaseMs:1500,inferenceStarted:true,
+  decodeWallMs:20,decodeWorkerCpuMs:5,guardWallMs:7,guardWorkerCpuMs:1,
+  modelWallMs:60,modelWorkerCpuMs:15,postGuardWallMs:2000,postGuardWorkerCpuMs:1,postGuardProcessCpuMs:3,
+  processingWallMs:87,totalWallMs:2087,totalProcessCpuMs:65,
+  cpuScope:'worker-thread-and-app-process',workerCpuAvailable:true,pixels:[1,2],nested:{private:true}};
+ const decoded={...attempt,attemptId:2,phase:'decode-discard',discardReason:4,inferenceStarted:false,
+  controlPollAgeMs:1501,modelWallMs:null,modelWorkerCpuMs:Infinity,workerCpuAvailable:false};
+ const inferred={...attempt,attemptId:3,phase:'inference-discard',attemptEpoch:4,controlEpoch:5,discardReason:2};
+ const text=[attempt,decoded,inferred,{...attempt,configAsset:'verification/other.json'},
+  {...attempt,kind:'pose-frame'}].map(JSON.stringify).join('\n');
+ const rows=nativeAttemptRows(text,config);
+ assert.deepEqual(rows.map(row=>row.phase),['accepted','decode-discard','inference-discard']);
+ assert.equal(rows[0].guardWallMs,7);assert.equal(rows[0].guardWorkerCpuMs,1);
+ assert.equal(rows[0].processingWallMs,87);assert.equal(rows[0].postGuardWallMs,2000);
+ assert.equal(rows[0].postGuardWorkerCpuMs,1);assert.equal(rows[0].postGuardProcessCpuMs,3);
+ assert.equal(rows[0].totalWallMs,2087);
+ assert.equal(rows[1].inferenceStarted,false);assert.equal(rows[1].controlLeaseMs,1500);
+ assert.equal(rows[1].workerCpuAvailable,false);assert.equal('modelWallMs' in rows[1],false);
+ assert.equal('modelWorkerCpuMs' in rows[1],false);assert.equal(rows[2].attemptEpoch,4);assert.equal(rows[2].controlEpoch,5);
+ for(const row of rows){assert.equal('pixels' in row,false);assert.equal('nested' in row,false);}
+});
+
+test('repeated frame attempts cannot inflate accepted coverage',()=>{
+ const attempts=[1,2,3].map(attemptId=>({kind:'frame-attempt',configAsset:config,attemptId,frameIndex:0,
+  phase:attemptId===3?'accepted':'decode-discard'}));
+ assert.equal(nativeFrameCoverage(attempts,expected).complete,false);
+ assert.equal(nativeFrameCoverage([...frames(),...attempts],expected).complete,true);
+ assert.equal(nativeScalarRows(attempts.map(JSON.stringify).join('\n'),config).length,0);
 });
 test('explicit displayed zero is valid; absent or malformed UI and missing video identity never become zero',()=>{
  assert.equal(nativeUiScoreVerified(ui(0)),true);
