@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-10-21T09:34:39.053687+00:00",
+  "baselineSourceCommit": "25abbd3d16651967f05b196069c7319d85c2dd46",
+  "status": "local-web-journey-implemented-and-verified; native-runtime-unverified",
+  "sourceSha256": {
+    "src/main.js": "9f54038a5aad0a971d46655d9844807279770a761ab7e87fcd5403d45cf101a1",
+    "src/model.js": "3007fdd99b893b0396df4c6d86b28ef08674dd5abd6e667358901e58f4ee3605",
+    "src/style.css": "c694eb7c2cee899c5fb5810c82e5ca04c72e42b58e0451a39ea79bf2e093d6b2",
+    "src/garden-view.js": "a14a628f105bd36ee9ac4f089325a19434ca5ea1fdf027866473a335975f9992",
+    "src/round-clock.js": "539eb3d00eae58fd97ec35bbeca2874267005102584ef8e0cc1c1bec7113ff26",
+    "src/motion.js": "5b26acca0f82ce9c2ba98185463229b973bd99e38bef611685ccc3b830466bb7",
+    "src/motion-view.js": "e9b004e2852eccd1514b3edc61ef3b3df80a414ee39f067e64db2172426cc3eb",
+    "tests/experience-loop.test.js": "271664f72f5d5d1daa71428d2198db2a7d1fdd9fa195692311e5ff4a2b3e49c5",
+    "tests/garden-view.test.js": "498bcb2f5c53e9228a19af30730bb1a2bee885f643cbd0ac1112a4a217e65b1e",
+    "tests/video-source.test.js": "79a8a3c7475832d2db856850153495f5f727e76c2b498c626fc256934f7936c9",
+    "scripts/verify-simulated-progress-preservation.mjs": "03e19e90bae59c9ac04c9cc21a8a645c9a237f0377e24640e9422df50d33bdf9",
+    "tests/browser/app.spec.js": "53902d1905b3aa0fe4a0ab5e53994656081d0de7bd005823dbc0c9c1f499d567",
+    "tests/browser/motion.spec.js": "c808561cde439f6398f60e533375fb431ca2a32254e68ddc376f33c7217d785f",
+    "tests/browser/motion-live.spec.js": "833d9b25bc73880c9ae49dce41d6581181b4b939f4ac7034879a961c1b74006e",
+    "playwright.mac.config.js": "2d185808e2d08ae3cce9549069981f30c99f7d137bc1659dbd96ac245ec5b161"
+  },
+  "verification": {
+    "node": {
+      "passed": 114,
+      "failed": 0,
+      "logSha256": "bd5474c682aa15e3cfd3ff6820808daee4909a06d59b850b1609916806502724"
+    },
+    "progressPreservation": {
+      "checksPassed": 90,
+      "testScenarios": 48,
+      "modelReferenceChecks": 12,
+      "cameraManualScenarios": 30,
+      "logSha256": "45ef8a27acb9c09502903ed6494936bdfb7a21635b552a547d32a925145e5494"
+    },
+    "webBuild": {
+      "passed": true,
+      "modules": 12,
+      "existingDependenciesOnly": true,
+      "distFiles": {
+        "dist/assets/index-Be1jdBcX.js": "8fe8cff7abbc7e56e9ffce03c8e28622cbf7c8131a3bdbcdb789d4b314916ba8",
+        "dist/assets/index-C0oFFzxi.css": "acfab546dd8e3c1b60820c3b87998b2c8eb1b5321ce3a8b74b98f17f563f24ff",
+        "dist/favicon.svg": "b5861f7df0933a0a1a41de6f492a5e8dbd7fd566c5ec7bcbe1ae95a8180a0412",
+        "dist/garden.png": "b2ebe71dfb717bbcf81a9ae9a0857bbcd7fc6ac29011ebff59de86b81acdff92",
+        "dist/index.html": "c66170935801a99b039ebce6fc0455efb7f61ea4fd43f25a9b35fed4f9b13a74"
+      }
+    },
+    "portableBrowserJourney": {
+      "passed": 5,
+      "failed": 0,
+      "report": "repository-browser-qa/journey/results.json",
+      "capturedStates": 26,
+      "cameraCalls": 0,
+      "tvFitGuardsPassed": true
+    },
+    "legacyMockedBrowser": {
+      "caseAssertionsPassedAcrossRuns": 13,
+      "boundedRunPassed": 11,
+      "boundedRunUnexecuted": 2,
+      "boundedRunLimitSeconds": 120,
+      "boundedRunOverallPass": false,
+      "boundedRunReason": "Global deadline and teardown timeout; preserved as partial, not a pass.",
+      "unexecutedCasesTargetedPassed": 2,
+      "liveRelayExecuted": false
+    },
+    "initialBrowserQa": {
+      "uniqueScenarios": 4,
+      "initialPassed": 2,
+      "initialLayoutFailures": 2,
+      "affectedScenariosRetestedPassed": 3,
+      "report": "journey-browser-qa/summary.json"
+    },
+    "probePidSupervisor": {
+      "deterministicTestsPassed": 14,
+      "actualProbeRerun": false,
+      "scope": "Operational harness only; startup PID handling not verified on device."
+    },
+    "manualAudit": {
+      "browser": "Chrome; in-app browser unavailable",
+      "viewport": [
+        1280,
+        720
+      ],
+      "flow": [
+        "enter",
+        "setup",
+        "counted manual activity",
+        "explicit participation confirmation",
+        "visible saved garden change",
+        "harvest",
+        "grow again retains blooms"
+      ],
+      "testInputs": "Manual UI interaction fixtures, not observed human motion."
+    }
+  },
+  "networkProfileSha256": "3bf9fa87d9d3867cc258a863635d0c7a993eb09881397c7d8b0b6aa419a6e222",
+  "externalDataOrHardware": {
+    "newSoftwareInstalled": false,
+    "physicalCameraOrMicUsed": false,
+    "newPublicFootageAnalyzed": false,
+    "paidCalls": false,
+    "uploads": false,
+    "pushOrDeployment": false
+  },
+  "issuesResolved": [
+    "First RAF timestamp regression in diagnostic guard: baseline now sampled from RAF.",
+    "Explicit recorded round without packet cannot save participation.",
+    "Synthetic completion/fallback uses test-only result and preserves saved bytes.",
+    "Growing again preserves earned blooms.",
+    "Unclaimed harvest remains reachable from Home.",
+    "Fresh inactive diagnostic callback cannot relabel manual reward.",
+    "Help preserves context; Back safely pauses then returns home.",
+    "Manual counts provide bounded immediate plant growth without automatic participation.",
+    "720-pixel confirmation, paused and strict-diagnostic overflow corrected."
+  ],
+  "limits": [
+    "The only built/installed APK is 25abbd3 and predates current UI. Its one emulator probe aborted before active input.",
+    "The PID retry repair has deterministic evidence only; no second emulator ran.",
+    "Earlier visible replay throughput root cause remains unresolved.",
+    "Synthetic/keypoint/browser fixtures establish behavior, not recognition accuracy or physical Fire TV compatibility.",
+    "At 960x540 the strict diagnostic full-page image is 741 pixels high. Existing bottom-only legacy assertions pass but do not certify entire-viewport fit. 720/1080 journey fit guards pass.",
+    "Active counts and visit ledger are in-memory; reload retains saved blooms and starts a new visit."
+  ],
+  "cleanup": {
+    "taskEmulatorClosed": true,
+    "taskAdb5041Closed": true,
+    "syntheticServiceClosed": true,
+    "testBrowserProcessesClosed": true,
+    "taskViteServerClosed": true,
+    "taskViteExitCode": 143,
+    "auditChromeTabCleanup": {
+      "targetTabId": "1626946725",
+      "outcome": "pending",
+      "reason": "Desktop control reported Mac locked; automatic unlock failed. Earlier detached-debugger response prevented confirming viewport reset/tab closure.",
+      "needs": "User unlocks Mac to close the task-created audit tab if it remains."
+    },
+    "canonicalCheckoutUnchanged": true,
+    "sharedServicesUntouched": true
+  },
+  "artifacts": [
+    {
+      "taskRelativePath": "journey-browser-qa/summary.json",
+      "sha256": "131dc4ade8d65b69bd0ba285766935681ed7feef16d7cecd72fc93c4b03e3992"
+    },
+    {
+      "taskRelativePath": "repository-browser-qa/summary.json",
+      "sha256": "594ab551e04bdf25294bae4ac3300e07e518b16564d47c1128c79818c6958b7c"
+    },
+    {
+      "taskRelativePath": "repository-browser-qa/journey/results.json",
+      "sha256": "17298434aa515f86d103a9f86ee0f6a3466fbad9b84042ab5d6d6890148985af"
+    },
+    {
+      "taskRelativePath": "repository-browser-qa/motion/results-bounded-11.json",
+      "sha256": "e9bbd3533516ce5d347e6c4ab164deaf5b0a180b5f29889fba662ca512c047ab"
+    },
+    {
+      "taskRelativePath": "repository-browser-qa/motion/results-layout-2.json",
+      "sha256": "0670fedde8c9ffc4e2c654fc3fe6c63fceeb7e8adff3ad607b3879d7b32e4fb4"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/timer-freeze-observation.json",
+      "sha256": "e7e6a3bb3bcfc0588040fc8a4e0b9e6c293bd2777d0a488ed4f5068b3d25dc18"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/01-before-home-720.jpg",
+      "sha256": "07682a2ced77f97b0d974814a6255c29be8150b8d3c2847736eeafd75f15fcce"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/02-before-setup-720.jpg",
+      "sha256": "6b10535f02e392a4b7d4b384044203c656d59faba3622ab533faadd4bf9d1660"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/03-before-activity-720.jpg",
+      "sha256": "98087d0e6f7c05c9296584f407dd167c02d3e622bf470f7aa6f4f273e829efed"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/04-after-home-720.jpg",
+      "sha256": "9f5a55c25d91bec4ff0835b6e4940fb8170c9d2471818a1c236f1736a308cbb3"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/05-after-setup-720.jpg",
+      "sha256": "4ebeb6195498e029a944e15a51832c55c28b3e7160a534e36e4ac525456a6e1d"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/06-after-three-manual-counts-720.jpg",
+      "sha256": "36e7f8c2b2c25b12ee8235f91a342a454df934c59ad23c1a3d232ab2dc911c67"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/07-after-six-manual-counts-720.jpg",
+      "sha256": "3f380ed0d5b1cdc1d0411b072225d33fbaefba8dc851a25df77209be1fb2d5a7"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/08-after-confirmation-720.jpg",
+      "sha256": "5f2cd75a34195ef1a7247faabcec2dd7ee2a557afa73262d7c3a9f89d1b6480f"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/09-after-first-garden-bloom-720.jpg",
+      "sha256": "b6ea02953992d5f545e0a2561713a81cf71619a287df88414324249661bbf061"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/10-sunshine-setup-review-720.jpg",
+      "sha256": "e56a8c919af2787a32ebc861e08ab043ff229908b464e60fe9703de651ce979e"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/11-after-garden-ready-720.jpg",
+      "sha256": "1155e9a45423e616dffe19f2202c61f7454c49e79d66962d91d52c7ab8cc8567"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/12-after-harvest-720.jpg",
+      "sha256": "4006e320f6d3600742aafc49bfb1a7a8dda90f58128e8ce50ed107952d9ddd50"
+    },
+    {
+      "taskRelativePath": "ui-audit-20261021/13-after-grow-again-keeps-blooms-720.jpg",
+      "sha256": "d5426202a3ce4253bac248e2785c4d6e756635331c045102d8e2c445c2b1304f"
+    },
+    {
+      "taskRelativePath": "journey-browser-qa/paused-720.png",
+      "sha256": "bd4a3a0bd89715796484e0bb68065aea360d6d9c50b37505113c2b40b2a3a3dc"
+    },
+    {
+      "taskRelativePath": "journey-browser-qa/strict-diagnostic-play-720.png",
+      "sha256": "5458dd42580899674d6b086eed7e6e2fbe3cd4908c9f9c23d6ad097e23ac5a48"
+    },
+    {
+      "taskRelativePath": "journey-browser-qa/home-mobile-390.png",
+      "sha256": "1e5df08369fccf329fe0ba61f56c15ee8a33a20a7d88546575d1a21026d725a9"
+    }
+  ]
+}

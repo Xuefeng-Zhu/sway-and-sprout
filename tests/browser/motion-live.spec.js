@@ -76,13 +76,14 @@ test('real HTTP relay synthetic landmarks grow sunshine with pause standing and 
     await expect(page.locator('.sun-rays .collected')).toHaveCount(6);
     await expect(page.getByRole('button',{name:'Pause Ⅱ'})).toBeFocused();
     await page.screenshot({path:`${evidence}live-http-synthetic-six-rays.png`,fullPage:true});
-    await expect(page.getByRole('heading',{name:'A little more life.'})).toBeVisible({timeout:35000});
+    await expect(page.getByRole('heading',{name:'Test result.'})).toBeVisible({timeout:35000});
     log.timingsMs.completed=Date.now()-started;
-    await expect(page.getByText(/0 OF 3 MOMENTS GROWN · SYNTHETIC TEST/)).toBeVisible();
+    await expect(page.getByText('SYNTHETIC TEST · NO CAMERA · 6 OF 6 SIMULATED RAYS',{exact:true})).toBeVisible();
+    await expect(page.getByText('Your saved garden is unchanged.',{exact:false})).toBeVisible();
     await page.screenshot({path:`${evidence}live-http-synthetic-completed.png`,fullPage:true});
     await Promise.allSettled(captures);
     expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
-    await page.reload();await expect(page.getByText('Your next little adventure')).toBeVisible();
+    await page.reload();await expect(page.getByText('Your garden starts with a seed',{exact:true})).toBeVisible();
     expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
     expect(log.responseCount).toBeGreaterThan(20);
     expect(log.packets.some(packet=>packet.events?.length)).toBe(true);

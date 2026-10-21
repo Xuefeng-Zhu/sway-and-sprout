@@ -17,6 +17,7 @@ export default defineConfig({
     trace:'retain-on-failure',screenshot:'only-on-failure'},
   webServer:{command:'npm run dev',url:'http://127.0.0.1:4173',reuseExistingServer:true},
   projects:[
+    {name:'journey',testDir:'tests/browser',testMatch:'app.spec.js'},
     {name:'motion',testDir:'tests/browser',testMatch:'motion.spec.js'},
     {name:'live-synthetic',testDir:'tests/browser',testMatch:'motion-live.spec.js'},
     ...(baseline?[{name:'baseline-regression',testDir:path.resolve(project,baseline),testMatch:'baseline.mac.spec.mjs'}]:[]),

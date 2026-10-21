@@ -13,6 +13,39 @@ traces. Inspect all local checkpoints with
 `git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
 been requested. The dated TogetherMove source remains an untouched backup.
 
+## Garden journey and bounded probe continuation — 2026-10-21
+
+The current continuation is in the isolated `work/activity-progression` worktree,
+based on `45ced16`. The canonical checkout remains at that base. Older branch names,
+strict acceptance plans and recognition results below are historical context,
+not the current movement-first gameplay requirements.
+
+The rendered web journey now has explicit manual movement counts, discrete
+seed-to-bloom feedback, confirmed participation, cumulative saved blooms and an
+honest local harvest. Growing again keeps earned blooms. Help, pause, Back,
+unclaimed-harvest return and simulated-source isolation have regression coverage.
+The first-RAF timestamp guard regression was fixed without changing the 250 ms
+credit cap or the 1.5-second input lease. See the
+[rendered audit and before/after evidence](UI-EXPERIENCE-AUDIT-20261021.md) and
+[current verification manifest](verification/ui-experience-20261021.json).
+
+An offline debug APK of `25abbd3` was built and installed in one windowed,
+camera-disabled emulator attempt. The harness stopped at its first unsuccessful
+PID query before active input; end-to-end native scoring remains unverified.
+The PID startup retry was repaired and passed 14 deterministic tests, with no
+second emulator run. That APK predates the UI changes. All emulator/ADB5041 and
+synthetic-service resources were closed. The
+[bounded probe report](BOUNDED-PROBE-20261021.md) preserves the exact failed outcome,
+build constraints and cleanup. Historical visible video slowdown and physical
+Fire TV behavior remain unresolved.
+
+No public footage, physical camera, paid service, upload, push, publication or
+deployment was used in this continuation. Pexels footage is excluded from new
+automated analysis in the current task; older free-use metadata is not renewed
+licensing clearance. Continue with synthetic fixtures and permitted keypoint
+traces until any new media's use is cleared. Do not apply the historical strict
+pose/side-order requirements below to ordinary activity gameplay.
+
 ## Movement-first gameplay — 2026-10-21
 
 The user's goal is comfortable movement, without prescribed anatomical order or

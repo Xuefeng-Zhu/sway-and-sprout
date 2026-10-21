@@ -154,8 +154,9 @@ test('synthetic semantic raises grow six rays without keyboard input or focus ch
   const after=await page.locator('.garden-flower').evaluate(node=>getComputedStyle(node).transform);
   expect(after).not.toBe(before);
   await screenshot(page,'synthetic-six-rays-1920');
-  await expect(page.getByRole('heading',{name:'A little more life.'})).toBeVisible({timeout:35000});
-  await expect(page.getByText(/0 OF 3 MOMENTS GROWN · SYNTHETIC TEST/)).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Test result.'})).toBeVisible({timeout:35000});
+  await expect(page.getByText('SYNTHETIC TEST · NO CAMERA · 6 OF 6 SIMULATED RAYS',{exact:true})).toBeVisible();
+  await expect(page.getByText('Your saved garden is unchanged.',{exact:false})).toBeVisible();
   // A completed result retains its actual source even if another local service
   // is started later. Celebration should release its inactive polling lease.
   await page.waitForTimeout(500);
@@ -163,10 +164,10 @@ test('synthetic semantic raises grow six rays without keyboard input or focus ch
   mock.source='camera';mock.streamId='different-post-completion-stream';
   await page.waitForTimeout(700);
   expect(mock.requests.length,'Completed celebration stops polling').toBe(completedRequests);
-  await expect(page.getByText(/0 OF 3 MOMENTS GROWN · SYNTHETIC TEST/)).toBeVisible();
+  await expect(page.getByText('SYNTHETIC TEST · NO CAMERA · 6 OF 6 SIMULATED RAYS',{exact:true})).toBeVisible();
   await expect(page.getByRole('button',{name:'Resume →'})).toHaveCount(0);
   expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
-  await page.reload();await expect(page.getByText('Your next little adventure')).toBeVisible();
+  await page.reload();await expect(page.getByText('Your garden starts with a seed',{exact:true})).toBeVisible();
   expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
 });
 
@@ -250,11 +251,11 @@ test('manual fallback from mocked camera transport stops polling and preserves s
   await page.waitForTimeout(1600);const settled=mock.requests.length;
   await page.waitForTimeout(900);expect(mock.requests.length).toBe(settled);
   await page.keyboard.press('Enter');
-  await expect(page.getByRole('heading',{name:'How did that feel?'})).toBeVisible({timeout:35000});
-  await expect(page.getByRole('button',{name:'We joined in ✦'})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Make this moment yours.'})).toBeVisible({timeout:35000});
+  await expect(page.getByRole('button',{name:'Grow this moment →'})).toBeVisible();
   await page.keyboard.press('Enter');
-  await expect(page.getByText('1 OF 3 MOMENTS GROWN',{exact:true})).toBeVisible();
-  await page.reload();await expect(page.getByText('1 of 3 moments grown')).toBeVisible();
+  await expect(page.getByText('1 OF 3 MOMENTS TENDED THIS VISIT',{exact:true})).toBeVisible();
+  await page.reload();await expect(page.getByText('1 of 3 blooms saved',{exact:true})).toBeVisible();
 });
 
 test('manual fallback from synthetic input does not save simulated participation',async({page})=>{
@@ -264,11 +265,13 @@ test('manual fallback from synthetic input does not save simulated participation
   await expect(page.locator('.sunshine-garden')).toHaveCount(0);
   await expect.poll(()=>mock.requests.at(-1)?.active).toBe('0');
   await page.getByRole('button',{name:'Resume →'}).click();
-  await expect(page.getByRole('heading',{name:'How did that feel?'})).toBeVisible({timeout:35000});
-  await page.getByRole('button',{name:'We joined in ✦'}).click();
-  await expect(page.getByText('0 OF 3 MOMENTS GROWN',{exact:true})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Test round finished.'})).toBeVisible({timeout:35000});
+  await page.getByRole('button',{name:'View test result'}).click();
+  await expect(page.getByRole('heading',{name:'Test result.'})).toBeVisible();
+  await expect(page.getByText('SYNTHETIC TEST · NO CAMERA · 0 OF 6 SIMULATED RAYS',{exact:true})).toBeVisible();
+  await expect(page.getByText('Your saved garden is unchanged.',{exact:false})).toBeVisible();
   expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
-  await page.reload();await expect(page.getByText('Your next little adventure')).toBeVisible();
+  await page.reload();await expect(page.getByText('Your garden starts with a seed',{exact:true})).toBeVisible();
   expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
 });
 
@@ -277,7 +280,7 @@ test('returning to Garden stops camera polling and starting again resets the rou
   mock.raise('left-raise');await expect(page.locator('#sunshine-count')).toHaveText('1');
   const oldRound=mock.lastRound;
   await page.getByRole('button',{name:'Back to garden',exact:true}).click();
-  await expect(page.getByRole('button',{name:'Let’s grow →'})).toBeFocused();
+  await expect(page.getByRole('button',{name:'Start growing →'})).toBeFocused();
   await page.waitForTimeout(1600);const settled=mock.requests.length;
   await page.waitForTimeout(900);expect(mock.requests.length).toBe(settled);
   await page.getByRole('button',{name:/02 Catch/}).click();

@@ -7,6 +7,7 @@ import {createMotionClient,createMotionState,acceptMotionEvent} from '../src/mot
 import {createPreviewClient} from '../src/preview.js';
 import {updateSunshine,updateCameraPreview} from '../src/motion-view.js';
 import {roundTickDelta} from '../src/round-clock.js';
+import {gardenMarkup} from '../src/garden-view.js';
 
 const context=()=>({clientId:'browser-1',roundId:'round-1',revision:1,active:true,mode:'seated',after:0});
 const packet=(source='video')=>({protocol:1,...context(),source,
@@ -89,7 +90,7 @@ test('video and synthetic completion return unchanged progress; camera and manua
 function appHarness(search=''){
   let callbacks,id=0;const writes=[];const nodes={};
   const root={innerHTML:'',querySelectorAll:()=>[],querySelector:()=>({focus(){}})};
-  const sandbox={...model,createMotionState,acceptMotionEvent,roundTickDelta,URLSearchParams,location:{search},
+  const sandbox={...model,createMotionState,acceptMotionEvent,roundTickDelta,gardenMarkup,URLSearchParams,location:{search},
     createMotionClient:options=>{callbacks=options;return {start(){},stop(){}};},
     createPreviewClient:()=>({start(){},stop(){}}),sunshineMarkup:()=>'',updateSunshine(){},updateCameraPreview(){},
     document:{querySelector:selector=>selector==='#app'?root:nodes[selector]||= {textContent:'',style:{},classList:{toggle(){}}},
