@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-10-21T20:58:55.563068+00:00",
+  "branch": "work/activity-progression",
+  "baseBeforeContinuation": "68028ac73675075db4af553c35c0b0d2bcf963c0",
+  "tests": [
+    {
+      "name": "Node tests",
+      "command": "npm test",
+      "passed": true,
+      "count": 151,
+      "logSha256": "40f51f3ad9eedfba4cd92e928fcf930c8ba3e697d4c4e63e5f88b244c9e32047"
+    },
+    {
+      "name": "sidecar Python",
+      "command": "python -B -m unittest discover -s sidecar -p test_*.py",
+      "passed": true,
+      "count": 168,
+      "logSha256": "d14db4bc38cf1254a5c97fabeea3b4d2bda22da8d64559e3ff4a700732740a70",
+      "environment": "Existing pinned CPython 3.14 environment and local hash-pinned models; external networking denied by unchanged OS profile."
+    },
+    {
+      "name": "cloud API/template stdlib Python",
+      "command": "python3 -B -m unittest discover -s cloud/tests -p test_*.py",
+      "passed": true,
+      "count": 33,
+      "storage": "in-memory injected store and inspected Dynamo adapter/template; no AWS"
+    },
+    {
+      "name": "permitted-evidence runner stdlib Python",
+      "command": "python3 -B -m unittest discover -s tests -p test_permitted_activity_evidence.py",
+      "passed": true,
+      "count": 12,
+      "scope": "guards, IPC and contracts; no model inference in this suite"
+    },
+    {
+      "name": "progress preservation",
+      "command": "node scripts/verify-simulated-progress-preservation.mjs . /absolute/result.json",
+      "passed": true,
+      "count": 90,
+      "sourceMainSha256": "2e00efd6a5610c0b2ea4633f83b9c3571ddd58a865fc1dfe1551de2ccdba9962",
+      "method": "Actual main/model/reducer in VM; in-memory DOM/storage; inert clients and timers"
+    },
+    {
+      "name": "production build",
+      "command": "PATH=<existing canonical node_modules/.bin>:$PATH npm run build",
+      "passed": true,
+      "vite": "6.4.1",
+      "modules": 13,
+      "newSoftwareInstalled": false
+    }
+  ],
+  "encounteredIssues": [
+    {
+      "issue": "Worktree had no resolvable Vite package/binary",
+      "attempts": "npm build failed; PATH-only retry also failed config module resolution",
+      "fix": "Ignored symlink to already-installed Vite plus invocation PATH; no download/install",
+      "outcome": "production build passed"
+    },
+    {
+      "issue": "Sidecar suite missing worktree model assets",
+      "attempts": "156 tests ran with two class-setup errors",
+      "fix": "Ignored symlink to already-present pinned canonical model assets; no download",
+      "outcome": "full 168-test suite passed"
+    },
+    {
+      "issue": "CAS version reset could permit delayed old writes/deletes after expiry/recreate",
+      "fix": "Generation-aware CAS and exact prior-state conditionals",
+      "outcome": "reviewed regressions pass"
+    },
+    {
+      "issue": "Physical delete could permit delayed create resurrection",
+      "fix": "Progress-free 30-day tombstone, bounded retention documented, fresh client identities",
+      "outcome": "reviewed regressions pass; no permanent revocation claim"
+    },
+    {
+      "issue": "Configured backup evaluated blocked localStorage getter outside guard",
+      "fix": "Guarded storage acquisition; manual startup remains usable, explicit backup error and zero HTTP",
+      "outcome": "actual-main VM regression passed"
+    },
+    {
+      "issue": "Help-return retained stale request status after cancellation",
+      "fix": "Set cancellation status when departing pending backup; ignore late restore responses",
+      "outcome": "actual-main VM regression passed"
+    }
+  ],
+  "actualPermittedVideo": {
+    "evidence": "permitted-activity-20261021.json",
+    "rawReportSha256": "6023f1ba0444bda3443648461130453d7eee8944be8647f3b622895c514f89ec",
+    "frames": 136,
+    "eof": true,
+    "events": 3,
+    "gameRays": 3,
+    "ack": 3,
+    "growth": 0.5,
+    "savedWrites": 0,
+    "testedMainSha256": "a5b9ef51bd6de0e53e25f2620211ecad1aaa1b04e76496292d3a33c76458cfa0",
+    "postMeasurementCloudFixPatch": "post-measurement-storage-review.patch",
+    "reversePatchReconstructedTestedHash": true,
+    "videoInferenceRepeatedAfterCloudOnlyFixes": false,
+    "accuracyClaim": false,
+    "nativeOrHardwareClaim": false
+  },
+  "sourceHashes": {
+    "src/main.js": "2e00efd6a5610c0b2ea4633f83b9c3571ddd58a865fc1dfe1551de2ccdba9962",
+    "src/cloud-garden.js": "cdae685512f410cdab9bc273acc9f141bf060c60ef0ac489c3506b1305448915",
+    "src/style.css": "2e65948a1cd4faaa18e11ca17fdc1789a562c44f49eec8d96c348c5635b9bb13",
+    "index.html": "9407148c9f3db1e657a0211faba672d090dae459bd295e898f4783aedc9002d0",
+    "cloud/garden_backup.py": "4a3f8bacb10e358d14dc111e6a42b0f786f316de8c371bdfa108917bc979071f",
+    "cloud/garden-backup.resources.json": "1be090bf75002ac59cb5608f01ec871e1893ec53cca3d3bcdd93fabaa3e098aa",
+    "cloud/build_template.py": "f58a33896bd242109b4fda8248597acb9f2b3b3bab8b1fcdabb9ce7cc3bc4135",
+    "scripts/activity-game-evidence.mjs": "2e70af3323c0c4db96f792c9c21901d1bf1f3f10ff3c437e3b8ae008c295ac6f",
+    "scripts/verify-permitted-activity-video.py": "3e74ebddb7de01b9e63a0c4795bb7bae5fa0abe5d4c32c1b8ebaac3c2516637a",
+    "package.json": "9e5f8924c9c4217fb53973651e73bcfe4f78ec1215244018b8add87ffe60393d",
+    "package-lock.json": "83629c2668339bef1043591a7e8e1bb5e9341d8ce3906daa380c8a66ebb73334",
+    "LICENSE": "3f085091f2b41f4e45bb9d86513e339ed3de769a68d99db2f1a21a6c83cc0b7d",
+    "THIRD-PARTY-NOTICES.md": "8fd032a01fad863485429243d95569a21c963c8c9812369627c6a7fc65ab77fe"
+  },
+  "boundaries": {
+    "awsDeployed": false,
+    "awsSpend": false,
+    "newCredentialsOrPermissions": false,
+    "cameraOrMicrophone": false,
+    "newSoftwareInstalled": false,
+    "emulatorStarted": false,
+    "desktopUnlocked": false,
+    "restrictedFootageUsed": false,
+    "modelsOrMediaCommitted": false,
+    "privateRepositoryVisibilityChanged": false
+  },
+  "remaining": [
+    "AWS useful runtime not deployed/invoked; competition running-AWS requirement remains unmet.",
+    "Configured backup screen has source/VM tests but no fresh rendered visual check while Mac is locked.",
+    "Newest source has no new native APK/runtime proof; prior manual native 32-layout-check APK identity remains distinct.",
+    "Generated-video native completion/timing and historical windowed 8/188 slowdown unresolved.",
+    "No six-ray natural-motion completion, recognition-accuracy dataset, live-human usability or physical Fire TV validation.",
+    "Complete demo recording, judge access and final competition submission remain pending."
+  ],
+  "applicationCodeCommit": "3a301733a5b0deabd3834b1a7cbc2f17ab0167a9",
+  "review": {
+    "independentFinal": "No concrete blockers for private feature-branch push; 29 candidate files reviewed; no secrets or unintended binaries/media.",
+    "correctedFindings": [
+      "generation ABA",
+      "delayed creation after delete",
+      "blocked storage startup",
+      "cancelled Help-return status"
+    ],
+    "license": "Owner-authored code/docs MIT; third-party terms preserved"
+  }
+}

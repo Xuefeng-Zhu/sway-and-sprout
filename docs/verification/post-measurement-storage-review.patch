@@ -1,0 +1,26 @@
+--- a/src/main.js
++++ b/src/main.js
+@@ -14,8 +14,10 @@
+ const nativeVideoCheck=query.get('input')==='video-verification';
+ // Empty by default. Native hosts retain their existing network restrictions.
+ const configuredCloud=document.querySelector('meta[name="sway-garden-api"]')?.content;
++let cloudStorage;
++try{cloudStorage=localStorage;}catch{}
+ const cloudGarden=typeof configuredCloud==='string'&&configuredCloud&&cloudBackupLocationAllowed(location)?
+-  createCloudGardenClient({endpoint:configuredCloud,storage:localStorage}):null;
++  createCloudGardenClient({endpoint:configuredCloud,storage:cloudStorage}):null;
+ let cloudStatus='',cloudDeleteConfirm=false;
+ // Strict recognition stays available for explicitly selected diagnostic sessions.
+ const motionPolicy=query.get('policy')==='strict'||(nativeVideoCheck&&query.get('policy')!=='activity')?'strict':'activity';
+@@ -194,7 +196,10 @@
+     if(screen==='play'&&!paused&&!cameraMode()&&manualCount===6){screen='check';revision++;render();}
+     return;
+   }
+-  if(screen==='cloud'){cloudGarden?.cancel();cloudDeleteConfirm=false;}
++  if(screen==='cloud'){
++    if(cloudGarden?.snapshot().busy)cloudStatus=cloudGardenErrorMessage({code:'cancelled'});
++    cloudGarden?.cancel();cloudDeleteConfirm=false;
++  }
+   revision++;
+   if(action==='home'){screen='home';inputMode='manual';paused=false;}
+   else if(action==='cloud'){screen='cloud';cloudStatus='';cloudDeleteConfirm=false;}
