@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "proposalId": "independent-natural-motion-evaluation-v1",
+  "status": "PROTOCOL_FROZEN_SET_NOT_YET_FROZEN",
+  "createdAtUtc": "2026-10-21T04:16:22.877315+00:00",
+  "purpose": "Prospective independent public-video evaluation of existing behavior; no source/default/threshold or historical-evidence change",
+  "codeCommit": "574ac455f4a5e09b399b2a337c5ddf873db0c98b",
+  "sourcePins": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "77c717a755d0bd142609701a10f00ea2057c78124ad6077fac5562af4466def7"
+    },
+    {
+      "path": "sidecar/motion.py",
+      "sha256": "375b9dd92631c13533513c88b7eea9f9b3900f82304c566ee86b373b80a3b458"
+    },
+    {
+      "path": "sidecar/service.py",
+      "sha256": "cae49767c0ec32a1ce02fe294b64364bfa89b795058d901abbf69aedd6c751d4"
+    },
+    {
+      "path": "sidecar/video_input.py",
+      "sha256": "00cdf1aa7e90eb2c1a6056dcca0226d8aff3c64fabd5dd6b3115169c25bd462e"
+    },
+    {
+      "path": "sidecar/verify_video.py",
+      "sha256": "3544bcd5789b31361a61ef871b5b166c94ab1a3d348f01768df2c51e33e35385"
+    },
+    {
+      "path": "sidecar/inference.py",
+      "sha256": "6ab5579be0c85fc88cf14dfa1e16de6900fb424641c56f8519b33c2b6fb31407"
+    },
+    {
+      "path": "sidecar/mediapipe_full.py",
+      "sha256": "4102c6773172920fc55d02128144c8f0f62d9410da6dae9c478e57085a856529"
+    },
+    {
+      "path": "sidecar/pose_backend.py",
+      "sha256": "7c03dd12f744bac641dc1f071e56ea1400fa15897d3a6121e27bb97af0dfcc83"
+    },
+    {
+      "path": "src/motion.js",
+      "sha256": "9158a312e1a6ad25bd32583387987da5c08fb4e0eb35eaacba2788e986484b13"
+    },
+    {
+      "path": "src/runtime.js",
+      "sha256": "c2d95a9c34a3b7bd4f361b7cf4f8c1f41f6bc9c863b3b81a658a83ede5310a05"
+    },
+    {
+      "path": "src/main.js",
+      "sha256": "7c5671a0bcd0a3c1960433e82a3bd3effb4851bdd633be44b87ac7dbaa3781f4"
+    },
+    {
+      "path": "src/model.js",
+      "sha256": "31c4b4f3296f9bbc56ba6e8ba7a127759d92d263d88a96e603044c78c31d50f9"
+    },
+    {
+      "path": "scripts/score-motion-fixture.mjs",
+      "sha256": "97ba23862bc5ee14d90551fb540a62bf782f0c09954ea5709ae9e74a35a31c61"
+    },
+    {
+      "path": "android/app/src/debug/java/com/togethermove/tv/NativeMoveNet.java",
+      "sha256": "e0834c62b7159a383ce3d6746f84f30be4516a5f29f63b330a28c21ed0e1dd14"
+    },
+    {
+      "path": "android/app/src/main/java/com/togethermove/tv/PoseGestureMachine.java",
+      "sha256": "5d573c11240c84e1737b75136bd6411e9aa967b4572b3f289caa13a2da0ae677"
+    },
+    {
+      "path": "android/app/src/debug/java/com/togethermove/tv/NativeVideoReplay.java",
+      "sha256": "0547c62e1b47cac4651bbd6522bb33646f90d4e102276e168f0bcd7fd5b2fcd3"
+    }
+  ],
+  "freezePhases": {
+    "contract": {
+      "status": "frozen-after-root-code-review",
+      "mayFreezeBeforeHumanClarification": true,
+      "labelAuthorityClarificationResolved": true
+    },
+    "annotationsAndSet": {
+      "status": "pending-contract-freeze-and-complete-reviewed-AI-visual-annotations",
+      "mustFreezeBeforePrediction": true
+    },
+    "inference": {
+      "blockedUntil": "immutable AI visual annotation/final-set freeze and privacy check",
+      "userExecutionAlreadyAuthorized": true,
+      "additionalExecutionPermissionRequired": false
+    }
+  },
+  "labelAuthority": {
+    "questionStatus": "resolved-explicit-user-permission-for-preliminary-AI-visual-review",
+    "AIProposalPreparationAllowedAfterContractFreeze": true,
+    "humanConfirmationRequiredForPreliminaryExecution": false,
+    "humanValidationRequiredBeforeAcceptance": true,
+    "humanConfirmed": false,
+    "preliminaryDiagnosticOnly": true,
+    "noHumanLabelWait": true,
+    "noAdditionalExecutionPermissionRequired": true,
+    "requiredFields": [
+      "authorType",
+      "authorId",
+      "predictionBlind",
+      "humanConfirmed",
+      "humanConfirmationStatus",
+      "labelProvenance"
+    ],
+    "humanConfirmationStatusEnum": [
+      "not-human-confirmed",
+      "confirmed-by-human"
+    ],
+    "currentAnnotationAuthorType": "AI",
+    "currentHumanConfirmationStatus": "not-human-confirmed",
+    "noAIAsHumanClaim": true,
+    "noUserSuppliedOrApprovedLabelClaim": true,
+    "authorizationEvidence": "Explicit user clarification relayed by parent: AI visual review may proceed without waiting for human labeling; freeze before inference; preliminary diagnostics only; human validation required before acceptance"
+  },
+  "cohort": {
+    "cases": [],
+    "caseCount": null,
+    "sourceGroupCount": null,
+    "definitePositiveOpportunityCount": null,
+    "negativeMinutes": null,
+    "selectionMustPrecedePrediction": true,
+    "noPredictionBasedExclusion": true,
+    "derivativesShareSourceGroup": true,
+    "actorIdentitySeparationClaim": false,
+    "allowedDerivative": "contiguous trim preserving decoded pixels and cadence; no mirror/splice/repeated frames/retime"
+  },
+  "physicalGate": {
+    "coordinateSystem": "unmirrored top-left image coordinates; anatomical sides",
+    "requiredJoints": [
+      "left_shoulder",
+      "right_shoulder",
+      "left_wrist",
+      "right_wrist"
+    ],
+    "jointRegions": "independently annotated plausible uncertainty regions, not model predictions",
+    "shoulderSpan": "hypot(LS.x-RS.x,LS.y-RS.y)",
+    "q": "(shoulder.y-wrist.y)/shoulderSpan",
+    "up": {
+      "operator": ">",
+      "value": 0.3
+    },
+    "down": {
+      "operator": "<",
+      "value": -0.2
+    },
+    "transition": {
+      "minInclusive": -0.2,
+      "maxInclusive": 0.3
+    },
+    "certification": "all permissible joint configurations agree; otherwise allowed gate set or unknown",
+    "occludedJoint": "unknown, never imputed from a model or treated as transition",
+    "modelConfidenceUsedForLabels": false,
+    "pointAccuracyClaimWithoutIndependentPointGT": false
+  },
+  "modelAdmission": {
+    "classifierMinimumInclusive": 0.65,
+    "classifierMaximumInclusive": 1.0,
+    "globalAndAllFourJointScoresRequired": true,
+    "finiteCoordinatesRequired": true,
+    "minimumShoulderSpanExclusive": 1e-05,
+    "statusNotTracking": "lost(status), resets temporal state",
+    "noObservation": "no-person / no-pose diagnostic distinct from physical absence",
+    "opencvGlobalScore": "min(detector score,pose score)",
+    "opencvJointScore": "min(visibility,presence), out-of-image joints masked to0",
+    "fullGlobalScore": "0.65 task-admission lower bound; not exposed global detector score",
+    "fullJointScore": "min(visibility,presence); invalid joint becomes0/0/0",
+    "separateRawVisibilityPresence": "record only if actually exposed and retained; never reconstruct from min",
+    "numericConfidenceEquivalenceAcrossModels": false,
+    "androidMoveNet": {
+      "existingRoute": "Android NativeMoveNet through LiteRT; no existing Mac MoveNet backend",
+      "output": {
+        "shape": [
+          1,
+          1,
+          17,
+          3
+        ],
+        "channels": [
+          "y",
+          "x",
+          "raw-keypoint-score"
+        ]
+      },
+      "indices": {
+        "leftShoulder": 5,
+        "rightShoulder": 6,
+        "leftWrist": 9,
+        "rightWrist": 10
+      },
+      "mapping": "current crop transform to decoded source image",
+      "validity": {
+        "finite": [
+          "restored x",
+          "restored y",
+          "raw score"
+        ],
+        "scoreInclusive": [
+          0,
+          1
+        ],
+        "rawYInclusive": [
+          0,
+          1
+        ],
+        "rawXInclusive": [
+          0,
+          1
+        ],
+        "restoredXInclusive": "[0,imageWidth]",
+        "restoredYInclusive": "[0,imageHeight]"
+      },
+      "invalidPoint": "(0,0,0), preserve mapping-invalid evidence; not usable confidence-free geometry",
+      "observationConfidence": "minimum of the four raw joint scores",
+      "threshold": 0.65,
+      "calibratedProbabilityClaim": false,
+      "notEquivalentTo": "Full min(visibility,presence)",
+      "requiredProfilePins": [
+        "model ID/hash",
+        "input size",
+        "tracked or stateless-three-pass refinement",
+        "runtime/ABI/host"
+      ],
+      "classificationPerStatelessImage": "three same-image inference passes, last observation classified once"
+    }
+  },
+  "classifier": {
+    "newRoundExpected": "left",
+    "neutralMs": 300,
+    "neutralComparison": ">=",
+    "neutralGate": "both-down",
+    "holdMs": 350,
+    "holdComparison": "int(nowMs-holdSinceMs)>=350",
+    "correctRaise": "expected-up AND opposite-down",
+    "cooldownMs": 500,
+    "cooldownBlocksWhile": "nowMs-lastEmittedMs<500",
+    "cooldownBlockedHold": "clear, not backdated; arming may survive",
+    "maxObservationGapMs": 300,
+    "gapResetComparison": ">",
+    "negativeTimeGap": "error",
+    "transitionPreservesArmedOnly": "expected wrist transition AND opposite down",
+    "transitionClears": [
+      "neutral timer",
+      "partial hold"
+    ],
+    "wrongBothOtherClears": [
+      "armed",
+      "neutral timer",
+      "partial hold"
+    ],
+    "eventActions": [
+      "switch expected side",
+      "last_emitted=now",
+      "reset temporal state"
+    ],
+    "temporalResetPreserves": [
+      "expected",
+      "last_emitted"
+    ],
+    "newRoundResets": [
+      "expected=left",
+      "last_emitted=-infinity",
+      "temporal state"
+    ]
+  },
+  "deterministicClock": {
+    "formula": "frameIndex*1000/fps, unrounded float",
+    "CFRRequired": true,
+    "decodedPtsToleranceStreamTicks": 1,
+    "verifyNoDisplayGapsOrDuplicatePtsBeforeInference": true,
+    "VFRPolicy": "exclude before prediction; no clock change",
+    "holdUsesElapsedSampleSpan": true,
+    "firstEligibleSample": "first i with int(t_i-t_start)>=350, subject to arming/cooldown/reset",
+    "fullFrozenFrameCountRequired": true,
+    "fileBounds": {
+      "maximumSeconds": 30,
+      "maximumFrames": 3600,
+      "maximumBytes": 536870912
+    }
+  },
+  "eventTiming": {
+    "onsetRepresentation": "last definitely non-up sample, first definitely up sample, allowed gates between; not exact physical onset",
+    "possibleEligibility": "earliest allowed sampled emission under consistent physical observations and existing state rules",
+    "guaranteedEligibility": "first sampled time at which every permitted physical/state interpretation establishes eligibility; unknown if not provable",
+    "beforePossible": "definitely early only if no permitted interpretation allows event",
+    "betweenPossibleAndGuaranteed": "timing-indeterminate; neither definite pass nor proven false trigger",
+    "atOrAfterGuaranteedDuringValidSupport": "definite valid timing; latency reported",
+    "maximumAdditionalDelayMs": null,
+    "lateBudgetRule": "none introduced; any future product budget must be justified and frozen before prediction",
+    "supportEnd": "certified physical reset/next-gesture/valid-pose ending boundary",
+    "outsideSupport": "outside opportunity; physical false classification requires independently adjudicable subsequent state",
+    "legacyVerifier": "ordinal inclusive exact-count eventWindows; raw result preserved; does not implement uncertainty analysis",
+    "uncertaintyAnalyzerStatus": "proposal, not implemented or verified",
+    "noOldLabelOrResultRewrite": true,
+    "physicalReferenceModelConfidenceGateApplied": false
+  },
+  "transport": {
+    "serviceClock": "monotonic milliseconds in actual worker; deterministic file clock only in verifier",
+    "actualObservationTime": "service clock after inference",
+    "actualVideoWorker": "no skipping; schedule max(previous+1/fps,monotonic now), slow inference stretches replay",
+    "sourceFpsIsNotMeasuredThroughput": true,
+    "leaseValidMsInclusive": 1500,
+    "oldestEventExpiresAfterMsExclusive": 1500,
+    "queueAndHistoryMaxEvents": 64,
+    "token": [
+      "clientId",
+      "roundId",
+      "revision",
+      "captureEpoch"
+    ],
+    "sameRoundRevisionOrLeaseReset": "ACK first, then clear temporal/queued work and restore ack_expected",
+    "newRoundSequenceNumbers": "monotonic across rounds within service, not necessarily restarting1",
+    "browser": {
+      "singleFlight": true,
+      "defaultPollDelayAfterCompletionMs": 200,
+      "defaultTimeoutMs": 1200,
+      "packetMaxBytes": 32768,
+      "eventAgeLimitMsInclusive": 1500,
+      "eventAge": "server age + full browser request duration + browser wait since receipt",
+      "freshWrongSideOrLowConfidence": "consume seq without ray",
+      "staleInactiveCompletedReplay": "do not consume seq or ray",
+      "unverifiedRuntime": "diagnostic only"
+    },
+    "ackIsNotScoredRay": true,
+    "headlessScorerDoesNotExercise": [
+      "browser bounded packet validation",
+      "request/transit delay",
+      "render",
+      "UI timer"
+    ],
+    "androidNativeRecordedFile": {
+      "source": "NativeVideoReplay",
+      "classifierClock": "frameIndex*1000/fps",
+      "leaseAndEventAgeClock": "SystemClock.elapsedRealtime monotonic wall milliseconds",
+      "worker": "serialized decoder/crop/interpreter ownership; stale epoch work discarded",
+      "transport": "same-origin WebView request interception",
+      "pythonSidecarDependency": false,
+      "actualRouteAcceptanceRequired": true
+    }
+  },
+  "ui": {
+    "targetRays": 6,
+    "initialExpected": "left",
+    "timer": "30 seconds of RAF accumulation, each delta capped at250ms; not strict elapsed walltime",
+    "pause": "timer stops; scored count/lastSeq retained; sidecar fresh neutral needed",
+    "sixRays": "active input/scoring stops immediately; celebration waits timer end",
+    "incompleteAtTimerEnd": "check screen and inactive context",
+    "disconnectDoesNotPauseTimer": true,
+    "sourceOrStreamChange": "reset round/time and pause",
+    "videoOrSyntheticProgressMustNotPersist": true,
+    "noBrowserClaimFromReducerOnly": true
+  },
+  "metrics": {
+    "unit": "unique events and frozen opportunities; correlated frames/derivatives not independent samples",
+    "primaryRecallLower": "definite correct ordered timed matches / all frozen definite physical opportunities, including abstention and failed/censored execution",
+    "recallUpper": "lower successes plus disjoint possibly compatible or unevaluated opportunities / same denominator; explicit bound, not measured success",
+    "zeroDenominator": "unestimable",
+    "timingIndeterminateEmissions": "separate count, not erased or forced to pass/false",
+    "definiteFalseTriggerCount": "unique emitted events incompatible with every permitted physical/state interpretation",
+    "falseTriggersPerNegativeMinute": "only definite false events occurring inside frozen certified-negative intervals / those intervals in minutes",
+    "unknownTimeInNegativeExposure": false,
+    "abstentionReasons": [
+      "no observation",
+      "non-tracking status",
+      "invalid coordinates",
+      "model admission rejection",
+      "weak joint rejection"
+    ],
+    "downstreamSequenceMissesRemainInPrimaryDenominator": true,
+    "geometry": "valid predicted-joint gate agreement and admission-conditioned agreement separately; annotation coverage and missing predictions reported",
+    "fullGoal": "natural independent exact six-alternation expectation, timed emissions,6rays,ACK consistency and actual UI evidence",
+    "generalizationClaim": "bounded pilot only; no camera/FireTV/deployment/general FPR claim"
+  },
+  "caseRecordTemplate": {
+    "caseId": null,
+    "sourceGroupId": null,
+    "role": null,
+    "source": {
+      "url": null,
+      "creator": null,
+      "license": null,
+      "licenseEvidence": null,
+      "sha256": null
+    },
+    "derivative": {
+      "sha256": null,
+      "sourceStartFrame": null,
+      "sourceEndFrameExclusive": null,
+      "frameMap": null,
+      "pixelCadenceVerification": null
+    },
+    "displayTime": {
+      "frameCount": null,
+      "fpsNumerator": null,
+      "fpsDenominator": null,
+      "timeBase": null,
+      "firstPts": null,
+      "cfrVerified": null,
+      "ptsMapHash": null
+    },
+    "coordinates": {
+      "decodedDimensions": null,
+      "workingDimensions": null,
+      "decodedToWorkingTransform": null
+    },
+    "annotation": {
+      "authorType": "AI",
+      "authorId": null,
+      "predictionBlind": null,
+      "humanConfirmationStatus": "not-human-confirmed",
+      "sha256": null,
+      "perFrame": [],
+      "humanConfirmed": false,
+      "labelProvenance": "AI visual review; not human-, user-supplied or user-approved labels"
+    },
+    "opportunities": [],
+    "certifiedNegativeIntervals": [],
+    "uncertainIntervals": [],
+    "expectedSequence": null,
+    "runtimePins": null,
+    "predeclaredExecutionProfile": null
+  },
+  "opportunityTemplate": {
+    "opportunityId": null,
+    "expectedGesture": null,
+    "precedingNeutralInterval": null,
+    "lastDefinitelyNotUpFrame": null,
+    "firstDefinitelyUpFrame": null,
+    "allowedTransitionGates": null,
+    "oppositeDownSupport": null,
+    "continuousCertifiedRaiseEndFrame": null,
+    "possibleFirstEligibleSample": null,
+    "guaranteedFirstEligibleSample": null,
+    "guaranteedValidUntilFrame": null,
+    "stateEligibility": "definite-or-indeterminate, independently derived",
+    "denominatorStatus": null
+  },
+  "executionPerformed": false,
+  "cameraUsed": false,
+  "applicationSourceChanged": false,
+  "historicalEvidenceChanged": false,
+  "comparisonRoutes": {
+    "moveNet": "existing Android LiteRT recorded-file route",
+    "full": "existing Mac Python CPU IMAGE route",
+    "macMoveNetBackendExists": false,
+    "crossHostSpeedupOrFireTVSupportClaim": false
+  },
+  "frozenAtUtc": "2026-10-21T04:21:03.036369+00:00",
+  "contractDocument": {
+    "path": "docs/NATURAL-EVALUATION-CONTRACT.md",
+    "sha256": "e6845536e78da88d3275e435edeec1e4fe040f9a83a955cbf1639218070a22b6"
+  },
+  "scope": "Preliminary AI visual diagnostic comparison, not human-confirmed acceptance"
+}

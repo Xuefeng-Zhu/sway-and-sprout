@@ -13,6 +13,10 @@ traces. Inspect all local checkpoints with
 `git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
 been requested. The dated TogetherMove source remains an untouched backup.
 
+## Prospective independent natural evaluation — protocol frozen 2026-10-21
+
+The [evaluation contract](NATURAL-EVALUATION-CONTRACT.md) and `sidecar/fixtures/independent-natural/PROTOCOL.freeze.json` now distinguish strict physical wrist/shoulder geometry from each model's0.65 admission, preserve neutral300/hold350/cooldown500/gap>300 semantics, and express uncertain onset and event timing as intervals. The user clarification allows model-blind **AI visual annotations for preliminary diagnostics**, with no claim of human/user-approved labels; human validation remains necessary before acceptance. All16 semantic source pins match574ac45. The cohort/annotations are not yet frozen; no new-source model inference has run. Existing65JS and62gesture/verifier tests passed. New public-source screening and annotation continue locally. No defaults, old labels, thresholds or failures change; no SDK source build/port, camera, upload or push.
+
 ## Natural-left early-event audit — 2026-10-21
 
 The video source is confirmed: [DVIDS679690, Kettlebell Overhead Lunge](https://www.dvidshub.net/video/679690/kettlebell-overhead-lunge), source285–367 inclusive /9.500–12.266667s end-exclusive,83frames at30fps. Fresh metadata and independent scalar checks reproduce every83 saved gate/state and exact event with zero mismatches; PTS, B-frame display order,350ms hold and ACK/reset defects do not explain the416.667ms lead. The actual model hold begins38/source323 and emits49/source334 after366.667ms.
