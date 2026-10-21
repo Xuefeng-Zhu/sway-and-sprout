@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "scope": "Posthoc existing-result audit only; no reinference or acceptance change",
+  "source": {
+    "page": "https://www.dvidshub.net/video/679690/kettlebell-overhead-lunge",
+    "title": "Kettlebell Overhead Lunge",
+    "fps": "30/1",
+    "width": 640,
+    "height": 480,
+    "sourceStartFrameInclusive": 285,
+    "sourceEndFrameExclusive": 368,
+    "frameCount": 83,
+    "sourceStartSeconds": 9.5,
+    "sourceEndSecondsExclusive": 12.266666666666667
+  },
+  "originalAcceptance": {
+    "status": "failed",
+    "pipelineConsistent": true,
+    "sequenceExpectationPresent": true,
+    "expectedSequenceMatched": true,
+    "eventTimingExpectationPresent": true,
+    "eventTimingMatched": false,
+    "completeGoalVerified": false,
+    "scope": "selected local fixture only",
+    "liveUserVerified": false
+  },
+  "observed": {
+    "events": 1,
+    "jsScore": 1,
+    "acknowledgedSeq": 1,
+    "holdStartClipFrame": 38,
+    "holdStartSourceFrame": 323,
+    "eventClipFrame": 49,
+    "eventSourceFrame": 334,
+    "eventClipMs": 1633.3333333333333,
+    "physicalGateOnsetConfirmed": false,
+    "physical350msHoldConfirmed": false,
+    "frozenWindowMs": [
+      2050,
+      2733.334
+    ],
+    "earlyByMs": 416.6666666666667
+  },
+  "numeric": {
+    "all83StatesAndGatesReproduced": true,
+    "mismatches": 0,
+    "all83TraceTimesMatchDisplayPts": true,
+    "ptsOffsetExplanationRejected": true,
+    "holdElapsedMs": 366.6666666666667,
+    "holdThresholdMs": 350,
+    "clockHoldAckDefectFound": false
+  },
+  "visual": {
+    "reviewType": "posthoc AI, model-coordinate-blind; timing disclosed; not human ground truth",
+    "framesReviewed": 19,
+    "sourceFrames": [
+      317,
+      335
+    ],
+    "robustFailFrames": [
+      317
+    ],
+    "uncertainFrames": [
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331
+    ],
+    "robustPassFrames": [
+      332,
+      333,
+      334,
+      335
+    ],
+    "all76ModelPointsInsideBroadAuditBounds": true,
+    "pointAccuracyProven": false,
+    "robustPriorGeometryAtEventMs": 66.66666666666667
+  },
+  "conclusion": "Frozen timing FAIL remains. Conservative certified-window contract differs from wrist-height onset; physical false-positive and exact model-point error remain unproven. Trigger geometry is clear, full physical dwell is uncertain.",
+  "decision": "No candidate promoted. Native port/build remains paused; prior timing rationale is qualified, not silently overturned.",
+  "nextEvidence": "Prospectively freeze product geometry, uncertainty bounds and event-window policy on new independent natural footage before model comparison.",
+  "bindings": {
+    "source": {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/natural/679690-source.mp4",
+      "sha256": "d1bc8805ba209fb797c19c50ec87814070ef6e7285c115aceada20d78b1dfb00",
+      "unchanged": true
+    },
+    "clip": {
+      "path": "/Users/frank/mygit/sway-and-sprout/sidecar/fixtures/.cache/native-confidence-study/left-natural.mp4",
+      "sha256": "e4cc461c1c8c162c0f2bd0d256dcd99cd229e997b2ac4175715e34e0240ca8c8",
+      "unchanged": true
+    },
+    "annotation": {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/natural/679690-blind-annotation.json",
+      "sha256": "e5f66c5180b39dd46d4034a3f2660b421441f1f12613d3229e39d0d3c8591755",
+      "unchanged": true
+    },
+    "selection": {
+      "path": "/Users/frank/mygit/sway-and-sprout/sidecar/fixtures/native-confidence-study/selection-before-inference.json",
+      "sha256": "285397fe10c744144b8fc694498b14394b493fffb68af83a9173fa21dc8a1c39",
+      "unchanged": true
+    },
+    "rawFullResult": {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/python-full-benefit/results/left-natural.json",
+      "sha256": "8eb751b930495a90189b60a30aecf3768ee92c4f6830c38a49cb8c823bd1dc85",
+      "unchanged": true
+    },
+    "visualBounds": {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/visual-independent/manual-boxes.freeze.json",
+      "sha256": "779480d7331336e5be72a21348553d67ff7381eedc730868c1d19009a23661e3",
+      "unchanged": true
+    }
+  },
+  "auditEvidence": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/REPORT.md",
+      "sha256": "fbba01d78281d0339b506438b794fdfb0babdf3bee3365b003aef87dfcf54ef6"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/point-comparison.json",
+      "sha256": "132af8d358438fd52ccdb4e8b4be4c828c51d08f07d4688ca128dd935215f5a7"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/point-comparison.csv",
+      "sha256": "3a0d91395c2ef2b0485f17f92a1bef1a2f7085a9a77ba2df25097ee89cdf937d"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/compare-frozen-points.py",
+      "sha256": "3647aff2a1d94ea8710db82d4001fc9ba197eb38b00b7adcb0cc471b42f97772"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/summarize-audit.py",
+      "sha256": "4c88582d7426d38cca907543c39b3e59798362f27aa4692f7db9a68e34cf0925"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/numeric-review/numeric-review.json",
+      "sha256": "c145dc96b3f15c7420687e0eff0a5a16b540e06e5a3279521112b51951110a6c"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/numeric-review/pts-metadata.json",
+      "sha256": "2ea961756d4b1f297097ec32c7f9703ec252d87e10923033de08289ceb6e38b8"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/numeric-review/state-recalculation.json",
+      "sha256": "364d487c041a7174c1aba34cc5801b9df2729123aaf7740a216fb9154cef1e26"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/numeric-review/verify-numeric-review.py",
+      "sha256": "018ccd3892a682782d0694943a6c2c6ca5e79aab8399bd43909a4b8f1aa3b2f9"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/visual-independent/manual-boxes.freeze.json",
+      "sha256": "779480d7331336e5be72a21348553d67ff7381eedc730868c1d19009a23661e3"
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-19/task/confidence-calibration/early-trigger-audit/visual-independent/geometry-summary.json",
+      "sha256": "cd8da1442c64d1f00b96d181df442aa09dbab7ab55eb3330d7208670c2dee155"
+    }
+  ],
+  "restrictions": {
+    "newInference": false,
+    "appSourceChanges": false,
+    "originalAnnotationsChanged": false,
+    "gatesChanged": false,
+    "physicalCameraUsed": false,
+    "newToolsInstalled": false,
+    "sdkInitialized": false,
+    "uploaded": false,
+    "pushed": false,
+    "deployed": false,
+    "fireTvDeviceValidation": false,
+    "pendingDeniedOrUncertainActions": []
+  }
+}

@@ -13,6 +13,12 @@ traces. Inspect all local checkpoints with
 `git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
 been requested. The dated TogetherMove source remains an untouched backup.
 
+## Natural-left early-event audit — 2026-10-21
+
+The video source is confirmed: [DVIDS679690, Kettlebell Overhead Lunge](https://www.dvidshub.net/video/679690/kettlebell-overhead-lunge), source285–367 inclusive /9.500–12.266667s end-exclusive,83frames at30fps. Fresh metadata and independent scalar checks reproduce every83 saved gate/state and exact event with zero mismatches; PTS, B-frame display order,350ms hold and ACK/reset defects do not explain the416.667ms lead. The actual model hold begins38/source323 and emits49/source334 after366.667ms.
+
+The frozen timed **FAIL remains unchanged**. Its certified stable-window contract differs from the implemented wrist-height threshold. A separate posthoc AI visual audit, model-coordinate-blind but given timing context, finds source317 robustly below,318–331 uncertain,332–335 robustly raised. Event geometry is clear; physical350ms dwell and exact onset remain unproven. This qualifies the prior timing-based no-go rationale without promoting a model or converting the result to pass. Native source/build work remains paused. Read [audit and source](NATURAL-LEFT-TIMING-AUDIT.md) and [bound evidence](verification/natural-left-timing-audit-20261021.json). No annotation/window/gate/source change, reinference, SDK initialization, build/install, camera, upload, push or deployment. Next timed acceptance needs prospectively frozen geometry/uncertainty/window policy on new independent natural footage; no FireTV or live-user validation is claimed.
+
 ## Existing Python Full natural benefit — 2026-10-21
 
 The parent changed strategy: **pause Android source builds/Bazel/new tools**, first compare the already-installed Python Full backend on the new natural-left and two negatives. Fresh read-only privacy review distinguishes this Python native/CAPI path from the Maven Android package. The known installed Python binary has telemetry capability; the existing approved deny-all macOS profile was applied before SDK import and throughout inference/children, with fresh fail-closed no-send EPERM preflight. This enforces no upload without claiming telemetry is disabled. No new dependencies, SDK patches, credentials or permissions.
