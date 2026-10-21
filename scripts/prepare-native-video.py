@@ -77,15 +77,19 @@ def validate_lock(lock):
     if lock['schemaVersion'] != 1 or lock['runtimeVersion'] != '1.4.2':
         raise ValueError('Unsupported native runtime lock schema/version')
     cases = ['clear', 'frontal', 'nearface', 'right-negative', 'both-up-negative',
-             'natural-original', 'natural-mirror', 'left-natural', 'right-short']
+             'natural-original', 'natural-mirror', 'left-natural', 'right-short',
+             'independent-both-press', 'independent-both-stretch', 'independent-cross-stretch']
     if [row['case'] for row in lock['fixtures']] != cases:
-        raise ValueError('Expected exactly the seven baseline and two independently bound study cases')
+        raise ValueError('Expected original nine cases plus the three independently frozen public cases')
     for row in lock['fixtures']:
         if type(row['expectationKnown']) is not bool:
             raise ValueError('expectationKnown must be an explicit boolean')
         if row['case'] in ('natural-original', 'natural-mirror'):
             if row['expectationKnown'] or row['expectedGestures']:
                 raise ValueError('Partial natural clips must remain observed-only')
+        elif row['case'].startswith('independent-'):
+            if not row['expectationKnown'] and row['expectedGestures']:
+                raise ValueError('Unknown independent clips cannot carry an exact expected sequence')
         elif not row['expectationKnown']:
             raise ValueError('Known frozen controls must retain their expectations')
     models = model_artifacts(lock)
