@@ -321,6 +321,161 @@ footer kbd { font: inherit; font-size: 17px; min-width: 29px; height: 29px; disp
   .camera-local-note { font-size: 16px; }
 }
 
+/* Android TV can expose a 960×540 CSS canvas for a 1080p display. Give that
+   canvas its own proportions; content stays in normal flow, never clipped. */
+@media (min-width: 851px) and (max-height: 600px) {
+  .app { padding-top: 12px; }
+  header { min-height: 34px; gap: 22px; }
+  .brand { font-size: 27px; }
+  nav { gap: 24px; }
+  nav button { font-size: 16px; padding: 6px 0; }
+  h1, .intro h1, .center-panel h1 { font-size: 36px; margin-bottom: 12px; }
+  h2 { font-size: 24px; }
+  p { font-size: 18px; line-height: 1.3; margin-bottom: 12px; }
+  .step { font-size: 14px; line-height: 1.3; margin-bottom: 8px; }
+  .subtle { font-size: 14px !important; line-height: 1.3; margin-top: 10px; }
+  .safety, .harvest-note { font-size: 16px; line-height: 1.3; margin-bottom: 12px; }
+  .primary { min-height: 46px; font-size: 20px; padding: 10px 20px; gap: 18px; }
+  .actions { gap: 9px; }
+  .actions button:not(.primary) { min-height: 42px; font-size: 16px; padding: 10px 14px; }
+  button:focus-visible, button:focus { outline-width: 2px; outline-offset: 4px; box-shadow: 0 0 0 6px var(--forest); }
+  footer { min-height: 40px; padding-top: 6px; padding-bottom: 6px; gap: 20px; font-size: 14px; }
+  footer kbd { font-size: 14px; min-width: 25px; height: 25px; }
+
+  .hero { gap: 28px; padding: 10px 0; }
+  .intro .subtle { margin-top: 12px; }
+  .home .garden-illustration { max-height: 155px; }
+  .garden-caption { font-size: 18px; line-height: 1.25; }
+  .garden-stage { font-size: 16px; }
+  .home .garden-stage, .home .garden-labels small { display: none; }
+  .garden-labels { font-size: 16px; margin-top: 10px; }
+  .challenge-list { margin: 8px 0 12px; }
+  .challenge { min-height: 86px; padding-top: 10px; padding-bottom: 10px; }
+  .challenge + .challenge { padding-left: 18px; }
+  .challenge .number { font-size: 15px; margin-bottom: 4px; }
+  .challenge strong { font-size: 20px; }
+  .challenge small { font-size: 15px; margin-top: 5px; }
+  .journey-strip { margin: 7px 0 8px; }
+  .journey-strip li { font-size: 16px; padding: 6px 15px; gap: 9px; }
+  .journey-strip b, .journey-strip .number, .journey-strip .step-number { width: 23px; height: 23px; flex-basis: 23px; font-size: 14px; }
+
+  .panel { padding: 12px 0; }
+  .setup-panel { gap: 30px; }
+  .choices { margin: 14px 0; gap: 12px; }
+  .choices button { padding: 11px 14px; }
+  .choices b { font-size: 20px; }
+  .choices small { font-size: 16px; margin-top: 4px; }
+  .setup-art .garden-illustration { max-height: 165px; }
+  .setup-art h2 { font-size: 22px; margin: 12px 0 8px; }
+  .setup-art p, .setup-art li { font-size: 16px; line-height: 1.3; }
+  .setup-art .garden-stage { display: none; }
+  .input-choices { margin: 12px 0; }
+  .input-choices legend { font-size: 14px; margin-bottom: 8px; }
+  .input-options { gap: 12px; }
+  .input-options button { padding: 11px 13px; }
+  .input-options b { font-size: 20px; }
+  .input-options small, .camera-setup-note { font-size: 16px; line-height: 1.3; }
+  /* The optional input choices replace the repeated seed illustration. */
+  .setup-panel.has-input-choices { grid-template-columns: 1fr; }
+  .setup-panel.has-input-choices .setup-art { display: none; }
+  .setup-panel.has-input-choices > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'step step' 'title input' 'intro input' 'position input' 'safety safety' 'start start';
+    column-gap: 30px;
+    row-gap: 10px;
+  }
+  .setup-panel.has-input-choices > div > .step { grid-area: step; margin: 0; }
+  .setup-panel.has-input-choices h1 { grid-area: title; margin: 0; }
+  .setup-panel.has-input-choices > div > p:not(.step):not(.safety) { grid-area: intro; margin: 0; }
+  .setup-panel.has-input-choices .choices { grid-area: position; margin: 0; }
+  .setup-panel.has-input-choices .input-choices { grid-area: input; margin: 0; align-self: start; }
+  .setup-panel.has-input-choices .safety { grid-area: safety; margin: 0; }
+  .setup-panel.has-input-choices > div > .primary { grid-area: start; justify-self: start; }
+
+  .play-panel, .camera-mode .play-panel { padding: 12px 0; gap: 26px; }
+  .cue, .camera-mode .cue { font-size: 22px; min-height: 60px; margin-bottom: 12px; }
+  .timer { margin: 15px 0; gap: 16px; }
+  #time { font-size: 23px; min-width: 50px; }
+  .track { height: 7px; }
+  .manual-feedback { gap: 7px; }
+  .manual-feedback .garden-illustration { max-height: 165px; }
+  .manual-feedback .garden-stage { display: none; }
+  #manual-count { font-size: 18px; }
+  .manual-feedback .primary { min-height: 46px; }
+  .manual-feedback .harvest-note { font-size: 14px; line-height: 1.3; margin: 4px 0 0; }
+  .pause-note { font-size: 16px; line-height: 1.3; padding: 8px 0; margin-bottom: 8px; }
+  .is-paused .instruction > .subtle { display: none; }
+  .is-paused .manual-feedback .garden-illustration { max-height: 145px; }
+
+  .center-panel { padding: 12px 0; }
+  .check .center-panel:not(.test-result), .celebration:not(.test-result), .center-panel.harvest {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    column-gap: 30px;
+    align-content: center;
+    text-align: left;
+  }
+  .check .center-panel:not(.test-result) > .garden-view { grid-column: 2; grid-row: 1 / 6; align-self: center; }
+  .check .center-panel:not(.test-result) > .step { grid-column: 1; grid-row: 1; }
+  .check .center-panel:not(.test-result) > h1 { grid-column: 1; grid-row: 2; }
+  .check .center-panel:not(.test-result) > p:not(.step):not(.subtle) { grid-column: 1; grid-row: 3; }
+  .check .center-panel:not(.test-result) > .actions { grid-column: 1; grid-row: 4; }
+  .check .center-panel:not(.test-result) > .subtle { grid-column: 1; grid-row: 5; }
+  .check .center-panel > .garden-view .garden-illustration { max-height: 190px; }
+  .check .center-panel > .garden-view .garden-stage { display: none; }
+  .celebration > .journey-strip { grid-column: 1 / -1; grid-row: 1; margin-top: 0; margin-bottom: 16px; }
+  .celebration > .step { grid-column: 1; grid-row: 2; }
+  .celebration > h1 { grid-column: 1; grid-row: 3; }
+  .celebration > .garden-change { grid-column: 2; grid-row: 2 / 7; align-self: center; margin: 0; }
+  .celebration > p:not(.step):not(.subtle) { grid-column: 1; grid-row: 4; }
+  .celebration > .actions { grid-column: 1; grid-row: 5; }
+  .celebration > .subtle { grid-column: 1; grid-row: 6; }
+  .garden-change .garden-illustration { max-height: 180px; }
+  .center-panel.harvest > .step { grid-column: 1; grid-row: 1; }
+  .center-panel.harvest > h1 { grid-column: 1; grid-row: 2; }
+  .center-panel.harvest > .garden-view { grid-column: 2; grid-row: 1 / 6; align-self: center; margin: 0; }
+  .center-panel.harvest > p:not(.step):not(.harvest-note) { grid-column: 1; grid-row: 3; }
+  .center-panel.harvest > .actions { grid-column: 1; grid-row: 4; }
+  .center-panel.harvest > .harvest-note { grid-column: 1; grid-row: 5; margin: 12px 0 0; }
+  .harvest .garden-illustration { max-height: 210px; }
+  .harvest .garden-caption b { font-size: 18px; }
+  .center-panel > p:not(.step):not(.subtle), .center-panel > .actions { margin-left: 0; margin-right: 0; }
+  .check .center-panel:not(.test-result) > .actions, .celebration > .actions, .harvest > .actions { justify-content: flex-start; }
+  .test-result > .garden-view .garden-illustration { max-height: 110px; }
+  .test-result .garden-caption { display: none; }
+  .test-result > p:not(.step):not(.subtle) { margin-left: auto; margin-right: auto; }
+  .help-panel h1 { margin-bottom: 16px; }
+  .help-grid { gap: 26px; margin-bottom: 16px; }
+  .help-grid h2 { font-size: 22px; margin-bottom: 8px; }
+  .help-grid p { font-size: 17px; line-height: 1.3; }
+
+  /* The same camera evidence occupies two columns instead of a tall stack. */
+  .sunshine-garden { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; padding: 10px; }
+  .camera-badge { grid-column: 1 / -1; font-size: 14px; }
+  .camera-preview { grid-column: 1; margin: 0; min-width: 0; }
+  .preview-heading { display: block; font-size: 14px; margin-bottom: 6px; }
+  .preview-heading > span { display: none; }
+  .preview-viewport { height: 92px; }
+  .preview-placeholder { padding: 9px; gap: 5px; }
+  .preview-placeholder b { font-size: 16px; }
+  .preview-placeholder span { font-size: 14px; line-height: 1.25; }
+  .preview-confidence { font-size: 13px; margin: 5px 0; gap: 5px; }
+  .preview-confidence meter { display: none; }
+  .preview-visibility { font-size: 14px; gap: 6px 8px; margin-top: 8px; }
+  .preview-visibility > span { flex-direction: row; gap: 4px; }
+  .preview-movement { font-size: 14px; line-height: 1.25; margin-top: 8px; }
+  .sunshine-progress { grid-column: 2; display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 7px; border-top: 0; padding: 0; min-width: 0; }
+  .garden-svg { max-height: 110px; }
+  .sunshine-caption { display: block; }
+  .sunshine-count { display: block; }
+  .sunshine-count b { font-size: 27px; }
+  .sunshine-count > span, #sunshine-next { font-size: 14px; }
+  #sunshine-next { display: block; margin-top: 3px; }
+  .signal-status { min-height: 0; font-size: 14px; line-height: 1.3; padding-top: 6px; }
+  .camera-local-note { grid-column: 1 / -1; font-size: 14px; margin: 0; }
+}
+
 /* Narrow screens keep the same journey and controls, in a single column. */
 @media (max-width: 850px) {
   .app { padding: 20px 6vw 0; }

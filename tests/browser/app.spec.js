@@ -41,9 +41,13 @@ async function fixture(context,page,{saved=null}={}){
 }
 async function inspect(page,name,{fit=true}={}){
  await expect(page.locator('main')).toBeVisible();
- const geometry=await page.evaluate(()=>({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight,footer:document.querySelector('footer').getBoundingClientRect().toJSON(),buttons:[...document.querySelectorAll('main button:not(:disabled)')].map(node=>({action:node.dataset.action,text:node.textContent.trim(),box:node.getBoundingClientRect().toJSON(),font:getComputedStyle(node).fontSize})),cameraCalls:window.__qaCameraCalls}));
- const path=output+'/'+name+'.png';await page.screenshot({path,fullPage:true});
- const row={name,path,...geometry};
+ // Let layout and remote focus settle before measuring. A
+ // screenshot must represent the visible TV viewport, including its header.
+ await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+ const geometry=await page.evaluate(()=>({width:innerWidth,height:innerHeight,scrollY,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight,header:document.querySelector('header').getBoundingClientRect().toJSON(),footer:document.querySelector('footer').getBoundingClientRect().toJSON(),focused:document.activeElement?.tagName==='BUTTON'?document.activeElement.getBoundingClientRect().toJSON():null,buttons:[...document.querySelectorAll('main button:not(:disabled)')].map(node=>({action:node.dataset.action,text:node.textContent.trim(),box:node.getBoundingClientRect().toJSON(),font:getComputedStyle(node).fontSize})),cameraCalls:window.__qaCameraCalls}));
+ const path=output+'/'+name+'.png';await page.screenshot({path,fullPage:!fit});
+ const afterCapture=await page.evaluate(()=>({scrollY,headerTop:document.querySelector('header').getBoundingClientRect().top,footerBottom:document.querySelector('footer').getBoundingClientRect().bottom}));
+ const row={name,path,...geometry,afterCapture};
  const current=logs.get(test.info().testId);current.layouts.push(row);
  expect(geometry.cameraCalls).toBe(0);
  expect(geometry.scrollWidth,name+' has no horizontal overflow').toBeLessThanOrEqual(geometry.width+1);
@@ -52,8 +56,8 @@ async function inspect(page,name,{fit=true}={}){
  return row;
 }
 function requireFits(log){
- const failures=log.fitScreens.filter(row=>row.scrollHeight>row.height+1||row.footer.bottom>row.height+1||row.buttons.some(button=>button.box.bottom>row.height+1||button.box.top<0));
- expect(failures.map(row=>({name:row.name,scrollHeight:row.scrollHeight,viewport:row.height,footerBottom:row.footer.bottom,offscreen:row.buttons.filter(button=>button.box.bottom>row.height+1||button.box.top<0)})),'TV controls and footer fit').toEqual([]);
+ const failures=log.fitScreens.filter(row=>row.scrollHeight>row.height+1||row.scrollY>1||row.header.top<0||row.footer.bottom>row.height+1||row.afterCapture.scrollY>1||row.afterCapture.headerTop<0||row.afterCapture.footerBottom>row.height+1||row.buttons.some(button=>button.box.bottom>row.height+1||button.box.top<0)||row.focused&&(row.focused.top<6||row.focused.bottom>row.height-6||row.focused.left<6||row.focused.right>row.width-6));
+ expect(failures.map(row=>({name:row.name,scrollHeight:row.scrollHeight,scrollY:row.scrollY,headerTop:row.header.top,viewport:row.height,footerBottom:row.footer.bottom,afterCapture:row.afterCapture,focused:row.focused,offscreen:row.buttons.filter(button=>button.box.bottom>row.height+1||button.box.top<0)})),'TV header controls focus ring and footer fit without scrolling').toEqual([]);
 }
 async function startManual(page,choice=0){
  await page.locator('[data-action="choose:'+choice+'"]').click();
@@ -228,5 +232,46 @@ test('D-pad reaches sunshine and manual position changes keep deliberate remote 
  await inspect(page,'remote-position-change-720');
  await page.keyboard.press('Escape');await expect(page.locator('.app.home')).toBeVisible();
  expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(null);
+ requireFits(logs.get(test.info().testId));
+});
+
+test('native 960 by 540 TV canvas keeps the complete journey and camera controls onscreen',async({context,page})=>{
+ await page.setViewportSize({width:960,height:540});
+ await fixture(context,page);await page.goto('/');await page.waitForLoadState('networkidle');
+ await inspect(page,'native-home-540');
+ for(let moment=0;moment<3;moment++){
+  if(moment===0)await page.locator('[data-action="choose:0"]').click();
+  else await page.getByRole('button',{name:'Next moment →',exact:true}).click();
+  await inspect(page,'native-setup-'+moment+'-540');
+  await page.locator('[data-action="start"]').click();await inspect(page,'native-manual-'+moment+'-540');
+  if(moment===0){
+   await page.keyboard.press('Space');await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
+   await inspect(page,'native-manual-paused-540');
+   await page.getByRole('button',{name:'How to play',exact:true}).click();await inspect(page,'native-help-540');
+   await page.getByRole('button',{name:'Return to where I was →',exact:true}).click();
+   await page.getByRole('button',{name:'Resume →',exact:true}).click();
+  }
+  await sixCounts(page);await inspect(page,'native-six-counts-'+moment+'-540');
+  await page.getByRole('button',{name:'Finish this moment →',exact:true}).click();
+  await inspect(page,'native-confirm-'+moment+'-540');
+  await page.getByRole('button',{name:'Grow this moment →',exact:true}).click();
+  await inspect(page,'native-celebrate-'+moment+'-540');
+ }
+ await page.getByRole('button',{name:'Harvest garden →',exact:true}).click();await inspect(page,'native-harvest-540');
+ await page.getByRole('button',{name:'Back to garden',exact:true}).click();await inspect(page,'native-saved-home-540');
+ await page.locator('[data-action="choose:1"]').click();
+ await page.locator('[data-action="input:camera"]').click();await inspect(page,'native-camera-setup-540');
+ await page.locator('[data-action="start"]').click();
+ await expect(page.locator('#camera-source')).toHaveText('SYNTHETIC TEST · NO CAMERA');
+ await inspect(page,'native-camera-play-540');
+ await page.keyboard.press('Space');await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
+ await inspect(page,'native-camera-paused-540');
+ await page.goto('/?policy=strict');await page.waitForLoadState('networkidle');
+ await page.locator('[data-action="choose:1"]').click();await page.locator('[data-action="input:camera"]').click();
+ await inspect(page,'native-strict-setup-540');await page.locator('[data-action="start"]').click();
+ await expect(page.locator('#camera-source')).toHaveText('SYNTHETIC TEST · NO CAMERA');
+ await inspect(page,'native-strict-play-540');
+ await page.keyboard.press('Space');await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
+ await inspect(page,'native-strict-paused-540');
  requireFits(logs.get(test.info().testId));
 });
