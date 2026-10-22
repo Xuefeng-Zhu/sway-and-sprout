@@ -45,6 +45,16 @@ test('the garden illustration is static and deterministic without new counted pr
   assert.notEqual(grown,first);
 });
 
+test('omitting a duplicate caption keeps the illustration accessible and preserves earned bloom state',()=>{
+  const completed=Object.freeze(['wake','sun','rain']);
+  const markup=gardenMarkup({kind:'harvest',completed,showCaption:false});
+  assert.doesNotMatch(markup,/<figcaption\b/);
+  assert.match(markup,/role="img" aria-label="Three blooms, gathered together"/);
+  assert.match(markup,/data-grown="3"/);
+  assert.equal((markup.match(/class="garden-bloom"/g)||[]).length,3);
+  assert.deepEqual(completed,['wake','sun','rain']);
+});
+
 test('harvest illustration requires all three distinct earned moments',()=>{
   for(const completed of [[],['wake'],['wake','sun'],['wake','wake','sun'],['wake','sun','unknown']]){
     assert.doesNotMatch(gardenMarkup({kind:'harvest',completed}),/class="garden-harvest"/);

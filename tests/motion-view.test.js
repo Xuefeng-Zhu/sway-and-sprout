@@ -8,7 +8,7 @@ const packet=(overrides={})=>({roundId:'round-current',revision:3,active:true,so
 
 // Exercise the real renderer, including its initial call before a packet arrives.
 // This supplies only DOM nodes it updates; no camera, network, storage or timers.
-function renderCue(options={}){
+function renderFeedback(options={}){
   const nodes=Object.fromEntries(['#sunshine-count','#sunshine-next','#camera-source',
     '#motion-status','#camera-cue'].map(key=>[key,{textContent:''}]));
   const garden={dataset:{motionCount:'0'},style:{setProperty(){}},querySelectorAll:()=>[]};
@@ -18,9 +18,11 @@ function renderCue(options={}){
     selector==='#sunshine-pop'?pop:nodes[selector]};
   try{
     updateSunshine({motion:motion(),packet:packet(),paused:false,disconnected:false,revision:3,...options});
-    return nodes['#camera-cue'].textContent;
+    return {cue:nodes['#camera-cue'].textContent,status:nodes['#motion-status'].textContent,
+      badge:nodes['#camera-source'].textContent};
   }finally{globalThis.document=previous;}
 }
+const renderCue=options=>renderFeedback(options).cue;
 const assertRest=cue=>{assert.match(cue,/rest both arms/i);assert.doesNotMatch(cue,/raise your|hold your/i);};
 
 test('initial renderer preserves a rest cue before the first camera packet',()=>{
@@ -101,20 +103,36 @@ test('a claimed verified runtime with invalid identity cannot authorize an armed
 test('activity cues encourage comfortable movement without sides, height or holding requirements',()=>{
   const move={...motion(),policy:'activity',expected:'any'};
   for(const status of ['waiting','tracking','neutral','hold','ready']){
-    const cue=renderCue({motion:move,packet:packet({policy:'activity',expected:'any',status})});
-    assert.match(cue,/move|movement|time/i);
-    assert.doesNotMatch(cue,/left hand|right hand|above your shoulder|rest both|hold your/i);
+    const feedback=renderFeedback({motion:move,packet:packet({policy:'activity',expected:'any',status})});
+    assert.match(feedback.cue,/\b(?:wave|reach|stretch|sway)\b/i);
+    assert.doesNotMatch(feedback.cue,/left hand|right hand|above your shoulder|rest both|hold your/i);
+    assert.ok(feedback.status.trim(),'Activity has separate status feedback');
+    assert.equal(feedback.badge,'LOCAL CAMERA');
+    if(['tracking','hold'].includes(status))assert.match(feedback.status,/\bsmall moves\b/i);
   }
-  const cue=renderCue({motion:move,packet:null});
-  assert.match(cue,/wave, reach, stretch or sway/);
-  assert.match(cue,/Small movements count/);
+  const initial=renderFeedback({motion:move,packet:null});
+  assert.match(initial.cue,/\b(?:wave|reach|stretch|sway)\b/i);
+  assert.match(initial.status,/finding.*view|connecting/i);
+  assert.doesNotMatch(initial.cue,/left hand|right hand|above your shoulder|rest both|hold your/i);
 });
 
-test('activity visibility guidance allows a clear hand or upper body and never prescribes a pose',()=>{
+test('activity status preserves visibility and recovery guidance without prescribing a pose',()=>{
   const move={...motion(),policy:'activity',expected:'any'};
-  const cue=renderCue({motion:move,packet:packet({policy:'activity',expected:'any',status:'low-confidence'})});
-  assert.match(cue,/a hand or your upper body/);
-  assert.doesNotMatch(cue,/both wrists|raise|hold|below your shoulders/i);
-  assert.match(renderCue({motion:move,paused:true}),/Rest whenever you like/);
-  assert.match(renderCue({motion:move,disconnected:true}),/reconnects/);
+  const options=status=>({motion:move,packet:packet({policy:'activity',expected:'any',status})});
+  const visibility=renderFeedback(options('low-confidence'));
+  assert.match(visibility.status,/hand.*(?:or|\/).*upper body/i);
+  assert.doesNotMatch(visibility.status,/both wrists|raise|hold|below your shoulders/i);
+  assert.match(renderFeedback(options('no-person')).status,/one person.*view/i);
+  const paused=renderFeedback({...options('tracking'),paused:true});
+  assert.match(paused.cue,/paused/i);assert.match(paused.status,/camera off/i);assert.match(paused.status,/resume/i);
+  const disconnected=renderFeedback({...options('tracking'),disconnected:true});
+  assert.match(disconnected.cue,/interrupted|connection/i);
+  assert.match(disconnected.status,/connection lost/i);assert.match(disconnected.status,/manual play/i);
+  const unavailable=renderFeedback(options('camera-error'));
+  assert.match(unavailable.status,/camera unavailable/i);assert.match(unavailable.status,/manual play/i);
+  const unverified=renderFeedback({...options('tracking'),packet:packet({policy:'activity',expected:'any',runtime:{opencv:'5.0.0',verified:false}})});
+  assert.match(unverified.status,/not verified/i);assert.match(unverified.status,/manual play/i);
+  for(const feedback of [visibility,paused,disconnected,unavailable,unverified]){
+    assert.doesNotMatch(feedback.cue,/left hand|right hand|above your shoulder|rest both|hold your/i);
+  }
 });

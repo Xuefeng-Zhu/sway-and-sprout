@@ -69,9 +69,9 @@ async function cameraRound(page,mock,{standing=false,policy='strict'}={}){
   if(standing){await page.locator('[data-action="mode:standing"]').click();await expect(page.locator('[data-action="mode:standing"]')).toHaveClass(/selected/);}
   await page.locator('[data-action="input:camera"]').click();
   await expect(page.locator('[data-action="input:camera"]')).toHaveClass(/selected/);
-  await page.getByRole('button',{name:/^Start catch/}).click();
+  await page.getByRole('button',{name:'Start camera →',exact:true}).click();
   await expect(page.getByRole('heading',{name:'Catch the sunshine'})).toBeVisible();
-  await expect(page.locator('#camera-source')).toHaveText(mock.source==='synthetic'?'SYNTHETIC TEST · NO CAMERA':'LOCAL CAMERA · OPENCV 5');
+  await expect(page.locator('#camera-source')).toHaveText(mock.source==='synthetic'?'SYNTHETIC TEST · NO CAMERA':'LOCAL CAMERA');
   await expect.poll(()=>mock.requests.some(request=>request.active==='1')).toBe(true);
   await expect(page.locator('#sunshine-count')).toHaveText('0');
 }
@@ -82,7 +82,8 @@ test('activity play gathers bounded rays without an anatomical cue and preserves
   const mock=await mockedSidecar(page);mock.status='tracking';
   await cameraRound(page,mock,{policy:'activity'});
   const savedBefore=await page.evaluate(()=>localStorage.getItem('togethermove.v1'));
-  await expect(page.locator('#camera-cue')).toContainText('Small movements count');
+  await expect(page.locator('#camera-cue')).toHaveText('Simulated activity.');
+  await expect(page.locator('#motion-status')).toContainText('Garden unchanged');
   await expect(page.locator('.preview-confidence')).toBeHidden();
   await expect(page.locator('#sunshine-next')).toHaveText('Every little move counts');
   await expect(page.locator('#camera-cue')).not.toContainText(/left hand|right hand|Hold your|Rest both/);
@@ -155,8 +156,9 @@ test('synthetic semantic raises grow six rays without keyboard input or focus ch
   expect(after).not.toBe(before);
   await screenshot(page,'synthetic-six-rays-1920');
   await expect(page.getByRole('heading',{name:'Test result.'})).toBeVisible({timeout:35000});
-  await expect(page.getByText('SYNTHETIC TEST · NO CAMERA · 6 OF 6 SIMULATED RAYS',{exact:true})).toBeVisible();
-  await expect(page.getByText('Your saved garden is unchanged.',{exact:false})).toBeVisible();
+  await expect(page.locator('.test-result .step')).toHaveText('SYNTHETIC TEST · NO CAMERA');
+  await expect(page.locator('.test-result .garden-caption b')).toHaveText('6/6 simulated rays');
+  await expect(page.getByText('Saved garden unchanged.',{exact:false})).toBeVisible();
   // A completed result retains its actual source even if another local service
   // is started later. Celebration should release its inactive polling lease.
   await page.waitForTimeout(500);
@@ -164,10 +166,11 @@ test('synthetic semantic raises grow six rays without keyboard input or focus ch
   mock.source='camera';mock.streamId='different-post-completion-stream';
   await page.waitForTimeout(700);
   expect(mock.requests.length,'Completed celebration stops polling').toBe(completedRequests);
-  await expect(page.getByText('SYNTHETIC TEST · NO CAMERA · 6 OF 6 SIMULATED RAYS',{exact:true})).toBeVisible();
+  await expect(page.locator('.test-result .step')).toHaveText('SYNTHETIC TEST · NO CAMERA');
+  await expect(page.locator('.test-result .garden-caption b')).toHaveText('6/6 simulated rays');
   await expect(page.getByRole('button',{name:'Resume →'})).toHaveCount(0);
   expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
-  await page.reload();await expect(page.getByText('Your garden starts with a seed',{exact:true})).toBeVisible();
+  await page.reload();await expect(page.getByText('0/3 blooms',{exact:true})).toBeVisible();
   expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
 });
 
@@ -186,7 +189,9 @@ test('pause Back and position change ignore semantic raises while paused',async(
   await page.keyboard.press('Escape');
   await expect(page.getByRole('button',{name:'Resume →'})).toBeFocused();
   await page.getByRole('button',{name:'Change position'}).click();
-  await expect(page.getByText('MOMENT 2 OF 3 · STANDING · SYNTHETIC TEST · NO CAMERA')).toBeVisible();
+  await expect(page.locator('.instruction .step')).toBeVisible();
+  await expect(page.locator('.instruction .step')).toContainText('MOMENT 2 OF 3 · STANDING');
+  await expect(page.locator('#camera-source')).toHaveText('SYNTHETIC TEST · NO CAMERA');
   await expect(page.getByRole('button',{name:'Resume →'})).toBeVisible();
   await expect.poll(()=>mock.requests.at(-1)?.mode).toBe('standing');
   mock.raise('left-raise');await page.waitForTimeout(450);
@@ -204,11 +209,11 @@ test('duplicates stale low-confidence wrong-side and previous-round events canno
   mock.raise('left-raise');await expect(page.locator('#sunshine-count')).toHaveText('1');
   mock.events.push({seq:mock.seq,gesture:'right-raise',confidence:.99,ageMs:0});
   await page.waitForTimeout(350);await expect(page.locator('#sunshine-count')).toHaveText('1');
-  await page.getByRole('button',{name:'Back to garden',exact:true}).click();
+  await page.locator('main [data-action="home"]').click();
   await page.getByRole('button',{name:/02 Catch/}).click();
   await page.locator('[data-action="input:camera"]').click();
   await expect(page.locator('[data-action="input:camera"]')).toHaveClass(/selected/);
-  await page.getByRole('button',{name:/^Start catch/}).click();
+  await page.getByRole('button',{name:'Start camera →',exact:true}).click();
   await expect(page.locator('#camera-source')).toHaveText('SYNTHETIC TEST · NO CAMERA');
   expect(mock.lastRound).not.toBe(originalRound);
   await expect(page.locator('#sunshine-count')).toHaveText('0');
@@ -235,7 +240,7 @@ test('network errors show fallback preserve progress and recover without reload'
   const mock=await mockedSidecar(page);await cameraRound(page,mock);
   mock.raise('left-raise');await expect(page.locator('#sunshine-count')).toHaveText('1');
   mock.drop=true;await expect(page.locator('#motion-status')).toContainText('connection lost');
-  await expect(page.getByRole('button',{name:'Use manual play'})).toBeVisible();
+  await expect(page.getByRole('button',{name:'Manual play'})).toBeVisible();
   await expect(page.locator('#sunshine-count')).toHaveText('1');
   await screenshot(page,'synthetic-network-fallback-1920');
   mock.drop=false;mock.raise('right-raise');await expect(page.locator('#sunshine-count')).toHaveText('2');
@@ -244,34 +249,36 @@ test('network errors show fallback preserve progress and recover without reload'
 test('manual fallback from mocked camera transport stops polling and preserves self-report completion',async({page})=>{
   // This is camera-labelled JSON only; both HTTP routes are mocked, with no capture.
   const mock=await mockedSidecar(page);mock.source='camera';await cameraRound(page,mock);
-  await page.getByRole('button',{name:'Use manual play'}).click();
+  await page.getByRole('button',{name:'Manual play'}).click();
   await expect(page.locator('.sunshine-garden')).toHaveCount(0);
-  await expect(page.getByText('MOMENT 2 OF 3 · SEATED · MANUAL')).toBeVisible();
+  await expect(page.getByText('MOMENT 2 OF 3 · SEATED',{exact:true})).toBeVisible();
+  await expect(page.getByText('Manual · self-reported · no camera',{exact:true})).toBeVisible();
   await expect(page.getByRole('button',{name:'Resume →'})).toBeFocused();
   await page.waitForTimeout(1600);const settled=mock.requests.length;
   await page.waitForTimeout(900);expect(mock.requests.length).toBe(settled);
   await page.keyboard.press('Enter');
-  await expect(page.getByRole('heading',{name:'Make this moment yours.'})).toBeVisible({timeout:35000});
+  await expect(page.getByRole('heading',{name:'Did you move?'})).toBeVisible({timeout:35000});
   await expect(page.getByRole('button',{name:'Grow this moment →'})).toBeVisible();
   await page.keyboard.press('Enter');
-  await expect(page.getByText('1 OF 3 MOMENTS TENDED THIS VISIT',{exact:true})).toBeVisible();
-  await page.reload();await expect(page.getByText('1 of 3 blooms saved',{exact:true})).toBeVisible();
+  await expect(page.getByText('1/3 moments tended',{exact:true})).toBeVisible();
+  await page.reload();await expect(page.getByText('1/3 blooms',{exact:true})).toBeVisible();
 });
 
 test('manual fallback from synthetic input does not save simulated participation',async({page})=>{
   const mock=await mockedSidecar(page);await cameraRound(page,mock);
   const savedBefore=await page.evaluate(()=>localStorage.getItem('togethermove.v1'));
-  await page.getByRole('button',{name:'Use manual play'}).click();
+  await page.getByRole('button',{name:'Manual play'}).click();
   await expect(page.locator('.sunshine-garden')).toHaveCount(0);
   await expect.poll(()=>mock.requests.at(-1)?.active).toBe('0');
   await page.getByRole('button',{name:'Resume →'}).click();
   await expect(page.getByRole('heading',{name:'Test round finished.'})).toBeVisible({timeout:35000});
   await page.getByRole('button',{name:'View test result'}).click();
   await expect(page.getByRole('heading',{name:'Test result.'})).toBeVisible();
-  await expect(page.getByText('SYNTHETIC TEST · NO CAMERA · 0 OF 6 SIMULATED RAYS',{exact:true})).toBeVisible();
-  await expect(page.getByText('Your saved garden is unchanged.',{exact:false})).toBeVisible();
+  await expect(page.locator('.test-result .step')).toHaveText('SYNTHETIC TEST · NO CAMERA');
+  await expect(page.locator('.test-result .garden-caption b')).toHaveText('0/6 simulated rays');
+  await expect(page.getByText('Saved garden unchanged.',{exact:false})).toBeVisible();
   expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
-  await page.reload();await expect(page.getByText('Your garden starts with a seed',{exact:true})).toBeVisible();
+  await page.reload();await expect(page.getByText('0/3 blooms',{exact:true})).toBeVisible();
   expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
 });
 
@@ -279,7 +286,7 @@ test('returning to Garden stops camera polling and starting again resets the rou
   const mock=await mockedSidecar(page);await cameraRound(page,mock);
   mock.raise('left-raise');await expect(page.locator('#sunshine-count')).toHaveText('1');
   const oldRound=mock.lastRound;
-  await page.getByRole('button',{name:'Back to garden',exact:true}).click();
+  await page.locator('main [data-action="home"]').click();
   await expect(page.getByRole('button',{name:'Start growing →'})).toBeFocused();
   await page.waitForTimeout(1600);const settled=mock.requests.length;
   await page.waitForTimeout(900);expect(mock.requests.length).toBe(settled);
@@ -287,7 +294,7 @@ test('returning to Garden stops camera polling and starting again resets the rou
   await expect(page.locator('[data-action="input:manual"]')).toHaveClass(/selected/);
   await page.locator('[data-action="input:camera"]').click();
   await expect(page.locator('[data-action="input:camera"]')).toHaveClass(/selected/);
-  await page.getByRole('button',{name:/^Start catch/}).click();
+  await page.getByRole('button',{name:'Start camera →',exact:true}).click();
   await expect(page.locator('#camera-source')).toHaveText('SYNTHETIC TEST · NO CAMERA');
   expect(mock.lastRound).not.toBe(oldRound);
   await expect(page.locator('#sunshine-count')).toHaveText('0');
@@ -300,7 +307,7 @@ test('switching input source or restarting the service resets evidence and pause
   mock.source='camera';mock.streamId='camera-qa-stream';
   await expect(page.locator('#sunshine-count')).toHaveText('0');
   await expect(page.getByRole('button',{name:'Resume →'})).toBeFocused();
-  await expect(page.locator('#motion-status')).toContainText('input service changed');
+  await expect(page.locator('#motion-status')).toContainText(/Input changed\. Round reset\. Resume/i);
   await expect.poll(()=>mock.lastRound).not.toBe(originalRound);
   await page.keyboard.press('Enter');
   mock.raise('left-raise');await expect(page.locator('#sunshine-count')).toHaveText('1');

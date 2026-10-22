@@ -51,7 +51,7 @@ test('actual app has no cloud controls or calls by default, on native hosts, or 
 test('configured controls only appear at rest and never send until an explicit backup action',async()=>{
   const current=app();assert.match(current.root.innerHTML,/data-action="cloud"/);assert.equal(current.calls.length,0);
   current.api.act('cloud');assert.equal(current.api.read().screen,'cloud');assert.equal(current.calls.length,0);
-  assert.match(current.root.innerHTML,/Backup belongs to this browser/);assert.match(current.root.innerHTML,/Clearing all browser data also removes its key/);
+  assert.match(current.root.innerHTML,/This browser holds your backup key/);assert.match(current.root.innerHTML,/Clearing its data removes access/);
   await current.api.act('cloud-backup');assert.equal(current.calls.length,1);
   assert.equal(current.storage.get('togethermove.v1'),current.initial,'Backup never rewrites local participation');
   current.api.act('home');current.api.act('choose:0');current.api.act('start');
@@ -80,7 +80,7 @@ test('explicit restore merges saved blooms without awarding a visit, harvest or 
   current.api.act('cloud');await current.api.act('cloud-backup');await current.api.act('cloud-restore');
   assert.deepEqual(JSON.parse(current.storage.get('togethermove.v1')),{completed:['wake','sun'],sessions:4});
   assert.equal(current.api.read().journeyCompleted.length,0);assert.equal(current.api.read().harvestClaimed,false);
-  assert.match(current.root.innerHTML,/Your current visit is unchanged/);
+  assert.match(current.root.innerHTML,/Blooms restored\. Current visit unchanged\./);
   current.api.act('home');assert.doesNotMatch(current.root.innerHTML,/data-action="return-harvest"/);
 });
 
@@ -103,10 +103,10 @@ test('Help cancels a pending restore and Return shows cancellation instead of a 
   let release;
   const current=app({fetchImpl:(url,options)=>options.method==='GET'?new Promise(resolve=>{release=resolve;}):reply(JSON.parse(options.body).progress)});
   current.api.act('cloud');await current.api.act('cloud-backup');const pending=current.api.act('cloud-restore');
-  assert.match(current.root.innerHTML,/Looking for your saved blooms/);
+  assert.match(current.root.innerHTML,/Restoring blooms…/);
   current.api.act('help');await pending;current.api.act('return');
   assert.equal(current.api.read().screen,'cloud');assert.match(current.root.innerHTML,/request was cancelled/);
-  assert.doesNotMatch(current.root.innerHTML,/Looking for your saved blooms|Backing up your saved garden/);
+  assert.doesNotMatch(current.root.innerHTML,/Restoring blooms…|Backing up…/);
   release(reply({completed:['rain'],sessions:9},2));await new Promise(resolve=>setImmediate(resolve));
   assert.match(current.root.innerHTML,/request was cancelled/);
   assert.equal(current.storage.get('togethermove.v1'),current.initial);
@@ -115,7 +115,7 @@ test('Help cancels a pending restore and Return shows cancellation instead of a 
 test('deleting requires confirmation and never deletes the garden saved on this device',async()=>{
   const current=app({fetchImpl:async(url,options)=>options.method==='DELETE'?new Response(null,{status:204}):reply(JSON.parse(options.body).progress)});
   current.api.act('cloud');await current.api.act('cloud-backup');await current.api.act('cloud-delete-confirm');assert.equal(current.calls.length,1);
-  current.api.act('cloud-delete');assert.match(current.root.innerHTML,/Delete the cloud copy\?/);
+  current.api.act('cloud-delete');assert.match(current.root.innerHTML,/Delete cloud copy\? Your local garden stays\./);
   current.api.act('cloud-delete-cancel');assert.equal(current.calls.length,1);
   current.api.act('cloud-delete');await current.api.act('cloud-delete-confirm');assert.equal(current.calls.length,2);
   assert.equal(current.storage.get('togethermove.v1'),current.initial);assert.match(current.root.innerHTML,/Cloud copy deleted/);

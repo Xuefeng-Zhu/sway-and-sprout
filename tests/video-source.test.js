@@ -67,15 +67,19 @@ test('actual garden renderer labels video scoring and cues as a replay with no c
 
 test('actual preview renderer keeps live and paused replay distinct from camera capture',()=>withView(nodes=>{
   updateCameraPreview({preview:preview()});
-  assert.equal(nodes['#preview-title'].textContent,'Local video replay');
-  assert.equal(nodes['#preview-state'].textContent,'Replay · no camera');
+  assert.equal(nodes['#preview-title'].textContent,'Replay preview');
+  assert.equal(nodes['#preview-state'].textContent,'Replay');
   assert.match(nodes['#camera-preview-image'].alt,/video replay/);
   assert.equal(nodes['#camera-preview-image'].hidden,false);
   updateCameraPreview({reason:'paused',source:'video'});
   assert.equal(nodes['#camera-preview-image'].src,undefined);
   assert.equal(nodes['#camera-preview-image'].hidden,true);
-  assert.match(nodes['#preview-placeholder-detail'].textContent,/No camera is active/);
-  assert.match(nodes['#preview-movement'].textContent,/no camera/);
+  assert.equal(nodes['#preview-state'].textContent,'Replay');
+  assert.match(nodes['#preview-placeholder-title'].textContent,/Replay paused/);
+  assert.match(nodes['#preview-placeholder-detail'].textContent,/Local file frames only/);
+  assert.doesNotMatch(nodes['#preview-placeholder-title'].textContent,/Camera/);
+  updateSunshine({motion:{count:0,target:6,expected:'left',completed:false},packet:packet(),paused:true});
+  assert.equal(nodes['#camera-source'].textContent,'VIDEO REPLAY · NO CAMERA');
 }));
 
 test('video and synthetic completion return unchanged progress; camera and manual complete normally',()=>{
@@ -116,7 +120,7 @@ test('ordinary play defaults to free activity while strict replay remains an exp
   const ordinary=appHarness();
   assert.equal(ordinary.api.read().motion.policy,'activity');
   assert.equal(ordinary.motionOptions.getContext().policy,'activity');
-  assert.match(ordinary.root.innerHTML,/wave, reach, stretch or sway/);
+  assert.match(ordinary.root.innerHTML,/\b(?:wave|reach|stretch|sway)\b/i);
   assert.doesNotMatch(ordinary.root.innerHTML,/Six alternating raises|Left, rest, right|above your shoulder/);
   assert.equal(appHarness('?policy=strict').api.read().motion.policy,'strict');
   assert.equal(appHarness('?input=video-verification').api.read().motion.policy,'strict');
@@ -221,7 +225,10 @@ test('native verification entry identifies recorded input before any packet with
   app.api.act('home');app.api.act('choose:1');
   assert.match(app.root.innerHTML,/Video replay/);
   assert.match(app.root.innerHTML,/Bundled test · no camera/);
-  assert.match(app.root.innerHTML,/does not open a camera/);
+  const disclosure=app.root.innerHTML.match(/<p class="camera-setup-note">([\s\S]*?)<\/p>/)?.[1]||'';
+  assert.match(disclosure,/no camera|does not open a camera/i);
+  assert.match(disclosure,/120(?:s|-second).*diagnostic/i);
+  assert.match(disclosure,/saved garden.*unchanged|does not.*change.*saved garden/i);
   assert.doesNotMatch(app.root.innerHTML,/OpenCV 5 on this Mac/);
   assert.equal(app.writes.length,0);
 });

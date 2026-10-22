@@ -49,7 +49,7 @@ function harvest(ready){
   </g>`;
 }
 
-export function gardenMarkup({completed=[],count=0,total=6,label='',kind='round'}={}){
+export function gardenMarkup({completed=[],count=0,total=6,label='',kind='round',showCaption=true}={}){
   const type=['round','garden','harvest'].includes(kind)?kind:'round';
   const grown=new Set(Array.isArray(completed)?completed.filter(id=>MOMENTS.some(([key])=>key===id)):[]);
   const growth=gardenStage(count,total),ready=grown.size===3;
@@ -64,7 +64,7 @@ export function gardenMarkup({completed=[],count=0,total=6,label='',kind='round'
     <svg class="garden-illustration" viewBox="0 0 600 370" role="img" aria-label="${escape(description)}" xmlns="http://www.w3.org/2000/svg">
       <path d="M62 337q238 31 476 0" fill="none" stroke="#315542" stroke-width="2"/>${image}
     </svg>
-    <figcaption class="garden-caption"><b>${caption}</b><span class="garden-stage">${escape(description)}</span></figcaption>
+    ${showCaption?`<figcaption class="garden-caption"><b>${caption}</b><span class="garden-stage">${escape(description)}</span></figcaption>`:''}
     ${type==='garden'?`<div class="garden-labels" aria-hidden="true">${MOMENTS.map(([id,name])=>`<span class="${grown.has(id)?'grown':'waiting'}">${escape(name)}<small>${grown.has(id)?'Grown':'A seed for now'}</small></span>`).join('')}</div>`:''}
   </figure>`;
 }

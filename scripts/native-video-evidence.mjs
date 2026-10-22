@@ -62,17 +62,26 @@ export function nativeDiagnosticRoundVerified(round){
  return round?.roundSecondsText==='120'&&round.diagnosticReplayText==='true'&&round.timerText==='120s';
 }
 
+function replayCompletionCountVerified(state,count){
+ if(!state)return false;
+ // Current UI separates the input badge from its numeric result. Do not accept
+ // a badge alone, a malformed count, or a result from a different input source.
+ if(Object.hasOwn(state,'simulatedRayLabel'))return state.rayLabel==='VIDEO REPLAY · NO CAMERA'&&
+  state.simulatedRayLabel===`${count}/6 simulated rays`;
+ // Preserve historical evidence whose single label carried both facts.
+ return state.rayLabel===`VIDEO REPLAY · NO CAMERA · ${count} OF 6 SIMULATED RAYS`;
+}
+
 export function nativeCompletionVerified(completion, count){
- const label=`${count} OF 6 SIMULATED RAYS`;
  return Number.isInteger(count)&&count>=0&&count<=6&&completion?.realTimerElapsed===true&&completion.realWallMs>=119000&&
   completion.celebration?.screen?.split(' ').includes('celebrate')===true&&
-  completion.celebration.heading==='Replay result.'&&completion.celebration.rayLabel?.includes(label)===true&&
+  completion.celebration.heading==='Replay result.'&&replayCompletionCountVerified(completion.celebration,count)&&
   completion.celebration.replayLabel===true&&completion.celebration.cameraCalls===0&&
   completion.progressUnchangedAtCelebration===true&&completion.progressUnchangedAfterReload===true&&
   completion.reload?.screen==='app home'&&completion.reload.cameraCalls===0&&
   completion.inactivePacket?.active===false&&completion.inactivePacket.metrics?.acknowledgedEvents===count&&
   (count===6?completion.path==='six-ray-auto-celebration':completion.path==='check-confirmation'&&
-   completion.check?.heading==='Replay finished.'&&completion.check.rayLabel?.includes(label)===true&&completion.realCompleteButtonClicked===true);
+   completion.check?.heading==='Replay finished.'&&replayCompletionCountVerified(completion.check,count)&&completion.realCompleteButtonClicked===true);
 }
 
 export function assessNativeCase(row, expected, nativeRows){

@@ -21,6 +21,7 @@ function readUiState(){
   source:garden?.dataset.motionSource??null,badgeText:document.querySelector('#camera-source')?.textContent?.trim()??null,
   screen:app?.className,heading:document.querySelector('main h1')?.textContent?.trim()??null,
   rayLabel:document.querySelector('main .step')?.textContent?.trim()??'',
+  simulatedRayLabel:document.querySelector('.test-result .garden-caption b')?.textContent?.trim()??'',
   roundSecondsText:app?.getAttribute('data-round-seconds')??null,
   diagnosticReplayText:app?.getAttribute('data-diagnostic-replay')??null,
   timerText:document.querySelector('#time')?.textContent?.trim()??null,
@@ -163,14 +164,14 @@ try{
      let terminal=await page.evaluate(readUiState);
      row.completion.realWallMs=Date.now()-started;row.completion.realTimerElapsed=row.completion.realWallMs>=119000;
      if(terminal.screen?.split(' ').includes('check')){
-      row.completion.path='check-confirmation';row.completion.check={screen:terminal.screen,heading:terminal.heading,rayLabel:terminal.rayLabel};
+      row.completion.path='check-confirmation';row.completion.check={screen:terminal.screen,heading:terminal.heading,rayLabel:terminal.rayLabel,simulatedRayLabel:terminal.simulatedRayLabel};
       row.completion.inactivePacket=await waitInactive();
       row.completion.completeButtonLabel=await page.locator('[data-action="complete"]').textContent();
       await page.locator('[data-action="complete"]').click();row.completion.realCompleteButtonClicked=true;
       await page.waitForFunction(()=>document.querySelector('.app')?.classList.contains('celebrate'),undefined,{timeout:5000});
      }else{row.completion.path='six-ray-auto-celebration';row.completion.inactivePacket=await waitInactive();}
      terminal=await page.evaluate(readUiState);
-     row.completion.celebration={screen:terminal.screen,heading:terminal.heading,rayLabel:terminal.rayLabel,
+     row.completion.celebration={screen:terminal.screen,heading:terminal.heading,rayLabel:terminal.rayLabel,simulatedRayLabel:terminal.simulatedRayLabel,
       replayLabel:terminal.body.includes('VIDEO REPLAY'),storageSha256:sha(terminal.storage),cameraCalls:terminal.cameraCalls};
      row.completion.progressUnchangedAtCelebration=before===terminal.storage;
      await page.reload({waitUntil:'domcontentloaded'});await page.waitForSelector('[data-action="choose:1"]');

@@ -44,7 +44,7 @@ async function inspect(page,name,{fit=true}={}){
  // Let layout and remote focus settle before measuring. A
  // screenshot must represent the visible TV viewport, including its header.
  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
- const geometry=await page.evaluate(()=>({width:innerWidth,height:innerHeight,scrollY,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight,header:document.querySelector('header').getBoundingClientRect().toJSON(),footer:document.querySelector('footer').getBoundingClientRect().toJSON(),focused:document.activeElement?.tagName==='BUTTON'?document.activeElement.getBoundingClientRect().toJSON():null,buttons:[...document.querySelectorAll('main button:not(:disabled)')].map(node=>({action:node.dataset.action,text:node.textContent.trim(),box:node.getBoundingClientRect().toJSON(),font:getComputedStyle(node).fontSize})),cameraCalls:window.__qaCameraCalls}));
+ const geometry=await page.evaluate(()=>({width:innerWidth,height:innerHeight,scrollY,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight,headingFontPx:Number.parseFloat(getComputedStyle(document.querySelector('main h1')).fontSize),header:document.querySelector('header').getBoundingClientRect().toJSON(),footer:document.querySelector('footer').getBoundingClientRect().toJSON(),focused:document.activeElement?.tagName==='BUTTON'?document.activeElement.getBoundingClientRect().toJSON():null,buttons:[...document.querySelectorAll('main button:not(:disabled)')].map(node=>({action:node.dataset.action,text:node.textContent.trim(),box:node.getBoundingClientRect().toJSON(),font:getComputedStyle(node).fontSize})),cameraCalls:window.__qaCameraCalls}));
  const path=output+'/'+name+'.png';await page.screenshot({path,fullPage:!fit});
  const afterCapture=await page.evaluate(()=>({scrollY,headerTop:document.querySelector('header').getBoundingClientRect().top,footerBottom:document.querySelector('footer').getBoundingClientRect().bottom}));
  const row={name,path,...geometry,afterCapture};
@@ -56,24 +56,36 @@ async function inspect(page,name,{fit=true}={}){
  return row;
 }
 function requireFits(log){
+ const smallHeadings=log.fitScreens.filter(row=>row.width===960&&row.height===540&&(!Number.isFinite(row.headingFontPx)||row.headingFontPx<36));
+ expect(smallHeadings.map(({name,headingFontPx})=>({name,headingFontPx})),'Concise copy keeps the 36px native TV heading baseline').toEqual([]);
  const failures=log.fitScreens.filter(row=>row.scrollHeight>row.height+1||row.scrollY>1||row.header.top<0||row.footer.bottom>row.height+1||row.afterCapture.scrollY>1||row.afterCapture.headerTop<0||row.afterCapture.footerBottom>row.height+1||row.buttons.some(button=>button.box.bottom>row.height+1||button.box.top<0)||row.focused&&(row.focused.top<6||row.focused.bottom>row.height-6||row.focused.left<6||row.focused.right>row.width-6));
  expect(failures.map(row=>({name:row.name,scrollHeight:row.scrollHeight,scrollY:row.scrollY,headerTop:row.header.top,viewport:row.height,footerBottom:row.footer.bottom,afterCapture:row.afterCapture,focused:row.focused,offscreen:row.buttons.filter(button=>button.box.bottom>row.height+1||button.box.top<0)})),'TV header controls focus ring and footer fit without scrolling').toEqual([]);
+}
+async function requireVisibleCopy(page,locator,meaning){
+ await expect(locator).toHaveCount(1);await expect(locator).toBeVisible();
+ await expect(locator).toContainText(meaning);
+ const proof=await locator.evaluate(node=>({text:node.textContent.trim(),box:node.getBoundingClientRect().toJSON(),
+  fontPx:Number.parseFloat(getComputedStyle(node).fontSize),width:innerWidth,height:innerHeight}));
+ expect(proof.text).not.toBe('');expect(proof.fontPx).toBeGreaterThan(0);
+ expect(proof.box.left).toBeGreaterThanOrEqual(-1);expect(proof.box.top).toBeGreaterThanOrEqual(-1);
+ expect(proof.box.right).toBeLessThanOrEqual(proof.width+1);expect(proof.box.bottom).toBeLessThanOrEqual(proof.height+1);
+ const log=logs.get(test.info().testId);(log.requiredCopy??=[]).push(proof);
 }
 async function startManual(page,choice=0){
  await page.locator('[data-action="choose:'+choice+'"]').click();
  await expect(page.locator('.app.setup')).toBeVisible();
  await page.locator('[data-action="start"]').click();
- await expect(page.locator('#manual-count')).toHaveText('0 / 6 movements you counted');
+ await expect(page.locator('#manual-count')).toHaveText('0 / 6 counted');
 }
 async function sixCounts(page,{capture=false}={}){
  for(let n=1;n<=6;n++){
   await page.getByRole('button',{name:'Count my movement',exact:true}).click();
-  await expect(page.locator('#manual-count')).toHaveText(n+' / 6 movements you counted');
+  await expect(page.locator('#manual-count')).toHaveText(n+' / 6 counted');
   await expect(page.locator('#manual-garden .garden-view')).toHaveAttribute('data-growth',String(n));
   if(capture&&n===3)await inspect(page,'manual-three-counts-720');
  }
  await expect(page.getByRole('button',{name:'Count my movement',exact:true})).toHaveCount(0);
- await expect(page.getByRole('button',{name:'Finish this moment →',exact:true})).toBeFocused();
+ await expect(page.getByRole('button',{name:'Finish moment →',exact:true})).toBeFocused();
 }
 async function cameraSetup(page,{strict=false}={}){
  await page.goto(strict?'/?policy=strict':'/');await page.waitForLoadState('networkidle');
@@ -108,14 +120,15 @@ test('manual entry activity growth confirmation harvest and retained replay fit 
   await sixCounts(page,{capture:moment===0});
   const rawBefore=await page.evaluate(()=>localStorage.getItem('togethermove.v1'));
   if(moment===0)expect(rawBefore).toBe(null);
-  await page.getByRole('button',{name:'Finish this moment →',exact:true}).click();
+  await page.getByRole('button',{name:'Finish moment →',exact:true}).click();
+  await requireVisibleCopy(page,page.getByText('Manual · self-reported · no camera',{exact:true}),/Manual · self-reported · no camera/);
   if(moment===0)await inspect(page,'manual-confirmation-720');
   expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(rawBefore);
   await page.getByRole('button',{name:'Grow this moment →',exact:true}).click();
   await inspect(page,'garden-'+(moment+1)+'-720');
   expect(JSON.parse(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).completed).toHaveLength(moment+1);
  }
- await page.getByRole('button',{name:'Back to garden',exact:true}).click();
+ await page.locator('main [data-action="home"]').click();
  await expect(page.getByRole('button',{name:'Harvest your garden →',exact:true})).toBeVisible();
  await inspect(page,'unclaimed-harvest-home-720');
  const beforeHarvest=JSON.parse(await page.evaluate(()=>localStorage.getItem('togethermove.v1')));
@@ -131,9 +144,9 @@ test('manual entry activity growth confirmation harvest and retained replay fit 
  await expect(page.locator('.app.setup')).toBeVisible();
  expect(JSON.parse(await page.evaluate(()=>localStorage.getItem('togethermove.v1')))).toEqual(harvested);
  await page.getByRole('button',{name:'Garden',exact:true}).click();
- await expect(page.getByText('3 of 3 blooms saved',{exact:true})).toBeVisible();
+ await expect(page.getByText('3/3 blooms',{exact:true})).toBeVisible();
  await inspect(page,'saved-garden-after-replay-720');
- await page.reload();await expect(page.getByText('3 of 3 blooms saved',{exact:true})).toBeVisible();
+ await page.reload();await expect(page.getByText('3/3 blooms',{exact:true})).toBeVisible();
  requireFits(logs.get(test.info().testId));
 });
 
@@ -141,18 +154,18 @@ test('pause natural RAF resume help Back reset and remote focus preserve honest 
  await fixture(context,page);await page.goto('/');await page.waitForLoadState('networkidle');await startManual(page);
  const first=await page.locator('#time').textContent();await expect(page.locator('#time')).not.toHaveText(first,{timeout:2500});
  await page.getByRole('button',{name:'Count my movement',exact:true}).press('Enter');
- await expect(page.locator('#manual-count')).toHaveText('1 / 6 movements you counted');
+ await expect(page.locator('#manual-count')).toHaveText('1 / 6 counted');
  await page.keyboard.press('Space');await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
  await expect(page.getByRole('button',{name:'Count my movement',exact:true})).toBeDisabled();
  const paused=await page.locator('#time').textContent();await page.waitForTimeout(1100);await expect(page.locator('#time')).toHaveText(paused);
  await inspect(page,'paused-720');await page.keyboard.press('Enter');
  await expect(page.locator('#time')).not.toHaveText(paused,{timeout:2500});
- await page.getByRole('button',{name:'How to play',exact:true}).click();await inspect(page,'help-720');
- await page.getByRole('button',{name:'Return to where I was →',exact:true}).click();
+ await page.getByRole('button',{name:'Help',exact:true}).click();await inspect(page,'help-720');
+ await page.getByRole('button',{name:'Return →',exact:true}).click();
  await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
- await expect(page.locator('#manual-count')).toHaveText('1 / 6 movements you counted');
+ await expect(page.locator('#manual-count')).toHaveText('1 / 6 counted');
  await page.keyboard.press('Escape');await expect(page.locator('.app.home')).toBeVisible();
- await startManual(page);await expect(page.locator('#manual-count')).toHaveText('0 / 6 movements you counted');
+ await startManual(page);await expect(page.locator('#manual-count')).toHaveText('0 / 6 counted');
  await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
  await page.keyboard.press('Escape');await expect(page.locator('.app.home')).toBeVisible();
  expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(null);
@@ -173,19 +186,20 @@ test('synthetic activity six score ACK duplicate and fallback result stay isolat
  await expect(page.locator('.sun-rays .collected')).toHaveCount(6);
  await inspect(page,'synthetic-six-rays-720');
  expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(stored);
- await page.getByRole('button',{name:'Use manual play',exact:true}).click();
+ await page.getByRole('button',{name:'Manual play',exact:true}).click();
  await page.getByRole('button',{name:'Resume →',exact:true}).click();await sixCounts(page);
- await page.getByRole('button',{name:'Finish this moment →',exact:true}).click();
+ await page.getByRole('button',{name:'Finish moment →',exact:true}).click();
  await expect(page.locator('.test-result')).toContainText('SYNTHETIC TEST · NO CAMERA');
  await expect(page.getByRole('button',{name:'Grow this moment →'})).toHaveCount(0);
  await page.getByRole('button',{name:'View test result',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Test result.',exact:true})).toBeVisible();
- await expect(page.locator('.test-result')).toContainText('Your saved garden is unchanged.');
+ await expect(page.locator('.test-result .garden-caption b')).toHaveText('6/6 simulated rays');
+ await expect(page.locator('.test-result')).toContainText('Saved garden unchanged.');
  await expect(page.getByRole('button',{name:'Harvest garden →'})).toHaveCount(0);
  await inspect(page,'synthetic-result-720');
  expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(stored);
- await page.getByRole('button',{name:'Back to garden',exact:true}).click();
- await expect(page.getByText('1 of 3 blooms saved',{exact:true})).toBeVisible();
+ await page.locator('main [data-action="home"]').click();
+ await expect(page.getByText('1/3 blooms',{exact:true})).toBeVisible();
  expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(stored);
  logs.get(test.info().testId).synthetic={source:'mocked semantic JSON only',seq:mock.seq,lastAfter:Number(mock.requests.at(-1)?.after),requests:mock.requests,cameraUsed:false,nativeRuntimeVerified:false};
  requireFits(logs.get(test.info().testId));
@@ -198,17 +212,90 @@ test('camera unavailable fallback strict diagnostics and responsive reduced moti
  await page.locator('[data-action="input:camera"]').click();await inspect(page,'camera-setup-720');
  await page.locator('[data-action="start"]').click();await expect(page.locator('#motion-status')).toContainText('connection lost');
  await inspect(page,'camera-unavailable-720');
- await expect(page.getByRole('button',{name:'Use manual play',exact:true})).toBeVisible();
- await page.getByRole('button',{name:'Use manual play',exact:true}).click();await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
+ await expect(page.getByRole('button',{name:'Manual play',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Manual play',exact:true}).click();await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
  mock.drop=false;await cameraSetup(page,{strict:true});await inspect(page,'strict-diagnostic-play-720');
- await page.getByRole('button',{name:'Back to garden',exact:true}).click();
+ await page.locator('main [data-action="home"]').click();
  await page.setViewportSize({width:1920,height:1080});await inspect(page,'home-1080');
  await page.emulateMedia({reducedMotion:'reduce'});await page.setViewportSize({width:390,height:844});
  await inspect(page,'home-mobile-390',{fit:false});
  await startManual(page);await inspect(page,'manual-mobile-390',{fit:false});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  expect(await page.locator('.garden-illustration').evaluate(node=>getComputedStyle(node).animationName)).toBe('none');
+ expect(await page.locator('[data-action="manual-count"]').evaluate(node=>getComputedStyle(node).transitionDuration)).toBe('0s');
  requireFits(logs.get(test.info().testId));
+});
+
+test('concise native TV copy keeps consent provenance camera unavailable recovery and Help return visible',async({context,page})=>{
+ await page.setViewportSize({width:960,height:540});
+ const mock=await fixture(context,page);await page.goto('/');await page.waitForLoadState('networkidle');
+ await page.locator('[data-action="choose:1"]').click();
+ await page.locator('[data-action="mode:standing"]').click();
+ await expect(page.locator('[data-action="mode:standing"]')).toHaveAttribute('aria-pressed','true');
+ expect(mock.requests).toHaveLength(0);
+ await page.getByRole('button',{name:'Help',exact:true}).click();
+ await requireVisibleCopy(page,page.locator('.help-panel .safety'),/Frames stay local/);
+ await expect(page.locator('.help-panel .safety')).toContainText(/No recording|not recorded/i);
+ await inspect(page,'concise-help-540');
+ await page.getByRole('button',{name:'Return →',exact:true}).click();
+ await expect(page.locator('.app.setup')).toBeVisible();
+ await expect(page.getByRole('button',{name:'Help',exact:true})).toBeFocused();
+ await expect(page.locator('[data-action="mode:standing"]')).toHaveAttribute('aria-pressed','true');
+ await expect(page.locator('[data-action="input:manual"]')).toHaveAttribute('aria-pressed','true');
+ mock.drop=true;await page.locator('[data-action="input:camera"]').click();
+ await expect.poll(()=>mock.requests.length).toBeGreaterThan(0);
+ expect(mock.requests.every(control=>control.active==='0')).toBe(true);
+ const consent=page.locator('.camera-setup-note');
+ await requireVisibleCopy(page,consent,/off until Start/i);
+ await expect(consent).toContainText(/one (?:person|player)/i);
+ await expect(consent).toContainText(/local/i);await expect(consent).toContainText(/not recorded|no recording/i);
+ await expect(page.locator('[data-action="start"]')).toHaveAccessibleName('Start camera →');
+ await inspect(page,'concise-camera-consent-540');
+ await page.locator('[data-action="start"]').click();
+ await expect.poll(()=>mock.requests.some(control=>control.active==='1')).toBe(true);
+ await requireVisibleCopy(page,page.locator('#motion-status'),/lost|unavailable|reconnect|disconnected/i);
+ await requireVisibleCopy(page,page.locator('[data-action="manual"]'),/Manual play/);
+ await inspect(page,'concise-camera-recovery-540');
+ mock.drop=false;mock.source='camera';mock.status='camera-error';
+ await requireVisibleCopy(page,page.locator('#motion-status'),/Camera unavailable.*manual play/i);
+ await inspect(page,'concise-camera-error-540');
+ await page.locator('[data-action="manual"]').click();
+ await expect(page.locator('[data-action="pause"]')).toBeFocused();
+ await expect(page.locator('[data-action="manual-count"]')).toBeDisabled();
+ await requireVisibleCopy(page,page.getByText('Manual · self-reported · no camera',{exact:true}),/Manual · self-reported · no camera/);
+ await inspect(page,'concise-manual-fallback-540');
+ await page.emulateMedia({reducedMotion:'reduce'});await page.locator('[data-action="pause"]').click();
+ await page.locator('[data-action="manual-count"]').click();
+ await expect(page.locator('#manual-count')).toHaveText('1 / 6 counted');
+ await requireVisibleCopy(page,page.locator('#manual-count'),/1 \/ 6 counted/);
+ await expect(page.locator('#manual-garden .garden-illustration')).toBeVisible();
+ await expect(page.locator('#manual-garden .garden-view')).toHaveAttribute('data-growth','1');
+ await expect(page.locator('[data-action="manual-count"]')).toBeFocused();
+ expect(await page.locator('.garden-illustration').evaluate(node=>getComputedStyle(node).animationName)).toBe('none');
+ expect(await page.locator('[data-action="manual-count"]').evaluate(node=>getComputedStyle(node).transitionDuration)).toBe('0s');
+ expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(null);
+ await inspect(page,'concise-reduced-motion-growth-540');requireFits(logs.get(test.info().testId));
+});
+
+test('concise native TV copy keeps a failed save visible without claiming successful persistence',async({context,page})=>{
+ await page.setViewportSize({width:960,height:540});await fixture(context,page);
+ await context.addInitScript(()=>{
+  const set=Storage.prototype.setItem;
+  Storage.prototype.setItem=function(key,value){
+   if(key==='togethermove.v1')throw new DOMException('Fixture storage unavailable','QuotaExceededError');
+   return set.call(this,key,value);
+  };
+ });
+ await page.goto('/');await page.waitForLoadState('networkidle');await startManual(page);await sixCounts(page);
+ await page.locator('[data-action="finish-moment"]').click();
+ await requireVisibleCopy(page,page.getByText('Manual · self-reported · no camera',{exact:true}),/Manual · self-reported · no camera/);
+ expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(null);
+ await page.locator('[data-action="complete"]').click();
+ await expect(page.locator('.app.celebrate')).toBeVisible();
+ await requireVisibleCopy(page,page.locator('.celebration .subtle'),/could not be saved/i);
+ await expect(page.locator('.celebration .subtle')).not.toContainText(/^Saved on this device\.$/);
+ expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(null);
+ await inspect(page,'concise-save-failure-540');requireFits(logs.get(test.info().testId));
 });
 
 
@@ -220,14 +307,14 @@ test('D-pad reaches sunshine and manual position changes keep deliberate remote 
  await page.keyboard.press('ArrowRight');
  await expect(page.locator('[data-action="choose:1"]')).toBeFocused();
  await page.keyboard.press('Enter');
- await expect(page.getByRole('button',{name:'Start catch the sunshine →',exact:true})).toBeFocused();
+ await expect(page.getByRole('button',{name:'Start →',exact:true})).toBeFocused();
  await page.getByRole('button',{name:'Garden',exact:true}).click();await startManual(page);
  await page.keyboard.press('Escape');
  await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
  await page.keyboard.press('ArrowRight');
  await expect(page.getByRole('button',{name:'Change position',exact:true})).toBeFocused();
  await page.keyboard.press('Enter');
- await expect(page.getByText('MOMENT 1 OF 3 · STANDING · MANUAL',{exact:true})).toBeVisible();
+ await expect(page.getByText('MOMENT 1 OF 3 · STANDING',{exact:true})).toBeVisible();
  await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
  await inspect(page,'remote-position-change-720');
  await page.keyboard.press('Escape');await expect(page.locator('.app.home')).toBeVisible();
@@ -247,18 +334,18 @@ test('native 960 by 540 TV canvas keeps the complete journey and camera controls
   if(moment===0){
    await page.keyboard.press('Space');await expect(page.getByRole('button',{name:'Resume →',exact:true})).toBeFocused();
    await inspect(page,'native-manual-paused-540');
-   await page.getByRole('button',{name:'How to play',exact:true}).click();await inspect(page,'native-help-540');
-   await page.getByRole('button',{name:'Return to where I was →',exact:true}).click();
+   await page.getByRole('button',{name:'Help',exact:true}).click();await inspect(page,'native-help-540');
+   await page.getByRole('button',{name:'Return →',exact:true}).click();
    await page.getByRole('button',{name:'Resume →',exact:true}).click();
   }
   await sixCounts(page);await inspect(page,'native-six-counts-'+moment+'-540');
-  await page.getByRole('button',{name:'Finish this moment →',exact:true}).click();
+  await page.getByRole('button',{name:'Finish moment →',exact:true}).click();
   await inspect(page,'native-confirm-'+moment+'-540');
   await page.getByRole('button',{name:'Grow this moment →',exact:true}).click();
   await inspect(page,'native-celebrate-'+moment+'-540');
  }
  await page.getByRole('button',{name:'Harvest garden →',exact:true}).click();await inspect(page,'native-harvest-540');
- await page.getByRole('button',{name:'Back to garden',exact:true}).click();await inspect(page,'native-saved-home-540');
+ await page.locator('main [data-action="home"]').click();await inspect(page,'native-saved-home-540');
  await page.locator('[data-action="choose:1"]').click();
  await page.locator('[data-action="input:camera"]').click();await inspect(page,'native-camera-setup-540');
  await page.locator('[data-action="start"]').click();

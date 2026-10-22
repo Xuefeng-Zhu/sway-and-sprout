@@ -128,6 +128,62 @@ function completion(count=0){return {realTimerElapsed:true,realWallMs:120250,
  progressUnchangedAtCelebration:true,progressUnchangedAfterReload:true,reload:{screen:'app home',cameraCalls:0},
  inactivePacket:{active:false,metrics:{acknowledgedEvents:count}}};}
 
+function splitCompletion(count=0){
+ const value=completion(count);
+ for(const phase of ['check','celebration']){
+  value[phase].rayLabel='VIDEO REPLAY · NO CAMERA';
+  value[phase].simulatedRayLabel=`${count}/6 simulated rays`;
+ }
+ return value;
+}
+
+test('split replay labels bind source and actual count while frozen combined history remains valid',()=>{
+ for(let count=0;count<=6;count++){
+  assert.equal(nativeCompletionVerified(completion(count),count),true,'Frozen combined-label history stays readable');
+  assert.equal(nativeCompletionVerified(splitCompletion(count),count),true,'Separate current source/count labels are verified');
+ }
+});
+
+test('replay completion rejects badge-only missing malformed or conflicting split count evidence',()=>{
+ const malformed=[undefined,null,'',0,'6/6 simulated rays','0/7 simulated rays','00/6 simulated rays',
+  '0/6 rays','0/6 simulated ray','0/6 simulated rays extra'];
+ for(const phase of ['check','celebration']){
+  for(const simulatedRayLabel of malformed){
+   const value=splitCompletion();value[phase].simulatedRayLabel=simulatedRayLabel;
+   assert.equal(nativeCompletionVerified(value,0),false,phase+' requires an exact simulated count label');
+  }
+  const missing=splitCompletion();delete missing[phase].simulatedRayLabel;
+  assert.equal(nativeCompletionVerified(missing,0),false,'A source badge alone is not count evidence');
+  for(const rayLabel of ['SYNTHETIC TEST · NO CAMERA','VIDEO REPLAY','NO CAMERA']){
+   const value=splitCompletion();value[phase].rayLabel=rayLabel;
+   assert.equal(nativeCompletionVerified(value,0),false,phase+' requires the recorded-video provenance');
+  }
+  const conflict=completion();conflict[phase].simulatedRayLabel='';
+  assert.equal(nativeCompletionVerified(conflict,0),false,'An explicit invalid split field cannot fall back to legacy text');
+ }
+ const inherited=splitCompletion();
+ inherited.celebration=Object.assign(Object.create({simulatedRayLabel:'0/6 simulated rays'}),inherited.celebration);
+ delete inherited.celebration.simulatedRayLabel;
+ assert.equal(nativeCompletionVerified(inherited,0),false,'Split evidence must be an own field');
+});
+
+test('split replay completion retains timer ACK persistence camera and route gates',()=>{
+ for(const count of [0,6]){
+  for(const mutate of [c=>c.realWallMs=118999,c=>c.realTimerElapsed=false,
+   c=>c.celebration.screen='app home',c=>c.celebration.heading='Test result.',c=>c.celebration.cameraCalls=1,
+   c=>c.celebration.replayLabel=false,c=>c.progressUnchangedAtCelebration=false,c=>c.progressUnchangedAfterReload=false,
+   c=>c.reload.screen='app setup',c=>c.reload.cameraCalls=1,c=>c.inactivePacket.active=true,
+   c=>c.inactivePacket.metrics.acknowledgedEvents=count+1,c=>c.path='unknown']){
+   const value=splitCompletion(count);mutate(value);assert.equal(nativeCompletionVerified(value,count),false);
+  }
+ }
+ const unconfirmed=splitCompletion();unconfirmed.realCompleteButtonClicked=false;
+ assert.equal(nativeCompletionVerified(unconfirmed,0),false);
+ const wrongPath=splitCompletion();wrongPath.path='six-ray-auto-celebration';
+ assert.equal(nativeCompletionVerified(wrongPath,0),false);
+ for(const count of [-1,7,.5,NaN,'0'])assert.equal(nativeCompletionVerified(splitCompletion(),count),false);
+});
+
 test('zero/subsix completion requires the real timer, check confirmation, inactive ACK and unchanged reload',()=>{
  const valid=completion();assert.equal(nativeCompletionVerified(valid,0),true);
  for(const mutate of [c=>c.realWallMs=30000,c=>c.realTimerElapsed=false,c=>c.realCompleteButtonClicked=false,

@@ -56,7 +56,7 @@ test('real HTTP relay synthetic landmarks grow sunshine with pause standing and 
     expect(initialPacket.source,'Only explicitly synthetic relay input is allowed').toBe('synthetic');
     expect(initialPacket.runtime?.verified,'Synthetic relay runtime is verified').toBe(true);
     const started=Date.now();
-    await page.getByRole('button',{name:/^Start catch/}).click();
+    await page.getByRole('button',{name:'Start camera →',exact:true}).click();
     await expect(page.locator('#camera-source')).toHaveText('SYNTHETIC TEST · NO CAMERA');
     await expect(page.locator('#sunshine-count')).toHaveText('2',{timeout:15000});
     log.timingsMs.secondRay=Date.now()-started;
@@ -68,7 +68,9 @@ test('real HTTP relay synthetic landmarks grow sunshine with pause standing and 
     await expect(page.locator('#sunshine-count')).toHaveText(pausedCount);
     await expect(page.locator('#time')).toHaveText(pausedTime);
     await page.getByRole('button',{name:'Change position'}).click();
-    await expect(page.getByText('MOMENT 2 OF 3 · STANDING · SYNTHETIC TEST · NO CAMERA')).toBeVisible();
+    await expect(page.locator('.instruction .step')).toBeVisible();
+    await expect(page.locator('.instruction .step')).toContainText('MOMENT 2 OF 3 · STANDING');
+    await expect(page.locator('#camera-source')).toHaveText('SYNTHETIC TEST · NO CAMERA');
     await page.screenshot({path:`${evidence}live-http-synthetic-paused-standing.png`,fullPage:true});
     await page.getByRole('button',{name:'Resume →'}).click();
     await expect(page.locator('#sunshine-count')).toHaveText('6',{timeout:15000});
@@ -78,12 +80,13 @@ test('real HTTP relay synthetic landmarks grow sunshine with pause standing and 
     await page.screenshot({path:`${evidence}live-http-synthetic-six-rays.png`,fullPage:true});
     await expect(page.getByRole('heading',{name:'Test result.'})).toBeVisible({timeout:35000});
     log.timingsMs.completed=Date.now()-started;
-    await expect(page.getByText('SYNTHETIC TEST · NO CAMERA · 6 OF 6 SIMULATED RAYS',{exact:true})).toBeVisible();
-    await expect(page.getByText('Your saved garden is unchanged.',{exact:false})).toBeVisible();
+    await expect(page.locator('.test-result .step')).toHaveText('SYNTHETIC TEST · NO CAMERA');
+    await expect(page.locator('.test-result .garden-caption b')).toHaveText('6/6 simulated rays');
+    await expect(page.getByText('Saved garden unchanged.',{exact:false})).toBeVisible();
     await page.screenshot({path:`${evidence}live-http-synthetic-completed.png`,fullPage:true});
     await Promise.allSettled(captures);
     expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
-    await page.reload();await expect(page.getByText('Your garden starts with a seed',{exact:true})).toBeVisible();
+    await page.reload();await expect(page.getByText('0/3 blooms',{exact:true})).toBeVisible();
     expect(await page.evaluate(()=>localStorage.getItem('togethermove.v1'))).toBe(savedBefore);
     expect(log.responseCount).toBeGreaterThan(20);
     expect(log.packets.some(packet=>packet.events?.length)).toBe(true);
