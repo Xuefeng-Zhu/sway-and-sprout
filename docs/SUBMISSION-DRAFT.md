@@ -2,6 +2,12 @@
 
 Submitted to Build, Ship, Shape: Amazon Developer Hackathon on October 23, 2026, at 10:53:48 a.m. Pacific (17:53:48 UTC). Devpost returned submission ID `1255413`, and a fresh live readback and the finalization page both confirm **Submitted**. The initial entry selected **Fire TV**, with no mini challenges; the later mini-challenge additions are recorded below.
 
+The later owner-requested update is now saved: **Fire TV + AWS Builder + Open
+Source**. Both mini-challenge opt-ins read **Yes** on a fresh Additional Info
+page load, their required explanations/links are populated, and Devpost still
+returns **Submitted** for ID `1255413`. The project story is version 4. The
+original submitted-at timestamp and public 165-second video remain unchanged.
+
 - Public project: https://devpost.com/software/sway-sprout
 - Public demo: https://www.youtube.com/watch?v=eQlCzsax3fI
 - Public repository: https://github.com/Xuefeng-Zhu/sway-and-sprout
@@ -34,9 +40,11 @@ Cooperative self-report, equal seated/standing participation, short sessions, no
 
 ## Track
 Submitted primary track: Fire TV / family entertainment. The initial 10:53 a.m.
-entry excluded mini challenges. A later owner-requested update prepares both
-mini challenges with the substantive additional work described below; its final
-saved status is verified separately on Devpost.
+entry excluded mini challenges. The later owner-requested update includes both
+mini challenges with the substantive additional work described below. The API
+submission receipt, live project readback and saved Additional Info fields all
+confirm the update. Sanitized receipts and the saved-field screenshot remain in
+`artifacts/demo-submission-20261023/submission-prep/` and `verification/`.
 
 ### AWS Builder addition, October 23
 
