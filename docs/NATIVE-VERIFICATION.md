@@ -1,5 +1,13 @@
 # Native APK verification — October 15, 2026
 
+This is a historical build/boot record for the original host and cloud VM.
+For current native source guidance, start with [the Android guide](../android/README-motion.md).
+Later [native video verification](NATIVE-VIDEO-VERIFICATION.md) and
+[independent natural evaluation](INDEPENDENT-NATURAL-EVALUATION-20261021.md)
+record separate Mac emulator runs. The legacy launcher at the end of this report
+targets a fixed emulator and the old unsuffixed app ID; it is not a current setup
+command. See the [portable plan](MIGRATION-TEST-PLAN.md) before native verification.
+
 ## Build
 
 - Official Gradle 8.9 distribution verified against official SHA-256, checksum-pinned wrapper committed

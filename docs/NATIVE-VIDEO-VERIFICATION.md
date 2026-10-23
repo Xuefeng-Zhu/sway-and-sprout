@@ -1,5 +1,12 @@
 # Android native video verification — 2026-10-20
 
+This dated report preserves the baseline fixtures, model comparisons and original
+30-second UI results. The later [independent natural evaluation](INDEPENDENT-NATURAL-EVALUATION-20261021.md)
+records additional clips and the explicit 120-second diagnostic replay rerun;
+its completion results do not replace the failures below. Use
+[Getting started](GETTING-STARTED.md) for current web setup and the
+[Android guide](../android/README-motion.md) for native source entry points.
+
 Official crop/preprocessing corrections restored one actual native positive: **Lightning FP16 with three same-image passes reaches six frontal events, six UI rays and ACK6**, then passes the real30-second celebration, reload and unchanged participation checks. Clear and near-face remain0/6; overall recognition is not accepted. The default web/OpenCV backend and optional Mac Full IMAGE baseline remain unchanged.
 
 The user has no physical Fire TV. The provisional reference is Fire OS7/API28/`armeabi-v7a`; actual execution is Android TV API34 ARM64 on the existing Mac emulator. ARMv7 ELF32 presence is statically checked, not executed. Fire OS/UVC/Vega and sustained device performance remain unverified.

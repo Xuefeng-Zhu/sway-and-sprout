@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
-import {pathToFileURL,fileURLToPath} from 'node:url';
+import {pathToFileURL,fileURLToPath,URLSearchParams} from 'node:url';
 import vm from 'node:vm';
 
 const project=path.resolve(process.argv[2]||fileURLToPath(new URL('../',import.meta.url)));
@@ -32,6 +32,7 @@ function harness(seed,{manual=false}={}){
   const writes=[],nodes={};
   const root={innerHTML:'',querySelectorAll:()=>[],querySelector:()=>({focus(){}})};
   const sandbox={...model,createMotionState,acceptMotionEvent,
+    URLSearchParams,location:{search:''},
     createMotionClient:options=>{callbacks=options;return {start(){},stop(){}};},
     createPreviewClient:()=>({start(){},stop(){}}),sunshineMarkup:()=>'',
     updateSunshine(){},updateCameraPreview(){},

@@ -1,5 +1,9 @@
 # Portable local verification
 
+For first-time web setup, use [Getting started](GETTING-STARTED.md). For test
+selection and evidence limits, use [Quality and verification](QUALITY.md).
+This guide retains the exact runtime/fixture restoration and migration checks.
+
 Run commands from the canonical repository root. The inference/classifier code,
 model lock and core verifiers already resolve files relative to their source.
 Migration changes test/tool paths and stale simulated-progress assertions.
@@ -82,10 +86,28 @@ mkdir -p verification-results
 npm test
 npm run build
 PYTHONDONTWRITEBYTECODE=1 sidecar/.venv/bin/python sidecar/run.py --verify
-PYTHONDONTWRITEBYTECODE=1 sidecar/.venv/bin/python -m unittest discover -s sidecar -p 'test_*.py'
 node scripts/verify-simulated-progress-preservation.mjs . verification-results/progress.json
 PYTHONDONTWRITEBYTECODE=1 sidecar/.venv/bin/python scripts/verify-decoder-contract.py --output verification-results/decoder.json
 PYTHONDONTWRITEBYTECODE=1 sidecar/.venv/bin/python sidecar/verify_synthetic.py --output verification-results/synthetic.json
+```
+
+Run the full Python suite with physical capture prohibited (individual tests
+can still supply their own fake capture objects):
+
+```sh
+sidecar/.venv/bin/python -B - <<'PY'
+import sys
+import unittest
+from pathlib import Path
+from unittest import mock
+import cv2
+
+sys.path.insert(0, str(Path('sidecar').resolve()))
+with mock.patch.object(cv2, 'VideoCapture', side_effect=AssertionError('Capture prohibited in unit tests')):
+    suite = unittest.defaultTestLoader.discover('sidecar', 'test_*.py')
+    result = unittest.TextTestRunner().run(suite)
+raise SystemExit(not result.wasSuccessful())
+PY
 ```
 
 The full Python suite contains explicit loopback HTTP tests. For a strictly

@@ -2,24 +2,73 @@
 
 Every move helps your garden grow.
 
-Canonical checkout: `~/mygit/sway-and-sprout`. Private remote:
-[Xuefeng-Zhu/sway-and-sprout](https://github.com/Xuefeng-Zhu/sway-and-sprout).
-Local development branch: `work/natural-motion-diagnostics`. Its starting point
-is `ed4e1f5f12003319fc2cb4a93c4c203fee104adb` on `main`/`origin/main`.
-Local milestones: `89a0f9c` explains calibration/readiness; `d48a3ac` binds video
-acceptance and reconstruction; `25b9de9` records the initial diagnosis. The next
-local milestone `b1b049e` adds authored event timing and generic bound-file
-traces. Inspect all local checkpoints with
-`git log --oneline origin/main..HEAD`. Pushing, publication and deployment have not
-been requested. The dated TogetherMove source remains an untouched backup.
+Canonical checkout: `~/mygit/sway-and-sprout`. Start with
+[Getting started](GETTING-STARTED.md) for setup and
+[Quality and verification](QUALITY.md) to choose a check. The
+[documentation index](README.md) groups all guides and reports.
+
+## Current handoff
+
+- Manual play and optional Mac synthetic/file workflows have reproducible local
+  setup. Default OpenCV and optional Full IMAGE remain separate backends.
+- The latest independent natural cohort has **zero definite positive
+  opportunities**. It does not establish a positive recognition benefit or
+  justify native Full porting. Human review remains necessary before acceptance.
+- Two formerly interrupted native clips finish in the explicit 120-second
+  diagnostic UI round. The original 30-second failures remain recorded; ordinary
+  rounds still use 30 seconds.
+- Natural alternating-six recognition, live-user performance and physical
+  Fire TV/Vega readiness remain unverified. Existing model thresholds, frozen
+  expectations and participation-preservation rules remain in force.
+
+The next recognition gate is clearly licensed, independently filmed natural
+left/right footage with visible shoulders/wrists, definite neutral and held-raise
+opportunities, and uncertainty frozen before inference. Apply the
+[evaluation contract](NATURAL-EVALUATION-CONTRACT.md) and obtain human label
+review before acceptance. DVIDS768147's redistribution eligibility remains
+uncleared; the [latest report](INDEPENDENT-NATURAL-EVALUATION-20261021.md) records
+that correction and the distinct UI/bridge results.
+
+The investigation branch is `work/natural-motion-diagnostics`, based on
+`ed4e1f5f12003319fc2cb4a93c4c203fee104adb`. Use `git status --short --branch`
+and `git log --oneline origin/main..HEAD` for the actual checkout state rather
+than inferring it from a dated milestone. The earlier TogetherMove export
+remains an unchanged backup outside this repository.
+
+The sections below are **dated investigation records**, newest first. Statements
+such as “not yet run” and test counts describe their checkpoint. Later entries
+can supersede their status without changing the original result.
 
 ## 120-second native replay UI rerun — 2026-10-21
 
-User-authorized commit `ddef01e` extends only exact `input=video-verification` + Sunshine replay input to120 seconds. Normal authored/manual/ordinary camera/video/synthetic and other challenges remain30; all motion/model thresholds and six-ray input-stop behavior are unchanged. Shared duration controls countdown, bar and termination; no clock acceleration.
+Commit `ddef01e` extends only exact `input=video-verification` + Sunshine motion
+input to **120 seconds**. Normal authored/manual/ordinary camera/video/synthetic
+and other challenges remain 30 seconds. All motion/model thresholds and six-ray
+input-stop behavior are unchanged. Shared duration controls countdown, bar and
+termination; no clock acceleration was used.
 
-Actual UI reruns now complete both previously interrupted Pexels clips: **188/188** and **195/195**, zero dropped/duplicate frames,0events/UI0/ACK0. EOF walls50.982/41.124s; real timer/check completion121.751/120.798s. Both traversed Replay finished→real View replay result click→Replay result→reload home with unchanged progress, then Activity destruction with decoder/interpreter closed. The single existing API34ARM64 emulator and isolatedADB5038 are stopped; camera stayed off under the existing OS network-denying execution.
+Actual UI reruns completed both previously interrupted Pexels clips:
+**188/188** and **195/195** frames, with zero dropped/duplicate frames and zero
+events, UI rays or ACKs. EOF wall times were 50.982 / 41.124 seconds; actual
+timer/check completion took 121.751 / 120.798 seconds. Both traversed
+Replay finished → View replay result click → Replay result → reload home with
+unchanged progress. Activity destruction then closed the decoder/interpreter.
+The API 34 ARM64 emulator and isolated ADB server on port 5038 were stopped;
+the camera stayed off under the existing OS network-denying execution.
 
-These are replay-flow successes, **not new positive recognition or FireTV performance evidence**; both frozen exact sequences remain unknown with0definite positives. Original30-second failures and all10raw UI files remain intact,71frozen inputs unchanged.15core semantic pins match; src/main.js has the authorized duration-only hash.86Node tests/frontend build+sync/offline debug build passed. [Updated report](INDEPENDENT-NATURAL-EVALUATION-20261021.md), [structured evidence](verification/replay-duration-120-20261021.json) and [independent review](verification/replay-120s-support/analysis-review/ui-120-result-review.md) preserve both time budgets. No new tools,source builds,uploads,push/deploy or credentials. DVIDS was not rerun; its redistribution eligibility remains uncleared.
+These are replay-flow successes; positive recognition and Fire TV performance
+remain unestablished. Both frozen exact sequences remain unknown, with zero
+definite positives. Original 30-second failures and all 10 raw UI files remain
+intact; 71 frozen inputs are unchanged. Fifteen core semantic pins match;
+`src/main.js` has the authorized duration-only hash. The run passed 86 Node tests,
+the frontend build, asset sync and the offline debug build.
+
+The [updated report](INDEPENDENT-NATURAL-EVALUATION-20261021.md),
+[structured evidence](verification/replay-duration-120-20261021.json) and
+[independent review](verification/replay-120s-support/analysis-review/ui-120-result-review.md)
+preserve both time budgets. No new tools, source builds, uploads, push/deploy or
+credentials were involved. DVIDS was not rerun; its redistribution eligibility
+remains uncleared.
 
 ## Independent natural-video diagnostic comparison — 2026-10-21
 
@@ -65,7 +114,7 @@ Mac execution restored with all eight pre-existing debug calibration files prese
 
 New independently recorded left-natural83frames fails0/1 through native inference/UI/ACK; right-short156 and both-up136 complete with0events and unchanged participation. This does not establish natural-six or resolve prior long-file latency. Read [pilot results](NATIVE-CONFIDENCE-VERIFICATION.md), [mapping sanity](NATIVE-CONFIDENCE-SANITY.md), [frozen evidence](verification/native-confidence-20261021.json) and the source/label recipes under `sidecar/fixtures/confidence-calibration/`. Existing frontal6 and regression evidence remain bound to unchanged model/gate sources. No real Fire TV, camera, push/deploy/upload/spending or credentials. The prior no-expansion checkpoint ended that milestone at the frozen verification: optional portable MediaPipe audit/artifact/adapter drafts remain in the dated workspace only, with no canonical integration, APK build or inference. No candidate is promoted. The single emulator and isolated ADB5038 are stopped.
 
-## Current native Android milestone — official reference parity, 2026-10-20
+## Native Android milestone — official reference parity, 2026-10-20
 
 Local correction commit `053e2eb` replaces rejected full-frame preprocessing with official Android dynamic torso cropping and sampled actual Support API tensor checks. Both the prepared bytes and same-interpreter51-float outputs match exactly on all sampled checks; source crop/inverse math separately passes350 golden assertions. This is the declared sampled boundary, not independent decoder/ROI or full-runtime parity. Read [native results](NATIVE-VIDEO-VERIFICATION.md) and [precise reference scope](MOVENET-REFERENCE-PARITY.md).
 
@@ -81,7 +130,7 @@ Next: freeze precise natural positives/negatives separate from acceptance fixtur
 
 [Controlled Mac candidates](MODEL-CANDIDATE-COMPARISON.md), committed at2b34976, still reject Heavy and RTMPose replacements: no sustained accepted350ms overhead, Heavy~3×Full cost and RTMPose loses near-face6/6. Retain Full IMAGE as an optional Mac diagnostic baseline.
 
-## Current optional-model milestone
+## Optional-model milestone — 2026-10-20
 
 Local commit `8afc8db` integrates the official Google Full IMAGE backend for explicit local videos.
 It improves the same near-face constructed fixture from **1 to6 actual model
