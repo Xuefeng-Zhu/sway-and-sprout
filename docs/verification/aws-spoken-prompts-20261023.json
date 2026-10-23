@@ -1,0 +1,192 @@
+{
+  "verifiedAtUtc": "2026-10-23T18:03:12.922416+00:00",
+  "scope": "Polly build-time generation and actual browser playback; no physical Fire TV or live-user claim",
+  "nodeTests": {
+    "passed": 98,
+    "failed": 0
+  },
+  "browserTests": {
+    "passed": 7,
+    "realAudioDecodedClips": 18,
+    "actualPlayback": {
+      "src": "./audio/prompts/wake-seated-0.mp3",
+      "currentTime": 0.120984,
+      "duration": 2.256,
+      "paused": false,
+      "readyState": 4,
+      "error": null
+    },
+    "externalRequests": [],
+    "layoutViewports": [
+      {
+        "width": 960,
+        "height": 540
+      },
+      {
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "layoutChecks": "All three manual setup/play/pause/position/resume/toggle-focus states fit viewport with zero page scroll and all critical elements in bounds."
+  },
+  "progressPreservationChecks": 90,
+  "audioAssets": {
+    "clips": [
+      {
+        "id": "wake-seated-0",
+        "seconds": 2.256,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "wake-seated-1",
+        "seconds": 4.248,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "wake-seated-2",
+        "seconds": 2.304,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "wake-standing-0",
+        "seconds": 3.48,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "wake-standing-1",
+        "seconds": 3.672,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "wake-standing-2",
+        "seconds": 3.672,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "sun-seated-0",
+        "seconds": 2.616,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "sun-seated-1",
+        "seconds": 2.712,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "sun-seated-2",
+        "seconds": 4.104,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "sun-standing-0",
+        "seconds": 2.4,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "sun-standing-1",
+        "seconds": 2.688,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "sun-standing-2",
+        "seconds": 3.864,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "rain-seated-0",
+        "seconds": 2.256,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "rain-seated-1",
+        "seconds": 3.144,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "rain-seated-2",
+        "seconds": 3.792,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "rain-standing-0",
+        "seconds": 3.24,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "rain-standing-1",
+        "seconds": 3.0,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      },
+      {
+        "id": "rain-standing-2",
+        "seconds": 3.6,
+        "codec": "mp3",
+        "sampleRate": "24000"
+      }
+    ],
+    "allPlayableFormat": true,
+    "allFitTenSecondCueWindow": true,
+    "method": "ffprobe actual AWS-generated assets; listening quality not independently rated"
+  },
+  "aws": {
+    "service": "Amazon Polly",
+    "engine": "neural",
+    "voice": "Joanna",
+    "region": "us-west-2",
+    "successfulAppPromptRequests": 18,
+    "conservativeAppReservationUsd": "0.015168",
+    "priorNarrationAndMarksUsd": "0.054720",
+    "aggregateReservationUsd": "0.069888",
+    "authorizedAggregateCapUsd": "1.000000",
+    "priorFailedCliValidationReservationRetained": true
+  },
+  "sourceHashes": {
+    "src/main.js": "ea63297de878604b1c0d448dff23dc58c1f8db9df1e4651a03f483b715ce66d0",
+    "src/spoken-prompts.js": "678d8b61e27bbbe76e924ecbac3c479d206c4f6f664b7f4f50a8522c7512f494",
+    "scripts/generate-spoken-prompts.mjs": "d6ac8ca360397e957adfb6ffa4f0ad2632e3625aedc8f2325c26d63487e72b07",
+    "public/audio/prompts/provenance.json": "eab91bdd584e932d603ba2a772bd743d529b3cc02c5f93db2a629c0fe5ef128c"
+  },
+  "sourceVideoBuild": "6ee7957063f955efdaf5ef4714b2f63e18b6cd77",
+  "videoPredatesAudioFeature": true,
+  "humanListeningQualityIndependentlyRated": false,
+  "nativeRuntime": {
+    "report": "aws-spoken-prompts-native-runtime-20261023.json",
+    "checksPassed": 21,
+    "checksRun": 21,
+    "actualRemoteKeys": 15,
+    "viewport": {
+      "width": 960,
+      "height": 540,
+      "devicePixelRatio": 2
+    },
+    "layoutCheckpoints": 7,
+    "audioDecodeAndPlayback": true,
+    "savedProgressBytesUnchanged": true,
+    "restartDefaultsOff": true,
+    "originalAvdImagesUnchanged": 7,
+    "physicalFireTvVerified": false,
+    "humanListeningVerified": false
+  },
+  "updatedAtUtc": "2026-10-23T18:16:20.771602+00:00"
+}

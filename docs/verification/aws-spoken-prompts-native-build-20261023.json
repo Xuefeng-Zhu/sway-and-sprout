@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "observedAtUtc": "2026-10-23T18:14:58.656218+00:00",
+  "scope": "Build and package verification only for optional offline AWS Polly spoken prompts; no native runtime acceptance claim",
+  "sourceBaseCommitAtBuild": "794903dc34cffb80b08482c336c39eeb2cdf17d5",
+  "sourceWorkingTreeChanges": true,
+  "sourceHashes": {
+    "src/main.js": "ea63297de878604b1c0d448dff23dc58c1f8db9df1e4651a03f483b715ce66d0",
+    "src/model.js": "31c4b4f3296f9bbc56ba6e8ba7a127759d92d263d88a96e603044c78c31d50f9",
+    "src/spoken-prompts.js": "678d8b61e27bbbe76e924ecbac3c479d206c4f6f664b7f4f50a8522c7512f494",
+    "src/style.css": "605317547270db0a8201db5fbb3709349186991f78981c7bab169324c9b71960",
+    "scripts/generate-spoken-prompts.mjs": "d6ac8ca360397e957adfb6ffa4f0ad2632e3625aedc8f2325c26d63487e72b07",
+    "android/app/src/main/java/com/togethermove/tv/MainActivity.java": "15beacbdcc7468011cad7d3e0e3f48fecaf00b8e49858a29d468395b652a42da"
+  },
+  "webBuild": {
+    "passed": true,
+    "command": "npm run build"
+  },
+  "androidSync": {
+    "passed": true,
+    "command": "npm run android:sync"
+  },
+  "nativeBuild": {
+    "debugPassed": true,
+    "offline": true,
+    "downloadPerformed": false,
+    "gradleVersion": "8.13",
+    "androidGradlePlugin": "8.13.2",
+    "jdkMajor": 17,
+    "compileSdk": 35,
+    "tasks": [
+      ":app:assembleDebug"
+    ],
+    "fullCachedScript": {
+      "command": "sh scripts/build-android-cached-mac.sh",
+      "debugTargetPassed": true,
+      "releaseTargetPassed": false,
+      "releaseLimitation": "Release lint requires uncached com.android.tools.lint:lint-gradle:31.13.2; offline mode prevented resolution. No dependency download or lint bypass performed."
+    }
+  },
+  "apk": {
+    "path": "android/app/build/outputs/apk/debug/app-debug.apk",
+    "bytes": 174919739,
+    "sha256": "ece732ccffa11d0cdeabd5e579cbf8079b5959be71f0b893aa22a1217ed3c950",
+    "applicationId": "com.togethermove.tv.motion",
+    "versionCode": 1,
+    "versionName": "1.0.0-motion",
+    "signature": {
+      "verified": true,
+      "schemeV2": true,
+      "signerCount": 1,
+      "certificateSha256": "0130f00e1caf94c7adf0cca07fe4addb73bee15aba2961881ce720147195a407"
+    },
+    "dexHashes": {
+      "classes.dex": "a8ac9d44d15e2e36eec5f9fb481fa4dc7d19ceb5ed142538a685fe2ed1f94b37",
+      "classes2.dex": "274f49155d58bc078b078fe0f546f90b6db9b4bca4352f714fd0ee5b1f70d722",
+      "classes3.dex": "8a9e5f13cfe20bae3bb91edbfbaa946f9e9fa8ca57a366fd8bdd214a550928f1"
+    }
+  },
+  "promptProvenance": {
+    "path": "public/audio/prompts/provenance.json",
+    "sha256": "eab91bdd584e932d603ba2a772bd743d529b3cc02c5f93db2a629c0fe5ef128c",
+    "packagedIdentically": true,
+    "service": "Amazon Polly",
+    "engine": "neural",
+    "voice": "Joanna",
+    "region": "us-west-2"
+  },
+  "clipCount": 18,
+  "clips": [
+    {
+      "file": "audio/prompts/wake-seated-0.mp3",
+      "bytes": 13580,
+      "sha256": "7f8b0e6f938281c212daf79cd848e8a7b5bfa2c94ec46335d8b2e0a7629096eb",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/wake-seated-1.mp3",
+      "bytes": 25532,
+      "sha256": "c43451ae9961453aef0397e7e751ddfee15bd15795b70fd7245535c36be9241f",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/wake-seated-2.mp3",
+      "bytes": 13868,
+      "sha256": "f8ce480f5286ccc36b72b34c4255ff4d3342d5831e05e3eddd26bb5b3c601da9",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/wake-standing-0.mp3",
+      "bytes": 20924,
+      "sha256": "487f74f06de79b19e0dc2bc60d97d5d3554343682a9a97f7d7b4acc2d50aa373",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/wake-standing-1.mp3",
+      "bytes": 22076,
+      "sha256": "052aaa3362253c564361a0b90a8f3fb9fa0f81c97c7b0e8fafb1fdaf48764d46",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/wake-standing-2.mp3",
+      "bytes": 22076,
+      "sha256": "8d13c723b4dc3afc09f835118b7ad85b3eb929c3d86e7e78ef55345751fbba91",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/sun-seated-0.mp3",
+      "bytes": 15740,
+      "sha256": "ba12aa05b5e8cbb418efd9c05fc6f9d886cf897382c3a5c628904314448063d9",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/sun-seated-1.mp3",
+      "bytes": 16316,
+      "sha256": "0525efda64edb3dde1bbbad5c5a7b78c34c10e8f120bbb0bd53360168d27a73b",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/sun-seated-2.mp3",
+      "bytes": 24668,
+      "sha256": "ccca2b466f2293638791d835cf0d344eda3cc852f0f019fed9562251e1b06aa1",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/sun-standing-0.mp3",
+      "bytes": 14444,
+      "sha256": "2b438ecac1c6e2e2b6f7d8033e859bbb3eead8689603b65a16fd132eeb432ca3",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/sun-standing-1.mp3",
+      "bytes": 16172,
+      "sha256": "757b4e21077e1c18c0d3b0c905118b1669c8ca23c0361516cb0f9d70485e2119",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/sun-standing-2.mp3",
+      "bytes": 23228,
+      "sha256": "784ca2b28d5bea2a7cba48d7d6e991452def74c6e35ea1f8dfa0680d2ce4f825",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/rain-seated-0.mp3",
+      "bytes": 13580,
+      "sha256": "1668e7262ef4a0369fb69868e9b00d9d78c18ab7b4be22b75d7ffc3b64df7038",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/rain-seated-1.mp3",
+      "bytes": 18908,
+      "sha256": "5e31b80a30764b0f2083ed77dfdd5316e0aaf728c59d8719d8eb9df5cad47131",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/rain-seated-2.mp3",
+      "bytes": 22796,
+      "sha256": "1c75e132a54beb5709090ed36408d9ba44a512c521c1477e0e4786723980996d",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/rain-standing-0.mp3",
+      "bytes": 19484,
+      "sha256": "c41571aa48a1b7bdc1ece66e25d31b5115d2bca17817fecc804b9df73ad6f5e9",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/rain-standing-1.mp3",
+      "bytes": 18044,
+      "sha256": "52ec19c05087d91f318068e4add898096ddcfff61ff6cf1560fd03b34802411b",
+      "sourceDistSyncedAndApkIdentical": true
+    },
+    {
+      "file": "audio/prompts/rain-standing-2.mp3",
+      "bytes": 21644,
+      "sha256": "7a1946ec372b94a76ec097dae49336479dc94b386831d1fd4333535aa3195606",
+      "sourceDistSyncedAndApkIdentical": true
+    }
+  ],
+  "allCurrentDistAssetsPackagedIdentically": true,
+  "currentDistAssetCount": 24,
+  "webAssetHashes": [
+    {
+      "path": "index.html",
+      "bytes": 679,
+      "sha256": "fc618730797dded8f54e01fa0b408b13fd6b69c57519e723eb5ac60c9cd27b90"
+    },
+    {
+      "path": "garden.png",
+      "bytes": 2568771,
+      "sha256": "b2ebe71dfb717bbcf81a9ae9a0857bbcd7fc6ac29011ebff59de86b81acdff92"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 347,
+      "sha256": "b5861f7df0933a0a1a41de6f492a5e8dbd7fd566c5ec7bcbe1ae95a8180a0412"
+    },
+    {
+      "path": "assets/index-CNOxmz9o.css",
+      "bytes": 23787,
+      "sha256": "31b2915bc8dc1c05694249fec8afba064b5d2a66035022dc0f0e04508fdaad86"
+    },
+    {
+      "path": "assets/index-Dm9Z8fIh.js",
+      "bytes": 42881,
+      "sha256": "2a76661965b58a1104c050a9ee64cadf14a32d8c5c95f4f47c258cfedc5f9a82"
+    },
+    {
+      "path": "audio/prompts/wake-standing-0.mp3",
+      "bytes": 20924,
+      "sha256": "487f74f06de79b19e0dc2bc60d97d5d3554343682a9a97f7d7b4acc2d50aa373"
+    },
+    {
+      "path": "audio/prompts/wake-standing-1.mp3",
+      "bytes": 22076,
+      "sha256": "052aaa3362253c564361a0b90a8f3fb9fa0f81c97c7b0e8fafb1fdaf48764d46"
+    },
+    {
+      "path": "audio/prompts/wake-standing-2.mp3",
+      "bytes": 22076,
+      "sha256": "8d13c723b4dc3afc09f835118b7ad85b3eb929c3d86e7e78ef55345751fbba91"
+    },
+    {
+      "path": "audio/prompts/provenance.json",
+      "bytes": 6364,
+      "sha256": "eab91bdd584e932d603ba2a772bd743d529b3cc02c5f93db2a629c0fe5ef128c"
+    },
+    {
+      "path": "audio/prompts/sun-seated-2.mp3",
+      "bytes": 24668,
+      "sha256": "ccca2b466f2293638791d835cf0d344eda3cc852f0f019fed9562251e1b06aa1"
+    },
+    {
+      "path": "audio/prompts/sun-standing-2.mp3",
+      "bytes": 23228,
+      "sha256": "784ca2b28d5bea2a7cba48d7d6e991452def74c6e35ea1f8dfa0680d2ce4f825"
+    },
+    {
+      "path": "audio/prompts/sun-standing-0.mp3",
+      "bytes": 14444,
+      "sha256": "2b438ecac1c6e2e2b6f7d8033e859bbb3eead8689603b65a16fd132eeb432ca3"
+    },
+    {
+      "path": "audio/prompts/sun-seated-1.mp3",
+      "bytes": 16316,
+      "sha256": "0525efda64edb3dde1bbbad5c5a7b78c34c10e8f120bbb0bd53360168d27a73b"
+    },
+    {
+      "path": "audio/prompts/sun-seated-0.mp3",
+      "bytes": 15740,
+      "sha256": "ba12aa05b5e8cbb418efd9c05fc6f9d886cf897382c3a5c628904314448063d9"
+    },
+    {
+      "path": "audio/prompts/sun-standing-1.mp3",
+      "bytes": 16172,
+      "sha256": "757b4e21077e1c18c0d3b0c905118b1669c8ca23c0361516cb0f9d70485e2119"
+    },
+    {
+      "path": "audio/prompts/rain-standing-2.mp3",
+      "bytes": 21644,
+      "sha256": "7a1946ec372b94a76ec097dae49336479dc94b386831d1fd4333535aa3195606"
+    },
+    {
+      "path": "audio/prompts/rain-seated-0.mp3",
+      "bytes": 13580,
+      "sha256": "1668e7262ef4a0369fb69868e9b00d9d78c18ab7b4be22b75d7ffc3b64df7038"
+    },
+    {
+      "path": "audio/prompts/rain-seated-1.mp3",
+      "bytes": 18908,
+      "sha256": "5e31b80a30764b0f2083ed77dfdd5316e0aaf728c59d8719d8eb9df5cad47131"
+    },
+    {
+      "path": "audio/prompts/rain-standing-1.mp3",
+      "bytes": 18044,
+      "sha256": "52ec19c05087d91f318068e4add898096ddcfff61ff6cf1560fd03b34802411b"
+    },
+    {
+      "path": "audio/prompts/rain-seated-2.mp3",
+      "bytes": 22796,
+      "sha256": "1c75e132a54beb5709090ed36408d9ba44a512c521c1477e0e4786723980996d"
+    },
+    {
+      "path": "audio/prompts/rain-standing-0.mp3",
+      "bytes": 19484,
+      "sha256": "c41571aa48a1b7bdc1ece66e25d31b5115d2bca17817fecc804b9df73ad6f5e9"
+    },
+    {
+      "path": "audio/prompts/wake-seated-2.mp3",
+      "bytes": 13868,
+      "sha256": "f8ce480f5286ccc36b72b34c4255ff4d3342d5831e05e3eddd26bb5b3c601da9"
+    },
+    {
+      "path": "audio/prompts/wake-seated-1.mp3",
+      "bytes": 25532,
+      "sha256": "c43451ae9961453aef0397e7e751ddfee15bd15795b70fd7245535c36be9241f"
+    },
+    {
+      "path": "audio/prompts/wake-seated-0.mp3",
+      "bytes": 13580,
+      "sha256": "7f8b0e6f938281c212daf79cd848e8a7b5bfa2c94ec46335d8b2e0a7629096eb"
+    }
+  ],
+  "boundaries": {
+    "emulatorLaunched": false,
+    "avdModified": false,
+    "cameraOpened": false,
+    "physicalFireTvTested": false,
+    "nativeAudioPlaybackTested": false,
+    "releaseApkValidated": false,
+    "cloudRuntimeRequestsNeeded": false
+  },
+  "operationalLogs": [
+    {
+      "path": "artifacts/aws-prompts/web-build-20261023.log",
+      "sha256": "a817b62728704257903d270618408cadeee490b013e92a58224c90d027c99346"
+    },
+    {
+      "path": "artifacts/aws-prompts/android-sync-20261023.log",
+      "sha256": "6950b9f322023ab308fba688dbd57b12bb22a67db52c1f97168ca574948d1310"
+    },
+    {
+      "path": "artifacts/aws-prompts/android-build-sandbox-attempt-20261023.log",
+      "sha256": "36710f667c68bd1e853598f6e8c1cec742087fd2b368617897823ae021320901"
+    },
+    {
+      "path": "artifacts/aws-prompts/android-build-20261023.log",
+      "sha256": "c64fa0dc88ee0d11e293d4f1183076b40b823689ce3f7f8cad0ecefb82887e9a"
+    },
+    {
+      "path": "artifacts/aws-prompts/android-debug-only-build-20261023.log",
+      "sha256": "87ee3221b2883213b59526ee5b41a1949e0355f39d09708fd6f7154804e4dd85"
+    },
+    {
+      "path": "artifacts/aws-prompts/debug-apk-signature-20261023.log",
+      "sha256": "fb704e1925d0fd17a77a498e944e1477c108e5a6e965fded19d99fbd09120231"
+    }
+  ],
+  "nativeHostBuildChecks": {
+    "mp3AudioMimeInCompiledDex": true,
+    "jsonMimeInCompiledDex": true,
+    "hostDexFile": "classes3.dex",
+    "defaultOffAppGateUsedForRemoteMediaPlayback": true,
+    "hostSourceIncludedInSourceHashes": true,
+    "nativeAudioRuntimeTested": false
+  },
+  "compactTvLayout": {
+    "browserCasesPassed": 63,
+    "cssViewports": [
+      {
+        "width": 960,
+        "height": 540
+      },
+      {
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "allThreeManualSetupsAndPausePositionToggleFlowsChecked": true,
+    "headerCueTimerControlsAudioStatusFooterInBounds": true,
+    "scrollTopZero": true,
+    "proof": "artifacts/aws-prompts/browser-manual-layout-20261023.json",
+    "proofSha256": "5e92ac141615414ac575ad27d4b729a6526441c99af1601edf720a85e057d402"
+  }
+}

@@ -25,7 +25,9 @@ public class MainActivity extends Activity {
   WebSettings settings=web.getSettings();
   settings.setJavaScriptEnabled(true); settings.setDomStorageEnabled(true);
   settings.setAllowFileAccess(false); settings.setAllowContentAccess(false);
-  settings.setMediaPlaybackRequiresUserGesture(true);
+  // Remote keys reach the app through evaluateJavascript, not trusted DOM gestures.
+  // The app's default-off spoken-prompts control explicitly gates bundled audio.
+  settings.setMediaPlaybackRequiresUserGesture(false);
   web.setWebViewClient(new WebViewClient(){
    @Override public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
     if (!isAppOrigin(request.getUrl())) return new WebResourceResponse("text/plain","UTF-8",new ByteArrayInputStream(new byte[0]));
@@ -33,8 +35,8 @@ public class MainActivity extends Activity {
     if (nativeVideo!=null && "/motion/preview".equals(request.getUrl().getEncodedPath())) return nativeVideo.preview(request.getMethod(),request.getUrl().getEncodedQuery());
     String path=request.getUrl().getPath(); if(path==null||path.equals("/"))path="/index.html";
     if(path.contains(".."))return new WebResourceResponse("text/plain","UTF-8",new ByteArrayInputStream(new byte[0]));
-    String mime=path.endsWith(".js")?"application/javascript":path.endsWith(".css")?"text/css":path.endsWith(".png")?"image/png":path.endsWith(".svg")?"image/svg+xml":"text/html";
-    try{return new WebResourceResponse(mime,"UTF-8",getAssets().open("web"+path));}
+    String mime=path.endsWith(".js")?"application/javascript":path.endsWith(".css")?"text/css":path.endsWith(".png")?"image/png":path.endsWith(".svg")?"image/svg+xml":path.endsWith(".mp3")?"audio/mpeg":path.endsWith(".json")?"application/json":"text/html";
+    try{return new WebResourceResponse(mime,mime.startsWith("audio/")?null:"UTF-8",getAssets().open("web"+path));}
     catch(Exception e){return new WebResourceResponse("text/plain","UTF-8",new ByteArrayInputStream(new byte[0]));}
    }
    @Override public boolean shouldOverrideUrlLoading(WebView view,WebResourceRequest request){return !isAppOrigin(request.getUrl());}

@@ -8,6 +8,13 @@ follow the prompts, and confirm your own participation to grow a shared garden.
 Manual play needs no camera, account, Python runtime, or credentials. Progress
 stays in the same browser on the same device.
 
+Optional **Spoken prompts** read the current manual-play instruction aloud.
+Turn them on in setup or during a round. Amazon Polly Joanna Neural generates
+the 18 bundled clips at build time; playback works offline and sends no player
+data to AWS. Pause stops speech, and Resume restarts the current instruction.
+The choice defaults to Off on restart and never changes the saved garden format.
+See the [AWS integration and reproduction guide](docs/AWS-SPOKEN-PROMPTS.md).
+
 Catch the sunshine also has an optional, single-person local motion prototype.
 It supports explicitly selected synthetic input, local-file replay, or camera
 capture. Camera frames stay in memory and are not saved or uploaded. Natural
@@ -58,6 +65,12 @@ browser checks, and troubleshooting.
 | Work on local pose inference or file replay | [Sidecar guide](sidecar/README.md) · [Video testing](sidecar/VIDEO-TESTING.md) |
 | Continue the current motion investigation | [Development handoff](docs/DEVELOPMENT-HANDOFF.md) |
 | Inspect the Android host and debug modes | [Native source guide](android/README-motion.md) |
+| Reproduce the Polly audio integration | [Spoken prompts](docs/AWS-SPOKEN-PROMPTS.md) |
+
+The additional open-source mini-challenge project,
+[Caption Pause Map](https://github.com/Xuefeng-Zhu/caption-pause-map), generalizes
+the demo's caption timing work into an independent, offline Python CLI with
+strict validation, synthetic examples and tests.
 
 ## Motion evidence and limits
 

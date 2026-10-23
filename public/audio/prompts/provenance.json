@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "service": "Amazon Polly",
+  "engine": "neural",
+  "voice": "Joanna",
+  "language": "en-US",
+  "region": "us-west-2",
+  "sampleRate": 24000,
+  "integration": "Build-time synthesis; offline bundled playback; no user input is sent to AWS",
+  "pricingUrl": "https://aws.amazon.com/polly/pricing/",
+  "clips": [
+    {
+      "id": "wake-seated-0",
+      "text": "Sit comfortably with your feet supported.",
+      "file": "wake-seated-0.mp3",
+      "sha256": "7f8b0e6f938281c212daf79cd848e8a7b5bfa2c94ec46335d8b2e0a7629096eb",
+      "bytes": 13580,
+      "requestCharacters": 41,
+      "generatedAtUtc": "2026-10-23T17:59:55.394Z"
+    },
+    {
+      "id": "wake-seated-1",
+      "text": "Make small, easy shoulder circles. Arms can stay resting.",
+      "file": "wake-seated-1.mp3",
+      "sha256": "c43451ae9961453aef0397e7e751ddfee15bd15795b70fd7245535c36be9241f",
+      "bytes": 25532,
+      "requestCharacters": 57,
+      "generatedAtUtc": "2026-10-23T17:59:55.977Z"
+    },
+    {
+      "id": "wake-seated-2",
+      "text": "Open and close your hands like little leaves.",
+      "file": "wake-seated-2.mp3",
+      "sha256": "f8ce480f5286ccc36b72b34c4255ff4d3342d5831e05e3eddd26bb5b3c601da9",
+      "bytes": 13868,
+      "requestCharacters": 45,
+      "generatedAtUtc": "2026-10-23T17:59:56.480Z"
+    },
+    {
+      "id": "wake-standing-0",
+      "text": "Plant your feet comfortably. Let your arms rest.",
+      "file": "wake-standing-0.mp3",
+      "sha256": "487f74f06de79b19e0dc2bc60d97d5d3554343682a9a97f7d7b4acc2d50aa373",
+      "bytes": 20924,
+      "requestCharacters": 48,
+      "generatedAtUtc": "2026-10-23T17:59:57.197Z"
+    },
+    {
+      "id": "wake-standing-1",
+      "text": "Slowly circle your shoulders. Keep it small and easy.",
+      "file": "wake-standing-1.mp3",
+      "sha256": "052aaa3362253c564361a0b90a8f3fb9fa0f81c97c7b0e8fafb1fdaf48764d46",
+      "bytes": 22076,
+      "requestCharacters": 53,
+      "generatedAtUtc": "2026-10-23T17:59:57.890Z"
+    },
+    {
+      "id": "wake-standing-2",
+      "text": "Open your hands like little leaves. Your garden is waking.",
+      "file": "wake-standing-2.mp3",
+      "sha256": "8d13c723b4dc3afc09f835118b7ad85b3eb929c3d86e7e78ef55345751fbba91",
+      "bytes": 22076,
+      "requestCharacters": 58,
+      "generatedAtUtc": "2026-10-23T17:59:58.516Z"
+    },
+    {
+      "id": "sun-seated-0",
+      "text": "Stay comfortably seated with your back supported.",
+      "file": "sun-seated-0.mp3",
+      "sha256": "ba12aa05b5e8cbb418efd9c05fc6f9d886cf897382c3a5c628904314448063d9",
+      "bytes": 15740,
+      "requestCharacters": 49,
+      "generatedAtUtc": "2026-10-23T17:59:59.046Z"
+    },
+    {
+      "id": "sun-seated-1",
+      "text": "Reach a hand forward within your comfortable range.",
+      "file": "sun-seated-1.mp3",
+      "sha256": "0525efda64edb3dde1bbbad5c5a7b78c34c10e8f120bbb0bd53360168d27a73b",
+      "bytes": 16316,
+      "requestCharacters": 51,
+      "generatedAtUtc": "2026-10-23T17:59:59.530Z"
+    },
+    {
+      "id": "sun-seated-2",
+      "text": "Alternate hands, or imagine the reach. Every version belongs.",
+      "file": "sun-seated-2.mp3",
+      "sha256": "ccca2b466f2293638791d835cf0d344eda3cc852f0f019fed9562251e1b06aa1",
+      "bytes": 24668,
+      "requestCharacters": 61,
+      "generatedAtUtc": "2026-10-23T18:00:00.050Z"
+    },
+    {
+      "id": "sun-standing-0",
+      "text": "Keep your feet still and your knees relaxed.",
+      "file": "sun-standing-0.mp3",
+      "sha256": "2b438ecac1c6e2e2b6f7d8033e859bbb3eead8689603b65a16fd132eeb432ca3",
+      "bytes": 14444,
+      "requestCharacters": 44,
+      "generatedAtUtc": "2026-10-23T18:00:00.539Z"
+    },
+    {
+      "id": "sun-standing-1",
+      "text": "Reach one hand gently forward, then the other.",
+      "file": "sun-standing-1.mp3",
+      "sha256": "757b4e21077e1c18c0d3b0c905118b1669c8ca23c0361516cb0f9d70485e2119",
+      "bytes": 16172,
+      "requestCharacters": 46,
+      "generatedAtUtc": "2026-10-23T18:00:01.032Z"
+    },
+    {
+      "id": "sun-standing-2",
+      "text": "Gather your imaginary sunshine. A small reach counts.",
+      "file": "sun-standing-2.mp3",
+      "sha256": "784ca2b28d5bea2a7cba48d7d6e991452def74c6e35ea1f8dfa0680d2ce4f825",
+      "bytes": 23228,
+      "requestCharacters": 53,
+      "generatedAtUtc": "2026-10-23T18:00:01.526Z"
+    },
+    {
+      "id": "rain-seated-0",
+      "text": "Rest your hands comfortably in your lap.",
+      "file": "rain-seated-0.mp3",
+      "sha256": "1668e7262ef4a0369fb69868e9b00d9d78c18ab7b4be22b75d7ffc3b64df7038",
+      "bytes": 13580,
+      "requestCharacters": 40,
+      "generatedAtUtc": "2026-10-23T18:00:01.993Z"
+    },
+    {
+      "id": "rain-seated-1",
+      "text": "Tap your fingertips on your lap like soft raindrops.",
+      "file": "rain-seated-1.mp3",
+      "sha256": "5e31b80a30764b0f2083ed77dfdd5316e0aaf728c59d8719d8eb9df5cad47131",
+      "bytes": 18908,
+      "requestCharacters": 52,
+      "generatedAtUtc": "2026-10-23T18:00:02.511Z"
+    },
+    {
+      "id": "rain-seated-2",
+      "text": "Try a gentle rhythm together. Watching along counts too.",
+      "file": "rain-seated-2.mp3",
+      "sha256": "1c75e132a54beb5709090ed36408d9ba44a512c521c1477e0e4786723980996d",
+      "bytes": 22796,
+      "requestCharacters": 56,
+      "generatedAtUtc": "2026-10-23T18:00:03.015Z"
+    },
+    {
+      "id": "rain-standing-0",
+      "text": "Stand comfortably, or choose to sit at any time.",
+      "file": "rain-standing-0.mp3",
+      "sha256": "c41571aa48a1b7bdc1ece66e25d31b5115d2bca17817fecc804b9df73ad6f5e9",
+      "bytes": 19484,
+      "requestCharacters": 48,
+      "generatedAtUtc": "2026-10-23T18:00:03.522Z"
+    },
+    {
+      "id": "rain-standing-1",
+      "text": "Tap your fingertips together like soft raindrops.",
+      "file": "rain-standing-1.mp3",
+      "sha256": "52ec19c05087d91f318068e4add898096ddcfff61ff6cf1560fd03b34802411b",
+      "bytes": 18044,
+      "requestCharacters": 49,
+      "generatedAtUtc": "2026-10-23T18:00:04.007Z"
+    },
+    {
+      "id": "rain-standing-2",
+      "text": "Make your own gentle rhythm. Let the garden drink it in.",
+      "file": "rain-standing-2.mp3",
+      "sha256": "7a1946ec372b94a76ec097dae49336479dc94b386831d1fd4333535aa3195606",
+      "bytes": 21644,
+      "requestCharacters": 56,
+      "generatedAtUtc": "2026-10-23T18:00:04.527Z"
+    }
+  ]
+}

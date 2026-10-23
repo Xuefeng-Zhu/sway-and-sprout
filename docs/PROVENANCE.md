@@ -62,3 +62,18 @@ removes audio; there is no reflection, retiming or duplicated hold. Retain creat
 source, license and modification notice in the frozen annotation and Full report.
 The media is ignored and was not published. Metadata-only MEVA research and a
 rejected flag-wave source are not positive recognition evidence.
+
+## October 23, 2026 spoken activity prompts
+
+The 18 MP3s in `public/audio/prompts/` were generated with Amazon Polly Joanna
+Neural in us-west-2 from the project's authored seated/standing instructions.
+They provide optional offline manual-play speech. The adjacent provenance JSON
+retains text, generation settings, timestamps and content hashes. No user input,
+camera frames, credentials, AWS account IDs or voice recordings were used or
+committed. The generation script and playback code were authored with Codex
+assistance. Polly also generated the separate submission-video narration.
+
+[Caption Pause Map](https://github.com/Xuefeng-Zhu/caption-pause-map) is an
+additional standalone MIT-licensed project created October 23 from the author's
+demo caption-retiming workflow. Its new independent schemas, validation, CLI,
+synthetic examples and tests contain no project media or operational receipts.

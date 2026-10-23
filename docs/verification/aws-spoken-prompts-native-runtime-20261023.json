@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "verifiedAtUtc": "2026-10-23T18:15:27.157Z",
+  "scope": "Actual Android TV emulator remote and real bundled MP3 decoding/playback; no physical Fire TV or human listening claim",
+  "apkSha256": "ece732ccffa11d0cdeabd5e579cbf8079b5959be71f0b893aa22a1217ed3c950",
+  "launch": {
+    "emulator": "Android TV API34 ARM64 disposable clone",
+    "app": "com.togethermove.tv.motion",
+    "origin": "https://app.togethermove.local/",
+    "diagnosticOptions": false,
+    "cameras": false,
+    "audioOutputDisabled": true,
+    "snapshots": false,
+    "externalNetworking": "OS sandbox denied; zero-send probe EPERM",
+    "qcowBackingChainsVerified": 3
+  },
+  "instrumentation": "Genuine Audio constructor observer attached before any prompt action; no play/pause behavior mocked",
+  "checks": {
+    "finalApkInstalled": true,
+    "ordinaryLaunchWithoutDiagnosticOptions": true,
+    "defaultOff": true,
+    "realNativeRemoteKeys": true,
+    "seatedPlayback": true,
+    "standingPlayback": true,
+    "pauseStopsAudioAndTimer": true,
+    "resumePlaysAudio": true,
+    "positionSwitchPausesAudio": true,
+    "nativeBackPausesAudio": true,
+    "gardenStopsAudio": true,
+    "restartResetsChoiceOff": true,
+    "savedParticipationByteIdentical": true,
+    "actualAssetMimeAudioMpeg": true,
+    "actualMp3Decoder": true,
+    "noPageErrors": true,
+    "noMediaErrors": true,
+    "nativeLayoutFitsViewport": true,
+    "originalAvdUnchanged": true,
+    "isolatedPortsReleased": true,
+    "disposableCloneAndKeyCopiesRemoved": true
+  },
+  "playbackEvidence": [
+    {
+      "name": "wake-seated-playing",
+      "timer": "30s",
+      "audio": [
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0.242814,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "paused",
+      "timer": "28s",
+      "audio": [
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0,
+          "readyState": 4,
+          "paused": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "paused-stable",
+      "timer": "28s",
+      "audio": [
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0,
+          "readyState": 4,
+          "paused": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "resumed",
+      "timer": "28s",
+      "audio": [
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0,
+          "readyState": 4,
+          "paused": true,
+          "error": null
+        },
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0.249866,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "standing-paused",
+      "timer": "27s",
+      "audio": [
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0,
+          "readyState": 4,
+          "paused": true,
+          "error": null
+        },
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0,
+          "readyState": 4,
+          "paused": true,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "standing-playing",
+      "timer": "27s",
+      "audio": [
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0,
+          "readyState": 4,
+          "paused": true,
+          "error": null
+        },
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0,
+          "readyState": 4,
+          "paused": true,
+          "error": null
+        },
+        {
+          "file": "wake-standing-0.mp3",
+          "currentTime": 0.255474,
+          "readyState": 4,
+          "paused": false,
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "native-back-paused",
+      "timer": "26s",
+      "audio": [
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0,
+          "readyState": 4,
+          "paused": true,
+          "error": null
+        },
+        {
+          "file": "wake-seated-0.mp3",
+          "currentTime": 0,
+          "readyState": 4,
+          "paused": true,
+          "error": null
+        },
+        {
+          "file": "wake-standing-0.mp3",
+          "currentTime": 0,
+          "readyState": 4,
+          "paused": true,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "nativeLayout": {
+    "viewport": {
+      "innerWidth": 960,
+      "innerHeight": 540,
+      "devicePixelRatio": 2,
+      "scrollY": 0,
+      "scrollHeight": 540,
+      "clientHeight": 540
+    },
+    "checks": [
+      {
+        "name": "setup-default-off",
+        "viewport": {
+          "innerWidth": 960,
+          "innerHeight": 540,
+          "devicePixelRatio": 2,
+          "scrollY": 0,
+          "scrollHeight": 540,
+          "clientHeight": 540
+        },
+        "overflow": []
+      },
+      {
+        "name": "wake-seated-playing",
+        "viewport": {
+          "innerWidth": 960,
+          "innerHeight": 540,
+          "devicePixelRatio": 2,
+          "scrollY": 0,
+          "scrollHeight": 540,
+          "clientHeight": 540
+        },
+        "overflow": []
+      },
+      {
+        "name": "paused",
+        "viewport": {
+          "innerWidth": 960,
+          "innerHeight": 540,
+          "devicePixelRatio": 2,
+          "scrollY": 0,
+          "scrollHeight": 540,
+          "clientHeight": 540
+        },
+        "overflow": []
+      },
+      {
+        "name": "resumed",
+        "viewport": {
+          "innerWidth": 960,
+          "innerHeight": 540,
+          "devicePixelRatio": 2,
+          "scrollY": 0,
+          "scrollHeight": 540,
+          "clientHeight": 540
+        },
+        "overflow": []
+      },
+      {
+        "name": "standing-paused",
+        "viewport": {
+          "innerWidth": 960,
+          "innerHeight": 540,
+          "devicePixelRatio": 2,
+          "scrollY": 0,
+          "scrollHeight": 540,
+          "clientHeight": 540
+        },
+        "overflow": []
+      },
+      {
+        "name": "standing-playing",
+        "viewport": {
+          "innerWidth": 960,
+          "innerHeight": 540,
+          "devicePixelRatio": 2,
+          "scrollY": 0,
+          "scrollHeight": 540,
+          "clientHeight": 540
+        },
+        "overflow": []
+      },
+      {
+        "name": "restart-default-off",
+        "viewport": {
+          "innerWidth": 960,
+          "innerHeight": 540,
+          "devicePixelRatio": 2,
+          "scrollY": 0,
+          "scrollHeight": 540,
+          "clientHeight": 540
+        },
+        "overflow": []
+      }
+    ],
+    "standingPlayElements": [
+      {
+        "tag": "HEADER",
+        "action": null,
+        "text": "Sway & Sprout\u2726GardenHow to play",
+        "fontSize": "16px",
+        "left": 38.3984375,
+        "right": 921.6015625,
+        "top": 12,
+        "bottom": 47.5,
+        "width": 883.203125,
+        "height": 35.5
+      },
+      {
+        "tag": "P",
+        "action": null,
+        "text": "MOMENT 1 OF 3 \u00b7 STANDING \u00b7 MANUAL",
+        "fontSize": "12px",
+        "left": 38.3984375,
+        "right": 567.1328125,
+        "top": 55.5,
+        "bottom": 72.8984375,
+        "width": 528.734375,
+        "height": 17.3984375
+      },
+      {
+        "tag": "H1",
+        "action": null,
+        "text": "Wake the garden",
+        "fontSize": "32px",
+        "left": 38.3984375,
+        "right": 567.1328125,
+        "top": 80.8984375,
+        "bottom": 114.4921875,
+        "width": 528.734375,
+        "height": 33.59375
+      },
+      {
+        "tag": "P",
+        "action": null,
+        "text": "Plant your feet comfortably. Let your arms rest.",
+        "fontSize": "22px",
+        "left": 38.3984375,
+        "right": 567.1328125,
+        "top": 122.4921875,
+        "bottom": 182.4921875,
+        "width": 528.734375,
+        "height": 60
+      },
+      {
+        "tag": "SPAN",
+        "action": null,
+        "text": "27s",
+        "fontSize": "22px",
+        "left": 519.1328125,
+        "right": 567.1328125,
+        "top": 190.4921875,
+        "bottom": 216.4921875,
+        "width": 48,
+        "height": 26
+      },
+      {
+        "tag": "BUTTON",
+        "action": "pause",
+        "text": "Pause \u2161",
+        "fontSize": "18px",
+        "left": 38.3984375,
+        "right": 135.4296875,
+        "top": 252.7890625,
+        "bottom": 296.7890625,
+        "width": 97.03125,
+        "height": 44
+      },
+      {
+        "tag": "BUTTON",
+        "action": "switch",
+        "text": "Change position",
+        "fontSize": "18px",
+        "left": 147.4296875,
+        "right": 309.421875,
+        "top": 252.7890625,
+        "bottom": 296.7890625,
+        "width": 161.9921875,
+        "height": 44
+      },
+      {
+        "tag": "BUTTON",
+        "action": "home",
+        "text": "Back to garden",
+        "fontSize": "18px",
+        "left": 321.421875,
+        "right": 473.3515625,
+        "top": 252.7890625,
+        "bottom": 296.7890625,
+        "width": 151.9296875,
+        "height": 44
+      },
+      {
+        "tag": "BUTTON",
+        "action": "spoken-prompts",
+        "text": "Spoken prompts: On",
+        "fontSize": "16px",
+        "left": 38.3984375,
+        "right": 214.890625,
+        "top": 308.7890625,
+        "bottom": 349.7890625,
+        "width": 176.4921875,
+        "height": 41
+      },
+      {
+        "tag": "P",
+        "action": null,
+        "text": "Spoken prompts on. The current instruction plays during manual play.",
+        "fontSize": "14px",
+        "left": 226.890625,
+        "right": 567.1328125,
+        "top": 308.9921875,
+        "bottom": 349.5859375,
+        "width": 340.2421875,
+        "height": 40.59375
+      },
+      {
+        "tag": "FOOTER",
+        "action": null,
+        "text": "\u2194 \u2195 NavigateOK Select\u21b6 BackII PauseOptional camera. Processed locally.",
+        "fontSize": "12px",
+        "left": 0,
+        "right": 960,
+        "top": 500,
+        "bottom": 540,
+        "width": 960,
+        "height": 40
+      }
+    ]
+  },
+  "decoderNames": [
+    "SymphoniaAudioDecoder"
+  ],
+  "storage": {
+    "key": "togethermove.v1",
+    "baselineHadSavedParticipation": true,
+    "beforeSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c",
+    "afterSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c",
+    "afterRestartSha256": "0e8b636f748ea190037c07160326eaeb057f0f8981c645ce8e31df4ddd46f02c"
+  },
+  "rawEvidence": {
+    "runtime": "artifacts/demo-submission-20261023/aws-prompts/native/runtime.raw.json",
+    "runtimeSha256": "26c0e822e052ef5c6d286089b803173542dfecee93ce0cc5b7e11c4407839354",
+    "nativeInputEvents": 15,
+    "screenshots": [
+      "wake-seated-playing.png",
+      "standing-playing.png",
+      "restart-default-off.png"
+    ],
+    "cleanup": "artifacts/demo-submission-20261023/aws-prompts/native/cleanup.json"
+  },
+  "previousEvidence": [
+    {
+      "directory": "artifacts/demo-submission-20261023/aws-prompts/native/pre-layout-fix",
+      "apkSha256": "9f57ae9e8b2596f33dd37564454b10366c1eb2091d81ec9c4e48122385923d16",
+      "functionalChecksPassed": 20,
+      "visualLimitation": "Native manual play scrolled, clipping heading/status; corrected before final verification.",
+      "harnessAttemptsRetained": [
+        "runtime.attempt1.json: startup endpoint needed bounded retry",
+        "runtime.attempt2.json: init observer absent while real playback succeeded",
+        "runtime.attempt3.json: initial harness expectation omitted intended pause on position switch"
+      ]
+    }
+  ],
+  "limitations": [
+    "Emulator MP3 decoding and media timeline verified; audio output disabled, no independent human listening claim.",
+    "No physical Fire TV or live human recognition claim."
+  ],
+  "passed": true
+}

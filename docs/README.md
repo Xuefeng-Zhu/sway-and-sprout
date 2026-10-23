@@ -18,6 +18,7 @@ The [project README](../README.md) gives the product overview and controls.
 | [Development handoff](DEVELOPMENT-HANDOFF.md) | Current investigation summary, next acceptance gate, and dated milestone context |
 | [Source and asset provenance](PROVENANCE.md) | Authored/generated assets, vendored code, model locks, and third-party notices |
 | [Demo script](DEMO-SCRIPT.md) | Manual and clearly labelled synthetic demonstration |
+| [AWS spoken prompts](AWS-SPOKEN-PROMPTS.md) | Real Polly asset generation, optional offline playback, cost accounting and dated verification |
 
 ## Reading verification evidence
 
@@ -74,8 +75,8 @@ latest natural evaluation above for the subsequent replay-duration result.
 
 - [Milestones](MILESTONES.md): dated implementation and migration checkpoints.
 - [Tool feedback](FEEDBACK.md): historical tool and environment friction.
-- [Submission draft](SUBMISSION-DRAFT.md): earlier event-facing copy and blockers;
-  review against current evidence before reuse. It is not a submitted entry.
+- [Submission record](SUBMISSION-DRAFT.md): approved event-facing copy, actual
+  submission receipt and dated verification scope; review live Devpost for current status.
 - [`verification/`](verification/): checked-in structured summaries and supporting
   reviews. Some records reference local-only raw artifacts; those paths are
   historical provenance, not fresh-clone setup requirements.

@@ -12,6 +12,7 @@ const project=path.resolve(process.argv[2]||fileURLToPath(new URL('../',import.m
 const output=path.resolve(process.argv[3]||'simulated-progress-preservation-result.json');
 const model=await import(pathToFileURL(path.join(project,'src/model.js')).href);
 const {createMotionState,acceptMotionEvent}=await import(pathToFileURL(path.join(project,'src/motion.js')).href);
+const {createSpokenPrompts,manualPromptContext}=await import(pathToFileURL(path.join(project,'src/spoken-prompts.js')).href);
 const main=readFileSync(path.join(project,'src/main.js'),'utf8');
 const seeds=[
   {name:'existing-other',completed:['wake'],sessions:3},
@@ -31,7 +32,7 @@ function harness(seed,{manual=false}={}){
   let stored=raw,callbacks,id=0;
   const writes=[],nodes={};
   const root={innerHTML:'',querySelectorAll:()=>[],querySelector:()=>({focus(){}})};
-  const sandbox={...model,createMotionState,acceptMotionEvent,
+  const sandbox={...model,createMotionState,acceptMotionEvent,createSpokenPrompts,manualPromptContext,
     URLSearchParams,location:{search:''},
     createMotionClient:options=>{callbacks=options;return {start(){},stop(){}};},
     createPreviewClient:()=>({start(){},stop(){}}),sunshineMarkup:()=>'',

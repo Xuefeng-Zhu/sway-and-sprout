@@ -3,6 +3,7 @@ import {challenges,normalizeProgress,complete,phaseAt,nearest} from './model.js'
 import {createMotionState,acceptMotionEvent,createMotionClient} from './motion.js';
 import {createPreviewClient} from './preview.js';
 import {sunshineMarkup,updateSunshine,updateCameraPreview} from './motion-view.js';
+import {createSpokenPrompts,manualPromptContext} from './spoken-prompts.js';
 
 const root=document.querySelector('#app');
 let saved;
@@ -13,6 +14,8 @@ let elapsed=0,paused=false,last=0,frame=0,storageFailed=false,returnScreen='home
 let inputMode='manual',roundId=crypto.randomUUID(),revision=0;
 let motion=createMotionState(roundId),packet=null,disconnected=false;
 let roundSource=null,streamId=null,motionNotice='';
+const spokenPrompts=createSpokenPrompts({onStatus(message){const status=root.querySelector('#spoken-prompts-status');if(status)status.textContent=message;}});
+function syncSpokenPrompts(){spokenPrompts.sync(manualPromptContext({screen,inputMode,challenge:challenges[selected].id,mode,elapsed,paused}));}
 const clientId=crypto.randomUUID();
 const cameraMode=()=>inputMode==='camera'&&challenges[selected].id==='sun';
 const cameraActive=()=>cameraMode()&&screen==='play'&&!paused&&!motion.completed;
@@ -68,17 +71,22 @@ function inputChoices(){
   if(challenges[selected].id!=='sun')return '';
   return `<fieldset class="input-choices"><legend>HOW WOULD YOU LIKE TO PLAY?</legend><div class="input-options">${button('<b>Manual play</b><small>Follow along, then confirm</small>','input:manual',inputMode==='manual'?'selected':'',`aria-pressed="${inputMode==='manual'}"`)}${button(nativeVideoCheck?'<b>Video replay</b><small>Bundled test · no camera</small>':'<b>Camera sunshine</b><small>One player · local processing</small>','input:camera',inputMode==='camera'?'selected':'',`aria-pressed="${inputMode==='camera'}"`)}</div><p class="camera-setup-note">${nativeVideoCheck?'Video replay uses a 120-second diagnostic round. It does not open a camera or change your saved garden.':inputMode==='camera'?'Camera is off. One person only: face the camera with both shoulders and wrists visible. Rest both arms below your shoulders, with hands clear of your face. After Start, wait for Ready, then follow the cue. Frames stay on this device; nothing is recorded.':'Manual play uses your own confirmation. No camera is needed.'}</p></fieldset>`;
 }
+function spokenPromptChoice(){
+  if(cameraMode())return spokenPrompts.enabled?'<p class="spoken-prompts-camera">Spoken prompts pause during camera play.</p>':'';
+  return `<div class="spoken-prompts">${button(`Spoken prompts: ${spokenPrompts.enabled?'On':'Off'}`,'spoken-prompts',spokenPrompts.enabled?'enabled':'',`aria-pressed="${spokenPrompts.enabled}" aria-describedby="spoken-prompts-status"`)}<p id="spoken-prompts-status" role="status">${spokenPrompts.message}</p><small>Optional offline audio for manual play. This choice resets on restart.</small></div>`;
+}
 function render(){
   // Remove the current image and invalidate requests before replacing the DOM.
   previewClient.stop();
+  syncSpokenPrompts();
   cancelAnimationFrame(frame);
   if(screen==='home'){
     shell(`<section class="hero"><div class="intro"><h1>A little movement.<br>A lot of together.</h1><p>Every move helps your garden grow.</p>${button('Let’s grow <span>→</span>','setup','primary','autofocus')}<p class="subtle">Seated or standing. Everyone belongs.</p></div><div class="garden-status">${progress.completed.length?`${progress.completed.length} of 3 moments grown`:'Your next little adventure'}</div></section><section class="challenge-list" aria-label="Three garden moments">${challenges.map((c,i)=>button(`<span class="number">0${i+1}</span><strong>${c.name.replace(/ (garden|sunshine|rain)$/,'<br>$1')}</strong><span class="symbol">${c.symbol}</span><small>${progress.completed.includes(c.id)?'✓ Grown together':c.id==='sun'?'30 seconds · Camera play available':'30 seconds · Your own pace'}</small>`,`choose:${i}`,'challenge',`style="--accent:${c.color}"`)).join('')}</section>`);
   }else if(screen==='setup'){
-    shell(`<section class="panel setup-panel"><div><p class="step">MAKE YOURSELF AT HOME</p><h1>Move your way.</h1><p>Choose a starting position. Everyone can adapt<br class="desktop"> any movement, rest, or simply watch along.</p><div class="choices">${button('<b>Seated</b><small>Comfortably in your chair</small>','mode:seated',mode==='seated'?'selected':'',`aria-pressed="${mode==='seated'}"`)}${button('<b>Standing</b><small>A little room around you</small>','mode:standing',mode==='standing'?'selected':'',`aria-pressed="${mode==='standing'}"`)}</div>${inputChoices()}<p class="safety">Keep movements comfortable. Clear a little space.<br>Rest whenever you need. Manual play is always available.</p>${button(`Start ${challenges[selected].name.toLowerCase()} →`,'start','primary','autofocus')}</div><aside class="setup-art"><span>✿</span><h2>One little move.<br>A brighter garden.</h2><p>About 2 minutes for all three moments.<br>No accounts. No cloud processing.</p></aside></section>`);
+    shell(`<section class="panel setup-panel"><div><p class="step">MAKE YOURSELF AT HOME</p><h1>Move your way.</h1><p>Choose a starting position. Everyone can adapt<br class="desktop"> any movement, rest, or simply watch along.</p><div class="choices">${button('<b>Seated</b><small>Comfortably in your chair</small>','mode:seated',mode==='seated'?'selected':'',`aria-pressed="${mode==='seated'}"`)}${button('<b>Standing</b><small>A little room around you</small>','mode:standing',mode==='standing'?'selected':'',`aria-pressed="${mode==='standing'}"`)}</div>${inputChoices()}${spokenPromptChoice()}<p class="safety">Keep movements comfortable. Clear a little space.<br>Rest whenever you need. Manual play is always available.</p>${button(`Start ${challenges[selected].name.toLowerCase()} →`,'start','primary','autofocus')}</div><aside class="setup-art"><span>✿</span><h2>One little move.<br>A brighter garden.</h2><p>About 2 minutes for all three moments.<br>No accounts. No cloud processing.</p></aside></section>`);
   }else if(screen==='play'){
     const c=challenges[selected],camera=cameraMode();
-    shell(`<section class="play-panel" style="--accent:${c.color}"><div class="instruction"><p class="step">MOMENT ${selected+1} OF 3 · ${mode.toUpperCase()}${camera?'<span id="motion-input-mode"> · CAMERA</span>':' · MANUAL'}</p><h1>${c.name}</h1><p id="${camera?'camera-cue':'cue'}" class="cue">${camera?'Start with both arms resting.':c[mode][phaseAt(elapsed)]}</p><div class="timer"><div class="track"><div id="bar"></div></div><span id="time"></span></div><p class="subtle">${camera?'Six alternating raises. Left, rest, right, rest. Your own pace.':'Go at your own pace. Small movements count.'}</p><div class="actions">${button(paused?'Resume →':'Pause Ⅱ','pause','primary','autofocus')}${button('Change position','switch')}${camera?button('Use manual play','manual'):''}${button('Back to garden','home')}</div></div>${camera?sunshineMarkup():`<div class="motion-art ${c.id}"><div class="halo"></div><span>${c.symbol}</span><p>Together is the whole point.</p></div>`}</section>${paused?'<div class="pause-note" role="status">Taking a breather. Resume whenever you’re ready.</div>':''}`);
+    shell(`<section class="play-panel" style="--accent:${c.color}"><div class="instruction"><p class="step">MOMENT ${selected+1} OF 3 · ${mode.toUpperCase()}${camera?'<span id="motion-input-mode"> · CAMERA</span>':' · MANUAL'}</p><h1>${c.name}</h1><p id="${camera?'camera-cue':'cue'}" class="cue">${camera?'Start with both arms resting.':c[mode][phaseAt(elapsed)]}</p><div class="timer"><div class="track"><div id="bar"></div></div><span id="time"></span></div><p class="subtle">${camera?'Six alternating raises. Left, rest, right, rest. Your own pace.':'Go at your own pace. Small movements count.'}</p><div class="actions">${button(paused?'Resume →':'Pause Ⅱ','pause','primary','autofocus')}${button('Change position','switch')}${camera?button('Use manual play','manual'):''}${button('Back to garden','home')}</div>${spokenPromptChoice()}</div>${camera?sunshineMarkup():`<div class="motion-art ${c.id}"><div class="halo"></div><span>${c.symbol}</span><p>Together is the whole point.</p></div>`}</section>${paused?'<div class="pause-note" role="status">Taking a breather. Resume whenever you’re ready.</div>':''}`);
     updateTimer();
     if(camera)updateSunshine({motion,packet,paused,disconnected,notice:motionNotice,revision});
     if(!paused){last=performance.now();frame=requestAnimationFrame(tick);}
@@ -108,6 +116,7 @@ function updateTimer(){
   document.querySelector('#bar').style.width=`${elapsed/roundSeconds()*100}%`;
   document.querySelector('.motion-art')?.classList.toggle('still',paused);
   document.querySelector('.sunshine-garden')?.classList.toggle('still',paused);
+  syncSpokenPrompts();
 }
 function finish(){const next=complete(progress,challenges[selected].id,videoRound()?'video':roundSource||packet?.source||'manual');if(next!==progress){progress=next;save();}screen='celebrate';revision++;render();}
 function tick(now){
@@ -128,6 +137,7 @@ function act(action){
   else if(action.startsWith('choose:')){selected=Number(action.split(':')[1]);inputMode='manual';screen='setup';}
   else if(action.startsWith('mode:'))mode=action.split(':')[1];
   else if(action.startsWith('input:')){inputMode=action.split(':')[1];if(cameraMode())motionClient.start();}
+  else if(action==='spoken-prompts'){spokenPrompts.setEnabled(!spokenPrompts.enabled);}
   else if(action==='start'){elapsed=0;paused=false;resetRound();screen='play';if(cameraMode())motionClient.start();}
   else if(action==='pause'){paused=!paused;if(!paused)motionNotice='';}
   else if(action==='switch'){mode=mode==='seated'?'standing':'seated';paused=true;}
@@ -136,6 +146,7 @@ function act(action){
   else if(action==='next'||action==='skip'){selected=(selected+1)%3;inputMode='manual';elapsed=0;paused=false;screen='setup';}
   else if(action==='restart'){progress={completed:[],sessions:progress.sessions+1};save();selected=0;inputMode='manual';screen='setup';}
   render();
+  if(action==='spoken-prompts')root.querySelector('[data-action="spoken-prompts"]')?.focus();
 }
 function back(){
   if(screen==='play'){paused=true;revision++;render();}
@@ -157,5 +168,5 @@ document.addEventListener('keydown',e=>{
   else if(e.key==='Escape'||e.key==='Backspace'){e.preventDefault();back();}
   else if(e.key===' '||e.key==='MediaPlayPause'){e.preventDefault();if(screen==='play')act('pause');}
 });
-window.addEventListener('pagehide',()=>{previewClient.stop();motionClient.stop();});
+window.addEventListener('pagehide',()=>{spokenPrompts.stop();previewClient.stop();motionClient.stop();});
 render();
