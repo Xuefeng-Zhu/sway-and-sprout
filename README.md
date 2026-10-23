@@ -94,8 +94,10 @@ names so branding changes do not discard progress or break integrations.
 
 ## Assets and licensing
 
-No project-wide open-source license has been selected. Preserve the committed
-third-party notices and [source/asset provenance](docs/PROVENANCE.md). Model
+Project-authored source and documentation are licensed under the [MIT License](LICENSE).
+Original project artwork is included with the project. Third-party components
+retain their existing licenses; preserve their committed notices and
+[source/asset provenance](docs/PROVENANCE.md). Model
 binaries, virtual environments, public test media, build outputs, credentials,
 and operational logs stay ignored. Restore public media only through the
 [explicit preparation recipe](docs/MIGRATION-TEST-PLAN.md#public-media-stays-local)

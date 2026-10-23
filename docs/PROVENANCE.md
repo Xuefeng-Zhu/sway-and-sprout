@@ -1,5 +1,15 @@
 # Current source and asset provenance
 
+## Licensing update, 2026-10-23
+
+Project-authored source and documentation are licensed under the root MIT
+License, selected with owner approval on October 23, 2026. Original
+project artwork remains included. Third-party code, model/runtime dependencies
+and optional test media keep their original licenses and notices. Optional
+licensed media and model binaries remain ignored and are not relicensed by the
+project license. Historical licensing statements below record the earlier
+repository state.
+
 ## Sway & Sprout migration, 2026-10-20
 
 The renamed app preserves the original TogetherMove compatibility identifiers and authored source. The new private source repository includes current local-motion code and tests; generated caches/builds and historical emulator logs are excluded.
