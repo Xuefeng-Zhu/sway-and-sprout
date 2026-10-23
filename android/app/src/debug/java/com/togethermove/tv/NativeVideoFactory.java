@@ -13,6 +13,7 @@ final class NativeVideoFactory {
   String refinement=intent.getStringExtra("nativeRefinement");
   if(refinement==null)refinement="image";
   if(!refinement.equals("image")&&!refinement.equals("tracked"))throw new IllegalArgumentException("Unknown native refinement profile");
-  return new NativeVideoReplay(context,config,refinement.equals("image"));
+  ReplayReferenceProfile reference = ReplayReferenceProfile.parse(intent.getStringExtra("nativeReferenceChecks"));
+  return new NativeVideoReplay(context,config,refinement.equals("image"),reference);
  }
 }

@@ -51,9 +51,9 @@ def verify(java_home, android_jar, cache_root):
         debug_base = ROOT / "android/app/src/debug/java/com/togethermove/tv"
         tests = ROOT / "android/tests/com/togethermove/tv"
         classes = ["PoseGestureMachine", "PoseCoordinates", "MoveNetCrop", "ActivityMachine", "ReplayFrameGuard", "MotionQuery"]
-        debug_classes = ["NativeVideoCase", "ReplayAttemptTiming"]
+        debug_classes = ["NativeVideoCase", "ReplayAttemptTiming", "ReplayReferenceProfile", "NativeRgbPacking"]
         checks = ["NativePoseMathTest", "MoveNetCropTest", "MotionQueryTest", "ReplayFrameGuardTest",
-                  "NativeVideoCaseTest", "ReplayAttemptTimingTest"]
+                  "NativeVideoCaseTest", "ReplayAttemptTimingTest", "ReplayReferenceProfileTest", "NativeRgbPackingTest"]
         run([java_home / "bin/javac", "--release", "17", "-d", temporary / "host",
              *[base / (name + ".java") for name in classes],
              *[debug_base / (name + ".java") for name in debug_classes],

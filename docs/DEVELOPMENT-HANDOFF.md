@@ -14,6 +14,17 @@ The older `work/natural-motion-diagnostics` branch began at
 `25b9de9` and `b1b049e` checkpoints remain diagnostic history. The dated
 TogetherMove source remains an untouched backup.
 
+## Latest checkpoint — 23 October 2026
+
+The concise UI and clean native build fixes are preserved on
+`work/activity-progression`. The current [build and runtime record](NATIVE-CLEAN-BUILD-20261023.md)
+supersedes the pending-build/runtime statements in the dated history below.
+Manual native entry → growth → harvest → replay passes. Geometry completes but
+is slower than real time. The human-video run fails at 77/136 frames after a
+control lease expiry; confidence resets also prevent an activity event in the
+accepted prefix. Reliable natural recognition and physical Fire TV performance
+remain unverified. No cloud migration or paid benchmark has run.
+
 ## Current continuation — 21 October 2026
 
 The active isolated branch is `work/activity-progression`; canonical remains

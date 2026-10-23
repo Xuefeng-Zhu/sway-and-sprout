@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {nativeScalarRows,nativeSummaryRows,nativeAttemptRows,nativeUiScoreVerified,nativeDiagnosticRoundVerified,nativeCompletionVerified,nativeFrameCoverage,assessNativeCase} from '../scripts/native-video-evidence.mjs';
+import {nativeScalarRows,nativeSummaryRows,nativeAttemptRows,nativePerformanceRows,nativeUiScoreVerified,nativeDiagnosticRoundVerified,nativeCompletionVerified,nativeFrameCoverage,assessNativeCase} from '../scripts/native-video-evidence.mjs';
 
 const config='verification/independent-both-press.float16.json';
 const expected={frames:2,fps:30,expectationKnown:false,expectedGestures:[]};
@@ -52,6 +52,25 @@ test('repeated frame attempts cannot inflate accepted coverage',()=>{
  assert.equal(nativeFrameCoverage(attempts,expected).complete,false);
  assert.equal(nativeFrameCoverage([...frames(),...attempts],expected).complete,true);
  assert.equal(nativeScalarRows(attempts.map(JSON.stringify).join('\n'),config).length,0);
+});
+test('performance evidence retains stage and ACK measurements without becoming frame coverage',()=>{
+ const rows=[
+  {kind:'init',configAsset:config,referenceProfile:'off',assetsInitMs:5,interpreterConstructionMs:8,decoderInitMs:2,explicitWarmupPasses:0,pixels:[1]},
+  {kind:'frame-completion',configAsset:config,frameIndex:0,classificationMs:.2,loggingAndBookkeepingMs:1.1,acceptedWorkMs:40,requestedPacingMs:0,wakeLatenessMs:3,landmarks:{private:true}},
+  {kind:'event-ack',configAsset:config,seq:1,latencyMs:240},
+ ];
+ const text=[...rows,{...rows[0],configAsset:'verification/other.json'},{...rows[1],kind:'pose-frame'}].map(JSON.stringify).join('\n');
+ const measured=nativePerformanceRows(text,config);
+ assert.equal(measured.length,3);assert.equal(measured[0].referenceProfile,'off');
+ assert.equal(measured[0].explicitWarmupPasses,0);assert.equal(measured[1].classificationMs,.2);
+ assert.equal(measured[1].wakeLatenessMs,3);assert.equal(measured[2].latencyMs,240);
+ assert.equal(nativeFrameCoverage(measured,expected).complete,false);
+ for(const row of measured){assert.equal('pixels' in row,false);assert.equal('landmarks' in row,false);}
+ const attempt=nativeAttemptRows(JSON.stringify({kind:'frame-attempt',configAsset:config,cropMs:1,resizeMs:2,packMs:3,
+  referencePrepareMs:4,referenceCompareMs:5,referenceInferenceMs:6,preprocessMs:6,pixels:'private'}),config)[0];
+ assert.deepEqual([attempt.cropMs,attempt.resizeMs,attempt.packMs],[1,2,3]);
+ assert.deepEqual([attempt.referencePrepareMs,attempt.referenceCompareMs,attempt.referenceInferenceMs],[4,5,6]);
+ assert.equal('pixels' in attempt,false);
 });
 test('explicit displayed zero is valid; absent or malformed UI and missing video identity never become zero',()=>{
  assert.equal(nativeUiScoreVerified(ui(0)),true);

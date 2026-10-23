@@ -52,6 +52,7 @@ public final class NativeVideoReplay implements MotionSource {
     private final String configAsset;
     private final NativeVideoAssets.ModelPin modelPin;
     private final boolean statelessCrop;
+    private final ReplayReferenceProfile referenceProfile;
     private final PoseGestureMachine machine = new PoseGestureMachine();
     private final ActivityMachine activity = new ActivityMachine();
     private final List<PendingEvent> pending = new ArrayList<>();
@@ -78,6 +79,7 @@ public final class NativeVideoReplay implements MotionSource {
     private String failure = "";
     private long lastPollWall;
     private long nextFrameWall;
+    private double assetsInitMs, interpreterInitMs, decoderInitMs;
     private int frameIndex;
     private RunStats stats = new RunStats();
 
@@ -88,7 +90,13 @@ public final class NativeVideoReplay implements MotionSource {
     public NativeVideoReplay(Context context, String configAsset) { this(context, configAsset, true); }
 
     public NativeVideoReplay(Context context, String configAsset, boolean statelessCrop) {
+        this(context, configAsset, statelessCrop, ReplayReferenceProfile.SAMPLED);
+    }
+
+    NativeVideoReplay(Context context, String configAsset, boolean statelessCrop, ReplayReferenceProfile referenceProfile) {
+        if (referenceProfile == null) throw new IllegalArgumentException("Missing reference profile");
         this.statelessCrop = statelessCrop;
+        this.referenceProfile = referenceProfile;
         assets = context.getApplicationContext().getAssets();
         this.configAsset = configAsset;
         this.modelPin = NativeVideoAssets.modelPin(configAsset);
@@ -155,6 +163,7 @@ public final class NativeVideoReplay implements MotionSource {
         synchronized (lock) {
             if (closed) return;
             closed = true;
+            if (stats.firstFrameStartNanos != 0 && stats.processingEndNanos == 0) stats.processingEndNanos = SystemClock.elapsedRealtimeNanos();
             epoch++;
             lose("paused");
             pending.clear();
@@ -233,6 +242,10 @@ public final class NativeVideoReplay implements MotionSource {
             if (event.seq > ackSeq && event.seq <= after) {
                 if (!activityPolicy()) ackExpected = "left-raise".equals(event.gesture) ? "right" : "left";
                 stats.acknowledgedEvents++;
+                JSONObject acknowledged = logBase("event-ack");
+                put(acknowledged, "seq", event.seq);
+                put(acknowledged, "latencyMs", Math.max(0, wall() - event.createdWall));
+                Log.i(TAG, acknowledged.toString());
             }
         }
         ackSeq = after;
@@ -380,14 +393,20 @@ public final class NativeVideoReplay implements MotionSource {
                 if (closed) return;
             }
             if (Build.VERSION.SDK_INT < 28) throw new IOException("recorded_video_requires_api_28");
+            long initStarted = SystemClock.elapsedRealtimeNanos();
             NativeVideoAssets loaded = new NativeVideoAssets(assets, configAsset);
+            long assetsReady = SystemClock.elapsedRealtimeNanos();
             model = new NativeMoveNet(loaded.modelBuffer, loaded.modelPin, statelessCrop);
+            long interpreterReady = SystemClock.elapsedRealtimeNanos();
             video = new MediaMetadataRetriever();
             try (AssetFileDescriptor file = assets.openFd(loaded.videoAsset)) {
                 if (file.getLength() != loaded.videoBytes) throw new IOException("fixture_fd_size_mismatch");
                 video.setDataSource(file.getFileDescriptor(), file.getStartOffset(), file.getLength());
             }
             validateVideo(video, loaded);
+            assetsInitMs = (assetsReady - initStarted) / 1000000.0;
+            interpreterInitMs = (interpreterReady - assetsReady) / 1000000.0;
+            decoderInitMs = (SystemClock.elapsedRealtimeNanos() - interpreterReady) / 1000000.0;
             synchronized (lock) {
                 config = loaded;
                 if (closed) return;
@@ -402,6 +421,7 @@ public final class NativeVideoReplay implements MotionSource {
                 int index;
                 String attemptRound;
                 RunStats attemptStats;
+                long wakeLateness;
                 synchronized (lock) {
                     while (!closed) {
                         long now = wall();
@@ -421,6 +441,8 @@ public final class NativeVideoReplay implements MotionSource {
                     attemptStats = stats;
                     attemptId = ++attemptStats.attemptedFrames;
                     attemptRound = context.roundId;
+                    wakeLateness = nextFrameWall == 0 ? 0 : Math.max(0, wall() - nextFrameWall);
+                    if (attemptStats.firstFrameStartNanos == 0) attemptStats.firstFrameStartNanos = SystemClock.elapsedRealtimeNanos();
                 }
                 if (token != inferenceEpoch) { model.resetTracking(); inferenceEpoch = token; }
                 ReplayAttemptTiming.Sample started = timingSample();
@@ -463,7 +485,7 @@ public final class NativeVideoReplay implements MotionSource {
                 }
                 NativeMoveNet.Result result;
                 ReplayAttemptTiming.Sample modelStarted = timingSample();
-                try { result = model.infer(bitmap, index < 3 || index % 30 == 0 || index + 1 == loaded.frames); }
+                try { result = model.infer(bitmap, referenceProfile.checkFrame(index, loaded.frames)); }
                 catch (RuntimeException | LinkageError error) {
                     ReplayAttemptTiming.Sample inferenceFailed = timingSample();
                     synchronized (lock) {
@@ -477,7 +499,8 @@ public final class NativeVideoReplay implements MotionSource {
                 synchronized (lock) {
                     expirePending(wall());
                     int discardReason = frameDiscardReason(token);
-                    ReplayAttemptTiming timing = new ReplayAttemptTiming(started, decoded, modelStarted, processingEnd, timingSample());
+                    ReplayAttemptTiming.Sample decision = timingSample();
+                    ReplayAttemptTiming timing = new ReplayAttemptTiming(started, decoded, modelStarted, processingEnd, decision);
                     if (discardReason != ReplayFrameGuard.ACCEPT) {
                         // A new round can replace stats while this frame runs.
                         // Attribute discarded work to its original round only.
@@ -492,10 +515,12 @@ public final class NativeVideoReplay implements MotionSource {
                     // Preserve historical frameMean/pace semantics: processing ends before the decision lock wait.
                     double totalMs = timing.processingWallMs();
                     stats.record(decodeMs, result, totalMs);
+                    long classificationStarted = SystemClock.elapsedRealtimeNanos();
                     PoseGestureMachine.Event recognized = activityPolicy()
                             ? activity.update(result.observation, index * 1000.0 / loaded.fps)
                             : machine.update(result.observation, index * 1000.0 / loaded.fps);
                     if (!activityPolicy()) stats.pose.observe(result, index * 1000.0 / loaded.fps, machine);
+                    long classificationFinished = SystemClock.elapsedRealtimeNanos();
                     JSONObject poseFrame = new JSONObject();
                     put(poseFrame, "kind", "pose-frame"); put(poseFrame, "configAsset", configAsset);
                     put(poseFrame, "frameIndex", index); put(poseFrame, "fileMs", index * 1000.0 / loaded.fps);
@@ -528,9 +553,26 @@ public final class NativeVideoReplay implements MotionSource {
                         Log.i(TAG, emitted.toString());
                     }
                     frameIndex++;
-                    nextFrameWall = wall() + Math.max(0, Math.round(1000.0 / loaded.fps - totalMs));
+                    long requestedPacing = Math.max(0, Math.round(1000.0 / loaded.fps - totalMs));
+                    nextFrameWall = wall() + requestedPacing;
+                    long acceptedFinished = SystemClock.elapsedRealtimeNanos();
+                    JSONObject completion = new JSONObject();
+                    put(completion, "kind", "frame-completion"); put(completion, "frameIndex", index);
+                    put(completion, "configAsset", configAsset); put(completion, "source", "video");
+                    put(completion, "roundId", attemptRound); put(completion, "controlEpoch", epoch);
+                    put(completion, "preClassificationBookkeepingMs", (classificationStarted - decision.wallNanos) / 1000000.0);
+                    put(completion, "classificationMs", (classificationFinished - classificationStarted) / 1000000.0);
+                    // This partial phase excludes creation/emission of this completion log itself.
+                    put(completion, "loggingAndBookkeepingMs", (acceptedFinished - classificationFinished) / 1000000.0);
+                    put(completion, "acceptedWorkMs", (acceptedFinished - started.wallNanos) / 1000000.0);
+                    put(completion, "requestedPacingMs", requestedPacing); put(completion, "wakeLatenessMs", wakeLateness);
+                    put(completion, "referenceProfile", referenceProfile.id);
+                    put(completion, "decodedProbeCrc32", result.decodedProbeCrc32);
+                    put(completion, "inputCrc32", result.inputCrc32); put(completion, "outputCrc32", result.outputCrc32);
+                    Log.i(TAG, completion.toString());
                     if (frameIndex >= loaded.frames) {
                         completed = true;
+                        stats.processingEndNanos = SystemClock.elapsedRealtimeNanos();
                         lose("paused");
                         report("finished");
                     }
@@ -541,6 +583,7 @@ public final class NativeVideoReplay implements MotionSource {
         } catch (IOException | JSONException | RuntimeException | LinkageError error) {
             synchronized (lock) {
                 failed = true;
+                if (stats.firstFrameStartNanos != 0 && stats.processingEndNanos == 0) stats.processingEndNanos = SystemClock.elapsedRealtimeNanos();
                 failure = failureCode(error);
                 invalidate("camera-error");
                 JSONObject report = logBase("failure");
@@ -603,6 +646,13 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "api", Build.VERSION.SDK_INT);
         put(output, "abi", Build.SUPPORTED_ABIS.length == 0 ? "unknown" : Build.SUPPORTED_ABIS[0]);
         put(output, "threads", 2);
+        put(output, "referenceProfile", referenceProfile.id);
+        put(output, "assetsInitMs", assetsInitMs);
+        put(output, "interpreterConstructionMs", interpreterInitMs);
+        put(output, "decoderInitMs", decoderInitMs);
+        put(output, "explicitWarmupPasses", 0);
+        put(output, "processingElapsedMs", stats.firstFrameStartNanos == 0 ? 0 :
+                ((stats.processingEndNanos == 0 ? SystemClock.elapsedRealtimeNanos() : stats.processingEndNanos) - stats.firstFrameStartNanos) / 1000000.0);
         put(output, "scalarFrameDiagnostics", true);
         put(output, "capture", NativeVideoCase.isSynthetic(configAsset) ? "generated-synthetic-video" : "bundled-public-video");
         put(output, "personCount", NativeVideoCase.isSynthetic(configAsset) ? "synthetic-no-person" : "unknown-singlepose-model");
@@ -714,8 +764,14 @@ public final class NativeVideoReplay implements MotionSource {
         put(output, "totalWorkerCpuMs", finiteOrNull(timing.totalWorkerCpuMs()));
         put(output, "totalProcessCpuMs", finiteOrNull(timing.totalProcessCpuMs()));
         put(output, "preprocessMs", result == null ? JSONObject.NULL : finiteOrNull(result.preprocessMs));
+        put(output, "cropMs", result == null ? JSONObject.NULL : finiteOrNull(result.cropMs));
+        put(output, "resizeMs", result == null ? JSONObject.NULL : finiteOrNull(result.resizeMs));
+        put(output, "packMs", result == null ? JSONObject.NULL : finiteOrNull(result.packMs));
         put(output, "inferenceMs", result == null ? JSONObject.NULL : finiteOrNull(result.inferenceMs));
         put(output, "referenceMs", result == null ? JSONObject.NULL : finiteOrNull(result.referenceMs));
+        put(output, "referencePrepareMs", result == null ? JSONObject.NULL : finiteOrNull(result.referencePrepareMs));
+        put(output, "referenceCompareMs", result == null ? JSONObject.NULL : finiteOrNull(result.referenceCompareMs));
+        put(output, "referenceInferenceMs", result == null ? JSONObject.NULL : finiteOrNull(result.referenceInferenceMs));
         // Worker CPU excludes interpreter threads; process CPU includes other app work.
         put(output, "cpuScope", "worker-thread-and-app-process");
         Log.i(TAG, output.toString());
@@ -777,6 +833,7 @@ public final class NativeVideoReplay implements MotionSource {
         }
     }
     private static final class RunStats {
+        long firstFrameStartNanos, processingEndNanos;
         int decodedFrames, acceptedFrames, discardedEpochFrames, acknowledgedEvents;
         long attemptedFrames;
         int controlLeaseBreaks, lastDiscardReason, skippedStaleInferences;

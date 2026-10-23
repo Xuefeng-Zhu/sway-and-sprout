@@ -77,17 +77,25 @@ journey, including growth, confirmation, harvest, replay and saved-garden reload
 The native run passed 32 layout checks. These are automated self-report inputs,
 not observed human movement. [Native result and preserved failures](docs/NATIVE-JOURNEY-20261021.md).
 
-The latest generated-video diagnostic APK was prepared but has not run. Historical
-windowed replay accepted only 8/188 frames; the cause remains unresolved. No
-physical Fire TV or reliable live-human recognition is established. Old strict
-diagnostics retain their original outcomes and expectations. Synthetic/video
-credit cannot become saved human participation.
+The 23 October clean native rebuild and complete manual journey passed on the
+Google Android TV API 34 ARM64 emulator. Generated geometry reached 20/20 frames
+and EOF in two diagnostic profiles, taking 14.363 and 10.800 seconds for two
+seconds of media. This is not real-time or human-recognition evidence.
+
+The permitted human-video attempt stopped at 77/136 accepted frames after a
+control-heartbeat expiry; it produced no activity events. Confidence interruptions
+also prevented the accepted prefix from accumulating enough movement history.
+Historical windowed replay accepted only 8/188 frames and was not directly
+retested. No physical Fire TV or reliable live-human recognition is established.
+See the [clean build, measurements and remaining limits](docs/NATIVE-CLEAN-BUILD-20261023.md).
+Old strict diagnostics retain their original outcomes and expectations.
+Synthetic/video credit cannot become saved human participation.
 
 ## Compatibility and native source
 
 The product is **Sway & Sprout**. Internal `togethermove.v1` storage, `com.togethermove.tv` / `.motion` Android IDs, JavaScript bridges, WebView origin, and protocol identifiers deliberately retain their original names. Branding alone must not discard existing progress or break native integration.
 
-`android/` contains the Fire OS host source and renamed launcher assets. The committed Gradle wrapper is 8.9 with AGP 8.7.3 and SDK 35 requirements. Historical APK/build evidence is not proof of a clean native build here. Migration validation does not start an emulator, Docker, or a physical camera, and does not deploy anything. See [native source notes](android/README-motion.md); physical Fire TV/Vega runtime verification remains pending.
+`android/` contains the Fire OS host source and renamed launcher assets. The committed Gradle wrapper is 8.9 with AGP 8.7.3 and SDK 35 requirements. The clean build used the documented existing Gradle 8.13/AGP 8.13.2 override with JDK 17 and SDK 35; it rebuilt project Java/Dex/package outputs while retaining pinned prebuilt runtime dependencies. See [native source notes](android/README-motion.md) and the [current build record](docs/NATIVE-CLEAN-BUILD-20261023.md). Physical Fire TV/Vega runtime verification remains pending.
 
 ## Repository contents
 

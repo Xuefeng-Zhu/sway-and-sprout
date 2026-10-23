@@ -1,5 +1,5 @@
 // Pure scalar evidence checks; no ADB, browser, SDK, camera or inference imports.
-const identityFields='kind source engine engineVersion modelSha256 modelId inputSize verified configAsset api abi threads scalarFrameDiagnostics capture personCount inputTransform attemptedFrames decodedFrames acceptedFrames discardedEpochFrames nextFrameIndex fullFileProcessed resourcesClosed cleanupSucceeded nativeRecognizedEvents acknowledgedEvents';
+const identityFields='kind source engine engineVersion modelSha256 modelId inputSize verified configAsset api abi threads referenceProfile assetsInitMs interpreterConstructionMs decoderInitMs explicitWarmupPasses processingElapsedMs scalarFrameDiagnostics capture personCount inputTransform attemptedFrames decodedFrames acceptedFrames discardedEpochFrames nextFrameIndex fullFileProcessed resourcesClosed cleanupSucceeded nativeRecognizedEvents acknowledgedEvents';
 function filteredScalarRows(text,configAsset,kinds,fields){
  const rows=[],keys=new Set(fields.split(' '));
  for(const line of text.split('\n')){
@@ -33,8 +33,14 @@ export function nativeAttemptRows(text,configAsset){
   ' decodeWallMs decodeWorkerCpuMs decodeProcessCpuMs guardWallMs guardWorkerCpuMs guardProcessCpuMs'+
   ' modelWallMs modelWorkerCpuMs modelProcessCpuMs'+
   ' postGuardWallMs postGuardWorkerCpuMs postGuardProcessCpuMs processingWallMs'+
-  ' totalWallMs totalWorkerCpuMs totalProcessCpuMs preprocessMs inferenceMs referenceMs cpuScope'+
+  ' totalWallMs totalWorkerCpuMs totalProcessCpuMs preprocessMs cropMs resizeMs packMs inferenceMs referenceMs referencePrepareMs referenceCompareMs referenceInferenceMs cpuScope'+
   ' wallTimingAvailable workerCpuAvailable processCpuAvailable');
+}
+
+// Performance/ACK observations are not inferred poses or accepted frame coverage.
+export function nativePerformanceRows(text,configAsset){
+ return filteredScalarRows(text,configAsset,['init','frame-completion','event-ack'],identityFields+
+  ' roundId frameIndex controlEpoch preClassificationBookkeepingMs classificationMs loggingAndBookkeepingMs acceptedWorkMs requestedPacingMs wakeLatenessMs decodedProbeCrc32 inputCrc32 outputCrc32 seq latencyMs');
 }
 
 export function nativeFrameCoverage(rows, expected){

@@ -20,6 +20,7 @@ final class NativeMoveNet implements Closeable {
     private final ByteBuffer input;
     private final float[][][][] output = new float[1][1][17][3];
     private final int[] pixels;
+    private final byte[] rgb;
     private final boolean statelessCrop;
     private MoveNetCrop.Region crop;
     private int imageWidth, imageHeight;
@@ -34,6 +35,7 @@ final class NativeMoveNet implements Closeable {
         this.inputSize = modelPin.inputSize;
         this.input = ByteBuffer.allocateDirect(inputSize * inputSize * 3).order(ByteOrder.nativeOrder());
         this.pixels = new int[inputSize * inputSize];
+        this.rgb = new byte[inputSize * inputSize * 3];
         this.statelessCrop = statelessCrop;
         Interpreter.Options options = new Interpreter.Options().setNumThreads(2).setUseNNAPI(false);
         Interpreter candidate = new Interpreter(model, options);
@@ -63,10 +65,16 @@ final class NativeMoveNet implements Closeable {
         resetTracking();
         Result last = null;
         double prepared = 0, inference = 0, reference = 0, outputDelta = 0;
+        double cropTime = 0, resizeTime = 0, packTime = 0;
+        double referencePrepare = 0, referenceCompare = 0, referenceInference = 0;
         int byteDifferences = 0, byteDelta = 0;
         for (int pass = 0; pass < 3; pass++) {
             last = inferPass(frame, verifyReference);
             prepared += last.preprocessMs; inference += last.inferenceMs; reference += last.referenceMs;
+            cropTime += last.cropMs; resizeTime += last.resizeMs; packTime += last.packMs;
+            referencePrepare += last.referencePrepareMs;
+            referenceCompare += last.referenceCompareMs;
+            referenceInference += last.referenceInferenceMs;
             byteDifferences += last.parityByteDifferences;
             byteDelta = Math.max(byteDelta, last.parityMaxByteDelta);
             outputDelta = Math.max(outputDelta, last.parityOutputMaxDelta);
@@ -75,7 +83,8 @@ final class NativeMoveNet implements Closeable {
                 last.decodedProbeCrc32, last.inputCrc32, last.outputCrc32, last.meanR, last.meanG, last.meanB,
                 last.nonzeroInputBytes, last.invalidMappedKeypoints, last.requiredRaw, last.plan,
                 last.imageWidth, last.imageHeight, last.defaultCrop, verifyReference,
-                byteDifferences, byteDelta, outputDelta, reference, 3);
+                byteDifferences, byteDelta, outputDelta, reference, 3,
+                cropTime, resizeTime, packTime, referencePrepare, referenceCompare, referenceInference);
     }
 
     private Result inferPass(Bitmap frame, boolean verifyReference) {
@@ -96,28 +105,27 @@ final class NativeMoveNet implements Closeable {
             // Same source-space square/padding and floating origin as MoveNet.kt.
             new Canvas(detect).drawBitmap(frame, -plan.left, -plan.top, null);
             square = Bitmap.createBitmap(detect, plan.centerCropLeft, plan.centerCropTop, plan.squareSize, plan.squareSize);
+            long cropped = SystemClock.elapsedRealtimeNanos();
             scaled = Bitmap.createScaledBitmap(square, inputSize, inputSize, true);
             scaled.getPixels(pixels, 0, inputSize, 0, 0, inputSize, inputSize);
+            long resized = SystemClock.elapsedRealtimeNanos();
             input.clear();
-            long red = 0, green = 0, blue = 0;
-            int nonzeroBytes = 0;
-            for (int pixel : pixels) {
-                int r = (pixel >>> 16) & 255, g = (pixel >>> 8) & 255, b = pixel & 255;
-                input.put((byte) r); input.put((byte) g); input.put((byte) b);
-                red += r; green += g; blue += b;
-                nonzeroBytes += (r == 0 ? 0 : 1) + (g == 0 ? 0 : 1) + (b == 0 ? 0 : 1);
-            }
+            NativeRgbPacking.Totals totals = NativeRgbPacking.pack(pixels, rgb);
+            input.put(rgb);
             input.rewind();
-            CRC32 inputChecksum = new CRC32(); inputChecksum.update(input.asReadOnlyBuffer());
+            CRC32 inputChecksum = new CRC32(); inputChecksum.update(rgb, 0, rgb.length);
             long prepared = SystemClock.elapsedRealtimeNanos();
             interpreter.run(input, output);
             long inferred = SystemClock.elapsedRealtimeNanos();
             int byteDifferences = 0, maxByteDelta = 0;
             double outputMaxDelta = 0;
+            double referencePrepareMs = 0, referenceCompareMs = 0, referenceInferenceMs = 0;
             long parityStart = SystemClock.elapsedRealtimeNanos();
+            long referencePrepared = parityStart, referenceInferenceStart = parityStart, referenceInferred = parityStart;
             if (verifyReference) {
                 // Actual official Support API classes, same bitmap/crop and pinned model.
                 ByteBuffer reference = MoveNetReferenceImage.prepare(detect, inputSize);
+                referencePrepared = SystemClock.elapsedRealtimeNanos();
                 ByteBuffer candidate = input.asReadOnlyBuffer(); candidate.rewind();
                 if (reference.remaining() != candidate.remaining()) throw new IllegalStateException("reference_input_size");
                 while (candidate.hasRemaining()) {
@@ -127,12 +135,20 @@ final class NativeMoveNet implements Closeable {
                 }
                 reference.rewind();
                 float[][][][] referenceOutput = new float[1][1][17][3];
+                referenceInferenceStart = SystemClock.elapsedRealtimeNanos();
                 interpreter.run(reference, referenceOutput);
+                referenceInferred = SystemClock.elapsedRealtimeNanos();
                 for (int i = 0; i < 17; i++) for (int j = 0; j < 3; j++) {
                     outputMaxDelta = Math.max(outputMaxDelta, Math.abs((double) output[0][0][i][j] - referenceOutput[0][0][i][j]));
                 }
             }
-            double referenceMs = (SystemClock.elapsedRealtimeNanos() - parityStart) / 1000000.0;
+            long parityEnd = SystemClock.elapsedRealtimeNanos();
+            double referenceMs = (parityEnd - parityStart) / 1000000.0;
+            if (verifyReference) {
+                referencePrepareMs = (referencePrepared - parityStart) / 1000000.0;
+                referenceCompareMs = ((referenceInferenceStart - referencePrepared) + (parityEnd - referenceInferred)) / 1000000.0;
+                referenceInferenceMs = (referenceInferred - referenceInferenceStart) / 1000000.0;
+            }
             float[][] original = new float[17][3];
             for (int i = 0; i < 17; i++) {
                 original[i][0] = plan.restoreX(output[0][0][i][1]);
@@ -162,9 +178,11 @@ final class NativeMoveNet implements Closeable {
                     optionalPoint(original, output[0][0], 12, imageWidth, imageHeight));
             return new Result(observation, (prepared - before) / 1000000.0, (inferred - prepared) / 1000000.0,
                     minimum, decodedProbe.getValue(), inputChecksum.getValue(), outputChecksum.getValue(),
-                    red / (double) pixels.length, green / (double) pixels.length, blue / (double) pixels.length,
-                    nonzeroBytes, invalidMapped, requiredRaw, plan, imageWidth, imageHeight, usedDefaultCrop,
-                    verifyReference, byteDifferences, maxByteDelta, outputMaxDelta, referenceMs, 1);
+                    totals.red / (double) pixels.length, totals.green / (double) pixels.length, totals.blue / (double) pixels.length,
+                    totals.nonzero, invalidMapped, requiredRaw, plan, imageWidth, imageHeight, usedDefaultCrop,
+                    verifyReference, byteDifferences, maxByteDelta, outputMaxDelta, referenceMs, 1,
+                    (cropped - before) / 1000000.0, (resized - cropped) / 1000000.0,
+                    (prepared - resized) / 1000000.0, referencePrepareMs, referenceCompareMs, referenceInferenceMs);
         } finally {
             if (scaled != null && scaled != square && scaled != detect) scaled.recycle();
             if (square != null && square != detect) square.recycle();
@@ -201,11 +219,21 @@ final class NativeMoveNet implements Closeable {
         final boolean defaultCrop, parityChecked;
         final int parityByteDifferences, parityMaxByteDelta;
         final double parityOutputMaxDelta, referenceMs;
+        // Contiguous preprocessing phases. Crop includes plan/probe checksums,
+        // bitmap allocation, drawing and square creation; resize includes getPixels;
+        // pack includes RGB packing, diagnostic sums/nonzero counts and input CRC.
+        final double cropMs, resizeMs, packMs;
+        // Comparison includes buffer/output allocation and byte/output comparisons.
+        // All reference phases are zero when verification is disabled. Existing
+        // referenceMs still measures the whole branch, including its clock overhead.
+        final double referencePrepareMs, referenceCompareMs, referenceInferenceMs;
         Result(PoseGestureMachine.Observation observation, double preprocessMs, double inferenceMs,
                double keypointMinimum, long decodedProbeCrc32, long inputCrc32, long outputCrc32,
                double meanR, double meanG, double meanB, int nonzeroInputBytes,
                int invalidMappedKeypoints, float[] requiredRaw, MoveNetCrop.PixelPlan plan, int imageWidth, int imageHeight, boolean defaultCrop,
-               boolean parityChecked, int parityByteDifferences, int parityMaxByteDelta, double parityOutputMaxDelta, double referenceMs, int modelCalls) {
+               boolean parityChecked, int parityByteDifferences, int parityMaxByteDelta, double parityOutputMaxDelta, double referenceMs, int modelCalls,
+               double cropMs, double resizeMs, double packMs,
+               double referencePrepareMs, double referenceCompareMs, double referenceInferenceMs) {
             this.observation = observation; this.preprocessMs = preprocessMs; this.inferenceMs = inferenceMs;
             this.keypointMinimum = keypointMinimum; this.decodedProbeCrc32 = decodedProbeCrc32;
             this.inputCrc32 = inputCrc32; this.outputCrc32 = outputCrc32;
@@ -215,6 +243,9 @@ final class NativeMoveNet implements Closeable {
             this.defaultCrop = defaultCrop; this.parityChecked = parityChecked;
             this.parityByteDifferences = parityByteDifferences; this.parityMaxByteDelta = parityMaxByteDelta;
             this.parityOutputMaxDelta = parityOutputMaxDelta; this.referenceMs = referenceMs; this.modelCalls = modelCalls;
+            this.cropMs = cropMs; this.resizeMs = resizeMs; this.packMs = packMs;
+            this.referencePrepareMs = referencePrepareMs; this.referenceCompareMs = referenceCompareMs;
+            this.referenceInferenceMs = referenceInferenceMs;
         }
     }
 }

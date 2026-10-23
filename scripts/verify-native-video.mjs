@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {chromium} from '@playwright/test';
 import {nativeOptions} from './native-emulator-options.mjs';
-import {nativeScalarRows,nativeSummaryRows,nativeAttemptRows,nativeUiScoreVerified,nativeDiagnosticRoundVerified,nativeCompletionVerified,assessNativeCase} from './native-video-evidence.mjs';
+import {nativeScalarRows,nativeSummaryRows,nativeAttemptRows,nativePerformanceRows,nativeUiScoreVerified,nativeDiagnosticRoundVerified,nativeCompletionVerified,assessNativeCase} from './native-video-evidence.mjs';
 const options=nativeOptions(),{adb,out,cases}=options;
 if(fs.readdirSync(out).length)throw Error('Refusing nonempty verification output directory');
 const lock=JSON.parse(fs.readFileSync(new URL('../android/native-video-assets.lock.json',import.meta.url),'utf8'));
@@ -68,17 +68,18 @@ try{
   const captureNative=async(phase='final')=>{
    if(captures.has(phase))return;captures.add(phase);
    const stem=out+'/'+name+(phase==='eof'?'.eof':'');
-   const file=stem+'.native-scalar.jsonl',summaryFile=stem+'.native-summary.jsonl',attemptFile=stem+'.native-attempt.jsonl';
-   let scalarLog,summaryLog,attemptLog,summary=null;
+   const file=stem+'.native-scalar.jsonl',summaryFile=stem+'.native-summary.jsonl',attemptFile=stem+'.native-attempt.jsonl',performanceFile=stem+'.native-performance.jsonl';
+   let scalarLog,summaryLog,attemptLog,performanceLog,summary=null;
    try{
     const text=phase==='final'&&closedLog?closedLog:await getLog();
-    const scalars=nativeScalarRows(text,config),summaries=nativeSummaryRows(text,config),attempts=nativeAttemptRows(text,config);
-    for(const [target,rows] of [[file,scalars],[summaryFile,summaries],[attemptFile,attempts]]){
+    const scalars=nativeScalarRows(text,config),summaries=nativeSummaryRows(text,config),attempts=nativeAttemptRows(text,config),performance=nativePerformanceRows(text,config);
+    for(const [target,rows] of [[file,scalars],[summaryFile,summaries],[attemptFile,attempts],[performanceFile,performance]]){
      const body=rows.map(item=>JSON.stringify(item)).join('\n')+(rows.length?'\n':'');fs.writeFileSync(target,body,{flag:'wx'});
     }
     scalarLog={available:true,path:file,sha256:sha(fs.readFileSync(file)),rows:scalars.length,pid,configAsset:config,phase};
     summaryLog={available:true,path:summaryFile,sha256:sha(fs.readFileSync(summaryFile)),rows:summaries.length,pid,configAsset:config,phase};
     attemptLog={available:true,path:attemptFile,sha256:sha(fs.readFileSync(attemptFile)),rows:attempts.length,pid,configAsset:config,phase};
+    performanceLog={available:true,path:performanceFile,sha256:sha(fs.readFileSync(performanceFile)),rows:performance.length,pid,configAsset:config,phase};
     summary=summaries.findLast(item=>['stopped','finished'].includes(item.kind)&&item.fullFileProcessed===true)??summaries.at(-1)??null;
     if(phase==='final'){
      nativeRows=scalars;row.nativeClosedSummary=summaries.findLast(item=>item.kind==='stopped')??null;
@@ -88,12 +89,14 @@ try{
     if(!fs.existsSync(file))fs.writeFileSync(file,'',{flag:'wx'});
     if(!fs.existsSync(summaryFile))fs.writeFileSync(summaryFile,'',{flag:'wx'});
     if(!fs.existsSync(attemptFile))fs.writeFileSync(attemptFile,'',{flag:'wx'});
+    if(!fs.existsSync(performanceFile))fs.writeFileSync(performanceFile,'',{flag:'wx'});
     scalarLog={available:false,path:file,pid:pid||null,error:error.message,phase};summaryLog={available:false,path:summaryFile,pid:pid||null,error:error.message,phase};
     const attemptBody=fs.readFileSync(attemptFile,'utf8');
     attemptLog={available:false,path:attemptFile,sha256:sha(attemptBody),rows:attemptBody.split('\n').filter(Boolean).length,pid:pid||null,configAsset:config,error:error.message,phase};
+    performanceLog={available:false,path:performanceFile,pid:pid||null,configAsset:config,error:error.message,phase};
    }
-   if(phase==='eof'){row.eofNativeScalarLog=scalarLog;row.eofNativeSummaryLog=summaryLog;row.eofNativeAttemptLog=attemptLog;row.eofNativePerformanceSummary=summary;}
-   else{row.nativeScalarLog=scalarLog;row.nativeSummaryLog=summaryLog;row.nativeAttemptLog=attemptLog;row.nativePerformanceSummary=summary;}
+   if(phase==='eof'){row.eofNativeScalarLog=scalarLog;row.eofNativeSummaryLog=summaryLog;row.eofNativeAttemptLog=attemptLog;row.eofNativePerformanceLog=performanceLog;row.eofNativePerformanceSummary=summary;}
+   else{row.nativeScalarLog=scalarLog;row.nativeSummaryLog=summaryLog;row.nativeAttemptLog=attemptLog;row.nativePerformanceLog=performanceLog;row.nativePerformanceSummary=summary;}
    row.nativePerformanceScope='PID/config/kind-filtered primitive scalars only; no pixels or nested poseDiagnostics. Native three-pass inference and frame/reference overhead differ from full UI wall time. PSS is an app-process snapshot, not sustained/full-TV peak.';
   };
   const waitInactive=async()=>{
