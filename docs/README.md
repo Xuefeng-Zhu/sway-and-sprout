@@ -75,6 +75,8 @@ latest natural evaluation above for the subsequent replay-duration result.
 
 - [Milestones](MILESTONES.md): dated implementation and migration checkpoints.
 - [Tool feedback](FEEDBACK.md): historical tool and environment friction.
+- [Friction log](FRICTION-LOG.md): reproducible demo, build and audio workflow issues,
+  workarounds and prioritized suggestions from October 23.
 - [Submission record](SUBMISSION-DRAFT.md): approved event-facing copy, actual
   submission receipt and dated verification scope; review live Devpost for current status.
 - [`verification/`](verification/): checked-in structured summaries and supporting

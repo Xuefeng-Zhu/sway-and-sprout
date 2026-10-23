@@ -63,7 +63,6 @@ browser checks, and troubleshooting.
 | Select checks and interpret their results | [Quality and verification](docs/QUALITY.md) |
 | Recreate the pinned Python runtime and public fixtures | [Portable local verification](docs/MIGRATION-TEST-PLAN.md) |
 | Work on local pose inference or file replay | [Sidecar guide](sidecar/README.md) · [Video testing](sidecar/VIDEO-TESTING.md) |
-| Continue the current motion investigation | [Development handoff](docs/DEVELOPMENT-HANDOFF.md) |
 | Inspect the Android host and debug modes | [Native source guide](android/README-motion.md) |
 | Reproduce the Polly audio integration | [Spoken prompts](docs/AWS-SPOKEN-PROMPTS.md) |
 
@@ -99,11 +98,9 @@ Camera capture is a separate opt-in workflow in the sidecar guide.
 | [`android/`](android/) | Fire OS host source and debug-only native video diagnostics |
 | [`docs/`](docs/README.md) | Guides, architecture, dated reports, and scoped evidence |
 
-This is the canonical development repository; the earlier dated TogetherMove
-export is an unchanged backup outside it. The visible product name is
-**Sway & Sprout**. Compatibility identifiers deliberately retain `togethermove.v1`,
-`com.togethermove.tv` / `.motion`, bridge names, WebView origin, and local protocol
-names so branding changes do not discard progress or break integrations.
+The visible product name is **Sway & Sprout**. Compatibility identifiers retain
+`togethermove.v1`, `com.togethermove.tv` / `.motion`, bridge names, WebView origin,
+and local protocol names so branding changes do not discard progress or break integrations.
 
 ## Assets and licensing
 
